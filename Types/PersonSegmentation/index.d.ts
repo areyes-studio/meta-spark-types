@@ -1,5 +1,5 @@
-/// <reference path="../ScalarSignal/index.d.ts" />
-/// <reference path="../BoolSignal/index.d.ts" />
+/// <reference path="../Reactive.ScalarSignal/index.d.ts" />
+/// <reference path="../Reactive.BoolSignal/index.d.ts" />
 declare namespace PersonSegmentationModule {
 /** 
 * ```

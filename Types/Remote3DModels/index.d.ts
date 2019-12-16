@@ -1,5 +1,5 @@
 /// <reference path="../url/index.d.ts" />
-/// <reference path="../EventSource/index.d.ts" />
+/// <reference path="../Reactive.EventSource/index.d.ts" />
 declare namespace Remote3DModelsModule {
 /** 
 *  

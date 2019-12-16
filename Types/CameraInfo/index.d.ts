@@ -1,7 +1,7 @@
-/// <reference path="../CameraPosition/index.d.ts" />
-/// <reference path="../BoolSignal/index.d.ts" />
-/// <reference path="../InsetsSignal/index.d.ts" />
-/// <reference path="../PixelSizeSignal/index.d.ts" />
+/// <reference path="../CameraInfo.CameraPosition/index.d.ts" />
+/// <reference path="../Reactive.BoolSignal/index.d.ts" />
+/// <reference path="../Reactive.InsetsSignal/index.d.ts" />
+/// <reference path="../Reactive.PixelSizeSignal/index.d.ts" />
 declare namespace CameraInfoModule {
 /** 
 * ```

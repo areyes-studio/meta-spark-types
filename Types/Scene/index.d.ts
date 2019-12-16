@@ -1,6 +1,6 @@
-/// <reference path="../SceneObjectBase/index.d.ts" />
-/// <reference path="../PixelPointSignal/index.d.ts" />
-/// <reference path="../PointSignal/index.d.ts" />
+/// <reference path="../Scene.SceneObjectBase/index.d.ts" />
+/// <reference path="../Reactive.PixelPointSignal/index.d.ts" />
+/// <reference path="../Reactive.PointSignal/index.d.ts" />
 /// <reference path="../number/index.d.ts" />
 declare namespace SceneModule {
 /** 

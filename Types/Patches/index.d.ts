@@ -1,14 +1,14 @@
 /// <reference path="../String/index.d.ts" />
-/// <reference path="../BoolSignal/index.d.ts" />
-/// <reference path="../StringSignal/index.d.ts" />
-/// <reference path="../EventSource/index.d.ts" />
-/// <reference path="../ScalarSignal/index.d.ts" />
-/// <reference path="../PointSignal/index.d.ts" />
+/// <reference path="../Reactive.BoolSignal/index.d.ts" />
+/// <reference path="../Reactive.StringSignal/index.d.ts" />
+/// <reference path="../Reactive.EventSource/index.d.ts" />
+/// <reference path="../Reactive.ScalarSignal/index.d.ts" />
+/// <reference path="../Reactive.PointSignal/index.d.ts" />
 /// <reference path="../void/index.d.ts" />
-/// <reference path="../RgbaSignal/index.d.ts" />
-/// <reference path="../PixelPointSignal/index.d.ts" />
-/// <reference path="../VectorSignal/index.d.ts" />
-/// <reference path="../ColorSignal/index.d.ts" />
+/// <reference path="../Reactive.RgbaSignal/index.d.ts" />
+/// <reference path="../Reactive.PixelPointSignal/index.d.ts" />
+/// <reference path="../Reactive.VectorSignal/index.d.ts" />
+/// <reference path="../Reactive.ColorSignal/index.d.ts" />
 declare namespace PatchesModule {
 /** 
 *  

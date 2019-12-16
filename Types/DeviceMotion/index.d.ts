@@ -1,4 +1,4 @@
-/// <reference path="../TransformSignal/index.d.ts" />
+/// <reference path="../Reactive.TransformSignal/index.d.ts" />
 declare namespace DeviceMotionModule {
 /** 
 * 

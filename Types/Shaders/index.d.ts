@@ -1,21 +1,63 @@
-/// <reference path="../Point2DSignal/index.d.ts" />
+/// <reference path="../GenericVector/index.d.ts" />
 /// <reference path="../TextureSdf/index.d.ts" />
-/// <reference path="../GenericMatrix/index.d.ts" />
-/// <reference path="../PointSignal/index.d.ts" />
-/// <reference path="../ScalarSignal/index.d.ts" />
-/// <reference path="../Point4DSignal/index.d.ts" />
+/// <reference path="../Reactive.ScalarSignal/index.d.ts" />
+/// <reference path="../Reactive.Point2DSignal/index.d.ts" />
+/// <reference path="../Reactive.Point4DSignal/index.d.ts" />
+/// <reference path="../Generic/index.d.ts" />
+/// <reference path="../GenericFunction/index.d.ts" />
+/// <reference path="../Reactive.PointSignal/index.d.ts" />
 /// <reference path="../Texture2d_1ch/index.d.ts" />
-/// <reference path="../Texture2d_2ch/index.d.ts" />
-/// <reference path="../Texture2d_3ch/index.d.ts" />
-/// <reference path="../Texture2d_4ch/index.d.ts" />
+/// <reference path="../GenericMatrix/index.d.ts" />
 /// <reference path="../GenericA/index.d.ts" />
 /// <reference path="../GenericI/index.d.ts" />
 /// <reference path="../GenericB/index.d.ts" />
-/// <reference path="../Generic/index.d.ts" />
-/// <reference path="../GenericFunction/index.d.ts" />
+/// <reference path="../Texture2d_2ch/index.d.ts" />
+/// <reference path="../Texture2d_3ch/index.d.ts" />
+/// <reference path="../Texture2d_4ch/index.d.ts" />
 /// <reference path="../Matrix3/index.d.ts" />
-/// <reference path="../GenericVector/index.d.ts" />
 declare namespace ShadersModule {
+/** 
+*  
+ * vertexAttribute(config: {variableName: Shaders.VertexAttribute}): GenericVector
+ *  
+ * 
+ * Returns a signal for the specified vertex attribute depending on the VertexAttribute used:
+ * `VertexAttribute.POSITION`: `Point4DSignal`
+ * `VertexAttribute.NORMAL`: `PointSignal`
+ * `VertexAttribute.TANGENT`: `Point4DSignal`
+ * `VertexAttribute.TEX_COORDS`: `Point2DSignal`
+ * `VertexAttribute.COLOR`: `Point4DSignal`
+ * `VertexAttribute.BASE_POSITION`: `Point4DSignal`
+ */function vertexAttribute(config: {variableName: Shaders.VertexAttribute}): GenericVector
+ ;
+
+/** 
+*  
+ * sdfAnnular(sdf: TextureSdf, width: ScalarSignal): TextureSdf
+ *  
+ * 
+ * Returns a signal of the given SDF shape made annular (ring-like) by the specified width.
+ */function sdfAnnular(sdf: TextureSdf, width: ScalarSignal): TextureSdf
+ ;
+
+/** 
+*  
+ * sdfSmoothDifference(sdf1: TextureSdf, sdf2: TextureSdf, K: ScalarSignal): TextureSdf
+ *  
+ * 
+ * Returns a signal of the smooth difference of the two given SDF shapes, modulated by K.
+ */function sdfSmoothDifference(sdf1: TextureSdf, sdf2: TextureSdf, K: ScalarSignal): TextureSdf
+ ;
+
+/** 
+*  
+ * sdfFlip(sdf: TextureSdf, offset: Point2DSignal, normal: Point2DSignal): TextureSdf
+ *  
+ * 
+ * Returns a signal of the given SDF shape flipped around the plane given by the offset an normal.
+ */function sdfFlip(sdf: TextureSdf, offset: Point2DSignal, normal: Point2DSignal): TextureSdf
+ ;
+
 /** 
 *  
  * sdfRectangle(center: Point2DSignal, halfSize: Point2DSignal, config: {sdfVariant: Shaders.SdfVariant}): TextureSdf
@@ -23,43 +65,6 @@ declare namespace ShadersModule {
  * 
  * Returns a signal for a rectangle SDF shape.
  */function sdfRectangle(center: Point2DSignal, halfSize: Point2DSignal, config: {sdfVariant: Shaders.SdfVariant}): TextureSdf
- ;
-
-/** 
-*  
- * vertexTransform(config: {variableName: Shaders.BuiltinUniform}): GenericMatrix
- *  
- * 
- * Returns a signal for the specified vertex transform depending on the BuiltinUniform used:
- * `BuiltinUniform.MVP_MATRIX`: `Matrix4`
- * `BuiltinUniform.MV_MATRIX`: `Matrix4`
- * `BuiltinUniform.M_MATRIX`: `Matrix4`
- * `BuiltinUniform.V_MATRIX`: `Matrix4`
- * `BuiltinUniform.P_MATRIX`: `Matrix4`
- * `BuiltinUniform.VP_MATRIX`: `Matrix4`
- * `BuiltinUniform.NORMAL_MATRIX`: `Matrix3`
- * `BuiltinUniform.INV_M_MATRIX`: `Matrix4`
- * `BuiltinUniform.INV_V_MATRIX`: `Matrix4`
- * `BuiltinUniform.INV_P_MATRIX`: `Matrix4`
- */function vertexTransform(config: {variableName: Shaders.BuiltinUniform}): GenericMatrix
- ;
-
-/** 
-*  
- * functionVec3(): (val: PointSignal) => PointSignal
- *  
- * 
- * Returns a signal for the identity function over the specified type.
- */function functionVec3(): (val: PointSignal) => PointSignal
- ;
-
-/** 
-*  
- * sdfRound(sdf: TextureSdf, radius: ScalarSignal): TextureSdf
- *  
- * 
- * Returns a signal of the given SDF shape rounded by the specified radius.
- */function sdfRound(sdf: TextureSdf, radius: ScalarSignal): TextureSdf
  ;
 
 /** 
@@ -73,11 +78,42 @@ declare namespace ShadersModule {
 
 /** 
 *  
+ * sdfRound(sdf: TextureSdf, radius: ScalarSignal): TextureSdf
+ *  
+ * 
+ * Returns a signal of the given SDF shape rounded by the specified radius.
+ */function sdfRound(sdf: TextureSdf, radius: ScalarSignal): TextureSdf
+ ;
+
+/** 
+*  
  * sdfMix(sdf1: TextureSdf, sdf2: TextureSdf, alpha: ScalarSignal): TextureSdf
  *  
  * 
  * Returns a signal of the linear interpolation of the two given SDF shapes, modulated by alpha.
  */function sdfMix(sdf1: TextureSdf, sdf2: TextureSdf, alpha: ScalarSignal): TextureSdf
+ ;
+
+/** 
+*  
+ * fragmentStage(val: Generic): Generic
+ * fragmentStage(val: GenericFunction): GenericFunction
+ *  
+ * 
+ * Places the subsequent computation on val to the fragment stage.
+ */function fragmentStage(val: Generic): Generic
+ ;
+
+function fragmentStage(val: GenericFunction): GenericFunction
+ ;
+
+/** 
+*  
+ * functionVec3(): (val: PointSignal) => PointSignal
+ *  
+ * 
+ * Returns a signal for the identity function over the specified type.
+ */function functionVec3(): (val: PointSignal) => PointSignal
  ;
 
 /** 
@@ -96,6 +132,19 @@ declare namespace ShadersModule {
  * 
  * Returns a signal for a half-plane SDF shape.
  */function sdfHalfPlane(offset: Point2DSignal, normal: Point2DSignal): TextureSdf
+ ;
+
+/** 
+*  
+ * colorSpaceConvert(color: PointSignal, config: {inColorSpace: Shaders.ColorSpace, outColorSpace: Shaders.ColorSpace}): PointSignal
+ * colorSpaceConvert(color: Point4DSignal, config: {inColorSpace: Shaders.ColorSpace, outColorSpace: Shaders.ColorSpace}): Point4DSignal
+ *  
+ * 
+ * Converts a color from the input color space to the output colorspace.
+ */function colorSpaceConvert(color: PointSignal, config: {inColorSpace: Shaders.ColorSpace, outColorSpace: Shaders.ColorSpace}): PointSignal
+ ;
+
+function colorSpaceConvert(color: Point4DSignal, config: {inColorSpace: Shaders.ColorSpace, outColorSpace: Shaders.ColorSpace}): Point4DSignal
  ;
 
 /** 
@@ -128,23 +177,39 @@ declare namespace ShadersModule {
 
 /** 
 *  
- * textureSampler(texture: Texture2d_1ch, uv: Point2DSignal): ScalarSignal
- * textureSampler(texture: Texture2d_2ch, uv: Point2DSignal): Point2DSignal
- * textureSampler(texture: Texture2d_3ch, uv: Point2DSignal): PointSignal
- * textureSampler(texture: Texture2d_4ch, uv: Point2DSignal): Point4DSignal
+ * derivative(val: GenericVector, config: {derivativeType: Shaders.DerivativeType}): GenericVector
  *  
  * 
- * Samples the given texture at the specified uv coordinates.
- */function textureSampler(texture: Texture2d_1ch, uv: Point2DSignal): ScalarSignal
+ * Returns a signal for the specified shader derivative of the given signal.
+ */function derivative(val: GenericVector, config: {derivativeType: Shaders.DerivativeType}): GenericVector
  ;
 
-function textureSampler(texture: Texture2d_2ch, uv: Point2DSignal): Point2DSignal
+/** 
+*  
+ * sdfTwist(sdf: TextureSdf, pivot: Point2DSignal, twist: ScalarSignal): TextureSdf
+ *  
+ * 
+ * Returns a signal of the given SDF shape twisted around the pivot by the given amount.
+ */function sdfTwist(sdf: TextureSdf, pivot: Point2DSignal, twist: ScalarSignal): TextureSdf
  ;
 
-function textureSampler(texture: Texture2d_3ch, uv: Point2DSignal): PointSignal
- ;
-
-function textureSampler(texture: Texture2d_4ch, uv: Point2DSignal): Point4DSignal
+/** 
+*  
+ * vertexTransform(config: {variableName: Shaders.BuiltinUniform}): GenericMatrix
+ *  
+ * 
+ * Returns a signal for the specified vertex transform depending on the BuiltinUniform used:
+ * `BuiltinUniform.MVP_MATRIX`: `Matrix4`
+ * `BuiltinUniform.MV_MATRIX`: `Matrix4`
+ * `BuiltinUniform.M_MATRIX`: `Matrix4`
+ * `BuiltinUniform.V_MATRIX`: `Matrix4`
+ * `BuiltinUniform.P_MATRIX`: `Matrix4`
+ * `BuiltinUniform.VP_MATRIX`: `Matrix4`
+ * `BuiltinUniform.NORMAL_MATRIX`: `Matrix3`
+ * `BuiltinUniform.INV_M_MATRIX`: `Matrix4`
+ * `BuiltinUniform.INV_V_MATRIX`: `Matrix4`
+ * `BuiltinUniform.INV_P_MATRIX`: `Matrix4`
+ */function vertexTransform(config: {variableName: Shaders.BuiltinUniform}): GenericMatrix
  ;
 
 /** 
@@ -180,6 +245,27 @@ function fallback(main: GenericFunction, fallback: GenericFunction): GenericFunc
  * 
  * Returns a signal of the complement of the given SDF shape.
  */function sdfComplement(sdf: TextureSdf): TextureSdf
+ ;
+
+/** 
+*  
+ * textureSampler(texture: Texture2d_1ch, uv: Point2DSignal): ScalarSignal
+ * textureSampler(texture: Texture2d_2ch, uv: Point2DSignal): Point2DSignal
+ * textureSampler(texture: Texture2d_3ch, uv: Point2DSignal): PointSignal
+ * textureSampler(texture: Texture2d_4ch, uv: Point2DSignal): Point4DSignal
+ *  
+ * 
+ * Samples the given texture at the specified uv coordinates.
+ */function textureSampler(texture: Texture2d_1ch, uv: Point2DSignal): ScalarSignal
+ ;
+
+function textureSampler(texture: Texture2d_2ch, uv: Point2DSignal): Point2DSignal
+ ;
+
+function textureSampler(texture: Texture2d_3ch, uv: Point2DSignal): PointSignal
+ ;
+
+function textureSampler(texture: Texture2d_4ch, uv: Point2DSignal): Point4DSignal
  ;
 
 /** 
@@ -309,48 +395,6 @@ function blend(src: Point4DSignal, dest: Point4DSignal, config: {mode: Shaders.B
 
 /** 
 *  
- * sdfAnnular(sdf: TextureSdf, width: ScalarSignal): TextureSdf
- *  
- * 
- * Returns a signal of the given SDF shape made annular (ring-like) by the specified width.
- */function sdfAnnular(sdf: TextureSdf, width: ScalarSignal): TextureSdf
- ;
-
-/** 
-*  
- * vertexAttribute(config: {variableName: Shaders.VertexAttribute}): GenericVector
- *  
- * 
- * Returns a signal for the specified vertex attribute depending on the VertexAttribute used:
- * `VertexAttribute.POSITION`: `Point4DSignal`
- * `VertexAttribute.NORMAL`: `PointSignal`
- * `VertexAttribute.TANGENT`: `Point4DSignal`
- * `VertexAttribute.TEX_COORDS`: `Point2DSignal`
- * `VertexAttribute.COLOR`: `Point4DSignal`
- * `VertexAttribute.BASE_POSITION`: `Point4DSignal`
- */function vertexAttribute(config: {variableName: Shaders.VertexAttribute}): GenericVector
- ;
-
-/** 
-*  
- * sdfSmoothDifference(sdf1: TextureSdf, sdf2: TextureSdf, K: ScalarSignal): TextureSdf
- *  
- * 
- * Returns a signal of the smooth difference of the two given SDF shapes, modulated by K.
- */function sdfSmoothDifference(sdf1: TextureSdf, sdf2: TextureSdf, K: ScalarSignal): TextureSdf
- ;
-
-/** 
-*  
- * sdfFlip(sdf: TextureSdf, offset: Point2DSignal, normal: Point2DSignal): TextureSdf
- *  
- * 
- * Returns a signal of the given SDF shape flipped around the plane given by the offset an normal.
- */function sdfFlip(sdf: TextureSdf, offset: Point2DSignal, normal: Point2DSignal): TextureSdf
- ;
-
-/** 
-*  
  * sdfTranslation(sdf: TextureSdf, offset: Point2DSignal): TextureSdf
  *  
  * 
@@ -405,56 +449,12 @@ function blend(src: Point4DSignal, dest: Point4DSignal, config: {mode: Shaders.B
 
 /** 
 *  
- * sdfTwist(sdf: TextureSdf, pivot: Point2DSignal, twist: ScalarSignal): TextureSdf
- *  
- * 
- * Returns a signal of the given SDF shape twisted around the pivot by the given amount.
- */function sdfTwist(sdf: TextureSdf, pivot: Point2DSignal, twist: ScalarSignal): TextureSdf
- ;
-
-/** 
-*  
- * derivative(val: GenericVector, config: {derivativeType: Shaders.DerivativeType}): GenericVector
- *  
- * 
- * Returns a signal for the specified shader derivative of the given signal.
- */function derivative(val: GenericVector, config: {derivativeType: Shaders.DerivativeType}): GenericVector
- ;
-
-/** 
-*  
  * sdfRotationalRepeat(sdf: TextureSdf, pivot: Point2DSignal, radius: ScalarSignal, numTimes: ScalarSignal): TextureSdf
  *  
  * 
  * Returns a signal of the given SDF shape's rotational repetition numTimes at the given radius.
  * The shape should be centered on the pivot and fit within the angular sector defined by numTimes at the given radius.
  */function sdfRotationalRepeat(sdf: TextureSdf, pivot: Point2DSignal, radius: ScalarSignal, numTimes: ScalarSignal): TextureSdf
- ;
-
-/** 
-*  
- * fragmentStage(val: Generic): Generic
- * fragmentStage(val: GenericFunction): GenericFunction
- *  
- * 
- * Places the subsequent computation on val to the fragment stage.
- */function fragmentStage(val: Generic): Generic
- ;
-
-function fragmentStage(val: GenericFunction): GenericFunction
- ;
-
-/** 
-*  
- * colorSpaceConvert(color: PointSignal, config: {inColorSpace: Shaders.ColorSpace, outColorSpace: Shaders.ColorSpace}): PointSignal
- * colorSpaceConvert(color: Point4DSignal, config: {inColorSpace: Shaders.ColorSpace, outColorSpace: Shaders.ColorSpace}): Point4DSignal
- *  
- * 
- * Converts a color from the input color space to the output colorspace.
- */function colorSpaceConvert(color: PointSignal, config: {inColorSpace: Shaders.ColorSpace, outColorSpace: Shaders.ColorSpace}): PointSignal
- ;
-
-function colorSpaceConvert(color: Point4DSignal, config: {inColorSpace: Shaders.ColorSpace, outColorSpace: Shaders.ColorSpace}): Point4DSignal
  ;
 
 } 

@@ -1,7 +1,7 @@
-/// <reference path="../EventSource/index.d.ts" />
+/// <reference path="../Reactive.EventSource/index.d.ts" />
 /// <reference path="../string/index.d.ts" />
 /// <reference path="../void/index.d.ts" />
-/// <reference path="../RequestedEffect/index.d.ts" />
+/// <reference path="../EffectLinking.RequestedEffect/index.d.ts" />
 declare namespace EffectLinkingModule {
 /** 
 * ```

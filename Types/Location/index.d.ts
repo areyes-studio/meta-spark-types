@@ -1,5 +1,5 @@
-/// <reference path="../BoolSignal/index.d.ts" />
-/// <reference path="../CoordinateSignal/index.d.ts" />
+/// <reference path="../Reactive.BoolSignal/index.d.ts" />
+/// <reference path="../Location.CoordinateSignal/index.d.ts" />
 declare namespace LocationModule {
 /** 
 * ```

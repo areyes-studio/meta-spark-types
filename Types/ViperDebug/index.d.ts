@@ -1,4 +1,4 @@
-/// <reference path="../StringSignal/index.d.ts" />
+/// <reference path="../Reactive.StringSignal/index.d.ts" />
 declare namespace ViperDebugModule {
 /** 
 * ```

@@ -1,5 +1,5 @@
-/// <reference path="../SceneObjectBase/index.d.ts" />
-/// <reference path="../EventSource/index.d.ts" />
+/// <reference path="../Scene.SceneObjectBase/index.d.ts" />
+/// <reference path="../Reactive.EventSource/index.d.ts" />
 declare namespace TouchGesturesModule {
 /** 
 *  

@@ -1,5 +1,5 @@
-/// <reference path="../SceneCategories/index.d.ts" />
-/// <reference path="../SceneCategory/index.d.ts" />
+/// <reference path="../SceneUnderstanding.SceneCategories/index.d.ts" />
+/// <reference path="../SceneUnderstanding.SceneCategory/index.d.ts" />
 declare namespace SceneUnderstandingModule {
 /** 
 *  

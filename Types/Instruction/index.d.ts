@@ -1,6 +1,6 @@
 /// <reference path="../boolean/index.d.ts" />
 /// <reference path="../BooleanSignal/index.d.ts" />
-/// <reference path="../StringSignal/index.d.ts" />
+/// <reference path="../Reactive.StringSignal/index.d.ts" />
 /// <reference path="../void/index.d.ts" />
 declare namespace InstructionModule {
 /** 

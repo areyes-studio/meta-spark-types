@@ -1,9 +1,9 @@
-/// <reference path="../Picker/index.d.ts" />
-/// <reference path="../Slider/index.d.ts" />
+/// <reference path="../NativeUI.Picker/index.d.ts" />
+/// <reference path="../NativeUI.Slider/index.d.ts" />
 /// <reference path="../String/index.d.ts" />
 /// <reference path="../void/index.d.ts" />
-/// <reference path="../StringSignal/index.d.ts" />
-/// <reference path="../EventSource/index.d.ts" />
+/// <reference path="../Reactive.StringSignal/index.d.ts" />
+/// <reference path="../Reactive.EventSource/index.d.ts" />
 declare namespace NativeUIModule {
 /** 
 * ```

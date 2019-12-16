@@ -1,4 +1,4 @@
-/// <reference path="../ScalarSignal/index.d.ts" />
+/// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 declare namespace FacialActionsModule {
 /** 
 *  

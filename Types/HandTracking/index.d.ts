@@ -1,6 +1,6 @@
-/// <reference path="../ScalarSignal/index.d.ts" />
+/// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 /// <reference path="../Number/index.d.ts" />
-/// <reference path="../Hand/index.d.ts" />
+/// <reference path="../HandTracking.Hand/index.d.ts" />
 declare namespace HandTrackingModule {
 /** 
 * ```

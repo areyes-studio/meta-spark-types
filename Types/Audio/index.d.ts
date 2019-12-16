@@ -1,11 +1,11 @@
-/// <reference path="../ScalarSignal/index.d.ts" />
+/// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 /// <reference path="../AudioSource/index.d.ts" />
 /// <reference path="../void/index.d.ts" />
-/// <reference path="../BoolSignal/index.d.ts" />
+/// <reference path="../Reactive.BoolSignal/index.d.ts" />
 /// <reference path="../String/index.d.ts" />
-/// <reference path="../PlaybackController/index.d.ts" />
+/// <reference path="../Audio.PlaybackController/index.d.ts" />
 /// <reference path="../string/index.d.ts" />
-/// <reference path="../AudioComponent/index.d.ts" />
+/// <reference path="../Audio.AudioComponent/index.d.ts" />
 declare namespace AudioModule {
 /** 
 * ```

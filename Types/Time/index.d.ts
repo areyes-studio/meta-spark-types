@@ -1,7 +1,7 @@
-/// <reference path="../ScalarSignal/index.d.ts" />
+/// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 /// <reference path="../Function/index.d.ts" />
 /// <reference path="../Number/index.d.ts" />
-/// <reference path="../Subscription/index.d.ts" />
+/// <reference path="../Reactive.Subscription/index.d.ts" />
 /// <reference path="../void/index.d.ts" />
 declare namespace TimeModule {
 /** 

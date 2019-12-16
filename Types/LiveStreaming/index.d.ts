@@ -1,7 +1,7 @@
-/// <reference path="../LiveStreamingComments/index.d.ts" />
-/// <reference path="../LiveStreamingReactions/index.d.ts" />
+/// <reference path="../LiveStreaming.LiveStreamingComments/index.d.ts" />
+/// <reference path="../LiveStreaming.LiveStreamingReactions/index.d.ts" />
 /// <reference path="../LiveStreaming.State/index.d.ts" />
-/// <reference path="../ScalarSignal/index.d.ts" />
+/// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 declare namespace LiveStreamingModule {
 /** 
 * ```

@@ -1,5 +1,5 @@
-/// <reference path="../Face/index.d.ts" />
-/// <reference path="../Eyeball/index.d.ts" />
+/// <reference path="../FaceTracking.Face/index.d.ts" />
+/// <reference path="../IrisTracking.Eyeball/index.d.ts" />
 declare namespace IrisTrackingModule {
 /** 
 *  

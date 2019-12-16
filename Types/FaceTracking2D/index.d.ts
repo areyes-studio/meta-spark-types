@@ -1,6 +1,6 @@
-/// <reference path="../ScalarSignal/index.d.ts" />
+/// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 /// <reference path="../number/index.d.ts" />
-/// <reference path="../Face2D/index.d.ts" />
+/// <reference path="../FaceTracking2D.Face2D/index.d.ts" />
 declare namespace FaceTracking2DModule {
 /** 
 * ```

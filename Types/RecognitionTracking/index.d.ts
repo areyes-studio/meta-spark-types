@@ -1,4 +1,4 @@
-/// <reference path="../EventSource/index.d.ts" />
+/// <reference path="../Reactive.EventSource/index.d.ts" />
 declare namespace RecognitionTrackingModule {
 /** 
 * ```
