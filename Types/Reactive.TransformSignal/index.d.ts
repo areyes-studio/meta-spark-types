@@ -1,8 +1,8 @@
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 /// <reference path="../Reactive.PointSignal/index.d.ts" />
 /// <reference path="../Reactive.ScaleSignal/index.d.ts" />
-/// <reference path="../Reactive.TransformSignal/index.d.ts" />
 /// <reference path="../Reactive.VectorSignal/index.d.ts" />
+/// <reference path="../Reactive.TransformSignal/index.d.ts" />
 /// <reference path="../number/index.d.ts" />
 /// <reference path="../this/index.d.ts" />
 declare interface TransformSignal {
@@ -111,6 +111,21 @@ position: PointSignal;
 Represents scale in the local coordinate system.
 */ 
 scale: ScaleSignal;
+/** 
+*  
+ * lookAt(targetPosition: PointSignal): TransformSignal
+ * lookAt(targetPosition: PointSignal, selfUp: VectorSignal): TransformSignal
+ *  
+ * Default `selfUp` is `ReactiveModule.vector(0, 1, 0)`.
+ * 
+ * Creates a scene object transform with rotation in direction of target.
+ * **Note:** self needs to be pointing the scene object alongside the X axis.
+ */lookAt(targetPosition: PointSignal): TransformSignal
+ ;
+
+lookAt(targetPosition: PointSignal, selfUp: VectorSignal): TransformSignal
+ ;
+
 /** 
 *  
  * inverse(): TransformSignal

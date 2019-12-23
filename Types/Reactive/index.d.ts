@@ -12,8 +12,8 @@
 /// <reference path="../Reactive.Rotation/index.d.ts" />
 /// <reference path="../Reactive.HsvaSignal/index.d.ts" />
 /// <reference path="../Reactive.StringSignal/index.d.ts" />
-/// <reference path="../Reactive.ScaleSignal/index.d.ts" />
 /// <reference path="../Reactive.PixelPointSignal/index.d.ts" />
+/// <reference path="../Reactive.ScaleSignal/index.d.ts" />
 /// <reference path="../string/index.d.ts" />
 /// <reference path="../boolean/index.d.ts" />
 declare namespace ReactiveModule {
@@ -153,29 +153,6 @@ function pack2(x: Point2DSignal, y: Point2DSignal): Point4DSignal
 
 /** 
 *  
- * lt(lhs: ScalarSignal, rhs: ScalarSignal): BoolSignal
- *  
- * 
- * Returns a Boolean signal that takes the value of `true` every time when the value of the left-hand-side signal is strictly **less than** the value of the right-hand-side one, and the value of `false` all other time.
- * 
- * **See Also**: `ScalarSignal.lt`
- */function lt(lhs: ScalarSignal, rhs: ScalarSignal): BoolSignal
- ;
-
-/** 
-*  
- *   schmittTrigger(signal: ScalarSignal, config: { low: number, high: number, initialValue: ?boolean}): BoolSignal
- *    
- * 
- *   Returns a Boolean signal that is `true` when the input is strictly greater than the upper threshold, and `false` when it is strictly less than the lower threshold.
- *   For input values between and including the thresholds, the Shmitt trigger returns the same value as at the previous update, or **initialValue** if this is the first update.
- * 
- *   **Note**: The initialValue is assumed to be `false` if it isn't specified.
- */function schmittTrigger(signal: ScalarSignal, config: { low: number, high: number, initialValue: ?boolean}): BoolSignal
- ;
-
-/** 
-*  
  * sumList(x: Array<number>): ScalarSignal
  *  
  * 
@@ -242,6 +219,18 @@ function reflect(normal: VectorSignal): VectorSignal
 
 /** 
 *  
+ *   schmittTrigger(signal: ScalarSignal, config: { low: number, high: number, initialValue: ?boolean}): BoolSignal
+ *    
+ * 
+ *   Returns a Boolean signal that is `true` when the input is strictly greater than the upper threshold, and `false` when it is strictly less than the lower threshold.
+ *   For input values between and including the thresholds, the Shmitt trigger returns the same value as at the previous update, or **initialValue** if this is the first update.
+ * 
+ *   **Note**: The initialValue is assumed to be `false` if it isn't specified.
+ */function schmittTrigger(signal: ScalarSignal, config: { low: number, high: number, initialValue: ?boolean}): BoolSignal
+ ;
+
+/** 
+*  
  * xor(lhs: BoolSignal, rhs: BoolSignal): BoolSignal
  *  
  * 
@@ -282,6 +271,17 @@ function reflect(normal: VectorSignal): VectorSignal
  * 
  * Returns a signal with the value that is the logical and of the values in an array
  */function andList(x: Array<BoolSignal>): BoolSignal
+ ;
+
+/** 
+*  
+ * lt(lhs: ScalarSignal, rhs: ScalarSignal): BoolSignal
+ *  
+ * 
+ * Returns a Boolean signal that takes the value of `true` every time when the value of the left-hand-side signal is strictly **less than** the value of the right-hand-side one, and the value of `false` all other time.
+ * 
+ * **See Also**: `ScalarSignal.lt`
+ */function lt(lhs: ScalarSignal, rhs: ScalarSignal): BoolSignal
  ;
 
 /** 
@@ -331,17 +331,6 @@ function expSmooth(signal: TransformSignal, dampFactor: number): TransformSignal
 
 /** 
 *  
- * ceil(x: ScalarSignal): ScalarSignal
- *  
- * 
- * Returns a signal with the value that is the smallest integer that is greater than or equal to the value of the given signal.
- * 
- * **See Also**: `ScalarSignal.ceil`
- */function ceil(x: ScalarSignal): ScalarSignal
- ;
-
-/** 
-*  
  * le(lhs: ScalarSignal, rhs: ScalarSignal): BoolSignal
  *  
  * 
@@ -379,26 +368,6 @@ function ne(lhs: StringSignal, rhs: StringSignal): BoolSignal
  ;
 
 function ne(lhs: BoolSignal, rhs: BoolSignal): BoolSignal
- ;
-
-/** 
-*  
- * gt(lhs: ScalarSignal, rhs: ScalarSignal): BoolSignal
- *  
- * 
- * Returns a Boolean signal that takes the value of `true` every time when the value of the left-hand-side signal is strictly **greater than** the value of the right-hand-side one, and the value of `false` all other time.
- * 
- * **See Also**: `ScalarSignal.gt`
- */function gt(lhs: ScalarSignal, rhs: ScalarSignal): BoolSignal
- ;
-
-/** 
-*  
- * scale(x: ScalarSignal, y: ScalarSignal, z: ScalarSignal): ScaleSignal
- *  
- * 
- * Combines three signals and returns the result as a `ScaleSignal`.
- */function scale(x: ScalarSignal, y: ScalarSignal, z: ScalarSignal): ScaleSignal
  ;
 
 /** 
@@ -463,6 +432,52 @@ function sum(x: VectorSignal, y: VectorSignal): VectorSignal
  * 
  * Returns a signal with the value that is the product of the values in an array
  */function mulList(x: Array<number>): ScalarSignal
+ ;
+
+/** 
+*  
+ * scale(x: ScalarSignal, y: ScalarSignal, z: ScalarSignal): ScaleSignal
+ *  
+ * 
+ * Combines three signals and returns the result as a `ScaleSignal`.
+ */function scale(x: ScalarSignal, y: ScalarSignal, z: ScalarSignal): ScaleSignal
+ ;
+
+/** 
+*  
+ * gt(lhs: ScalarSignal, rhs: ScalarSignal): BoolSignal
+ *  
+ * 
+ * Returns a Boolean signal that takes the value of `true` every time when the value of the left-hand-side signal is strictly **greater than** the value of the right-hand-side one, and the value of `false` all other time.
+ * 
+ * **See Also**: `ScalarSignal.gt`
+ */function gt(lhs: ScalarSignal, rhs: ScalarSignal): BoolSignal
+ ;
+
+/** 
+*  
+ * ceil(x: ScalarSignal): ScalarSignal
+ *  
+ * 
+ * Returns a signal with the value that is the smallest integer that is greater than or equal to the value of the given signal.
+ * 
+ * **See Also**: `ScalarSignal.ceil`
+ */function ceil(x: ScalarSignal): ScalarSignal
+ ;
+
+/** 
+*  
+ * lookAt(eyeTransform: TransformSignal, targetPosition: PointSignal): TransformSignal
+ * lookAt(eyeTransform: TransformSignal, targetPosition: PointSignal, eyeUp: VectorSignal): TransformSignal
+ *  
+ * Default `eyeUp` is `ReactiveModule.vector(0, 1, 0)`.
+ * 
+ * Creates a scene object transform with rotation in direction of target.
+ * **Note:** The eyeTransform needs to be pointing the scene object alongside the X axis.
+ */function lookAt(eyeTransform: TransformSignal, targetPosition: PointSignal): TransformSignal
+ ;
+
+function lookAt(eyeTransform: TransformSignal, targetPosition: PointSignal, eyeUp: VectorSignal): TransformSignal
  ;
 
 /** 
@@ -673,17 +688,6 @@ function normalize(): VectorSignal
 
 /** 
 *  
- * sqrt(x: ScalarSignal): ScalarSignal
- *  
- * 
- * Returns a signal with the value that is the square root of the value of the given signal.
- * 
- * **See Also**: `ScalarSignal.sqrt`
- */function sqrt(x: ScalarSignal): ScalarSignal
- ;
-
-/** 
-*  
  * abs(x: ScalarSignal): ScalarSignal
  *  
  * 
@@ -704,6 +708,17 @@ function normalize(): VectorSignal
  * 
  * **See Also**: `ScalarSignal.sign`
  */function sign(x: ScalarSignal): ScalarSignal
+ ;
+
+/** 
+*  
+ * sqrt(x: ScalarSignal): ScalarSignal
+ *  
+ * 
+ * Returns a signal with the value that is the square root of the value of the given signal.
+ * 
+ * **See Also**: `ScalarSignal.sqrt`
+ */function sqrt(x: ScalarSignal): ScalarSignal
  ;
 
 /** 

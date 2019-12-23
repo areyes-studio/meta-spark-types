@@ -1,6 +1,7 @@
 /// <reference path="../Animation.SamplerFactory/index.d.ts" />
 /// <reference path="../Animation.TimeDriver/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
+/// <reference path="../Animation.SignalRecorder/index.d.ts" />
 /// <reference path="../number/index.d.ts" />
 /// <reference path="../Animation.ValueDriver/index.d.ts" />
 /// <reference path="../Animation.Driver/index.d.ts" />
@@ -11,7 +12,6 @@
 /// <reference path="../Animation.ArrayOfScalarSignals/index.d.ts" />
 /// <reference path="../Reactive.RotationSignal/index.d.ts" />
 /// <reference path="../Reactive.RgbaSignal/index.d.ts" />
-/// <reference path="../Animation.SignalRecorder/index.d.ts" />
 declare namespace AnimationModule {
 /** 
 * 
@@ -37,38 +37,6 @@ const samplers: SamplerFactory;
 
 /** 
 *  
- * valueDriver(value: ScalarSignal, min: number, max: number): ValueDriver
- *  
- * 
- * Returns a `ValueDriver` object that drives an animation based on values emitted from a `ScalarValue`. The signal values are normalized and clamped to maximum and minimum values.
- */function valueDriver(value: ScalarSignal, min: number, max: number): ValueDriver
- ;
-
-/** 
-*  
- * animate(driver: Driver, sampler: ScalarSampler): ScalarSignal
- * animate(driver: Driver, sampler: ArrayOfScalarSamplers): ArrayOfScalarSignals
- * animate(driver: Driver, sampler: RotationSampler): RotationSignal
- * animate(driver: Driver, sampler: ColorSampler): RgbaSignal
- *  
- * 
- * Combines the driver and the sampler to create a signal that can be used to animate arbitrary properties of arbitrary objects.
- * 
- * For `TimeDriver`-based animations the animation will start only when `TimeDriver.start` is invoked.
- */function animate(driver: Driver, sampler: ScalarSampler): ScalarSignal
- ;
-
-function animate(driver: Driver, sampler: ArrayOfScalarSamplers): ArrayOfScalarSignals
- ;
-
-function animate(driver: Driver, sampler: RotationSampler): RotationSignal
- ;
-
-function animate(driver: Driver, sampler: ColorSampler): RgbaSignal
- ;
-
-/** 
-*  
  * makeSignalRecorder(targetSignal: ScalarSignal): SignalRecorder
  * makeSignalRecorder(targetSignal: ScalarSignal, recordingSignalParams: {minRecordingGapMs: ?number, maxRecordCount: ?number}): SignalRecorder
  *  
@@ -80,6 +48,40 @@ function animate(driver: Driver, sampler: ColorSampler): RgbaSignal
  ;
 
 function makeSignalRecorder(targetSignal: ScalarSignal, recordingSignalParams: {minRecordingGapMs: ?number, maxRecordCount: ?number}): SignalRecorder
+ ;
+
+/** 
+*  
+ * valueDriver(value: ScalarSignal, min: number, max: number): ValueDriver
+ *  
+ * 
+ * Returns a `ValueDriver` object that drives an animation based on values emitted from a `ScalarValue`. The signal values are normalized and clamped to maximum and minimum values.
+ */function valueDriver(value: ScalarSignal, min: number, max: number): ValueDriver
+ ;
+
+/** 
+* 
+ *  
+ * animate(driver: Driver, sampler: ScalarSampler): ScalarSignal
+ * animate(driver: Driver, sampler: ArrayOfScalarSamplers): ArrayOfScalarSignals
+ * animate(driver: Driver, sampler: RotationSampler): RotationSignal
+ * animate(driver: Driver, sampler: ColorSampler): RgbaSignal
+ *  
+ * 
+ * Combines the driver and the sampler to create a signal that can be used to animate arbitrary properties of arbitrary objects.
+ * 
+ * For `TimeDriver`-based animations the animation will start only when `TimeDriver.start` is invoked.
+ * 
+ */function animate(driver: Driver, sampler: ScalarSampler): ScalarSignal
+ ;
+
+function animate(driver: Driver, sampler: ArrayOfScalarSamplers): ArrayOfScalarSignals
+ ;
+
+function animate(driver: Driver, sampler: RotationSampler): RotationSignal
+ ;
+
+function animate(driver: Driver, sampler: ColorSampler): RgbaSignal
  ;
 
 } 
