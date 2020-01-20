@@ -30,13 +30,13 @@ lastValue: boolean;
 
 /** 
 *  
- * or(other: BoolSignal): BoolSignal
+ * or(lhs: BoolSignal, rhs: BoolSignal): BoolSignal
  *  
  * 
  * Returns a signal with the value that is the logical disjunction of the values of the given signals. It is `true` every time at least one of the input signals is `true` and `false` at all other times.
  * 
- * **See Also**: `ReactiveModule.or`
- */or(other: BoolSignal): BoolSignal
+ * **See Also**: `BoolSignal.or`
+ */or(lhs: BoolSignal, rhs: BoolSignal): BoolSignal
  ;
 
 /** 
@@ -127,13 +127,13 @@ monitor(config: { fireOnInitialValue: ?boolean}): EventSource
 
 /** 
 *  
- * and(other: BoolSignal): BoolSignal
- *  
+ *  and(lhs: BoolSignal, rhs: BoolSignal): BoolSignal
+ *   
  * 
- * Returns a signal with the value that is the logical conjunction of the values of the given signals. It is `true` every time both input signals are `true` and `false` at all other times.
+ *  Returns a signal with the value that is the logical conjunction of the values of the given signals. It is `true` every time both input signals are `true` and `false` at all other times.
  * 
- * **See Also**: `ReactiveModule.and`
- */and(other: BoolSignal): BoolSignal
+ *  **See Also**: `BoolSignal.and`
+ */and(lhs: BoolSignal, rhs: BoolSignal): BoolSignal
  ;
 
 /** 

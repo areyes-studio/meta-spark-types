@@ -6,7 +6,7 @@ declare interface SvgImage {
 (set) svg: Svg
 ```
 
-Sets the given svg from the svg registry to the svgImage.
+Sets the given svg from the svg registry to the svg image scene object.
 */ 
 svg: Svg;
 } 

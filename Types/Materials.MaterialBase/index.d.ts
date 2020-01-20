@@ -5,6 +5,7 @@
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 /// <reference path="../Reactive.ShaderSignal/index.d.ts" />
 /// <reference path="../void/index.d.ts" />
+/// <reference path="../String/index.d.ts" />
 declare interface MaterialBase {
 /** 
 * ```
@@ -81,6 +82,15 @@ alphaCutoff: ScalarSignal;
  * 
  * Assigns a `ShaderSignal` to the specified texture slot.
  */setTexture(signal: ShaderSignal, config: {
+ ;
+
+/** 
+*  
+ * setTextureSlot(textureSlotName: String, signal: ShaderSignal): void
+ *  
+ * 
+ * Assigns a `ShaderSignal` to the specified texture slot.
+ */setTextureSlot(textureSlotName: String, signal: ShaderSignal): void
  ;
 
 } 

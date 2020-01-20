@@ -4,6 +4,7 @@
 /// <reference path="../Reactive.StringSignal/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 /// <reference path="../Reactive.PixelPointSignal/index.d.ts" />
+/// <reference path="../Reactive.ShaderSignal/index.d.ts" />
 /// <reference path="../Reactive.BoolSignal/index.d.ts" />
 /// <reference path="../Reactive.ColorSignal/index.d.ts" />
 /// <reference path="../Reactive.VectorSignal/index.d.ts" />
@@ -51,6 +52,15 @@ declare interface BlockSceneRoot {
  * 
  * Binds a `PixelPointSignal` to a named Block input.
  */setPixelPointInput(name: String, signal: PixelPointSignal): void
+ ;
+
+/** 
+*  
+ * setShaderInput(name: String, signal: ShaderSignal): void
+ *  
+ * 
+ * Binds a `ShaderSignal` to a named Block input.
+ */setShaderInput(name: String, signal: ShaderSignal): void
  ;
 
 /** 
@@ -132,6 +142,15 @@ declare interface BlockSceneRoot {
  * 
  * Returns a `VectorSignal` for a named Block output.
  */getVectorOutput(name: String): VectorSignal
+ ;
+
+/** 
+*  
+ * getShaderOutput(name: String): ShaderSignal
+ *  
+ * 
+ * Returns a `ShaderSignal` for a named Block output.
+ */getShaderOutput(name: String): ShaderSignal
  ;
 
 } 
