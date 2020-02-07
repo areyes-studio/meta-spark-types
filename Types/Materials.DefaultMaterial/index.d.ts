@@ -1,5 +1,6 @@
 /// <reference path="../Textures.TextureBase/index.d.ts" />
 /// <reference path="../Materials.TextureTransform/index.d.ts" />
+/// <reference path="../Signal<Materials.BlendMode>/index.d.ts" />
 declare interface DefaultMaterial {
 /** 
 * ```
@@ -10,15 +11,6 @@ declare interface DefaultMaterial {
 Specifies the reflective texture of the material.
 */ 
 reflective: TextureBase;
-/** 
-* ```
-(get) multiplyTextureTransform: TextureTransform
-(set) multiplyTextureTransform: TextureTransformSignal
-```
-
-Specifies the coordinates transform of the multiplicative texture of this material.
-*/ 
-multiplyTextureTransform: TextureTransform;
 /** 
 * ```
 (get) multiply: TextureBase
@@ -46,4 +38,22 @@ emissive: TextureBase;
   Specifies the coordinates transform of the emissive texture of this material.
 */ 
 emissiveTextureTransform: TextureTransform;
+/** 
+* ```
+(get) multiplyTextureTransform: TextureTransform
+(set) multiplyTextureTransform: TextureTransformSignal
+```
+
+Specifies the coordinates transform of the multiplicative texture of this material.
+*/ 
+multiplyTextureTransform: TextureTransform;
+/** 
+* ```
+(get) blendMode: Signal<MaterialsModule.BlendMode>
+(set) blendMode: Signal<MaterialsModule.BlendMode>
+```
+
+Specifies the material blend mode.
+*/ 
+blendMode: BlendMode>;
 } 

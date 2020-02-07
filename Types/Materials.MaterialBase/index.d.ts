@@ -2,6 +2,7 @@
 /// <reference path="../Textures.TextureBase/index.d.ts" />
 /// <reference path="../Materials.TextureTransform/index.d.ts" />
 /// <reference path="../Reactive.BoolSignal/index.d.ts" />
+/// <reference path="../Signal<Materials.CullMode>/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 /// <reference path="../Reactive.ShaderSignal/index.d.ts" />
 /// <reference path="../void/index.d.ts" />
@@ -56,6 +57,15 @@ Indicates whether the material can be seen from both sides when rendering the sc
 **Note**: When `FALSE`, only the side specified by object's **Cull Mode** is rendered.
 */ 
 doubleSided: BoolSignal;
+/** 
+* ```
+(get) cullMode: Signal<MaterialsModule.CullMode>
+(set) cullMode: Signal<MaterialsModule.CullMode>
+```
+
+Specifies the material cull mode.
+*/ 
+cullMode: CullMode>;
 /** 
 * ```
 (get) opacity: ScalarSignal

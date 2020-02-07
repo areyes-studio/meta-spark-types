@@ -2,6 +2,7 @@
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 /// <reference path="../Materials.TextureTransform/index.d.ts" />
 /// <reference path="../Reactive.ColorSignal/index.d.ts" />
+/// <reference path="../Signal<Materials.BlendMode>/index.d.ts" />
 declare interface MetallicRoughnessPbrMaterial {
 /** 
 * ```
@@ -55,6 +56,15 @@ roughnessFactor: ScalarSignal;
 Specifies the baseColor texture of the material.
 */ 
 baseColor: TextureBase;
+/** 
+* ```
+(get) blendMode: Signal<MaterialsModule.BlendMode>
+(set) blendMode: Signal<MaterialsModule.BlendMode>
+```
+
+Specifies the material blend mode.
+*/ 
+blendMode: BlendMode>;
 /** 
 * ```
 (get) baseColorTextureTransform: TextureTransform
