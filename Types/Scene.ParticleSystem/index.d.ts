@@ -258,14 +258,12 @@ Specifies the absolute delta value for the `rotationalVelocity` property. The ro
 */ 
 rotationalVelocityDelta: ScalarSignal;
 /** 
-* 
-```
+* ```
 (get) types: ParticleTypeDescriptions
 (set) (Not Available)
 ```
 
 Retrieves the ParticleTypeDescriptions
-
 */ 
 types: ParticleTypeDescriptions;
 /** 

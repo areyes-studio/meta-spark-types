@@ -8,11 +8,11 @@
 /// <reference path="../Reactive.TransformSignal/index.d.ts" />
 /// <reference path="../Reactive.RgbaSignal/index.d.ts" />
 /// <reference path="../Reactive.EventSource/index.d.ts" />
-/// <reference path="../number/index.d.ts" />
-/// <reference path="../Reactive.Rotation/index.d.ts" />
 /// <reference path="../Reactive.HsvaSignal/index.d.ts" />
 /// <reference path="../Reactive.StringSignal/index.d.ts" />
+/// <reference path="../number/index.d.ts" />
 /// <reference path="../Reactive.PixelPointSignal/index.d.ts" />
+/// <reference path="../Reactive.Rotation/index.d.ts" />
 /// <reference path="../Reactive.ScaleSignal/index.d.ts" />
 /// <reference path="../string/index.d.ts" />
 /// <reference path="../boolean/index.d.ts" />
@@ -199,26 +199,6 @@ function reflect(normal: VectorSignal): VectorSignal
 
 /** 
 *  
- * vector(x: ScalarSignal, y: ScalarSignal, z: ScalarSignal): VectorSignal
- *  
- * 
- * Combines three signals and returns the result as a `VectorSignal`.
- */function vector(x: ScalarSignal, y: ScalarSignal, z: ScalarSignal): VectorSignal
- ;
-
-/** 
-* 
- *  
- * rotation(w: number, x: number, y: number, z: number): Rotation
- *  
- * 
- * Creates 'Rotation' from quaternion components.
- *   
- */function rotation(w: number, x: number, y: number, z: number): Rotation
- ;
-
-/** 
-*  
  *   schmittTrigger(signal: ScalarSignal, config: { low: number, high: number, initialValue: ?boolean}): BoolSignal
  *    
  * 
@@ -266,6 +246,26 @@ function reflect(normal: VectorSignal): VectorSignal
 
 /** 
 *  
+ * lt(lhs: ScalarSignal, rhs: ScalarSignal): BoolSignal
+ *  
+ * 
+ * Returns a Boolean signal that takes the value of `true` every time when the value of the left-hand-side signal is strictly **less than** the value of the right-hand-side one, and the value of `false` all other time.
+ * 
+ * **See Also**: `ScalarSignal.lt`
+ */function lt(lhs: ScalarSignal, rhs: ScalarSignal): BoolSignal
+ ;
+
+/** 
+*  
+ * switch(condition: StringSignal, map: { [case: string]: string}, default : string): StringSignal
+ *  
+ * 
+ * Returns a signal which at any point of time takes the value of one of the elements in the provided map, or the provided default value, depending on the momentary value of the given condition Signal.
+ */function switch(condition: StringSignal, map: { [case: string]: string}, default : string): StringSignal
+ ;
+
+/** 
+*  
  * andList(x: Array<BoolSignal>): BoolSignal
  *  
  * 
@@ -275,13 +275,11 @@ function reflect(normal: VectorSignal): VectorSignal
 
 /** 
 *  
- * lt(lhs: ScalarSignal, rhs: ScalarSignal): BoolSignal
+ * log(x: ScalarSignal): ScalarSignal
  *  
  * 
- * Returns a Boolean signal that takes the value of `true` every time when the value of the left-hand-side signal is strictly **less than** the value of the right-hand-side one, and the value of `false` all other time.
- * 
- * **See Also**: `ScalarSignal.lt`
- */function lt(lhs: ScalarSignal, rhs: ScalarSignal): BoolSignal
+ * Returns a signal with the value that is the natural logarithm of the value of the given signal.
+ */function log(x: ScalarSignal): ScalarSignal
  ;
 
 /** 
@@ -432,6 +430,26 @@ function sum(x: VectorSignal, y: VectorSignal): VectorSignal
  * 
  * Returns a signal with the value that is the product of the values in an array
  */function mulList(x: Array<number>): ScalarSignal
+ ;
+
+/** 
+*  
+ * vector(x: ScalarSignal, y: ScalarSignal, z: ScalarSignal): VectorSignal
+ *  
+ * 
+ * Combines three signals and returns the result as a `VectorSignal`.
+ */function vector(x: ScalarSignal, y: ScalarSignal, z: ScalarSignal): VectorSignal
+ ;
+
+/** 
+* 
+ *  
+ * rotation(w: number, x: number, y: number, z: number): Rotation
+ *  
+ * 
+ * Creates 'Rotation' from quaternion components.
+ *   
+ */function rotation(w: number, x: number, y: number, z: number): Rotation
  ;
 
 /** 
@@ -675,15 +693,6 @@ function normalize(): VectorSignal
  * 
  * Maps x from [min, max] range to [0.0, 1.0] range.
  */function fromRange(x: ScalarSignal, min: ScalarSignal, max: ScalarSignal): ScalarSignal
- ;
-
-/** 
-*  
- * log(x: ScalarSignal): ScalarSignal
- *  
- * 
- * Returns a signal with the value that is the natural logarithm of the value of the given signal.
- */function log(x: ScalarSignal): ScalarSignal
  ;
 
 /** 

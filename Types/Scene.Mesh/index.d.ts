@@ -42,11 +42,11 @@ Specifies the name of prefab for Mesh. This is the unique identifier of the pref
 prefabName: string;
 /** 
 *  
- * getBlendShapes(): Promise<ArrayOfBlendShapes>
+ * getBlendShapes(): Promise<Array<BlendShape>>
  *  
  * 
  * Returns a `JS Promise` which will be fulfilled with `array of blend Shapes` or an error.
- */getBlendShapes(): Promise<ArrayOfBlendShapes>
+ */getBlendShapes(): Promise<Array<BlendShape>>
  ;
 
 } 

@@ -22,11 +22,11 @@ Specifies the multiplicative texture of the material. This can be used for maski
 multiply: TextureBase;
 /** 
 * ```
-  (get) emissive: TextureBase
-  (set) emissive: TextureBase
-  ```
+(get) emissive: TextureBase
+(set) emissive: TextureBase
+```
 
-  Specifies the emissive texture of the material.
+Specifies the emissive texture of the material.
 */ 
 emissive: TextureBase;
 /** 

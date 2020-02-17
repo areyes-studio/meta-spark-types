@@ -1,7 +1,7 @@
 /// <reference path="../Reactive.BoolSignal/index.d.ts" />
 /// <reference path="../Reactive.InsetsSignal/index.d.ts" />
 /// <reference path="../Reactive.PixelSizeSignal/index.d.ts" />
-/// <reference path="../CameraInfo.CameraPosition/index.d.ts" />
+/// <reference path="../Signal<CameraPosition>/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 declare namespace CameraInfoModule {
 /** 
@@ -42,13 +42,13 @@ Specifies a `PixelSizeSignal` describing the size of the preview, in pixels.
 const previewSize: PixelSizeSignal;
 /** 
 * ```
-(get) captureDevicePosition: CameraPosition
+(get) captureDevicePosition: Signal<CameraPosition>
 (set) (Not Available)
 ```
 
-Specifies a `CameraPosition` enum value identifying the current camera in use on the device.
+Specifies a `CameraPosition` enum signal identifying the current camera in use on the device.
 */ 
-const captureDevicePosition: CameraPosition;
+const captureDevicePosition: Signal<CameraPosition>;
 /** 
 * ```
 (get) previewScreenScale: ScalarSignal
