@@ -45,11 +45,11 @@ function watch(tag: String, signal:StringSignal): void
 
 /** 
 *  
- * getTypeDescriptions(): Array<string>
+ * getTypeDescriptions(): Object
  *  
  * 
  * Finds the descriptions for each type in the effect.
- */function getTypeDescriptions(): Array<string>
+ */function getTypeDescriptions(): Object
  ;
 
 } 
