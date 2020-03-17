@@ -44,7 +44,7 @@ height: ScalarSignal;
 Represents the current 2D bounds relative to the parent element. This is the result of the layout calculation. Values are measured in 3D units.
 
 **Note**: The `Canvas.transform` property doesn't affect the layout, the transformation it specifies is applied on top of it.
-        
+
 */ 
 bounds: Bounds2D;
 /** 
