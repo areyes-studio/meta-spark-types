@@ -5,6 +5,7 @@
 /// <reference path="../?number/index.d.ts" />
 /// <reference path="../boolean/index.d.ts" />
 /// <reference path="../Scene.TextAlignmentWrapper/index.d.ts" />
+/// <reference path="../Promise/index.d.ts" />
 declare interface PlanarText {
 /** 
 * ```
@@ -87,4 +88,13 @@ tracking: number;
 Represents the `TextAlignmentWrapper` that contains parameters that specify the text alignment.
 */ 
 alignment: TextAlignmentWrapper;
+/** 
+*  
+ * getMaterial(): Promise<MaterialBase>
+ *  
+ * 
+ * Returns a promise that is resolved with the material associated with a given scene object or null if no material was assigned.
+ */getMaterial(): Promise<MaterialBase>
+ ;
+
 } 

@@ -4,9 +4,10 @@
 /// <reference path="../Reactive.BoolSignal/index.d.ts" />
 /// <reference path="../Signal<Materials.CullMode>/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
+/// <reference path="../Promise/index.d.ts" />
+/// <reference path="../String/index.d.ts" />
 /// <reference path="../Reactive.ShaderSignal/index.d.ts" />
 /// <reference path="../void/index.d.ts" />
-/// <reference path="../String/index.d.ts" />
 declare interface MaterialBase {
 /** 
 * ```
@@ -85,13 +86,11 @@ Specifies a number between 0.0 and 1.0.
 alphaCutoff: ScalarSignal;
 /** 
 *  
- * setTexture(signal: ShaderSignal, config: {
- *   textureSlotName: DefaultMaterialTextures | BlendedMaterialTextures | FacePaintMaterialTextures | PhysicallyBasedMaterialTextures
- * }): void
+ * getDiffuse(): Promise<TextureBase>
  *  
  * 
- * Assigns a `ShaderSignal` to the specified texture slot.
- */setTexture(signal: ShaderSignal, config: {
+ * Returns a promise that is resolved with the texture associated with a given material or null if no texture was assigned.
+ */getDiffuse(): Promise<TextureBase>
  ;
 
 /** 
@@ -101,6 +100,17 @@ alphaCutoff: ScalarSignal;
  * 
  * Assigns a `ShaderSignal` to the specified texture slot.
  */setTextureSlot(textureSlotName: String, signal: ShaderSignal): void
+ ;
+
+/** 
+*  
+ * setTexture(signal: ShaderSignal, config: {
+ *   textureSlotName: DefaultMaterialTextures | BlendedMaterialTextures | FacePaintMaterialTextures | PhysicallyBasedMaterialTextures
+ * }): void
+ *  
+ * 
+ * Assigns a `ShaderSignal` to the specified texture slot.
+ */setTexture(signal: ShaderSignal, config: {
  ;
 
 } 

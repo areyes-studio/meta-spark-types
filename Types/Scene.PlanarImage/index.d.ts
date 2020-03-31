@@ -1,4 +1,5 @@
 /// <reference path="../Materials.MaterialBase/index.d.ts" />
+/// <reference path="../Promise/index.d.ts" />
 declare interface PlanarImage {
 /** 
 * ```
@@ -9,4 +10,13 @@ declare interface PlanarImage {
 Specifies the material of the scene object.
 */ 
 material: MaterialBase;
+/** 
+*  
+ * getMaterial(): Promise<MaterialBase>
+ *  
+ * 
+ * Returns a promise that is resolved with the material associated with a given scene object or null if no material was assigned.
+ */getMaterial(): Promise<MaterialBase>
+ ;
+
 } 

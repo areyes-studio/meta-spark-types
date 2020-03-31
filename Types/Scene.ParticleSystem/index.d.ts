@@ -1,7 +1,6 @@
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 /// <reference path="../Reactive.PointSignal/index.d.ts" />
 /// <reference path="../Reactive.VectorSignal/index.d.ts" />
-/// <reference path="../Reactive.ScalarValue/index.d.ts" />
 /// <reference path="../Reactive.HsvaSignal/index.d.ts" />
 /// <reference path="../Animation.ColorSampler/index.d.ts" />
 /// <reference path="../Scene.ParticleTypeDescriptions/index.d.ts" />
@@ -9,6 +8,7 @@
 /// <reference path="../Materials.MaterialBase/index.d.ts" />
 /// <reference path="../Animation.ScalarSampler/index.d.ts" />
 /// <reference path="../Reactive.BoolSignal/index.d.ts" />
+/// <reference path="../Promise/index.d.ts" />
 declare interface ParticleSystem {
 /** 
 * ```
@@ -70,7 +70,7 @@ Specifies the percentage delta value, between 0.0 and 1.0, for the `birthrate` p
 birthrateDelta: ScalarSignal;
 /** 
 * ```
-(get) innerRadius: ScalarValue
+(get) innerRadius: ScalarSignal
 (set) innerRadius: ScalarSignal
 ```
 
@@ -78,7 +78,7 @@ Specifies the radius of the inner circle when using the ring emitter for the par
 
 **Note**: `outerRadius` must be greater-than or equal to `innerRadius`.
 */ 
-innerRadius: ScalarValue;
+innerRadius: ScalarSignal;
 /** 
 * ```
 (get) scaleDelta: ScalarSignal
@@ -368,7 +368,7 @@ Specifies the modifier that will be added to the particle velocity according to 
 velocityModifier: ArrayOfScalarSamplers;
 /** 
 * ```
-(get) outerRadius: ScalarValue
+(get) outerRadius: ScalarSignal
 (set) outerRadius: ScalarSignal
 ```
 
@@ -376,7 +376,7 @@ Specifies the radius of the outer circle when using the ring emitter for the par
 
 **Note**: `outerRadius` must be greater-than or equal to `innerRadius`.
 */ 
-outerRadius: ScalarValue;
+outerRadius: ScalarSignal;
 /** 
 * ```
 (get) worldSpace: BoolSignal
@@ -395,4 +395,22 @@ worldSpace: BoolSignal;
 Specifies the mean spawn position of each particle.
 */ 
 position: PointSignal;
+/** 
+*  
+ * getMaterial(): Promise<MaterialBase>
+ *  
+ * 
+ * Returns a promise that is resolved with the material associated with a given scene object or null if no material was assigned.
+ */getMaterial(): Promise<MaterialBase>
+ ;
+
+/** 
+*  
+ * (get) getTypes(): Promise<Array<ParticleTypeDescription>>
+ *  
+ * 
+ * Retrieves the array of ParticleTypeDescription objects
+ */getTypes(): Promise<Array<ParticleTypeDescription>>
+ ;
+
 } 

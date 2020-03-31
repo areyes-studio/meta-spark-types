@@ -1,4 +1,5 @@
 /// <reference path="../Svgs.Svg/index.d.ts" />
+/// <reference path="../Promise/index.d.ts" />
 declare interface SvgImage {
 /** 
 * ```
@@ -9,4 +10,13 @@ declare interface SvgImage {
 Sets the given svg from the svg registry to the svg image scene object.
 */ 
 svg: Svg;
+/** 
+*  
+ * getSvg(): Promise<Svg>
+ *  
+ * 
+ * Retrieves a previously set Svg to a given svg image scene object.
+ */getSvg(): Promise<Svg>
+ ;
+
 } 

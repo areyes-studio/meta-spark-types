@@ -1,22 +1,22 @@
-/// <reference path="../Scene.VerticalTextAlignment/index.d.ts" />
-/// <reference path="../Scene.TextAlignment/index.d.ts" />
+/// <reference path="../Signal<VerticalTextAlignment>/index.d.ts" />
+/// <reference path="../Signal<TextAlignment>/index.d.ts" />
 declare interface TextAlignmentWrapper {
 /** 
 * ```
-(get) (Not Available)
-(set) vertical: VerticalTextAlignment
+(get) vertical: Signal<VerticalTextAlignment>
+(set) vertical: Signal<VerticalTextAlignment>
 ```
 
 Specifies the vertical text alignment.
 */ 
-vertical: VerticalTextAlignment;
+vertical: Signal<VerticalTextAlignment>;
 /** 
 * ```
-(get) (Not Available)
-(set) horizontal: TextAlignment
+(get) horizontal: Signal<TextAlignment>
+(set) horizontal: Signal<TextAlignment>
 ```
 
 Specifies the horizontal text alignment.
 */ 
-horizontal: TextAlignment;
+horizontal: Signal<TextAlignment>;
 } 

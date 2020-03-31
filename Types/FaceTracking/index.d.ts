@@ -22,11 +22,15 @@ Specifies a `BoolSignal` that takes the value of `true` whenever the Face Tracke
 */ 
 const isEnabled: BoolSignal;
 /** 
-*  
+* 
+ *  
  * face(index: number): Face
  *  
  * 
  * Returns the `Face` object from the detected face array at the specified index.
+ * 
+ * **Note**: this method will throw for face index lower than 0 and greater or equal to
+ * 10.
  */function face(index: number): Face
  ;
 

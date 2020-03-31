@@ -2,6 +2,7 @@
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 /// <reference path="../Reactive.StringSignal/index.d.ts" />
 /// <reference path="../Fonts.FontId/index.d.ts" />
+/// <reference path="../Promise/index.d.ts" />
 declare interface TextExtrusion {
 /** 
 * ```
@@ -86,4 +87,40 @@ backMaterial: MaterialBase;
 Specifies the line spacing value.
 */ 
 lineSpacing: ScalarSignal;
+/** 
+*  
+ * getFont(): Promise<FontId>
+ *  
+ * 
+ * Returns a promise that is resolved with the font identifier associated with the instance of TextExtrusion or null if none is.
+ */getFont(): Promise<FontId>
+ ;
+
+/** 
+*  
+ * getFrontMaterial(): Promise<MaterialBase>
+ *  
+ * 
+ * Returns a promise that is resolved with the material associated with the front cap of 3-d text of given scene object or null if no material was assigned.
+ */getFrontMaterial(): Promise<MaterialBase>
+ ;
+
+/** 
+*  
+ * getBackMaterial(): Promise<MaterialBase>
+ *  
+ * 
+ * Returns a promise that is resolved with the material associated with the back cap of 3-d text of given scene object or null if no material was assigned.
+ */getBackMaterial(): Promise<MaterialBase>
+ ;
+
+/** 
+*  
+ * getSideMaterial(): Promise<MaterialBase>
+ *  
+ * 
+ * Returns a promise that is resolved with the material associated with the extrusion part of 3-d text of given scene object or null if no material was assigned.
+ */getSideMaterial(): Promise<MaterialBase>
+ ;
+
 } 

@@ -1,4 +1,5 @@
 /// <reference path="../boolean/index.d.ts" />
+/// <reference path="../Reactive.BoolSignal/index.d.ts" />
 /// <reference path="../BooleanSignal/index.d.ts" />
 /// <reference path="../Reactive.StringSignal/index.d.ts" />
 /// <reference path="../void/index.d.ts" />
@@ -12,6 +13,15 @@ declare namespace InstructionModule {
 Specifies whether or not automatic instructions are enabled.
 */ 
 const automaticInstructionsEnabled: boolean;
+/** 
+* ```
+(get) automaticHintsEnabled: BoolSignal
+(set) automaticHintsEnabled: BoolSignal
+```
+
+Specifies whether or not automatic instruction hints are enabled.
+*/ 
+const automaticHintsEnabled: BoolSignal;
 /** 
 *  
  * bind(enabled: BooleanSignal, token: StringSignal): void

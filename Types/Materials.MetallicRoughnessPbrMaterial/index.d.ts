@@ -3,6 +3,7 @@
 /// <reference path="../Materials.TextureTransform/index.d.ts" />
 /// <reference path="../Reactive.ColorSignal/index.d.ts" />
 /// <reference path="../Signal<Materials.BlendMode>/index.d.ts" />
+/// <reference path="../Promise/index.d.ts" />
 declare interface MetallicRoughnessPbrMaterial {
 /** 
 * ```
@@ -92,4 +93,31 @@ metallicRoughnessTextureTransform: TextureTransform;
 Specifies the metallicRoughness texture of the material.
 */ 
 metallicRoughness: TextureBase;
+/** 
+*  
+ * getEmissive(): Promise<TextureBase>
+ *  
+ * 
+ * Returns a promise that is resolved with the texture associated with a given material or null if no texture was assigned.
+ */getEmissive(): Promise<TextureBase>
+ ;
+
+/** 
+*  
+ * getBaseColor(): Promise<TextureBase>
+ *  
+ * 
+ * Returns a promise that is resolved with the texture associated with a given material or null if no texture was assigned.
+ */getBaseColor(): Promise<TextureBase>
+ ;
+
+/** 
+*  
+ * getMetallicRoughness(): Promise<TextureBase>
+ *  
+ * 
+ * Returns a promise that is resolved with the texture associated with a given material or null if no texture was assigned.
+ */getMetallicRoughness(): Promise<TextureBase>
+ ;
+
 } 

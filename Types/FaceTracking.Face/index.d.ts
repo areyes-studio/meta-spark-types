@@ -10,7 +10,6 @@
 /// <reference path="../FaceTracking.Expression/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 /// <reference path="../Reactive.PointSignal/index.d.ts" />
-/// <reference path="../number/index.d.ts" />
 declare interface Face {
 /** 
 * ```
@@ -153,26 +152,6 @@ expression: Expression;
  * 
  *  **See Also**: `Face.cameraTransform` to convert the point to the coordinate system of the camera.
  */point(u: ScalarSignal, v: ScalarSignal): PointSignal
- ;
-
-/** 
-*  
- * landmark2D(index: number): PointSignal
- *  
- * 
- * Returns a `PointSignal` containing the location of the specified 2D landmark as a point in the focal plane (in 3D space).
- * 
- * **Note**: This method is for debug purposes only and may disappear without notice. Don't use it in production effects.
- */landmark2D(index: number): PointSignal
- ;
-
-/** 
-*  
- * deformationCoefficientAt(index: number): ScalarSignal
- *  
- * 
- * Returns a `ScalarSignal` containing the deformation coefficient associated with a tracked face at the specified index.
- */deformationCoefficientAt(index: number): ScalarSignal
  ;
 
 } 

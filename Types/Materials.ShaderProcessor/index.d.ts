@@ -1,7 +1,7 @@
 /// <reference path="../string/index.d.ts" />
 /// <reference path="../Reactive.ScalarValue/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
-/// <reference path="../void/index.d.ts" />
+/// <reference path="../Promise/index.d.ts" />
 /// <reference path="../Reactive.BoolValue/index.d.ts" />
 /// <reference path="../Reactive.BoolSignal/index.d.ts" />
 declare interface ShaderProcessor {
@@ -18,13 +18,24 @@ declare interface ShaderProcessor {
 
 /** 
 *  
- * setFloatParameter(paramName: string, source: ScalarSignal): void
+ * getFloatParameterOrFallback(paramName: string, fallback: ScalarSignal): ScalarSignal
  *  
  * 
- * Specifies the value of the shader parameter indicated by the `paramName` argument. An exception is thrown when the identifier isn't found in the shader processor.
+ * Returns a `ScalarSignal` associated with a given `paramName` or `fallback` if the param is not found in the material.
  * 
- * **See Also**: `ShaderProcessor.floatParameter`.
- */setFloatParameter(paramName: string, source: ScalarSignal): void
+ * **See Also**: `ShaderProcessor.getFloatParameter`, `ShaderProcessor.setFloatParameter`.
+ */getFloatParameterOrFallback(paramName: string, fallback: ScalarSignal): ScalarSignal
+ ;
+
+/** 
+*  
+ * getFloatParameter(paramName: string): Promise<ScalarSignal>
+ *  
+ * 
+ * Returns a promise that is resolved with the `ScalarSignal` associated with a given `paramName` or error if the param is not found in the material.
+ * 
+ * **See Also**: `ShaderProcessor.getFloatParameterOrFallback`, `ShaderProcessor.setFloatParameter`.
+ */getFloatParameter(paramName: string): Promise<ScalarSignal>
  ;
 
 /** 
@@ -40,13 +51,48 @@ declare interface ShaderProcessor {
 
 /** 
 *  
- * setBoolParameter(paramName: string, source: BoolSignal): void
+ * setFloatParameter(paramName: string, source: ScalarSignal): Promise<void>
  *  
  * 
- * Specifies the value of a shader parameter indicated by the `paramName` argument. An exception is thrown when the identifier isn't found in the shader processor.
+ * Specifies the value of the shader parameter indicated by the `paramName` argument.
+ * Returns promise resolved with error if param for given `paramName` is not found in the material.
  * 
- * **See Also**: `ShaderProcessor.boolParameter`.
- */setBoolParameter(paramName: string, source: BoolSignal): void
+ * **See Also**: `ShaderProcessor.getFloatParameter`, `ShaderProcessor.getFloatParameterOrFallback`.
+ */setFloatParameter(paramName: string, source: ScalarSignal): Promise<void>
+ ;
+
+/** 
+*  
+ * getBoolParameterOrFallback(paramName: string, fallback: BoolSignal): BoolSignal
+ *  
+ * 
+ * Returns a `BoolSignal` associated with a given `paramName` or `fallback` if the param is not found in the material.
+ * 
+ * **See Also**: `ShaderProcessor.getBoolParameter`, `ShaderProcessor.setBoolParameter`.
+ */getBoolParameterOrFallback(paramName: string, fallback: BoolSignal): BoolSignal
+ ;
+
+/** 
+*  
+ * setBoolParameter(paramName: string, source: BoolSignal): Promise<void>
+ *  
+ * 
+ * Specifies the value of the shader parameter indicated by the `paramName` argument.
+ * Returns promise resolved with error if param for given `paramName` is not found in the material.
+ * 
+ * **See Also**: `ShaderProcessor.getBoolParameter`, `ShaderProcessor.getBoolParameterOrFallback`.
+ */setBoolParameter(paramName: string, source: BoolSignal): Promise<void>
+ ;
+
+/** 
+*  
+ * getBoolParameter(paramName: string): Promise<BoolSignal>
+ *  
+ * 
+ * Returns a promise that is resolved with the `BoolSignal` associated with a given `paramName` or error if the param is not found in the material.
+ * 
+ * **See Also**: `ShaderProcessor.setBoolParameter`, `ShaderProcessor.getBoolParameterOrFallback`.
+ */getBoolParameter(paramName: string): Promise<BoolSignal>
  ;
 
 } 

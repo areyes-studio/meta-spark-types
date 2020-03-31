@@ -1,6 +1,7 @@
 /// <reference path="../Textures.TextureBase/index.d.ts" />
 /// <reference path="../Materials.TextureTransform/index.d.ts" />
 /// <reference path="../Signal<Materials.BlendMode>/index.d.ts" />
+/// <reference path="../Promise/index.d.ts" />
 declare interface DefaultMaterial {
 /** 
 * ```
@@ -56,4 +57,31 @@ multiplyTextureTransform: TextureTransform;
 Specifies the material blend mode.
 */ 
 blendMode: BlendMode>;
+/** 
+*  
+ * getReflective(): Promise<TextureBase>
+ *  
+ * 
+ * Returns a promise that is resolved with the texture associated with a given material or null if no texture was assigned.
+ */getReflective(): Promise<TextureBase>
+ ;
+
+/** 
+*  
+ * getMultiply(): Promise<TextureBase>
+ *  
+ * 
+ * Returns a promise that is resolved with the texture associated with a given material or null if no texture was assigned.
+ */getMultiply(): Promise<TextureBase>
+ ;
+
+/** 
+*  
+ * getEmissive(): Promise<TextureBase>
+ *  
+ * 
+ * Returns a promise that is resolved with the texture associated with a given material or null if no texture was assigned.
+ */getEmissive(): Promise<TextureBase>
+ ;
+
 } 

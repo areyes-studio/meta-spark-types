@@ -1,38 +1,19 @@
+/// <reference path="../Diagnostics.TypeSystemMetadata/index.d.ts" />
+/// <reference path="../Array/index.d.ts" />
 /// <reference path="../Object/index.d.ts" />
 /// <reference path="../void/index.d.ts" />
-/// <reference path="../String/index.d.ts" />
+/// <reference path="../string/index.d.ts" />
 /// <reference path="../Reactive.BoolSignal/index.d.ts" />
-/// <reference path="../Reactive.ScalarSignal/index.d.ts" />
-/// <reference path="../Reactive.StringSignal/index.d.ts" />
-/// <reference path="../Array/index.d.ts" />
 declare namespace DiagnosticsModule {
 /** 
-*  
- * log(content: Object): void
- *  
- * 
- * Flattens content to a string and prints it to the debug console.
- * Note: this function can be reassigned to any var (i.e. `foo.log = Diagnostics.log;`)
- */function log(content: Object): void
- ;
+* ```
+(get) typeSystem: TypeSystemMetadata
+(set) (Not Available)
+```
 
-/** 
-*  
- * watch(tag: String, signal:BoolSignal): void
- * watch(tag: String, signal:ScalarSignal): void
- * watch(tag: String, signal:StringSignal): void
- *  
- * 
- * Adds the specified signal to the watch view in AR Studio with the specified tag.
- */function watch(tag: String, signal:BoolSignal): void
- ;
-
-function watch(tag: String, signal:ScalarSignal): void
- ;
-
-function watch(tag: String, signal:StringSignal): void
- ;
-
+Object containing available module and types information.
+*/ 
+const typeSystem: TypeSystemMetadata;
 /** 
 *  
  * getModuleNames(): Array<string>
@@ -50,6 +31,25 @@ function watch(tag: String, signal:StringSignal): void
  * 
  * Finds the descriptions for each type in the effect.
  */function getTypeDescriptions(): Object
+ ;
+
+/** 
+*  
+ * log(content: Object): void
+ *  
+ * 
+ * Flattens content to a string and prints it to the debug console.
+ * Note: this function can be reassigned to any var (i.e. `foo.log = Diagnostics.log;`)
+ */function log(content: Object): void
+ ;
+
+/** 
+*  
+ * watch(tag: string, signal: BoolSignal | ScalarSignal | StringSignal): void
+ *  
+ * 
+ * Adds the specified signal to the watch view in AR Studio with the specified tag.
+ */function watch(tag: string, signal: BoolSignal | ScalarSignal | StringSignal): void
  ;
 
 } 

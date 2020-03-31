@@ -1,14 +1,38 @@
+/// <reference path="../BlockInstanceInputs/index.d.ts" />
+/// <reference path="../BlockInstanceOutputs/index.d.ts" />
 /// <reference path="../String/index.d.ts" />
 /// <reference path="../Reactive.PointSignal/index.d.ts" />
 /// <reference path="../void/index.d.ts" />
+/// <reference path="../Reactive.BoolSignal/index.d.ts" />
 /// <reference path="../Reactive.StringSignal/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 /// <reference path="../Reactive.PixelPointSignal/index.d.ts" />
 /// <reference path="../Reactive.ShaderSignal/index.d.ts" />
-/// <reference path="../Reactive.BoolSignal/index.d.ts" />
 /// <reference path="../Reactive.ColorSignal/index.d.ts" />
 /// <reference path="../Reactive.VectorSignal/index.d.ts" />
 declare interface BlockSceneRoot {
+/** 
+* 
+```
+(get) inputs: BlockInstanceInputs
+(set) (Not Available)
+```
+
+Returns an object encapsulating all input setters for the Block Instance.
+
+*/ 
+inputs: BlockInstanceInputs;
+/** 
+* 
+```
+(get) outputs: BlockInstanceOutputs
+(set) (Not Available)
+```
+
+Returns an object encapsulating all outputs getters for the Block Instance.
+
+*/ 
+outputs: BlockInstanceOutputs;
 /** 
 *  
  * setPointInput(name: String, signal: PointSignal): void
@@ -20,11 +44,20 @@ declare interface BlockSceneRoot {
 
 /** 
 *  
- * setStringInput(name: String, signal: StringSignal): void
+ * setBooleanInput(name: String, signal: BoolSignal): void
  *  
  * 
- * Binds a `StringSignal` to a named Block input.
- */setStringInput(name: String, signal: StringSignal): void
+ * Binds a `BoolSignal` to a named Block input.
+ */setBooleanInput(name: String, signal: BoolSignal): void
+ ;
+
+/** 
+*  
+ * getStringOutput(name: String): StringSignal
+ *  
+ * 
+ * Returns a `StringSignal` for a named Block output.
+ */getStringOutput(name: String): StringSignal
  ;
 
 /** 
@@ -47,6 +80,15 @@ declare interface BlockSceneRoot {
 
 /** 
 *  
+ * setStringInput(name: String, signal: StringSignal): void
+ *  
+ * 
+ * Binds a `StringSignal` to a named Block input.
+ */setStringInput(name: String, signal: StringSignal): void
+ ;
+
+/** 
+*  
  * setPixelPointInput(name: String, signal: PixelPointSignal): void
  *  
  * 
@@ -61,15 +103,6 @@ declare interface BlockSceneRoot {
  * 
  * Binds a `ShaderSignal` to a named Block input.
  */setShaderInput(name: String, signal: ShaderSignal): void
- ;
-
-/** 
-*  
- * getBooleanOutput(name: String): BoolSignal
- *  
- * 
- * Returns a `BoolSignal` for a named Block output.
- */getBooleanOutput(name: String): BoolSignal
  ;
 
 /** 
@@ -92,20 +125,11 @@ declare interface BlockSceneRoot {
 
 /** 
 *  
- * getStringOutput(name: String): StringSignal
+ * getBooleanOutput(name: String): BoolSignal
  *  
  * 
- * Returns a `StringSignal` for a named Block output.
- */getStringOutput(name: String): StringSignal
- ;
-
-/** 
-*  
- * setBooleanInput(name: String, signal: BoolSignal): void
- *  
- * 
- * Binds a `BoolSignal` to a named Block input.
- */setBooleanInput(name: String, signal: BoolSignal): void
+ * Returns a `BoolSignal` for a named Block output.
+ */getBooleanOutput(name: String): BoolSignal
  ;
 
 /** 
