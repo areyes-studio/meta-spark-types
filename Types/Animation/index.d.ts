@@ -44,10 +44,10 @@ const samplers: SamplerFactory;
  * Begins recording a scalar signal (targetSignal) for use in a sampler. This returns a SignalRecorder object that returns a SignalRecord when stopped.
  * 
  * minRecordingGapMs and maxRecordCount are included for performance reasons: minRecordingGapMs defines the minimum amount of delay between snapshots taken in ms while maxRecordCount defines the maximum number of snapshots. maxRecordCount must be > 0. If these two values are not included, a default of 10 is used for minRecordingGapMs and 1000 is used for maxRecordCount.
- */function makeSignalRecorder(targetSignal: ScalarSignal): SignalRecorder
+ */function makeSignalRecorder(targetSignal: ScalarSignal | number): SignalRecorder
  ;
 
-function makeSignalRecorder(targetSignal: ScalarSignal, recordingSignalParams: {minRecordingGapMs: ?number, maxRecordCount: ?number}): SignalRecorder
+function makeSignalRecorder(targetSignal: ScalarSignal | number, recordingSignalParams: {minRecordingGapMs: ?number, maxRecordCount: ?number}): SignalRecorder
  ;
 
 /** 
@@ -56,7 +56,7 @@ function makeSignalRecorder(targetSignal: ScalarSignal, recordingSignalParams: {
  *  
  * 
  * Returns a `ValueDriver` object that drives an animation based on values emitted from a `ScalarValue`. The signal values are normalized and clamped to maximum and minimum values.
- */function valueDriver(value: ScalarSignal, min: number, max: number): ValueDriver
+ */function valueDriver(value: ScalarSignal | number, min: number, max: number): ValueDriver
  ;
 
 /** 

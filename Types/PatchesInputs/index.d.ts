@@ -17,7 +17,7 @@ declare interface PatchesInputs {
  * Sends a `ScalarSignal` to the Patch Editor under specified `name`.
  * 
  * **Note**: 
- */setScalar(name: String, signal: ScalarSignal): Promise<void>
+ */setScalar(name: String, signal: ScalarSignal | number): Promise<void>
  ;
 
 /** 
@@ -39,7 +39,7 @@ declare interface PatchesInputs {
  * Sends a `StringSignal` to the Patch Editor under specified `name`.
  * 
  * **Note**: 
- */setString(name: String, signal: StringSignal): Promise<void>
+ */setString(name: String, signal: StringSignal | string): Promise<void>
  ;
 
 /** 
@@ -50,7 +50,7 @@ declare interface PatchesInputs {
  * Sends a `BoolSignal` to the Patch Editor under specified `name`.
  * 
  * **Note**: 
- */setBoolean(name: String, signal: BoolSignal): Promise<void>
+ */setBoolean(name: String, signal: BoolSignal | boolean): Promise<void>
  ;
 
 /** 

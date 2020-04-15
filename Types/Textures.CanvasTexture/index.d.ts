@@ -7,7 +7,7 @@ declare interface CanvasTexture {
  *  
  * 
  * Adds a path based on the specified samplers.
- */addPath(startProgress: ScalarSignal, endProgress: ScalarSignal, xSampler: ScalarSampler, ySampler: ScalarSampler, widthSampler: ScalarSampler, colorSampler: ColorSampler): void
+ */addPath(startProgress: ScalarSignal | number, endProgress: ScalarSignal | number, xSampler: ScalarSampler, ySampler: ScalarSampler, widthSampler: ScalarSampler, colorSampler: ColorSampler): void
  ;
 
 /** 

@@ -1,237 +1,238 @@
+/// <reference path="../FaceTracking.Face/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 declare namespace FacialMovementsModule {
 /** 
 *  
- *   rightEyeClose(): ScalarSignal
- *    
+ * innerBrowUp(face: Face): ScalarSignal
+ *  
  * 
- *   Returns a `ScalarSignal` containing the weight associated with the facial movement named `RightEyeClose`.
- */function rightEyeClose(): ScalarSignal
+ * Returns a `ScalarSignal` containing the weight associated with the facial movement named `InnerBrowUp`.
+ */function innerBrowUp(face: Face): ScalarSignal
  ;
 
 /** 
 *  
- *   leftBrowDown(): ScalarSignal
- *    
+ * jawDown(face: Face): ScalarSignal
+ *  
  * 
- *   Returns a `ScalarSignal` containing the weight associated with the facial movement named `LeftBrowDown`.
- */function leftBrowDown(): ScalarSignal
+ * Returns a `ScalarSignal` containing the weight associated with the facial movement named `JawDown`.
+ */function jawDown(face: Face): ScalarSignal
  ;
 
 /** 
 *  
- *   jawDown(): ScalarSignal
- *    
+ * leftBrowDown(face: Face): ScalarSignal
+ *  
  * 
- *   Returns a `ScalarSignal` containing the weight associated with the facial movement named `JawDown`.
- */function jawDown(): ScalarSignal
+ * Returns a `ScalarSignal` containing the weight associated with the facial movement named `LeftBrowDown`.
+ */function leftBrowDown(face: Face): ScalarSignal
  ;
 
 /** 
 *  
- *   rightOuterBrowUp(): ScalarSignal
- *    
+ * leftEyeClose(face: Face): ScalarSignal
+ *  
  * 
- *   Returns a `ScalarSignal` containing the weight associated with the facial movement named `RightOuterBrowUp`.
- */function rightOuterBrowUp(): ScalarSignal
+ * Returns a `ScalarSignal` containing the weight associated with the facial movement named `LeftEyeClose`.
+ */function leftEyeClose(face: Face): ScalarSignal
  ;
 
 /** 
 *  
- *   leftEyeSquint(): ScalarSignal
- *    
+ * leftEyeSquint(face: Face): ScalarSignal
+ *  
  * 
- *   Returns a `ScalarSignal` containing the weight associated with the facial movement named `LeftEyeSquint`.
- */function leftEyeSquint(): ScalarSignal
+ * Returns a `ScalarSignal` containing the weight associated with the facial movement named `LeftEyeSquint`.
+ */function leftEyeSquint(face: Face): ScalarSignal
  ;
 
 /** 
 *  
- *   rightUpperEyeLidUp(): ScalarSignal
- *    
+ * leftLipsCornerUp(face: Face): ScalarSignal
+ *  
  * 
- *   Returns a `ScalarSignal` containing the weight associated with the facial movement named `RightUpperEyeLidUp`.
- */function rightUpperEyeLidUp(): ScalarSignal
+ * Returns a `ScalarSignal` containing the weight associated with the facial movement named `LeftLipsCornerUp`.
+ */function leftLipsCornerUp(face: Face): ScalarSignal
  ;
 
 /** 
 *  
- *   innerBrowUp(): ScalarSignal
- *    
+ * leftLowerLipDown(face: Face): ScalarSignal
+ *  
  * 
- *   Returns a `ScalarSignal` containing the weight associated with the facial movement named `InnerBrowUp`.
- */function innerBrowUp(): ScalarSignal
+ * Returns a `ScalarSignal` containing the weight associated with the facial movement named `LeftLowerLipDown`.
+ */function leftLowerLipDown(face: Face): ScalarSignal
  ;
 
 /** 
 *  
- *   rightMouthDimple(): ScalarSignal
- *    
+ * leftMouthDimple(face: Face): ScalarSignal
+ *  
  * 
- *   Returns a `ScalarSignal` containing the weight associated with the facial movement named `RightMouthDimple`.
- */function rightMouthDimple(): ScalarSignal
+ * Returns a `ScalarSignal` containing the weight associated with the facial movement named `LeftMouthDimple`.
+ */function leftMouthDimple(face: Face): ScalarSignal
  ;
 
 /** 
 *  
- *   rightEyeSquint(): ScalarSignal
- *    
+ * leftOuterBrowUp(face: Face): ScalarSignal
+ *  
  * 
- *   Returns a `ScalarSignal` containing the weight associated with the facial movement named `RightEyeSquint`.
- */function rightEyeSquint(): ScalarSignal
+ * Returns a `ScalarSignal` containing the weight associated with the facial movement named `LeftOuterBrowUp`.
+ */function leftOuterBrowUp(face: Face): ScalarSignal
  ;
 
 /** 
 *  
- *   leftEyeClose(): ScalarSignal
- *    
+ * leftUpperEyeLidUp(face: Face): ScalarSignal
+ *  
  * 
- *   Returns a `ScalarSignal` containing the weight associated with the facial movement named `LeftEyeClose`.
- */function leftEyeClose(): ScalarSignal
+ * Returns a `ScalarSignal` containing the weight associated with the facial movement named `LeftUpperEyeLidUp`.
+ */function leftUpperEyeLidUp(face: Face): ScalarSignal
  ;
 
 /** 
 *  
- *   leftOuterBrowUp(): ScalarSignal
- *    
+ * leftUpperLipUp(face: Face): ScalarSignal
+ *  
  * 
- *   Returns a `ScalarSignal` containing the weight associated with the facial movement named `LeftOuterBrowUp`.
- */function leftOuterBrowUp(): ScalarSignal
+ * Returns a `ScalarSignal` containing the weight associated with the facial movement named `LeftUpperLipUp`.
+ */function leftUpperLipUp(face: Face): ScalarSignal
  ;
 
 /** 
 *  
- *   lipFunnel(): ScalarSignal
- *    
+ * lipFunnel(face: Face): ScalarSignal
+ *  
  * 
- *   Returns a `ScalarSignal` containing the weight associated with the facial movement named `LipFunnel`.
- */function lipFunnel(): ScalarSignal
+ * Returns a `ScalarSignal` containing the weight associated with the facial movement named `LipFunnel`.
+ */function lipFunnel(face: Face): ScalarSignal
  ;
 
 /** 
 *  
- *   leftUpperEyeLidUp(): ScalarSignal
- *    
+ * lipsMoveLeft(face: Face): ScalarSignal
+ *  
  * 
- *   Returns a `ScalarSignal` containing the weight associated with the facial movement named `LeftUpperEyeLidUp`.
- */function leftUpperEyeLidUp(): ScalarSignal
+ * Returns a `ScalarSignal` containing the weight associated with the facial movement named `LipsMoveLeft`.
+ */function lipsMoveLeft(face: Face): ScalarSignal
  ;
 
 /** 
 *  
- *   rightBrowDown(): ScalarSignal
- *    
+ * lipsMoveRight(face: Face): ScalarSignal
+ *  
  * 
- *   Returns a `ScalarSignal` containing the weight associated with the facial movement named `RightBrowDown`.
- */function rightBrowDown(): ScalarSignal
+ * Returns a `ScalarSignal` containing the weight associated with the facial movement named `LipsMoveRight`.
+ */function lipsMoveRight(face: Face): ScalarSignal
  ;
 
 /** 
 *  
- *   leftMouthDimple(): ScalarSignal
- *    
+ * lipsPucker(face: Face): ScalarSignal
+ *  
  * 
- *   Returns a `ScalarSignal` containing the weight associated with the facial movement named `LeftMouthDimple`.
- */function leftMouthDimple(): ScalarSignal
+ * Returns a `ScalarSignal` containing the weight associated with the facial movement named `LipsPucker`.
+ */function lipsPucker(face: Face): ScalarSignal
  ;
 
 /** 
 *  
- *   upperLipOut(): ScalarSignal
- *    
+ * lowerLipOut(face: Face): ScalarSignal
+ *  
  * 
- *   Returns a `ScalarSignal` containing the weight associated with the facial movement named `UpperLipOut`.
- */function upperLipOut(): ScalarSignal
+ * Returns a `ScalarSignal` containing the weight associated with the facial movement named `LowerLipOut`.
+ */function lowerLipOut(face: Face): ScalarSignal
  ;
 
 /** 
 *  
- *   lipsMoveLeft(): ScalarSignal
- *    
+ * rightBrowDown(face: Face): ScalarSignal
+ *  
  * 
- *   Returns a `ScalarSignal` containing the weight associated with the facial movement named `LipsMoveLeft`.
- */function lipsMoveLeft(): ScalarSignal
+ * Returns a `ScalarSignal` containing the weight associated with the facial movement named `RightBrowDown`.
+ */function rightBrowDown(face: Face): ScalarSignal
  ;
 
 /** 
 *  
- *   lipsPucker(): ScalarSignal
- *    
+ * rightEyeClose(face: Face): ScalarSignal
+ *  
  * 
- *   Returns a `ScalarSignal` containing the weight associated with the facial movement named `LipsPucker`.
- */function lipsPucker(): ScalarSignal
+ * Returns a `ScalarSignal` containing the weight associated with the facial movement named `RightEyeClose`.
+ */function rightEyeClose(face: Face): ScalarSignal
  ;
 
 /** 
 *  
- *   rightLowerLipDown(): ScalarSignal
- *    
+ * rightEyeSquint(face: Face): ScalarSignal
+ *  
  * 
- *   Returns a `ScalarSignal` containing the weight associated with the facial movement named `RightLowerLipDown`.
- */function rightLowerLipDown(): ScalarSignal
+ * Returns a `ScalarSignal` containing the weight associated with the facial movement named `RightEyeSquint`.
+ */function rightEyeSquint(face: Face): ScalarSignal
  ;
 
 /** 
 *  
- *   lipsMoveRight(): ScalarSignal
- *    
+ * rightLipsCornerUp(face: Face): ScalarSignal
+ *  
  * 
- *   Returns a `ScalarSignal` containing the weight associated with the facial movement named `LipsMoveRight`.
- */function lipsMoveRight(): ScalarSignal
+ * Returns a `ScalarSignal` containing the weight associated with the facial movement named `RightLipsCornerUp`.
+ */function rightLipsCornerUp(face: Face): ScalarSignal
  ;
 
 /** 
 *  
- *   leftLowerLipDown(): ScalarSignal
- *    
+ * rightLowerLipDown(face: Face): ScalarSignal
+ *  
  * 
- *   Returns a `ScalarSignal` containing the weight associated with the facial movement named `LeftLowerLipDown`.
- */function leftLowerLipDown(): ScalarSignal
+ * Returns a `ScalarSignal` containing the weight associated with the facial movement named `RightLowerLipDown`.
+ */function rightLowerLipDown(face: Face): ScalarSignal
  ;
 
 /** 
 *  
- *   lowerLipOut(): ScalarSignal
- *    
+ * rightMouthDimple(face: Face): ScalarSignal
+ *  
  * 
- *   Returns a `ScalarSignal` containing the weight associated with the facial movement named `LowerLipOut`.
- */function lowerLipOut(): ScalarSignal
+ * Returns a `ScalarSignal` containing the weight associated with the facial movement named `RightMouthDimple`.
+ */function rightMouthDimple(face: Face): ScalarSignal
  ;
 
 /** 
 *  
- *   leftLipsCornerUp(): ScalarSignal
- *    
+ * rightOuterBrowUp(face: Face): ScalarSignal
+ *  
  * 
- *   Returns a `ScalarSignal` containing the weight associated with the facial movement named `LeftLipsCornerUp`.
- */function leftLipsCornerUp(): ScalarSignal
+ * Returns a `ScalarSignal` containing the weight associated with the facial movement named `RightOuterBrowUp`.
+ */function rightOuterBrowUp(face: Face): ScalarSignal
  ;
 
 /** 
 *  
- *   rightLipsCornerUp(): ScalarSignal
- *    
+ * rightUpperEyeLidUp(face: Face): ScalarSignal
+ *  
  * 
- *   Returns a `ScalarSignal` containing the weight associated with the facial movement named `RightLipsCornerUp`.
- */function rightLipsCornerUp(): ScalarSignal
+ * Returns a `ScalarSignal` containing the weight associated with the facial movement named `RightUpperEyeLidUp`.
+ */function rightUpperEyeLidUp(face: Face): ScalarSignal
  ;
 
 /** 
 *  
- *   leftUpperLipUp(): ScalarSignal
- *    
+ * rightUpperLipUp(face: Face): ScalarSignal
+ *  
  * 
- *   Returns a `ScalarSignal` containing the weight associated with the facial movement named `LeftUpperLipUp`.
- */function leftUpperLipUp(): ScalarSignal
+ * Returns a `ScalarSignal` containing the weight associated with the facial movement named `RightUpperLipUp`.
+ */function rightUpperLipUp(face: Face): ScalarSignal
  ;
 
 /** 
 *  
- *   rightUpperLipUp(): ScalarSignal
- *    
+ * upperLipOut(face: Face): ScalarSignal
+ *  
  * 
- *   Returns a `ScalarSignal` containing the weight associated with the facial movement named `RightUpperLipUp`.
- */function rightUpperLipUp(): ScalarSignal
+ * Returns a `ScalarSignal` containing the weight associated with the facial movement named `UpperLipOut`.
+ */function upperLipOut(face: Face): ScalarSignal
  ;
 
 } 

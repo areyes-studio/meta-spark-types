@@ -59,7 +59,7 @@ declare namespace ShadersModule {
  *  
  * 
  * Returns a signal of the given SDF shape rounded by the specified radius.
- */function sdfRound(sdf: TextureSdf, radius: ScalarSignal): TextureSdf
+ */function sdfRound(sdf: TextureSdf, radius: ScalarSignal | number): TextureSdf
  ;
 
 /** 
@@ -77,7 +77,7 @@ declare namespace ShadersModule {
  *  
  * 
  * Returns a signal of the linear interpolation of the two given SDF shapes, modulated by alpha.
- */function sdfMix(sdf1: TextureSdf, sdf2: TextureSdf, alpha: ScalarSignal): TextureSdf
+ */function sdfMix(sdf1: TextureSdf, sdf2: TextureSdf, alpha: ScalarSignal | number): TextureSdf
  ;
 
 /** 
@@ -113,7 +113,7 @@ declare namespace ShadersModule {
  *  
  * 
  * Returns a signal for a circle SDF shape.
- */function sdfCircle(center: Point2DSignal, radius: ScalarSignal): TextureSdf
+ */function sdfCircle(center: Point2DSignal, radius: ScalarSignal | number): TextureSdf
  ;
 
 /** 
@@ -209,7 +209,7 @@ function textureTransform(texture: Texture2d_4ch, transform: Matrix3): Texture2d
  *  
  * 
  * Returns a signal for the identity function over the specified type.
- */function functionScalar(): (val: ScalarSignal) => ScalarSignal
+ */function functionScalar(): (val: ScalarSignal | number) => ScalarSignal
  ;
 
 /** 
@@ -218,7 +218,7 @@ function textureTransform(texture: Texture2d_4ch, transform: Matrix3): Texture2d
  *  
  * 
  * Returns a signal for a star SDF shape.
- */function sdfStar(center: Point2DSignal, radius1: ScalarSignal, radius2: ScalarSignal, numSides: ScalarSignal): TextureSdf
+ */function sdfStar(center: Point2DSignal, radius1: ScalarSignal | number, radius2: ScalarSignal | number, numSides: ScalarSignal | number): TextureSdf
  ;
 
 /** 
@@ -286,7 +286,7 @@ function blend(src: Point4DSignal, dest: Point4DSignal, config: {mode: Shaders.B
  *  
  * 
  * Returns a signal for a polygon SDF shape.
- */function sdfPolygon(center: Point2DSignal, radius: ScalarSignal, numSides: ScalarSignal, config: {sdfVariant: Shaders.SdfVariant}): TextureSdf
+ */function sdfPolygon(center: Point2DSignal, radius: ScalarSignal | number, numSides: ScalarSignal | number, config: {sdfVariant: Shaders.SdfVariant}): TextureSdf
  ;
 
 /** 
@@ -313,7 +313,7 @@ function blend(src: Point4DSignal, dest: Point4DSignal, config: {mode: Shaders.B
  *  
  * 
  * Returns a signal of the given SDF shape made annular (ring-like) by the specified width.
- */function sdfAnnular(sdf: TextureSdf, width: ScalarSignal): TextureSdf
+ */function sdfAnnular(sdf: TextureSdf, width: ScalarSignal | number): TextureSdf
  ;
 
 /** 
@@ -337,7 +337,7 @@ function blend(src: Point4DSignal, dest: Point4DSignal, config: {mode: Shaders.B
  *  
  * 
  * Returns a signal of the smooth difference of the two given SDF shapes, modulated by K.
- */function sdfSmoothDifference(sdf1: TextureSdf, sdf2: TextureSdf, K: ScalarSignal): TextureSdf
+ */function sdfSmoothDifference(sdf1: TextureSdf, sdf2: TextureSdf, K: ScalarSignal | number): TextureSdf
  ;
 
 /** 
@@ -364,7 +364,7 @@ function blend(src: Point4DSignal, dest: Point4DSignal, config: {mode: Shaders.B
  *  
  * 
  * Returns a signal of the given SDF shape rotated around the given pivot by the given angle.
- */function sdfRotation(sdf: TextureSdf, pivot: Point2DSignal, angle: ScalarSignal): TextureSdf
+ */function sdfRotation(sdf: TextureSdf, pivot: Point2DSignal, angle: ScalarSignal | number): TextureSdf
  ;
 
 /** 
@@ -373,7 +373,7 @@ function blend(src: Point4DSignal, dest: Point4DSignal, config: {mode: Shaders.B
  *  
  * 
  * Returns a signal for a line SDF shape.
- */function sdfLine(offset: Point2DSignal, normal: Point2DSignal, halfWidth: ScalarSignal): TextureSdf
+ */function sdfLine(offset: Point2DSignal, normal: Point2DSignal, halfWidth: ScalarSignal | number): TextureSdf
  ;
 
 /** 
@@ -391,7 +391,7 @@ function blend(src: Point4DSignal, dest: Point4DSignal, config: {mode: Shaders.B
  *  
  * 
  * Returns a signal of the smooth union of the two given SDF shapes, modulated by K.
- */function sdfSmoothUnion(sdf1: TextureSdf, sdf2: TextureSdf, K: ScalarSignal): TextureSdf
+ */function sdfSmoothUnion(sdf1: TextureSdf, sdf2: TextureSdf, K: ScalarSignal | number): TextureSdf
  ;
 
 /** 
@@ -400,7 +400,7 @@ function blend(src: Point4DSignal, dest: Point4DSignal, config: {mode: Shaders.B
  *  
  * 
  * Returns a signal of the smooth intersection of the two given SDF shapes, modulated by K.
- */function sdfSmoothIntersection(sdf1: TextureSdf, sdf2: TextureSdf, K: ScalarSignal): TextureSdf
+ */function sdfSmoothIntersection(sdf1: TextureSdf, sdf2: TextureSdf, K: ScalarSignal | number): TextureSdf
  ;
 
 /** 
@@ -409,7 +409,7 @@ function blend(src: Point4DSignal, dest: Point4DSignal, config: {mode: Shaders.B
  *  
  * 
  * Returns a signal of the given SDF shape twisted around the pivot by the given amount.
- */function sdfTwist(sdf: TextureSdf, pivot: Point2DSignal, twist: ScalarSignal): TextureSdf
+ */function sdfTwist(sdf: TextureSdf, pivot: Point2DSignal, twist: ScalarSignal | number): TextureSdf
  ;
 
 /** 
@@ -428,7 +428,7 @@ function blend(src: Point4DSignal, dest: Point4DSignal, config: {mode: Shaders.B
  * 
  * Returns a signal of the given SDF shape's rotational repetition numTimes at the given radius.
  * The shape should be centered on the pivot and fit within the angular sector defined by numTimes at the given radius.
- */function sdfRotationalRepeat(sdf: TextureSdf, pivot: Point2DSignal, radius: ScalarSignal, numTimes: ScalarSignal): TextureSdf
+ */function sdfRotationalRepeat(sdf: TextureSdf, pivot: Point2DSignal, radius: ScalarSignal | number, numTimes: ScalarSignal | number): TextureSdf
  ;
 
 /** 

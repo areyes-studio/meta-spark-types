@@ -25,7 +25,7 @@ declare interface CustomMaterial {
  * Returns a `ScalarSignal` associated with a given `paramName` or `fallback` if the param is not found in the material.
  * 
  * **See Also**: `CustomMaterial.getFloatParameter`, `CustomMaterial.setFloatParameter`.
- */getFloatParameterOrFallback(paramName: string, fallback: ScalarSignal): ScalarSignal
+ */getFloatParameterOrFallback(paramName: string, fallback: ScalarSignal | number): ScalarSignal
  ;
 
 /** 
@@ -71,7 +71,7 @@ declare interface CustomMaterial {
  * Returns promise resolved with error if param for given `paramName` is not found in the material.
  * 
  * **See Also**: `CustomMaterial.getFloatParameter`, `CustomMaterial.getFloatParameterOrFallback`.
- */setFloatParameter(paramName: string, source: ScalarSignal): Promise<void>
+ */setFloatParameter(paramName: string, source: ScalarSignal | number): Promise<void>
  ;
 
 /** 
@@ -82,7 +82,7 @@ declare interface CustomMaterial {
  * Returns a `BoolSignal` associated with a given `paramName` or `fallback` if the param is not found in the material.
  * 
  * **See Also**: `CustomMaterial.getBoolParameter`, `CustomMaterial.setBoolParameter`.
- */getBoolParameterOrFallback(paramName: string, fallback: BoolSignal): BoolSignal
+ */getBoolParameterOrFallback(paramName: string, fallback: BoolSignal | boolean): BoolSignal
  ;
 
 /** 
@@ -94,7 +94,7 @@ declare interface CustomMaterial {
  * Returns promise resolved with error if param for given `paramName` is not found in the material.
  * 
  * **See Also**: `CustomMaterial.getBoolParameter`, `CustomMaterial.getBoolParameterOrFallback`.
- */setBoolParameter(paramName: string, source: BoolSignal): Promise<void>
+ */setBoolParameter(paramName: string, source: BoolSignal | boolean): Promise<void>
  ;
 
 /** 

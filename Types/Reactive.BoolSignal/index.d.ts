@@ -25,7 +25,7 @@ lastValue: boolean;
  * Returns a Boolean signal that takes the value of `true` every time when the value of the left-hand-side signal is **equal** to the value of the right-hand-side one, and the value of `false` all other time.
  * 
  * **See Also**: `ReactiveModule.eq`
- */eq(other: BoolSignal): BoolSignal
+ */eq(other: BoolSignal | boolean): BoolSignal
  ;
 
 /** 
@@ -36,7 +36,7 @@ lastValue: boolean;
  * Returns a signal with the value that is the logical disjunction of the values of the given signals. It is `true` every time at least one of the input signals is `true` and `false` at all other times.
  * 
  * **See Also**: `BoolSignal.or`
- */or(lhs: BoolSignal, rhs: BoolSignal): BoolSignal
+ */or(lhs: BoolSignal | boolean, rhs: BoolSignal | boolean): BoolSignal
  ;
 
 /** 
@@ -60,7 +60,7 @@ lastValue: boolean;
  * **Note**: It is equivalent to `BoolSignal.ne`.
  * 
  * **See Also**: `ReactiveModule.xor`
- */xor(other: BoolSignal): BoolSignal
+ */xor(other: BoolSignal | boolean): BoolSignal
  ;
 
 /** 
@@ -80,7 +80,7 @@ lastValue: boolean;
  * Returns a Boolean signal that takes the value of `true` every time when the value of the left-hand-side signal is **not equal** to the value of the right-hand-side one, and the value of `false` all other time.
  * 
  * **See Also**: `ReactiveModule.ne`
- */ne(other: BoolSignal): BoolSignal
+ */ne(other: BoolSignal | boolean): BoolSignal
  ;
 
 /** 
@@ -95,13 +95,13 @@ lastValue: boolean;
  */ifThenElse(thenValue: EventSource, elseValue: EventSource): EventSource
  ;
 
-ifThenElse(thenValue: ScalarSignal, elseValue: ScalarSignal): ScalarSignal
+ifThenElse(thenValue: ScalarSignal | number, elseValue: ScalarSignal | number): ScalarSignal
  ;
 
-ifThenElse(thenValue: StringSignal, elseValue: StringSignal): StringSignal
+ifThenElse(thenValue: StringSignal | string, elseValue: StringSignal | string): StringSignal
  ;
 
-ifThenElse(thenValue: BoolSignal, elseValue: BoolSignal): BoolSignal
+ifThenElse(thenValue: BoolSignal | boolean, elseValue: BoolSignal | boolean): BoolSignal
  ;
 
 /** 
@@ -133,7 +133,7 @@ monitor(config: { fireOnInitialValue: ?boolean}): EventSource
  *  Returns a signal with the value that is the logical conjunction of the values of the given signals. It is `true` every time both input signals are `true` and `false` at all other times.
  * 
  *  **See Also**: `BoolSignal.and`
- */and(lhs: BoolSignal, rhs: BoolSignal): BoolSignal
+ */and(lhs: BoolSignal | boolean, rhs: BoolSignal | boolean): BoolSignal
  ;
 
 /** 

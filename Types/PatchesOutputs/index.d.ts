@@ -23,7 +23,7 @@ declare interface PatchesOutputs {
  *  
  * 
  * Returns a `ScalarSignal` existing in the Patch Editor under specified `name` or `fallback` on error.
- */getScalarOrFallback(name: String, fallback: ScalarSignal): ScalarSignal
+ */getScalarOrFallback(name: String, fallback: ScalarSignal | number): ScalarSignal
  ;
 
 /** 
@@ -67,7 +67,7 @@ declare interface PatchesOutputs {
  *  
  * 
  * Returns a `StringSignal` existing in the Patch Editor under specified `name` or `fallback` on error.
- */getStringOrFallback(name: String, fallback: StringSignal): StringSignal
+ */getStringOrFallback(name: String, fallback: StringSignal | string): StringSignal
  ;
 
 /** 
@@ -83,7 +83,7 @@ declare interface PatchesOutputs {
  *  
  * 
  * Returns a `BoolSignal` existing in the Patch Editor under specified `name` or `fallback` on error.
- */getBooleanOrFallback(name: String, fallback: BoolSignal): BoolSignal
+ */getBooleanOrFallback(name: String, fallback: BoolSignal | boolean): BoolSignal
  ;
 
 /** 

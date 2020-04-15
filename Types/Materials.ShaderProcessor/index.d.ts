@@ -24,7 +24,7 @@ declare interface ShaderProcessor {
  * Returns a `ScalarSignal` associated with a given `paramName` or `fallback` if the param is not found in the material.
  * 
  * **See Also**: `ShaderProcessor.getFloatParameter`, `ShaderProcessor.setFloatParameter`.
- */getFloatParameterOrFallback(paramName: string, fallback: ScalarSignal): ScalarSignal
+ */getFloatParameterOrFallback(paramName: string, fallback: ScalarSignal | number): ScalarSignal
  ;
 
 /** 
@@ -58,7 +58,7 @@ declare interface ShaderProcessor {
  * Returns promise resolved with error if param for given `paramName` is not found in the material.
  * 
  * **See Also**: `ShaderProcessor.getFloatParameter`, `ShaderProcessor.getFloatParameterOrFallback`.
- */setFloatParameter(paramName: string, source: ScalarSignal): Promise<void>
+ */setFloatParameter(paramName: string, source: ScalarSignal | number): Promise<void>
  ;
 
 /** 
@@ -69,7 +69,7 @@ declare interface ShaderProcessor {
  * Returns a `BoolSignal` associated with a given `paramName` or `fallback` if the param is not found in the material.
  * 
  * **See Also**: `ShaderProcessor.getBoolParameter`, `ShaderProcessor.setBoolParameter`.
- */getBoolParameterOrFallback(paramName: string, fallback: BoolSignal): BoolSignal
+ */getBoolParameterOrFallback(paramName: string, fallback: BoolSignal | boolean): BoolSignal
  ;
 
 /** 
@@ -81,7 +81,7 @@ declare interface ShaderProcessor {
  * Returns promise resolved with error if param for given `paramName` is not found in the material.
  * 
  * **See Also**: `ShaderProcessor.getBoolParameter`, `ShaderProcessor.getBoolParameterOrFallback`.
- */setBoolParameter(paramName: string, source: BoolSignal): Promise<void>
+ */setBoolParameter(paramName: string, source: BoolSignal | boolean): Promise<void>
  ;
 
 /** 

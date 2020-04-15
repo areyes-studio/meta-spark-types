@@ -49,7 +49,7 @@ const typeSystem: TypeSystemMetadata;
  *  
  * 
  * Adds the specified signal to the watch view in AR Studio with the specified tag.
- */function watch(tag: string, signal: BoolSignal | ScalarSignal | StringSignal): void
+ */function watch(tag: string, signal: BoolSignal | boolean | ScalarSignal | number | StringSignal | string): void
  ;
 
 } 

@@ -48,7 +48,7 @@ outputs: BlockInstanceOutputs;
  *  
  * 
  * Binds a `BoolSignal` to a named Block input.
- */setBooleanInput(name: String, signal: BoolSignal): void
+ */setBooleanInput(name: String, signal: BoolSignal | boolean): void
  ;
 
 /** 
@@ -66,7 +66,7 @@ outputs: BlockInstanceOutputs;
  *  
  * 
  * Binds a `ScalarSignal` to a named Block input.
- */setScalarInput(name: String, signal: ScalarSignal): void
+ */setScalarInput(name: String, signal: ScalarSignal | number): void
  ;
 
 /** 
@@ -84,7 +84,7 @@ outputs: BlockInstanceOutputs;
  *  
  * 
  * Binds a `StringSignal` to a named Block input.
- */setStringInput(name: String, signal: StringSignal): void
+ */setStringInput(name: String, signal: StringSignal | string): void
  ;
 
 /** 

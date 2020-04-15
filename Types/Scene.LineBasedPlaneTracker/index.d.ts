@@ -72,7 +72,7 @@ resetPlane(screenX: number, screenY: number, planeType : PlaneType): void
 movePlane(screenX: number, screenY: number): void
  ;
 
-movePlane(screenLocation: PixelPointSignal, gestureState: StringSignal): void
+movePlane(screenLocation: PixelPointSignal, gestureState: StringSignal | string): void
  ;
 
 /** 

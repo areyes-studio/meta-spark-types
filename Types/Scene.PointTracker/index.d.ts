@@ -43,7 +43,7 @@ confidence: StringSignal;
 trackPoint(screenX: number, screenY: number): void
  ;
 
-trackPoint(screenLocation: PixelPointSignal, gestureState: StringSignal): void
+trackPoint(screenLocation: PixelPointSignal, gestureState: StringSignal | string): void
  ;
 
 } 

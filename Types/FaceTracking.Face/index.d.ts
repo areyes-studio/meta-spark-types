@@ -1,54 +1,26 @@
-/// <reference path="../Reactive.StringSignal/index.d.ts" />
-/// <reference path="../FaceTracking.Mouth/index.d.ts" />
-/// <reference path="../FaceTracking.Eye/index.d.ts" />
-/// <reference path="../FaceTracking.Cheek/index.d.ts" />
-/// <reference path="../FaceTracking.Chin/index.d.ts" />
-/// <reference path="../FaceTracking.Nose/index.d.ts" />
-/// <reference path="../FaceTracking.Forehead/index.d.ts" />
-/// <reference path="../FaceTracking.Eyebrow/index.d.ts" />
 /// <reference path="../Reactive.TransformSignal/index.d.ts" />
+/// <reference path="../FaceTracking.Chin/index.d.ts" />
 /// <reference path="../FaceTracking.Expression/index.d.ts" />
+/// <reference path="../FaceTracking.Forehead/index.d.ts" />
+/// <reference path="../Reactive.StringSignal/index.d.ts" />
+/// <reference path="../Reactive.BoolSignal/index.d.ts" />
+/// <reference path="../FaceTracking.Cheek/index.d.ts" />
+/// <reference path="../FaceTracking.Eye/index.d.ts" />
+/// <reference path="../FaceTracking.Eyebrow/index.d.ts" />
+/// <reference path="../FaceTracking.Mouth/index.d.ts" />
+/// <reference path="../FaceTracking.Nose/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 /// <reference path="../Reactive.PointSignal/index.d.ts" />
 declare interface Face {
 /** 
 * ```
-(get) isTracked: StringSignal
+(get) cameraTransform: TransformSignal
 (set) (Not Available)
 ```
 
-A `boolSignal` indicating whether the face was tracked this frame. 
-
- If the face was not tracked, other properties represent the most recent tracked frame.
+Specifies a `TransformSignal` object describing the face transformation relative to camera coordinate system.
 */ 
-isTracked: StringSignal;
-/** 
-* ```
-(get) mouth: Mouth
-(set) (Not Available)
-```
-
-Specifies a `Mouth` object describing the attributes of the mouth.
-*/ 
-mouth: Mouth;
-/** 
-* ```
-(get) rightEye: Eye
-(set) (Not Available)
-```
-
-Specifies an `Eye` object describing the attributes of the right eye.
-*/ 
-rightEye: Eye;
-/** 
-* ```
-(get) leftCheek: Cheek
-(set) (Not Available)
-```
-
-Specifies a `Cheek` object describing the attributes of the left cheek.
-*/ 
-leftCheek: Cheek;
+cameraTransform: TransformSignal;
 /** 
 * ```
 (get) chin: Chin
@@ -60,24 +32,13 @@ Specifies a `Chin` object describing the attributes of the chin.
 chin: Chin;
 /** 
 * ```
-(get) id: StringSignal
+(get) expression: Expression
 (set) (Not Available)
 ```
 
-Specifies a `StringSignal` containing the unique ID assigned to a face. An ID is generated every time a face is detected and tracked in the scene.
-
-When a face is lost and then tracked again, a new ID is generated even if it is the same person.
+Specifies an `Expression` object describing the facial expression coefficients on the tracked face.
 */ 
-id: StringSignal;
-/** 
-* ```
-(get) nose: Nose
-(set) (Not Available)
-```
-
-Specifies a `Nose` object describing the attributes of the nose.
-*/ 
-nose: Nose;
+expression: Expression;
 /** 
 * ```
 (get) forehead: Forehead
@@ -89,33 +50,31 @@ Specifies a `Forehead` object describing the attributes of the forehead.
 forehead: Forehead;
 /** 
 * ```
-(get) rightEyebrow: Eyebrow
+(get) id: StringSignal
 (set) (Not Available)
 ```
 
-Specifies an `Eyebrow` object describing the attributes of the right eyebrow.
+Specifies a `StringSignal` containing the unique ID assigned to a face. An ID is generated every time a face is detected and tracked in the scene.
 */ 
-rightEyebrow: Eyebrow;
+id: StringSignal;
 /** 
 * ```
-(get) cameraTransform: TransformSignal
+(get) isTracked: BoolSignal
 (set) (Not Available)
 ```
 
-Specifies a `TransformSignal` object describing the face transformation relative to camera coordinate system. 
-
-**Note**: `cameraTransform.applyTo(point)`, where `point` is a point in face local coordinate system, returns a point in camera local coordinate system.
+A `boolSignal` indicating whether the face was tracked this frame.
 */ 
-cameraTransform: TransformSignal;
+isTracked: BoolSignal;
 /** 
 * ```
-(get) rightCheek: Cheek
+(get) leftCheek: Cheek
 (set) (Not Available)
 ```
 
-Specifies a `Cheek` object describing the attributes of the right cheek.
+Specifies a `Cheek` object describing the attributes of the left cheek.
 */ 
-rightCheek: Cheek;
+leftCheek: Cheek;
 /** 
 * ```
 (get) leftEye: Eye
@@ -136,22 +95,56 @@ Specifies an `Eyebrow` object describing the attributes of the left eyebrow.
 leftEyebrow: Eyebrow;
 /** 
 * ```
-(get) expression: Expression
+(get) mouth: Mouth
 (set) (Not Available)
 ```
 
-Specifies an `Expression` object describing the facial expression coefficients on the tracked face.
+Specifies a `Mouth` object describing the attributes of the mouth.
 */ 
-expression: Expression;
+mouth: Mouth;
+/** 
+* ```
+(get) nose: Nose
+(set) (Not Available)
+```
+
+Specifies a `Nose` object describing the attributes of the nose.
+*/ 
+nose: Nose;
+/** 
+* ```
+(get) rightCheek: Cheek
+(set) (Not Available)
+```
+
+Specifies a `Cheek` object describing the attributes of the right cheek.
+*/ 
+rightCheek: Cheek;
+/** 
+* ```
+(get) rightEye: Eye
+(set) (Not Available)
+```
+
+Specifies an `Eye` object describing the attributes of the right eye.
+*/ 
+rightEye: Eye;
+/** 
+* ```
+(get) rightEyebrow: Eyebrow
+(set) (Not Available)
+```
+
+Specifies an `Eyebrow` object describing the attributes of the right eyebrow.
+*/ 
+rightEyebrow: Eyebrow;
 /** 
 *  
  * point(u: ScalarSignal, v: ScalarSignal): PointSignal
  *  
  * 
- * Returns a `PointSignal` object representing a point in the face local coordinate system that corresponds to a UV point on the facial mesh texture map. 
- * 
- *  **See Also**: `Face.cameraTransform` to convert the point to the coordinate system of the camera.
- */point(u: ScalarSignal, v: ScalarSignal): PointSignal
+ * Returns a `PointSignal` object representing a point in the face local coordinate system that corresponds to a UV point on the facial mesh texture map.
+ */point(u: ScalarSignal | number, v: ScalarSignal | number): PointSignal
  ;
 
 } 

@@ -15,7 +15,7 @@ declare interface BlockInstanceOutputs {
  *  
  * 
  * Returns a `BoolSignal` from the Block output with the given `name`. Returns the `fallback` if any error happens, such as if no output with that `name` is present in the Block, or if the output with that `name` is not of type `BoolSignal`.
- */getBooleanOrFallback(name: String, fallback: BoolSignal): BoolSignal
+ */getBooleanOrFallback(name: String, fallback: BoolSignal | boolean): BoolSignal
  ;
 
 /** 
@@ -40,7 +40,7 @@ declare interface BlockInstanceOutputs {
  *  
  * 
  * Returns a `ScalarSignal` from the Block output with the given `name`. Returns the `fallback` if any error happens, such as if no output with that `name` is present in the Block, or if the output with that `name` is not of type `ScalarSignal`.
- */getScalarOrFallback(name: String, fallback: ScalarSignal): ScalarSignal
+ */getScalarOrFallback(name: String, fallback: ScalarSignal | number): ScalarSignal
  ;
 
 /** 
@@ -93,7 +93,7 @@ declare interface BlockInstanceOutputs {
  *  
  * 
  * Returns a `StringSignal` from the Block output with the given `name`. Returns the `fallback` if any error happens, such as if no output with that `name` is present in the Block, or if the output with that `name` is not of type `StringSignal`.
- */getStringOrFallback(name: String, fallback: StringSignal): StringSignal
+ */getStringOrFallback(name: String, fallback: StringSignal | string): StringSignal
  ;
 
 /** 

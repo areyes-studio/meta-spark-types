@@ -24,7 +24,7 @@ lastValue: string;
  * Returns a Boolean signal that takes the value of `true` every time when the value of the left-hand-side signal is **equal** to the value of the right-hand-side one, and the value of `false` all other time.
  * 
  * **See Also**: `ReactiveModule.eq`
- */eq(other: StringSignal): BoolSignal
+ */eq(other: StringSignal | string): BoolSignal
  ;
 
 /** 
@@ -35,7 +35,7 @@ lastValue: string;
  * Returns a `StringSignal` containing the concatenation of the values specified by the input signals.
  * 
  * **See Also**: `ReactiveModule.concat`
- */concat(other: StringSignal): StringSignal
+ */concat(other: StringSignal | string): StringSignal
  ;
 
 /** 
@@ -55,7 +55,7 @@ lastValue: string;
  * Returns a Boolean signal that takes the value of `true` every time when the value of the left-hand-side signal is **not equal** to the value of the right-hand-side one, and the value of `false` all other time.
  * 
  * **See Also**: `ReactiveModule.ne`
- */ne(other: StringSignal): BoolSignal
+ */ne(other: StringSignal | string): BoolSignal
  ;
 
 /** 

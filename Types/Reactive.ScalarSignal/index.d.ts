@@ -28,7 +28,7 @@ lastValue: number;
  * Returns a Boolean signal that takes the value of `true` every time when the value of the left-hand-side signal is strictly **less than** the value of the right-hand-side one, and the value of `false` all other time.
  * 
  * **See Also**: `ReactiveModule.lt`
- */lt(other: ScalarSignal): BoolSignal
+ */lt(other: ScalarSignal | number): BoolSignal
  ;
 
 /** 
@@ -39,7 +39,7 @@ lastValue: number;
  * Returns a signal with the value that is the smallest integer that is greater than or equal to the value of the given signal.
  * 
  * **See Also**: `ScalarSignal.ceil`
- */ceil(x: ScalarSignal): ScalarSignal
+ */ceil(x: ScalarSignal | number): ScalarSignal
  ;
 
 /** 
@@ -52,7 +52,7 @@ lastValue: number;
  * **Note**: the scalar values are tested for exact equality. For some applications it might be reasonable to perform a non-strict comparison allowing the values to be within a small distance one from another.
  * 
  * **See Also**: `ReactiveModule.eq`
- */eq(other: ScalarSignal): BoolSignal
+ */eq(other: ScalarSignal | number): BoolSignal
  ;
 
 /** 
@@ -61,7 +61,7 @@ lastValue: number;
  *  
  * 
  * Maps x from [min, max] range to [0.0, 1.0] range.
- */fromRange(x: ScalarSignal, min: ScalarSignal, max: ScalarSignal): ScalarSignal
+ */fromRange(x: ScalarSignal | number, min: ScalarSignal | number, max: ScalarSignal | number): ScalarSignal
  ;
 
 /** 
@@ -112,7 +112,7 @@ lastValue: number;
  * **Note**: the scalar values are tested for exact equality. For some applications it might be reasonable to perform a non-strict comparison allowing the values to be within a small distance one from another.
  * 
  * **See Also**: `ReactiveModule.ne`
- */ne(other: ScalarSignal): BoolSignal
+ */ne(other: ScalarSignal | number): BoolSignal
  ;
 
 /** 
@@ -123,7 +123,7 @@ lastValue: number;
  * Returns a Boolean signal that takes the value of `true` every time when the value of the left-hand-side signal is strictly **greater than** the value of the right-hand-side one, and the value of `false` all other time.
  * 
  * **See Also**: `ReactiveModule.gt`
- */gt(other: ScalarSignal): BoolSignal
+ */gt(other: ScalarSignal | number): BoolSignal
  ;
 
 /** 
@@ -167,7 +167,7 @@ lastValue: number;
  * Returns a Boolean signal that takes the value of `true` every time when the value of the left-hand-side signal is **greater than or equal** to the value of the right-hand-side one, and the value of `false` all other time.
  * 
  * **See Also**: `ReactiveModule.ge`
- */ge(other: ScalarSignal): BoolSignal
+ */ge(other: ScalarSignal | number): BoolSignal
  ;
 
 /** 
@@ -195,7 +195,7 @@ lastValue: number;
  * Returns a Boolean signal that takes the value of `true` every time when the value of the left-hand-side signal is **less than or equal** to the value of the right-hand-side one, and the value of `false` all other time.
  * 
  * **See Also**: `ReactiveModule.le`
- */le(other: ScalarSignal): BoolSignal
+ */le(other: ScalarSignal | number): BoolSignal
  ;
 
 /** 
@@ -206,7 +206,7 @@ lastValue: number;
  * Returns a signal with the value that is the floating-point remainder of the division of the value of the first signal by the value of the second signal.
  * 
  * **See Also**: `ScalarSignal.mod`
- */mod(x: ScalarSignal, y: ScalarSignal): ScalarSignal
+ */mod(x: ScalarSignal | number, y: ScalarSignal | number): ScalarSignal
  ;
 
 /** 
@@ -266,7 +266,7 @@ monitor(config: { fireOnInitialValue: ?boolean}): EventSource
  * Returns a signal with the value that is the square root of the value of the given signal.
  * 
  * **See Also**: `ScalarSignal.sqrt`
- */sqrt(x: ScalarSignal): ScalarSignal
+ */sqrt(x: ScalarSignal | number): ScalarSignal
  ;
 
 /** 
@@ -302,7 +302,7 @@ monitor(config: { fireOnInitialValue: ?boolean}): EventSource
  * Returns a signal with the value that is the absolute value of the given signal.
  * 
  * **See Also**: `ScalarSignal.abs`
- */abs(x: ScalarSignal): ScalarSignal
+ */abs(x: ScalarSignal | number): ScalarSignal
  ;
 
 /** 
@@ -314,7 +314,7 @@ monitor(config: { fireOnInitialValue: ?boolean}): EventSource
  * Returns a signal with the negated value of the given signal.
  * 
  * **See Also**: `ScalarSignal.neg`, `VectorSignal.neg`
- */neg(x: ScalarSignal): ScalarSignal
+ */neg(x: ScalarSignal | number): ScalarSignal
  ;
 
 neg(x: VectorSignal): VectorSignal
@@ -328,7 +328,7 @@ neg(x: VectorSignal): VectorSignal
  * Returns a signal with the value that is the largest integer that is less than or equal to the value of the given signal.
  * 
  * **See Also**: `ScalarSignal.floor`
- */floor(x: ScalarSignal): ScalarSignal
+ */floor(x: ScalarSignal | number): ScalarSignal
  ;
 
 /** 
@@ -341,7 +341,7 @@ neg(x: VectorSignal): VectorSignal
  * **Note**: When the fractional part is 0.5, it rounds the number away from zero, which is at odds with JavaScript standard behavior of rounding it always up in such cases. Therefore, this function is NOT exactly the reactive counterpart of the standard JavaScript `Math.round` utility.
  * 
  * **See Also**: `ScalarSignal.round`
- */round(x: ScalarSignal): ScalarSignal
+ */round(x: ScalarSignal | number): ScalarSignal
  ;
 
 /** 
@@ -351,7 +351,7 @@ neg(x: VectorSignal): VectorSignal
  * 
  * Returns 0.0 if x is less than edge0, and 1.0 if x is greater than edge1.
  * If x is between edge0 and edge1, smooth Hermite interpolation is performed.
- */smoothStep(x: ScalarSignal, edge0: ScalarSignal, edge1: ScalarSignal): ScalarSignal
+ */smoothStep(x: ScalarSignal | number, edge0: ScalarSignal | number, edge1: ScalarSignal | number): ScalarSignal
  ;
 
 /** 
@@ -375,7 +375,7 @@ neg(x: VectorSignal): VectorSignal
  * **Note**: this function is the reactive counterpart of the standard JavaScript `Math.sign` utility.
  * 
  * **See Also**: `ScalarSignal.sign`
- */sign(x: ScalarSignal): ScalarSignal
+ */sign(x: ScalarSignal | number): ScalarSignal
  ;
 
 /** 
@@ -391,7 +391,7 @@ neg(x: VectorSignal): VectorSignal
  * **Note**: `add` and `sum` functions are synonyms, the behavior they provide is equivalent.
  * 
  * **See Also**: `ReactiveModule.sum`, `ScalarSignal.add`, `PointSignal.add`, `VectorSignal.add`
- */add(x: ScalarSignal, y: ScalarSignal): ScalarSignal
+ */add(x: ScalarSignal | number, y: ScalarSignal | number): ScalarSignal
  ;
 
 add(x: PointSignal, y: VectorSignal): PointSignal
@@ -416,7 +416,7 @@ add(x: VectorSignal, y: VectorSignal): VectorSignal
  * **Note**: `add` and `sum` functions are synonyms, the behavior they provide is equivalent.
  * 
  * **See Also**: `ReactiveModule.sum`, `ScalarSignal.add`, `PointSignal.add`, `VectorSignal.add`
- */sum(x: ScalarSignal, y: ScalarSignal): ScalarSignal
+ */sum(x: ScalarSignal | number, y: ScalarSignal | number): ScalarSignal
  ;
 
 sum(x: PointSignal, y: VectorSignal): PointSignal
@@ -439,7 +439,7 @@ sum(x: VectorSignal, y: VectorSignal): VectorSignal
  * Returns a signal with the value that is the difference of the values of the given signals.
  * 
  * **See Also**: `ScalarSignal.sub`, `VectorSignal.sub`, `PointSignal.sub`
- */sub(x: ScalarSignal, y: ScalarSignal): ScalarSignal
+ */sub(x: ScalarSignal | number, y: ScalarSignal | number): ScalarSignal
  ;
 
 sub(x: PointSignal, y: VectorSignal): PointSignal
@@ -459,7 +459,7 @@ sub(x: PointSignal, y: PointSignal): VectorSignal
  * Returns a signal with the value that is the value of the first signal divided by the value of the second signal.
  * 
  * **See Also**: `ScalarSignal.div`
- */div(x: ScalarSignal, y: ScalarSignal): ScalarSignal
+ */div(x: ScalarSignal | number, y: ScalarSignal | number): ScalarSignal
  ;
 
 /** 
@@ -472,7 +472,7 @@ sub(x: PointSignal, y: PointSignal): VectorSignal
  * The result is undefined if the base is negative, or if the base is zero and the exponent is not positive.
  * 
  * **See Also**: `ScalarSignal.pow`
- */pow(base: ScalarSignal, exponent: ScalarSignal): ScalarSignal
+ */pow(base: ScalarSignal | number, exponent: ScalarSignal | number): ScalarSignal
  ;
 
 /** 
@@ -499,13 +499,13 @@ reflect(normal: VectorSignal): VectorSignal
  * Returns a signal with the value that is the product of the values of the given signals.
  * 
  * **See Also**: `ScalarSignal.mul`, `VectorSignal.mul`
- */mul(x: ScalarSignal, y: ScalarSignal): ScalarSignal
+ */mul(x: ScalarSignal | number, y: ScalarSignal | number): ScalarSignal
  ;
 
-mul(x: VectorSignal, y: ScalarSignal): VectorSignal
+mul(x: VectorSignal, y: ScalarSignal | number): VectorSignal
  ;
 
-mul(x: ScalarSignal, y: VectorSignal): VectorSignal
+mul(x: ScalarSignal | number, y: VectorSignal): VectorSignal
  ;
 
 mul(x: VectorSignal, y: VectorSignal): VectorSignal
@@ -519,7 +519,7 @@ mul(x: VectorSignal, y: VectorSignal): VectorSignal
  * Returns a signal with the value that is the angle in radians between the x-axis and the ray from (0, 0) to (x, y) where x and y are the values of the specified signals. The range is -PI to +PI.
  * 
  * **See Also**: `ScalarSignal.atan2`
- */atan2(y: ScalarSignal, x: ScalarSignal): ScalarSignal
+ */atan2(y: ScalarSignal | number, x: ScalarSignal | number): ScalarSignal
  ;
 
 /** 
@@ -528,7 +528,7 @@ mul(x: VectorSignal, y: VectorSignal): VectorSignal
  *  
  * 
  * Maps x from [0.0, 1.0] range to [min, max] range.
- */toRange(x: ScalarSignal, min: ScalarSignal, max: ScalarSignal): ScalarSignal
+ */toRange(x: ScalarSignal | number, min: ScalarSignal | number, max: ScalarSignal | number): ScalarSignal
  ;
 
 /** 

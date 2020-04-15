@@ -7,8 +7,6 @@ declare interface Cheek {
 ```
 
 Specifies a `PointSignal` representing the center of the cheek in the face local coordinate system.
-
-**See Also**: `Face.cameraTransform` to convert the point to the coordinate system of the camera.
 */ 
 center: PointSignal;
 /** 
@@ -18,8 +16,6 @@ center: PointSignal;
 ```
 
 Specifies a `PointSignal` representing the cheekbone in the face local coordinate system.
-
-**See Also**: `Face.cameraTransform` to convert the point to the coordinate system of the camera.
 */ 
 cheekbone: PointSignal;
 } 

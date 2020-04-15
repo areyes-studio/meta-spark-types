@@ -1,5 +1,5 @@
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
-/// <reference path="../Reactive.BoolSignal/index.d.ts" />
+/// <reference path="../void/index.d.ts" />
 /// <reference path="../number/index.d.ts" />
 /// <reference path="../FaceTracking.Face/index.d.ts" />
 declare namespace FaceTrackingModule {
@@ -15,22 +15,18 @@ const count: ScalarSignal;
 /** 
 * ```
 (get) (Not Available)
-(set) isEnabled: BoolSignal
+(set) isEnabled: void
 ```
 
-Specifies a `BoolSignal` that takes the value of `true` whenever the Face Tracker should be run, and the value of `false` otherwise. Default value is `true`
+Specifies a `BoolSignal` that takes the value of `true` whenever the Face Tracker should be run, and the value of `false` otherwise. Default value is `true`.
 */ 
-const isEnabled: BoolSignal;
+const isEnabled: void;
 /** 
-* 
- *  
+*  
  * face(index: number): Face
  *  
  * 
  * Returns the `Face` object from the detected face array at the specified index.
- * 
- * **Note**: this method will throw for face index lower than 0 and greater or equal to
- * 10.
  */function face(index: number): Face
  ;
 

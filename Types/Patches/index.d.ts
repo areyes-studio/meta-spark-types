@@ -76,7 +76,7 @@ const outputs: PatchesOutputs;
  *  
  * 
  * Sends a `ScalarSignal` that is imported with `name` into the Patch Editor.
- */function setScalarValue(name: String, signal: ScalarSignal): void
+ */function setScalarValue(name: String, signal: ScalarSignal | number): void
  ;
 
 /** 
@@ -157,7 +157,7 @@ const outputs: PatchesOutputs;
  *  
  * 
  * Sends a `BoolSignal` that is imported with `name` into the Patch Editor.
- */function setBooleanValue(name: String, signal: BoolSignal): void
+ */function setBooleanValue(name: String, signal: BoolSignal | boolean): void
  ;
 
 /** 
@@ -177,7 +177,7 @@ const outputs: PatchesOutputs;
  *  
  * 
  * Sends a `StringSignal` that is imported with `name` into the Patch Editor.
- */function setStringValue(name: String, signal: StringSignal): void
+ */function setStringValue(name: String, signal: StringSignal | string): void
  ;
 
 } 

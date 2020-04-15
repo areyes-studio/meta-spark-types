@@ -16,7 +16,7 @@ declare interface BlockInstanceInputs {
  *  
  * 
  * Sends a `ScalarSignal` to the Block's input with the given `name`. Returns a promise that is fulfilled if the operation succeeds and is rejected if the operation fails, such as if no input exists with the given name, or if the input's type is not a `ScalarSignal`.
- */setScalar(name: String, signal: ScalarSignal): Promise<void>
+ */setScalar(name: String, signal: ScalarSignal | number): Promise<void>
  ;
 
 /** 
@@ -34,7 +34,7 @@ declare interface BlockInstanceInputs {
  *  
  * 
  * Sends a `StringSignal` to the Block's input with the given `name`. Returns a promise that is fulfilled if the operation succeeds and is rejected if the operation fails, such as if no input exists with the given name, or if the input's type is not a `StringSignal`.
- */setString(name: String, signal: StringSignal): Promise<void>
+ */setString(name: String, signal: StringSignal | string): Promise<void>
  ;
 
 /** 
@@ -43,7 +43,7 @@ declare interface BlockInstanceInputs {
  *  
  * 
  * Sends a `BoolSignal` to the Block's input with the given `name`. Returns a promise that is fulfilled if the operation succeeds and is rejected if the operation fails, such as if no input exists with the given name, or if the input's type is not a `BoolSignal`.
- */setBoolean(name: String, signal: BoolSignal): Promise<void>
+ */setBoolean(name: String, signal: BoolSignal | boolean): Promise<void>
  ;
 
 /** 

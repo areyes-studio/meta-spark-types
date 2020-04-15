@@ -34,7 +34,7 @@ const automaticHintsEnabled: BoolSignal;
  * 
  * You can have at most one binding for instructions, meaning that setting a different binding
  * would replace any previously created and setup binding for instructions.
- */function bind(enabled: BooleanSignal, token: StringSignal): void
+ */function bind(enabled: BooleanSignal, token: StringSignal | string): void
  ;
 
 } 
