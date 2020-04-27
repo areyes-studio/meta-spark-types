@@ -1,7 +1,17 @@
+/// <reference path="../Reactive.BoolSignal/index.d.ts" />
 /// <reference path="../string/index.d.ts" />
 /// <reference path="../Scene.SceneObjectBase/index.d.ts" />
 /// <reference path="../Promise/index.d.ts" />
 declare interface Scene {
+/** 
+* ```
+(get) hidden: BoolSignal
+(set) hidden: BoolSignal
+```
+
+Specifies whether the scene and its descendants are hidden.
+*/ 
+hidden: BoolSignal;
 /** 
 *  
  * child(name: string): SceneObjectBase

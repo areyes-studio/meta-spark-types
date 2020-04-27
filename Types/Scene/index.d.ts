@@ -1,17 +1,17 @@
-/// <reference path="../Scene.SceneObjectBase/index.d.ts" />
+/// <reference path="../Scene.Scene/index.d.ts" />
 /// <reference path="../Reactive.PixelPointSignal/index.d.ts" />
 /// <reference path="../Reactive.PointSignal/index.d.ts" />
 /// <reference path="../number/index.d.ts" />
 declare namespace SceneModule {
 /** 
 * ```
-(get) root: SceneObjectBase
+(get) root: Scene
 (set) (Not Available)
 ```
 
 Returns an object that is the root of the scene tree. Other objects are accessed by walking down the scene tree from the root using the `SceneObjectBase.child` and `SceneObjectBase.find` methods.
 */ 
-const root: any;
+const root: Scene;
 /** 
 *  
  * unprojectToFocalPlane(location: PixelPointSignal): PointSignal
