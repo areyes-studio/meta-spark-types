@@ -3,8 +3,9 @@
 /// <reference path="../Reactive.ScaleSignal/index.d.ts" />
 /// <reference path="../Reactive.VectorSignal/index.d.ts" />
 /// <reference path="../Reactive.TransformSignal/index.d.ts" />
-/// <reference path="../number/index.d.ts" />
 /// <reference path="../this/index.d.ts" />
+/// <reference path="../number/index.d.ts" />
+/// <reference path="../TransformSignalHistory/index.d.ts" />
 declare interface TransformSignal {
 /** 
 * ```
@@ -128,6 +129,25 @@ lookAt(targetPosition: PointSignal, selfUp: VectorSignal): TransformSignal
 
 /** 
 *  
+ * delayBy(timeSpan: {milliseconds: number}): this
+ *  
+ * Delays a signal. The argument is an object with a "milliseconds" property specifying the delay duration in milliseconds.
+ */delayBy(timeSpan: {milliseconds: number}): this
+ ;
+
+/** 
+*  
+ * history(framesCount: number): TransformSignalHistory
+ *  
+ * 
+ * Returns an object used to access signal values from past frames. The amount of frames tracked is customizable via `framesCount` parameter.
+ * Historical signal values are going to be initialized with signal value at call time or using `initialValues` if provided.
+ * 
+ */history(framesCount: number): TransformSignalHistory
+ ;
+
+/** 
+*  
  * inverse(): TransformSignal
  *  
  * 
@@ -163,14 +183,6 @@ applyTo(vector: VectorSignal): VectorSignal
  * 
  * **Note**: See also `ReactiveModule.expSmooth`.
  */expSmooth(dampFactor: number): TransformSignal
- ;
-
-/** 
-*  
- * delayBy(timeSpan: {milliseconds: number}): this
- *  
- * Delays a signal. The argument is an object with a "milliseconds" property specifying the delay duration in milliseconds.
- */delayBy(timeSpan: {milliseconds: number}): this
  ;
 
 } 

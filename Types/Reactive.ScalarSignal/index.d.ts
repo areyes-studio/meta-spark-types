@@ -6,6 +6,8 @@
 /// <reference path="../Reactive.StringSignal/index.d.ts" />
 /// <reference path="../this/index.d.ts" />
 /// <reference path="../string/index.d.ts" />
+/// <reference path="../Array/index.d.ts" />
+/// <reference path="../ScalarSignalHistory/index.d.ts" />
 /// <reference path="../ConstScalarSignal/index.d.ts" />
 /// <reference path="../Reactive.PointSignal/index.d.ts" />
 declare interface ScalarSignal {
@@ -267,6 +269,21 @@ monitor(config: { fireOnInitialValue: ?boolean}): EventSource
  * 
  * **See Also**: `ScalarSignal.sqrt`
  */sqrt(x: ScalarSignal | number): ScalarSignal
+ ;
+
+/** 
+*  
+ * history(framesCount: number): ScalarSignalHistory
+ * history(framesCount: number, initialValues: Array<number>): ScalarSignalHistory
+ *  
+ * 
+ * Returns an object used to access signal values from past frames. The amount of frames tracked is customizable via `framesCount` parameter.
+ * Historical signal values are going to be initialized with signal value at call time or using `initialValues` if provided.
+ * 
+ */history(framesCount: number): ScalarSignalHistory
+ ;
+
+history(framesCount: number, initialValues: Array<number>): ScalarSignalHistory
  ;
 
 /** 

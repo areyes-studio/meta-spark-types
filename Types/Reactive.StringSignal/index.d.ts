@@ -2,6 +2,9 @@
 /// <reference path="../Reactive.StringSignal/index.d.ts" />
 /// <reference path="../Reactive.BoolSignal/index.d.ts" />
 /// <reference path="../Reactive.EventSource/index.d.ts" />
+/// <reference path="../number/index.d.ts" />
+/// <reference path="../Array/index.d.ts" />
+/// <reference path="../StringSignalHistory/index.d.ts" />
 /// <reference path="../ConstStringSignal/index.d.ts" />
 /// <reference path="../this/index.d.ts" />
 declare interface StringSignal {
@@ -77,6 +80,21 @@ lastValue: string;
  ;
 
 monitor(config: { fireOnInitialValue: ?boolean}): EventSource
+ ;
+
+/** 
+*  
+ * history(framesCount: number): StringSignalHistory
+ * history(framesCount: number, initialValues: Array<string>): StringSignalHistory
+ *  
+ * 
+ * Returns an object used to access signal values from past frames. The amount of frames tracked is customizable via `framesCount` parameter.
+ * Historical signal values are going to be initialized with signal value at call time or using `initialValues` if provided.
+ * 
+ */history(framesCount: number): StringSignalHistory
+ ;
+
+history(framesCount: number, initialValues: Array<string>): StringSignalHistory
  ;
 
 /** 

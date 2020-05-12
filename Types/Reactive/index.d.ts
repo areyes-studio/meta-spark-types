@@ -1,22 +1,60 @@
-/// <reference path="../Reactive.BoolSignal/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
+/// <reference path="../Reactive.StringSignal/index.d.ts" />
+/// <reference path="../Reactive.BoolSignal/index.d.ts" />
 /// <reference path="../Reactive.Point2DSignal/index.d.ts" />
 /// <reference path="../Reactive.PointSignal/index.d.ts" />
 /// <reference path="../Reactive.Point4DSignal/index.d.ts" />
 /// <reference path="../Array/index.d.ts" />
-/// <reference path="../Reactive.VectorSignal/index.d.ts" />
-/// <reference path="../Reactive.TransformSignal/index.d.ts" />
-/// <reference path="../Reactive.RgbaSignal/index.d.ts" />
-/// <reference path="../Reactive.EventSource/index.d.ts" />
-/// <reference path="../Reactive.HsvaSignal/index.d.ts" />
-/// <reference path="../Reactive.StringSignal/index.d.ts" />
+/// <reference path="../Reactive.ShaderSignal/index.d.ts" />
 /// <reference path="../number/index.d.ts" />
+/// <reference path="../Reactive.PrimitiveOrShaderSignal/index.d.ts" />
+/// <reference path="../Reactive.EventSource/index.d.ts" />
+/// <reference path="../Reactive.VectorSignal/index.d.ts" />
+/// <reference path="../Reactive.BoundingBoxSignal/index.d.ts" />
+/// <reference path="../Reactive.TransformSignal/index.d.ts" />
+/// <reference path="../Reactive.RotationSignal/index.d.ts" />
+/// <reference path="../ShaderSignalHistory/index.d.ts" />
+/// <reference path="../PrimitiveOrShaderSignalHistory/index.d.ts" />
+/// <reference path="../EventSourceHistory/index.d.ts" />
+/// <reference path="../Point2DSignalHistory/index.d.ts" />
+/// <reference path="../PointSignalHistory/index.d.ts" />
+/// <reference path="../VectorSignalHistory/index.d.ts" />
+/// <reference path="../Point4DSignalHistory/index.d.ts" />
+/// <reference path="../BoundingBoxSignalHistory/index.d.ts" />
+/// <reference path="../TransformSignalHistory/index.d.ts" />
+/// <reference path="../RotationSignalHistory/index.d.ts" />
+/// <reference path="../ScalarSignalHistory/index.d.ts" />
+/// <reference path="../BoolSignalHistory/index.d.ts" />
+/// <reference path="../StringSignalHistory/index.d.ts" />
+/// <reference path="../Reactive.RgbaSignal/index.d.ts" />
 /// <reference path="../Reactive.PixelPointSignal/index.d.ts" />
+/// <reference path="../Reactive.HsvaSignal/index.d.ts" />
 /// <reference path="../Reactive.Rotation/index.d.ts" />
 /// <reference path="../Reactive.ScaleSignal/index.d.ts" />
 /// <reference path="../string/index.d.ts" />
 /// <reference path="../boolean/index.d.ts" />
 declare namespace ReactiveModule {
+/** 
+*  
+ *   eq(lhs: ScalarSignal, rhs: ScalarSignal): BoolSignal
+ *   eq(lhs: StringSignal, rhs: StringSignal): BoolSignal
+ *   eq(lhs: BoolSignal, rhs: BoolSignal): BoolSignal
+ *    
+ * 
+ *   Returns a Boolean signal that takes the value of `true` every time when the value of the left-hand-side signal is **equal** to the value of the right-hand-side one, and the value of `false` all other time.
+ * 
+ *   **Note**: the scalar values are tested for exact equality. For some applications it might be reasonable to perform a non-strict comparison allowing the values to be within a small distance one from another.
+ * 
+ *   **See Also**: `ScalarSignal.eq`, `StringSignal.eq`, `BoolSignal.eq`
+ */function eq(lhs: ScalarSignal | number, rhs: ScalarSignal | number): BoolSignal
+ ;
+
+function eq(lhs: StringSignal | string, rhs: StringSignal | string): BoolSignal
+ ;
+
+function eq(lhs: BoolSignal | boolean, rhs: BoolSignal | boolean): BoolSignal
+ ;
+
 /** 
 *  
  * not(signal: BoolSignal): BoolSignal
@@ -60,55 +98,94 @@ function pack3(x: Point2DSignal, y: ScalarSignal | number, z: ScalarSignal | num
 
 /** 
 *  
+ * signalHistory(signal: ShaderSignal, framesCount: number): ShaderSignalHistory
+ * signalHistory(signal: PrimitiveOrShaderSignal, framesCount: number): PrimitiveOrShaderSignalHistory
+ * signalHistory(signal: EventSource, framesCount: number): EventSourceHistory
+ * signalHistory(signal: Point2DSignal, framesCount: number): Point2DSignalHistory
+ * signalHistory(signal: Point2DSignal, framesCount: number, initialValues: Array<Point2D>): Point2DSignalHistory
+ * signalHistory(signal: PointSignal, framesCount: number): PointSignalHistory
+ * signalHistory(signal: PointSignal, framesCount: number, initialValues: Array<Point3D>): PointSignalHistory
+ * signalHistory(signal: VectorSignal, framesCount: number): VectorSignalHistory
+ * signalHistory(signal: Point4DSignal, framesCount: number): Point4DSignalHistory
+ * signalHistory(signal: BoundingBoxSignal, framesCount: number): BoundingBoxSignalHistory
+ * signalHistory(signal: TransformSignal, framesCount: number): TransformSignalHistory
+ * signalHistory(signal: RotationSignal, framesCount: number): RotationSignalHistory
+ * signalHistory(signal: RotationSignal, framesCount: number, initialValues: Array<Rotation>): RotationSignalHistory
+ * signalHistory(signal: ScalarSignal, framesCount: number): ScalarSignalHistory
+ * signalHistory(signal: ScalarSignal, framesCount: number, initialValues: Array<number>): ScalarSignalHistory
+ * signalHistory(signal: BoolSignal, framesCount: number): BoolSignalHistory
+ * signalHistory(signal: BoolSignal, framesCount: number, initialValues: Array<boolean>): BoolSignalHistory
+ * signalHistory(signal: StringSignal, framesCount: number): StringSignalHistory
+ * signalHistory(signal: StringSignal, framesCount: number, initialValues: Array<string>): StringSignalHistory
+ *  
+ * 
+ * Returns an object used to access `signal` values from past frames. The amount of frames tracked is customizable via `framesCount` parameter.
+ * Historical signal values are going to be initialized with signal value at call time or using `initialValues` if provided.
+ * 
+ */function signalHistory(signal: ShaderSignal, framesCount: number): ShaderSignalHistory
+ ;
+
+function signalHistory(signal: PrimitiveOrShaderSignal, framesCount: number): PrimitiveOrShaderSignalHistory
+ ;
+
+function signalHistory(signal: EventSource, framesCount: number): EventSourceHistory
+ ;
+
+function signalHistory(signal: Point2DSignal, framesCount: number): Point2DSignalHistory
+ ;
+
+function signalHistory(signal: Point2DSignal, framesCount: number, initialValues: Array<Point2D>): Point2DSignalHistory
+ ;
+
+function signalHistory(signal: PointSignal, framesCount: number): PointSignalHistory
+ ;
+
+function signalHistory(signal: PointSignal, framesCount: number, initialValues: Array<Point3D>): PointSignalHistory
+ ;
+
+function signalHistory(signal: VectorSignal, framesCount: number): VectorSignalHistory
+ ;
+
+function signalHistory(signal: Point4DSignal, framesCount: number): Point4DSignalHistory
+ ;
+
+function signalHistory(signal: BoundingBoxSignal, framesCount: number): BoundingBoxSignalHistory
+ ;
+
+function signalHistory(signal: TransformSignal, framesCount: number): TransformSignalHistory
+ ;
+
+function signalHistory(signal: RotationSignal, framesCount: number): RotationSignalHistory
+ ;
+
+function signalHistory(signal: RotationSignal, framesCount: number, initialValues: Array<Rotation>): RotationSignalHistory
+ ;
+
+function signalHistory(signal: ScalarSignal | number, framesCount: number): ScalarSignalHistory
+ ;
+
+function signalHistory(signal: ScalarSignal | number, framesCount: number, initialValues: Array<number>): ScalarSignalHistory
+ ;
+
+function signalHistory(signal: BoolSignal | boolean, framesCount: number): BoolSignalHistory
+ ;
+
+function signalHistory(signal: BoolSignal | boolean, framesCount: number, initialValues: Array<boolean>): BoolSignalHistory
+ ;
+
+function signalHistory(signal: StringSignal | string, framesCount: number): StringSignalHistory
+ ;
+
+function signalHistory(signal: StringSignal | string, framesCount: number, initialValues: Array<string>): StringSignalHistory
+ ;
+
+/** 
+*  
  * exp(x: ScalarSignal): ScalarSignal
  *  
  * 
  * Returns a signal with the value that is e (the Euler's constant 2.718...) to the power of the value of the given signal.
  */function exp(x: ScalarSignal | number): ScalarSignal
- ;
-
-/** 
-*  
- * round(x: ScalarSignal): ScalarSignal
- *  
- * 
- * Returns a signal with the value that is the rounded value of the given signal.
- * 
- * **Note**: When the fractional part is 0.5, it rounds the number away from zero, which is at odds with JavaScript standard behavior of rounding it always up in such cases. Therefore, this function is NOT exactly the reactive counterpart of the standard JavaScript `Math.round` utility.
- * 
- * **See Also**: `ScalarSignal.round`
- */function round(x: ScalarSignal | number): ScalarSignal
- ;
-
-/** 
-*  
- * mix(x: ScalarSignal, y: ScalarSignal, alpha: ScalarSignal): ScalarSignal
- * mix(x: PointSignal, y: PointSignal, alpha: ScalarSignal): PointSignal
- * mix(x: VectorSignal, y: VectorSignal, alpha: ScalarSignal): VectorSignal
- * mix(x: TransformSignal, y: TransformSignal, alpha: ScalarSignal): TransformSignal
- *  
- * Returns a signal with the value that is the interpolation of the values of the given signals.
- */function mix(x: ScalarSignal | number, y: ScalarSignal | number, alpha: ScalarSignal | number): ScalarSignal
- ;
-
-function mix(x: PointSignal, y: PointSignal, alpha: ScalarSignal | number): PointSignal
- ;
-
-function mix(x: VectorSignal, y: VectorSignal, alpha: ScalarSignal | number): VectorSignal
- ;
-
-function mix(x: TransformSignal, y: TransformSignal, alpha: ScalarSignal | number): TransformSignal
- ;
-
-/** 
-*  
- * RGBA(r: ScalarSignal, g: ScalarSignal, b: ScalarSignal, a: ScalarSignal): RgbaSignal
- *  
- * 
- * Combines four signals and returns the result as an `RgbaSignal`. Each value should be in the range between 0.0 and 1.0.
- * 
- * **Note**: RGB components are interpreted in sRGB space.
- */function RGBA(r: ScalarSignal | number, g: ScalarSignal | number, b: ScalarSignal | number, a: ScalarSignal | number): RgbaSignal
  ;
 
 /** 
@@ -120,6 +197,17 @@ function mix(x: TransformSignal, y: TransformSignal, alpha: ScalarSignal | numbe
  * 
  * **See Also**: `ScalarSignal.floor`
  */function floor(x: ScalarSignal | number): ScalarSignal
+ ;
+
+/** 
+*  
+ * RGBA(r: ScalarSignal, g: ScalarSignal, b: ScalarSignal, a: ScalarSignal): RgbaSignal
+ *  
+ * 
+ * Combines four signals and returns the result as an `RgbaSignal`. Each value should be in the range between 0.0 and 1.0.
+ * 
+ * **Note**: RGB components are interpreted in sRGB space.
+ */function RGBA(r: ScalarSignal | number, g: ScalarSignal | number, b: ScalarSignal | number, a: ScalarSignal | number): RgbaSignal
  ;
 
 /** 
@@ -207,6 +295,49 @@ function reflect(normal: VectorSignal): VectorSignal
  * 
  *   **Note**: The initialValue is assumed to be `false` if it isn't specified.
  */function schmittTrigger(signal: ScalarSignal | number, config: { low: number, high: number, initialValue: ?boolean}): BoolSignal
+ ;
+
+/** 
+*  
+ * mulList(x: Array<number>): ScalarSignal
+ *  
+ * 
+ * Returns a signal with the value that is the product of the values in an array
+ */function mulList(x: Array<number>): ScalarSignal
+ ;
+
+/** 
+*  
+ * point2d(x: ScalarSignal, y: ScalarSignal): PixelPointSignal
+ *  
+ * 
+ * Combines two signals and returns the result as a `PixelPointSignal`.
+ */function point2d(x: ScalarSignal | number, y: ScalarSignal | number): PixelPointSignal
+ ;
+
+/** 
+*  
+ * sum(x: ScalarSignal, y: ScalarSignal): ScalarSignal
+ * sum(x: PointSignal, y: VectorSignal): PointSignal
+ * sum(x: VectorSignal, y: PointSignal): PointSignal
+ * sum(x: VectorSignal, y: VectorSignal): VectorSignal
+ *  
+ * 
+ * Returns a signal with the value that is the sum of the values of the given signals.
+ * 
+ * **Note**: `add` and `sum` functions are synonyms, the behavior they provide is equivalent.
+ * 
+ * **See Also**: `ReactiveModule.sum`, `ScalarSignal.add`, `PointSignal.add`, `VectorSignal.add`
+ */function sum(x: ScalarSignal | number, y: ScalarSignal | number): ScalarSignal
+ ;
+
+function sum(x: PointSignal, y: VectorSignal): PointSignal
+ ;
+
+function sum(x: VectorSignal, y: PointSignal): PointSignal
+ ;
+
+function sum(x: VectorSignal, y: VectorSignal): VectorSignal
  ;
 
 /** 
@@ -366,70 +497,6 @@ function ne(lhs: StringSignal | string, rhs: StringSignal | string): BoolSignal
  ;
 
 function ne(lhs: BoolSignal | boolean, rhs: BoolSignal | boolean): BoolSignal
- ;
-
-/** 
-*  
- *   eq(lhs: ScalarSignal, rhs: ScalarSignal): BoolSignal
- *   eq(lhs: StringSignal, rhs: StringSignal): BoolSignal
- *   eq(lhs: BoolSignal, rhs: BoolSignal): BoolSignal
- *    
- * 
- *   Returns a Boolean signal that takes the value of `true` every time when the value of the left-hand-side signal is **equal** to the value of the right-hand-side one, and the value of `false` all other time.
- * 
- *   **Note**: the scalar values are tested for exact equality. For some applications it might be reasonable to perform a non-strict comparison allowing the values to be within a small distance one from another.
- * 
- *   **See Also**: `ScalarSignal.eq`, `StringSignal.eq`, `BoolSignal.eq`
- */function eq(lhs: ScalarSignal | number, rhs: ScalarSignal | number): BoolSignal
- ;
-
-function eq(lhs: StringSignal | string, rhs: StringSignal | string): BoolSignal
- ;
-
-function eq(lhs: BoolSignal | boolean, rhs: BoolSignal | boolean): BoolSignal
- ;
-
-/** 
-*  
- * point2d(x: ScalarSignal, y: ScalarSignal): PixelPointSignal
- *  
- * 
- * Combines two signals and returns the result as a `PixelPointSignal`.
- */function point2d(x: ScalarSignal | number, y: ScalarSignal | number): PixelPointSignal
- ;
-
-/** 
-*  
- * sum(x: ScalarSignal, y: ScalarSignal): ScalarSignal
- * sum(x: PointSignal, y: VectorSignal): PointSignal
- * sum(x: VectorSignal, y: PointSignal): PointSignal
- * sum(x: VectorSignal, y: VectorSignal): VectorSignal
- *  
- * 
- * Returns a signal with the value that is the sum of the values of the given signals.
- * 
- * **Note**: `add` and `sum` functions are synonyms, the behavior they provide is equivalent.
- * 
- * **See Also**: `ReactiveModule.sum`, `ScalarSignal.add`, `PointSignal.add`, `VectorSignal.add`
- */function sum(x: ScalarSignal | number, y: ScalarSignal | number): ScalarSignal
- ;
-
-function sum(x: PointSignal, y: VectorSignal): PointSignal
- ;
-
-function sum(x: VectorSignal, y: PointSignal): PointSignal
- ;
-
-function sum(x: VectorSignal, y: VectorSignal): VectorSignal
- ;
-
-/** 
-*  
- * mulList(x: Array<number>): ScalarSignal
- *  
- * 
- * Returns a signal with the value that is the product of the values in an array
- */function mulList(x: Array<number>): ScalarSignal
  ;
 
 /** 
@@ -693,6 +760,39 @@ function normalize(): VectorSignal
  * 
  * Maps x from [min, max] range to [0.0, 1.0] range.
  */function fromRange(x: ScalarSignal | number, min: ScalarSignal | number, max: ScalarSignal | number): ScalarSignal
+ ;
+
+/** 
+*  
+ * round(x: ScalarSignal): ScalarSignal
+ *  
+ * 
+ * Returns a signal with the value that is the rounded value of the given signal.
+ * 
+ * **Note**: When the fractional part is 0.5, it rounds the number away from zero, which is at odds with JavaScript standard behavior of rounding it always up in such cases. Therefore, this function is NOT exactly the reactive counterpart of the standard JavaScript `Math.round` utility.
+ * 
+ * **See Also**: `ScalarSignal.round`
+ */function round(x: ScalarSignal | number): ScalarSignal
+ ;
+
+/** 
+*  
+ * mix(x: ScalarSignal, y: ScalarSignal, alpha: ScalarSignal): ScalarSignal
+ * mix(x: PointSignal, y: PointSignal, alpha: ScalarSignal): PointSignal
+ * mix(x: VectorSignal, y: VectorSignal, alpha: ScalarSignal): VectorSignal
+ * mix(x: TransformSignal, y: TransformSignal, alpha: ScalarSignal): TransformSignal
+ *  
+ * Returns a signal with the value that is the interpolation of the values of the given signals.
+ */function mix(x: ScalarSignal | number, y: ScalarSignal | number, alpha: ScalarSignal | number): ScalarSignal
+ ;
+
+function mix(x: PointSignal, y: PointSignal, alpha: ScalarSignal | number): PointSignal
+ ;
+
+function mix(x: VectorSignal, y: VectorSignal, alpha: ScalarSignal | number): VectorSignal
+ ;
+
+function mix(x: TransformSignal, y: TransformSignal, alpha: ScalarSignal | number): TransformSignal
  ;
 
 /** 

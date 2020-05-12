@@ -1,5 +1,5 @@
 /// <reference path="../Reactive.BoundingBoxSignal/index.d.ts" />
-/// <reference path="../Reactive.StringSignal/index.d.ts" />
+/// <reference path="../Reactive.BoolSignal/index.d.ts" />
 declare interface Face2D {
 /** 
 * ```
@@ -12,13 +12,11 @@ Specifies a `BoundingBoxSignal` object describing the face bounding box relative
 boundingBox: BoundingBoxSignal;
 /** 
 * ```
-      (get) isTracked: StringSignal
-      (set) (Not Available)
-      ```
+(get) isTracked: BoolSignal
+(set) (Not Available)
+```
 
-      A `boolSignal` indicating whether the face was tracked this frame.
-
-      If the face was not tracked, other properties represent the most recent tracked frame.
+A `BoolSignal` indicating whether the face was tracked this frame.
 */ 
-isTracked: StringSignal;
+isTracked: BoolSignal;
 } 

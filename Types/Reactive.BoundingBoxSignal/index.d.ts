@@ -1,5 +1,7 @@
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 /// <reference path="../Reactive.Point2DSignal/index.d.ts" />
+/// <reference path="../number/index.d.ts" />
+/// <reference path="../BoundingBoxSignalHistory/index.d.ts" />
 declare interface BoundingBoxSignal {
 /** 
 * ```
@@ -46,4 +48,15 @@ height: ScalarSignal;
 Represents the center of the bounding box, in normalized screen space units.
 */ 
 center: Point2DSignal;
+/** 
+*  
+ * history(framesCount: number): BoundingBoxSignalHistory
+ *  
+ * 
+ * Returns an object used to access signal values from past frames. The amount of frames tracked is customizable via `framesCount` parameter.
+ * Historical signal values are going to be initialized with signal value at call time or using `initialValues` if provided.
+ * 
+ */history(framesCount: number): BoundingBoxSignalHistory
+ ;
+
 } 

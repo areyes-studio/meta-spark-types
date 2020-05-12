@@ -1,4 +1,6 @@
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
+/// <reference path="../number/index.d.ts" />
+/// <reference path="../Point4DSignalHistory/index.d.ts" />
 /// <reference path="../Reactive.VectorSignal/index.d.ts" />
 /// <reference path="../Reactive.PointSignal/index.d.ts" />
 declare interface Point4DSignal {
@@ -40,6 +42,17 @@ z: ScalarSignal;
 w: ScalarSignal;
 /** 
 *  
+ * history(framesCount: number): Point4DSignalHistory
+ *  
+ * 
+ * Returns an object used to access signal values from past frames. The amount of frames tracked is customizable via `framesCount` parameter.
+ * Historical signal values are going to be initialized with signal value at call time or using `initialValues` if provided.
+ * 
+ */history(framesCount: number): Point4DSignalHistory
+ ;
+
+/** 
+*  
  * ceil(x: ScalarSignal): ScalarSignal
  *  
  * 
@@ -47,6 +60,21 @@ w: ScalarSignal;
  * 
  * **See Also**: `ScalarSignal.ceil`
  */ceil(x: ScalarSignal | number): ScalarSignal
+ ;
+
+/** 
+*  
+ * neg(x: ScalarSignal): ScalarSignal
+ * neg(x: VectorSignal): VectorSignal
+ *  
+ * 
+ * Returns a signal with the negated value of the given signal.
+ * 
+ * **See Also**: `ScalarSignal.neg`, `VectorSignal.neg`
+ */neg(x: ScalarSignal | number): ScalarSignal
+ ;
+
+neg(x: VectorSignal): VectorSignal
  ;
 
 /** 
@@ -67,21 +95,6 @@ w: ScalarSignal;
  * 
  * Maps x from [min, max] range to [0.0, 1.0] range.
  */fromRange(x: ScalarSignal | number, min: ScalarSignal | number, max: ScalarSignal | number): ScalarSignal
- ;
-
-/** 
-*  
- * neg(x: ScalarSignal): ScalarSignal
- * neg(x: VectorSignal): VectorSignal
- *  
- * 
- * Returns a signal with the negated value of the given signal.
- * 
- * **See Also**: `ScalarSignal.neg`, `VectorSignal.neg`
- */neg(x: ScalarSignal | number): ScalarSignal
- ;
-
-neg(x: VectorSignal): VectorSignal
  ;
 
 /** 
@@ -117,15 +130,6 @@ neg(x: VectorSignal): VectorSignal
  * 
  * **See Also**: `ScalarSignal.sign`
  */sign(x: ScalarSignal | number): ScalarSignal
- ;
-
-/** 
-*  
- * distance(v1: PointSignal, v2: PointSignal): ScalarSignal
- *  
- * 
- * Returns the distance from the point to another point as a `ScalarSignal`.
- */distance(v1: PointSignal, v2: PointSignal): ScalarSignal
  ;
 
 /** 
@@ -326,17 +330,6 @@ normalize(): VectorSignal
 
 /** 
 *  
- * floor(x: ScalarSignal): ScalarSignal
- *  
- * 
- * Returns a signal with the value that is the largest integer that is less than or equal to the value of the given signal.
- * 
- * **See Also**: `ScalarSignal.floor`
- */floor(x: ScalarSignal | number): ScalarSignal
- ;
-
-/** 
-*  
  * round(x: ScalarSignal): ScalarSignal
  *  
  * 
@@ -350,6 +343,17 @@ normalize(): VectorSignal
 
 /** 
 *  
+ * floor(x: ScalarSignal): ScalarSignal
+ *  
+ * 
+ * Returns a signal with the value that is the largest integer that is less than or equal to the value of the given signal.
+ * 
+ * **See Also**: `ScalarSignal.floor`
+ */floor(x: ScalarSignal | number): ScalarSignal
+ ;
+
+/** 
+*  
  * cross(v1: VectorSignal, v2: VectorSignal): VectorSignal
  *  
  * 
@@ -357,6 +361,15 @@ normalize(): VectorSignal
  * 
  * **See Also**: `VectorSignal.dot`, `ScalarSignal.mul`, `VectorSignal.mul`
  */cross(v1: VectorSignal, v2: VectorSignal): VectorSignal
+ ;
+
+/** 
+*  
+ * distance(v1: PointSignal, v2: PointSignal): ScalarSignal
+ *  
+ * 
+ * Returns the distance from the point to another point as a `ScalarSignal`.
+ */distance(v1: PointSignal, v2: PointSignal): ScalarSignal
  ;
 
 } 

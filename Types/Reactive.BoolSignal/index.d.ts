@@ -3,6 +3,9 @@
 /// <reference path="../Reactive.EventSource/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 /// <reference path="../Reactive.StringSignal/index.d.ts" />
+/// <reference path="../number/index.d.ts" />
+/// <reference path="../Array/index.d.ts" />
+/// <reference path="../BoolSignalHistory/index.d.ts" />
 /// <reference path="../ConstBoolSignal/index.d.ts" />
 /// <reference path="../this/index.d.ts" />
 declare interface BoolSignal {
@@ -127,13 +130,17 @@ monitor(config: { fireOnInitialValue: ?boolean}): EventSource
 
 /** 
 *  
- *  and(lhs: BoolSignal, rhs: BoolSignal): BoolSignal
- *   
+ * history(framesCount: number): BoolSignalHistory
+ * history(framesCount: number, initialValues: Array<boolean>): BoolSignalHistory
+ *  
  * 
- *  Returns a signal with the value that is the logical conjunction of the values of the given signals. It is `true` every time both input signals are `true` and `false` at all other times.
+ * Returns an object used to access signal values from past frames. The amount of frames tracked is customizable via `framesCount` parameter.
+ * Historical signal values are going to be initialized with signal value at call time or using `initialValues` if provided.
  * 
- *  **See Also**: `BoolSignal.and`
- */and(lhs: BoolSignal | boolean, rhs: BoolSignal | boolean): BoolSignal
+ */history(framesCount: number): BoolSignalHistory
+ ;
+
+history(framesCount: number, initialValues: Array<boolean>): BoolSignalHistory
  ;
 
 /** 
@@ -144,6 +151,17 @@ monitor(config: { fireOnInitialValue: ?boolean}): EventSource
  * Returns a `ConstBoolSignal` containing a constant value which is the last value of the specified signal before `pinLastValue` is called.
  * ConstBoolSignal can be passed to a functions which accept bool.
  */pinLastValue(): ConstBoolSignal
+ ;
+
+/** 
+*  
+ *  and(lhs: BoolSignal, rhs: BoolSignal): BoolSignal
+ *   
+ * 
+ *  Returns a signal with the value that is the logical conjunction of the values of the given signals. It is `true` every time both input signals are `true` and `false` at all other times.
+ * 
+ *  **See Also**: `BoolSignal.and`
+ */and(lhs: BoolSignal | boolean, rhs: BoolSignal | boolean): BoolSignal
  ;
 
 /** 

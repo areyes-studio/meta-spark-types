@@ -1,31 +1,35 @@
-/// <reference path="../Reactive.EventSource/index.d.ts" />
+/// <reference path="../EventSource<RequestFailure>/index.d.ts" />
 /// <reference path="../string/index.d.ts" />
 /// <reference path="../void/index.d.ts" />
 /// <reference path="../EffectLinking.RequestedEffect/index.d.ts" />
 declare namespace EffectLinkingModule {
 /** 
 * ```
-(get) onGoToEffectFailure: EventSource
+(get) onGoToEffectFailure: EventSource<RequestFailure>
 (set) (Not Available)
 ```
+
+Global failure listener
 */ 
-const onGoToEffectFailure: EventSource;
+const onGoToEffectFailure: EventSource<RequestFailure>;
 /** 
 *  
- * goToEffect(effectID: string): void
+ * goToEffect(effectId: string): void
  *  
- */function goToEffect(effectID: string): void
+ * 
+ * Equivalent to calling `requestEffect({'effectId': effectId}).apply()`
+ */function goToEffect(effectId: string): void
  ;
 
 /** 
 *  
- * requestEffect(requestEffectParams: {effectID: string}): RequestedEffect
+ * requestEffect(requestEffectParams: {[key: string]: string}): RequestedEffect
  *  
  * 
  * Requests the hosting environment to download an effect via it's ID.
- * effectID defines the ID of the effect being requested.
- * Returned RequestedEffect can be used to apply the effect, and subscribe to apply failure.
- */function requestEffect(requestEffectParams: {effectID: string}): RequestedEffect
+ * `effectId` parameter defines the ID of the effect being requested.
+ * Returned `RequestedEffect` can be used to apply the effect, and subscribe to apply failure.
+ */function requestEffect(requestEffectParams: {[key: string]: string}): RequestedEffect
  ;
 
 } 

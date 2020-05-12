@@ -1,5 +1,5 @@
 /// <reference path="../string/index.d.ts" />
-/// <reference path="../Reactive.EventSource/index.d.ts" />
+/// <reference path="../EventSource<RequestFailure>/index.d.ts" />
 /// <reference path="../void/index.d.ts" />
 declare interface RequestedEffect {
 /** 
@@ -13,17 +13,13 @@ Specifies the effectID associated with this RequestedEffect.
 effectID: string;
 /** 
 * ```
-(get) onApplyFailure: EventSource
+(get) onApplyFailure: EventSource<RequestFailure>
 (set) (Not Available)
 ```
 
 Returns an `EventSource` to which you may subscribe. The event fires when a request to apply an effect fails. The event contains a JSON object in the format:
-
-```
-{ "failureReason": string }
-```
 */ 
-onApplyFailure: EventSource;
+onApplyFailure: EventSource<RequestFailure>;
 /** 
 *  
  * apply(): void

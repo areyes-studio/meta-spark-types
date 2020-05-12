@@ -2,6 +2,7 @@
 /// <reference path="../Reactive.Subscription/index.d.ts" />
 /// <reference path="../number/index.d.ts" />
 /// <reference path="../Reactive.EventSource/index.d.ts" />
+/// <reference path="../EventSourceHistory/index.d.ts" />
 /// <reference path="../string/index.d.ts" />
 declare interface EventSource {
 /** 
@@ -47,6 +48,17 @@ declare interface EventSource {
  * 
  * Yields a filtered event source: the first `count` events from the original source are dropped, and subsequent ones signaled.
  */skip(count: number): EventSource
+ ;
+
+/** 
+*  
+ * history(framesCount: number): EventSourceHistory
+ *  
+ * 
+ * Returns an object used to access signal values from past frames. The amount of frames tracked is customizable via `framesCount` parameter.
+ * Historical signal values are going to be initialized with signal value at call time or using `initialValues` if provided.
+ * 
+ */history(framesCount: number): EventSourceHistory
  ;
 
 /** 

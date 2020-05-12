@@ -2,6 +2,8 @@
 /// <reference path="../number/index.d.ts" />
 /// <reference path="../Reactive.PointSignal/index.d.ts" />
 /// <reference path="../Reactive.VectorSignal/index.d.ts" />
+/// <reference path="../Array/index.d.ts" />
+/// <reference path="../PointSignalHistory/index.d.ts" />
 /// <reference path="../this/index.d.ts" />
 declare interface PointSignal {
 /** 
@@ -53,6 +55,21 @@ z: ScalarSignal;
  ;
 
 normalize(): VectorSignal
+ ;
+
+/** 
+*  
+ * history(framesCount: number): PointSignalHistory
+ * history(framesCount: number, initialValues: Array<Point3D>): PointSignalHistory
+ *  
+ * 
+ * Returns an object used to access signal values from past frames. The amount of frames tracked is customizable via `framesCount` parameter.
+ * Historical signal values are going to be initialized with signal value at call time or using `initialValues` if provided.
+ * 
+ */history(framesCount: number): PointSignalHistory
+ ;
+
+history(framesCount: number, initialValues: Array<Point3D>): PointSignalHistory
  ;
 
 /** 
