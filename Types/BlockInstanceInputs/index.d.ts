@@ -8,7 +8,7 @@
 /// <reference path="../Reactive.PointSignal/index.d.ts" />
 /// <reference path="../Reactive.VectorSignal/index.d.ts" />
 /// <reference path="../Reactive.EventSource/index.d.ts" />
-/// <reference path="../Reactive.PixelPointSignal/index.d.ts" />
+/// <reference path="../Reactive.Point2DSignal/index.d.ts" />
 declare interface BlockInstanceInputs {
 /** 
 *  
@@ -84,11 +84,11 @@ declare interface BlockInstanceInputs {
 
 /** 
 *  
- * setPoint2D(name: String, signal: PixelPointSignal): Promise<void>
+ * setPoint2D(name: String, signal: Point2DSignal): Promise<void>
  *  
  * 
- * Sends a `PixelPointSignal` to the Block's input with the given `name`. Returns a promise that is fulfilled if the operation succeeds and is rejected if the operation fails, such as if no input exists with the given name, or if the input's type is not a `PixelPointSignal`.
- */setPoint2D(name: String, signal: PixelPointSignal): Promise<void>
+ * Sends a `Point2DSignal` to the Block's input with the given `name`. Returns a promise that is fulfilled if the operation succeeds and is rejected if the operation fails, such as if no input exists with the given name, or if the input's type is not a `Point2DSignal`.
+ */setPoint2D(name: String, signal: Point2DSignal): Promise<void>
  ;
 
 } 

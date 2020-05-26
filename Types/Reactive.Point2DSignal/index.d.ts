@@ -11,7 +11,7 @@ declare interface Point2DSignal {
 (set) (Not Available)
 ```
 
-Represents the X coordinate of the point.
+Represents the X coordinate of the point, or the first element of the vector.
 */ 
 x: ScalarSignal;
 /** 
@@ -20,9 +20,27 @@ x: ScalarSignal;
 (set) (Not Available)
 ```
 
-Represents the Y coordinate of the point.
+Represents the Y coordinate of the point, or the second element of the vector.
 */ 
 y: ScalarSignal;
+/** 
+* ```
+(get) width: ScalarSignal
+(set) (Not Available)
+```
+
+Represents the width of the size, or the first element of the vector.
+*/ 
+width: ScalarSignal;
+/** 
+* ```
+(get) height: ScalarSignal
+(set) (Not Available)
+```
+
+Represents the width of the size, or the second element of the vector.
+*/ 
+height: ScalarSignal;
 /** 
 *  
  * history(framesCount: number): Point2DSignalHistory
@@ -159,15 +177,11 @@ sum(x: VectorSignal, y: VectorSignal): VectorSignal
 
 /** 
 *  
- * reflect(incident: VectorSignal, normal: VectorSignal): VectorSignal
  * reflect(normal: VectorSignal): VectorSignal
  *  
  * 
  * Calculates the reflection direction for an incident vector and a normal as a `VectorSignal`.
- */reflect(incident: VectorSignal, normal: VectorSignal): VectorSignal
- ;
-
-reflect(normal: VectorSignal): VectorSignal
+ */reflect(normal: VectorSignal): VectorSignal
  ;
 
 /** 
@@ -283,15 +297,11 @@ mul(x: VectorSignal, y: VectorSignal): VectorSignal
 
 /** 
 *  
- * normalize(v: VectorSignal): VectorSignal
  * normalize(): VectorSignal
  *  
  * 
  * Returns the normalized (unit) vector in the direction of the original vector as a `VectorSignal`.
- */normalize(v: VectorSignal): VectorSignal
- ;
-
-normalize(): VectorSignal
+ */normalize(): VectorSignal
  ;
 
 /** 

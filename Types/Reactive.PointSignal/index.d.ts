@@ -46,15 +46,11 @@ z: ScalarSignal;
 
 /** 
 *  
- * normalize(v: VectorSignal): VectorSignal
  * normalize(): VectorSignal
  *  
  * 
  * Returns the normalized (unit) vector in the direction of the original vector as a `VectorSignal`.
- */normalize(v: VectorSignal): VectorSignal
- ;
-
-normalize(): VectorSignal
+ */normalize(): VectorSignal
  ;
 
 /** 
@@ -193,15 +189,11 @@ sum(x: VectorSignal, y: VectorSignal): VectorSignal
 
 /** 
 *  
- * reflect(incident: VectorSignal, normal: VectorSignal): VectorSignal
  * reflect(normal: VectorSignal): VectorSignal
  *  
  * 
  * Calculates the reflection direction for an incident vector and a normal as a `VectorSignal`.
- */reflect(incident: VectorSignal, normal: VectorSignal): VectorSignal
- ;
-
-reflect(normal: VectorSignal): VectorSignal
+ */reflect(normal: VectorSignal): VectorSignal
  ;
 
 /** 

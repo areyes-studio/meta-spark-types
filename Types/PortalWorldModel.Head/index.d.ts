@@ -1,80 +1,80 @@
-/// <reference path="../Reactive.PixelPointSignal/index.d.ts" />
+/// <reference path="../Reactive.Point2DSignal/index.d.ts" />
 declare interface Head {
 /** 
 * 
 ```
-(get) top: PixelPointSignal
+(get) top: Point2DSignal
 (set) (Not Available)
 ```
 
 Gets the 2D head top position.
 
 */ 
-top: PixelPointSignal;
+top: Point2DSignal;
 /** 
 * 
 ```
-(get) leftEar: PixelPointSignal
+(get) leftEar: Point2DSignal
 (set) (Not Available)
 ```
 
 Gets the 2D left ear position.
 
 */ 
-leftEar: PixelPointSignal;
+leftEar: Point2DSignal;
 /** 
 * 
 ```
-(get) nose: PixelPointSignal
+(get) nose: Point2DSignal
 (set) (Not Available)
 ```
 
 Gets the 2D nose position.
 
 */ 
-nose: PixelPointSignal;
+nose: Point2DSignal;
 /** 
 * 
 ```
-(get) rightEar: PixelPointSignal
+(get) rightEar: Point2DSignal
 (set) (Not Available)
 ```
 
 Gets the 2D right ear position.
 
 */ 
-rightEar: PixelPointSignal;
+rightEar: Point2DSignal;
 /** 
 * 
 ```
-(get) rightEye: PixelPointSignal
+(get) rightEye: Point2DSignal
 (set) (Not Available)
 ```
 
 Gets the 2D right eye position.
 
 */ 
-rightEye: PixelPointSignal;
+rightEye: Point2DSignal;
 /** 
 * 
 ```
-(get) leftEye: PixelPointSignal
+(get) leftEye: Point2DSignal
 (set) (Not Available)
 ```
 
 Gets the 2D left eye position.
 
 */ 
-leftEye: PixelPointSignal;
+leftEye: Point2DSignal;
 /** 
 * 
 ```
-(get) chin: PixelPointSignal
+(get) chin: Point2DSignal
 (set) (Not Available)
 ```
 
 Gets the 2D chin position.
 
 */ 
-chin: PixelPointSignal;
+chin: Point2DSignal;
 } 

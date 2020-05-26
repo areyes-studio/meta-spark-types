@@ -1,6 +1,6 @@
 /// <reference path="../Reactive.BoolSignal/index.d.ts" />
 /// <reference path="../Reactive.InsetsSignal/index.d.ts" />
-/// <reference path="../Reactive.PixelSizeSignal/index.d.ts" />
+/// <reference path="../Reactive.Point2DSignal/index.d.ts" />
 /// <reference path="../Signal<CameraPosition>/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 declare namespace CameraInfoModule {
@@ -33,13 +33,13 @@ Specifies an `InsetsSignal` indicating the insets of the effect safe area.
 const effectSafeAreaInsets: InsetsSignal;
 /** 
 * ```
-(get) previewSize: PixelSizeSignal
+(get) previewSize: Point2DSignal
 (set) (Not Available)
 ```
 
-Specifies a `PixelSizeSignal` describing the size of the preview, in pixels.
+Specifies a `Point2DSignal` describing the size of the preview, in pixels.
 */ 
-const previewSize: PixelSizeSignal;
+const previewSize: Point2DSignal;
 /** 
 * ```
 (get) captureDevicePosition: Signal<CameraPosition>

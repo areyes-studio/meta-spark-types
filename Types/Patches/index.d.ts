@@ -10,7 +10,7 @@
 /// <reference path="../Reactive.EventSource/index.d.ts" />
 /// <reference path="../Reactive.BoolSignal/index.d.ts" />
 /// <reference path="../Reactive.RgbaSignal/index.d.ts" />
-/// <reference path="../Reactive.PixelPointSignal/index.d.ts" />
+/// <reference path="../Reactive.Point2DSignal/index.d.ts" />
 declare namespace PatchesModule {
 /** 
 * 
@@ -135,20 +135,20 @@ const outputs: PatchesOutputs;
 
 /** 
 *  
- * getPoint2DValue(name: String): PixelPointSignal
+ * getPoint2DValue(name: String): Point2DSignal
  *  
  * 
- * Returns a `PixelPointSignal` that is exported with `name` from the Patch Editor.
- */function getPoint2DValue(name: String): PixelPointSignal
+ * Returns a `Point2DSignal` that is exported with `name` from the Patch Editor.
+ */function getPoint2DValue(name: String): Point2DSignal
  ;
 
 /** 
 *  
- * setPoint2DValue(name: String, signal: PixelPointSignal): void
+ * setPoint2DValue(name: String, signal: Point2DSignal): void
  *  
  * 
- * Sends a `PixelPointSignal` that is imported with `name` into the Patch Editor.
- */function setPoint2DValue(name: String, signal: PixelPointSignal): void
+ * Sends a `Point2DSignal` that is imported with `name` into the Patch Editor.
+ */function setPoint2DValue(name: String, signal: Point2DSignal): void
  ;
 
 /** 

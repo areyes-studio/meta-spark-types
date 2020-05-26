@@ -1,25 +1,25 @@
-/// <reference path="../Reactive.PixelPointSignal/index.d.ts" />
+/// <reference path="../Reactive.Point2DSignal/index.d.ts" />
 declare interface LeftLeg {
 /** 
 * 
 ```
-(get) knee: PixelPointSignal
+(get) knee: Point2DSignal
 (set) (Not Available)
 ```
 
 Gets the 2D knee position.
 
 */ 
-knee: PixelPointSignal;
+knee: Point2DSignal;
 /** 
 * 
 ```
-(get) foot: PixelPointSignal
+(get) foot: Point2DSignal
 (set) (Not Available)
 ```
 
 Gets the 2D foot position.
 
 */ 
-foot: PixelPointSignal;
+foot: Point2DSignal;
 } 

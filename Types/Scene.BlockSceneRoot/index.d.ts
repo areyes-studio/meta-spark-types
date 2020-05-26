@@ -6,7 +6,7 @@
 /// <reference path="../Reactive.BoolSignal/index.d.ts" />
 /// <reference path="../Reactive.StringSignal/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
-/// <reference path="../Reactive.PixelPointSignal/index.d.ts" />
+/// <reference path="../Reactive.Point2DSignal/index.d.ts" />
 /// <reference path="../Reactive.ShaderSignal/index.d.ts" />
 /// <reference path="../Reactive.ColorSignal/index.d.ts" />
 /// <reference path="../Reactive.VectorSignal/index.d.ts" />
@@ -89,11 +89,11 @@ outputs: BlockInstanceOutputs;
 
 /** 
 *  
- * setPixelPointInput(name: String, signal: PixelPointSignal): void
+ * setPixelPointInput(name: String, signal: Point2DSignal): void
  *  
  * 
- * Binds a `PixelPointSignal` to a named Block input.
- */setPixelPointInput(name: String, signal: PixelPointSignal): void
+ * Binds a `Point2DSignal` to a named Block input.
+ */setPixelPointInput(name: String, signal: Point2DSignal): void
  ;
 
 /** 
@@ -143,11 +143,11 @@ outputs: BlockInstanceOutputs;
 
 /** 
 *  
- * getPixelPointOutput(name: String): PixelPointSignal
+ * getPixelPointOutput(name: String): Point2DSignal
  *  
  * 
- * Returns a `PixelPointSignal` for a named Block output.
- */getPixelPointOutput(name: String): PixelPointSignal
+ * Returns a `Point2DSignal` for a named Block output.
+ */getPixelPointOutput(name: String): Point2DSignal
  ;
 
 /** 

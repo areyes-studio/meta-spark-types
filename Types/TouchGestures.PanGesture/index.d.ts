@@ -1,25 +1,25 @@
-/// <reference path="../Reactive.PixelPointSignal/index.d.ts" />
+/// <reference path="../Reactive.Point2DSignal/index.d.ts" />
 declare interface PanGesture {
 /** 
 * ```
-(get) location: PixelPointSignal
+(get) location: Point2DSignal
 (set) (Not Available)
 ```
 
-Specifies a [`PixelPointSignal`](/docs/camera-effects/reference/reactive_module/pixelpointsignal_class) that represents the location of the gesture in screen coordinates.
+Specifies a `Point2DSignal` that represents the location of the gesture in screen coordinates.
 
 **Note**: The location is always specified in the screen coordinates, even if the event was emitted as a result of panning on a specific object.
 */ 
-location: PixelPointSignal;
+location: Point2DSignal;
 /** 
 * ```
-(get) translation: PixelPointSignal
+(get) translation: Point2DSignal
 (set) (Not Available)
 ```
 
-Specifies a [`PixelPointSignal`](/docs/camera-effects/reference/reactive_module/pixelpointsignal_class) indicating the position of the gesture, in screen coordinates, relative to the start point.
+Specifies a `Point2DSignal` indicating the position of the gesture, in screen coordinates, relative to the start point.
 
 **Note**: The translation is always specified in the screen coordinates, even if the event was emitted as a result of panning on a specific object.
 */ 
-translation: PixelPointSignal;
+translation: Point2DSignal;
 } 

@@ -3,7 +3,7 @@
 /// <reference path="../Reactive.Point2D/index.d.ts" />
 /// <reference path="../Reactive.Point3D/index.d.ts" />
 /// <reference path="../number/index.d.ts" />
-/// <reference path="../Reactive.PixelPointSignal/index.d.ts" />
+/// <reference path="../Reactive.Point2DSignal/index.d.ts" />
 /// <reference path="../void/index.d.ts" />
 /// <reference path="../Textures.ImageTexture/index.d.ts" />
 /// <reference path="../Textures.ExternalTexture/index.d.ts" />
@@ -46,7 +46,7 @@ trackingMode: TrackingMode;
 *  
  * trackPoint(screenLocation: Point2D): void
  * trackPoint(screenX: number, screenY: number): void
- * trackPoint(screenLocation: PixelPointSignal, gestureState: StringSignal): void
+ * trackPoint(screenLocation: Point2DSignal, gestureState: StringSignal): void
  *  
  * 
  * PlaneTracker origin is bound to a point in 3d space, located on detected plane.
@@ -66,7 +66,7 @@ trackingMode: TrackingMode;
 trackPoint(screenX: number, screenY: number): void
  ;
 
-trackPoint(screenLocation: PixelPointSignal, gestureState: StringSignal | string): void
+trackPoint(screenLocation: Point2DSignal, gestureState: StringSignal | string): void
  ;
 
 /** 

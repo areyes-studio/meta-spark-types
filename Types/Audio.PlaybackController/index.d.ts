@@ -12,10 +12,10 @@ declare interface PlaybackController {
 
 /** 
 *  
- * loop(): void
- *  
+ *     loop(): void
+ *      
  * 
- * Deprecated: Please use the `setLooping` method. Loop the playback controller, sound comes through all speakers (also known as Audio Source in the past) that reference the playback controller.
+ *     Deprecated: Please use the `setLooping` method. Loop the playback controller, sound comes through all speakers (also known as Audio Source in the past) that reference the playback controller.
  */loop(): void
  ;
 
@@ -39,18 +39,18 @@ declare interface PlaybackController {
 
 /** 
 *  
- * play(): void
- *  
+ *     play(): void
+ *      
  * 
- * Deprecated: Please use the `setPlaying` method. Play the playback controller, sound comes through all speakers (also known as Audio Source in the past) that reference the playback controller.
+ *     Deprecated: Please use the `setPlaying` method. Play the playback controller, sound comes through all speakers (also known as Audio Source in the past) that reference the playback controller.
  */play(): void
  ;
 
 /** 
 *  
- * stop(): void
- *  
- * Deprecated: Please use the `setPlaying` method to pause the audio or the `reset` method to return the audio to the beginning. Stop the playback controller.
+ *     stop(): void
+ *      
+ *     Deprecated: Please use the `setPlaying` method to pause the audio or the `reset` method to return the audio to the beginning. Stop the playback controller.
  */stop(): void
  ;
 

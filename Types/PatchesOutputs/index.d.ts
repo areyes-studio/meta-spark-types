@@ -7,7 +7,7 @@
 /// <reference path="../Reactive.PointSignal/index.d.ts" />
 /// <reference path="../Reactive.ColorSignal/index.d.ts" />
 /// <reference path="../Reactive.VectorSignal/index.d.ts" />
-/// <reference path="../Reactive.PixelPointSignal/index.d.ts" />
+/// <reference path="../Reactive.Point2DSignal/index.d.ts" />
 declare interface PatchesOutputs {
 /** 
 *  
@@ -28,11 +28,11 @@ declare interface PatchesOutputs {
 
 /** 
 *  
- * getPoint2D(name: String): Promise<PixelPointSignal>
+ * getPoint2D(name: String): Promise<Point2DSignal>
  *  
  * 
- * Returns a promise that is resolved with a `PixelPointSignal` existing in the Patch Editor under specified `name`.
- */getPoint2D(name: String): Promise<PixelPointSignal>
+ * Returns a promise that is resolved with a `Point2DSignal` existing in the Patch Editor under specified `name`.
+ */getPoint2D(name: String): Promise<Point2DSignal>
  ;
 
 /** 
@@ -138,11 +138,11 @@ declare interface PatchesOutputs {
  ;
 
 /** 
-*  getPoint2DOrFallback(name: String, fallback: PixelPointSignal): PixelPointSignal
+*  getPoint2DOrFallback(name: String, fallback: Point2DSignal): Point2DSignal
  *  
  * 
- * Returns a `PixelPointSignal` existing in the Patch Editor under specified `name` or `fallback` on error.
- */getPoint2DOrFallback(name: String, fallback: PixelPointSignal): PixelPointSignal
+ * Returns a `Point2DSignal` existing in the Patch Editor under specified `name` or `fallback` on error.
+ */getPoint2DOrFallback(name: String, fallback: Point2DSignal): Point2DSignal
  ;
 
 } 

@@ -27,7 +27,6 @@
 /// <reference path="../BoolSignalHistory/index.d.ts" />
 /// <reference path="../StringSignalHistory/index.d.ts" />
 /// <reference path="../Reactive.RgbaSignal/index.d.ts" />
-/// <reference path="../Reactive.PixelPointSignal/index.d.ts" />
 /// <reference path="../Reactive.HsvaSignal/index.d.ts" />
 /// <reference path="../Reactive.Rotation/index.d.ts" />
 /// <reference path="../Reactive.ScaleSignal/index.d.ts" />
@@ -265,15 +264,11 @@ function neg(x: VectorSignal): VectorSignal
 
 /** 
 *  
- * reflect(incident: VectorSignal, normal: VectorSignal): VectorSignal
  * reflect(normal: VectorSignal): VectorSignal
  *  
  * 
  * Calculates the reflection direction for an incident vector and a normal as a `VectorSignal`.
- */function reflect(incident: VectorSignal, normal: VectorSignal): VectorSignal
- ;
-
-function reflect(normal: VectorSignal): VectorSignal
+ */function reflect(normal: VectorSignal): VectorSignal
  ;
 
 /** 
@@ -308,11 +303,11 @@ function reflect(normal: VectorSignal): VectorSignal
 
 /** 
 *  
- * point2d(x: ScalarSignal, y: ScalarSignal): PixelPointSignal
+ * point2d(x: ScalarSignal, y: ScalarSignal): Point2DSignal
  *  
  * 
- * Combines two signals and returns the result as a `PixelPointSignal`.
- */function point2d(x: ScalarSignal | number, y: ScalarSignal | number): PixelPointSignal
+ * Combines two signals and returns the result as a `Point2DSignal`.
+ */function point2d(x: ScalarSignal | number, y: ScalarSignal | number): Point2DSignal
  ;
 
 /** 
@@ -722,15 +717,11 @@ function monitorMany(signals: { [name: string]: ScalarSignal | number}, config: 
 
 /** 
 *  
- * normalize(v: VectorSignal): VectorSignal
  * normalize(): VectorSignal
  *  
  * 
  * Returns the normalized (unit) vector in the direction of the original vector as a `VectorSignal`.
- */function normalize(v: VectorSignal): VectorSignal
- ;
-
-function normalize(): VectorSignal
+ */function normalize(): VectorSignal
  ;
 
 /** 

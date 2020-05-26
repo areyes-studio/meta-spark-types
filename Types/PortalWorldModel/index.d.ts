@@ -1,5 +1,14 @@
+/// <reference path="../Reactive.BoundingBoxSignal/index.d.ts" />
 /// <reference path="../number/index.d.ts" />
 declare namespace PortalWorldModelModule {
+/** 
+* ```
+(get) crop: BoundingBoxSignal
+(set) (Not Available)
+```
+The scene crop (relative to full FOV) currently applied.
+*/ 
+const crop: BoundingBoxSignal;
 /** 
 * ```
 (get) count: number

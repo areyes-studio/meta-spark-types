@@ -3,7 +3,7 @@
 /// <reference path="../number/index.d.ts" />
 /// <reference path="../Scene.PlaneType/index.d.ts" />
 /// <reference path="../void/index.d.ts" />
-/// <reference path="../Reactive.PixelPointSignal/index.d.ts" />
+/// <reference path="../Reactive.Point2DSignal/index.d.ts" />
 declare interface LineBasedPlaneTracker {
 /** 
 * ```
@@ -54,7 +54,7 @@ resetPlane(screenX: number, screenY: number, planeType : PlaneType): void
 *  
  * movePlane(screenLocation: Point2D): void
  * movePlane(screenX: number, screenY: number): void
- * movePlane(screenLocation: PixelPointSignal, gestureState: StringSignal): void
+ * movePlane(screenLocation: Point2DSignal, gestureState: StringSignal): void
  *  
  * 
  * Moves this object along an existing 3d plane.
@@ -72,7 +72,7 @@ resetPlane(screenX: number, screenY: number, planeType : PlaneType): void
 movePlane(screenX: number, screenY: number): void
  ;
 
-movePlane(screenLocation: PixelPointSignal, gestureState: StringSignal | string): void
+movePlane(screenLocation: Point2DSignal, gestureState: StringSignal | string): void
  ;
 
 /** 

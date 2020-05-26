@@ -494,15 +494,11 @@ sub(x: PointSignal, y: PointSignal): VectorSignal
 
 /** 
 *  
- * reflect(incident: VectorSignal, normal: VectorSignal): VectorSignal
  * reflect(normal: VectorSignal): VectorSignal
  *  
  * 
  * Calculates the reflection direction for an incident vector and a normal as a `VectorSignal`.
- */reflect(incident: VectorSignal, normal: VectorSignal): VectorSignal
- ;
-
-reflect(normal: VectorSignal): VectorSignal
+ */reflect(normal: VectorSignal): VectorSignal
  ;
 
 /** 
@@ -550,15 +546,11 @@ mul(x: VectorSignal, y: VectorSignal): VectorSignal
 
 /** 
 *  
- * normalize(v: VectorSignal): VectorSignal
  * normalize(): VectorSignal
  *  
  * 
  * Returns the normalized (unit) vector in the direction of the original vector as a `VectorSignal`.
- */normalize(v: VectorSignal): VectorSignal
- ;
-
-normalize(): VectorSignal
+ */normalize(): VectorSignal
  ;
 
 /** 

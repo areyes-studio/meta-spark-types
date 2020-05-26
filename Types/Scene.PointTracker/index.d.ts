@@ -1,7 +1,7 @@
 /// <reference path="../Reactive.StringSignal/index.d.ts" />
 /// <reference path="../Reactive.Point2D/index.d.ts" />
 /// <reference path="../number/index.d.ts" />
-/// <reference path="../Reactive.PixelPointSignal/index.d.ts" />
+/// <reference path="../Reactive.Point2DSignal/index.d.ts" />
 /// <reference path="../void/index.d.ts" />
 declare interface PointTracker {
 /** 
@@ -23,7 +23,7 @@ confidence: StringSignal;
 *  
  * trackPoint(screenLocation: Point2D): void
  * trackPoint(screenX: number, screenY: number): void
- * trackPoint(screenLocation: PixelPointSignal, gestureState: StringSignal): void
+ * trackPoint(screenLocation: Point2DSignal, gestureState: StringSignal): void
  *  
  * 
  * PointTracker origin is bound to a point in 3d space, located on detected point.
@@ -43,7 +43,7 @@ confidence: StringSignal;
 trackPoint(screenX: number, screenY: number): void
  ;
 
-trackPoint(screenLocation: PixelPointSignal, gestureState: StringSignal | string): void
+trackPoint(screenLocation: Point2DSignal, gestureState: StringSignal | string): void
  ;
 
 } 

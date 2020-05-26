@@ -1,36 +1,36 @@
-/// <reference path="../Reactive.PixelPointSignal/index.d.ts" />
+/// <reference path="../Reactive.Point2DSignal/index.d.ts" />
 declare interface LeftArm {
 /** 
 * 
 ```
-(get) shoulder: PixelPointSignal
+(get) shoulder: Point2DSignal
 (set) (Not Available)
 ```
 
 Gets the 2D shoulder position.
 
 */ 
-shoulder: PixelPointSignal;
+shoulder: Point2DSignal;
 /** 
 * 
 ```
-(get) elbow: PixelPointSignal
+(get) elbow: Point2DSignal
 (set) (Not Available)
 ```
 
 Gets the 2D elbow position.
 
 */ 
-elbow: PixelPointSignal;
+elbow: Point2DSignal;
 /** 
 * 
 ```
-(get) wrist: PixelPointSignal
+(get) wrist: Point2DSignal
 (set) (Not Available)
 ```
 
 Gets the 2D wrist position.
 
 */ 
-wrist: PixelPointSignal;
+wrist: Point2DSignal;
 } 

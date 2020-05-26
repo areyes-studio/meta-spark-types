@@ -1,25 +1,25 @@
-/// <reference path="../Reactive.PixelPointSignal/index.d.ts" />
+/// <reference path="../Reactive.Point2DSignal/index.d.ts" />
 declare interface Torso {
 /** 
 * 
 ```
-(get) leftHip: PixelPointSignal
+(get) leftHip: Point2DSignal
 (set) (Not Available)
 ```
 
 Gets the 2D left hip position.
 
 */ 
-leftHip: PixelPointSignal;
+leftHip: Point2DSignal;
 /** 
 * 
 ```
-(get) rightHip: PixelPointSignal
+(get) rightHip: Point2DSignal
 (set) (Not Available)
 ```
 
 Gets the 2D right hip position.
 
 */ 
-rightHip: PixelPointSignal;
+rightHip: Point2DSignal;
 } 

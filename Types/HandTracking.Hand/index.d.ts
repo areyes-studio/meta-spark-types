@@ -1,203 +1,203 @@
 /// <reference path="../Reactive.TransformSignal/index.d.ts" />
-/// <reference path="../Reactive.PointSignal/index.d.ts" />
 /// <reference path="../Reactive.StringSignal/index.d.ts" />
+/// <reference path="../Reactive.PointSignal/index.d.ts" />
 declare interface Hand {
 /** 
 * ```
-                       (get) cameraTransform: TransformSignal
-                       (set) (Not Available)
-                       ```
+(get) cameraTransform: TransformSignal
+(set) (Not Available)
+```
 
-                       Specifies the hand transformation relative to camera coordinate system.
+Specifies the hand transformation relative to camera coordinate system.
 */ 
 cameraTransform: TransformSignal;
 /** 
 * ```
-                                (get) middleFingerProximal: PointSignal
-                                (set) (Not Available)
-                                ```
+(get) gestureType: StringSignal
+(set) (Not Available)
+```
 
-                                Specifies the 3D position of the proximal joint of the middle finger.
+Specifies a `StringSignal` containing the name of the hand gesture.
 */ 
-middleFingerProximal: PointSignal;
+gestureType: StringSignal;
 /** 
 * ```
-                       (get) indexFingerTip: PointSignal
-                       (set) (Not Available)
-                       ```
+(get) indexFingerBase: PointSignal
+(set) (Not Available)
+```
 
-                       Specifies the 3D position of the tip of the index finger.
-*/ 
-indexFingerTip: PointSignal;
-/** 
-* ```
-                                            (get) ringFingerRightSide: PointSignal
-                                            (set) (Not Available)
-                                            ```
-
-                                            Specifies the 3D position of the right side of the ring finger.
-*/ 
-ringFingerRightSide: PointSignal;
-/** 
-* ```
-                       (get) wrist: PointSignal
-                       (set) (Not Available)
-                       ```
-
-                       Specifies the 3D position of the wrist center point of the hand.
-*/ 
-wrist: PointSignal;
-/** 
-* ```
-                       (get) indexFingerBase: PointSignal
-                       (set) (Not Available)
-                       ```
-
-                       Specifies the 3D position of the base of the index finger.
+Specifies the 3D position of the base of the index finger.
 */ 
 indexFingerBase: PointSignal;
 /** 
 * ```
-                       (get) indexFingerProximal: PointSignal
-                       (set) (Not Available)
-                       ```
+(get) indexFingerDistal: PointSignal
+(set) (Not Available)
+```
 
-                       Specifies the 3D position of the proximal joint of the index finger.
-*/ 
-indexFingerProximal: PointSignal;
-/** 
-* ```
-                                (get) littleFingerDistal: PointSignal
-                                (set) (Not Available)
-                                ```
-
-                                Specifies the 3D position of the distal joint of the little finger.
-*/ 
-littleFingerDistal: PointSignal;
-/** 
-* ```
-                       (get) indexFingerDistal: PointSignal
-                       (set) (Not Available)
-                       ```
-
-                       Specifies the 3D position of the distal joint of the index finger.
+Specifies the 3D position of the distal joint of the index finger.
 */ 
 indexFingerDistal: PointSignal;
 /** 
 * ```
-                                (get) ringFingerProximal: PointSignal
-                                (set) (Not Available)
-                                ```
+(get) indexFingerProximal: PointSignal
+(set) (Not Available)
+```
 
-                                Specifies the 3D position of the proximal joint of the ring finger.
+Specifies the 3D position of the proximal joint of the index finger.
 */ 
-ringFingerProximal: PointSignal;
+indexFingerProximal: PointSignal;
 /** 
 * ```
-                                (get) middleFingerBase: PointSignal
-                                (set) (Not Available)
-                                ```
+(get) indexFingerTip: PointSignal
+(set) (Not Available)
+```
 
-                                Specifies the 3D position of the base of the middle finger.
+Specifies the 3D position of the tip of the index finger.
 */ 
-middleFingerBase: PointSignal;
+indexFingerTip: PointSignal;
 /** 
 * ```
-                                (get) littleFingerBase: PointSignal
-                                (set) (Not Available)
-                                ```
+(get) littleFingerBase: PointSignal
+(set) (Not Available)
+```
 
-                                Specifies the 3D position of the base of the little finger.
+Specifies the 3D position of the base of the little finger.
 */ 
 littleFingerBase: PointSignal;
 /** 
 * ```
-                                (get) middleFingerDistal: PointSignal
-                                (set) (Not Available)
-                                ```
+(get) littleFingerDistal: PointSignal
+(set) (Not Available)
+```
 
-                                Specifies the 3D position of the distal joint of the middle finger.
+Specifies the 3D position of the distal joint of the little finger.
 */ 
-middleFingerDistal: PointSignal;
+littleFingerDistal: PointSignal;
 /** 
 * ```
-                                (get) ringFingerTip: PointSignal
-                                (set) (Not Available)
-                                ```
+(get) littleFingerProximal: PointSignal
+(set) (Not Available)
+```
 
-                                Specifies the 3D position of the tip of the ring finger.
-*/ 
-ringFingerTip: PointSignal;
-/** 
-* ```
-                                (get) middleFingerTip: PointSignal
-                                (set) (Not Available)
-                                ```
-
-                                Specifies the 3D position of the tip of the middle finger.
-*/ 
-middleFingerTip: PointSignal;
-/** 
-* ```
-                                (get) ringFingerDistal: PointSignal
-                                (set) (Not Available)
-                                ```
-
-                                Specifies the 3D position of the distal joint of the ring finger.
-*/ 
-ringFingerDistal: PointSignal;
-/** 
-* ```
-                                (get) ringFingerBase: PointSignal
-                                (set) (Not Available)
-                                ```
-
-                                Specifies the 3D position of the base of the ring finger.
-*/ 
-ringFingerBase: PointSignal;
-/** 
-* ```
-                                (get) littleFingerTip: PointSignal
-                                (set) (Not Available)
-                                ```
-
-                                Specifies the 3D position of the tip of the little finger.
-*/ 
-littleFingerTip: PointSignal;
-/** 
-* ```
-                                (get) littleFingerProximal: PointSignal
-                                (set) (Not Available)
-                                ```
-
-                                Specifies the 3D position of the proximal joint of the little finger.
+Specifies the 3D position of the proximal joint of the little finger.
 */ 
 littleFingerProximal: PointSignal;
 /** 
 * ```
-                                (get) thumbTip: PointSignal
-                                (set) (Not Available)
-                                ```
+(get) littleFingerTip: PointSignal
+(set) (Not Available)
+```
 
-                                Specifies the 3D position of the tip of the thumb finger.
+Specifies the 3D position of the tip of the little finger.
 */ 
-thumbTip: PointSignal;
+littleFingerTip: PointSignal;
 /** 
 * ```
-                                            (get) ringFingerLeftSide: PointSignal
-                                            (set) (Not Available)
-                                            ```
+(get) middleFingerBase: PointSignal
+(set) (Not Available)
+```
 
-                                            Specifies the 3D position of the left side of the ring finger.
+Specifies the 3D position of the base of the middle finger.
+*/ 
+middleFingerBase: PointSignal;
+/** 
+* ```
+(get) middleFingerDistal: PointSignal
+(set) (Not Available)
+```
+
+Specifies the 3D position of the distal joint of the middle finger.
+*/ 
+middleFingerDistal: PointSignal;
+/** 
+* ```
+(get) middleFingerProximal: PointSignal
+(set) (Not Available)
+```
+
+Specifies the 3D position of the proximal joint of the middle finger.
+*/ 
+middleFingerProximal: PointSignal;
+/** 
+* ```
+(get) middleFingerTip: PointSignal
+(set) (Not Available)
+```
+
+Specifies the 3D position of the tip of the middle finger.
+*/ 
+middleFingerTip: PointSignal;
+/** 
+* ```
+(get) ringFingerBase: PointSignal
+(set) (Not Available)
+```
+
+Specifies the 3D position of the base of the ring finger.
+*/ 
+ringFingerBase: PointSignal;
+/** 
+* ```
+(get) ringFingerDistal: PointSignal
+(set) (Not Available)
+```
+
+Specifies the 3D position of the distal joint of the ring finger.
+*/ 
+ringFingerDistal: PointSignal;
+/** 
+* ```
+(get) ringFingerLeftSide: PointSignal
+(set) (Not Available)
+```
+
+Specifies the 3D position of the left side of the ring finger.
 */ 
 ringFingerLeftSide: PointSignal;
 /** 
 * ```
-                       (get) gestureType: StringSignal
-                       (set) (Not Available)
-                       ```
+(get) ringFingerProximal: PointSignal
+(set) (Not Available)
+```
 
-                       Specifies a `StringSignal` containing the name of the hand gesture.
+Specifies the 3D position of the proximal joint of the ring finger.
 */ 
-gestureType: StringSignal;
+ringFingerProximal: PointSignal;
+/** 
+* ```
+(get) ringFingerRightSide: PointSignal
+(set) (Not Available)
+```
+
+Specifies the 3D position of the right side of the ring finger.
+*/ 
+ringFingerRightSide: PointSignal;
+/** 
+* ```
+(get) ringFingerTip: PointSignal
+(set) (Not Available)
+```
+
+Specifies the 3D position of the tip of the ring finger.
+*/ 
+ringFingerTip: PointSignal;
+/** 
+* ```
+(get) thumbTip: PointSignal
+(set) (Not Available)
+```
+
+Specifies the 3D position of the tip of the thumb finger.
+*/ 
+thumbTip: PointSignal;
+/** 
+* ```
+(get) wrist: PointSignal
+(set) (Not Available)
+```
+
+Specifies the 3D position of the wrist center point of the hand.
+*/ 
+wrist: PointSignal;
 } 

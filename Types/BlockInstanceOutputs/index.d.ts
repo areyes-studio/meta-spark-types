@@ -7,7 +7,7 @@
 /// <reference path="../Reactive.PointSignal/index.d.ts" />
 /// <reference path="../Reactive.ColorSignal/index.d.ts" />
 /// <reference path="../Reactive.VectorSignal/index.d.ts" />
-/// <reference path="../Reactive.PixelPointSignal/index.d.ts" />
+/// <reference path="../Reactive.Point2DSignal/index.d.ts" />
 /// <reference path="../Reactive.ShaderSignal/index.d.ts" />
 declare interface BlockInstanceOutputs {
 /** 
@@ -45,11 +45,11 @@ declare interface BlockInstanceOutputs {
 
 /** 
 *  
- * getPoint2D(name: String): Promise<PixelPointSignal>
+ * getPoint2D(name: String): Promise<Point2DSignal>
  *  
  * 
- * Returns a promise that is resolved with a `PixelPointSignal` from the Block output with the given `name`. Fails the promise if no output with that `name` is present in the Block or if the output with that `name` is not of type `PixelPointSignal`.
- */getPoint2D(name: String): Promise<PixelPointSignal>
+ * Returns a promise that is resolved with a `Point2DSignal` from the Block output with the given `name`. Fails the promise if no output with that `name` is present in the Block or if the output with that `name` is not of type `Point2DSignal`.
+ */getPoint2D(name: String): Promise<Point2DSignal>
  ;
 
 /** 
@@ -139,11 +139,11 @@ declare interface BlockInstanceOutputs {
  ;
 
 /** 
-*  getPoint2DOrFallback(name: String, fallback: PixelPointSignal): PixelPointSignal
+*  getPoint2DOrFallback(name: String, fallback: Point2DSignal): Point2DSignal
  *  
  * 
- * Returns a `PixelPointSignal` from the Block output with the given `name`. Returns the `fallback` if any error happens, such as if no output with that `name` is present in the Block, or if the output with that `name` is not of type `PixelPointSignal`.
- */getPoint2DOrFallback(name: String, fallback: PixelPointSignal): PixelPointSignal
+ * Returns a `Point2DSignal` from the Block output with the given `name`. Returns the `fallback` if any error happens, such as if no output with that `name` is present in the Block, or if the output with that `name` is not of type `Point2DSignal`.
+ */getPoint2DOrFallback(name: String, fallback: Point2DSignal): Point2DSignal
  ;
 
 /** 

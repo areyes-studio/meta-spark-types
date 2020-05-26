@@ -7,7 +7,7 @@
 /// <reference path="../Reactive.EventSource/index.d.ts" />
 /// <reference path="../Reactive.PointSignal/index.d.ts" />
 /// <reference path="../Reactive.VectorSignal/index.d.ts" />
-/// <reference path="../Reactive.PixelPointSignal/index.d.ts" />
+/// <reference path="../Reactive.Point2DSignal/index.d.ts" />
 declare interface PatchesInputs {
 /** 
 *  
@@ -88,13 +88,13 @@ declare interface PatchesInputs {
 
 /** 
 *  
- * setPoint2D(name: String, signal: PixelPointSignal): Promise<void>
+ * setPoint2D(name: String, signal: Point2DSignal): Promise<void>
  *  
  * 
- * Sends a `PixelPointSignal` to the Patch Editor under specified `name`.
+ * Sends a `Point2DSignal` to the Patch Editor under specified `name`.
  * 
  * **Note**: 
- */setPoint2D(name: String, signal: PixelPointSignal): Promise<void>
+ */setPoint2D(name: String, signal: Point2DSignal): Promise<void>
  ;
 
 } 
