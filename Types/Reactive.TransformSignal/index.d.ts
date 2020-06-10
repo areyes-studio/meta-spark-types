@@ -5,7 +5,7 @@
 /// <reference path="../Reactive.TransformSignal/index.d.ts" />
 /// <reference path="../this/index.d.ts" />
 /// <reference path="../number/index.d.ts" />
-/// <reference path="../TransformSignalHistory/index.d.ts" />
+/// <reference path="../Reactive.TransformSignalHistory/index.d.ts" />
 declare interface TransformSignal {
 /** 
 * ```

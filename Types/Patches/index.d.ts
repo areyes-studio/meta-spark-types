@@ -1,5 +1,5 @@
-/// <reference path="../PatchesInputs/index.d.ts" />
-/// <reference path="../PatchesOutputs/index.d.ts" />
+/// <reference path="../Patches.PatchesInputs/index.d.ts" />
+/// <reference path="../Patches.PatchesOutputs/index.d.ts" />
 /// <reference path="../String/index.d.ts" />
 /// <reference path="../Reactive.PointSignal/index.d.ts" />
 /// <reference path="../void/index.d.ts" />

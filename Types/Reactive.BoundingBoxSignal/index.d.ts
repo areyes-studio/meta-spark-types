@@ -1,7 +1,7 @@
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 /// <reference path="../Reactive.Point2DSignal/index.d.ts" />
 /// <reference path="../number/index.d.ts" />
-/// <reference path="../BoundingBoxSignalHistory/index.d.ts" />
+/// <reference path="../Reactive.BoundingBoxSignalHistory/index.d.ts" />
 declare interface BoundingBoxSignal {
 /** 
 * ```

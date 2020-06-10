@@ -1,5 +1,5 @@
 /// <reference path="../number/index.d.ts" />
-/// <reference path="../PrimitiveOrShaderSignalHistory/index.d.ts" />
+/// <reference path="../Reactive.PrimitiveOrShaderSignalHistory/index.d.ts" />
 declare interface PrimitiveOrShaderSignal {
 /** 
 *  

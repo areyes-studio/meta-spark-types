@@ -30,6 +30,8 @@ confidence: StringSignal;
  ```
 
  Specifies if this tracker object should track horizontal plane or moving object.
+
+ **See Also**: `PlaneTracker.mode` and `PlaneTracker.setMode`.
 */ 
 trackingMode: TrackingMode;
 /** 

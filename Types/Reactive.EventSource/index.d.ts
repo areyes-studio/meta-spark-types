@@ -2,7 +2,7 @@
 /// <reference path="../Reactive.Subscription/index.d.ts" />
 /// <reference path="../number/index.d.ts" />
 /// <reference path="../Reactive.EventSource/index.d.ts" />
-/// <reference path="../EventSourceHistory/index.d.ts" />
+/// <reference path="../Reactive.EventSourceHistory/index.d.ts" />
 /// <reference path="../string/index.d.ts" />
 declare interface EventSource {
 /** 

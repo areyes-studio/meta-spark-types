@@ -1,5 +1,5 @@
 /// <reference path="../Reactive.BoolSignal/index.d.ts" />
-/// <reference path="../Reactive.InsetsSignal/index.d.ts" />
+/// <reference path="../Reactive.Point4DSignal/index.d.ts" />
 /// <reference path="../Reactive.Point2DSignal/index.d.ts" />
 /// <reference path="../Signal<CameraPosition>/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
@@ -24,13 +24,13 @@ Specifies a `BoolSignal` that indicates whether the camera is capturing a photo.
 const isCapturingPhoto: BoolSignal;
 /** 
 * ```
-(get) effectSafeAreaInsets: InsetsSignal
+(get) effectSafeAreaInsets: Point4DSignal
 (set) (Not Available)
 ```
 
-Specifies an `InsetsSignal` indicating the insets of the effect safe area.
+Specifies a `Point4DSignal` indicating the insets of the effect safe area.
 */ 
-const effectSafeAreaInsets: InsetsSignal;
+const effectSafeAreaInsets: Point4DSignal;
 /** 
 * ```
 (get) previewSize: Point2DSignal

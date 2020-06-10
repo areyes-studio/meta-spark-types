@@ -1,7 +1,7 @@
 /// <reference path="../Reactive.EulerAnglesSignal/index.d.ts" />
 /// <reference path="../number/index.d.ts" />
 /// <reference path="../Array/index.d.ts" />
-/// <reference path="../RotationSignalHistory/index.d.ts" />
+/// <reference path="../Reactive.RotationSignalHistory/index.d.ts" />
 declare interface RotationSignal {
 /** 
 * ```

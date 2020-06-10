@@ -5,7 +5,7 @@
 /// <reference path="../Reactive.StringSignal/index.d.ts" />
 /// <reference path="../number/index.d.ts" />
 /// <reference path="../Array/index.d.ts" />
-/// <reference path="../BoolSignalHistory/index.d.ts" />
+/// <reference path="../Reactive.BoolSignalHistory/index.d.ts" />
 /// <reference path="../ConstBoolSignal/index.d.ts" />
 /// <reference path="../this/index.d.ts" />
 declare interface BoolSignal {
@@ -33,13 +33,13 @@ lastValue: boolean;
 
 /** 
 *  
- * or(lhs: BoolSignal, rhs: BoolSignal): BoolSignal
+ * or(other: BoolSignal): BoolSignal
  *  
  * 
  * Returns a signal with the value that is the logical disjunction of the values of the given signals. It is `true` every time at least one of the input signals is `true` and `false` at all other times.
  * 
- * **See Also**: `BoolSignal.or`
- */or(lhs: BoolSignal | boolean, rhs: BoolSignal | boolean): BoolSignal
+ * **See Also**: `ReactiveModule.or`
+ */or(other: BoolSignal | boolean): BoolSignal
  ;
 
 /** 
@@ -155,13 +155,13 @@ history(framesCount: number, initialValues: Array<boolean>): BoolSignalHistory
 
 /** 
 *  
- *  and(lhs: BoolSignal, rhs: BoolSignal): BoolSignal
- *   
+ * and(other: BoolSignal): BoolSignal
+ *  
  * 
- *  Returns a signal with the value that is the logical conjunction of the values of the given signals. It is `true` every time both input signals are `true` and `false` at all other times.
+ * Returns a signal with the value that is the logical conjunction of the values of the given signals. It is `true` every time both input signals are `true` and `false` at all other times.
  * 
- *  **See Also**: `BoolSignal.and`
- */and(lhs: BoolSignal | boolean, rhs: BoolSignal | boolean): BoolSignal
+ * **See Also**: `ReactiveModule.and`
+ */and(other: BoolSignal | boolean): BoolSignal
  ;
 
 /** 

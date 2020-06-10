@@ -63,7 +63,7 @@ id: StringSignal;
 (set) (Not Available)
 ```
 
-A `boolSignal` indicating whether the face was tracked this frame.
+A `BoolSignal` indicating whether the face was tracked this frame.
 */ 
 isTracked: BoolSignal;
 /** 

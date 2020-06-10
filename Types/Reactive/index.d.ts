@@ -13,19 +13,19 @@
 /// <reference path="../Reactive.BoundingBoxSignal/index.d.ts" />
 /// <reference path="../Reactive.TransformSignal/index.d.ts" />
 /// <reference path="../Reactive.RotationSignal/index.d.ts" />
-/// <reference path="../ShaderSignalHistory/index.d.ts" />
-/// <reference path="../PrimitiveOrShaderSignalHistory/index.d.ts" />
-/// <reference path="../EventSourceHistory/index.d.ts" />
-/// <reference path="../Point2DSignalHistory/index.d.ts" />
-/// <reference path="../PointSignalHistory/index.d.ts" />
-/// <reference path="../VectorSignalHistory/index.d.ts" />
-/// <reference path="../Point4DSignalHistory/index.d.ts" />
-/// <reference path="../BoundingBoxSignalHistory/index.d.ts" />
-/// <reference path="../TransformSignalHistory/index.d.ts" />
-/// <reference path="../RotationSignalHistory/index.d.ts" />
-/// <reference path="../ScalarSignalHistory/index.d.ts" />
-/// <reference path="../BoolSignalHistory/index.d.ts" />
-/// <reference path="../StringSignalHistory/index.d.ts" />
+/// <reference path="../Reactive.ShaderSignalHistory/index.d.ts" />
+/// <reference path="../Reactive.PrimitiveOrShaderSignalHistory/index.d.ts" />
+/// <reference path="../Reactive.EventSourceHistory/index.d.ts" />
+/// <reference path="../Reactive.Point2DSignalHistory/index.d.ts" />
+/// <reference path="../Reactive.PointSignalHistory/index.d.ts" />
+/// <reference path="../Reactive.VectorSignalHistory/index.d.ts" />
+/// <reference path="../Reactive.Point4DSignalHistory/index.d.ts" />
+/// <reference path="../Reactive.BoundingBoxSignalHistory/index.d.ts" />
+/// <reference path="../Reactive.TransformSignalHistory/index.d.ts" />
+/// <reference path="../Reactive.RotationSignalHistory/index.d.ts" />
+/// <reference path="../Reactive.ScalarSignalHistory/index.d.ts" />
+/// <reference path="../Reactive.BoolSignalHistory/index.d.ts" />
+/// <reference path="../Reactive.StringSignalHistory/index.d.ts" />
 /// <reference path="../Reactive.RgbaSignal/index.d.ts" />
 /// <reference path="../Reactive.HsvaSignal/index.d.ts" />
 /// <reference path="../Reactive.Rotation/index.d.ts" />
@@ -713,6 +713,18 @@ function monitorMany(signals: { [name: string]: ScalarSignal | number}, config: 
  * 
  * Returns a signal with the value that is the inverse cosine of the value of the given signal (interpreted as radians).
  */function acos(x: ScalarSignal | number): ScalarSignal
+ ;
+
+/** 
+*  
+ * magnitudeSquared(): ScalarSignal
+ *  
+ * 
+ * Returns the squared length (magnitude) of a given signal.
+ * 
+ * Calculating the squared magnitude instead of the magnitude is much faster.
+ * Often if you are comparing magnitudes of two vectors you can just compare their squared magnitudes.
+ */function magnitudeSquared(): ScalarSignal
  ;
 
 /** 
