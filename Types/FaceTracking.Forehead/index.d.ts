@@ -7,6 +7,7 @@ declare interface Forehead {
 ```
 
 Specifies a `PointSignal` representing the center of the forehead in the face local coordinate system.
+**See Also**: `Face.cameraTransform` to convert the point to the coordinate system of the camera.
 */ 
 center: PointSignal;
 /** 
@@ -16,6 +17,7 @@ center: PointSignal;
 ```
 
 Specifies a `PointSignal` representing the top of the forehead in the face local coordinate system.
+**See Also**: `Face.cameraTransform` to convert the point to the coordinate system of the camera.
 */ 
 top: PointSignal;
 } 

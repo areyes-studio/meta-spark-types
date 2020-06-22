@@ -26,11 +26,11 @@ faceMaterial: MaterialBase;
 depth: ScalarSignal;
 /** 
 * ```
-   (get) text: StringSignal
-   (set) text: StringSignal
-   ```
+(get) text: StringSignal
+(set) text: StringSignal
+```
 
-   Specifies the text displayed.
+Specifies the text displayed.
 */ 
 text: StringSignal;
 /** 

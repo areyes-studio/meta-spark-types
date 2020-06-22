@@ -29,7 +29,6 @@
 /// <reference path="../Reactive.RgbaSignal/index.d.ts" />
 /// <reference path="../Reactive.HsvaSignal/index.d.ts" />
 /// <reference path="../Reactive.Rotation/index.d.ts" />
-/// <reference path="../Reactive.ScaleSignal/index.d.ts" />
 /// <reference path="../string/index.d.ts" />
 /// <reference path="../boolean/index.d.ts" />
 declare namespace ReactiveModule {
@@ -516,11 +515,11 @@ function ne(lhs: BoolSignal | boolean, rhs: BoolSignal | boolean): BoolSignal
 
 /** 
 *  
- * scale(x: ScalarSignal, y: ScalarSignal, z: ScalarSignal): ScaleSignal
+ * scale(x: ScalarSignal, y: ScalarSignal, z: ScalarSignal): PointSignal
  *  
  * 
- * Combines three signals and returns the result as a `ScaleSignal`.
- */function scale(x: ScalarSignal | number, y: ScalarSignal | number, z: ScalarSignal | number): ScaleSignal
+ * Combines three signals and returns the result as a `PointSignal`.
+ */function scale(x: ScalarSignal | number, y: ScalarSignal | number, z: ScalarSignal | number): PointSignal
  ;
 
 /** 

@@ -1,5 +1,4 @@
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
-/// <reference path="../Reactive.ScaleSignal/index.d.ts" />
 /// <reference path="../Reactive.PointSignal/index.d.ts" />
 /// <reference path="../Reactive.Rotation/index.d.ts" />
 /// <reference path="../Reactive.TransformSignal/index.d.ts" />
@@ -85,13 +84,13 @@ Specifies the object rotation about the Z-axis of the object's rotated local coo
 rotationZ: ScalarSignal;
 /** 
 * ```
-(get) scale: ScaleSignal
-(set) scale: ScaleSignal
+(get) scale: PointSignal
+(set) scale: PointSignal | VectorSignal
 ```
 
 Specifies the object scale along the X, Y and Z axis.
 */ 
-scale: ScaleSignal;
+scale: PointSignal;
 /** 
 * ```
 (get) position: PointSignal

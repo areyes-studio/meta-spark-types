@@ -1,26 +1,5 @@
-/// <reference path="../EventSource<RequestFailure>/index.d.ts" />
-/// <reference path="../string/index.d.ts" />
-/// <reference path="../void/index.d.ts" />
 /// <reference path="../EffectLinking.RequestedEffect/index.d.ts" />
 declare namespace EffectLinkingModule {
-/** 
-* ```
-(get) onGoToEffectFailure: EventSource<RequestFailure>
-(set) (Not Available)
-```
-
-Global failure listener
-*/ 
-const onGoToEffectFailure: EventSource<RequestFailure>;
-/** 
-*  
- * goToEffect(effectId: string): void
- *  
- * 
- * Equivalent to calling `requestEffect({'effectId': effectId}).apply()`
- */function goToEffect(effectId: string): void
- ;
-
 /** 
 *  
  * requestEffect(requestEffectParams: {[key: string]: string}): RequestedEffect

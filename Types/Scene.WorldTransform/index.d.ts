@@ -1,5 +1,4 @@
 /// <reference path="../Reactive.PointSignal/index.d.ts" />
-/// <reference path="../Reactive.ScaleSignal/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 /// <reference path="../Reactive.TransformSignal/index.d.ts" />
 /// <reference path="../Reactive.VectorSignal/index.d.ts" />
@@ -15,13 +14,13 @@ Specifies the object position along the X, Y and Z axis of the world coordinate 
 position: PointSignal;
 /** 
 * ```
-(get) scale: ScaleSignal
+(get) scale: PointSignal
 (set) (Not Available)
 ```
 
 Represents scale in the world coordinate system.
 */ 
-scale: ScaleSignal;
+scale: PointSignal;
 /** 
 * ```
 (get) x: ScalarSignal
@@ -135,6 +134,16 @@ lookAt(targetPosition: PointSignal, selfUp: VectorSignal): TransformSignal
 
 /** 
 *  
+ * applyToPoint(signal: PointSignal): PointSignal
+ *  
+ * 
+ * Returns a signal with the value that is equal to the value of the provided point with the transformation applied to it.
+ * This performs a matrix multiplication of the provided point (with an implicit `1` in the 4th dimension) and the receiver transform, and divides by perspective.
+ */applyToPoint(signal: PointSignal): PointSignal
+ ;
+
+/** 
+*  
  * inverse(): TransformSignal
  *  
  * 
@@ -145,18 +154,20 @@ lookAt(targetPosition: PointSignal, selfUp: VectorSignal): TransformSignal
 /** 
 *  
  * applyTo(transform: TransformSignal): TransformSignal
- * applyTo(point: PointSignal): PointSignal
- * applyTo(vector: VectorSignal): VectorSignal
  *  
  * 
- * Returns a signal with the value that is equal to the value of the provided transformation/point/vector with the transformation of the current `TransformSignal` applied to it.
+ * Returns a signal with the value that is equal to the value of the provided transformation with the transformation of the current `TransformSignal` applied to it.
  */applyTo(transform: TransformSignal): TransformSignal
  ;
 
-applyTo(point: PointSignal): PointSignal
- ;
-
-applyTo(vector: VectorSignal): VectorSignal
+/** 
+*  
+ * applyToVector(signal: VectorSignal): VectorSignal
+ *  
+ * 
+ * Returns a signal with the value that is equal to the value of the provided vector with the transformation applied to it.
+ * This performs a matrix multiplication of the provided vector (with an implicit `0` in the 4th dimension) and the receiver transform, without change of position.
+ */applyToVector(signal: VectorSignal): VectorSignal
  ;
 
 } 

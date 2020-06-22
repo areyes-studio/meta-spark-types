@@ -18,6 +18,9 @@ effectID: string;
 ```
 
 Returns an `EventSource` to which you may subscribe. The event fires when a request to apply an effect fails. The event contains a JSON object in the format:
+```
+{ "failureReason": string }
+```
 */ 
 onApplyFailure: EventSource<RequestFailure>;
 /** 

@@ -1,6 +1,5 @@
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 /// <reference path="../Reactive.PointSignal/index.d.ts" />
-/// <reference path="../Reactive.ScaleSignal/index.d.ts" />
 /// <reference path="../Reactive.VectorSignal/index.d.ts" />
 /// <reference path="../Reactive.TransformSignal/index.d.ts" />
 /// <reference path="../this/index.d.ts" />
@@ -105,13 +104,13 @@ Represents the offset in the local coordinate system.
 position: PointSignal;
 /** 
 * ```
-(get) scale: ScaleSignal
+(get) scale: PointSignal
 (set) (Not Available)
 ```
 
 Represents scale in the local coordinate system.
 */ 
-scale: ScaleSignal;
+scale: PointSignal;
 /** 
 *  
  * lookAt(targetPosition: PointSignal): TransformSignal
@@ -137,13 +136,12 @@ lookAt(targetPosition: PointSignal, selfUp: VectorSignal): TransformSignal
 
 /** 
 *  
- * history(framesCount: number): TransformSignalHistory
+ * applyToPoint(signal: PointSignal): PointSignal
  *  
  * 
- * Returns an object used to access signal values from past frames. The amount of frames tracked is customizable via `framesCount` parameter.
- * Historical signal values are going to be initialized with signal value at call time or using `initialValues` if provided.
- * 
- */history(framesCount: number): TransformSignalHistory
+ * Returns a signal with the value that is equal to the value of the provided point with the transformation applied to it.
+ * This performs a matrix multiplication of the provided point (with an implicit `1` in the 4th dimension) and the receiver transform, and divides by perspective.
+ */applyToPoint(signal: PointSignal): PointSignal
  ;
 
 /** 
@@ -158,18 +156,10 @@ lookAt(targetPosition: PointSignal, selfUp: VectorSignal): TransformSignal
 /** 
 *  
  * applyTo(transform: TransformSignal): TransformSignal
- * applyTo(point: PointSignal): PointSignal
- * applyTo(vector: VectorSignal): VectorSignal
  *  
  * 
- * Returns a signal with the value that is equal to the value of the provided transformation/point/vector with the transformation of the current `TransformSignal` applied to it.
+ * Returns a signal with the value that is equal to the value of the provided transformation with the transformation of the current `TransformSignal` applied to it.
  */applyTo(transform: TransformSignal): TransformSignal
- ;
-
-applyTo(point: PointSignal): PointSignal
- ;
-
-applyTo(vector: VectorSignal): VectorSignal
  ;
 
 /** 
@@ -183,6 +173,27 @@ applyTo(vector: VectorSignal): VectorSignal
  * 
  * **Note**: See also `ReactiveModule.expSmooth`.
  */expSmooth(dampFactor: number): TransformSignal
+ ;
+
+/** 
+*  
+ * applyToVector(signal: VectorSignal): VectorSignal
+ *  
+ * 
+ * Returns a signal with the value that is equal to the value of the provided vector with the transformation applied to it.
+ * This performs a matrix multiplication of the provided vector (with an implicit `0` in the 4th dimension) and the receiver transform, without change of position.
+ */applyToVector(signal: VectorSignal): VectorSignal
+ ;
+
+/** 
+*  
+ * history(framesCount: number): TransformSignalHistory
+ *  
+ * 
+ * Returns an object used to access signal values from past frames. The amount of frames tracked is customizable via `framesCount` parameter.
+ * Historical signal values are going to be initialized with signal value at call time or using `initialValues` if provided.
+ * 
+ */history(framesCount: number): TransformSignalHistory
  ;
 
 } 

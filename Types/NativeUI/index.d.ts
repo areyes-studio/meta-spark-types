@@ -3,7 +3,7 @@
 /// <reference path="../String/index.d.ts" />
 /// <reference path="../void/index.d.ts" />
 /// <reference path="../Reactive.StringSignal/index.d.ts" />
-/// <reference path="../Reactive.EventSource/index.d.ts" />
+/// <reference path="../Promise/index.d.ts" />
 declare namespace NativeUIModule {
 /** 
 * ```
@@ -47,11 +47,11 @@ const slider: Slider;
 
 /** 
 *  
- *                                   enterRawTextEditMode(nodeName: String): EventSource
+ *                                   enterRawTextEditMode(nodeName: String): Promise<boolean>
  *                                    
  *                                   Requests a raw user input for given node. The key difference between raw user input and regular user input is that raw user input does not provide any editing UI.
- *                                   The returned EventSource emits an event with values \"true\" when keyboard was shown and now it's being hidden, and \"false\" if failed to enter the raw text edit mode.
- */function enterRawTextEditMode(nodeName: String): EventSource
+ *                                   Returns a promise that is resolved with `true` when keyboard was shown and now it's being hidden or `false` if failed to enter the raw text edit mode.
+ */function enterRawTextEditMode(nodeName: String): Promise<boolean>
  ;
 
 /** 

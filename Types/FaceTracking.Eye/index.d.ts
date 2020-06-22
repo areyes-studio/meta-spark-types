@@ -8,6 +8,7 @@ declare interface Eye {
 ```
 
 Specifies a `PointSignal` representing the center of the eye in the face local coordinate system.
+**See Also**: `Face.cameraTransform` to convert the point to the coordinate system of the camera.
 */ 
 center: PointSignal;
 /** 
@@ -17,6 +18,7 @@ center: PointSignal;
 ```
 
 Specifies a `PointSignal` representing the inside corner of the eye in the face local coordinate system.
+**See Also**: `Face.cameraTransform` to convert the point to the coordinate system of the camera.
 */ 
 insideCorner: PointSignal;
 /** 
@@ -26,6 +28,7 @@ insideCorner: PointSignal;
 ```
 
 Specifies a `PointSignal` representing the center of the lower eyelid in the face local coordinate system.
+**See Also**: `Face.cameraTransform` to convert the point to the coordinate system of the camera.
 */ 
 lowerEyelidCenter: PointSignal;
 /** 
@@ -45,6 +48,7 @@ openness: ScalarSignal;
 ```
 
 Specifies a `PointSignal` representing the outside corner of the eye in the face local coordinate system.
+**See Also**: `Face.cameraTransform` to convert the point to the coordinate system of the camera.
 */ 
 outsideCorner: PointSignal;
 /** 
@@ -54,6 +58,7 @@ outsideCorner: PointSignal;
 ```
 
 Specifies a `PointSignal` representing the center of the upper eyelid in the face local coordinate system.
+**See Also**: `Face.cameraTransform` to convert the point to the coordinate system of the camera.
 */ 
 upperEyelidCenter: PointSignal;
 } 
