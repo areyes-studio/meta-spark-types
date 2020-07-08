@@ -1,13 +1,13 @@
-/// <reference path="../Reactive.BoolValue/index.d.ts" />
+/// <reference path="../boolean/index.d.ts" />
 /// <reference path="../void/index.d.ts" />
 declare interface PlaybackController {
 /** 
 *  
- * setPlaying(playing: BoolValue): void
+ * setPlaying(playing: boolean): void
  *  
  * 
  * Plays or pauses the playback controller depending on the value entered. When the audio is finished playing, use `reset` to play from the beginning.
- */setPlaying(playing: BoolValue): void
+ */setPlaying(playing: boolean): void
  ;
 
 /** 
@@ -30,11 +30,11 @@ declare interface PlaybackController {
 
 /** 
 *  
- * setLooping(looping: BoolValue): void
+ * setLooping(looping: boolean): void
  *  
  * 
  * Loops the playback controller. To be used in pair with the `setPlaying` method. If set to `true`, the audio will repeat infinitely.
- */setLooping(looping: BoolValue): void
+ */setLooping(looping: boolean): void
  ;
 
 /** 

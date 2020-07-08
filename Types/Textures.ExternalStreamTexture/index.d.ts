@@ -7,7 +7,7 @@ declare interface ExternalStreamTexture {
 (set) streamIdentifier: string
 ```
 
-Specifies a `StringValue` representing the identifier of stream (used by External Stream Texture Factory to map stream with texture model).
+Specifies a string representing the identifier of stream (used by External Stream Texture Factory to map stream with texture model).
 */ 
 streamIdentifier: string;
 /** 

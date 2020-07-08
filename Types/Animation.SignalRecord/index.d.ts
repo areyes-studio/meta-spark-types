@@ -13,7 +13,7 @@ durationMs: number;
 /** 
 * ```
 (get) valuesString: string
-(set) (Not available)
+(set) (Not Available)
 ```
 
 Returns the array of values (as doubles to 4 decimal precision) of this SignalRecord as a string
@@ -31,7 +31,7 @@ recordCount: number;
 /** 
 * ```
 (get) timestampsString: string
-(set) (Not available)
+(set) (Not Available)
 ```
 
 Returns the array of timestamps (as integer milliseconds) of this SignalRecord as a string

@@ -10,7 +10,7 @@
 /// <reference path="../Animation.RotationSampler/index.d.ts" />
 /// <reference path="../Animation.ColorSampler/index.d.ts" />
 /// <reference path="../Animation.ArrayOfScalarSignals/index.d.ts" />
-/// <reference path="../Reactive.RotationSignal/index.d.ts" />
+/// <reference path="../Reactive.QuaternionSignal/index.d.ts" />
 /// <reference path="../Reactive.RgbaSignal/index.d.ts" />
 declare namespace AnimationModule {
 /** 
@@ -55,7 +55,7 @@ function makeSignalRecorder(targetSignal: ScalarSignal | number, recordingSignal
  * valueDriver(value: ScalarSignal, min: number, max: number): ValueDriver
  *  
  * 
- * Returns a `ValueDriver` object that drives an animation based on values emitted from a `ScalarValue`. The signal values are normalized and clamped to maximum and minimum values.
+ * Returns a `ValueDriver` object that drives an animation based on values emitted from a `ScalarSignal`. The signal values are normalized and clamped to maximum and minimum values.
  */function valueDriver(value: ScalarSignal | number, min: number, max: number): ValueDriver
  ;
 
@@ -64,7 +64,7 @@ function makeSignalRecorder(targetSignal: ScalarSignal | number, recordingSignal
  *  
  * animate(driver: Driver, sampler: ScalarSampler): ScalarSignal
  * animate(driver: Driver, sampler: ArrayOfScalarSamplers): ArrayOfScalarSignals
- * animate(driver: Driver, sampler: RotationSampler): RotationSignal
+ * animate(driver: Driver, sampler: RotationSampler): QuaternionSignal
  * animate(driver: Driver, sampler: ColorSampler): RgbaSignal
  *  
  * 
@@ -78,7 +78,7 @@ function makeSignalRecorder(targetSignal: ScalarSignal | number, recordingSignal
 function animate(driver: Driver, sampler: ArrayOfScalarSamplers): ArrayOfScalarSignals
  ;
 
-function animate(driver: Driver, sampler: RotationSampler): RotationSignal
+function animate(driver: Driver, sampler: RotationSampler): QuaternionSignal
  ;
 
 function animate(driver: Driver, sampler: ColorSampler): RgbaSignal

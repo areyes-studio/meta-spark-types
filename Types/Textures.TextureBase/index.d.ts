@@ -1,10 +1,10 @@
-/// <reference path="../Reactive.StringValue/index.d.ts" />
+/// <reference path="../string/index.d.ts" />
 /// <reference path="../Reactive.ShaderSignal/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 declare interface TextureBase {
 /** 
 * ```
-(get) name: StringValue
+(get) name: string
 (set) (Not Available)
 ```
 
@@ -12,7 +12,7 @@ Specifies the unique texture name. The texture name is specified in AR Studio at
 
 **See Also**: `TexturesModule.get`.
 */ 
-name: StringValue;
+name: string;
 /** 
 * ```
 (get) signal: ShaderSignal
@@ -23,13 +23,13 @@ Gets the RGBA ShaderSignal of the given texture. This signal can then be used in
 signal: ShaderSignal;
 /** 
 * ```
-(get) identifier: StringValue
+(get) identifier: string
 (set) (Not Available)
 ```
 
 Specifies the unique texture identifier. This value is specified internally in AR Studio.
 */ 
-identifier: StringValue;
+identifier: string;
 /** 
 * ```
 (get) width: ScalarSignal

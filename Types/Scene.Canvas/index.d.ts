@@ -77,8 +77,8 @@ Represents the current 2D bounds relative to the parent element. This is the res
 bounds: Bounds2D;
 /** 
 *  
- * void setMode(mode: Signal<SceneModule.RenderMode>): void
- * void setMode(mode: Signal<SceneModule.RenderMode>, config { fallback: SceneModule.RenderMode }): void
+ * setMode(mode: Signal<SceneModule.RenderMode>): void
+ * setMode(mode: Signal<SceneModule.RenderMode>, config: { fallback: SceneModule.RenderMode }): void
  *  
  * 
  * Specifies how Canvas should be rendered.
@@ -91,7 +91,7 @@ bounds: Bounds2D;
  */setMode(mode: Signal<SceneModule.RenderMode>): void
  ;
 
-setMode(mode: Signal<SceneModule.RenderMode>, config { fallback: SceneModule.RenderMode }): void
+setMode(mode: Signal<SceneModule.RenderMode>, config: { fallback: SceneModule.RenderMode }): void
  ;
 
 } 

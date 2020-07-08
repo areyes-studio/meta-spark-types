@@ -1,15 +1,14 @@
-/// <reference path="../Reactive.ScalarValue/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 declare interface ColorPaintMaterial {
 /** 
 * ```
-(get) paintBrightness: ScalarValue
+(get) paintBrightness: ScalarSignal
 (set) paintBrightness: ScalarSignal
 ```
 
 Specifies the simulated paint brightness.
 */ 
-paintBrightness: ScalarValue;
+paintBrightness: ScalarSignal;
 /** 
 * ```
 (get) backgroundInfluence: ScalarSignal

@@ -1,18 +1,18 @@
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 /// <reference path="../Reactive.StringSignal/index.d.ts" />
 /// <reference path="../Reactive.BoolSignal/index.d.ts" />
-/// <reference path="../Reactive.Point2DSignal/index.d.ts" />
+/// <reference path="../Reactive.TransformSignal/index.d.ts" />
 /// <reference path="../Reactive.PointSignal/index.d.ts" />
+/// <reference path="../Reactive.VectorSignal/index.d.ts" />
+/// <reference path="../Reactive.QuaternionSignal/index.d.ts" />
+/// <reference path="../Reactive.Point2DSignal/index.d.ts" />
 /// <reference path="../Reactive.Point4DSignal/index.d.ts" />
 /// <reference path="../Array/index.d.ts" />
 /// <reference path="../Reactive.ShaderSignal/index.d.ts" />
 /// <reference path="../number/index.d.ts" />
 /// <reference path="../Reactive.PrimitiveOrShaderSignal/index.d.ts" />
 /// <reference path="../Reactive.EventSource/index.d.ts" />
-/// <reference path="../Reactive.VectorSignal/index.d.ts" />
 /// <reference path="../Reactive.BoundingBoxSignal/index.d.ts" />
-/// <reference path="../Reactive.TransformSignal/index.d.ts" />
-/// <reference path="../Reactive.RotationSignal/index.d.ts" />
 /// <reference path="../Reactive.ShaderSignalHistory/index.d.ts" />
 /// <reference path="../Reactive.PrimitiveOrShaderSignalHistory/index.d.ts" />
 /// <reference path="../Reactive.EventSourceHistory/index.d.ts" />
@@ -22,7 +22,7 @@
 /// <reference path="../Reactive.Point4DSignalHistory/index.d.ts" />
 /// <reference path="../Reactive.BoundingBoxSignalHistory/index.d.ts" />
 /// <reference path="../Reactive.TransformSignalHistory/index.d.ts" />
-/// <reference path="../Reactive.RotationSignalHistory/index.d.ts" />
+/// <reference path="../Reactive.QuaternionSignalHistory/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignalHistory/index.d.ts" />
 /// <reference path="../Reactive.BoolSignalHistory/index.d.ts" />
 /// <reference path="../Reactive.StringSignalHistory/index.d.ts" />
@@ -51,6 +51,41 @@ function eq(lhs: StringSignal | string, rhs: StringSignal | string): BoolSignal
  ;
 
 function eq(lhs: BoolSignal | boolean, rhs: BoolSignal | boolean): BoolSignal
+ ;
+
+/** 
+*  
+ * lookAt(eyeTransform: TransformSignal, targetPosition: PointSignal): TransformSignal
+ * lookAt(eyeTransform: TransformSignal, targetPosition: PointSignal, eyeUp: VectorSignal): TransformSignal
+ *  
+ * Default `eyeUp` is `ReactiveModule.vector(0, 1, 0)`.
+ * 
+ * Creates a scene object transform with rotation in direction of target.
+ * **Note:** The eyeTransform needs to be pointing the scene object alongside the X axis.
+ */function lookAt(eyeTransform: TransformSignal, targetPosition: PointSignal): TransformSignal
+ ;
+
+function lookAt(eyeTransform: TransformSignal, targetPosition: PointSignal, eyeUp: VectorSignal): TransformSignal
+ ;
+
+/** 
+*  
+ * ceil(x: ScalarSignal): ScalarSignal
+ *  
+ * 
+ * Returns a signal with the value that is the smallest integer that is greater than or equal to the value of the given signal.
+ * 
+ * **See Also**: `ScalarSignal.ceil`
+ */function ceil(x: ScalarSignal | number): ScalarSignal
+ ;
+
+/** 
+*  
+ * quaternionFromAngleAxis(angle: ScalarSignal, axis: VectorSignal): QuaternionSignal
+ *  
+ * 
+ * Construct a new quaternion from an angle and normalized axis.
+ */function quaternionFromAngleAxis(angle: ScalarSignal | number, axis: VectorSignal): QuaternionSignal
  ;
 
 /** 
@@ -107,8 +142,8 @@ function pack3(x: Point2DSignal, y: ScalarSignal | number, z: ScalarSignal | num
  * signalHistory(signal: Point4DSignal, framesCount: number): Point4DSignalHistory
  * signalHistory(signal: BoundingBoxSignal, framesCount: number): BoundingBoxSignalHistory
  * signalHistory(signal: TransformSignal, framesCount: number): TransformSignalHistory
- * signalHistory(signal: RotationSignal, framesCount: number): RotationSignalHistory
- * signalHistory(signal: RotationSignal, framesCount: number, initialValues: Array<Rotation>): RotationSignalHistory
+ * signalHistory(signal: QuaternionSignal, framesCount: number): QuaternionSignalHistory
+ * signalHistory(signal: QuaternionSignal, framesCount: number, initialValues: Array<Rotation>): QuaternionSignalHistory
  * signalHistory(signal: ScalarSignal, framesCount: number): ScalarSignalHistory
  * signalHistory(signal: ScalarSignal, framesCount: number, initialValues: Array<number>): ScalarSignalHistory
  * signalHistory(signal: BoolSignal, framesCount: number): BoolSignalHistory
@@ -153,10 +188,10 @@ function signalHistory(signal: BoundingBoxSignal, framesCount: number): Bounding
 function signalHistory(signal: TransformSignal, framesCount: number): TransformSignalHistory
  ;
 
-function signalHistory(signal: RotationSignal, framesCount: number): RotationSignalHistory
+function signalHistory(signal: QuaternionSignal, framesCount: number): QuaternionSignalHistory
  ;
 
-function signalHistory(signal: RotationSignal, framesCount: number, initialValues: Array<Rotation>): RotationSignalHistory
+function signalHistory(signal: QuaternionSignal, framesCount: number, initialValues: Array<Rotation>): QuaternionSignalHistory
  ;
 
 function signalHistory(signal: ScalarSignal | number, framesCount: number): ScalarSignalHistory
@@ -179,11 +214,13 @@ function signalHistory(signal: StringSignal | string, framesCount: number, initi
 
 /** 
 *  
- * exp(x: ScalarSignal): ScalarSignal
+ * RGBA(r: ScalarSignal, g: ScalarSignal, b: ScalarSignal, a: ScalarSignal): RgbaSignal
  *  
  * 
- * Returns a signal with the value that is e (the Euler's constant 2.718...) to the power of the value of the given signal.
- */function exp(x: ScalarSignal | number): ScalarSignal
+ * Combines four signals and returns the result as an `RgbaSignal`. Each value should be in the range between 0.0 and 1.0.
+ * 
+ * **Note**: RGB components are interpreted in sRGB space.
+ */function RGBA(r: ScalarSignal | number, g: ScalarSignal | number, b: ScalarSignal | number, a: ScalarSignal | number): RgbaSignal
  ;
 
 /** 
@@ -195,17 +232,6 @@ function signalHistory(signal: StringSignal | string, framesCount: number, initi
  * 
  * **See Also**: `ScalarSignal.floor`
  */function floor(x: ScalarSignal | number): ScalarSignal
- ;
-
-/** 
-*  
- * RGBA(r: ScalarSignal, g: ScalarSignal, b: ScalarSignal, a: ScalarSignal): RgbaSignal
- *  
- * 
- * Combines four signals and returns the result as an `RgbaSignal`. Each value should be in the range between 0.0 and 1.0.
- * 
- * **Note**: RGB components are interpreted in sRGB space.
- */function RGBA(r: ScalarSignal | number, g: ScalarSignal | number, b: ScalarSignal | number, a: ScalarSignal | number): RgbaSignal
  ;
 
 /** 
@@ -400,15 +426,6 @@ function sum(x: VectorSignal, y: VectorSignal): VectorSignal
 
 /** 
 *  
- * log(x: ScalarSignal): ScalarSignal
- *  
- * 
- * Returns a signal with the value that is the natural logarithm of the value of the given signal.
- */function log(x: ScalarSignal | number): ScalarSignal
- ;
-
-/** 
-*  
  * ge(lhs: ScalarSignal, rhs: ScalarSignal): BoolSignal
  *  
  * 
@@ -495,6 +512,24 @@ function ne(lhs: BoolSignal | boolean, rhs: BoolSignal | boolean): BoolSignal
 
 /** 
 *  
+ * quaternion(w: ScalarSignal, x: ScalarSignal, y: ScalarSignal, z: ScalarSignal): QuaternionSignal
+ *  
+ * 
+ * Construct a new quaternion signal with w, x, y, z components.
+ */function quaternion(w: ScalarSignal | number, x: ScalarSignal | number, y: ScalarSignal | number, z: ScalarSignal | number): QuaternionSignal
+ ;
+
+/** 
+*  
+ * log(x: ScalarSignal): ScalarSignal
+ *  
+ * 
+ * Returns a signal with the value that is the natural logarithm of the value of the given signal.
+ */function log(x: ScalarSignal | number): ScalarSignal
+ ;
+
+/** 
+*  
  * vector(x: ScalarSignal, y: ScalarSignal, z: ScalarSignal): VectorSignal
  *  
  * 
@@ -535,32 +570,6 @@ function ne(lhs: BoolSignal | boolean, rhs: BoolSignal | boolean): BoolSignal
 
 /** 
 *  
- * ceil(x: ScalarSignal): ScalarSignal
- *  
- * 
- * Returns a signal with the value that is the smallest integer that is greater than or equal to the value of the given signal.
- * 
- * **See Also**: `ScalarSignal.ceil`
- */function ceil(x: ScalarSignal | number): ScalarSignal
- ;
-
-/** 
-*  
- * lookAt(eyeTransform: TransformSignal, targetPosition: PointSignal): TransformSignal
- * lookAt(eyeTransform: TransformSignal, targetPosition: PointSignal, eyeUp: VectorSignal): TransformSignal
- *  
- * Default `eyeUp` is `ReactiveModule.vector(0, 1, 0)`.
- * 
- * Creates a scene object transform with rotation in direction of target.
- * **Note:** The eyeTransform needs to be pointing the scene object alongside the X axis.
- */function lookAt(eyeTransform: TransformSignal, targetPosition: PointSignal): TransformSignal
- ;
-
-function lookAt(eyeTransform: TransformSignal, targetPosition: PointSignal, eyeUp: VectorSignal): TransformSignal
- ;
-
-/** 
-*  
  * derivative(): ScalarSignal
  *  
  * 
@@ -570,6 +579,88 @@ function lookAt(eyeTransform: TransformSignal, targetPosition: PointSignal, eyeU
  * 
  * **Note**: the returned signal might be noisy for certain types of input signals, especially those received from the face tracking. It is recommended to pass the input signal to `expSmooth` first with a damping constant in the range between 100 and 500.
  */function derivative(): ScalarSignal
+ ;
+
+/** 
+*  
+ * antiderivative(signal: ScalarSignal, config: {min: number, max: number, initialValue: number, overflowBehaviour: ReactiveModule.AntiderivativeOverflowBehaviour}): ScalarSignal
+ *  
+ * 
+ * Returns a signal that estimates the anti derivative of the given signal with respect to time (measured in milliseconds).
+ * 
+ * **Note**: Since the antiderivative is inherently unbound the min/max parameters must be provided to prevent overflow. when `overflowBehaviour` is CLAMP the output is clamped at the min/max. When `overflowBehaviour` is WRAP the output is wrapped. This is useful when the output represents something that is cyclic like an angle in this case min might be 0, max might be 2*PI.
+ */function antiderivative(signal: ScalarSignal | number, config: {min: number, max: number, initialValue: number, overflowBehaviour: ReactiveModule.AntiderivativeOverflowBehaviour}): ScalarSignal
+ ;
+
+/** 
+*  
+ * atan(x: ScalarSignal): ScalarSignal
+ *  
+ * 
+ * Returns a signal with the value that is the inverse tangent of the value of the given signal (interpreted as radians).
+ */function atan(x: ScalarSignal | number): ScalarSignal
+ ;
+
+/** 
+*  
+ * fromRange(x: ScalarSignal, min: ScalarSignal, max: ScalarSignal): ScalarSignal
+ *  
+ * 
+ * Maps x from [min, max] range to [0.0, 1.0] range.
+ */function fromRange(x: ScalarSignal | number, min: ScalarSignal | number, max: ScalarSignal | number): ScalarSignal
+ ;
+
+/** 
+*  
+ * quaternionIdentity(): QuaternionSignal
+ *  
+ * 
+ * Construct a new quaternion signal that represents an identity quaternion.
+ */function quaternionIdentity(): QuaternionSignal
+ ;
+
+/** 
+*  
+ * quaternionFromEuler(x: ScalarSignal, y: ScalarSignal, z: ScalarSignal): QuaternionSignal
+ *  
+ * 
+ * Construct a new quaternion signal from euler angles, representing pitch, yaw, roll respectively.
+ */function quaternionFromEuler(x: ScalarSignal | number, y: ScalarSignal | number, z: ScalarSignal | number): QuaternionSignal
+ ;
+
+/** 
+*  
+ * sqrt(x: ScalarSignal): ScalarSignal
+ *  
+ * 
+ * Returns a signal with the value that is the square root of the value of the given signal.
+ * 
+ * **See Also**: `ScalarSignal.sqrt`
+ */function sqrt(x: ScalarSignal | number): ScalarSignal
+ ;
+
+/** 
+*  
+ * quaternionFromTo(from: VectorSignal, to: VectorSignal): QuaternionSignal
+ *  
+ * 
+ * Construct a new quaternion signal that represents required rotation to rotate vector `from` to vector `to`.
+ */function quaternionFromTo(from: VectorSignal, to: VectorSignal): QuaternionSignal
+ ;
+
+/** 
+*  
+ * quaternionLookAt(targetPosition: PointSignal): QuaternionSignal
+ * quaternionLookAt(targetPosition: PointSignal, selfUp: VectorSignal): QuaternionSignal
+ *  
+ * 
+ * Default selfUp is ReactiveModule.vector(0, 1, 0).
+ * 
+ * Creates a new quaternion signal representing rotation in the direction of target.
+ */function quaternionLookAt(targetPosition: PointSignal): QuaternionSignal
+ ;
+
+function quaternionLookAt(targetPosition: PointSignal, selfUp: VectorSignal): QuaternionSignal
  ;
 
 /** 
@@ -737,31 +828,11 @@ function monitorMany(signals: { [name: string]: ScalarSignal | number}, config: 
 
 /** 
 *  
- * atan(x: ScalarSignal): ScalarSignal
+ * exp(x: ScalarSignal): ScalarSignal
  *  
  * 
- * Returns a signal with the value that is the inverse tangent of the value of the given signal (interpreted as radians).
- */function atan(x: ScalarSignal | number): ScalarSignal
- ;
-
-/** 
-*  
- * antiderivative(signal: ScalarSignal, config: {min: number, max: number, initialValue: number, overflowBehaviour: ReactiveModule.AntiderivativeOverflowBehaviour}): ScalarSignal
- *  
- * 
- * Returns a signal that estimates the anti derivative of the given signal with respect to time (measured in milliseconds).
- * 
- * **Note**: Since the antiderivative is inherently unbound the min/max parameters must be provided to prevent overflow. when `overflowBehaviour` is CLAMP the output is clamped at the min/max. When `overflowBehaviour` is WRAP the output is wrapped. This is useful when the output represents something that is cyclic like an angle in this case min might be 0, max might be 2*PI.
- */function antiderivative(signal: ScalarSignal | number, config: {min: number, max: number, initialValue: number, overflowBehaviour: ReactiveModule.AntiderivativeOverflowBehaviour}): ScalarSignal
- ;
-
-/** 
-*  
- * fromRange(x: ScalarSignal, min: ScalarSignal, max: ScalarSignal): ScalarSignal
- *  
- * 
- * Maps x from [min, max] range to [0.0, 1.0] range.
- */function fromRange(x: ScalarSignal | number, min: ScalarSignal | number, max: ScalarSignal | number): ScalarSignal
+ * Returns a signal with the value that is e (the Euler's constant 2.718...) to the power of the value of the given signal.
+ */function exp(x: ScalarSignal | number): ScalarSignal
  ;
 
 /** 
@@ -819,17 +890,6 @@ function mix(x: TransformSignal, y: TransformSignal, alpha: ScalarSignal | numbe
  * 
  * **See Also**: `ScalarSignal.sign`
  */function sign(x: ScalarSignal | number): ScalarSignal
- ;
-
-/** 
-*  
- * sqrt(x: ScalarSignal): ScalarSignal
- *  
- * 
- * Returns a signal with the value that is the square root of the value of the given signal.
- * 
- * **See Also**: `ScalarSignal.sqrt`
- */function sqrt(x: ScalarSignal | number): ScalarSignal
  ;
 
 /** 

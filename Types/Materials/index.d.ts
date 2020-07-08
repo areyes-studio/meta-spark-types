@@ -1,6 +1,8 @@
 /// <reference path="../Materials.ShaderProcessor/index.d.ts" />
 /// <reference path="../string/index.d.ts" />
+/// <reference path="../initialState/index.d.ts" />
 /// <reference path="../Promise/index.d.ts" />
+/// <reference path="../string /index.d.ts" />
 /// <reference path="../config/index.d.ts" />
 /// <reference path="../Materials.MaterialBase/index.d.ts" />
 declare namespace MaterialsModule {
@@ -22,6 +24,45 @@ const postProcessor: ShaderProcessor;
 Specifies the `ShaderProcessor` object used for the pre-rendering pass.
 */ 
 const preProcessor: ShaderProcessor;
+/** 
+*  
+ * clone(identifier: string, initialState?: {[key: string]: any}): Promise<MaterialBase>
+ *  
+ * 
+ * Clone a material asynchronously.
+ * When creating the materials, keep the following in mind:
+ * - Cloning a material with an identifier that doesn't exist fails the `Promise`.
+ * - New materials always get assigned a globally unique `name` and `identifier`.
+ * - `initialState` is optional, but encouraged to be used.
+ */function clone(identifier: string, initialState?: {[key: string]: any}): Promise<MaterialBase>
+ ;
+
+/** 
+*  
+ * create(className: string, initialState?: {[key: string]: any}): Promise<MaterialBase>
+ *  
+ * 
+ * Create a material asynchronously.
+ * When creating the materials, keep the following in mind:
+ * - All materials must have an existing class.
+ * - New materials always get assigned a globally unique `name` and `identifier`.
+ * - `initialState` is optional, but encouraged to be used.
+ */function create(className: string, initialState?: {[key: string]: any}): Promise<MaterialBase>
+ ;
+
+/** 
+*  
+ * destroy(material: string | MaterialBase): Promise<void>
+ *  
+ * 
+ * Destroy a material asynchronously.
+ * When destroying the materials, keep the following in mind:
+ * - All bound properties will be automatically unbound on destruction.
+ * - Destroying a material that doesn't exist fails the `Future`.
+ * - Destroying a set of Materials that was created in Studio fails the `Future`.
+ */function destroy(material: string | MaterialBase): Promise<void>
+ ;
+
 /** 
 *  
  * findFirst(name: string): Promise<MaterialBase>

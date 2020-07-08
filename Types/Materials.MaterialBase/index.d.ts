@@ -104,13 +104,11 @@ alphaCutoff: ScalarSignal;
 
 /** 
 *  
- * setTexture(signal: ShaderSignal, config: {
- *   textureSlotName: DefaultMaterialTextures | BlendedMaterialTextures | FacePaintMaterialTextures | PhysicallyBasedMaterialTextures
- * }): void
+ * setTexture(signal: ShaderSignal, config: {textureSlotName: DefaultMaterialTextures | BlendedMaterialTextures | FacePaintMaterialTextures | PhysicallyBasedMaterialTextures}): void
  *  
  * 
  * Assigns a `ShaderSignal` to the specified texture slot.
- */setTexture(signal: ShaderSignal, config: {
+ */setTexture(signal: ShaderSignal, config: {textureSlotName: DefaultMaterialTextures | BlendedMaterialTextures | FacePaintMaterialTextures | PhysicallyBasedMaterialTextures}): void
  ;
 
 } 

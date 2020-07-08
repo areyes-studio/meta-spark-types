@@ -128,19 +128,6 @@ boundingBox: BoundingBox;
 
 /** 
 *  
- * find(name: string): SceneObjectBase
- *  
- * 
- * Returns a descendant object by name. An exception is thrown if the object isn't found or if more than one is found.
- * 
- * **Note**: object D is considered to be a descendant of object P if either D is a child of P or if such an object C which is a child of P exists that D is a descendant of C.
- * 
- * **See Also**: `SceneObjectBase.child`, `SceneModule.root`.
- */find(name: string): any
- ;
-
-/** 
-*  
  * findByPath(pathQuery: string): Promise<Array<SceneObjectBase>>
  * findByPath(pathQuery: string, config: {limit: number}): Promise<Array<SceneObjectBase>>
  *  
@@ -173,6 +160,23 @@ boundingBox: BoundingBox;
  ;
 
 findByPath(pathQuery: string, config: {limit: number}): Promise<Array<any>>
+ ;
+
+/** 
+*  
+ * removeChild(child: SceneObjectBase): Promise<void>
+ * removeChild(identifier: string): Promise<void>
+ *  
+ * Remove a child from this scene object list of children.
+ * 
+ * When removing scene objects, keep the following in mind:
+ *   - Removing a child that was created in Studio isn't allowed.
+ *   - Removing a child that is not present under a given parent isn't allowed.
+ *   - Removing a child doesn't unbind any of it's properties.
+ */removeChild(child: any): Promise<void>
+ ;
+
+removeChild(identifier: string): Promise<void>
  ;
 
 /** 
@@ -211,6 +215,48 @@ findAll(name: string, config:{ recursive: bool }): Promise<Array<any>>
  ;
 
 findFirst(name: string, config:{ recursive: bool }): Promise<any>
+ ;
+
+/** 
+*  
+ * find(name: string): SceneObjectBase
+ *  
+ * 
+ * Returns a descendant object by name. An exception is thrown if the object isn't found or if more than one is found.
+ * 
+ * **Note**: object D is considered to be a descendant of object P if either D is a child of P or if such an object C which is a child of P exists that D is a descendant of C.
+ * 
+ * **See Also**: `SceneObjectBase.child`, `SceneModule.root`.
+ */find(name: string): any
+ ;
+
+/** 
+*  
+ * addChild(child: SceneObjectBase): Promise<void>
+ * addChild(identifier: string): Promise<void>
+ *  
+ * Add a child to this scene object.
+ * 
+ * Please note the following specific behavior when using this API:
+ *   - Adding an object as a child automatically removes it from any other parent.
+ *   - Adding a child that was created in Studio is not allowed.
+ */addChild(child: any): Promise<void>
+ ;
+
+addChild(identifier: string): Promise<void>
+ ;
+
+/** 
+*  
+ * removeFromParent(): Promise<void>
+ *  
+ * Remove this child from any parent object.
+ * 
+ * When removing scene objects, keep the following in mind:
+ *   - Removing a child that was created in Studio isn't allowed.
+ *   - Removing a child that is not present under a given parent isn't allowed.
+ *   - Removing a child doesn't unbind any of it's properties.
+ */removeFromParent(): Promise<void>
  ;
 
 } 

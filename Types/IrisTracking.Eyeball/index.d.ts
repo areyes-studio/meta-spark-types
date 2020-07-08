@@ -1,5 +1,5 @@
 /// <reference path="../Reactive.PointSignal/index.d.ts" />
-/// <reference path="../Reactive.RotationSignal/index.d.ts" />
+/// <reference path="../Reactive.QuaternionSignal/index.d.ts" />
 declare interface Eyeball {
 /** 
 * ```
@@ -21,11 +21,11 @@ Specifies the 3D position of the center point of the iris in the face local coor
 iris: PointSignal;
 /** 
 * ```
-(get) rotation: RotationSignal
+(get) rotation: QuaternionSignal
 (set) (Not Available)
 ```
 
 Specifies the rotation of the eyeball around its center.
 */ 
-rotation: RotationSignal;
+rotation: QuaternionSignal;
 } 

@@ -406,7 +406,7 @@ position: PointSignal;
 
 /** 
 *  
- * (get) getTypes(): Promise<Array<ParticleTypeDescription>>
+ * getTypes(): Promise<Array<ParticleTypeDescription>>
  *  
  * 
  * Retrieves the array of ParticleTypeDescription objects

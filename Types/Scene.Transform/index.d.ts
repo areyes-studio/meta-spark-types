@@ -1,6 +1,6 @@
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 /// <reference path="../Reactive.PointSignal/index.d.ts" />
-/// <reference path="../Reactive.Rotation/index.d.ts" />
+/// <reference path="../Reactive.QuaternionSignal/index.d.ts" />
 /// <reference path="../Reactive.TransformSignal/index.d.ts" />
 /// <reference path="../Reactive.VectorSignal/index.d.ts" />
 declare interface Transform {
@@ -102,13 +102,13 @@ Specifies the object position along the X, Y and Z axis of the object's local co
 position: PointSignal;
 /** 
 * ```
-(get) (Not Available)
-(set) rotation: Rotation
+(get) rotation: QuaternionSignal
+(set) rotation: QuaternionSignal
 ```
 
 Specifies the object rotation along the X, Y and Z axis of the object's local coordinate system.
 */ 
-rotation: Rotation;
+rotation: QuaternionSignal;
 /** 
 * ```
 (get) scaleZ: ScalarSignal

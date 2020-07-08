@@ -1,15 +1,15 @@
-/// <reference path="../Reactive.StringValue/index.d.ts" />
+/// <reference path="../ConstStringSignal/index.d.ts" />
 /// <reference path="../Reactive.StringSignal/index.d.ts" />
 declare interface ExternalTexture {
 /** 
 * ```
-(get) url: StringValue
+(get) url: ConstStringSignal
 (set) url: StringSignal
 ```
 
 Specifies the URL of the texture to be downloaded.
 */ 
-url: StringValue;
+url: ConstStringSignal;
 /** 
 * ```
 (get) state: StringSignal

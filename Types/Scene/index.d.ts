@@ -1,4 +1,8 @@
 /// <reference path="../Scene.Scene/index.d.ts" />
+/// <reference path="../string/index.d.ts" />
+/// <reference path="../initialState/index.d.ts" />
+/// <reference path="../Promise/index.d.ts" />
+/// <reference path="../string /index.d.ts" />
 /// <reference path="../Reactive.PointSignal/index.d.ts" />
 /// <reference path="../Reactive.Point2DSignal/index.d.ts" />
 /// <reference path="../number/index.d.ts" />
@@ -12,6 +16,36 @@ declare namespace SceneModule {
 Returns an object that is the root of the scene tree. Other objects are accessed by walking down the scene tree from the root using the `SceneObjectBase.child` and `SceneObjectBase.find` methods.
 */ 
 const root: Scene;
+/** 
+*  
+ * create(className: string, initialState?: {[key: string]: any}): Promise<SceneObjectBase>
+ *  
+ * 
+ * Create a scene object asynchronously.
+ * When creating the scene objects, keep the following in mind:
+ * - All objects must have an existing class.
+ * - New objects always get assigned a globally unique `identifier`.`
+ * - `initialState` is optional, but encouraged to be used.
+ * - `name` in `initialState` is being used, unless it's not provided - then `dynamicObject` is used.
+ * )
+ */function create(className: string, initialState?: {[key: string]: any}): Promise<any>
+ ;
+
+/** 
+*  
+ * destroy(sceneObject: string | SceneObjectBase): Promise<void>
+ *  
+ * 
+ * Destroy a scene object, asynchronously.
+ * When destroying scene objects, keep the following in mind:
+ *  - All bound properties will be automatically unbound on destruction.
+ *  - Destroying a scene object automatically removes it from any parent.
+ *  - Destroying a scene object automatically removes it all children from it.
+ *  - Destroying a scene object that doesn't exist fails the `Promise`.
+ *  - Destroying a scene object that was created in Studio fails the `Promise`.
+ */function destroy(sceneObject: string | any): Promise<void>
+ ;
+
 /** 
 *  
  * projectToScreen(point: PointSignal): Point2DSignal

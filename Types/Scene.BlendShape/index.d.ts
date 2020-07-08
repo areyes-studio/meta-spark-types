@@ -1,15 +1,15 @@
-/// <reference path="../Reactive.ScalarValue/index.d.ts" />
+/// <reference path="../ConstScalarSignal/index.d.ts" />
 /// <reference path="../string/index.d.ts" />
 declare interface BlendShape {
 /** 
 * ```
-(get) weight: ScalarValue
+(get) weight: ConstScalarSignal
 (set) weight: ScalarSignal
 ```
 
 Specifies the weight of the blend shape.
 */ 
-weight: ScalarValue;
+weight: ConstScalarSignal;
 /** 
 * ```
 (get) prefabName: string

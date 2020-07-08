@@ -1,20 +1,20 @@
 /// <reference path="../string/index.d.ts" />
-/// <reference path="../Reactive.ScalarValue/index.d.ts" />
+/// <reference path="../ConstScalarSignal/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 /// <reference path="../Promise/index.d.ts" />
-/// <reference path="../Reactive.BoolValue/index.d.ts" />
+/// <reference path="../ConstBoolSignal/index.d.ts" />
 /// <reference path="../Textures.TextureBase/index.d.ts" />
 /// <reference path="../Reactive.BoolSignal/index.d.ts" />
 declare interface CustomMaterial {
 /** 
 *  
- * floatParameter(paramName: string): ScalarValue
+ * floatParameter(paramName: string): ConstScalarSignal
  *  
  * 
- * Returns the `ScalarValue` value representing the shader parameter indicated by the `paramName` argument. An exception is thrown when the identifier isn't found in the material.
+ * Returns the `ConstScalarSignal` value representing the shader parameter indicated by the `paramName` argument. An exception is thrown when the identifier isn't found in the material.
  * 
  * **See Also**: `CustomMaterial.setFloatParameter`.
- */floatParameter(paramName: string): ScalarValue
+ */floatParameter(paramName: string): ConstScalarSignal
  ;
 
 /** 
@@ -41,13 +41,13 @@ declare interface CustomMaterial {
 
 /** 
 *  
- * boolParameter(paramName: string): BoolValue
+ * boolParameter(paramName: string): ConstBoolSignal
  *  
  * 
  * Returns the Boolean value indicated by the `paramName` argument. An exception is thrown when the identifier isn't found in the material.
  * 
  * **See Also**: `CustomMaterial.setBoolParameter`.
- */boolParameter(paramName: string): BoolValue
+ */boolParameter(paramName: string): ConstBoolSignal
  ;
 
 /** 

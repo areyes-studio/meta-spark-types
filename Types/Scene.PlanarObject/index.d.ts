@@ -1,4 +1,4 @@
-/// <reference path="../Reactive.ScalarSignal/index.d.ts" />
+/// <reference path="../ConstScalarSignal/index.d.ts" />
 /// <reference path="../number/index.d.ts" />
 /// <reference path="../Scene.HorizontalAlignment/index.d.ts" />
 /// <reference path="../Scene.VerticalAlignment/index.d.ts" />
@@ -7,7 +7,7 @@
 declare interface PlanarObject {
 /** 
 * ```
-(get) width: ScalarSignal
+(get) width: ConstScalarSignal
 (set) width: ScalarSignal
 ```
 
@@ -17,7 +17,7 @@ Specifies the width of the object.
 
 **Note**: this parameter is used as an input to the layout algorithm. The layout-calculated size and location of the object is available via `PlanarObject.bounds` property. The `SceneObjectBase.transform` property doesn't affect the layout, the transformation it specifies is applied on top of it.
 */ 
-width: ScalarSignal;
+width: ConstScalarSignal;
 /** 
 * ```
 (get) (Not Available)
@@ -31,7 +31,7 @@ Specifies the size of the bottom margin.
 marginBottom: number;
 /** 
 * ```
-(get) height: ScalarSignal
+(get) height: ConstScalarSignal
 (set) height: ScalarSignal
 ```
 
@@ -41,7 +41,7 @@ Specifies the height of the object.
 
 **Note**: this parameter is used as an input to the layout algorithm. The layout-calculated size and location of the object is available via `PlanarObject.bounds` property. The `SceneObjectBase.transform` property doesn't affect the layout, the transformation it specifies is applied on top of it.
 */ 
-height: ScalarSignal;
+height: ConstScalarSignal;
 /** 
 * ```
 (get) (Not Available)
