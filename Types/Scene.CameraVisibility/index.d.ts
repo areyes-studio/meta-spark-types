@@ -1,30 +1,30 @@
-/// <reference path="../ConstBoolSignal/index.d.ts" />
+/// <reference path="../Reactive.BoolSignal/index.d.ts" />
 declare interface CameraVisibility {
 /** 
 * ```
-(get) forUnspecifiedCamera: ConstBoolSignal
+(get) forUnspecifiedCamera: BoolSignal
 (set) forUnspecifiedCamera: BoolSignal
 ```
 
 Specifies whether the object is visible when the active camera couldn't be specified.
 */ 
-forUnspecifiedCamera: ConstBoolSignal;
+forUnspecifiedCamera: BoolSignal;
 /** 
 * ```
-(get) forFrontCamera: ConstBoolSignal
+(get) forFrontCamera: BoolSignal
 (set) forFrontCamera: BoolSignal
 ```
 
 Specifies whether the object is visible when the front camera is the active one.
 */ 
-forFrontCamera: ConstBoolSignal;
+forFrontCamera: BoolSignal;
 /** 
 * ```
-(get) forBackCamera: ConstBoolSignal
+(get) forBackCamera: BoolSignal
 (set) forBackCamera: BoolSignal
 ```
 
 Specifies whether the object is visible when the back camera is the active one.
 */ 
-forBackCamera: ConstBoolSignal;
+forBackCamera: BoolSignal;
 } 

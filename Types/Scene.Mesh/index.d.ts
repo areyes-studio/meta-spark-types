@@ -4,13 +4,14 @@
 /// <reference path="../Promise/index.d.ts" />
 declare interface Mesh {
 /** 
-* ```
+* 
+```
 (get) material: MaterialBase
 (set) material: MaterialBase
 ```
 
 Specifies the material of the scene object.
-This method will throw an error if multiple materials are associated with different surfaces of the mesh.
+
 */ 
 material: MaterialBase;
 /** 
@@ -41,13 +42,23 @@ Specifies the name of prefab for Mesh. This is the unique identifier of the pref
 */ 
 prefabName: string;
 /** 
-*  
+* 
+ *  
  * getMaterial(): Promise<MaterialBase>
  *  
  * 
- * Returns a promise that is resolved with the material associated with a given mesh object or null if no material was assigned.
- * This method will return an error if multiple materials are associated with different surfaces of the mesh.
+ * Returns a promise that is resolved with the material associated with a given scene object or null if no material was assigned.
+ * 
  */getMaterial(): Promise<MaterialBase>
+ ;
+
+/** 
+*  
+ * getPrefab(): Promise<Prefab>
+ *  
+ * 
+ * Returns a promise that is resolved with the prefab associated with a given mesh object or null if no prefab was assigned.
+ */getPrefab(): Promise<Prefab>
  ;
 
 /** 

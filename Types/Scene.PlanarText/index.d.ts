@@ -89,11 +89,13 @@ Represents the `TextAlignmentWrapper` that contains parameters that specify the 
 */ 
 alignment: TextAlignmentWrapper;
 /** 
-*  
+* 
+ *  
  * getMaterial(): Promise<MaterialBase>
  *  
  * 
  * Returns a promise that is resolved with the material associated with a given scene object or null if no material was assigned.
+ * 
  */getMaterial(): Promise<MaterialBase>
  ;
 

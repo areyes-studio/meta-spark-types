@@ -1,12 +1,12 @@
-/// <reference path="../ConstStringSignal/index.d.ts" />
+/// <reference path="../Reactive.StringSignal/index.d.ts" />
 declare interface RemoteSceneObject {
 /** 
 * ```
-(get) remoteModelIdentifier: ConstStringSignal
-(set) remoteModelIdentifier: ConstStringSignal
+(get) remoteModelIdentifier: StringSignal
+(set) remoteModelIdentifier: StringSignal
 ```
 
 Specifies the Remote 3D model indentifier.
 */ 
-remoteModelIdentifier: ConstStringSignal;
+remoteModelIdentifier: StringSignal;
 } 

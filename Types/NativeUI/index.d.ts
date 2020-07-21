@@ -2,8 +2,8 @@
 /// <reference path="../NativeUI.Slider/index.d.ts" />
 /// <reference path="../String/index.d.ts" />
 /// <reference path="../void/index.d.ts" />
-/// <reference path="../Reactive.StringSignal/index.d.ts" />
 /// <reference path="../Promise/index.d.ts" />
+/// <reference path="../Reactive.StringSignal/index.d.ts" />
 declare namespace NativeUIModule {
 /** 
 * ```
@@ -31,10 +31,11 @@ const slider: Slider;
 
 /** 
 *  
- *                                     enterTextEditMode(nodeName: String): void
+ *                                     enterTextEditMode(nodeName: String): Promise<boolean>
  *                                      
  *                                     Requests user input for given node.
- */function enterTextEditMode(nodeName: String): void
+ *                                     Returns a promise that is resolved with boolean value representing whenever the request succeeded.
+ */function enterTextEditMode(nodeName: String): Promise<boolean>
  ;
 
 /** 

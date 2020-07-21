@@ -338,12 +338,14 @@ Specifies the percentage delta value, between 0.0 and 1.0, for the `rotationalDa
 */ 
 rotationalDampingPercentageDelta: ScalarSignal;
 /** 
-* ```
+* 
+```
 (get) material: MaterialBase
 (set) material: MaterialBase
 ```
 
 Specifies the material of the scene object.
+
 */ 
 material: MaterialBase;
 /** 
@@ -397,20 +399,22 @@ Specifies the mean spawn position of each particle.
 position: PointSignal;
 /** 
 *  
- * getMaterial(): Promise<MaterialBase>
- *  
- * 
- * Returns a promise that is resolved with the material associated with a given scene object or null if no material was assigned.
- */getMaterial(): Promise<MaterialBase>
- ;
-
-/** 
-*  
  * getTypes(): Promise<Array<ParticleTypeDescription>>
  *  
  * 
  * Retrieves the array of ParticleTypeDescription objects
  */getTypes(): Promise<Array<ParticleTypeDescription>>
+ ;
+
+/** 
+* 
+ *  
+ * getMaterial(): Promise<MaterialBase>
+ *  
+ * 
+ * Returns a promise that is resolved with the material associated with a given scene object or null if no material was assigned.
+ * 
+ */getMaterial(): Promise<MaterialBase>
  ;
 
 } 

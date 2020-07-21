@@ -1,5 +1,5 @@
 /// <reference path="../string/index.d.ts" />
-/// <reference path="../ConstStringSignal/index.d.ts" />
+/// <reference path="../Reactive.StringSignal/index.d.ts" />
 /// <reference path="../Signal<Prefabs.State>/index.d.ts" />
 declare interface Prefab {
 /** 
@@ -15,13 +15,13 @@ Specifies the unique prefab name. The prefab name can be retrieved from within m
 name: string;
 /** 
 * ```
-(get) url: ConstStringSignal
+(get) url: StringSignal
 (set) url: StringSignal
 ```
 
 Specifies the URL of the prefab to be downloaded.
 */ 
-url: ConstStringSignal;
+url: StringSignal;
 /** 
 * ```
 (get) state: Signal<PrefabsModule.State>

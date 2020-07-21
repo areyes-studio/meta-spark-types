@@ -1,13 +1,12 @@
-/// <reference path="../ConstScalarSignal/index.d.ts" />
-/// <reference path="../AudioSource/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
+/// <reference path="../AudioSource/index.d.ts" />
 /// <reference path="../number/index.d.ts" />
 /// <reference path="../Scene.AudioTransformWrapper/index.d.ts" />
 /// <reference path="../Reactive.BoolSignal/index.d.ts" />
 declare interface Speaker {
 /** 
 * ```
-(get) volume: ConstScalarSignal
+(get) volume: ScalarSignal
 (set) volume: ScalarSignal
 ```
 
@@ -16,7 +15,7 @@ declare interface Speaker {
 
 Note: To access this property you need to enable the AudioSourceVolume API capability.
 */ 
-volume: ConstScalarSignal;
+volume: ScalarSignal;
 /** 
 *  
  * minProgress(audioSource: AudioSource): ScalarSignal

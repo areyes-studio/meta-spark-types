@@ -1,30 +1,30 @@
-/// <reference path="../ConstBoolSignal/index.d.ts" />
+/// <reference path="../Reactive.BoolSignal/index.d.ts" />
 declare interface OutputVisibility {
 /** 
 * ```
-(get) forPreviewOutput: ConstBoolSignal
+(get) forPreviewOutput: BoolSignal
 (set) forPreviewOutput: BoolSignal
 ```
 
 Specifies whether the object is visible on the preview output.
 */ 
-forPreviewOutput: ConstBoolSignal;
+forPreviewOutput: BoolSignal;
 /** 
 * ```
-(get) forCaptureOutput: ConstBoolSignal
+(get) forCaptureOutput: BoolSignal
 (set) forCaptureOutput: BoolSignal
 ```
 
 Specifies whether the object is visible on the capture output.
 */ 
-forCaptureOutput: ConstBoolSignal;
+forCaptureOutput: BoolSignal;
 /** 
 * ```
-(get) forOverlayOutput: ConstBoolSignal
+(get) forOverlayOutput: BoolSignal
 (set) forOverlayOutput: BoolSignal
 ```
 
 Specifies whether the object is visible on the overlay output.
 */ 
-forOverlayOutput: ConstBoolSignal;
+forOverlayOutput: BoolSignal;
 } 

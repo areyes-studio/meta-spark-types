@@ -1,15 +1,16 @@
-/// <reference path="../ConstScalarSignal/index.d.ts" />
+/// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 /// <reference path="../string/index.d.ts" />
+/// <reference path="../Promise/index.d.ts" />
 declare interface BlendShape {
 /** 
 * ```
-(get) weight: ConstScalarSignal
+(get) weight: ScalarSignal
 (set) weight: ScalarSignal
 ```
 
 Specifies the weight of the blend shape.
 */ 
-weight: ConstScalarSignal;
+weight: ScalarSignal;
 /** 
 * ```
 (get) prefabName: string
@@ -28,4 +29,13 @@ prefabName: string;
 Retrieves the name of the BlendShape.
 */ 
 name: string;
+/** 
+*  
+ * getPrefab(): Promise<Prefab>
+ *  
+ * 
+ * Returns a promise that is resolved with the prefab associated with a given BlendShape or null if no prefab was assigned.
+ */getPrefab(): Promise<Prefab>
+ ;
+
 } 
