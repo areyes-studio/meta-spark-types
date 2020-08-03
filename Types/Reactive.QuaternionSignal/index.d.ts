@@ -24,7 +24,7 @@ eulerAngles: PointSignal;
 
 Represents the W component of the quaternion.
 */ 
-w: ScalarSignal;
+w: ScalarSignal | number;
 /** 
 * ```
 (get) x: ScalarSignal
@@ -33,7 +33,7 @@ w: ScalarSignal;
 
 Represents the X component of the quaternion.
 */ 
-x: ScalarSignal;
+x: ScalarSignal | number;
 /** 
 * ```
 (get) y: ScalarSignal
@@ -42,7 +42,7 @@ x: ScalarSignal;
 
 Represents the Y component of the quaternion.
 */ 
-y: ScalarSignal;
+y: ScalarSignal | number;
 /** 
 * ```
 (get) z: ScalarSignal
@@ -51,7 +51,7 @@ y: ScalarSignal;
 
 Represents the Z component of the quaternion.
 */ 
-z: ScalarSignal;
+z: ScalarSignal | number;
 /** 
 *  
  * conjugate(): QuaternionSignal

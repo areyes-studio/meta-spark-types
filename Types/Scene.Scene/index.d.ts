@@ -7,12 +7,12 @@ declare interface Scene {
 /** 
 * ```
 (get) hidden: BoolSignal
-(set) hidden: void
+(set) hidden: BoolSignal | boolean
 ```
 
 Specifies whether the scene and its descendants are hidden.
 */ 
-hidden: BoolSignal;
+hidden: BoolSignal | boolean;
 /** 
 *  
  * child(name: string): SceneObjectBase

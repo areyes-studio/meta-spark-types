@@ -8,7 +8,7 @@ declare namespace ViperDebugModule {
 
 Gets a debug string piped through from Viper.
 */ 
-const debugString: StringSignal;
+const debugString: StringSignal | string;
 /** 
 *  
  * setViperOnlyMode() : void

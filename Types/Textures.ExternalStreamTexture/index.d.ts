@@ -18,5 +18,5 @@ streamIdentifier: string;
 
 Specifies a `StringSignal` representing the identifier of stream (used by External Stream Texture Factory to map stream with texture model).
 */ 
-streamId: StringSignal;
+streamId: StringSignal | string;
 } 

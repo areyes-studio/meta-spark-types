@@ -19,7 +19,7 @@ cameraTransform: TransformSignal;
 
 Specifies a `StringSignal` containing the name of the hand gesture.
 */ 
-gestureType: StringSignal;
+gestureType: StringSignal | string;
 /** 
 * ```
 (get) indexFingerBase: PointSignal

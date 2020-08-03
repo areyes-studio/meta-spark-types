@@ -10,7 +10,7 @@ declare interface BlendShape {
 
 Specifies the weight of the blend shape.
 */ 
-weight: ScalarSignal;
+weight: ScalarSignal | number;
 /** 
 * ```
 (get) prefabName: string

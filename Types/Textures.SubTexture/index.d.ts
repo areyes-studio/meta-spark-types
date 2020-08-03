@@ -8,7 +8,7 @@ declare interface SubTexture {
 
 Specifies the position of the left boundary in UV texture coordinates.
 */ 
-minU: ScalarSignal;
+minU: ScalarSignal | number;
 /** 
 * ```
 (get) minV: ScalarSignal
@@ -17,7 +17,7 @@ minU: ScalarSignal;
 
 Specifies the position of the bottom boundary in UV texture coordinates.
 */ 
-minV: ScalarSignal;
+minV: ScalarSignal | number;
 /** 
 * ```
 (get) sizeU: ScalarSignal
@@ -26,7 +26,7 @@ minV: ScalarSignal;
 
 Specifies the horizontal span in UV texture coordinates.
 */ 
-sizeU: ScalarSignal;
+sizeU: ScalarSignal | number;
 /** 
 * ```
 (get) sizeV: ScalarSignal
@@ -35,5 +35,5 @@ sizeU: ScalarSignal;
 
 Specifies the vertical span in UV texture coordinates.
 */ 
-sizeV: ScalarSignal;
+sizeV: ScalarSignal | number;
 } 

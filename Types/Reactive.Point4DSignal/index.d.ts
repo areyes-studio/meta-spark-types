@@ -17,7 +17,7 @@ declare interface Point4DSignal {
 
 Represents the left component of the `Insets`, the second element of the vector.
 */ 
-left: ScalarSignal;
+left: ScalarSignal | number;
 /** 
 * ```
 (get) z: ScalarSignal
@@ -26,7 +26,7 @@ left: ScalarSignal;
 
 Represents the Z component, the third element of the vector.
 */ 
-z: ScalarSignal;
+z: ScalarSignal | number;
 /** 
 * ```
 (get) y: ScalarSignal
@@ -35,7 +35,7 @@ z: ScalarSignal;
 
 Represents the Y coordinate, the second elemnt of the vector.
 */ 
-y: ScalarSignal;
+y: ScalarSignal | number;
 /** 
 * ```
 (get) top: ScalarSignal
@@ -44,7 +44,7 @@ y: ScalarSignal;
 
 Represents the top component of the `Insets`, the first element of the vector.
 */ 
-top: ScalarSignal;
+top: ScalarSignal | number;
 /** 
 * ```
 (get) x: ScalarSignal
@@ -53,7 +53,7 @@ top: ScalarSignal;
 
 Represents the X coordinate, the first element of the vector.
 */ 
-x: ScalarSignal;
+x: ScalarSignal | number;
 /** 
 * ```
 (get) bottom: ScalarSignal
@@ -62,7 +62,7 @@ x: ScalarSignal;
 
 Represents the bottom component of the `Insets`, the third element of the vector.
 */ 
-bottom: ScalarSignal;
+bottom: ScalarSignal | number;
 /** 
 * ```
 (get) w: ScalarSignal
@@ -71,7 +71,7 @@ bottom: ScalarSignal;
 
 Represents the W component, the fourth element of the vector.
 */ 
-w: ScalarSignal;
+w: ScalarSignal | number;
 /** 
 * ```
 (get) right: ScalarSignal
@@ -80,7 +80,7 @@ w: ScalarSignal;
 
 Represents the bottom component of the `Insets`, the fourth element of the vector.
 */ 
-right: ScalarSignal;
+right: ScalarSignal | number;
 /** 
 *  
  * mod(other: ScalarSignal): ScalarSignal

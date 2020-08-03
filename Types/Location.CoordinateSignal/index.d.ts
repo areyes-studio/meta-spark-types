@@ -6,12 +6,12 @@ declare interface CoordinateSignal {
                                         (set) (Not Available)
                                         ```
 */ 
-latitude: ScalarSignal;
+latitude: ScalarSignal | number;
 /** 
 * ```
                                         (get) longitude: ScalarSignal
                                         (set) (Not Available)
                                         ```
 */ 
-longitude: ScalarSignal;
+longitude: ScalarSignal | number;
 } 

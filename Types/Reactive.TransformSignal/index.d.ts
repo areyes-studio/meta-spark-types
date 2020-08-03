@@ -14,7 +14,7 @@ declare interface TransformSignal {
 
 Represents the offset along the Y-axis of the local coordinate system.
 */ 
-y: ScalarSignal;
+y: ScalarSignal | number;
 /** 
 * ```
 (get) z: ScalarSignal
@@ -23,7 +23,7 @@ y: ScalarSignal;
 
 Represents the offset along the Z-axis of the local coordinate system.
 */ 
-z: ScalarSignal;
+z: ScalarSignal | number;
 /** 
 * ```
 (get) rotationY: ScalarSignal
@@ -34,7 +34,7 @@ Represents rotation about the Y-axis of the rotated local coordinate system, in 
 
 **Note**: The order of operations (rotations in particular) is the same as in `Transform`. The rotations are applied to the object in Z-Y-X order. The Y rotation is applied second to the object, therefore if the `rotationX` is not zero, then `rotationY` is applied not in the object's local coordinate system but in the rotated one.
 */ 
-rotationY: ScalarSignal;
+rotationY: ScalarSignal | number;
 /** 
 * ```
 (get) rotationX: ScalarSignal
@@ -45,7 +45,7 @@ Represents rotation about the X-axis of the local coordinate system, in radians.
 
 **Note**: The order of operations (rotations in particular) is the same as in `Transform`. The rotations are applied to the object in Z-Y-X order. The X rotation is applied first to the object, therefore it is always performed in the object's local coordinate system.
 */ 
-rotationX: ScalarSignal;
+rotationX: ScalarSignal | number;
 /** 
 * ```
 (get) x: ScalarSignal
@@ -54,7 +54,7 @@ rotationX: ScalarSignal;
 
 Represents the offset along the X-axis of the local coordinate system.
 */ 
-x: ScalarSignal;
+x: ScalarSignal | number;
 /** 
 * ```
 (get) scaleX: ScalarSignal
@@ -63,7 +63,7 @@ x: ScalarSignal;
 
 Represents scale along the X-axis of the local coordinate system.
 */ 
-scaleX: ScalarSignal;
+scaleX: ScalarSignal | number;
 /** 
 * ```
 (get) rotationZ: ScalarSignal
@@ -74,7 +74,7 @@ Represents rotation about the Z-axis of the rotated local coordinate system, in 
 
 **Note**: The order of operations (rotations in particular) is the same as in `Transform`. The rotations are applied to the object in Z-Y-X order. The Z rotation is applied last to the object, therefore if the `rotationX` or `rotationY` is not zero, then `rotationZ` is applied not in the object's local coordinate system but in the rotated one.
 */ 
-rotationZ: ScalarSignal;
+rotationZ: ScalarSignal | number;
 /** 
 * ```
 (get) scaleY: ScalarSignal
@@ -83,7 +83,7 @@ rotationZ: ScalarSignal;
 
 Represents scale along the Y-axis of the local coordinate system.
 */ 
-scaleY: ScalarSignal;
+scaleY: ScalarSignal | number;
 /** 
 * ```
 (get) scaleZ: ScalarSignal
@@ -92,7 +92,7 @@ scaleY: ScalarSignal;
 
 Represents scale along the Z-axis of the local coordinate system.
 */ 
-scaleZ: ScalarSignal;
+scaleZ: ScalarSignal | number;
 /** 
 * ```
 (get) position: PointSignal

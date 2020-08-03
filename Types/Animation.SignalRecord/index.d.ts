@@ -12,15 +12,6 @@ Returns duration of SignalRecord recording in milliseconds.
 durationMs: number;
 /** 
 * ```
-(get) valuesString: string
-(set) (Not Available)
-```
-
-Returns the array of values (as doubles to 4 decimal precision) of this SignalRecord as a string
-*/ 
-valuesString: string;
-/** 
-* ```
 (get) recordCount: number
 (set) (Not Available)
 ```
@@ -34,7 +25,16 @@ recordCount: number;
 (set) (Not Available)
 ```
 
-Returns the array of timestamps (as integer milliseconds) of this SignalRecord as a string
+Returns the array of timestamps (as integer milliseconds) of this SignalRecord as a string.
 */ 
 timestampsString: string;
+/** 
+* ```
+(get) valuesString: string
+(set) (Not Available)
+```
+
+Returns the array of values (as doubles to 4 decimal precision) of this SignalRecord as a string.
+*/ 
+valuesString: string;
 } 

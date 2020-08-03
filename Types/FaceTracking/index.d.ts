@@ -1,5 +1,5 @@
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
-/// <reference path="../void/index.d.ts" />
+/// <reference path="../Reactive.BoolSignal/index.d.ts" />
 /// <reference path="../Promise/index.d.ts" />
 /// <reference path="../number/index.d.ts" />
 /// <reference path="../FaceTracking.Face/index.d.ts" />
@@ -12,16 +12,16 @@ declare namespace FaceTrackingModule {
 
 Returns a `ScalarSignal` representing the number of faces tracked in the scene.
 */ 
-const count: ScalarSignal;
+const count: ScalarSignal | number;
 /** 
 * ```
 (get) (Not Available)
-(set) isEnabled: void
+(set) isEnabled: BoolSignal | boolean
 ```
 
 Specifies a `BoolSignal` that takes the value of `true` whenever the Face Tracker should be run, and the value of `false` otherwise. Default value is `true`.
 */ 
-const isEnabled: void;
+const isEnabled: BoolSignal | boolean;
 /** 
 *  
  * createFaceMeshSceneObject(initialState?: {[key: string]: any}): Promise<FaceMesh>

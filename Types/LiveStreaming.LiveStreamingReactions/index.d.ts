@@ -8,7 +8,7 @@ declare interface LiveStreamingReactions {
 
 Specifies a `ScalarSignal` that is the count of the like reaction for this live stream.
 */ 
-like: ScalarSignal;
+like: ScalarSignal | number;
 /** 
 * ```
 (get) sad: ScalarSignal
@@ -17,7 +17,7 @@ like: ScalarSignal;
 
 Specifies a `ScalarSignal` that is the count of the sad reaction for this live stream.
 */ 
-sad: ScalarSignal;
+sad: ScalarSignal | number;
 /** 
 * ```
 (get) love: ScalarSignal
@@ -26,7 +26,7 @@ sad: ScalarSignal;
 
 Specifies a `ScalarSignal` that is the count of the love reaction for this live stream.
 */ 
-love: ScalarSignal;
+love: ScalarSignal | number;
 /** 
 * ```
 (get) haha: ScalarSignal
@@ -35,7 +35,7 @@ love: ScalarSignal;
 
 Specifies a `ScalarSignal` that is the count of the haha reaction for this live stream.
 */ 
-haha: ScalarSignal;
+haha: ScalarSignal | number;
 /** 
 * ```
 (get) wow: ScalarSignal
@@ -44,7 +44,7 @@ haha: ScalarSignal;
 
 Specifies a `ScalarSignal` that is the count of the wow reaction for this live stream.
 */ 
-wow: ScalarSignal;
+wow: ScalarSignal | number;
 /** 
 * ```
 (get) angry: ScalarSignal
@@ -53,7 +53,7 @@ wow: ScalarSignal;
 
 Specifies a `ScalarSignal` that is the count of the angry reaction for this live stream.
 */ 
-angry: ScalarSignal;
+angry: ScalarSignal | number;
 /** 
 * ```
 (get) total: ScalarSignal
@@ -62,5 +62,5 @@ angry: ScalarSignal;
 
 Specifies a `ScalarSignal` that is the total number of reactions on this live stream. This may exceed the sum of the individual reaction counts (like, love, etc.) if a seasonal reaction (such as thankful) is available and is used by viewers.
 */ 
-total: ScalarSignal;
+total: ScalarSignal | number;
 } 

@@ -1,17 +1,16 @@
 /// <reference path="../string/index.d.ts" />
 /// <reference path="../Reactive.StringSignal/index.d.ts" />
-/// <reference path="../Object/index.d.ts" />
+/// <reference path="../any/index.d.ts" />
 /// <reference path="../void/index.d.ts" />
 declare namespace AnalyticsModule {
 /** 
 * ```
- (get) cameraProductName: string
- (set) (Not Available)
- ```
+(get) cameraProductName: string
+(set) (Not Available)
+```
 
- Specifies the current context camera product name used for analytics.
-
- Note: This can return empty string in cases where current product name couldn't be determined.
+Specifies the current context camera product name used for analytics.
+Note: This can return empty string in cases where current product name couldn't be determined.
 */ 
 const cameraProductName: string;
 /** 
@@ -21,17 +20,16 @@ const cameraProductName: string;
 ```
 
 Specifies the current context camera product name used for analytics.
-
 Note: This can return empty string signal in cases where current product name couldn't be determined.
 */ 
-const productName: StringSignal;
+const productName: StringSignal | string;
 /** 
 *  
- *  logEvent(eventName: string, extras: Object): void
- *   
+ * logEvent(eventName: string, extras: any): void
+ *  
  * 
- *  Log an analytics event with a custom name and optional extras object.
- */function logEvent(eventName: string, extras: Object): void
+ * Log an analytics event with a custom name and optional extras object.
+ */function logEvent(eventName: string, extras: any): void
  ;
 
 } 

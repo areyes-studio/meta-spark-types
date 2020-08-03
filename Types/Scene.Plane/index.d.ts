@@ -10,7 +10,7 @@ declare interface Plane {
 
 Specifies the horizontal offset, in 3D units.
 */ 
-x: ScalarSignal;
+x: ScalarSignal | number;
 /** 
 * ```
 (get) width: ScalarSignal
@@ -19,7 +19,7 @@ x: ScalarSignal;
 
 Specifies the horizontal size, in 3D units.
 */ 
-width: ScalarSignal;
+width: ScalarSignal | number;
 /** 
 * ```
 (get) height: ScalarSignal
@@ -28,7 +28,7 @@ width: ScalarSignal;
 
 Specifies the vertical size, in 3D units.
 */ 
-height: ScalarSignal;
+height: ScalarSignal | number;
 /** 
 * ```
 (get) y: ScalarSignal
@@ -37,7 +37,7 @@ height: ScalarSignal;
 
 Specifies the vertical offset, in 3D units.
 */ 
-y: ScalarSignal;
+y: ScalarSignal | number;
 /** 
 * 
 ```

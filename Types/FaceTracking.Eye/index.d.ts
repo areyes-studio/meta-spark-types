@@ -40,7 +40,7 @@ lowerEyelidCenter: PointSignal;
 Specifies a `ScalarSignal` representing the openness of the eye.
 The openness of the eye is a non-negative value where 0.0 is eye closed and 1.0 eye wide open (it can also take values greater than 1.0).
 */ 
-openness: ScalarSignal;
+openness: ScalarSignal | number;
 /** 
 * ```
 (get) outsideCorner: PointSignal

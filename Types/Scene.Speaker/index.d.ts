@@ -15,7 +15,7 @@ declare interface Speaker {
 
 Note: To access this property you need to enable the AudioSourceVolume API capability.
 */ 
-volume: ScalarSignal;
+volume: ScalarSignal | number;
 /** 
 *  
  * minProgress(audioSource: AudioSource): ScalarSignal

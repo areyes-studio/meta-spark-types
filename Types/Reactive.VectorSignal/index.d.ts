@@ -16,7 +16,7 @@ declare interface VectorSignal {
 
 Represents the X component of the vector.
 */ 
-x: ScalarSignal;
+x: ScalarSignal | number;
 /** 
 * ```
 (get) y: ScalarSignal
@@ -25,7 +25,7 @@ x: ScalarSignal;
 
 Represents the Y component of the vector.
 */ 
-y: ScalarSignal;
+y: ScalarSignal | number;
 /** 
 * ```
 (get) z: ScalarSignal
@@ -34,7 +34,7 @@ y: ScalarSignal;
 
 Represents the Z component of the vector.
 */ 
-z: ScalarSignal;
+z: ScalarSignal | number;
 /** 
 *  
  * expSmooth(dampFactor: number): VectorSignal

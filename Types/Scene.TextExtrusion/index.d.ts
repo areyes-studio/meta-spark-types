@@ -1,7 +1,7 @@
 /// <reference path="../Materials.MaterialBase/index.d.ts" />
+/// <reference path="../Fonts.FontId/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 /// <reference path="../Reactive.StringSignal/index.d.ts" />
-/// <reference path="../Fonts.FontId/index.d.ts" />
 /// <reference path="../Promise/index.d.ts" />
 declare interface TextExtrusion {
 /** 
@@ -14,34 +14,27 @@ declare interface TextExtrusion {
 */ 
 faceMaterial: MaterialBase;
 /** 
-* ```
-    (get) depth: ScalarSignal
-    (set) depth: ScalarSignal
-    ```
-
-    Text extrusion is only made through straight paths. This specifies the depth of the straight path of extrusion, starting from the position of textExtrusion scene object.
-
-    **Note**: Default value is 10 mm.
-*/ 
-depth: ScalarSignal;
-/** 
-* ```
-(get) text: StringSignal
-(set) text: StringSignal
+* 
 ```
-
-Specifies the text displayed.
-*/ 
-text: StringSignal;
-/** 
-* ```
 (get) (Not Available)
 (set) sideMaterial: MaterialBase
 ```
 
 Specifies the material of the extrusion part of 3-d text.
+
 */ 
 sideMaterial: MaterialBase;
+/** 
+* 
+```
+(get) (Not Available)
+(set) frontMaterial: MaterialBase
+```
+
+Specifies the material of the front cap of 3-d text.
+
+*/ 
+frontMaterial: MaterialBase;
 /** 
 * ```
 (get) (Not Available)
@@ -53,31 +46,24 @@ Sets the given font from the fonts registry.
 font: FontId;
 /** 
 * ```
-(get) (Not Available)
-(set) frontMaterial: MaterialBase
-```
+    (get) depth: ScalarSignal
+    (set) depth: ScalarSignal
+    ```
 
-Specifies the material of the front cap of 3-d text.
+    Text extrusion is only made through straight paths. This specifies the depth of the straight path of extrusion, starting from the position of textExtrusion scene object.
+
+    **Note**: Default value is 10 mm.
 */ 
-frontMaterial: MaterialBase;
+depth: ScalarSignal | number;
 /** 
 * ```
-(get) letterSpacing: ScalarSignal
-(set) letterSpacing: ScalarSignal
+(get) text: StringSignal
+(set) text: StringSignal
 ```
 
-Specifies the letter spacing value.
+Specifies the text displayed.
 */ 
-letterSpacing: ScalarSignal;
-/** 
-* ```
-  (get) (Not Available)
-  (set) backMaterial: MaterialBase
-  ```
-
-  Specifies the material of the back cap of 3-d text.
-*/ 
-backMaterial: MaterialBase;
+text: StringSignal | string;
 /** 
 * ```
 (get) lineSpacing: ScalarSignal
@@ -86,7 +72,27 @@ backMaterial: MaterialBase;
 
 Specifies the line spacing value.
 */ 
-lineSpacing: ScalarSignal;
+lineSpacing: ScalarSignal | number;
+/** 
+* ```
+(get) letterSpacing: ScalarSignal
+(set) letterSpacing: ScalarSignal
+```
+
+Specifies the letter spacing value.
+*/ 
+letterSpacing: ScalarSignal | number;
+/** 
+* 
+```
+(get) (Not Available)
+(set) backMaterial: MaterialBase
+```
+
+Specifies the material of the back cap of 3-d text.
+
+*/ 
+backMaterial: MaterialBase;
 /** 
 *  
  * getFont(): Promise<FontId>
@@ -97,29 +103,35 @@ lineSpacing: ScalarSignal;
  ;
 
 /** 
-*  
+* 
+ *  
  * getFrontMaterial(): Promise<MaterialBase>
  *  
  * 
  * Returns a promise that is resolved with the material associated with the front cap of 3-d text of given scene object or null if no material was assigned.
+ * 
  */getFrontMaterial(): Promise<MaterialBase>
  ;
 
 /** 
-*  
+* 
+ *  
  * getBackMaterial(): Promise<MaterialBase>
  *  
  * 
  * Returns a promise that is resolved with the material associated with the back cap of 3-d text of given scene object or null if no material was assigned.
+ * 
  */getBackMaterial(): Promise<MaterialBase>
  ;
 
 /** 
-*  
+* 
+ *  
  * getSideMaterial(): Promise<MaterialBase>
  *  
  * 
  * Returns a promise that is resolved with the material associated with the extrusion part of 3-d text of given scene object or null if no material was assigned.
+ * 
  */getSideMaterial(): Promise<MaterialBase>
  ;
 

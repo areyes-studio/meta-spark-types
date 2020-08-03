@@ -1,23 +1,34 @@
-/// <reference path="../void/index.d.ts" />
-/// <reference path="../Reactive.EventSource/index.d.ts" />
 /// <reference path="../Reactive.BoolSignal/index.d.ts" />
+/// <reference path="../Reactive.EventSource/index.d.ts" />
+/// <reference path="../void/index.d.ts" />
 declare interface TimeDriver {
 /** 
 *  
- * start(): void
+ * isRunning(): BoolSignal
  *  
  * 
- * Starts the animation.
- */start(): void
+ * Returns a `BoolSignal` indicating whether the animation is running.
+ */isRunning(): BoolSignal
  ;
 
 /** 
 *  
- * stop(): void
+ * onAfterIteration(): EventSource
  *  
  * 
- * Stops or pauses the animation.
- */stop(): void
+ * Returns an `EventSource` to which you may subscribe.
+ * The event fires when the animation with loopCount completes an iteration.
+ * Subscribers will receive the one-based index of the completed iteration.
+ */onAfterIteration(): EventSource
+ ;
+
+/** 
+*  
+ * onCompleted(): EventSource
+ *  
+ * 
+ * Returns an`EventSource` to which you may subscribe.The event fires once when the animation completes.
+ */onCompleted(): EventSource
  ;
 
 /** 
@@ -40,30 +51,20 @@ declare interface TimeDriver {
 
 /** 
 *  
- * onCompleted(): EventSource
+ * start(): void
  *  
  * 
- * Returns an `EventSource` to which you may subscribe. The event fires once when the animation completes.
- */onCompleted(): EventSource
+ * Starts the animation.
+ */start(): void
  ;
 
 /** 
 *  
- * onAfterIteration(): EventSource
+ * stop(): void
  *  
  * 
- * Returns an `EventSource` to which you may subscribe. The event fires when the animation with loopCount completes an iteration.
- * Subscribers will receive the one-based index of the completed iteration.
- */onAfterIteration(): EventSource
- ;
-
-/** 
-*  
- * isRunning(): BoolSignal
- *  
- * 
- * Returns a `BoolSignal` indicating whether the animation is running.
- */isRunning(): BoolSignal
+ * Stops or pauses the animation.
+ */stop(): void
  ;
 
 } 

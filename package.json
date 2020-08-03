@@ -1,6 +1,6 @@
 {
     "name": "spark-ar-types",
-    "version": "93.0.0",
+    "version": "94.0.0",
     "description": "Типы данных из Spark AR Studio",
     "author": "AREYES.STUDIO",
     "license": "UNLICENSED"

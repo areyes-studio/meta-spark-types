@@ -40,7 +40,7 @@ lowerLipCenter: PointSignal;
 Specifies a `ScalarSignal` indicating how high or low the mouth angles are with respect to the lip center. 0.0 is a straight line.
 Mouth angles higher than the lip center yield positive curvature, lowering the mouth angles makes it negative.
 */ 
-lowerLipCurvature: ScalarSignal;
+lowerLipCurvature: ScalarSignal | number;
 /** 
 * ```
 (get) openness: ScalarSignal
@@ -50,7 +50,7 @@ lowerLipCurvature: ScalarSignal;
 Specifies a `ScalarSignal` representing the openness of the mouth.
 The openness of the mouth is a non-negative value where 0.0 is mouth closed and 1.0 mouth wide open (it can also take values greater than 1.0).
 */ 
-openness: ScalarSignal;
+openness: ScalarSignal | number;
 /** 
 * ```
 (get) rightCorner: PointSignal
@@ -80,5 +80,5 @@ upperLipCenter: PointSignal;
 Specifies a `ScalarSignal` indicating how high or low the mouth angles are with respect to the lip center. 0.0 is a straight line.
 Mouth angles higher than the lip center yield positive curvature, lowering the mouth angles makes it negative.
 */ 
-upperLipCurvature: ScalarSignal;
+upperLipCurvature: ScalarSignal | number;
 } 

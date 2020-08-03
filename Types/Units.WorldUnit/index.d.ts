@@ -1,19 +1,19 @@
 /** 
  * The `WorldUnit` enum describes the unit of measurement used in world-space.
- * @property INCH Indicates that the world-space is described in millimeters.
- * @property FOOT Indicates that the world-space is described in meters.
- * @property LEGACY Indicates that the world-space is described in yards.
- * @property YARD Indicates that the world-space is described in legacy units.
- * @property CENTIMETER Indicates that the world-space is described in feet.
- * @property MILLIMETER Indicates that the world-space is described in inches.
- * @property METER Indicates that the world-space is described in centimeters.
+ * @property CENTIMETER Indicates that the world-space is described in centimeters.
+ * @property FOOT Indicates that the world-space is described in feet.
+ * @property INCH Indicates that the world-space is described in inches.
+ * @property LEGACY Indicates that the world-space is described in legacy units.
+ * @property METER Indicates that the world-space is described in meters.
+ * @property MILLIMETER Indicates that the world-space is described in millimeters.
+ * @property YARD Indicates that the world-space is described in yards.
  */ 
 declare interface WorldUnit{ 
-INCH, 
-FOOT, 
-LEGACY, 
-YARD, 
 CENTIMETER, 
-MILLIMETER, 
+FOOT, 
+INCH, 
+LEGACY, 
 METER, 
+MILLIMETER, 
+YARD, 
 } 

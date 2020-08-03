@@ -12,7 +12,7 @@ declare namespace TimeModule {
 
 Specifies a `ScalarSignal` indicating the number of milliseconds elapsed since the first frame.
 */ 
-const ms: ScalarSignal;
+const ms: ScalarSignal | number;
 /** 
 *  
  * setTimeout(callback: Function, delay: Number): Subscription

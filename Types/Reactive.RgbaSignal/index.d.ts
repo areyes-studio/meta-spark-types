@@ -10,7 +10,7 @@ declare interface RgbaSignal {
 
 Returns the value of the red channel between 0 and 1.0.
 */ 
-red: ScalarSignal;
+red: ScalarSignal | number;
 /** 
 * ```
 (get) green: ScalarSignal
@@ -19,7 +19,7 @@ red: ScalarSignal;
 
 Returns the value of the green channel between 0 and 1.0.
 */ 
-green: ScalarSignal;
+green: ScalarSignal | number;
 /** 
 * ```
 (get) blue: ScalarSignal
@@ -28,7 +28,7 @@ green: ScalarSignal;
 
 Returns the value of the blue channel between 0 and 1.0.
 */ 
-blue: ScalarSignal;
+blue: ScalarSignal | number;
 /** 
 * ```
 (get) alpha: ScalarSignal
@@ -37,7 +37,7 @@ blue: ScalarSignal;
 
 Returns the value of the alpha channel between 0 and 1.0.
 */ 
-alpha: ScalarSignal;
+alpha: ScalarSignal | number;
 /** 
 *  
  * toHSVA(): HsvaSignal

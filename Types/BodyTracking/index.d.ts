@@ -10,7 +10,7 @@ declare namespace BodyTrackingModule {
 
 Returns a `ScalarSignal` representing the count of tracked bodies.
 */ 
-const count: ScalarSignal;
+const count: ScalarSignal | number;
 /** 
 *  
  * body(index: number): Body

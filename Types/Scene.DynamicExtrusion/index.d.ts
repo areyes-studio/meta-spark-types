@@ -1,6 +1,6 @@
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
-/// <reference path="../Scene.DynamicExtrusion.BrushType/index.d.ts" />
 /// <reference path="../Materials.MaterialBase/index.d.ts" />
+/// <reference path="../Scene.DynamicExtrusion.BrushType/index.d.ts" />
 /// <reference path="../void/index.d.ts" />
 declare interface DynamicExtrusion {
 /** 
@@ -13,7 +13,20 @@ Specifies the default size of a side of brush for Dynamic Extrusion.
 
 This value will be used in the newly created strokes if brushSize isn't given explicitly in createStroke method.
 */ 
-defaultBrushSize: ScalarSignal;
+defaultBrushSize: ScalarSignal | number;
+/** 
+* 
+```
+(get) (Not Available)
+(set) defaultMaterial: MaterialBase
+```
+
+Specifies the defaultMaterial of the scene object.
+
+This value will be used in the newly created strokes if material isn't given explicitly in createStroke method.
+
+*/ 
+defaultMaterial: MaterialBase;
 /** 
 * ```
 (get) defaultBrushType: SceneModule.DynamicExtrusion.BrushType
@@ -35,18 +48,7 @@ Specifies how many internal points should be sampled between each 2 consecutive 
 
 This value will be used in the newly created strokes if brushDistance isn't given explicitly in createStroke method.
 */ 
-defaultBrushDistance: ScalarSignal;
-/** 
-* ```
-(get) (Not Available)
-(set) defaultMaterial: MaterialBase
-```
-
-Specifies the defaultMaterial of the scene object.
-
-This value will be used in the newly created strokes if material isn't given explicitly in createStroke method.
-*/ 
-defaultMaterial: MaterialBase;
+defaultBrushDistance: ScalarSignal | number;
 /** 
 * ```
 (get) defaultTextureWidthSize: ScalarSignal
@@ -57,7 +59,7 @@ Specifies the width to map texture on the tube. The default value is 10 mm, so t
 
 This value will be used in the newly created strokes if defaultTextureWidthSize isn't given explicitly in createStroke method.
 */ 
-defaultTextureWidthSize: ScalarSignal;
+defaultTextureWidthSize: ScalarSignal | number;
 /** 
 *  
  * createStroke(config: {location: PointSignal, completionEvent: EventSource, brushSize: ?number, brushType: ?SceneModule.DynamicExtrusion.BrushType, brushDistance: ?number, textureWidthSize: ?number, textureHeightStep: ?number, material: ?MaterialBase, extrudeInCPU: ?boolean}): void

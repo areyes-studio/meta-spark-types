@@ -30,7 +30,7 @@ mode: RenderMode>;
 Specifies the horizontal size, in 3D units.
 **Note:** this is only effective when `renderMode` property is set to WORLD_SPACE.
 */ 
-width: ScalarSignal;
+width: ScalarSignal | number;
 /** 
 * ```
 (get) renderMode: SceneModule.RenderMode
@@ -51,7 +51,7 @@ renderMode: RenderMode;
 Specifies the vertical size, in 3D units.
 **Note:** this is only effective when `renderMode` property is set to WORLD_SPACE.
 */ 
-height: ScalarSignal;
+height: ScalarSignal | number;
 /** 
 * ```
 (get) useSafeAreaMargins: BoolSignal
@@ -61,7 +61,7 @@ height: ScalarSignal;
 Specifies if Canvas should automatically include SafeArea margin to its content.
 **Note:** this is only effective when `renderMode` property is set to SCREEN_SPACE.
 */ 
-useSafeAreaMargins: BoolSignal;
+useSafeAreaMargins: BoolSignal | boolean;
 /** 
 * 
 ```

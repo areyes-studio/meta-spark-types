@@ -19,7 +19,7 @@ Possible values:
 - HORIZONTAL_CEILING
 - VERTICAL
 */ 
-planeType: StringSignal;
+planeType: StringSignal | string;
 /** 
 *  
  *          resetPlane(screenLocation: Point2D): void

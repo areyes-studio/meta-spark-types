@@ -3,11 +3,11 @@
 declare namespace NativeNavigationModule {
 /** 
 *  
- * navigateTo(contentUrl: string): void
+ * navigateTo(url: string): void
  *  
  * 
- * Navigate in native app to the internal content specified in `contentUrl`.
- */function navigateTo(contentUrl: string): void
+ * Navigate within the application to the content specified by the provided `URL`.
+ */function navigateTo(url: string): void
  ;
 
 } 

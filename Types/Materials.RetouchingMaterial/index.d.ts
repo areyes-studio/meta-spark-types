@@ -3,31 +3,13 @@
 declare interface RetouchingMaterial {
 /** 
 * ```
-(get) teethWhiteningFactor: ScalarSignal
-(set) teethWhiteningFactor: ScalarSignal
-```
-
-Specifies the simulated teeth whitening factor.
-*/ 
-teethWhiteningFactor: ScalarSignal;
-/** 
-* ```
 (get) eyeBrighteningFactor: ScalarSignal
 (set) eyeBrighteningFactor: ScalarSignal
 ```
 
-Specifies the simulated eye whitening factor.
+Specifies the simulated eye brightening factor.
 */ 
-eyeBrighteningFactor: ScalarSignal;
-/** 
-* ```
-(get) skinSmoothingFactor: ScalarSignal
-(set) skinSmoothingFactor: ScalarSignal
-```
-
-Specifies the simulated skin smoothness factor.
-*/ 
-skinSmoothingFactor: ScalarSignal;
+eyeBrighteningFactor: ScalarSignal | number;
 /** 
 * ```
 (get) fullScreen: BoolSignal
@@ -36,5 +18,23 @@ skinSmoothingFactor: ScalarSignal;
 
 Specifies whether effect should be full-screen.
 */ 
-fullScreen: BoolSignal;
+fullScreen: BoolSignal | boolean;
+/** 
+* ```
+(get) skinSmoothingFactor: ScalarSignal
+(set) skinSmoothingFactor: ScalarSignal
+```
+
+Specifies the simulated skin smoothness factor.
+*/ 
+skinSmoothingFactor: ScalarSignal | number;
+/** 
+* ```
+(get) teethWhiteningFactor: ScalarSignal
+(set) teethWhiteningFactor: ScalarSignal
+```
+
+Specifies the simulated teeth whitening factor.
+*/ 
+teethWhiteningFactor: ScalarSignal | number;
 } 

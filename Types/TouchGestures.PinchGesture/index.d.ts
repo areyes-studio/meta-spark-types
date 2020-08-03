@@ -19,5 +19,5 @@ location: Point2DSignal;
 
 Specifies a [`ScalarSignal`](/docs/camera-effects/reference/reactive_module/scalarsignal_class) representing the scale factor indicated by the gesture.
 */ 
-scale: ScalarSignal;
+scale: ScalarSignal | number;
 } 

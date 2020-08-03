@@ -18,7 +18,7 @@ const fromDevice: string;
 
 Provides the ISO 639-1 compliant language identifier, e.g. `en` or `zh`.
 */ 
-const language: StringSignal;
+const language: StringSignal | string;
 /** 
 * ```
 (get) locale: StringSignal
@@ -27,7 +27,7 @@ const language: StringSignal;
 
 Provides the ISO 639-1 language + ISO 3166-1 region compliant locale identifier, e.g. `en_US` or `zh_HK`.
 */ 
-const locale: StringSignal;
+const locale: StringSignal | string;
 /** 
 * ```
 (get) region: StringSignal
@@ -36,6 +36,6 @@ const locale: StringSignal;
 
 Provides the ISO 3166-1 region identifier, e.g. `US`, or `HK`.
 */ 
-const region: StringSignal;
+const region: StringSignal | string;
 } 
 export = LocaleModule;

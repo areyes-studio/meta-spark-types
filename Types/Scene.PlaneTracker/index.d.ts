@@ -25,7 +25,7 @@ Possible values:
 - LOW
 - NOT_TRACKING
 */ 
-confidence: StringSignal;
+confidence: StringSignal | string;
 /** 
 * ```
  (get) trackingMode: SceneModule.TrackingMode

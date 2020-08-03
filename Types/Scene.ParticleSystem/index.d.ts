@@ -18,7 +18,7 @@ declare interface ParticleSystem {
 
 Specifies the optical flow sensitivity.
 */ 
-opticalFlowSensitivity: ScalarSignal;
+opticalFlowSensitivity: ScalarSignal | number;
 /** 
 * ```
 (get) initialVelocityMagnitudePercentageDelta: ScalarSignal
@@ -29,7 +29,7 @@ Specifies the percentage delta value, between 0.0 and 1.0, for the `initialVeloc
 
 **Note**: The behavior is undefined for values outside the valid range.
 */ 
-initialVelocityMagnitudePercentageDelta: ScalarSignal;
+initialVelocityMagnitudePercentageDelta: ScalarSignal | number;
 /** 
 * ```
 (get) sprayAngleDelta: PointSignal
@@ -56,7 +56,7 @@ acceleration: VectorSignal;
 
 Specifies the mean linear damping of each particle.
 */ 
-linearDamping: ScalarSignal;
+linearDamping: ScalarSignal | number;
 /** 
 * ```
 (get) birthrateDelta: ScalarSignal
@@ -67,7 +67,7 @@ Specifies the percentage delta value, between 0.0 and 1.0, for the `birthrate` p
 
 **Note**: The behavior is undefined for values outside the valid range.
 */ 
-birthrateDelta: ScalarSignal;
+birthrateDelta: ScalarSignal | number;
 /** 
 * ```
 (get) innerRadius: ScalarSignal
@@ -78,7 +78,7 @@ Specifies the radius of the inner circle when using the ring emitter for the par
 
 **Note**: `outerRadius` must be greater-than or equal to `innerRadius`.
 */ 
-innerRadius: ScalarSignal;
+innerRadius: ScalarSignal | number;
 /** 
 * ```
 (get) scaleDelta: ScalarSignal
@@ -89,7 +89,7 @@ Specifies the percentage delta value, between 0.0 and 1.0, for the `scale` prope
 
 **Note**: The behavior is undefined for values outside the valid range.
 */ 
-scaleDelta: ScalarSignal;
+scaleDelta: ScalarSignal | number;
 /** 
 * ```
 (get) linearDampingPercentageDelta: ScalarSignal
@@ -100,7 +100,7 @@ Specifies the percentage delta value, between 0.0 and 1.0, for the `linearDampin
 
 **Note**: The behavior is undefined for values outside the valid range.
 */ 
-linearDampingPercentageDelta: ScalarSignal;
+linearDampingPercentageDelta: ScalarSignal | number;
 /** 
 * ```
 (get) scale: ScalarSignal
@@ -109,7 +109,7 @@ linearDampingPercentageDelta: ScalarSignal;
 
 Specifies the mean size of each particle, in 3d units.
 */ 
-scale: ScalarSignal;
+scale: ScalarSignal | number;
 /** 
 * ```
 (get) angularVelocity: PointSignal
@@ -127,7 +127,7 @@ angularVelocity: PointSignal;
 
 Specifies the mean rotational damping of each particle.
 */ 
-rotationalDamping: ScalarSignal;
+rotationalDamping: ScalarSignal | number;
 /** 
 * ```
 (get) lifetimeSecondsPercentageDelta: ScalarSignal
@@ -138,7 +138,7 @@ Specifies the percentage delta value, between 0.0 and 1.0, for the `lifetimeSeco
 
 **Note**: The behavior is undefined for values outside the valid range.
 */ 
-lifetimeSecondsPercentageDelta: ScalarSignal;
+lifetimeSecondsPercentageDelta: ScalarSignal | number;
 /** 
 * ```
 (get) initialVelocityMagnitude: ScalarSignal
@@ -147,7 +147,7 @@ lifetimeSecondsPercentageDelta: ScalarSignal;
 
 Specifies the mean initial velocity magnitude of each particle.
 */ 
-initialVelocityMagnitude: ScalarSignal;
+initialVelocityMagnitude: ScalarSignal | number;
 /** 
 * ```
 (get) birthrate: ScalarSignal
@@ -156,7 +156,7 @@ initialVelocityMagnitude: ScalarSignal;
 
 Specifies the particle birthrate, in number of particles per second.
 */ 
-birthrate: ScalarSignal;
+birthrate: ScalarSignal | number;
 /** 
 * ```
 (get) sprayAngle: PointSignal
@@ -174,7 +174,7 @@ sprayAngle: PointSignal;
 
 Specifies the mean initial velocity angle of each particle, in radians.
 */ 
-initialVelocityAngle: ScalarSignal;
+initialVelocityAngle: ScalarSignal | number;
 /** 
 * ```
 (get) initialVelocityAngleDelta: ScalarSignal
@@ -183,7 +183,7 @@ initialVelocityAngle: ScalarSignal;
 
 Specifies the absolute delta value for the `initialVelocityAngle` property. The initial velocity angle is randomized uniformly in the range `[initialVelocityAngle - initialVelocityAngleDelta; initialVelocityAngle + initialVelocityAngleDelta]` for each particle.
 */ 
-initialVelocityAngleDelta: ScalarSignal;
+initialVelocityAngleDelta: ScalarSignal | number;
 /** 
 * ```
 (get) (Not Available)
@@ -207,7 +207,7 @@ colorModulationHSVADelta: HsvaSignal;
 
 Specifies the mean rotation of each particle, in radians.
 */ 
-initialRotation: ScalarSignal;
+initialRotation: ScalarSignal | number;
 /** 
 * ```
 (get) initialRotationDelta: ScalarSignal
@@ -216,7 +216,7 @@ initialRotation: ScalarSignal;
 
 Specifies the absolute delta value for the `initialRotation` property. The initial rotation is randomized uniformly in the range `[initialRotation - initialRotationDelta; initialRotation + initialRotationDelta]` for each particle.
 */ 
-initialRotationDelta: ScalarSignal;
+initialRotationDelta: ScalarSignal | number;
 /** 
 * ```
 (get) (Not Available)
@@ -256,7 +256,7 @@ particleRotation: PointSignal;
 
 Specifies the absolute delta value for the `rotationalVelocity` property. The rotation velocity is randomized uniformly in the range `[rotationalVelocity - rotationalVelocityDelta; rotationalVelocity + rotationalVelocityDelta]` for each particle.
 */ 
-rotationalVelocityDelta: ScalarSignal;
+rotationalVelocityDelta: ScalarSignal | number;
 /** 
 * ```
 (get) types: ParticleTypeDescriptions
@@ -303,7 +303,7 @@ positionModifier: ArrayOfScalarSamplers;
 
 Specifies the mean rotational velocity of each particle, in radians-per-second.
 */ 
-rotationalVelocity: ScalarSignal;
+rotationalVelocity: ScalarSignal | number;
 /** 
 * ```
 (get) lifetimeSeconds: ScalarSignal
@@ -312,7 +312,7 @@ rotationalVelocity: ScalarSignal;
 
 Specifies the mean lifetime of each particle, in seconds.
 */ 
-lifetimeSeconds: ScalarSignal;
+lifetimeSeconds: ScalarSignal | number;
 /** 
 * ```
 (get) (Not Available)
@@ -336,7 +336,7 @@ Specifies the percentage delta value, between 0.0 and 1.0, for the `rotationalDa
 
 **Note**: The behavior is undefined for values outside the valid range.
 */ 
-rotationalDampingPercentageDelta: ScalarSignal;
+rotationalDampingPercentageDelta: ScalarSignal | number;
 /** 
 * 
 ```
@@ -378,7 +378,7 @@ Specifies the radius of the outer circle when using the ring emitter for the par
 
 **Note**: `outerRadius` must be greater-than or equal to `innerRadius`.
 */ 
-outerRadius: ScalarSignal;
+outerRadius: ScalarSignal | number;
 /** 
 * ```
 (get) worldSpace: BoolSignal
@@ -387,7 +387,7 @@ outerRadius: ScalarSignal;
 
 Specifies whether the particles will move with the emitter or will have their own position after being emitted.
 */ 
-worldSpace: BoolSignal;
+worldSpace: BoolSignal | boolean;
 /** 
 * ```
 (get) (Not Available)

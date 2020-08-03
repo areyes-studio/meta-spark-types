@@ -7,7 +7,7 @@ declare namespace LocationModule {
                                         (set) (Not Available)
                                         ```
 */ 
-const hasValidLocation: BoolSignal;
+const hasValidLocation: BoolSignal | boolean;
 /** 
 * ```
                                         (get) coordinate: CoordinateSignal

@@ -20,5 +20,5 @@ location: Point2DSignal;
 
 Specifies a [`ScalarSignal`](/docs/camera-effects/reference/reactive_module/scalarsignal_class) representing the rotation indicated by the gesture, in radians.
 */ 
-rotation: ScalarSignal;
+rotation: ScalarSignal | number;
 } 

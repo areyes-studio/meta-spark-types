@@ -10,7 +10,7 @@ Specifies the left boundary of the scene element. Relative to the parent object 
 
 **Note**: the offset is measured from the parent's left boundary, which might be different from the parent's origin.
 */ 
-x: ScalarSignal;
+x: ScalarSignal | number;
 /** 
 * ```
 (get) y: ScalarSignal
@@ -21,7 +21,7 @@ Specifies the top boundary of the scene element. Relative to the parent object b
 
 **Note**: the offset is measured from the parent's top boundary, which might be different from the parent's origin.
 */ 
-y: ScalarSignal;
+y: ScalarSignal | number;
 /** 
 * ```
 (get) width: ScalarSignal
@@ -30,7 +30,7 @@ y: ScalarSignal;
 
 Specifies the width of the scene element boundaries. Measured in 3D units.
 */ 
-width: ScalarSignal;
+width: ScalarSignal | number;
 /** 
 * ```
 (get) height: ScalarSignal
@@ -39,5 +39,5 @@ width: ScalarSignal;
 
 Specifies the height of the scene element boundaries. Measured in 3D units.
 */ 
-height: ScalarSignal;
+height: ScalarSignal | number;
 } 

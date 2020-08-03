@@ -18,7 +18,7 @@ color: ColorSignal;
 
 Specifies the intensity of this light source, usually between 0.0 and 1.0.
 */ 
-intensity: ScalarSignal;
+intensity: ScalarSignal | number;
 /** 
 * ```
 (get) angleInner: ScalarSignal
@@ -27,7 +27,7 @@ intensity: ScalarSignal;
 
 Specifies the inner angle of the spotlight cone, everything inside is fully illuminated. In radians.
 */ 
-angleInner: ScalarSignal;
+angleInner: ScalarSignal | number;
 /** 
 * ```
 (get) angleOuter: ScalarSignal
@@ -36,5 +36,5 @@ angleInner: ScalarSignal;
 
 Specifies the outer angle of the spotlight cone, everything outside is not illuminated. In radians.
 */ 
-angleOuter: ScalarSignal;
+angleOuter: ScalarSignal | number;
 } 

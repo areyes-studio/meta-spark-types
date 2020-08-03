@@ -1,5 +1,5 @@
-/// <reference path="../Materials.MaterialBase/index.d.ts" />
 /// <reference path="../Reactive.StringSignal/index.d.ts" />
+/// <reference path="../Materials.MaterialBase/index.d.ts" />
 /// <reference path="../number/index.d.ts" />
 /// <reference path="../Fonts.FontId/index.d.ts" />
 /// <reference path="../?number/index.d.ts" />
@@ -9,22 +9,24 @@
 declare interface PlanarText {
 /** 
 * ```
-(get) (Not Available)
-(set) material: MaterialBase
-```
-
-Specifies the material of the scene object.
-*/ 
-material: MaterialBase;
-/** 
-* ```
 (get) text: StringSignal
 (set) text: StringSignal
 ```
 
 Specifies the text displayed.
 */ 
-text: StringSignal;
+text: StringSignal | string;
+/** 
+* 
+```
+(get) (Not Available)
+(set) material: MaterialBase
+```
+
+Specifies the material of the scene object.
+
+*/ 
+material: MaterialBase;
 /** 
 * ```
 (get) (Not Available)
@@ -55,15 +57,6 @@ leading? : number;
 /** 
 * ```
 (get) (Not Available)
-(set) scaleToFit: boolean
-```
-
-Specifies if the text is scaled to fit the container.
-*/ 
-scaleToFit: boolean;
-/** 
-* ```
-(get) (Not Available)
 (set) maxLines: ?number
 ```
 
@@ -79,6 +72,15 @@ maxLines? : number;
 Specifies the text spacing. This is the additional distance between letters. Default is zero. Can be negative.
 */ 
 tracking: number;
+/** 
+* ```
+(get) (Not Available)
+(set) scaleToFit: boolean
+```
+
+Specifies if the text is scaled to fit the container.
+*/ 
+scaleToFit: boolean;
 /** 
 * ```
 (get) alignment: TextAlignmentWrapper

@@ -8,5 +8,5 @@ declare interface TargetTracker {
 
 Specifies whether the TargetTracker is actively tracking.
 */ 
-isTracking: BoolSignal;
+isTracking: BoolSignal | boolean;
 } 

@@ -17,7 +17,7 @@ declare interface PointSignal {
 
 Represents the X coordinate of the point.
 */ 
-x: ScalarSignal;
+x: ScalarSignal | number;
 /** 
 * ```
 (get) y: ScalarSignal
@@ -26,7 +26,7 @@ x: ScalarSignal;
 
 Represents the Y coordinate of the point.
 */ 
-y: ScalarSignal;
+y: ScalarSignal | number;
 /** 
 * ```
 (get) z: ScalarSignal
@@ -35,7 +35,7 @@ y: ScalarSignal;
 
 Represents the Z coordinate of the point.
 */ 
-z: ScalarSignal;
+z: ScalarSignal | number;
 /** 
 *  
  * expSmooth(dampFactor: number): PointSignal

@@ -16,7 +16,7 @@ state: Signal<AugmentationState>;
 (set) (Not Available)
 ```
 */ 
-downloadProgress: ScalarSignal;
+downloadProgress: ScalarSignal | number;
 /** 
 *  
  * instantiate(config: any): Promise<AugmentationInstance>

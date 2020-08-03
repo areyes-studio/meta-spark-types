@@ -12,7 +12,7 @@ declare interface Transform {
 
 Specifies the object offset along the Y-axis of the object's local coordinate system.
 */ 
-y: ScalarSignal;
+y: ScalarSignal | number;
 /** 
 * ```
 (get) z: ScalarSignal
@@ -21,7 +21,7 @@ y: ScalarSignal;
 
 Specifies the object offset along the Z-axis of the object's local coordinate system.
 */ 
-z: ScalarSignal;
+z: ScalarSignal | number;
 /** 
 * ```
 (get) scaleX: ScalarSignal
@@ -30,7 +30,7 @@ z: ScalarSignal;
 
 Specifies the object scale along the X-axis of the object's local coordinate system.
 */ 
-scaleX: ScalarSignal;
+scaleX: ScalarSignal | number;
 /** 
 * ```
 (get) x: ScalarSignal
@@ -39,7 +39,7 @@ scaleX: ScalarSignal;
 
 Specifies the object offset along the X-axis of the object's local coordinate system.
 */ 
-x: ScalarSignal;
+x: ScalarSignal | number;
 /** 
 * ```
 (get) rotationX: ScalarSignal
@@ -50,7 +50,7 @@ Specifies the object rotation about the X-axis of the object's local coordinate 
 
 **Note**: the rotations are applied to the object in Z-Y-X order. The X rotation is applied first to the object, therefore it is always performed in the object's local coordinate system.
 */ 
-rotationX: ScalarSignal;
+rotationX: ScalarSignal | number;
 /** 
 * ```
 (get) scaleY: ScalarSignal
@@ -59,7 +59,7 @@ rotationX: ScalarSignal;
 
 Specifies the object scale along the Y-axis of the object's local coordinate system.
 */ 
-scaleY: ScalarSignal;
+scaleY: ScalarSignal | number;
 /** 
 * ```
 (get) rotationY: ScalarSignal
@@ -70,7 +70,7 @@ Specifies the object rotation about the Y-axis of the object's rotated local coo
 
 **Note**: the rotations are applied to the object in Z-Y-X order. The Y rotation is applied second to the object, therefore if the `rotationX` is not zero, then `rotationY` is applied not in the object's local coordinate system but in the rotated one.
 */ 
-rotationY: ScalarSignal;
+rotationY: ScalarSignal | number;
 /** 
 * ```
 (get) rotationZ: ScalarSignal
@@ -81,7 +81,7 @@ Specifies the object rotation about the Z-axis of the object's rotated local coo
 
 **Note**: the rotations are applied to the object in Z-Y-X order. The Z rotation is applied last to the object, therefore if the `rotationX` or `rotationY` is not zero, then `rotationZ` is applied not in the object's local coordinate system but in the rotated one.
 */ 
-rotationZ: ScalarSignal;
+rotationZ: ScalarSignal | number;
 /** 
 * ```
 (get) scale: PointSignal
@@ -117,7 +117,7 @@ rotation: QuaternionSignal;
 
 Specifies the object scale along the Z-axis of the object's local coordinate system.
 */ 
-scaleZ: ScalarSignal;
+scaleZ: ScalarSignal | number;
 /** 
 *  
  * toSignal(): TransformSignal

@@ -18,7 +18,7 @@ Possible values:
 - LOW
 - NOT_TRACKING
 */ 
-confidence: StringSignal;
+confidence: StringSignal | string;
 /** 
 *  
  * trackPoint(screenLocation: Point2D): void

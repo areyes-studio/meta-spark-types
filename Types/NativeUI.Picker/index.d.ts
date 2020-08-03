@@ -8,7 +8,7 @@ declare interface Picker {
                                     ```
                                     Will instruct picker to be visible or not visible, according to passed boolean value.
 */ 
-visible: BoolSignal;
+visible: BoolSignal | boolean;
 /** 
 * ```
                                     (get) selectedIndex: ScalarSignal
@@ -17,7 +17,7 @@ visible: BoolSignal;
 
                                     Represents the index of the selected item in the picker.
 */ 
-selectedIndex: ScalarSignal;
+selectedIndex: ScalarSignal | number;
 /** 
 *  
  *                                     configure(configuration: {selectedIndex: ?int, items: Array<Object>}): void

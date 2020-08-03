@@ -70,4 +70,13 @@ prefabName: string;
  */getBlendShapes(): Promise<Array<BlendShape>>
  ;
 
+/** 
+*  
+ * getSurfaces(): Promise<Array<MeshSurface>>
+ *  
+ * 
+ * Returns a `JS Promise` which will be fulfilled with `array of MeshSurfaces` or an error.
+ */getSurfaces(): Promise<Array<MeshSurface>>
+ ;
+
 } 

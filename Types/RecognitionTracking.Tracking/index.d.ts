@@ -8,7 +8,7 @@ declare interface Tracking {
 (set) (Not Available)
 ```
 */ 
-isTracking: BoolSignal;
+isTracking: BoolSignal | boolean;
 /** 
 * ```
 (get) globalTransform: TransformSignal
@@ -22,5 +22,5 @@ globalTransform: TransformSignal;
 (set) (Not Available)
 ```
 */ 
-targetAspectRatio: ScalarSignal;
+targetAspectRatio: ScalarSignal | number;
 } 

@@ -9,7 +9,7 @@ declare namespace PersonSegmentationModule {
 
 Represents the percentage of screen space occupied by a person/people.
 */ 
-const foregroundPercent: ScalarSignal;
+const foregroundPercent: ScalarSignal | number;
 /** 
 * ```
 (get) hasForeground: BoolSignal
@@ -18,7 +18,7 @@ const foregroundPercent: ScalarSignal;
 
 Represents whether there is anybody in the scene (TRUE/FALSE), based on whether the percentage of foreground is larger than a threshold.
 */ 
-const hasForeground: BoolSignal;
+const hasForeground: BoolSignal | boolean;
 /** 
 * ```
 (get) (Not Available)
@@ -26,7 +26,9 @@ const hasForeground: BoolSignal;
 ```
 
 Specifies whether the segmentation should be enabled. Default value is 'true'.
+
+**Note**: This API is not accessible in Blocks.
 */ 
-const isEnabled: BoolSignal;
+const isEnabled: BoolSignal | boolean;
 } 
 export = PersonSegmentationModule;

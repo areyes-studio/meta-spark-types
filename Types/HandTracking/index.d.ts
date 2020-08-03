@@ -10,7 +10,7 @@ declare namespace HandTrackingModule {
 
 Specifies a `ScalarSignal` indicating the number of detected hands.
 */ 
-const count: ScalarSignal;
+const count: ScalarSignal | number;
 /** 
 *  
  * hand(index: number): Hand

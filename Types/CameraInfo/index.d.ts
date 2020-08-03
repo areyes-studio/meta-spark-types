@@ -12,7 +12,7 @@ declare namespace CameraInfoModule {
 
 Specifies a `BoolSignal` that indicates whether the camera is recording video.
 */ 
-const isRecordingVideo: BoolSignal;
+const isRecordingVideo: BoolSignal | boolean;
 /** 
 * ```
 (get) isCapturingPhoto: BoolSignal
@@ -21,7 +21,7 @@ const isRecordingVideo: BoolSignal;
 
 Specifies a `BoolSignal` that indicates whether the camera is capturing a photo.
 */ 
-const isCapturingPhoto: BoolSignal;
+const isCapturingPhoto: BoolSignal | boolean;
 /** 
 * ```
 (get) effectSafeAreaInsets: Point4DSignal
@@ -57,6 +57,6 @@ const captureDevicePosition: Signal<CameraPosition>;
 
 Specifies a `ScalarSignal` describing the scale of the preview's screen, i.e. the number of pixels per point.
 */ 
-const previewScreenScale: ScalarSignal;
+const previewScreenScale: ScalarSignal | number;
 } 
 export = CameraInfoModule;

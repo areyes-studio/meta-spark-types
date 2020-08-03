@@ -37,7 +37,7 @@ identifier: string;
 
 Gets the width of the texture in pixels.
 */ 
-width: ScalarSignal;
+width: ScalarSignal | number;
 /** 
 * ```
 (get) height: ScalarSignal
@@ -45,5 +45,5 @@ width: ScalarSignal;
 
 Gets the height of the texture in pixels.
 */ 
-height: ScalarSignal;
+height: ScalarSignal | number;
 } 

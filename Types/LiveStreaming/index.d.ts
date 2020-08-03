@@ -38,6 +38,6 @@ const state: State>;
 
  Provides access to a `ScalarSignal` that encapsulates the number of concurrent viewers of the live stream.
 */ 
-const concurrentViewerCount: ScalarSignal;
+const concurrentViewerCount: ScalarSignal | number;
 } 
 export = LiveStreamingModule;

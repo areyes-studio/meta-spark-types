@@ -32,7 +32,7 @@ name: string;
 
 Represents whether or not the bounding box for the object is visible.
 */ 
-boundingBoxVisible: BoolSignal;
+boundingBoxVisible: BoolSignal | boolean;
 /** 
 * ```
 (get) identifier: string
@@ -68,7 +68,7 @@ materialIdentifier: string;
 
 Specifies whether the scene object and its descendants are hidden.
 */ 
-hidden: BoolSignal;
+hidden: BoolSignal | boolean;
 /** 
 * ```
 (get) worldTransform: WorldTransform

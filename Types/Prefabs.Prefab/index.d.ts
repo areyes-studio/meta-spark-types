@@ -21,7 +21,7 @@ name: string;
 
 Specifies the URL of the prefab to be downloaded.
 */ 
-url: StringSignal;
+url: StringSignal | string;
 /** 
 * ```
 (get) state: Signal<PrefabsModule.State>

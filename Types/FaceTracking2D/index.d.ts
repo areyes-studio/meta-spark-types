@@ -10,7 +10,7 @@ declare namespace FaceTracking2DModule {
 
 Returns a `ScalarSignal` representing the number of faces tracked in the scene.
 */ 
-const count: ScalarSignal;
+const count: ScalarSignal | number;
 /** 
 *  
  * face(index: number): Face2D

@@ -13,7 +13,7 @@ declare namespace MultiplayerModule {
 
              Contains the viewerId of the user using this effect as a string signal
 */ 
-const viewerId: StringSignal;
+const viewerId: StringSignal | string;
 /** 
 * ```
              (get) message: { [key: string] : string }
@@ -32,7 +32,7 @@ const message: {;
 
              Scalar signal of the number of participants currently using the effect in the call
 */ 
-const numParticipants: ScalarSignal;
+const numParticipants: ScalarSignal | number;
 /** 
 * ```
               (get) participants: Array<string>

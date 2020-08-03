@@ -8,7 +8,7 @@ declare interface ExternalTexture {
 
 Specifies the URL of the texture to be downloaded.
 */ 
-url: StringSignal;
+url: StringSignal | string;
 /** 
 * ```
 (get) state: StringSignal
@@ -17,5 +17,5 @@ url: StringSignal;
 
 Specifies a `StringSignal` representing the loading state of the external texture. The value of the signal is guaranteed to be a member of the `TexturesModule.ExternalTexture.State` enumeration.
 */ 
-state: StringSignal;
+state: StringSignal | string;
 } 

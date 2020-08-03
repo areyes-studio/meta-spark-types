@@ -16,7 +16,7 @@ declare interface Point2DSignal {
 
 Represents the X coordinate of the point, or the first element of the vector.
 */ 
-x: ScalarSignal;
+x: ScalarSignal | number;
 /** 
 * ```
 (get) y: ScalarSignal
@@ -25,7 +25,7 @@ x: ScalarSignal;
 
 Represents the Y coordinate of the point, or the second element of the vector.
 */ 
-y: ScalarSignal;
+y: ScalarSignal | number;
 /** 
 * ```
 (get) width: ScalarSignal
@@ -34,7 +34,7 @@ y: ScalarSignal;
 
 Represents the width of the size, or the first element of the vector.
 */ 
-width: ScalarSignal;
+width: ScalarSignal | number;
 /** 
 * ```
 (get) height: ScalarSignal
@@ -43,7 +43,7 @@ width: ScalarSignal;
 
 Represents the width of the size, or the second element of the vector.
 */ 
-height: ScalarSignal;
+height: ScalarSignal | number;
 /** 
 *  
  * history(framesCount: number): Point2DSignalHistory

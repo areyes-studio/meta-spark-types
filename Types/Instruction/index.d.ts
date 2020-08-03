@@ -21,7 +21,7 @@ const automaticInstructionsEnabled: boolean;
 
 Specifies whether or not automatic instruction hints are enabled.
 */ 
-const automaticHintsEnabled: BoolSignal;
+const automaticHintsEnabled: BoolSignal | boolean;
 /** 
 *  
  * bind(enabled: BooleanSignal, token: StringSignal): void

@@ -1,8 +1,8 @@
 /// <reference path="../Materials.ShaderProcessor/index.d.ts" />
+/// <reference path="../string /index.d.ts" />
+/// <reference path="../Promise/index.d.ts" />
 /// <reference path="../string/index.d.ts" />
 /// <reference path="../initialState/index.d.ts" />
-/// <reference path="../Promise/index.d.ts" />
-/// <reference path="../string /index.d.ts" />
 /// <reference path="../config/index.d.ts" />
 /// <reference path="../Materials.MaterialBase/index.d.ts" />
 declare namespace MaterialsModule {
@@ -26,7 +26,7 @@ Specifies the `ShaderProcessor` object used for the pre-rendering pass.
 const preProcessor: ShaderProcessor;
 /** 
 *  
- * clone(identifier: string, initialState?: {[key: string]: any}): Promise<MaterialBase>
+ * clone(material: string | MaterialBase, initialState?: {[key: string]: any}): Promise<MaterialBase>
  *  
  * 
  * Clone a material asynchronously.
@@ -34,7 +34,8 @@ const preProcessor: ShaderProcessor;
  * - Cloning a material with an identifier that doesn't exist fails the `Promise`.
  * - New materials always get assigned a globally unique `name` and `identifier`.
  * - `initialState` is optional, but encouraged to be used.
- */function clone(identifier: string, initialState?: {[key: string]: any}): Promise<MaterialBase>
+ * - All properties that are using Signal types get assigned a ConstSignal with last value. Use initialState to override it.
+ */function clone(material: string | MaterialBase, initialState?: {[key: string]: any}): Promise<MaterialBase>
  ;
 
 /** 
@@ -65,12 +66,12 @@ const preProcessor: ShaderProcessor;
 
 /** 
 *  
- * findFirst(name: string): Promise<MaterialBase>
+ * findFirst(name: string): Promise<MaterialBase | null>
  *  
  * 
  * Returns a promise that is resolved with the material of a requested name or null if none was found.
- * *See Also**: `Materials.findUsingPattern`, `Materials.getAll`.
- */function findFirst(name: string): Promise<MaterialBase>
+ * **See Also**: `Materials.findUsingPattern`, `Materials.getAll`.
+ */function findFirst(name: string): Promise<MaterialBase | null>
  ;
 
 /** 
@@ -113,7 +114,7 @@ const preProcessor: ShaderProcessor;
  *  
  * 
  * Returns a promise that is resolved with all of the materials.
- * *See Also**: `Materials.findUsingPattern`, `Materials.findFirst`.
+ * **See Also**: `Materials.findUsingPattern`, `Materials.findFirst`.
  */function getAll(): Promise<Array<MaterialBase>>
  ;
 

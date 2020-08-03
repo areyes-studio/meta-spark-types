@@ -19,5 +19,5 @@ type: Gesture;
 ```
 Specifies a [`StringSignal`](/docs/camera-effects/reference/reactive_module/stringsignal_class) representing the current gesture state. The value is a member of the [`TouchGesturesModule.Gesture.State`](/docs/camera-effects/reference/gesture_state_enum) enum.
 */ 
-state: StringSignal;
+state: StringSignal | string;
 } 
