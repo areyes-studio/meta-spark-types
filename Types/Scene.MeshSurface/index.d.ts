@@ -1,5 +1,4 @@
-/// <reference path="../string/index.d.ts" />
-/// <reference path="../Promise/index.d.ts" />
+/// <reference path="../Materials.MaterialBase/index.d.ts" />
 declare interface MeshSurface {
 /** 
 * ```
@@ -18,8 +17,8 @@ name: string;
  * 
  * Returns a promise that is resolved with the material associated with a given scene object or null if no material was assigned.
  * 
- */getMaterial(): Promise<MaterialBase>
- ;
+ */ 
+getMaterial(): Promise<MaterialBase>;
 
 /** 
 * 
@@ -29,7 +28,7 @@ name: string;
  * 
  * Returns a promise that is resolved when given material is associated with a given scene object.
  * 
- */setMaterial(MaterialBase): Promise
- ;
+ */ 
+setMaterial(MaterialBase): Promise;
 
 } 

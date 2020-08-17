@@ -1,6 +1,6 @@
-/// <reference path="../Reactive.TransformSignal/index.d.ts" />
-/// <reference path="../Reactive.StringSignal/index.d.ts" />
 /// <reference path="../Reactive.PointSignal/index.d.ts" />
+/// <reference path="../Reactive.StringSignal/index.d.ts" />
+/// <reference path="../Reactive.TransformSignal/index.d.ts" />
 declare interface Hand {
 /** 
 * ```
@@ -182,6 +182,33 @@ ringFingerRightSide: PointSignal;
 Specifies the 3D position of the tip of the ring finger.
 */ 
 ringFingerTip: PointSignal;
+/** 
+* ```
+(get) thumbBase: PointSignal
+(set) (Not Available)
+```
+
+Specifies the 3D position of the base of the thumb finger.
+*/ 
+thumbBase: PointSignal;
+/** 
+* ```
+(get) thumbDistal: PointSignal
+(set) (Not Available)
+```
+
+Specifies the 3D position of the distal joint of the thumb finger.
+*/ 
+thumbDistal: PointSignal;
+/** 
+* ```
+(get) thumbProximal: PointSignal
+(set) (Not Available)
+```
+
+Specifies the 3D position of the proximal joint of the thumb finger.
+*/ 
+thumbProximal: PointSignal;
 /** 
 * ```
 (get) thumbTip: PointSignal

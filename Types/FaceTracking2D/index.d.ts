@@ -1,6 +1,5 @@
-/// <reference path="../Reactive.ScalarSignal/index.d.ts" />
-/// <reference path="../number/index.d.ts" />
 /// <reference path="../FaceTracking2D.Face2D/index.d.ts" />
+/// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 declare namespace FaceTracking2DModule {
 /** 
 * ```
@@ -17,8 +16,8 @@ const count: ScalarSignal | number;
  *  
  * 
  * Returns the `Face2D` object from the detected face array at the specified index.
- */function face(index: number): Face2D
- ;
+ */ 
+function face(index: number): Face2D;
 
 } 
 export = FaceTracking2DModule;

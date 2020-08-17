@@ -1,4 +1,3 @@
-/// <reference path="../number/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 declare interface ArrayOfScalarSignals {
 /** 
@@ -7,7 +6,7 @@ declare interface ArrayOfScalarSignals {
  *  
  * 
  * Returns the signal indicated by the `index` parameter.
- */get(index: number): ScalarSignal
- ;
+ */ 
+get(index: number): ScalarSignal;
 
 } 

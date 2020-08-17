@@ -1,29 +1,18 @@
-/// <reference path="../Textures.TextureBase/index.d.ts" />
 /// <reference path="../Reactive.ColorSignal/index.d.ts" />
-/// <reference path="../Materials.TextureTransform/index.d.ts" />
-/// <reference path="../Signal<Materials.BlendMode>/index.d.ts" />
+/// <reference path="../Reactive.RgbaSignal/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
-/// <reference path="../Promise/index.d.ts" />
+/// <reference path="../Textures.TextureBase/index.d.ts" />
+/// <reference path="../Materials.TextureTransform/index.d.ts" />
 declare interface MetallicRoughnessPbrMaterial {
 /** 
 * ```
 (get) (Not Available)
-(set) baseColor: TextureBase
+(set) baseColor: TextureBase | null
 ```
 
 Specifies the baseColor texture of the material.
 */ 
-baseColor: TextureBase;
-/** 
-* ```
-(get) (Not Available)
-(set) baseColorFactor: ColorSignal
-```
-
-Specifies a `ColorSignal` for a base color factor. A `ColorSignal` may be created using the `RGBA()` and `HSVA()` methods of the `Reactive` module.
-**See Also**: `ReactiveModule.RGBA` and `ReactiveModule.HSVA`.
-*/ 
-baseColorFactor: ColorSignal;
+baseColor: TextureBase | null;
 /** 
 * ```
 (get) baseColorTextureTransform: TextureTransform
@@ -41,16 +30,16 @@ baseColorTextureTransform: TextureTransform;
 
 Specifies the material blend mode.
 */ 
-blendMode: BlendMode>;
+blendMode: Signal<MaterialsModule.BlendMode>;
 /** 
 * ```
-(get) emissive: TextureBase
-(set) emissive: TextureBase
+(get) emissive: TextureBase | null
+(set) emissive: TextureBase | null
 ```
 
 Specifies the emissive texture of the material.
 */ 
-emissive: TextureBase;
+emissive: TextureBase | null;
 /** 
 * ```
 (get) emissiveTextureTransform: TextureTransform
@@ -72,12 +61,12 @@ metallicFactor: ScalarSignal | number;
 /** 
 * ```
 (get) (Not Available)
-(set) metallicRoughness: TextureBase
+(set) metallicRoughness: TextureBase | null
 ```
 
 Specifies the metallicRoughness texture of the material.
 */ 
-metallicRoughness: TextureBase;
+metallicRoughness: TextureBase | null;
 /** 
 * ```
 (get) metallicRoughnessTextureTransform: TextureTransform
@@ -106,49 +95,60 @@ Specifies the roughness factor.
 */ 
 roughnessFactor: ScalarSignal | number;
 /** 
+* ```
+(get) baseColorFactor: RgbaSignal
+(set) baseColorFactor: ColorSignal
+```
+
+Specifies a `ColorSignal` for a base color factor. A `ColorSignal` may be created using the `RGBA()` and `HSVA()` methods of the `Reactive` module.
+Note that RgbaSignal is always returned.
+**See Also**: `ReactiveModule.RGBA` and `ReactiveModule.HSVA`.
+*/ 
+baseColorFactor: RgbaSignal;
+/** 
 *  
- * getBaseColor(): Promise<TextureBase>
+ * getBaseColor(): Promise<TextureBase | null>
  *  
  * 
  * Returns a promise that is resolved with the texture associated with a given material or null if no texture was assigned.
- */getBaseColor(): Promise<TextureBase>
- ;
+ */ 
+getBaseColor(): Promise<TextureBase | null>;
 
 /** 
 *  
- * getEmissive(): Promise<TextureBase>
+ * getEmissive(): Promise<TextureBase | null>
  *  
  * 
  * Returns a promise that is resolved with the texture associated with a given material or null if no texture was assigned.
- */getEmissive(): Promise<TextureBase>
- ;
+ */ 
+getEmissive(): Promise<TextureBase | null>;
 
 /** 
 *  
- * getMetallicRoughness(): Promise<TextureBase>
+ * getMetallicRoughness(): Promise<TextureBase | null>
  *  
  * 
  * Returns a promise that is resolved with the texture associated with a given material or null if no texture was assigned.
- */getMetallicRoughness(): Promise<TextureBase>
- ;
+ */ 
+getMetallicRoughness(): Promise<TextureBase | null>;
 
 /** 
 *  
- * getNormal(): Promise<TextureBase>
+ * getNormal(): Promise<TextureBase | null>
  *  
  * 
  * Returns a promise that is resolved with the texture associated with a given material or null if no texture was assigned.
- */getNormal(): Promise<TextureBase>
- ;
+ */ 
+getNormal(): Promise<TextureBase | null>;
 
 /** 
 *  
- * setNormal(texture: TextureBase): Promise<void>
+ * setNormal(texture: TextureBase | null): Promise<void>
  *  
  * 
  * Assign normal texture for this material.
  * Returns a promise that is resolved when the texture is assigned.
- */setNormal(texture: TextureBase): Promise<void>
- ;
+ */ 
+setNormal(texture: TextureBase | null): Promise<void>;
 
 } 

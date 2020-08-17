@@ -1,13 +1,11 @@
-/// <reference path="../string/index.d.ts" />
 /// <reference path="../Reactive.BoolSignal/index.d.ts" />
-/// <reference path="../Scene.Transform/index.d.ts" />
-/// <reference path="../Scene.WorldTransform/index.d.ts" />
+/// <reference path="../Scene.BoundingBox/index.d.ts" />
 /// <reference path="../Scene.CameraVisibility/index.d.ts" />
 /// <reference path="../Scene.OutputVisibility/index.d.ts" />
-/// <reference path="../Reactive.TransformSignal/index.d.ts" />
-/// <reference path="../Scene.BoundingBox/index.d.ts" />
 /// <reference path="../Scene.SceneObjectBase/index.d.ts" />
-/// <reference path="../Promise/index.d.ts" />
+/// <reference path="../Scene.Transform/index.d.ts" />
+/// <reference path="../Reactive.TransformSignal/index.d.ts" />
+/// <reference path="../Scene.WorldTransform/index.d.ts" />
 declare interface SceneObjectBase {
 /** 
 * ```
@@ -123,8 +121,8 @@ boundingBox: BoundingBox;
  * Returns a child object by name. An exception is thrown if the object isn't found.
  * 
  * **See Also**: `SceneObjectBase.find`, `SceneModule.root`.
- */child(name: string): any
- ;
+ */ 
+child(name: string): any;
 
 /** 
 *  
@@ -156,11 +154,10 @@ boundingBox: BoundingBox;
  * **Note**: object D is considered to be a descendant of object P if either D is a child of P or if such an object C which is a child of P exists that D is a descendant of C.
  * 
  * **See Also**: `SceneObjectBase.findAll`, `SceneObjectBase.findFirst`, `SceneModule.root`.
- */findByPath(pathQuery: string): Promise<Array<any>>
- ;
+ */ 
+findByPath(pathQuery: string): Promise<Array<any>>;
 
-findByPath(pathQuery: string, config: {limit: number}): Promise<Array<any>>
- ;
+findByPath(pathQuery: string, config: {limit: number}): Promise<Array<any>>;
 
 /** 
 *  
@@ -173,11 +170,10 @@ findByPath(pathQuery: string, config: {limit: number}): Promise<Array<any>>
  *   - Removing a child that was created in Studio isn't allowed.
  *   - Removing a child that is not present under a given parent isn't allowed.
  *   - Removing a child doesn't unbind any of it's properties.
- */removeChild(child: any): Promise<void>
- ;
+ */ 
+removeChild(child: any): Promise<void>;
 
-removeChild(identifier: string): Promise<void>
- ;
+removeChild(identifier: string): Promise<void>;
 
 /** 
 * 
@@ -193,11 +189,10 @@ removeChild(identifier: string): Promise<void>
  * 
  * **See Also**: `SceneObjectBase.findFirst`, `SceneObjectBase.findByPath`, `SceneModule.root`.
  * 
- */findAll(name: string): Promise<Array<any>>
- ;
+ */ 
+findAll(name: string): Promise<Array<any>>;
 
-findAll(name: string, config:{ recursive: bool }): Promise<Array<any>>
- ;
+findAll(name: string, config: { recursive: bool }): Promise<Array<any>>;
 
 /** 
 * 
@@ -211,11 +206,10 @@ findAll(name: string, config:{ recursive: bool }): Promise<Array<any>>
  * 
  * **See Also**: `SceneObjectBase.findAll`, `SceneObjectBase.findByPath`, `SceneModule.root`.
  * 
- */findFirst(name: string): Promise<any>
- ;
+ */ 
+findFirst(name: string): Promise<any>;
 
-findFirst(name: string, config:{ recursive: bool }): Promise<any>
- ;
+findFirst(name: string, config: { recursive: bool }): Promise<any>;
 
 /** 
 *  
@@ -227,8 +221,8 @@ findFirst(name: string, config:{ recursive: bool }): Promise<any>
  * **Note**: object D is considered to be a descendant of object P if either D is a child of P or if such an object C which is a child of P exists that D is a descendant of C.
  * 
  * **See Also**: `SceneObjectBase.child`, `SceneModule.root`.
- */find(name: string): any
- ;
+ */ 
+find(name: string): any;
 
 /** 
 *  
@@ -240,11 +234,10 @@ findFirst(name: string, config:{ recursive: bool }): Promise<any>
  * Please note the following specific behavior when using this API:
  *   - Adding an object as a child automatically removes it from any other parent.
  *   - Adding a child that was created in Studio is not allowed.
- */addChild(child: any): Promise<void>
- ;
+ */ 
+addChild(child: any): Promise<void>;
 
-addChild(identifier: string): Promise<void>
- ;
+addChild(identifier: string): Promise<void>;
 
 /** 
 *  
@@ -256,7 +249,7 @@ addChild(identifier: string): Promise<void>
  *   - Removing a child that was created in Studio isn't allowed.
  *   - Removing a child that is not present under a given parent isn't allowed.
  *   - Removing a child doesn't unbind any of it's properties.
- */removeFromParent(): Promise<void>
- ;
+ */ 
+removeFromParent(): Promise<void>;
 
 } 

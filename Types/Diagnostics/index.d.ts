@@ -1,9 +1,7 @@
-/// <reference path="../Diagnostics.TypeSystemMetadata/index.d.ts" />
-/// <reference path="../Array/index.d.ts" />
-/// <reference path="../Object/index.d.ts" />
-/// <reference path="../void/index.d.ts" />
-/// <reference path="../string/index.d.ts" />
 /// <reference path="../Reactive.BoolSignal/index.d.ts" />
+/// <reference path="../Reactive.ScalarSignal/index.d.ts" />
+/// <reference path="../Reactive.StringSignal/index.d.ts" />
+/// <reference path="../Diagnostics.TypeSystemMetadata/index.d.ts" />
 declare namespace DiagnosticsModule {
 /** 
 * ```
@@ -21,8 +19,8 @@ const typeSystem: TypeSystemMetadata;
  * 
  * Returns an array of names of all the scripting modules that can be loaded through a `require` call.
  * Note: This set of modules is based on the list of enabled capabilities.
- */function getModuleNames(): Array<string>
- ;
+ */ 
+function getModuleNames(): Array<string>;
 
 /** 
 *  
@@ -30,8 +28,8 @@ const typeSystem: TypeSystemMetadata;
  *  
  * 
  * Finds the descriptions for each type in the effect.
- */function getTypeDescriptions(): Object
- ;
+ */ 
+function getTypeDescriptions(): Object;
 
 /** 
 *  
@@ -40,8 +38,8 @@ const typeSystem: TypeSystemMetadata;
  * 
  * Flattens content to a string and prints it to the debug console.
  * Note: this function can be reassigned to any var (i.e. `foo.log = Diagnostics.log;`)
- */function log(content: Object): void
- ;
+ */ 
+function log(content: Object): void;
 
 /** 
 *  
@@ -49,8 +47,8 @@ const typeSystem: TypeSystemMetadata;
  *  
  * 
  * Adds the specified signal to the watch view in AR Studio with the specified tag.
- */function watch(tag: string, signal: BoolSignal | boolean | ScalarSignal | number | StringSignal | string): void
- ;
+ */ 
+function watch(tag: string, signal: BoolSignal | ScalarSignal | StringSignal | boolean | number | string): void;
 
 } 
 export = DiagnosticsModule;

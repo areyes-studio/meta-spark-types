@@ -1,10 +1,8 @@
-/// <reference path="../string/index.d.ts" />
-/// <reference path="../Promise/index.d.ts" />
 /// <reference path="../Reactive.BoolSignal/index.d.ts" />
-/// <reference path="../Reactive.RgbaSignal/index.d.ts" />
+/// <reference path="../Reactive.EventSource/index.d.ts" />
 /// <reference path="../Reactive.Point2DSignal/index.d.ts" />
 /// <reference path="../Reactive.PointSignal/index.d.ts" />
-/// <reference path="../Reactive.EventSource/index.d.ts" />
+/// <reference path="../Reactive.RgbaSignal/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 /// <reference path="../Reactive.StringSignal/index.d.ts" />
 /// <reference path="../Reactive.VectorSignal/index.d.ts" />
@@ -15,8 +13,8 @@ declare interface PatchesOutputs {
  *  
  * 
  * Returns a promise that is resolved with a `BoolSignal` existing in the Patch Editor under specified `name`.
- */getBoolean(name: string): Promise<BoolSignal>
- ;
+ */ 
+getBoolean(name: string): Promise<BoolSignal>;
 
 /** 
 *  
@@ -24,8 +22,8 @@ declare interface PatchesOutputs {
  *  
  * 
  * Returns a `BoolSignal` existing in the Patch Editor under specified `name` or `fallback` on error.
- */getBooleanOrFallback(name: string, fallback: BoolSignal | boolean | boolean): BoolSignal
- ;
+ */ 
+getBooleanOrFallback(name: string, fallback: BoolSignal | boolean): BoolSignal;
 
 /** 
 *  
@@ -33,8 +31,8 @@ declare interface PatchesOutputs {
  *  
  * 
  * Returns a promise that is resolved with a `RgbaSignal` existing in the Patch Editor under specified `name`.
- */getColor(name: string): Promise<RgbaSignal>
- ;
+ */ 
+getColor(name: string): Promise<RgbaSignal>;
 
 /** 
 *  
@@ -42,8 +40,8 @@ declare interface PatchesOutputs {
  *  
  * 
  * Returns a `RgbaSignal` existing in the Patch Editor under specified `name` or `fallback` on error.
- */getColorOrFallback(name: string, fallback: RgbaSignal): RgbaSignal
- ;
+ */ 
+getColorOrFallback(name: string, fallback: RgbaSignal): RgbaSignal;
 
 /** 
 *  
@@ -51,8 +49,8 @@ declare interface PatchesOutputs {
  *  
  * 
  * Returns a promise that is resolved with a `PointSignal` existing in the Patch Editor under specified `name`.
- */getPoint(name: string): Promise<PointSignal>
- ;
+ */ 
+getPoint(name: string): Promise<PointSignal>;
 
 /** 
 *  
@@ -60,8 +58,8 @@ declare interface PatchesOutputs {
  *  
  * 
  * Returns a promise that is resolved with a `Point2DSignal` existing in the Patch Editor under specified `name`.
- */getPoint2D(name: string): Promise<Point2DSignal>
- ;
+ */ 
+getPoint2D(name: string): Promise<Point2DSignal>;
 
 /** 
 *  
@@ -69,8 +67,8 @@ declare interface PatchesOutputs {
  *  
  * 
  * Returns a `Point2DSignal` existing in the Patch Editor under specified `name` or `fallback` on error.
- */getPoint2DOrFallback(name: string, fallback: Point2DSignal): Point2DSignal
- ;
+ */ 
+getPoint2DOrFallback(name: string, fallback: Point2DSignal): Point2DSignal;
 
 /** 
 *  
@@ -78,8 +76,8 @@ declare interface PatchesOutputs {
  *  
  * 
  * Returns a `PointSignal` existing in the Patch Editor under specified `name` or `fallback` on error.
- */getPointOrFallback(name: string, fallback: PointSignal): PointSignal
- ;
+ */ 
+getPointOrFallback(name: string, fallback: PointSignal): PointSignal;
 
 /** 
 *  
@@ -87,8 +85,8 @@ declare interface PatchesOutputs {
  *  
  * 
  * Returns a promise that is resolved with a `EventSource<any>` existing in the Patch Editor under specified `name`.
- */getPulse(name: string): Promise<EventSource<any>>
- ;
+ */ 
+getPulse(name: string): Promise<EventSource<any>>;
 
 /** 
 *  
@@ -96,8 +94,8 @@ declare interface PatchesOutputs {
  *  
  * 
  * Returns a `EventSource<any>` existing in the Patch Editor under specified `name` or `fallback` on error.
- */getPulseOrFallback(name: string, fallback: EventSource<any>): EventSource<any>
- ;
+ */ 
+getPulseOrFallback(name: string, fallback: EventSource<any>): EventSource<any>;
 
 /** 
 *  
@@ -105,8 +103,8 @@ declare interface PatchesOutputs {
  *  
  * 
  * Returns a promise that is resolved with a `ScalarSignal` existing in the Patch Editor under specified `name`.
- */getScalar(name: string): Promise<ScalarSignal>
- ;
+ */ 
+getScalar(name: string): Promise<ScalarSignal>;
 
 /** 
 *  
@@ -114,8 +112,8 @@ declare interface PatchesOutputs {
  *  
  * 
  * Returns a `ScalarSignal` existing in the Patch Editor under specified `name` or `fallback` on error.
- */getScalarOrFallback(name: string, fallback: ScalarSignal | number | number): ScalarSignal
- ;
+ */ 
+getScalarOrFallback(name: string, fallback: ScalarSignal | number): ScalarSignal;
 
 /** 
 *  
@@ -123,8 +121,8 @@ declare interface PatchesOutputs {
  *  
  * 
  * Returns a promise that is resolved with a `StringSignal` existing in the Patch Editor under specified `name`.
- */getString(name: string): Promise<StringSignal>
- ;
+ */ 
+getString(name: string): Promise<StringSignal>;
 
 /** 
 *  
@@ -132,8 +130,8 @@ declare interface PatchesOutputs {
  *  
  * 
  * Returns a `StringSignal` existing in the Patch Editor under specified `name` or `fallback` on error.
- */getStringOrFallback(name: string, fallback: StringSignal | string | string): StringSignal
- ;
+ */ 
+getStringOrFallback(name: string, fallback: StringSignal | string): StringSignal;
 
 /** 
 *  
@@ -141,8 +139,8 @@ declare interface PatchesOutputs {
  *  
  * 
  * Returns a promise that is resolved with a `VectorSignal` existing in the Patch Editor under specified `name`.
- */getVector(name: string): Promise<VectorSignal>
- ;
+ */ 
+getVector(name: string): Promise<VectorSignal>;
 
 /** 
 *  
@@ -150,7 +148,7 @@ declare interface PatchesOutputs {
  *  
  * 
  * Returns a `VectorSignal` existing in the Patch Editor under specified `name` or `fallback` on error.
- */getVectorOrFallback(name: string, fallback: VectorSignal): VectorSignal
- ;
+ */ 
+getVectorOrFallback(name: string, fallback: VectorSignal): VectorSignal;
 
 } 

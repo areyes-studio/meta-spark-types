@@ -1,4 +1,3 @@
-/// <reference path="../string/index.d.ts" />
 declare interface FontId {
 /** 
 * ```

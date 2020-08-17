@@ -1,5 +1,3 @@
-/// <reference path="../string/index.d.ts" />
-/// <reference path="../void/index.d.ts" />
 declare namespace NativeNavigationModule {
 /** 
 *  
@@ -7,8 +5,8 @@ declare namespace NativeNavigationModule {
  *  
  * 
  * Navigate within the application to the content specified by the provided `URL`.
- */function navigateTo(url: string): void
- ;
+ */ 
+function navigateTo(url: string): void;
 
 } 
 export = NativeNavigationModule;

@@ -1,5 +1,5 @@
-/// <reference path="../Reactive.BoundingBoxSignal/index.d.ts" />
 /// <reference path="../Reactive.BoolSignal/index.d.ts" />
+/// <reference path="../Reactive.BoundingBoxSignal/index.d.ts" />
 declare interface Face2D {
 /** 
 * ```

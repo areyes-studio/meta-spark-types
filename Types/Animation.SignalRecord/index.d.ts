@@ -1,5 +1,3 @@
-/// <reference path="../number/index.d.ts" />
-/// <reference path="../string/index.d.ts" />
 declare interface SignalRecord {
 /** 
 * ```

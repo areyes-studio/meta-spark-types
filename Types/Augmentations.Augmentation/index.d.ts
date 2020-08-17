@@ -1,7 +1,6 @@
-/// <reference path="../Signal<AugmentationState>/index.d.ts" />
+/// <reference path="../Augmentations.AugmentationInstance/index.d.ts" />
+/// <reference path="../Augmentations.AugmentationState/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
-/// <reference path="../any/index.d.ts" />
-/// <reference path="../Promise/index.d.ts" />
 declare interface Augmentation {
 /** 
 * ```
@@ -21,7 +20,7 @@ downloadProgress: ScalarSignal | number;
 *  
  * instantiate(config: any): Promise<AugmentationInstance>
  *  
- */instantiate(config: any): Promise<AugmentationInstance>
- ;
+ */ 
+instantiate(config: any): Promise<AugmentationInstance>;
 
 } 

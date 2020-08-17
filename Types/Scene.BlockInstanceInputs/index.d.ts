@@ -1,14 +1,12 @@
-/// <reference path="../String/index.d.ts" />
-/// <reference path="../Reactive.ScalarSignal/index.d.ts" />
-/// <reference path="../Promise/index.d.ts" />
-/// <reference path="../Reactive.ColorSignal/index.d.ts" />
-/// <reference path="../Reactive.StringSignal/index.d.ts" />
 /// <reference path="../Reactive.BoolSignal/index.d.ts" />
-/// <reference path="../Reactive.ShaderSignal/index.d.ts" />
-/// <reference path="../Reactive.PointSignal/index.d.ts" />
-/// <reference path="../Reactive.VectorSignal/index.d.ts" />
+/// <reference path="../Reactive.ColorSignal/index.d.ts" />
 /// <reference path="../Reactive.EventSource/index.d.ts" />
 /// <reference path="../Reactive.Point2DSignal/index.d.ts" />
+/// <reference path="../Reactive.PointSignal/index.d.ts" />
+/// <reference path="../Reactive.ScalarSignal/index.d.ts" />
+/// <reference path="../Reactive.ShaderSignal/index.d.ts" />
+/// <reference path="../Reactive.StringSignal/index.d.ts" />
+/// <reference path="../Reactive.VectorSignal/index.d.ts" />
 declare interface BlockInstanceInputs {
 /** 
 *  
@@ -16,8 +14,8 @@ declare interface BlockInstanceInputs {
  *  
  * 
  * Sends a `ScalarSignal` to the Block's input with the given `name`. Returns a promise that is fulfilled if the operation succeeds and is rejected if the operation fails, such as if no input exists with the given name, or if the input's type is not a `ScalarSignal`.
- */setScalar(name: String, signal: ScalarSignal | number): Promise<void>
- ;
+ */ 
+setScalar(name: String, signal: ScalarSignal | number): Promise<void>;
 
 /** 
 *  
@@ -25,8 +23,8 @@ declare interface BlockInstanceInputs {
  *  
  * 
  * Sends a `ColorSignal` to the Block's input with the given `name`. Returns a promise that is fulfilled if the operation succeeds and is rejected if the operation fails, such as if no input exists with the given name, or if the input's type is not a `ColorSignal`.
- */setColor(name: String, signal: ColorSignal): Promise<void>
- ;
+ */ 
+setColor(name: String, signal: ColorSignal): Promise<void>;
 
 /** 
 *  
@@ -34,8 +32,8 @@ declare interface BlockInstanceInputs {
  *  
  * 
  * Sends a `StringSignal` to the Block's input with the given `name`. Returns a promise that is fulfilled if the operation succeeds and is rejected if the operation fails, such as if no input exists with the given name, or if the input's type is not a `StringSignal`.
- */setString(name: String, signal: StringSignal | string): Promise<void>
- ;
+ */ 
+setString(name: String, signal: StringSignal | string): Promise<void>;
 
 /** 
 *  
@@ -43,8 +41,8 @@ declare interface BlockInstanceInputs {
  *  
  * 
  * Sends a `BoolSignal` to the Block's input with the given `name`. Returns a promise that is fulfilled if the operation succeeds and is rejected if the operation fails, such as if no input exists with the given name, or if the input's type is not a `BoolSignal`.
- */setBoolean(name: String, signal: BoolSignal | boolean): Promise<void>
- ;
+ */ 
+setBoolean(name: String, signal: BoolSignal | boolean): Promise<void>;
 
 /** 
 *  
@@ -52,8 +50,8 @@ declare interface BlockInstanceInputs {
  *  
  * 
  * Sends a `ShaderSignal` to the Block's input with the given `name`. Returns a promise that is fulfilled if the operation succeeds and is rejected if the operation fails, such as if no input exists with the given name, or if the input's type is not a `ShaderSignal`.
- */setShader(name: String, signal: ShaderSignal): Promise<void>
- ;
+ */ 
+setShader(name: String, signal: ShaderSignal): Promise<void>;
 
 /** 
 *  
@@ -61,8 +59,8 @@ declare interface BlockInstanceInputs {
  *  
  * 
  * Sends a `PointSignal` to the Block's input with the given `name`. Returns a promise that is fulfilled if the operation succeeds and is rejected if the operation fails, such as if no input exists with the given name, or if the input's type is not a `PointSignal`.
- */setPoint(name: String, signal: PointSignal): Promise<void>
- ;
+ */ 
+setPoint(name: String, signal: PointSignal): Promise<void>;
 
 /** 
 *  
@@ -70,8 +68,8 @@ declare interface BlockInstanceInputs {
  *  
  * 
  * Sends a `VectorSignal` to the Block's input with the given `name`. Returns a promise that is fulfilled if the operation succeeds and is rejected if the operation fails, such as if no input exists with the given name, or if the input's type is not a `VectorSignal`.
- */setVector(name: String, signal: VectorSignal): Promise<void>
- ;
+ */ 
+setVector(name: String, signal: VectorSignal): Promise<void>;
 
 /** 
 *  
@@ -79,8 +77,8 @@ declare interface BlockInstanceInputs {
  *  
  * 
  * Sends a `EventSource` to the Block's input with the given `name`. Returns a promise that is fulfilled if the operation succeeds and is rejected if the operation fails, such as if no input exists with the given name, or if the input's type is not a `EventSource`.
- */setPulse(name: String, signal: EventSource): Promise<void>
- ;
+ */ 
+setPulse(name: String, signal: EventSource): Promise<void>;
 
 /** 
 *  
@@ -88,7 +86,7 @@ declare interface BlockInstanceInputs {
  *  
  * 
  * Sends a `Point2DSignal` to the Block's input with the given `name`. Returns a promise that is fulfilled if the operation succeeds and is rejected if the operation fails, such as if no input exists with the given name, or if the input's type is not a `Point2DSignal`.
- */setPoint2D(name: String, signal: Point2DSignal): Promise<void>
- ;
+ */ 
+setPoint2D(name: String, signal: Point2DSignal): Promise<void>;
 
 } 

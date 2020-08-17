@@ -1,7 +1,3 @@
-/// <reference path="../string/index.d.ts" />
-/// <reference path="../BoolValue/index.d.ts" />
-/// <reference path="../ScalarValue/index.d.ts" />
-/// <reference path="../Promise/index.d.ts" />
 /// <reference path="../Reactive.BoolSignal/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 /// <reference path="../Textures.TextureBase/index.d.ts" />
@@ -13,8 +9,8 @@ declare interface CustomMaterial {
  * 
  * Returns the Boolean value indicated by the `paramName` argument. An exception is thrown when the identifier isn't found in the material.
  * **See Also**: `CustomMaterial.setBoolParameter`.
- */boolParameter(paramName: string): BoolValue
- ;
+ */ 
+boolParameter(paramName: string): BoolValue;
 
 /** 
 *  
@@ -23,8 +19,8 @@ declare interface CustomMaterial {
  * 
  * Returns the `ScalarValue` value representing the shader parameter indicated by the `paramName` argument. An exception is thrown when the identifier isn't found in the material.
  * **See Also**: `CustomMaterial.setFloatParameter`.
- */floatParameter(paramName: string): ScalarValue
- ;
+ */ 
+floatParameter(paramName: string): ScalarValue;
 
 /** 
 *  
@@ -33,8 +29,8 @@ declare interface CustomMaterial {
  * 
  * Returns a promise that is resolved with the `BoolSignal` associated with a given `paramName` or error if the param is not found in the material.
  * **See Also**: `CustomMaterial.getBoolParameterOrFallback`, `CustomMaterial.setBoolParameter`.
- */getBoolParameter(paramName: string): Promise<BoolSignal>
- ;
+ */ 
+getBoolParameter(paramName: string): Promise<BoolSignal>;
 
 /** 
 *  
@@ -43,8 +39,8 @@ declare interface CustomMaterial {
  * 
  * Returns a `BoolSignal` associated with a given `paramName` or `fallback` if the param is not found in the material.
  * **See Also**: `CustomMaterial.getBoolParameter`, `CustomMaterial.setBoolParameter`.
- */getBoolParameterOrFallback(paramName: string, fallback: BoolSignal | boolean): BoolSignal
- ;
+ */ 
+getBoolParameterOrFallback(paramName: string, fallback: BoolSignal | boolean): BoolSignal;
 
 /** 
 *  
@@ -53,8 +49,8 @@ declare interface CustomMaterial {
  * 
  * Returns a promise that is resolved with the `ScalarSignal` associated with a given `paramName` or error if the param is not found in the material.
  * **See Also**: `CustomMaterial.getFloatParameterOrFallback`, `CustomMaterial.setFloatParameter`.
- */getFloatParameter(paramName: string): Promise<ScalarSignal>
- ;
+ */ 
+getFloatParameter(paramName: string): Promise<ScalarSignal>;
 
 /** 
 *  
@@ -63,18 +59,18 @@ declare interface CustomMaterial {
  * 
  * Returns a `ScalarSignal` associated with a given `paramName` or `fallback` if the param is not found in the material.
  * **See Also**: `CustomMaterial.getFloatParameter`, `CustomMaterial.setFloatParameter`.
- */getFloatParameterOrFallback(paramName: string, fallback: ScalarSignal | number): ScalarSignal
- ;
+ */ 
+getFloatParameterOrFallback(paramName: string, fallback: ScalarSignal | number): ScalarSignal;
 
 /** 
 *  
- * getTexture(paramName: string): Promise<TextureBase>
+ * getTexture(paramName: string): Promise<TextureBase | null>
  *  
  * 
  * Returns a promise that is resolved with the `TextureBase` associated with a given `paramName` or error if the param is not found in the material.
  * **See Also**: `CustomMaterial.setTexture`.
- */getTexture(paramName: string): Promise<TextureBase>
- ;
+ */ 
+getTexture(paramName: string): Promise<TextureBase | null>;
 
 /** 
 *  
@@ -84,8 +80,8 @@ declare interface CustomMaterial {
  * Specifies the value of the shader parameter indicated by the `paramName` argument.
  * Returns promise resolved with error if param for given `paramName` is not found in the material.
  * **See Also**: `CustomMaterial.getBoolParameter`, `CustomMaterial.getBoolParameterOrFallback`.
- */setBoolParameter(paramName: string, source: BoolSignal | boolean): Promise<void>
- ;
+ */ 
+setBoolParameter(paramName: string, source: BoolSignal | boolean): Promise<void>;
 
 /** 
 *  
@@ -95,8 +91,8 @@ declare interface CustomMaterial {
  * Specifies the value of the shader parameter indicated by the `paramName` argument.
  * Returns promise resolved with error if param for given `paramName` is not found in the material.
  * **See Also**: `CustomMaterial.getFloatParameter`, `CustomMaterial.getFloatParameterOrFallback`.
- */setFloatParameter(paramName: string, source: ScalarSignal | number): Promise<void>
- ;
+ */ 
+setFloatParameter(paramName: string, source: ScalarSignal | number): Promise<void>;
 
 /** 
 *  
@@ -106,7 +102,7 @@ declare interface CustomMaterial {
  * Specifies the value of the shader parameter indicated by the `paramName` argument.
  * Returns promise resolved with error if param for given `paramName` is not found in the material.
  * **See Also**: `CustomMaterial.getTexture`.
- */setTexture(paramName: string, texture: TextureBase): Promise<void>
- ;
+ */ 
+setTexture(paramName: string, texture: TextureBase): Promise<void>;
 
 } 

@@ -1,8 +1,5 @@
-/// <reference path="../boolean/index.d.ts" />
 /// <reference path="../Reactive.BoolSignal/index.d.ts" />
-/// <reference path="../BooleanSignal/index.d.ts" />
 /// <reference path="../Reactive.StringSignal/index.d.ts" />
-/// <reference path="../void/index.d.ts" />
 declare namespace InstructionModule {
 /** 
 * ```
@@ -34,8 +31,8 @@ const automaticHintsEnabled: BoolSignal | boolean;
  * 
  * You can have at most one binding for instructions, meaning that setting a different binding
  * would replace any previously created and setup binding for instructions.
- */function bind(enabled: BooleanSignal, token: StringSignal | string): void
- ;
+ */ 
+function bind(enabled: BooleanSignal, token: StringSignal | string): void;
 
 } 
 export = InstructionModule;

@@ -1,5 +1,5 @@
-/// <reference path="../Signal<VerticalTextAlignment>/index.d.ts" />
-/// <reference path="../Signal<TextAlignment>/index.d.ts" />
+/// <reference path="../Scene.TextAlignment/index.d.ts" />
+/// <reference path="../Scene.VerticalTextAlignment/index.d.ts" />
 declare interface TextAlignmentWrapper {
 /** 
 * ```

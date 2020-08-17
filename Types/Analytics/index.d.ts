@@ -1,7 +1,4 @@
-/// <reference path="../string/index.d.ts" />
 /// <reference path="../Reactive.StringSignal/index.d.ts" />
-/// <reference path="../any/index.d.ts" />
-/// <reference path="../void/index.d.ts" />
 declare namespace AnalyticsModule {
 /** 
 * ```
@@ -29,8 +26,8 @@ const productName: StringSignal | string;
  *  
  * 
  * Log an analytics event with a custom name and optional extras object.
- */function logEvent(eventName: string, extras: any): void
- ;
+ */ 
+function logEvent(eventName: string, extras: any): void;
 
 } 
 export = AnalyticsModule;

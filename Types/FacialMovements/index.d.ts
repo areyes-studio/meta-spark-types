@@ -7,8 +7,8 @@ declare namespace FacialMovementsModule {
  *  
  * 
  * Returns a `ScalarSignal` containing the weight associated with the facial movement named `InnerBrowUp`.
- */function innerBrowUp(face: Face): ScalarSignal
- ;
+ */ 
+function innerBrowUp(face: Face): ScalarSignal;
 
 /** 
 *  
@@ -16,8 +16,8 @@ declare namespace FacialMovementsModule {
  *  
  * 
  * Returns a `ScalarSignal` containing the weight associated with the facial movement named `JawDown`.
- */function jawDown(face: Face): ScalarSignal
- ;
+ */ 
+function jawDown(face: Face): ScalarSignal;
 
 /** 
 *  
@@ -25,8 +25,8 @@ declare namespace FacialMovementsModule {
  *  
  * 
  * Returns a `ScalarSignal` containing the weight associated with the facial movement named `LeftBrowDown`.
- */function leftBrowDown(face: Face): ScalarSignal
- ;
+ */ 
+function leftBrowDown(face: Face): ScalarSignal;
 
 /** 
 *  
@@ -34,8 +34,8 @@ declare namespace FacialMovementsModule {
  *  
  * 
  * Returns a `ScalarSignal` containing the weight associated with the facial movement named `LeftEyeClose`.
- */function leftEyeClose(face: Face): ScalarSignal
- ;
+ */ 
+function leftEyeClose(face: Face): ScalarSignal;
 
 /** 
 *  
@@ -43,8 +43,8 @@ declare namespace FacialMovementsModule {
  *  
  * 
  * Returns a `ScalarSignal` containing the weight associated with the facial movement named `LeftEyeSquint`.
- */function leftEyeSquint(face: Face): ScalarSignal
- ;
+ */ 
+function leftEyeSquint(face: Face): ScalarSignal;
 
 /** 
 *  
@@ -52,8 +52,8 @@ declare namespace FacialMovementsModule {
  *  
  * 
  * Returns a `ScalarSignal` containing the weight associated with the facial movement named `LeftLipsCornerUp`.
- */function leftLipsCornerUp(face: Face): ScalarSignal
- ;
+ */ 
+function leftLipsCornerUp(face: Face): ScalarSignal;
 
 /** 
 *  
@@ -61,8 +61,8 @@ declare namespace FacialMovementsModule {
  *  
  * 
  * Returns a `ScalarSignal` containing the weight associated with the facial movement named `LeftLowerLipDown`.
- */function leftLowerLipDown(face: Face): ScalarSignal
- ;
+ */ 
+function leftLowerLipDown(face: Face): ScalarSignal;
 
 /** 
 *  
@@ -70,8 +70,8 @@ declare namespace FacialMovementsModule {
  *  
  * 
  * Returns a `ScalarSignal` containing the weight associated with the facial movement named `LeftMouthDimple`.
- */function leftMouthDimple(face: Face): ScalarSignal
- ;
+ */ 
+function leftMouthDimple(face: Face): ScalarSignal;
 
 /** 
 *  
@@ -79,8 +79,8 @@ declare namespace FacialMovementsModule {
  *  
  * 
  * Returns a `ScalarSignal` containing the weight associated with the facial movement named `LeftOuterBrowUp`.
- */function leftOuterBrowUp(face: Face): ScalarSignal
- ;
+ */ 
+function leftOuterBrowUp(face: Face): ScalarSignal;
 
 /** 
 *  
@@ -88,8 +88,8 @@ declare namespace FacialMovementsModule {
  *  
  * 
  * Returns a `ScalarSignal` containing the weight associated with the facial movement named `LeftUpperEyeLidUp`.
- */function leftUpperEyeLidUp(face: Face): ScalarSignal
- ;
+ */ 
+function leftUpperEyeLidUp(face: Face): ScalarSignal;
 
 /** 
 *  
@@ -97,8 +97,8 @@ declare namespace FacialMovementsModule {
  *  
  * 
  * Returns a `ScalarSignal` containing the weight associated with the facial movement named `LeftUpperLipUp`.
- */function leftUpperLipUp(face: Face): ScalarSignal
- ;
+ */ 
+function leftUpperLipUp(face: Face): ScalarSignal;
 
 /** 
 *  
@@ -106,8 +106,8 @@ declare namespace FacialMovementsModule {
  *  
  * 
  * Returns a `ScalarSignal` containing the weight associated with the facial movement named `LipFunnel`.
- */function lipFunnel(face: Face): ScalarSignal
- ;
+ */ 
+function lipFunnel(face: Face): ScalarSignal;
 
 /** 
 *  
@@ -115,8 +115,8 @@ declare namespace FacialMovementsModule {
  *  
  * 
  * Returns a `ScalarSignal` containing the weight associated with the facial movement named `LipsMoveLeft`.
- */function lipsMoveLeft(face: Face): ScalarSignal
- ;
+ */ 
+function lipsMoveLeft(face: Face): ScalarSignal;
 
 /** 
 *  
@@ -124,8 +124,8 @@ declare namespace FacialMovementsModule {
  *  
  * 
  * Returns a `ScalarSignal` containing the weight associated with the facial movement named `LipsMoveRight`.
- */function lipsMoveRight(face: Face): ScalarSignal
- ;
+ */ 
+function lipsMoveRight(face: Face): ScalarSignal;
 
 /** 
 *  
@@ -133,8 +133,8 @@ declare namespace FacialMovementsModule {
  *  
  * 
  * Returns a `ScalarSignal` containing the weight associated with the facial movement named `LipsPucker`.
- */function lipsPucker(face: Face): ScalarSignal
- ;
+ */ 
+function lipsPucker(face: Face): ScalarSignal;
 
 /** 
 *  
@@ -142,8 +142,8 @@ declare namespace FacialMovementsModule {
  *  
  * 
  * Returns a `ScalarSignal` containing the weight associated with the facial movement named `LowerLipOut`.
- */function lowerLipOut(face: Face): ScalarSignal
- ;
+ */ 
+function lowerLipOut(face: Face): ScalarSignal;
 
 /** 
 *  
@@ -151,8 +151,8 @@ declare namespace FacialMovementsModule {
  *  
  * 
  * Returns a `ScalarSignal` containing the weight associated with the facial movement named `RightBrowDown`.
- */function rightBrowDown(face: Face): ScalarSignal
- ;
+ */ 
+function rightBrowDown(face: Face): ScalarSignal;
 
 /** 
 *  
@@ -160,8 +160,8 @@ declare namespace FacialMovementsModule {
  *  
  * 
  * Returns a `ScalarSignal` containing the weight associated with the facial movement named `RightEyeClose`.
- */function rightEyeClose(face: Face): ScalarSignal
- ;
+ */ 
+function rightEyeClose(face: Face): ScalarSignal;
 
 /** 
 *  
@@ -169,8 +169,8 @@ declare namespace FacialMovementsModule {
  *  
  * 
  * Returns a `ScalarSignal` containing the weight associated with the facial movement named `RightEyeSquint`.
- */function rightEyeSquint(face: Face): ScalarSignal
- ;
+ */ 
+function rightEyeSquint(face: Face): ScalarSignal;
 
 /** 
 *  
@@ -178,8 +178,8 @@ declare namespace FacialMovementsModule {
  *  
  * 
  * Returns a `ScalarSignal` containing the weight associated with the facial movement named `RightLipsCornerUp`.
- */function rightLipsCornerUp(face: Face): ScalarSignal
- ;
+ */ 
+function rightLipsCornerUp(face: Face): ScalarSignal;
 
 /** 
 *  
@@ -187,8 +187,8 @@ declare namespace FacialMovementsModule {
  *  
  * 
  * Returns a `ScalarSignal` containing the weight associated with the facial movement named `RightLowerLipDown`.
- */function rightLowerLipDown(face: Face): ScalarSignal
- ;
+ */ 
+function rightLowerLipDown(face: Face): ScalarSignal;
 
 /** 
 *  
@@ -196,8 +196,8 @@ declare namespace FacialMovementsModule {
  *  
  * 
  * Returns a `ScalarSignal` containing the weight associated with the facial movement named `RightMouthDimple`.
- */function rightMouthDimple(face: Face): ScalarSignal
- ;
+ */ 
+function rightMouthDimple(face: Face): ScalarSignal;
 
 /** 
 *  
@@ -205,8 +205,8 @@ declare namespace FacialMovementsModule {
  *  
  * 
  * Returns a `ScalarSignal` containing the weight associated with the facial movement named `RightOuterBrowUp`.
- */function rightOuterBrowUp(face: Face): ScalarSignal
- ;
+ */ 
+function rightOuterBrowUp(face: Face): ScalarSignal;
 
 /** 
 *  
@@ -214,8 +214,8 @@ declare namespace FacialMovementsModule {
  *  
  * 
  * Returns a `ScalarSignal` containing the weight associated with the facial movement named `RightUpperEyeLidUp`.
- */function rightUpperEyeLidUp(face: Face): ScalarSignal
- ;
+ */ 
+function rightUpperEyeLidUp(face: Face): ScalarSignal;
 
 /** 
 *  
@@ -223,8 +223,8 @@ declare namespace FacialMovementsModule {
  *  
  * 
  * Returns a `ScalarSignal` containing the weight associated with the facial movement named `RightUpperLipUp`.
- */function rightUpperLipUp(face: Face): ScalarSignal
- ;
+ */ 
+function rightUpperLipUp(face: Face): ScalarSignal;
 
 /** 
 *  
@@ -232,8 +232,8 @@ declare namespace FacialMovementsModule {
  *  
  * 
  * Returns a `ScalarSignal` containing the weight associated with the facial movement named `UpperLipOut`.
- */function upperLipOut(face: Face): ScalarSignal
- ;
+ */ 
+function upperLipOut(face: Face): ScalarSignal;
 
 } 
 export = FacialMovementsModule;

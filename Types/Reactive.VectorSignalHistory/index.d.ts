@@ -1,4 +1,3 @@
-/// <reference path="../number/index.d.ts" />
 /// <reference path="../Reactive.VectorSignal/index.d.ts" />
 declare interface VectorSignalHistory {
 /** 
@@ -26,8 +25,8 @@ length: number;
  * **Note**: See also `SignalHistory.frame` method which uses more intuitive negative indexing.
  * **Note**: You can use `SignalHistory[0]` to achieve same effect as calling `SignalHistory.at(0)`
  * 
- */at(index: number): VectorSignal
- ;
+ */ 
+at(index: number): VectorSignal;
 
 /** 
 * 
@@ -43,7 +42,7 @@ length: number;
  * **Note**: See also `SignalHistory.at` method for approach which is index based.
  * **Note**: You can use `SignalHistory[-1]` to achieve same effect as calling `SignalHistory.frame(-1)`
  * 
- */frame(relativeFrame: number): VectorSignal
- ;
+ */ 
+frame(relativeFrame: number): VectorSignal;
 
 } 

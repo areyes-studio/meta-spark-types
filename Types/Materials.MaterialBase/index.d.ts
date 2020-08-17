@@ -1,13 +1,12 @@
+/// <reference path="../Shaders.BlendedMaterialTextures/index.d.ts" />
+/// <reference path="../Reactive.BoolSignal/index.d.ts" />
+/// <reference path="../Shaders.DefaultMaterialTextures/index.d.ts" />
+/// <reference path="../Shaders.FacePaintMaterialTextures/index.d.ts" />
+/// <reference path="../Shaders.PhysicallyBasedMaterialTextures/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
-/// <reference path="../Signal<Materials.CullMode>/index.d.ts" />
+/// <reference path="../Reactive.ShaderSignal/index.d.ts" />
 /// <reference path="../Textures.TextureBase/index.d.ts" />
 /// <reference path="../Materials.TextureTransform/index.d.ts" />
-/// <reference path="../Reactive.BoolSignal/index.d.ts" />
-/// <reference path="../string/index.d.ts" />
-/// <reference path="../Promise/index.d.ts" />
-/// <reference path="../Reactive.ShaderSignal/index.d.ts" />
-/// <reference path="../void/index.d.ts" />
-/// <reference path="../String/index.d.ts" />
 declare interface MaterialBase {
 /** 
 * ```
@@ -26,16 +25,16 @@ alphaCutoff: ScalarSignal | number;
 
 Specifies the material cull mode.
 */ 
-cullMode: CullMode>;
+cullMode: Signal<MaterialsModule.CullMode>;
 /** 
 * ```
-(get) diffuse: TextureBase
-(set) diffuse: TextureBase
+(get) diffuse: TextureBase | null
+(set) diffuse: TextureBase | null
 ```
 
 Specifies the texture that forms the basis of this material.
 */ 
-diffuse: TextureBase;
+diffuse: TextureBase | null;
 /** 
 * ```
 (get) diffuseTextureTransform: TextureTransform
@@ -85,12 +84,12 @@ Specifies a number between 0.0 and 1.0 indicating the opacity threshold for disc
 opacity: ScalarSignal | number;
 /** 
 *  
- * getDiffuse(): Promise<TextureBase>
+ * getDiffuse(): Promise<TextureBase | null>
  *  
  * 
  * Returns a promise that is resolved with the texture associated with a given material or null if no texture was assigned.
- */getDiffuse(): Promise<TextureBase>
- ;
+ */ 
+getDiffuse(): Promise<TextureBase | null>;
 
 /** 
 *  
@@ -98,8 +97,8 @@ opacity: ScalarSignal | number;
  *  
  * 
  * Assigns a ShaderSignal to the specified texture slot.
- */setTexture(signal: ShaderSignal, config: {textureSlotName: DefaultMaterialTextures | BlendedMaterialTextures | FacePaintMaterialTextures | PhysicallyBasedMaterialTextures}): void
- ;
+ */ 
+setTexture(signal: ShaderSignal, config: {textureSlotName: DefaultMaterialTextures | BlendedMaterialTextures | FacePaintMaterialTextures | PhysicallyBasedMaterialTextures}): void;
 
 /** 
 *  
@@ -107,7 +106,7 @@ opacity: ScalarSignal | number;
  *  
  * 
  * Assigns a ShaderSignal to the specified texture slot.
- */setTextureSlot(textureSlotName: String, signal: ShaderSignal): void
- ;
+ */ 
+setTextureSlot(textureSlotName: String, signal: ShaderSignal): void;
 
 } 

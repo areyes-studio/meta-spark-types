@@ -1,8 +1,6 @@
-/// <reference path="../Reactive.ScalarSignal/index.d.ts" />
-/// <reference path="../AudioSource/index.d.ts" />
-/// <reference path="../number/index.d.ts" />
 /// <reference path="../Scene.AudioTransformWrapper/index.d.ts" />
 /// <reference path="../Reactive.BoolSignal/index.d.ts" />
+/// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 declare interface Speaker {
 /** 
 * ```
@@ -22,22 +20,22 @@ volume: ScalarSignal | number;
  *  
  * 
  * Returns a `ScalarSignal` indicating the timestamp of the played audio source instance with lowest timestamp. A value of zero is returned if the audio source is not currently playing.
- */minProgress(audioSource: AudioSource): ScalarSignal
- ;
+ */ 
+minProgress(audioSource: AudioSource): ScalarSignal;
 
 /** 
 *  
  * audioTransformsCount(): number
  *  
- */audioTransformsCount(): number
- ;
+ */ 
+audioTransformsCount(): number;
 
 /** 
 *  
  * audioTransformAtIndex(index: number): AudioTransformWrapper
  *  
- */audioTransformAtIndex(index: number): AudioTransformWrapper
- ;
+ */ 
+audioTransformAtIndex(index: number): AudioTransformWrapper;
 
 /** 
 *  
@@ -45,7 +43,7 @@ volume: ScalarSignal | number;
  *  
  * 
  * Returns a `BooleanSignal` indicating whether the specified audio source is playing.
- */isPlaying(audioSource: AudioSource): BoolSignal
- ;
+ */ 
+isPlaying(audioSource: AudioSource): BoolSignal;
 
 } 

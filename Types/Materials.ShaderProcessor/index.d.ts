@@ -1,7 +1,3 @@
-/// <reference path="../string/index.d.ts" />
-/// <reference path="../BoolValue/index.d.ts" />
-/// <reference path="../ScalarValue/index.d.ts" />
-/// <reference path="../Promise/index.d.ts" />
 /// <reference path="../Reactive.BoolSignal/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 declare interface ShaderProcessor {
@@ -12,8 +8,8 @@ declare interface ShaderProcessor {
  * 
  * Returns the `BoolValue` value representing the shader parameter indicated by the `paramName` argument. An exception is thrown when the identifier isn't found in the shader processor.
  * **See Also**: `ShaderProcessor.setBoolParameter`.
- */boolParameter(paramName: string): BoolValue
- ;
+ */ 
+boolParameter(paramName: string): BoolValue;
 
 /** 
 *  
@@ -22,8 +18,8 @@ declare interface ShaderProcessor {
  * 
  * Returns the `ScalarValue` value representing the shader parameter indicated by the `paramName` argument. An exception is thrown when the identifier isn't found in the shader processor.
  * **See Also**: `ShaderProcessor.setFloatParameter`.
- */floatParameter(paramName: string): ScalarValue
- ;
+ */ 
+floatParameter(paramName: string): ScalarValue;
 
 /** 
 *  
@@ -32,8 +28,8 @@ declare interface ShaderProcessor {
  * 
  * Returns a promise that is resolved with the `BoolSignal` associated with a given `paramName` or error if the param is not found in the material.
  * **See Also**: `ShaderProcessor.getBoolParameterOrFallback`, `ShaderProcessor.setBoolParameter`.
- */getBoolParameter(paramName: string): Promise<BoolSignal>
- ;
+ */ 
+getBoolParameter(paramName: string): Promise<BoolSignal>;
 
 /** 
 *  
@@ -42,8 +38,8 @@ declare interface ShaderProcessor {
  * 
  * Returns a `BoolSignal` associated with a given `paramName` or `fallback` if the param is not found in the material.
  * **See Also**: `ShaderProcessor.getBoolParameter`, `ShaderProcessor.setBoolParameter`.
- */getBoolParameterOrFallback(paramName: string, fallback: BoolSignal | boolean | boolean): BoolSignal
- ;
+ */ 
+getBoolParameterOrFallback(paramName: string, fallback: BoolSignal | boolean): BoolSignal;
 
 /** 
 *  
@@ -52,8 +48,8 @@ declare interface ShaderProcessor {
  * 
  * Returns a promise that is resolved with the `ScalarSignal` associated with a given `paramName` or error if the param is not found in the material.
  * **See Also**: `ShaderProcessor.getFloatParameterOrFallback`, `ShaderProcessor.setFloatParameter`.
- */getFloatParameter(paramName: string): Promise<ScalarSignal>
- ;
+ */ 
+getFloatParameter(paramName: string): Promise<ScalarSignal>;
 
 /** 
 *  
@@ -62,8 +58,8 @@ declare interface ShaderProcessor {
  * 
  * Returns a `ScalarSignal` associated with a given `paramName` or `fallback` if the param is not found in the material.
  * **See Also**: `ShaderProcessor.getFloatParameter`, `ShaderProcessor.setFloatParameter`.
- */getFloatParameterOrFallback(paramName: string, fallback: ScalarSignal | number | number): ScalarSignal
- ;
+ */ 
+getFloatParameterOrFallback(paramName: string, fallback: ScalarSignal | number): ScalarSignal;
 
 /** 
 *  
@@ -73,8 +69,8 @@ declare interface ShaderProcessor {
  * Specifies the value of the shader parameter indicated by the `paramName` argument.
  * Returns promise resolved with error if param for given `paramName` is not found in the material.
  * **See Also**: `ShaderProcessor.getBoolParameter`, `ShaderProcessor.getBoolParameterOrFallback`.
- */setBoolParameter(paramName: string, source: BoolSignal | boolean | boolean): Promise<void>
- ;
+ */ 
+setBoolParameter(paramName: string, source: BoolSignal | boolean): Promise<void>;
 
 /** 
 *  
@@ -84,7 +80,7 @@ declare interface ShaderProcessor {
  * Specifies the value of the shader parameter indicated by the `paramName` argument.
  * Returns promise resolved with error if param for given `paramName` is not found in the material.
  * **See Also**: `ShaderProcessor.getFloatParameter`, `ShaderProcessor.getFloatParameterOrFallback`.
- */setFloatParameter(paramName: string, source: ScalarSignal | number | number): Promise<void>
- ;
+ */ 
+setFloatParameter(paramName: string, source: ScalarSignal | number): Promise<void>;
 
 } 

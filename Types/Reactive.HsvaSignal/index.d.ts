@@ -1,6 +1,6 @@
-/// <reference path="../Reactive.ScalarSignal/index.d.ts" />
-/// <reference path="../Reactive.RgbaSignal/index.d.ts" />
 /// <reference path="../Reactive.Point4DSignal/index.d.ts" />
+/// <reference path="../Reactive.RgbaSignal/index.d.ts" />
+/// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 declare interface HsvaSignal {
 /** 
 * ```
@@ -46,8 +46,8 @@ alpha: ScalarSignal | number;
  * Convert this signal into RGBA color space.
  * 
  * Be aware, that there is a potential loss of data, when converting HSVA values with `Saturation` set to 0.
- */toRGBA(): RgbaSignal
- ;
+ */ 
+toRGBA(): RgbaSignal;
 
 /** 
 *  
@@ -55,7 +55,7 @@ alpha: ScalarSignal | number;
  *  
  * 
  * Convert this signal to Vector signal, using H, S, V, A for four components of vector respectively.
- */toVec4(): Point4DSignal
- ;
+ */ 
+toVec4(): Point4DSignal;
 
 } 

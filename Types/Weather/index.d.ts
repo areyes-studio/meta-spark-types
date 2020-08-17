@@ -1,4 +1,3 @@
-/// <reference path="../Promise/index.d.ts" />
 declare namespace WeatherModule {
 /** 
 *  
@@ -7,8 +6,8 @@ declare namespace WeatherModule {
  * 
  * 
  * Returns a `JS Promise` which will be fulfilled with `Weather` object or an error.
- */function getWeather(): Promise<Weather>
- ;
+ */ 
+function getWeather(): Promise<Weather>;
 
 } 
 export = WeatherModule;

@@ -1,10 +1,5 @@
-/// <reference path="../Materials.ShaderProcessor/index.d.ts" />
-/// <reference path="../string /index.d.ts" />
-/// <reference path="../Promise/index.d.ts" />
-/// <reference path="../string/index.d.ts" />
-/// <reference path="../initialState/index.d.ts" />
-/// <reference path="../config/index.d.ts" />
 /// <reference path="../Materials.MaterialBase/index.d.ts" />
+/// <reference path="../Materials.ShaderProcessor/index.d.ts" />
 declare namespace MaterialsModule {
 /** 
 * ```
@@ -35,8 +30,8 @@ const preProcessor: ShaderProcessor;
  * - New materials always get assigned a globally unique `name` and `identifier`.
  * - `initialState` is optional, but encouraged to be used.
  * - All properties that are using Signal types get assigned a ConstSignal with last value. Use initialState to override it.
- */function clone(material: string | MaterialBase, initialState?: {[key: string]: any}): Promise<MaterialBase>
- ;
+ */ 
+function clone(material: MaterialBase | string, initialState?: {[key: string]: any}): Promise<MaterialBase>;
 
 /** 
 *  
@@ -48,8 +43,8 @@ const preProcessor: ShaderProcessor;
  * - All materials must have an existing class.
  * - New materials always get assigned a globally unique `name` and `identifier`.
  * - `initialState` is optional, but encouraged to be used.
- */function create(className: string, initialState?: {[key: string]: any}): Promise<MaterialBase>
- ;
+ */ 
+function create(className: string, initialState?: {[key: string]: any}): Promise<MaterialBase>;
 
 /** 
 *  
@@ -61,8 +56,8 @@ const preProcessor: ShaderProcessor;
  * - All bound properties will be automatically unbound on destruction.
  * - Destroying a material that doesn't exist fails the `Future`.
  * - Destroying a set of Materials that was created in Studio fails the `Future`.
- */function destroy(material: string | MaterialBase): Promise<void>
- ;
+ */ 
+function destroy(material: MaterialBase | string): Promise<void>;
 
 /** 
 *  
@@ -71,8 +66,8 @@ const preProcessor: ShaderProcessor;
  * 
  * Returns a promise that is resolved with the material of a requested name or null if none was found.
  * **See Also**: `Materials.findUsingPattern`, `Materials.getAll`.
- */function findFirst(name: string): Promise<MaterialBase | null>
- ;
+ */ 
+function findFirst(name: string): Promise<MaterialBase | null>;
 
 /** 
 *  
@@ -93,8 +88,8 @@ const preProcessor: ShaderProcessor;
  * `limit` parameter describes if `findUsingPattern` should finish the search if it finds specified number of results (default is no limit). Non-positive values for limit are treated as unlimited.
  * 
  * **See Also**: `Materials.getAll`, `Materials.findFirst`.
- */function findUsingPattern(namePattern: string, config?: {limit: number}): Promise<Array<MaterialBase>>
- ;
+ */ 
+function findUsingPattern(namePattern: string, config?: {limit: number}): Promise<Array<MaterialBase>>;
 
 /** 
 *  
@@ -105,8 +100,8 @@ const preProcessor: ShaderProcessor;
  * An exception is thrown when the identifier isn't found in the project.
  * 
  * **See Also**: `MaterialBase.name`.
- */function get(materialName: string): MaterialBase
- ;
+ */ 
+function get(materialName: string): MaterialBase;
 
 /** 
 *  
@@ -115,8 +110,8 @@ const preProcessor: ShaderProcessor;
  * 
  * Returns a promise that is resolved with all of the materials.
  * **See Also**: `Materials.findUsingPattern`, `Materials.findFirst`.
- */function getAll(): Promise<Array<MaterialBase>>
- ;
+ */ 
+function getAll(): Promise<Array<MaterialBase>>;
 
 } 
 export = MaterialsModule;

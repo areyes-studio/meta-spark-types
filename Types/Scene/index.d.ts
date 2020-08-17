@@ -1,11 +1,7 @@
-/// <reference path="../Scene.Scene/index.d.ts" />
-/// <reference path="../string/index.d.ts" />
-/// <reference path="../initialState/index.d.ts" />
-/// <reference path="../Promise/index.d.ts" />
-/// <reference path="../string /index.d.ts" />
-/// <reference path="../Reactive.PointSignal/index.d.ts" />
 /// <reference path="../Reactive.Point2DSignal/index.d.ts" />
-/// <reference path="../number/index.d.ts" />
+/// <reference path="../Reactive.PointSignal/index.d.ts" />
+/// <reference path="../Scene.Scene/index.d.ts" />
+/// <reference path="../Scene.SceneObjectBase/index.d.ts" />
 declare namespace SceneModule {
 /** 
 * ```
@@ -28,8 +24,8 @@ const root: Scene;
  * - `initialState` is optional, but encouraged to be used.
  * - `name` in `initialState` is being used, unless it's not provided - then `dynamicObject` is used.
  * )
- */function create(className: string, initialState?: {[key: string]: any}): Promise<any>
- ;
+ */ 
+function create(className: string, initialState?: {[key: string]: any}): Promise<any>;
 
 /** 
 *  
@@ -43,8 +39,8 @@ const root: Scene;
  *  - Destroying a scene object automatically removes it all children from it.
  *  - Destroying a scene object that doesn't exist fails the `Promise`.
  *  - Destroying a scene object that was created in Studio fails the `Promise`.
- */function destroy(sceneObject: string | any): Promise<void>
- ;
+ */ 
+function destroy(sceneObject: any | string): Promise<void>;
 
 /** 
 *  
@@ -58,8 +54,8 @@ const root: Scene;
  * The values in the returned signal are not capped to the size of the screen space and can lie outside of the visible screen area.
  * 
  * This functionality can be used for precisely positioning 2D screen elements or to add additional effects that apply to the entire camera texture, based on contents of the scene.
- */function projectToScreen(point: PointSignal): Point2DSignal
- ;
+ */ 
+function projectToScreen(point: PointSignal): Point2DSignal;
 
 /** 
 *  
@@ -77,8 +73,8 @@ const root: Scene;
  * var signal = S.unprojectToFocalPlane(gesture.location);
  * });
  *  
- */function unprojectToFocalPlane(location: Point2DSignal): PointSignal
- ;
+ */ 
+function unprojectToFocalPlane(location: Point2DSignal): PointSignal;
 
 /** 
 *  
@@ -95,8 +91,8 @@ const root: Scene;
  * var signal = Scene.unprojectWithDepth(gesture.location, 0.5);
  * });
  *  
- */function unprojectWithDepth(location: Point2DSignal, depth: number): PointSignal
- ;
+ */ 
+function unprojectWithDepth(location: Point2DSignal, depth: number): PointSignal;
 
 } 
 export = SceneModule;

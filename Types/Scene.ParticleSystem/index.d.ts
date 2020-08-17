@@ -1,14 +1,14 @@
-/// <reference path="../Reactive.ScalarSignal/index.d.ts" />
-/// <reference path="../Reactive.PointSignal/index.d.ts" />
-/// <reference path="../Reactive.VectorSignal/index.d.ts" />
-/// <reference path="../Reactive.HsvaSignal/index.d.ts" />
-/// <reference path="../Animation.ColorSampler/index.d.ts" />
-/// <reference path="../Scene.ParticleTypeDescriptions/index.d.ts" />
 /// <reference path="../Animation.ArrayOfScalarSamplers/index.d.ts" />
-/// <reference path="../Materials.MaterialBase/index.d.ts" />
-/// <reference path="../Animation.ScalarSampler/index.d.ts" />
 /// <reference path="../Reactive.BoolSignal/index.d.ts" />
-/// <reference path="../Promise/index.d.ts" />
+/// <reference path="../Animation.ColorSampler/index.d.ts" />
+/// <reference path="../Reactive.HsvaSignal/index.d.ts" />
+/// <reference path="../Materials.MaterialBase/index.d.ts" />
+/// <reference path="../Scene.ParticleTypeDescription/index.d.ts" />
+/// <reference path="../Scene.ParticleTypeDescriptions/index.d.ts" />
+/// <reference path="../Reactive.PointSignal/index.d.ts" />
+/// <reference path="../Animation.ScalarSampler/index.d.ts" />
+/// <reference path="../Reactive.ScalarSignal/index.d.ts" />
+/// <reference path="../Reactive.VectorSignal/index.d.ts" />
 declare interface ParticleSystem {
 /** 
 * ```
@@ -403,8 +403,8 @@ position: PointSignal;
  *  
  * 
  * Retrieves the array of ParticleTypeDescription objects
- */getTypes(): Promise<Array<ParticleTypeDescription>>
- ;
+ */ 
+getTypes(): Promise<Array<ParticleTypeDescription>>;
 
 /** 
 * 
@@ -414,7 +414,7 @@ position: PointSignal;
  * 
  * Returns a promise that is resolved with the material associated with a given scene object or null if no material was assigned.
  * 
- */getMaterial(): Promise<MaterialBase>
- ;
+ */ 
+getMaterial(): Promise<MaterialBase>;
 
 } 

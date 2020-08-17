@@ -1,4 +1,3 @@
-/// <reference path="../string/index.d.ts" />
 /// <reference path="../Reactive.StringSignal/index.d.ts" />
 declare namespace LocaleModule {
 /** 

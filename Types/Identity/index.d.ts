@@ -1,4 +1,3 @@
-/// <reference path="../Promise/index.d.ts" />
 declare namespace IdentityModule {
 /** 
 *  
@@ -7,8 +6,8 @@ declare namespace IdentityModule {
  * 
  * 
  * Returns a `JS Promise` which will be fulfilled with Access Token `String` object or an error.
- */function getAccessToken(): Promise<String>
- ;
+ */ 
+function getAccessToken(): Promise<String>;
 
 /** 
 *  
@@ -17,8 +16,8 @@ declare namespace IdentityModule {
  * 
  * 
  * Returns a `JS Promise` which will be fulfilled with user Email Address `String` object or an error.
- */function getEmailAddress(): Promise<String>
- ;
+ */ 
+function getEmailAddress(): Promise<String>;
 
 /** 
 *  
@@ -27,8 +26,8 @@ declare namespace IdentityModule {
  * 
  * 
  * Returns a `JS Promise` which will be fulfilled with App Scope ID `String` object or an error.
- */function getAppScopedID(): Promise<String>
- ;
+ */ 
+function getAppScopedID(): Promise<String>;
 
 /** 
 *  
@@ -37,8 +36,8 @@ declare namespace IdentityModule {
  * 
  * 
  * Returns a `JS Promise` which will be fulfilled with user Full Name `String` object or an error.
- */function getFullName(): Promise<String>
- ;
+ */ 
+function getFullName(): Promise<String>;
 
 } 
 export = IdentityModule;

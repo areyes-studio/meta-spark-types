@@ -1,6 +1,4 @@
-/// <reference path="../string/index.d.ts" />
 /// <reference path="../Svgs.Svg/index.d.ts" />
-/// <reference path="../Promise/index.d.ts" />
 declare namespace SvgsModule {
 /** 
 *  
@@ -10,8 +8,8 @@ declare namespace SvgsModule {
  * Returns a svg object identified by the `svgName` argument.
  * 
  * Throws an exception if there is no such identifier in the project.
- */function get(svgName: string): Svg
- ;
+ */ 
+function get(svgName: string): Svg;
 
 /** 
 *  
@@ -34,11 +32,10 @@ declare namespace SvgsModule {
  * `limit` parameter describes if `findUsingPattern` should finish the search if it finds specified number of results (default is no limit). Non-positive values for limit are treated as unlimited.
  * 
  * **See Also**: `Svgs.getAll`, `Svgs.findFirst`.
- */function findUsingPattern(namePattern: string): Promise<Array<Svg>>
- ;
+ */ 
+function findUsingPattern(namePattern: string): Promise<Array<Svg>>;
 
-function findUsingPattern(namePattern: string, config: {limit: number}): Promise<Array<Svg>>
- ;
+function findUsingPattern(namePattern: string, config: {limit: number}): Promise<Array<Svg>>;
 
 /** 
 * 
@@ -49,8 +46,8 @@ function findUsingPattern(namePattern: string, config: {limit: number}): Promise
  * Returns a promise that is resolved with all of the svgs.
  * **See Also**: `Svgs.findUsingPattern`, `Svgs.findFirst`.
  *     
- */function getAll(): Promise<Array<Svg>>
- ;
+ */ 
+function getAll(): Promise<Array<Svg>>;
 
 /** 
 * 
@@ -61,8 +58,8 @@ function findUsingPattern(namePattern: string, config: {limit: number}): Promise
  * Returns a promise that is resolved with the svg of a requested name or null if none was found.
  * **See Also**: `Svgs.findUsingPattern`, `Svgs.getAll`.
  *     
- */function findFirst(name: string): Promise<Svg>
- ;
+ */ 
+function findFirst(name: string): Promise<Svg>;
 
 } 
 export = SvgsModule;

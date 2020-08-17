@@ -1,5 +1,3 @@
-/// <reference path="../string/index.d.ts" />
-/// <reference path="../number/index.d.ts" />
 /// <reference path="../Scene.AudioTransformParameterWrapper/index.d.ts" />
 declare interface AudioTransformWrapper {
 /** 
@@ -13,21 +11,21 @@ effectName: string;
 *  
  * transformParametersCount(): number
  *  
- */transformParametersCount(): number
- ;
+ */ 
+transformParametersCount(): number;
 
 /** 
 *  
  * transformParameterAtIndex(index: number): AudioTransformParameterWrapper
  *  
- */transformParameterAtIndex(index: number): AudioTransformParameterWrapper
- ;
+ */ 
+transformParameterAtIndex(index: number): AudioTransformParameterWrapper;
 
 /** 
 *  
  * transformParameterByName(parameterName: string): AudioTransformParameterWrapper
  *  
- */transformParameterByName(parameterName: string): AudioTransformParameterWrapper
- ;
+ */ 
+transformParameterByName(parameterName: string): AudioTransformParameterWrapper;
 
 } 

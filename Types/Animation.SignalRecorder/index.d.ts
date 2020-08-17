@@ -27,7 +27,7 @@ recordCount: ScalarSignal | number;
  *  
  * 
  * Stops this recorder and returns a Signal Record.
- */stop(): SignalRecord
- ;
+ */ 
+stop(): SignalRecord;
 
 } 

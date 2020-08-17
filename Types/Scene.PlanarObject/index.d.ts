@@ -1,9 +1,5 @@
-/// <reference path="../Reactive.ScalarSignal/index.d.ts" />
-/// <reference path="../number/index.d.ts" />
-/// <reference path="../Scene.ScalingOption/index.d.ts" />
-/// <reference path="../Scene.VerticalAlignment/index.d.ts" />
-/// <reference path="../Scene.HorizontalAlignment/index.d.ts" />
 /// <reference path="../Scene.Bounds2D/index.d.ts" />
+/// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 declare interface PlanarObject {
 /** 
 * ```

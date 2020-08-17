@@ -3,17 +3,20 @@
 declare interface Slider {
 /** 
 * ```
-                                    (set) visible: BoolSignal
-                                    ```
-                                    Will instruct slider to be visible or not visible, according to passed boolean value.
-*/ 
-visible: BoolSignal | boolean;
-/** 
-* ```
-                                    (get) value: ScalarSignal
-                                    (set) value: ScalarSignal
-                                    ```
-                                    Will instruct slider to change its value.
+(get) value: ScalarSignal
+(set) value: ScalarSignal
+```
+
+Will instruct slider to change its value.
 */ 
 value: ScalarSignal | number;
+/** 
+* ```
+(get) (Not Available)
+(set) visible: BoolSignal
+```
+
+Will instruct slider to be visible or not visible, according to passed boolean value.
+*/ 
+visible: BoolSignal | boolean;
 } 

@@ -1,10 +1,6 @@
-/// <reference path="../Signal<Scene.RenderMode>/index.d.ts" />
-/// <reference path="../Reactive.ScalarSignal/index.d.ts" />
-/// <reference path="../Scene.RenderMode/index.d.ts" />
 /// <reference path="../Reactive.BoolSignal/index.d.ts" />
 /// <reference path="../Scene.Bounds2D/index.d.ts" />
-/// <reference path="../Signal/index.d.ts" />
-/// <reference path="../void/index.d.ts" />
+/// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 declare interface Canvas {
 /** 
 * ```
@@ -20,7 +16,7 @@ In WORLD_SPACE Canvas behaves as regular 3D object and is sized according to `wi
 
 **See Also**: `Canvas.setMode`.
 */ 
-mode: RenderMode>;
+mode: Signal<SceneModule.RenderMode>;
 /** 
 * ```
 (get) width: ScalarSignal
@@ -88,10 +84,9 @@ bounds: Bounds2D;
  * **Note:** on invalid value provided in setter, the mode will default to `fallback` (or SCREEN_SPACE if fallback is not specified).
  * 
  * **See Also**: `Canvas.mode`.
- */setMode(mode: Signal<SceneModule.RenderMode>): void
- ;
+ */ 
+setMode(mode: Signal<SceneModule.RenderMode>): void;
 
-setMode(mode: Signal<SceneModule.RenderMode>, config: { fallback: SceneModule.RenderMode }): void
- ;
+setMode(mode: Signal<SceneModule.RenderMode>, config: { fallback: SceneModule.RenderMode }): void;
 
 } 

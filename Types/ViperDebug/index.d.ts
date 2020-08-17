@@ -15,8 +15,8 @@ const debugString: StringSignal | string;
  *  
  * 
  * Makes underlying camera + anchor tracking algorithms run in viper only mode.
- */function setViperOnlyMode() : void
- ;
+ */ 
+function setViperOnlyMode() : void;
 
 /** 
 *  
@@ -24,8 +24,8 @@ const debugString: StringSignal | string;
  *  
  * 
  * Removes running in viper only mode. (Aka, runs the normal gyro+regiontracking+SLAM)
- */function clearViperOnlyMode() : void
- ;
+ */ 
+function clearViperOnlyMode() : void;
 
 } 
 export = ViperDebugModule;

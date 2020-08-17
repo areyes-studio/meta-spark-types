@@ -1,6 +1,5 @@
-/// <reference path="../Reactive.ScalarSignal/index.d.ts" />
-/// <reference path="../number/index.d.ts" />
 /// <reference path="../BodyTracking.Body/index.d.ts" />
+/// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 declare namespace BodyTrackingModule {
 /** 
 * ```
@@ -17,8 +16,8 @@ const count: ScalarSignal | number;
  *  
  * 
  * Returns a `Body` object.
- */function body(index: number): Body
- ;
+ */ 
+function body(index: number): Body;
 
 } 
 export = BodyTrackingModule;

@@ -1,6 +1,5 @@
 /// <reference path="../Reactive.BoolSignal/index.d.ts" />
 /// <reference path="../Reactive.EventSource/index.d.ts" />
-/// <reference path="../void/index.d.ts" />
 declare interface TimeDriver {
 /** 
 *  
@@ -8,8 +7,8 @@ declare interface TimeDriver {
  *  
  * 
  * Returns a `BoolSignal` indicating whether the animation is running.
- */isRunning(): BoolSignal
- ;
+ */ 
+isRunning(): BoolSignal;
 
 /** 
 *  
@@ -19,8 +18,8 @@ declare interface TimeDriver {
  * Returns an `EventSource` to which you may subscribe.
  * The event fires when the animation with loopCount completes an iteration.
  * Subscribers will receive the one-based index of the completed iteration.
- */onAfterIteration(): EventSource
- ;
+ */ 
+onAfterIteration(): EventSource;
 
 /** 
 *  
@@ -28,8 +27,8 @@ declare interface TimeDriver {
  *  
  * 
  * Returns an`EventSource` to which you may subscribe.The event fires once when the animation completes.
- */onCompleted(): EventSource
- ;
+ */ 
+onCompleted(): EventSource;
 
 /** 
 *  
@@ -37,8 +36,8 @@ declare interface TimeDriver {
  *  
  * 
  * Resets the driver progress to time point zero.
- */reset(): void
- ;
+ */ 
+reset(): void;
 
 /** 
 *  
@@ -46,8 +45,8 @@ declare interface TimeDriver {
  *  
  * 
  * Reverses the animation from the moment it is called and goes back in time.
- */reverse(): void
- ;
+ */ 
+reverse(): void;
 
 /** 
 *  
@@ -55,8 +54,8 @@ declare interface TimeDriver {
  *  
  * 
  * Starts the animation.
- */start(): void
- ;
+ */ 
+start(): void;
 
 /** 
 *  
@@ -64,7 +63,7 @@ declare interface TimeDriver {
  *  
  * 
  * Stops or pauses the animation.
- */stop(): void
- ;
+ */ 
+stop(): void;
 
 } 

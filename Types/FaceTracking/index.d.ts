@@ -1,8 +1,8 @@
-/// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 /// <reference path="../Reactive.BoolSignal/index.d.ts" />
-/// <reference path="../Promise/index.d.ts" />
-/// <reference path="../number/index.d.ts" />
 /// <reference path="../FaceTracking.Face/index.d.ts" />
+/// <reference path="../Scene.FaceMesh/index.d.ts" />
+/// <reference path="../Scene.FaceTracker/index.d.ts" />
+/// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 declare namespace FaceTrackingModule {
 /** 
 * ```
@@ -32,8 +32,8 @@ const isEnabled: BoolSignal | boolean;
  *   - All objects must have an existing class.
  *   - New objects always get assigned a globally unique `name` and `identifier`.
  *   - `initialState` is optional, but encouraged to be used.
- */function createFaceMeshSceneObject(initialState?: {[key: string]: any}): Promise<FaceMesh>
- ;
+ */ 
+function createFaceMeshSceneObject(initialState?: {[key: string]: any}): Promise<FaceMesh>;
 
 /** 
 *  
@@ -45,8 +45,8 @@ const isEnabled: BoolSignal | boolean;
  *   - All objects must have an existing class.
  *   - New objects always get assigned a globally unique `name` and `identifier`.
  *   - `initialState` is optional, but encouraged to be used.
- */function createFaceTrackerSceneObject(initialState?: {[key: string]: any}): Promise<FaceTracker>
- ;
+ */ 
+function createFaceTrackerSceneObject(initialState?: {[key: string]: any}): Promise<FaceTracker>;
 
 /** 
 *  
@@ -54,8 +54,8 @@ const isEnabled: BoolSignal | boolean;
  *  
  * 
  * Returns the `Face` object from the detected face array at the specified index.
- */function face(index: number): Face
- ;
+ */ 
+function face(index: number): Face;
 
 } 
 export = FaceTrackingModule;

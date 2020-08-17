@@ -1,18 +1,13 @@
-/// <reference path="../number/index.d.ts" />
-/// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 /// <reference path="../Reactive.BoolSignal/index.d.ts" />
-/// <reference path="../this/index.d.ts" />
-/// <reference path="../Reactive.VectorSignal/index.d.ts" />
-/// <reference path="../Array/index.d.ts" />
-/// <reference path="../Reactive.ScalarSignalHistory/index.d.ts" />
 /// <reference path="../Reactive.EventSource/index.d.ts" />
-/// <reference path="../ConstScalarSignal/index.d.ts" />
-/// <reference path="../Reactive.StringSignal/index.d.ts" />
-/// <reference path="../Reactive.PointSignal/index.d.ts" />
 /// <reference path="../Reactive.Point2DSignal/index.d.ts" />
 /// <reference path="../Reactive.Point4DSignal/index.d.ts" />
+/// <reference path="../Reactive.PointSignal/index.d.ts" />
+/// <reference path="../Reactive.ScalarSignal/index.d.ts" />
+/// <reference path="../Reactive.ScalarSignalHistory/index.d.ts" />
+/// <reference path="../Reactive.StringSignal/index.d.ts" />
 /// <reference path="../Reactive.TransformSignal/index.d.ts" />
-/// <reference path="../string/index.d.ts" />
+/// <reference path="../Reactive.VectorSignal/index.d.ts" />
 declare interface ScalarSignal {
 /** 
 * ```
@@ -33,8 +28,8 @@ lastValue: number;
  * Returns a Boolean signal that takes the value of `true` every time when the value of the left-hand-side signal is strictly **less than** the value of the right-hand-side one, and the value of `false` all other time.
  * 
  * **See Also**: `ReactiveModule.lt`
- */lt(other: ScalarSignal | number): BoolSignal
- ;
+ */ 
+lt(other: ScalarSignal | number): BoolSignal;
 
 /** 
 *  
@@ -44,8 +39,8 @@ lastValue: number;
  * Returns a signal with the value that is the smallest integer that is greater than or equal to the value of the given signal.
  * 
  * **See Also**: `ReactiveModule.ceil`
- */ceil(): ScalarSignal
- ;
+ */ 
+ceil(): ScalarSignal;
 
 /** 
 *  
@@ -57,16 +52,16 @@ lastValue: number;
  * **Note**: the scalar values are tested for exact equality. For some applications it might be reasonable to perform a non-strict comparison allowing the values to be within a small distance one from another.
  * 
  * **See Also**: `ReactiveModule.eq`
- */eq(other: ScalarSignal | number): BoolSignal
- ;
+ */ 
+eq(other: ScalarSignal | number): BoolSignal;
 
 /** 
 *  
  * delayBy(timeSpan: {milliseconds: number}): this
  *  
  * Delays a signal. The argument is an object with a "milliseconds" property specifying the delay duration in milliseconds.
- */delayBy(timeSpan: {milliseconds: number}): this
- ;
+ */ 
+delayBy(timeSpan: {milliseconds: number}): this;
 
 /** 
 *  
@@ -74,8 +69,8 @@ lastValue: number;
  *  
  * 
  * Maps x from [min, max] range to [0.0, 1.0] range.
- */fromRange(x: ScalarSignal | number, min: ScalarSignal | number, max: ScalarSignal | number): ScalarSignal
- ;
+ */ 
+fromRange(x: ScalarSignal | number, min: ScalarSignal | number, max: ScalarSignal | number): ScalarSignal;
 
 /** 
 *  
@@ -83,8 +78,8 @@ lastValue: number;
  *  
  * 
  * Returns the magnitude of the vector as a `ScalarSignal`.
- */magnitude(): ScalarSignal
- ;
+ */ 
+magnitude(): ScalarSignal;
 
 /** 
 *  
@@ -95,8 +90,8 @@ lastValue: number;
  * For input values between and including the thresholds, the Shmitt trigger returns the same value as at the previous update, or **initialValue** if this is the first update.
  * 
  * **Note**: The initialValue is assumed to be `false` if it isn't specified.
- */schmittTrigger(config: { low: number, high: number, initialValue: ?boolean}): BoolSignal
- ;
+ */ 
+schmittTrigger(config: { low: number, high: number, initialValue: ?boolean}): BoolSignal;
 
 /** 
 *  
@@ -108,8 +103,8 @@ lastValue: number;
  * **Note**: the scalar values are tested for exact equality. For some applications it might be reasonable to perform a non-strict comparison allowing the values to be within a small distance one from another.
  * 
  * **See Also**: `ReactiveModule.ne`
- */ne(other: ScalarSignal | number): BoolSignal
- ;
+ */ 
+ne(other: ScalarSignal | number): BoolSignal;
 
 /** 
 *  
@@ -119,8 +114,8 @@ lastValue: number;
  * Returns a Boolean signal that takes the value of `true` every time when the value of the left-hand-side signal is strictly **greater than** the value of the right-hand-side one, and the value of `false` all other time.
  * 
  * **See Also**: `ReactiveModule.gt`
- */gt(other: ScalarSignal | number): BoolSignal
- ;
+ */ 
+gt(other: ScalarSignal | number): BoolSignal;
 
 /** 
 *  
@@ -130,8 +125,8 @@ lastValue: number;
  * Returns a vector signal with the value that is the cross product of the given signals.
  * 
  * **See Also**: `VectorSignal.dot`, `ScalarSignal.mul`, `VectorSignal.mul`
- */cross(other: VectorSignal): VectorSignal
- ;
+ */ 
+cross(other: VectorSignal): VectorSignal;
 
 /** 
 *  
@@ -141,8 +136,8 @@ lastValue: number;
  * Smoothes a variable signal using exponential averaging over time. The argument specifies the dampening time constant in milliseconds.
  * 
  * **Note**: See also `ReactiveModule.expSmooth`.
- */expSmooth(dampFactor: number): ScalarSignal
- ;
+ */ 
+expSmooth(dampFactor: number): ScalarSignal;
 
 /** 
 *  
@@ -152,8 +147,8 @@ lastValue: number;
  * Returns a Boolean signal that takes the value of `true` every time when the value of the left-hand-side signal is **greater than or equal** to the value of the right-hand-side one, and the value of `false` all other time.
  * 
  * **See Also**: `ReactiveModule.ge`
- */ge(other: ScalarSignal | number): BoolSignal
- ;
+ */ 
+ge(other: ScalarSignal | number): BoolSignal;
 
 /** 
 *  
@@ -161,8 +156,8 @@ lastValue: number;
  *  
  * 
  * Returns a `ScalarSignal` containing a constant value which is the value of the specified signal immediately after `pin` is called.
- */pin(): ScalarSignal
- ;
+ */ 
+pin(): ScalarSignal;
 
 /** 
 *  
@@ -172,8 +167,8 @@ lastValue: number;
  * Returns a Boolean signal that takes the value of `true` every time when the value of the left-hand-side signal is **less than or equal** to the value of the right-hand-side one, and the value of `false` all other time.
  * 
  * **See Also**: `ReactiveModule.le`
- */le(other: ScalarSignal | number): BoolSignal
- ;
+ */ 
+le(other: ScalarSignal | number): BoolSignal;
 
 /** 
 *  
@@ -183,8 +178,8 @@ lastValue: number;
  * Returns a signal with the value that is the floating-point remainder of the division of the value of the first signal by the value of the second signal.
  * 
  * **See Also**: `ReactiveModule.mod`
- */mod(other: ScalarSignal | number): ScalarSignal
- ;
+ */ 
+mod(other: ScalarSignal | number): ScalarSignal;
 
 /** 
 *  
@@ -195,11 +190,10 @@ lastValue: number;
  * Returns an object used to access signal values from past frames. The amount of frames tracked is customizable via `framesCount` parameter.
  * Historical signal values are going to be initialized with signal value at call time or using `initialValues` if provided.
  * 
- */history(framesCount: number): ScalarSignalHistory
- ;
+ */ 
+history(framesCount: number): ScalarSignalHistory;
 
-history(framesCount: number, initialValues: Array<number>): ScalarSignalHistory
- ;
+history(framesCount: number, initialValues: Array<number>): ScalarSignalHistory;
 
 /** 
 *  
@@ -213,8 +207,8 @@ history(framesCount: number, initialValues: Array<number>): ScalarSignalHistory
  * **Note**: The initial value of the signal is assumed to be 0.0.
  * 
  * **See Also**: `ReactiveModule.trigger`, `ReactiveModule.interval`.
- */multiTrigger(threshold: number): EventSource
- ;
+ */ 
+multiTrigger(threshold: number): EventSource;
 
 /** 
 *  
@@ -224,8 +218,8 @@ history(framesCount: number, initialValues: Array<number>): ScalarSignalHistory
  * Returns a signal with the value that is the square root of the value of the given signal.
  * 
  * **See Also**: `ReactiveModule.sqrt`
- */sqrt(): ScalarSignal
- ;
+ */ 
+sqrt(): ScalarSignal;
 
 /** 
 * 
@@ -242,11 +236,10 @@ history(framesCount: number, initialValues: Array<number>): ScalarSignalHistory
  * 
  * **Note**: By default, there is no event fired for the initial value of the signal. If `config.fireOnInitialValue` is set to `true` then an event for initial signal value is also emitted. `oldValue` is unset for this initial event.
  * 
- */monitor(): EventSource
- ;
+ */ 
+monitor(): EventSource;
 
-monitor(config: { fireOnInitialValue: ?boolean}): EventSource
- ;
+monitor(config: { fireOnInitialValue: ?boolean}): EventSource;
 
 /** 
 *  
@@ -256,8 +249,8 @@ monitor(config: { fireOnInitialValue: ?boolean}): EventSource
  * Returns a signal with the value that is the absolute value of the given signal.
  * 
  * **See Also**: `ReactiveModule.abs`
- */abs(): ScalarSignal
- ;
+ */ 
+abs(): ScalarSignal;
 
 /** 
 *  
@@ -267,8 +260,8 @@ monitor(config: { fireOnInitialValue: ?boolean}): EventSource
  * Returns a signal with the value that is the largest integer that is less than or equal to the value of the given signal.
  * 
  * **See Also**: `ReactiveModule.floor`
- */floor(): ScalarSignal
- ;
+ */ 
+floor(): ScalarSignal;
 
 /** 
 *  
@@ -277,8 +270,8 @@ monitor(config: { fireOnInitialValue: ?boolean}): EventSource
  * 
  * Returns a `ConstScalarSignal` containing a constant value which is the last value of the specified signal before `pinLastValue` is called.
  * ConstScalarSignal can be passed to a functions which accept numbers.
- */pinLastValue(): ConstScalarSignal
- ;
+ */ 
+pinLastValue(): ConstScalarSignal;
 
 /** 
 *  
@@ -287,8 +280,8 @@ monitor(config: { fireOnInitialValue: ?boolean}): EventSource
  * 
  * Returns 0.0 if x is less than edge0, and 1.0 if x is greater than edge1.
  * If x is between edge0 and edge1, smooth Hermite interpolation is performed.
- */smoothStep(x: ScalarSignal | number, edge0: ScalarSignal | number, edge1: ScalarSignal | number): ScalarSignal
- ;
+ */ 
+smoothStep(x: ScalarSignal | number, edge0: ScalarSignal | number, edge1: ScalarSignal | number): ScalarSignal;
 
 /** 
 *  
@@ -298,8 +291,8 @@ monitor(config: { fireOnInitialValue: ?boolean}): EventSource
  * Returns a scalar signal with the value that is the dot product of the given signals.
  * 
  * **See Also**: `VectorSignal.cross`, `ScalarSignal.mul`, `VectorSignal.mul`
- */dot(other: VectorSignal): ScalarSignal
- ;
+ */ 
+dot(other: VectorSignal): ScalarSignal;
 
 /** 
 *  
@@ -311,8 +304,8 @@ monitor(config: { fireOnInitialValue: ?boolean}): EventSource
  * **Note**: this function is the reactive counterpart of the standard JavaScript `Math.sign` utility.
  * 
  * **See Also**: `ReactiveModule.sign`
- */sign(): ScalarSignal
- ;
+ */ 
+sign(): ScalarSignal;
 
 /** 
 *  
@@ -322,8 +315,8 @@ monitor(config: { fireOnInitialValue: ?boolean}): EventSource
  * Converts a `ScalarSignal` to a `StringSignal` according to the default string formatting rules.
  * 
  * **Note**: `ScalarSignal.format` allows more flexible control over the way the number is converted to string.
- */toString(): StringSignal
- ;
+ */ 
+toString(): StringSignal;
 
 /** 
 *  
@@ -338,17 +331,14 @@ monitor(config: { fireOnInitialValue: ?boolean}): EventSource
  * **Note**: `add` and `sum` functions are synonyms, the behavior they provide is equivalent.
  * 
  * **See Also**: `ScalarSignal.sum`, `ReactiveModule.add`
- */add(other: ScalarSignal | number): ScalarSignal
- ;
+ */ 
+add(other: ScalarSignal | number): ScalarSignal;
 
-add(other: VectorSignal): PointSignal
- ;
+add(other: VectorSignal): PointSignal;
 
-add(other: VectorSignal): VectorSignal
- ;
+add(other: VectorSignal): VectorSignal;
 
-add(other: PointSignal): PointSignal
- ;
+add(other: PointSignal): PointSignal;
 
 /** 
 *  
@@ -363,17 +353,14 @@ add(other: PointSignal): PointSignal
  * **Note**: `add` and `sum` functions are synonyms, the behavior they provide is equivalent.
  * 
  * **See Also**: `ScalarSignal.sum`, `ReactiveModule.add`
- */sum(other: ScalarSignal | number): ScalarSignal
- ;
+ */ 
+sum(other: ScalarSignal | number): ScalarSignal;
 
-sum(other: VectorSignal): PointSignal
- ;
+sum(other: VectorSignal): PointSignal;
 
-sum(other: VectorSignal): VectorSignal
- ;
+sum(other: VectorSignal): VectorSignal;
 
-sum(other: PointSignal): PointSignal
- ;
+sum(other: PointSignal): PointSignal;
 
 /** 
 *  
@@ -386,17 +373,14 @@ sum(other: PointSignal): PointSignal
  * Returns a signal with the value that is the difference of the values of the given signals.
  * 
  * **See Also**: `ReactiveModule.sub`, `ScalarSignal.sub`, `VectorSignal.sub`, `PointSignal.sub`
- */sub(other: ScalarSignal | number): ScalarSignal
- ;
+ */ 
+sub(other: ScalarSignal | number): ScalarSignal;
 
-sub(other: PointSignal): VectorSignal
- ;
+sub(other: PointSignal): VectorSignal;
 
-sub(other: VectorSignal): PointSignal
- ;
+sub(other: VectorSignal): PointSignal;
 
-sub(other: VectorSignal): VectorSignal
- ;
+sub(other: VectorSignal): VectorSignal;
 
 /** 
 *  
@@ -406,8 +390,8 @@ sub(other: VectorSignal): VectorSignal
  * Returns a signal with the value that is the value of the first signal divided by the value of the second signal.
  * 
  * **See Also**: `ReactiveModule.div`
- */div(other: ScalarSignal | number): ScalarSignal
- ;
+ */ 
+div(other: ScalarSignal | number): ScalarSignal;
 
 /** 
 *  
@@ -415,8 +399,8 @@ sub(other: VectorSignal): VectorSignal
  *  
  * 
  * Calculates the reflection direction for an incident vector and a normal as a `VectorSignal`.
- */reflect(normal: VectorSignal): VectorSignal
- ;
+ */ 
+reflect(normal: VectorSignal): VectorSignal;
 
 /** 
 *  
@@ -427,11 +411,10 @@ sub(other: VectorSignal): VectorSignal
  * Returns a signal with the negated value of the given signal.
  * 
  * **See Also**: `ReactiveModule.neg`, `ScalarSignal.neg`, `VectorSignal.neg`
- */neg(): ScalarSignal
- ;
+ */ 
+neg(): ScalarSignal;
 
-neg(): VectorSignal
- ;
+neg(): VectorSignal;
 
 /** 
 *  
@@ -447,8 +430,8 @@ neg(): VectorSignal
  * **Note**: `interval` is mostly useful for non-negative non-decreasing scalar signals.
  * 
  * **See Also**: `ReactiveModule.trigger`, `ReactiveModule.multiTrigger`.
- */interval(threshold: number): EventSource
- ;
+ */ 
+interval(threshold: number): EventSource;
 
 /** 
 *  
@@ -458,14 +441,12 @@ neg(): VectorSignal
  *  
  * 
  * Returns a signal with the component-wise values that are the lesser of the values of the given signals.
- */min(other: ScalarSignal | number): ScalarSignal
- ;
+ */ 
+min(other: ScalarSignal | number): ScalarSignal;
 
-min(other: ScalarSignal | number): Point2DSignal
- ;
+min(other: ScalarSignal | number): Point2DSignal;
 
-min(other: ScalarSignal | number): VectorSignal
- ;
+min(other: ScalarSignal | number): VectorSignal;
 
 /** 
 *  
@@ -475,8 +456,8 @@ min(other: ScalarSignal | number): VectorSignal
  * Returns a signal with the value that is the base signal raised to the power of the exponent signal. The result is undefined if the base is negative, or if the base is zero and the exponent is not positive.
  * 
  * **See Also**: `ReactiveModule.pow`
- */pow(exponent: ScalarSignal | number): ScalarSignal
- ;
+ */ 
+pow(exponent: ScalarSignal | number): ScalarSignal;
 
 /** 
 *  
@@ -488,14 +469,12 @@ min(other: ScalarSignal | number): VectorSignal
  * Returns a signal with the value that is the product of the values of the given signals.
  * 
  * **See Also**: `ReactiveModule.mul`, `ScalarSignal.mul`, `VectorSignal.mul`
- */mul(other: ScalarSignal | number): ScalarSignal
- ;
+ */ 
+mul(other: ScalarSignal | number): ScalarSignal;
 
-mul(other: VectorSignal): VectorSignal
- ;
+mul(other: VectorSignal): VectorSignal;
 
-mul(other: ScalarSignal | number): VectorSignal
- ;
+mul(other: ScalarSignal | number): VectorSignal;
 
 /** 
 *  
@@ -505,8 +484,8 @@ mul(other: ScalarSignal | number): VectorSignal
  * Returns a signal with the value that is the angle in radians between the x-axis and the ray from (0, 0) to (x, y) where x and y are the values of the specified signals. The range is -PI to +PI.
  * 
  * **See Also**: `ReactiveModule.atan2`
- */atan2(other: ScalarSignal | number): ScalarSignal
- ;
+ */ 
+atan2(other: ScalarSignal | number): ScalarSignal;
 
 /** 
 *  
@@ -518,14 +497,12 @@ mul(other: ScalarSignal | number): VectorSignal
  * Returns a signal with the value that is the value of the given `x` signal constrained to lie between the values of the given `min` and `max` signals.
  * 
  * **Note**: The behavior is undefined if `min` is greater than `max`.
- */clamp(min: ScalarSignal | number, max: ScalarSignal | number): ScalarSignal
- ;
+ */ 
+clamp(min: ScalarSignal | number, max: ScalarSignal | number): ScalarSignal;
 
-clamp(min: ScalarSignal | number, max: ScalarSignal | number): Point2DSignal
- ;
+clamp(min: ScalarSignal | number, max: ScalarSignal | number): Point2DSignal;
 
-clamp(min: ScalarSignal | number, max: ScalarSignal | number): VectorSignal
- ;
+clamp(min: ScalarSignal | number, max: ScalarSignal | number): VectorSignal;
 
 /** 
 *  
@@ -533,8 +510,8 @@ clamp(min: ScalarSignal | number, max: ScalarSignal | number): VectorSignal
  *  
  * 
  * Maps x from [0.0, 1.0] range to [min, max] range.
- */toRange(x: ScalarSignal | number, min: ScalarSignal | number, max: ScalarSignal | number): ScalarSignal
- ;
+ */ 
+toRange(x: ScalarSignal | number, min: ScalarSignal | number, max: ScalarSignal | number): ScalarSignal;
 
 /** 
 *  
@@ -544,14 +521,12 @@ clamp(min: ScalarSignal | number, max: ScalarSignal | number): VectorSignal
  *  
  * 
  * Returns a signal with the component-wise values that are the greater of the values of the given signals.
- */max(other: ScalarSignal | number): ScalarSignal
- ;
+ */ 
+max(other: ScalarSignal | number): ScalarSignal;
 
-max(other: ScalarSignal | number): Point2DSignal
- ;
+max(other: ScalarSignal | number): Point2DSignal;
 
-max(other: ScalarSignal | number): VectorSignal
- ;
+max(other: ScalarSignal | number): VectorSignal;
 
 /** 
 *  
@@ -563,23 +538,18 @@ max(other: ScalarSignal | number): VectorSignal
  * mix(signal: TransformSignal, factor: ScalarSignal): TransformSignal
  *  
  * Returns a signal with the value that is the linear interpolation between this and another `signal` by a given `factor`.
- */mix(signal: ScalarSignal | number, factor: ScalarSignal | number): ScalarSignal
- ;
+ */ 
+mix(signal: ScalarSignal | number, factor: ScalarSignal | number): ScalarSignal;
 
-mix(signal: Point2DSignal, factor: ScalarSignal | number): Point2DSignal
- ;
+mix(signal: Point2DSignal, factor: ScalarSignal | number): Point2DSignal;
 
-mix(signal: PointSignal, factor: ScalarSignal | number): PointSignal
- ;
+mix(signal: PointSignal, factor: ScalarSignal | number): PointSignal;
 
-mix(signal: VectorSignal, factor: ScalarSignal | number): VectorSignal
- ;
+mix(signal: VectorSignal, factor: ScalarSignal | number): VectorSignal;
 
-mix(signal: Point4DSignal, factor: ScalarSignal | number): Point4DSignal
- ;
+mix(signal: Point4DSignal, factor: ScalarSignal | number): Point4DSignal;
 
-mix(signal: TransformSignal, factor: ScalarSignal | number): TransformSignal
- ;
+mix(signal: TransformSignal, factor: ScalarSignal | number): TransformSignal;
 
 /** 
 *  
@@ -591,8 +561,8 @@ mix(signal: TransformSignal, factor: ScalarSignal | number): TransformSignal
  * **Note**: When the fractional part is 0.5, it rounds the number away from zero, which is at odds with JavaScript standard behavior of rounding it always up in such cases. Therefore, this function is NOT exactly the reactive counterpart of the standard JavaScript `Math.round` utility.
  * 
  * **See Also**: `ReactiveModule.round`
- */round(): ScalarSignal
- ;
+ */ 
+round(): ScalarSignal;
 
 /** 
 *  
@@ -604,8 +574,8 @@ mix(signal: TransformSignal, factor: ScalarSignal | number): TransformSignal
  * **Note**: `formatString` shall conform to the Folly formatting rules as specified here: https://github.com/facebook/folly/blob/master/folly/docs/Format.md#format-string-syntax .
  * 
  * **See Also**: `ScalarSignal.toString`.
- */format(formatString: string): StringSignal
- ;
+ */ 
+format(formatString: string): StringSignal;
 
 /** 
 *  
@@ -616,8 +586,8 @@ mix(signal: TransformSignal, factor: ScalarSignal | number): TransformSignal
  * 
  * Calculating the squared magnitude instead of the magnitude is much faster.
  * Often if you are comparing magnitudes of two vectors you can just compare their squared magnitudes.
- */magnitudeSquared(): ScalarSignal
- ;
+ */ 
+magnitudeSquared(): ScalarSignal;
 
 /** 
 *  
@@ -625,8 +595,8 @@ mix(signal: TransformSignal, factor: ScalarSignal | number): TransformSignal
  *  
  * 
  * Returns the normalized (unit) vector in the direction of the original vector as a `VectorSignal`.
- */normalize(): VectorSignal
- ;
+ */ 
+normalize(): VectorSignal;
 
 /** 
 *  
@@ -640,8 +610,8 @@ mix(signal: TransformSignal, factor: ScalarSignal | number): TransformSignal
  * **Note**: for positive thresholds, `trigger` is equivalent to `interval(threshold).take(1)`.
  * 
  * **See Also**: `ReactiveModule.multiTrigger`, `ReactiveModule.interval`.
- */trigger(threshold: number): EventSource
- ;
+ */ 
+trigger(threshold: number): EventSource;
 
 /** 
 *  
@@ -649,7 +619,7 @@ mix(signal: TransformSignal, factor: ScalarSignal | number): TransformSignal
  *  
  * 
  * Returns the distance from the point to another point as a `ScalarSignal`.
- */distance(other: PointSignal): ScalarSignal
- ;
+ */ 
+distance(other: PointSignal): ScalarSignal;
 
 } 

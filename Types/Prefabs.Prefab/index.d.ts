@@ -1,6 +1,4 @@
-/// <reference path="../string/index.d.ts" />
 /// <reference path="../Reactive.StringSignal/index.d.ts" />
-/// <reference path="../Signal<Prefabs.State>/index.d.ts" />
 declare interface Prefab {
 /** 
 * ```
@@ -30,5 +28,5 @@ url: StringSignal | string;
 
 Specifies a `StringSignal` representing the loading state of the external prefab. The value of the signal is guaranteed to be a member of the `ReactivePrefabsModule.State` enumeration.
 */ 
-state: State>;
+state: Signal<PrefabsModule.State>;
 } 

@@ -1,4 +1,3 @@
-/// <reference path="../string/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 declare interface AudioComponent {
 /** 
@@ -7,7 +6,7 @@ declare interface AudioComponent {
  *  
  * 
  * Returns a scalar signal providing the value of an output parameter
- */getParameterValue(parameterName: string): ScalarSignal
- ;
+ */ 
+getParameterValue(parameterName: string): ScalarSignal;
 
 } 

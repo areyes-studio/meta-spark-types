@@ -1,5 +1,4 @@
 /// <reference path="../Persistence.StorageScope/index.d.ts" />
-/// <reference path="../Object/index.d.ts" />
 declare namespace PersistenceModule {
 /** 
 * ```

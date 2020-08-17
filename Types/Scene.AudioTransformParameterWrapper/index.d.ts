@@ -1,5 +1,3 @@
-/// <reference path="../string/index.d.ts" />
-/// <reference path="../number/index.d.ts" />
 declare interface AudioTransformParameterWrapper {
 /** 
 * ```

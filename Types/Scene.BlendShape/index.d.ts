@@ -1,6 +1,5 @@
+/// <reference path="../Prefabs.Prefab/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
-/// <reference path="../string/index.d.ts" />
-/// <reference path="../Promise/index.d.ts" />
 declare interface BlendShape {
 /** 
 * ```
@@ -35,7 +34,7 @@ name: string;
  *  
  * 
  * Returns a promise that is resolved with the prefab associated with a given BlendShape or null if no prefab was assigned.
- */getPrefab(): Promise<Prefab>
- ;
+ */ 
+getPrefab(): Promise<Prefab>;
 
 } 

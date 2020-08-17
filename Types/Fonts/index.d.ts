@@ -1,6 +1,4 @@
-/// <reference path="../string/index.d.ts" />
 /// <reference path="../Fonts.FontId/index.d.ts" />
-/// <reference path="../Promise/index.d.ts" />
 declare namespace FontsModule {
 /** 
 *  
@@ -10,8 +8,8 @@ declare namespace FontsModule {
  * Returns a font object identified by the `fontName` argument.
  * 
  * Throws an exception if there is no such font in the project.
- */function get(fontName: string): FontId
- ;
+ */ 
+function get(fontName: string): FontId;
 
 /** 
 *  
@@ -34,11 +32,10 @@ declare namespace FontsModule {
  * `limit` parameter describes if `findUsingPattern` should finish the search if it finds specified number of results (default is no limit). Non-positive values for limit are treated as unlimited.
  * 
  * **See Also**: `FontsModule.getAll`, `FontsModule.findFirst`.
- */function findUsingPattern(namePattern: string): Promise<Array<FontId>>
- ;
+ */ 
+function findUsingPattern(namePattern: string): Promise<Array<FontId>>;
 
-function findUsingPattern(namePattern: string, config: {limit: number}): Promise<Array<FontId>>
- ;
+function findUsingPattern(namePattern: string, config: {limit: number}): Promise<Array<FontId>>;
 
 /** 
 * 
@@ -49,8 +46,8 @@ function findUsingPattern(namePattern: string, config: {limit: number}): Promise
  * Returns a promise that is resolved with all of the font identifiers.
  * **See Also**: `FontsModule.findUsingPattern`, `FontsModule.findFirst`.
  *         
- */function getAll(): Promise<Array<FontId>>
- ;
+ */ 
+function getAll(): Promise<Array<FontId>>;
 
 /** 
 * 
@@ -61,8 +58,8 @@ function findUsingPattern(namePattern: string, config: {limit: number}): Promise
  * Returns a promise that is resolved with the font identifier of a requested name or null if none was found.
  * **See Also**: `FontsModule.findUsingPattern`, `FontsModule.getAll`.
  *         
- */function findFirst(name: string): Promise<FontId>
- ;
+ */ 
+function findFirst(name: string): Promise<FontId>;
 
 } 
 export = FontsModule;

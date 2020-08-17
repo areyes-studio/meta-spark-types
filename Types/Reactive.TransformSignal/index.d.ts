@@ -1,10 +1,8 @@
-/// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 /// <reference path="../Reactive.PointSignal/index.d.ts" />
-/// <reference path="../Reactive.VectorSignal/index.d.ts" />
+/// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 /// <reference path="../Reactive.TransformSignal/index.d.ts" />
-/// <reference path="../this/index.d.ts" />
-/// <reference path="../number/index.d.ts" />
 /// <reference path="../Reactive.TransformSignalHistory/index.d.ts" />
+/// <reference path="../Reactive.VectorSignal/index.d.ts" />
 declare interface TransformSignal {
 /** 
 * ```
@@ -120,19 +118,18 @@ scale: PointSignal;
  * 
  * Creates a scene object transform with rotation in direction of target.
  * **Note:** self needs to be pointing the scene object alongside the X axis.
- */lookAt(targetPosition: PointSignal): TransformSignal
- ;
+ */ 
+lookAt(targetPosition: PointSignal): TransformSignal;
 
-lookAt(targetPosition: PointSignal, selfUp: VectorSignal): TransformSignal
- ;
+lookAt(targetPosition: PointSignal, selfUp: VectorSignal): TransformSignal;
 
 /** 
 *  
  * delayBy(timeSpan: {milliseconds: number}): this
  *  
  * Delays a signal. The argument is an object with a "milliseconds" property specifying the delay duration in milliseconds.
- */delayBy(timeSpan: {milliseconds: number}): this
- ;
+ */ 
+delayBy(timeSpan: {milliseconds: number}): this;
 
 /** 
 *  
@@ -141,8 +138,8 @@ lookAt(targetPosition: PointSignal, selfUp: VectorSignal): TransformSignal
  * 
  * Returns a signal with the value that is equal to the value of the provided point with the transformation applied to it.
  * This performs a matrix multiplication of the provided point (with an implicit `1` in the 4th dimension) and the receiver transform, and divides by perspective.
- */applyToPoint(signal: PointSignal): PointSignal
- ;
+ */ 
+applyToPoint(signal: PointSignal): PointSignal;
 
 /** 
 *  
@@ -150,8 +147,8 @@ lookAt(targetPosition: PointSignal, selfUp: VectorSignal): TransformSignal
  *  
  * 
  * Returns a signal with the value that is equal to the inverted transformation value of the given signal at any point of time.
- */inverse(): TransformSignal
- ;
+ */ 
+inverse(): TransformSignal;
 
 /** 
 *  
@@ -159,8 +156,8 @@ lookAt(targetPosition: PointSignal, selfUp: VectorSignal): TransformSignal
  *  
  * 
  * Returns a signal with the value that is equal to the value of the provided transformation with the transformation of the current `TransformSignal` applied to it.
- */applyTo(transform: TransformSignal): TransformSignal
- ;
+ */ 
+applyTo(transform: TransformSignal): TransformSignal;
 
 /** 
 *  
@@ -172,8 +169,8 @@ lookAt(targetPosition: PointSignal, selfUp: VectorSignal): TransformSignal
  * **Note**: The smoothed transformation for a signal that specifies a rigid body transformation is guaranteed to be a rigid body transformation. The rotation component is smoothed in spherical coordinates using Slerp (spherical linear interpolation).
  * 
  * **Note**: See also `ReactiveModule.expSmooth`.
- */expSmooth(dampFactor: number): TransformSignal
- ;
+ */ 
+expSmooth(dampFactor: number): TransformSignal;
 
 /** 
 *  
@@ -182,8 +179,8 @@ lookAt(targetPosition: PointSignal, selfUp: VectorSignal): TransformSignal
  * 
  * Returns a signal with the value that is equal to the value of the provided vector with the transformation applied to it.
  * This performs a matrix multiplication of the provided vector (with an implicit `0` in the 4th dimension) and the receiver transform, without change of position.
- */applyToVector(signal: VectorSignal): VectorSignal
- ;
+ */ 
+applyToVector(signal: VectorSignal): VectorSignal;
 
 /** 
 *  
@@ -193,7 +190,7 @@ lookAt(targetPosition: PointSignal, selfUp: VectorSignal): TransformSignal
  * Returns an object used to access signal values from past frames. The amount of frames tracked is customizable via `framesCount` parameter.
  * Historical signal values are going to be initialized with signal value at call time or using `initialValues` if provided.
  * 
- */history(framesCount: number): TransformSignalHistory
- ;
+ */ 
+history(framesCount: number): TransformSignalHistory;
 
 } 

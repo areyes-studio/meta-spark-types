@@ -1,7 +1,7 @@
-/// <reference path="../Reactive.ScalarSignal/index.d.ts" />
+/// <reference path="../Reactive.EventSource/index.d.ts" />
 /// <reference path="../Materials.MaterialBase/index.d.ts" />
-/// <reference path="../Scene.DynamicExtrusion.BrushType/index.d.ts" />
-/// <reference path="../void/index.d.ts" />
+/// <reference path="../Reactive.PointSignal/index.d.ts" />
+/// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 declare interface DynamicExtrusion {
 /** 
 * ```
@@ -37,7 +37,7 @@ Specifies default type of brush should the Dynamic Extrusion be drawn with.
 
 This value will be used in the newly created strokes if brushType isn't given explicitly in createStroke method.
 */ 
-defaultBrushType: DynamicExtrusion;
+defaultBrushType: BrushType;
 /** 
 * ```
 (get) defaultBrushDistance: ScalarSignal
@@ -77,8 +77,8 @@ defaultTextureWidthSize: ScalarSignal | number;
  *    dynamicExtrusion.createStroke({location: worldSpacePointSignal, completionEvent: endedEvent});
  * });
  *  
- */createStroke(config: {location: PointSignal, completionEvent: EventSource, brushSize: ?number, brushType: ?SceneModule.DynamicExtrusion.BrushType, brushDistance: ?number, textureWidthSize: ?number, textureHeightStep: ?number, material: ?MaterialBase, extrudeInCPU: ?boolean}): void
- ;
+ */ 
+createStroke(config: {location: PointSignal, completionEvent: EventSource, brushSize: ?number, brushType: ?SceneModule.DynamicExtrusion.BrushType, brushDistance: ?number, textureWidthSize: ?number, textureHeightStep: ?number, material: ?MaterialBase, extrudeInCPU: ?boolean}): void;
 
 /** 
 *  
@@ -86,8 +86,8 @@ defaultTextureWidthSize: ScalarSignal | number;
  *  
  * This method is used to clear all stroke. Cannot be called before the last stroke has ended. Doesn't do anything if there are no strokes.
  *  
- */clear(): void
- ;
+ */ 
+clear(): void;
 
 /** 
 *  
@@ -95,7 +95,7 @@ defaultTextureWidthSize: ScalarSignal | number;
  *  
  * This method is used to undo the last stroke. Cannot be called before the last stroke has ended. Doesn't do anything if there are no strokes.
  *  
- */undo(): void
- ;
+ */ 
+undo(): void;
 
 } 

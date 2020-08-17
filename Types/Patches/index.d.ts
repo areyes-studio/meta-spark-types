@@ -1,15 +1,13 @@
+/// <reference path="../Reactive.BoolSignal/index.d.ts" />
+/// <reference path="../Reactive.EventSource/index.d.ts" />
 /// <reference path="../Patches.PatchesInputs/index.d.ts" />
 /// <reference path="../Patches.PatchesOutputs/index.d.ts" />
-/// <reference path="../string/index.d.ts" />
-/// <reference path="../Reactive.BoolSignal/index.d.ts" />
-/// <reference path="../Reactive.RgbaSignal/index.d.ts" />
 /// <reference path="../Reactive.Point2DSignal/index.d.ts" />
 /// <reference path="../Reactive.PointSignal/index.d.ts" />
-/// <reference path="../Reactive.EventSource/index.d.ts" />
+/// <reference path="../Reactive.RgbaSignal/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 /// <reference path="../Reactive.StringSignal/index.d.ts" />
 /// <reference path="../Reactive.VectorSignal/index.d.ts" />
-/// <reference path="../void/index.d.ts" />
 declare namespace PatchesModule {
 /** 
 * ```
@@ -35,8 +33,8 @@ const outputs: PatchesOutputs;
  *  
  * 
  * Returns a `BoolSignal` that is exported with `name` from the Patch Editor.
- */function getBooleanValue(name: string): BoolSignal
- ;
+ */ 
+function getBooleanValue(name: string): BoolSignal;
 
 /** 
 *  
@@ -44,8 +42,8 @@ const outputs: PatchesOutputs;
  *  
  * 
  * Returns a `RgbaSignal` that is exported with `name` from the Patch Editor.
- */function getColorValue(name: string): RgbaSignal
- ;
+ */ 
+function getColorValue(name: string): RgbaSignal;
 
 /** 
 *  
@@ -53,8 +51,8 @@ const outputs: PatchesOutputs;
  *  
  * 
  * Returns a `Point2DSignal` that is exported with `name` from the Patch Editor.
- */function getPoint2DValue(name: string): Point2DSignal
- ;
+ */ 
+function getPoint2DValue(name: string): Point2DSignal;
 
 /** 
 *  
@@ -62,8 +60,8 @@ const outputs: PatchesOutputs;
  *  
  * 
  * Returns a `PointSignal` that is exported with `name` from the Patch Editor.
- */function getPointValue(name: string): PointSignal
- ;
+ */ 
+function getPointValue(name: string): PointSignal;
 
 /** 
 *  
@@ -71,8 +69,8 @@ const outputs: PatchesOutputs;
  *  
  * 
  * Returns a pulse `EventSource` that wrapps a pulse that is exported with `name` from the Patch Editor.
- */function getPulseValue(name: string): EventSource<any>
- ;
+ */ 
+function getPulseValue(name: string): EventSource<any>;
 
 /** 
 *  
@@ -80,8 +78,8 @@ const outputs: PatchesOutputs;
  *  
  * 
  * Returns a `ScalarSignal` that is exported with `name` from the Patch Editor.
- */function getScalarValue(name: string): ScalarSignal
- ;
+ */ 
+function getScalarValue(name: string): ScalarSignal;
 
 /** 
 *  
@@ -89,8 +87,8 @@ const outputs: PatchesOutputs;
  *  
  * 
  * Returns a `StringSignal` that is exported with `name` from the Patch Editor.
- */function getStringValue(name: string): StringSignal
- ;
+ */ 
+function getStringValue(name: string): StringSignal;
 
 /** 
 *  
@@ -98,8 +96,8 @@ const outputs: PatchesOutputs;
  *  
  * 
  * Returns a `VectorSignal` that is exported with `name` from the Patch Editor.
- */function getVectorValue(name: string): VectorSignal
- ;
+ */ 
+function getVectorValue(name: string): VectorSignal;
 
 /** 
 *  
@@ -107,8 +105,8 @@ const outputs: PatchesOutputs;
  *  
  * 
  * Sends a `BoolSignal` that is imported with `name` into the Patch Editor.
- */function setBooleanValue(name: string, signal: BoolSignal | boolean | boolean): void
- ;
+ */ 
+function setBooleanValue(name: string, signal: BoolSignal | boolean): void;
 
 /** 
 *  
@@ -116,8 +114,8 @@ const outputs: PatchesOutputs;
  *  
  * 
  * Sends a `RgbaSignal` that is imported with `name` into the Patch Editor.
- */function setColorValue(name: string, signal: RgbaSignal): void
- ;
+ */ 
+function setColorValue(name: string, signal: RgbaSignal): void;
 
 /** 
 *  
@@ -125,8 +123,8 @@ const outputs: PatchesOutputs;
  *  
  * 
  * Sends a `Point2DSignal` that is imported with `name` into the Patch Editor.
- */function setPoint2DValue(name: string, signal: Point2DSignal): void
- ;
+ */ 
+function setPoint2DValue(name: string, signal: Point2DSignal): void;
 
 /** 
 *  
@@ -134,8 +132,8 @@ const outputs: PatchesOutputs;
  *  
  * 
  * Sends a `PointSignal` that is imported with `name` into the Patch Editor.
- */function setPointValue(name: string, signal: PointSignal): void
- ;
+ */ 
+function setPointValue(name: string, signal: PointSignal): void;
 
 /** 
 *  
@@ -144,8 +142,8 @@ const outputs: PatchesOutputs;
  * 
  * Sends an `EventSource<any>` that is imported with `name` into the Patch Editor.
  * **Note**: The `Reactive.once()` method can be used to return an `EventSource<any>` that emits an empty event as soon as possible.
- */function setPulseValue(name: string, signal: EventSource<any>): void
- ;
+ */ 
+function setPulseValue(name: string, signal: EventSource<any>): void;
 
 /** 
 *  
@@ -153,8 +151,8 @@ const outputs: PatchesOutputs;
  *  
  * 
  * Sends a `ScalarSignal` that is imported with `name` into the Patch Editor.
- */function setScalarValue(name: string, signal: ScalarSignal | number | number): void
- ;
+ */ 
+function setScalarValue(name: string, signal: ScalarSignal | number): void;
 
 /** 
 *  
@@ -162,8 +160,8 @@ const outputs: PatchesOutputs;
  *  
  * 
  * Sends a `StringSignal` that is imported with `name` into the Patch Editor.
- */function setStringValue(name: string, signal: StringSignal | string | string): void
- ;
+ */ 
+function setStringValue(name: string, signal: StringSignal | string): void;
 
 /** 
 *  
@@ -171,8 +169,8 @@ const outputs: PatchesOutputs;
  *  
  * 
  * Sends a `VectorSignal` that is imported with `name` into the Patch Editor.
- */function setVectorValue(name: string, signal: VectorSignal): void
- ;
+ */ 
+function setVectorValue(name: string, signal: VectorSignal): void;
 
 } 
 export = PatchesModule;

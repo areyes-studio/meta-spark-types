@@ -1,9 +1,7 @@
-/// <reference path="../Reactive.StringSignal/index.d.ts" />
-/// <reference path="../Reactive.Point2D/index.d.ts" />
-/// <reference path="../number/index.d.ts" />
 /// <reference path="../Scene.PlaneType/index.d.ts" />
-/// <reference path="../void/index.d.ts" />
+/// <reference path="../Reactive.Point2D/index.d.ts" />
 /// <reference path="../Reactive.Point2DSignal/index.d.ts" />
+/// <reference path="../Reactive.StringSignal/index.d.ts" />
 declare interface LineBasedPlaneTracker {
 /** 
 * ```
@@ -38,17 +36,14 @@ planeType: StringSignal | string;
  *            lineBasedTracker.resetPlane(gesture.location, PlaneType.HORZONTAL);
  *          });
  *           
- */resetPlane(screenLocation: Point2D): void
- ;
+ */ 
+resetPlane(screenLocation: Point2D): void;
 
-resetPlane(screenX: number, screenY: number): void
- ;
+resetPlane(screenX: number, screenY: number): void;
 
-resetPlane(screenLocation: Point2D, planeType : PlaneType): void
- ;
+resetPlane(screenLocation: Point2D, planeType: PlaneType): void;
 
-resetPlane(screenX: number, screenY: number, planeType : PlaneType): void
- ;
+resetPlane(screenX: number, screenY: number, planeType: PlaneType): void;
 
 /** 
 *  
@@ -66,14 +61,12 @@ resetPlane(screenX: number, screenY: number, planeType : PlaneType): void
  *   lineBasedTracker.movePlane(gesture.location);
  * });
  *  
- */movePlane(screenLocation: Point2D): void
- ;
+ */ 
+movePlane(screenLocation: Point2D): void;
 
-movePlane(screenX: number, screenY: number): void
- ;
+movePlane(screenX: number, screenY: number): void;
 
-movePlane(screenLocation: Point2DSignal, gestureState: StringSignal | string): void
- ;
+movePlane(screenLocation: Point2DSignal, gestureState: StringSignal | string): void;
 
 /** 
 *  
@@ -87,7 +80,7 @@ movePlane(screenLocation: Point2DSignal, gestureState: StringSignal | string): v
  *   lineBasedTracker.removePlane();
  * });
  *  
- */removePlane(): void
- ;
+ */ 
+removePlane(): void;
 
 } 

@@ -1,6 +1,6 @@
-/// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 /// <reference path="../Reactive.PointSignal/index.d.ts" />
 /// <reference path="../Reactive.QuaternionSignal/index.d.ts" />
+/// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 /// <reference path="../Reactive.TransformSignal/index.d.ts" />
 /// <reference path="../Reactive.VectorSignal/index.d.ts" />
 declare interface Transform {
@@ -124,8 +124,8 @@ scaleZ: ScalarSignal | number;
  *  
  * 
  * Returns a signal for a given transformation.
- */toSignal(): TransformSignal
- ;
+ */ 
+toSignal(): TransformSignal;
 
 /** 
 *  
@@ -136,10 +136,9 @@ scaleZ: ScalarSignal | number;
  * 
  * Creates a scene object transform with rotation in direction of target.
  * **Note:** The self needs to be pointing the scene object alongside the X axis.
- */lookAt(targetPosition: PointSignal): TransformSignal
- ;
+ */ 
+lookAt(targetPosition: PointSignal): TransformSignal;
 
-lookAt(targetPosition: PointSignal, selfUp: VectorSignal): TransformSignal
- ;
+lookAt(targetPosition: PointSignal, selfUp: VectorSignal): TransformSignal;
 
 } 

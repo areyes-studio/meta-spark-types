@@ -1,9 +1,6 @@
-/// <reference path="../Reactive.StringSignal/index.d.ts" />
-/// <reference path="../{/index.d.ts" />
+/// <reference path="../Reactive.BoolSignal/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
-/// <reference path="../Array<string>/index.d.ts" />
-/// <reference path="../string/index.d.ts" />
-/// <reference path="../void/index.d.ts" />
+/// <reference path="../Reactive.StringSignal/index.d.ts" />
 declare namespace MultiplayerModule {
 /** 
 * ```
@@ -23,7 +20,7 @@ const viewerId: StringSignal | string;
              Receives the latest incoming message from the peers using the effect.
              Received message should contain only one entry.
 */ 
-const message: {;
+const message: any;
 /** 
 * ```
              (get) numParticipants: ScalarSignal
@@ -64,8 +61,8 @@ const onParticipantsChanged: Array<string>;
  *               ** Please use `viewerId` property instead. **
  * 
  *               Returns the viewerID of this user.
- */function getViewerID(): string
- ;
+ */ 
+function getViewerID(): string;
 
 /** 
 *  
@@ -77,8 +74,8 @@ const onParticipantsChanged: Array<string>;
  *              The keys here should always be a subset of the of keys in `activate`.
  * 
  *              For example: { "numPlayers": "2", "scores": "2,5" }
- */function sendStateUpdate(state: { [key: string] : string }): void
- ;
+ */ 
+function sendStateUpdate(state: { [key: string] : string }): void;
 
 /** 
 *  
@@ -89,8 +86,8 @@ const onParticipantsChanged: Array<string>;
  *              within an RTC call. Should only have one entry.
  * 
  *              For example: { "miss": "4" }
- */function sendMessage(message: { [key: string] : string }): void
- ;
+ */ 
+function sendMessage(message: { [key: string] : string }): void;
 
 /** 
 *  
@@ -102,8 +99,8 @@ const onParticipantsChanged: Array<string>;
  * 
  *              String input will match keys defined from the metadata.
  *              Output signal type is dependent on the `keyType` enum from metadata.
- */function getState(key: string): ScalarSignal | BoolSignal | StringSignal
- ;
+ */ 
+function getState(key: string): ScalarSignal | BoolSignal | StringSignal;
 
 /** 
 * 
@@ -117,8 +114,8 @@ const onParticipantsChanged: Array<string>;
  * 
  * For example: { numPlayers: StateSignalType::SCALAR, scores: StateSignalType::STRING }
  *     
- */function activate(metadata: { [key: string] : StateSignalType }): void
- ;
+ */ 
+function activate(metadata: { [key: string] : StateSignalType }): void;
 
 } 
 export = MultiplayerModule;

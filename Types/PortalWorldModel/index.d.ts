@@ -1,5 +1,4 @@
 /// <reference path="../Reactive.BoundingBoxSignal/index.d.ts" />
-/// <reference path="../number/index.d.ts" />
 declare namespace PortalWorldModelModule {
 /** 
 * ```

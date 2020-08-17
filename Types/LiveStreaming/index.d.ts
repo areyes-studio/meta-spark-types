@@ -1,6 +1,5 @@
 /// <reference path="../LiveStreaming.LiveStreamingComments/index.d.ts" />
 /// <reference path="../LiveStreaming.LiveStreamingReactions/index.d.ts" />
-/// <reference path="../Signal<LiveStreaming.State>/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 declare namespace LiveStreamingModule {
 /** 
@@ -29,7 +28,7 @@ const reactions: LiveStreamingReactions;
 
  Specifies a `LiveStreaming.State` enum value indicating the broadcast state.
 */ 
-const state: State>;
+const state: Signal<LiveStreamingModule.State>;
 /** 
 * ```
 (get) concurrentViewerCount: ScalarSignal

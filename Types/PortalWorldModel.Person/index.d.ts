@@ -1,11 +1,10 @@
 /// <reference path="../Scene.BoundingBox/index.d.ts" />
-/// <reference path="../number/index.d.ts" />
-/// <reference path="../PortalWorldModel.RightLeg/index.d.ts" />
 /// <reference path="../PortalWorldModel.Head/index.d.ts" />
 /// <reference path="../PortalWorldModel.LeftArm/index.d.ts" />
-/// <reference path="../PortalWorldModel.RightArm/index.d.ts" />
-/// <reference path="../PortalWorldModel.Torso/index.d.ts" />
 /// <reference path="../PortalWorldModel.LeftLeg/index.d.ts" />
+/// <reference path="../PortalWorldModel.RightArm/index.d.ts" />
+/// <reference path="../PortalWorldModel.RightLeg/index.d.ts" />
+/// <reference path="../PortalWorldModel.Torso/index.d.ts" />
 declare interface Person {
 /** 
 * 

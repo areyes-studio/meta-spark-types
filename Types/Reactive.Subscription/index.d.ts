@@ -1,4 +1,3 @@
-/// <reference path="../void/index.d.ts" />
 declare interface Subscription {
 /** 
 *  
@@ -8,7 +7,7 @@ declare interface Subscription {
  * Unsubscribes the previously subscribed callback from the `EventSource`.
  * 
  * **See Also**: `EventSource.subscribe`, `EventSource.subscribeOnNext`.
- */unsubscribe(): void
- ;
+ */ 
+unsubscribe(): void;
 
 } 

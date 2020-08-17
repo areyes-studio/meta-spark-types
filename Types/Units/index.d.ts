@@ -1,4 +1,3 @@
-/// <reference path="../number/index.d.ts" />
 declare namespace UnitsModule {
 /** 
 *  
@@ -6,8 +5,8 @@ declare namespace UnitsModule {
  *  
  * 
  * Converts the specified centimeter value to world units.
- */function cm(centimeters: number): number
- ;
+ */ 
+function cm(centimeters: number): number;
 
 /** 
 *  
@@ -15,8 +14,8 @@ declare namespace UnitsModule {
  *  
  * 
  * Converts the specified foot value to world units.
- */function ft(feet: number): number
- ;
+ */ 
+function ft(feet: number): number;
 
 /** 
 *  
@@ -24,8 +23,8 @@ declare namespace UnitsModule {
  *  
  * 
  * Converts the specified inch value to world units.
- */function in(inches: number): number
- ;
+ */ 
+function in(inches: number): number;
 
 /** 
 *  
@@ -33,8 +32,8 @@ declare namespace UnitsModule {
  *  
  * 
  * Converts the specified meter value to world units.
- */function m(meters: number): number
- ;
+ */ 
+function m(meters: number): number;
 
 /** 
 *  
@@ -42,8 +41,8 @@ declare namespace UnitsModule {
  *  
  * 
  * Converts the specified millimeter value to world units.
- */function mm(millimeters: number): number
- ;
+ */ 
+function mm(millimeters: number): number;
 
 /** 
 *  
@@ -51,8 +50,8 @@ declare namespace UnitsModule {
  *  
  * 
  * Converts the specified yard value to world units.
- */function yd(yards: number): number
- ;
+ */ 
+function yd(yards: number): number;
 
 } 
 export = UnitsModule;

@@ -1,4 +1,3 @@
-/// <reference path="../number/index.d.ts" />
 /// <reference path="../Animation.ScalarSampler/index.d.ts" />
 declare interface ArrayOfScalarSamplers {
 /** 
@@ -7,7 +6,7 @@ declare interface ArrayOfScalarSamplers {
  *  
  * 
  * Returns the sampler indicated by the `index` parameter.
- */get(index: number): ScalarSampler
- ;
+ */ 
+get(index: number): ScalarSampler;
 
 } 

@@ -1,15 +1,15 @@
-/// <reference path="../Reactive.TransformSignal/index.d.ts" />
-/// <reference path="../FaceTracking.Chin/index.d.ts" />
-/// <reference path="../FaceTracking.Forehead/index.d.ts" />
-/// <reference path="../Reactive.StringSignal/index.d.ts" />
 /// <reference path="../Reactive.BoolSignal/index.d.ts" />
 /// <reference path="../FaceTracking.Cheek/index.d.ts" />
+/// <reference path="../FaceTracking.Chin/index.d.ts" />
 /// <reference path="../FaceTracking.Eye/index.d.ts" />
 /// <reference path="../FaceTracking.Eyebrow/index.d.ts" />
+/// <reference path="../FaceTracking.Forehead/index.d.ts" />
 /// <reference path="../FaceTracking.Mouth/index.d.ts" />
 /// <reference path="../FaceTracking.Nose/index.d.ts" />
-/// <reference path="../ScalarSignal /index.d.ts" />
 /// <reference path="../Reactive.PointSignal/index.d.ts" />
+/// <reference path="../Reactive.ScalarSignal/index.d.ts" />
+/// <reference path="../Reactive.StringSignal/index.d.ts" />
+/// <reference path="../Reactive.TransformSignal/index.d.ts" />
 declare interface Face {
 /** 
 * ```
@@ -138,7 +138,7 @@ rightEyebrow: Eyebrow;
  * 
  * Returns a `PointSignal` object representing a point in the face local coordinate system that corresponds to a UV point on the facial mesh texture map.
  * **See Also**: `Face.cameraTransform` to convert the point to the coordinate system of the camera.
- */point(u: ScalarSignal | number | number, v: ScalarSignal | number | number): PointSignal
- ;
+ */ 
+point(u: ScalarSignal | number, v: ScalarSignal | number): PointSignal;
 
 } 

@@ -7,8 +7,8 @@ declare namespace FacialActionsModule {
  *  
  * 
  * Returns a `ScalarSignal` containing the weight associated with the facial action named `BrowLowererLeft`.
- */function browLowererLeft(face: Face): ScalarSignal
- ;
+ */ 
+function browLowererLeft(face: Face): ScalarSignal;
 
 /** 
 *  
@@ -16,8 +16,8 @@ declare namespace FacialActionsModule {
  *  
  * 
  * Returns a `ScalarSignal` containing the weight associated with the facial action named `BrowLowererRight`.
- */function browLowererRight(face: Face): ScalarSignal
- ;
+ */ 
+function browLowererRight(face: Face): ScalarSignal;
 
 /** 
 *  
@@ -25,8 +25,8 @@ declare namespace FacialActionsModule {
  *  
  * 
  * Returns a `ScalarSignal` containing the weight associated with the facial action named `ChinRaiser`.
- */function chinRaiser(face: Face): ScalarSignal
- ;
+ */ 
+function chinRaiser(face: Face): ScalarSignal;
 
 /** 
 *  
@@ -34,8 +34,8 @@ declare namespace FacialActionsModule {
  *  
  * 
  * Returns a `ScalarSignal` containing the weight associated with the facial action named `EyeCloseLeft`.
- */function eyeCloseLeft(face: Face): ScalarSignal
- ;
+ */ 
+function eyeCloseLeft(face: Face): ScalarSignal;
 
 /** 
 *  
@@ -43,8 +43,8 @@ declare namespace FacialActionsModule {
  *  
  * 
  * Returns a `ScalarSignal` containing the weight associated with the facial action named `EyeCloseRight`.
- */function eyeCloseRight(face: Face): ScalarSignal
- ;
+ */ 
+function eyeCloseRight(face: Face): ScalarSignal;
 
 /** 
 *  
@@ -52,8 +52,8 @@ declare namespace FacialActionsModule {
  *  
  * 
  * Returns a `ScalarSignal` containing the weight associated with the facial action named `InnerBrowRaiser`.
- */function innerBrowRaiser(face: Face): ScalarSignal
- ;
+ */ 
+function innerBrowRaiser(face: Face): ScalarSignal;
 
 /** 
 *  
@@ -61,8 +61,8 @@ declare namespace FacialActionsModule {
  *  
  * 
  * Returns a `ScalarSignal` containing the weight associated with the facial action named `JawDrop`.
- */function jawDrop(face: Face): ScalarSignal
- ;
+ */ 
+function jawDrop(face: Face): ScalarSignal;
 
 /** 
 *  
@@ -70,8 +70,8 @@ declare namespace FacialActionsModule {
  *  
  * 
  * Returns a `ScalarSignal` containing the weight associated with the facial action named `LidTightenerLeft`.
- */function lidTightenerLeft(face: Face): ScalarSignal
- ;
+ */ 
+function lidTightenerLeft(face: Face): ScalarSignal;
 
 /** 
 *  
@@ -79,8 +79,8 @@ declare namespace FacialActionsModule {
  *  
  * 
  * Returns a `ScalarSignal` containing the weight associated with the facial action named `LidTightenerRight`.
- */function lidTightenerRight(face: Face): ScalarSignal
- ;
+ */ 
+function lidTightenerRight(face: Face): ScalarSignal;
 
 /** 
 *  
@@ -88,8 +88,8 @@ declare namespace FacialActionsModule {
  *  
  * 
  * Returns a `ScalarSignal` containing the weight associated with the facial action named `LipCornerDepressorLeft`.
- */function lipCornerDepressorLeft(face: Face): ScalarSignal
- ;
+ */ 
+function lipCornerDepressorLeft(face: Face): ScalarSignal;
 
 /** 
 *  
@@ -97,8 +97,8 @@ declare namespace FacialActionsModule {
  *  
  * 
  * Returns a `ScalarSignal` containing the weight associated with the facial action named `LipCornerDepressorRight`.
- */function lipCornerDepressorRight(face: Face): ScalarSignal
- ;
+ */ 
+function lipCornerDepressorRight(face: Face): ScalarSignal;
 
 /** 
 *  
@@ -106,8 +106,8 @@ declare namespace FacialActionsModule {
  *  
  * 
  * Returns a `ScalarSignal` containing the weight associated with the facial action named `LipCornerPullerLeft`.
- */function lipCornerPullerLeft(face: Face): ScalarSignal
- ;
+ */ 
+function lipCornerPullerLeft(face: Face): ScalarSignal;
 
 /** 
 *  
@@ -115,8 +115,8 @@ declare namespace FacialActionsModule {
  *  
  * 
  * Returns a `ScalarSignal` containing the weight associated with the facial action named `LipCornerPullerRight`.
- */function lipCornerPullerRight(face: Face): ScalarSignal
- ;
+ */ 
+function lipCornerPullerRight(face: Face): ScalarSignal;
 
 /** 
 *  
@@ -124,8 +124,8 @@ declare namespace FacialActionsModule {
  *  
  * 
  * Returns a `ScalarSignal` containing the weight associated with the facial action named `LipDepressorLeft`.
- */function lipDepressorLeft(face: Face): ScalarSignal
- ;
+ */ 
+function lipDepressorLeft(face: Face): ScalarSignal;
 
 /** 
 *  
@@ -133,8 +133,8 @@ declare namespace FacialActionsModule {
  *  
  * 
  * Returns a `ScalarSignal` containing the weight associated with the facial action named `LipDepressorRight`.
- */function lipDepressorRight(face: Face): ScalarSignal
- ;
+ */ 
+function lipDepressorRight(face: Face): ScalarSignal;
 
 /** 
 *  
@@ -142,8 +142,8 @@ declare namespace FacialActionsModule {
  *  
  * 
  * Returns a `ScalarSignal` containing the weight associated with the facial action named `LipStretchLeft`.
- */function lipStretchLeft(face: Face): ScalarSignal
- ;
+ */ 
+function lipStretchLeft(face: Face): ScalarSignal;
 
 /** 
 *  
@@ -151,8 +151,8 @@ declare namespace FacialActionsModule {
  *  
  * 
  * Returns a `ScalarSignal` containing the weight associated with the facial action named `LipStretchRight`.
- */function lipStretchRight(face: Face): ScalarSignal
- ;
+ */ 
+function lipStretchRight(face: Face): ScalarSignal;
 
 /** 
 *  
@@ -160,8 +160,8 @@ declare namespace FacialActionsModule {
  *  
  * 
  * Returns a `ScalarSignal` containing the weight associated with the facial action named `LipSuck`.
- */function lipSuck(face: Face): ScalarSignal
- ;
+ */ 
+function lipSuck(face: Face): ScalarSignal;
 
 /** 
 *  
@@ -169,8 +169,8 @@ declare namespace FacialActionsModule {
  *  
  * 
  * Returns a `ScalarSignal` containing the weight associated with the facial action named `MouthMoveLeft`.
- */function mouthMoveLeft(face: Face): ScalarSignal
- ;
+ */ 
+function mouthMoveLeft(face: Face): ScalarSignal;
 
 /** 
 *  
@@ -178,8 +178,8 @@ declare namespace FacialActionsModule {
  *  
  * 
  * Returns a `ScalarSignal` containing the weight associated with the facial action named `MouthMoveRight`.
- */function mouthMoveRight(face: Face): ScalarSignal
- ;
+ */ 
+function mouthMoveRight(face: Face): ScalarSignal;
 
 /** 
 *  
@@ -187,8 +187,8 @@ declare namespace FacialActionsModule {
  *  
  * 
  * Returns a `ScalarSignal` containing the weight associated with the facial action named `NoseWrinklerLeft`.
- */function noseWrinklerLeft(face: Face): ScalarSignal
- ;
+ */ 
+function noseWrinklerLeft(face: Face): ScalarSignal;
 
 /** 
 *  
@@ -196,8 +196,8 @@ declare namespace FacialActionsModule {
  *  
  * 
  * Returns a `ScalarSignal` containing the weight associated with the facial action named `NoseWrinklerRight`.
- */function noseWrinklerRight(face: Face): ScalarSignal
- ;
+ */ 
+function noseWrinklerRight(face: Face): ScalarSignal;
 
 /** 
 *  
@@ -205,8 +205,8 @@ declare namespace FacialActionsModule {
  *  
  * 
  * Returns a `ScalarSignal` containing the weight associated with the facial action named `OuterBrowRaiserLeft`.
- */function outerBrowRaiserLeft(face: Face): ScalarSignal
- ;
+ */ 
+function outerBrowRaiserLeft(face: Face): ScalarSignal;
 
 /** 
 *  
@@ -214,8 +214,8 @@ declare namespace FacialActionsModule {
  *  
  * 
  * Returns a `ScalarSignal` containing the weight associated with the facial action named `OuterBrowRaiserRight`.
- */function outerBrowRaiserRight(face: Face): ScalarSignal
- ;
+ */ 
+function outerBrowRaiserRight(face: Face): ScalarSignal;
 
 /** 
 *  
@@ -223,8 +223,8 @@ declare namespace FacialActionsModule {
  *  
  * 
  * Returns a `ScalarSignal` containing the weight associated with the facial action named `Pucker`.
- */function pucker(face: Face): ScalarSignal
- ;
+ */ 
+function pucker(face: Face): ScalarSignal;
 
 /** 
 *  
@@ -232,8 +232,8 @@ declare namespace FacialActionsModule {
  *  
  * 
  * Returns a `ScalarSignal` containing the weight associated with the facial action named `UpperLidRaiserLeft`.
- */function upperLidRaiserLeft(face: Face): ScalarSignal
- ;
+ */ 
+function upperLidRaiserLeft(face: Face): ScalarSignal;
 
 /** 
 *  
@@ -241,8 +241,8 @@ declare namespace FacialActionsModule {
  *  
  * 
  * Returns a `ScalarSignal` containing the weight associated with the facial action named `UpperLidRaiserRight`.
- */function upperLidRaiserRight(face: Face): ScalarSignal
- ;
+ */ 
+function upperLidRaiserRight(face: Face): ScalarSignal;
 
 /** 
 *  
@@ -250,8 +250,8 @@ declare namespace FacialActionsModule {
  *  
  * 
  * Returns a `ScalarSignal` containing the weight associated with the facial action named `UpperLipRaiserLeft`.
- */function upperLipRaiserLeft(face: Face): ScalarSignal
- ;
+ */ 
+function upperLipRaiserLeft(face: Face): ScalarSignal;
 
 /** 
 *  
@@ -259,8 +259,8 @@ declare namespace FacialActionsModule {
  *  
  * 
  * Returns a `ScalarSignal` containing the weight associated with the facial action named `UpperLipRaiserRight`.
- */function upperLipRaiserRight(face: Face): ScalarSignal
- ;
+ */ 
+function upperLipRaiserRight(face: Face): ScalarSignal;
 
 } 
 export = FacialActionsModule;

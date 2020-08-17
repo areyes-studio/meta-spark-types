@@ -1,13 +1,8 @@
-/// <reference path="../boolean/index.d.ts" />
 /// <reference path="../Reactive.BoolSignal/index.d.ts" />
+/// <reference path="../Reactive.BoolSignalHistory/index.d.ts" />
 /// <reference path="../Reactive.EventSource/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 /// <reference path="../Reactive.StringSignal/index.d.ts" />
-/// <reference path="../number/index.d.ts" />
-/// <reference path="../Array/index.d.ts" />
-/// <reference path="../Reactive.BoolSignalHistory/index.d.ts" />
-/// <reference path="../ConstBoolSignal/index.d.ts" />
-/// <reference path="../this/index.d.ts" />
 declare interface BoolSignal {
 /** 
 * ```
@@ -28,8 +23,8 @@ lastValue: boolean;
  * Returns a Boolean signal that takes the value of `true` every time when the value of the left-hand-side signal is **equal** to the value of the right-hand-side one, and the value of `false` all other time.
  * 
  * **See Also**: `ReactiveModule.eq`
- */eq(other: BoolSignal | boolean): BoolSignal
- ;
+ */ 
+eq(other: BoolSignal | boolean): BoolSignal;
 
 /** 
 *  
@@ -39,8 +34,8 @@ lastValue: boolean;
  * Returns a signal with the value that is the logical disjunction of the values of the given signals. It is `true` every time at least one of the input signals is `true` and `false` at all other times.
  * 
  * **See Also**: `ReactiveModule.or`
- */or(other: BoolSignal | boolean): BoolSignal
- ;
+ */ 
+or(other: BoolSignal | boolean): BoolSignal;
 
 /** 
 *  
@@ -50,8 +45,8 @@ lastValue: boolean;
  * Returns a signal with the logically negated value of the given signal.
  * 
  * **See Also**: `ReactiveModule.not`
- */not(): BoolSignal
- ;
+ */ 
+not(): BoolSignal;
 
 /** 
 *  
@@ -63,8 +58,8 @@ lastValue: boolean;
  * **Note**: It is equivalent to `BoolSignal.ne`.
  * 
  * **See Also**: `ReactiveModule.xor`
- */xor(other: BoolSignal | boolean): BoolSignal
- ;
+ */ 
+xor(other: BoolSignal | boolean): BoolSignal;
 
 /** 
 *  
@@ -72,8 +67,8 @@ lastValue: boolean;
  *  
  * 
  * Returns a `BoolSignal` containing a constant value which is the value of the specified signal immediately after `pin` is called.
- */pin(): BoolSignal
- ;
+ */ 
+pin(): BoolSignal;
 
 /** 
 *  
@@ -83,8 +78,8 @@ lastValue: boolean;
  * Returns a Boolean signal that takes the value of `true` every time when the value of the left-hand-side signal is **not equal** to the value of the right-hand-side one, and the value of `false` all other time.
  * 
  * **See Also**: `ReactiveModule.ne`
- */ne(other: BoolSignal | boolean): BoolSignal
- ;
+ */ 
+ne(other: BoolSignal | boolean): BoolSignal;
 
 /** 
 *  
@@ -95,17 +90,14 @@ lastValue: boolean;
  *  
  * 
  * Returns a signal or an `EventSource` which at any point of time takes the value (passes the events in case of `EventSource`) of one or another inputs, depending on the momentary value of the given `BoolSignal`.
- */ifThenElse(thenValue: EventSource, elseValue: EventSource): EventSource
- ;
+ */ 
+ifThenElse(thenValue: EventSource, elseValue: EventSource): EventSource;
 
-ifThenElse(thenValue: ScalarSignal | number, elseValue: ScalarSignal | number): ScalarSignal
- ;
+ifThenElse(thenValue: ScalarSignal | number, elseValue: ScalarSignal | number): ScalarSignal;
 
-ifThenElse(thenValue: StringSignal | string, elseValue: StringSignal | string): StringSignal
- ;
+ifThenElse(thenValue: StringSignal | string, elseValue: StringSignal | string): StringSignal;
 
-ifThenElse(thenValue: BoolSignal | boolean, elseValue: BoolSignal | boolean): BoolSignal
- ;
+ifThenElse(thenValue: BoolSignal | boolean, elseValue: BoolSignal | boolean): BoolSignal;
 
 /** 
 * 
@@ -122,11 +114,10 @@ ifThenElse(thenValue: BoolSignal | boolean, elseValue: BoolSignal | boolean): Bo
  * 
  * **Note**: By default, there is no event fired for the initial value of the signal. If `config.fireOnInitialValue` is set to `true` then an event for initial signal value is also emitted. `oldValue` is unset for this initial event.
  * 
- */monitor(): EventSource
- ;
+ */ 
+monitor(): EventSource;
 
-monitor(config: { fireOnInitialValue: ?boolean}): EventSource
- ;
+monitor(config: { fireOnInitialValue: ?boolean}): EventSource;
 
 /** 
 *  
@@ -137,11 +128,10 @@ monitor(config: { fireOnInitialValue: ?boolean}): EventSource
  * Returns an object used to access signal values from past frames. The amount of frames tracked is customizable via `framesCount` parameter.
  * Historical signal values are going to be initialized with signal value at call time or using `initialValues` if provided.
  * 
- */history(framesCount: number): BoolSignalHistory
- ;
+ */ 
+history(framesCount: number): BoolSignalHistory;
 
-history(framesCount: number, initialValues: Array<boolean>): BoolSignalHistory
- ;
+history(framesCount: number, initialValues: Array<boolean>): BoolSignalHistory;
 
 /** 
 *  
@@ -150,8 +140,8 @@ history(framesCount: number, initialValues: Array<boolean>): BoolSignalHistory
  * 
  * Returns a `ConstBoolSignal` containing a constant value which is the last value of the specified signal before `pinLastValue` is called.
  * ConstBoolSignal can be passed to a functions which accept bool.
- */pinLastValue(): ConstBoolSignal
- ;
+ */ 
+pinLastValue(): ConstBoolSignal;
 
 /** 
 *  
@@ -161,8 +151,8 @@ history(framesCount: number, initialValues: Array<boolean>): BoolSignalHistory
  * Returns a signal with the value that is the logical conjunction of the values of the given signals. It is `true` every time both input signals are `true` and `false` at all other times.
  * 
  * **See Also**: `ReactiveModule.and`
- */and(other: BoolSignal | boolean): BoolSignal
- ;
+ */ 
+and(other: BoolSignal | boolean): BoolSignal;
 
 /** 
 * 
@@ -179,11 +169,10 @@ history(framesCount: number, initialValues: Array<boolean>): BoolSignalHistory
  * 
  * **Note**: By default, there is no event fired for the initial value of the signal if it's `true` straight away. If `config.fireOnInitialValue` is set to `true` then an event for initial signal value is also emitted. `oldValue` is unset for this initial event.
  * 
- */onOn(): EventSource
- ;
+ */ 
+onOn(): EventSource;
 
-onOn(config: { fireOnInitialValue: ?boolean}): EventSource
- ;
+onOn(config: { fireOnInitialValue: ?boolean}): EventSource;
 
 /** 
 * 
@@ -200,18 +189,17 @@ onOn(config: { fireOnInitialValue: ?boolean}): EventSource
  * 
  * **Note**: By default, there is no event fired for the initial value of the signal if it's `false` straight away. If `config.fireOnInitialValue` is set to `true` then an event for initial signal value is also emitted. `oldValue` is unset for this initial event.
  * 
- */onOff(): EventSource
- ;
+ */ 
+onOff(): EventSource;
 
-onOff(config: { fireOnInitialValue: ?boolean}): EventSource
- ;
+onOff(config: { fireOnInitialValue: ?boolean}): EventSource;
 
 /** 
 *  
  * delayBy(timeSpan: {milliseconds: number}): this
  *  
  * Delays a signal. The argument is an object with a "milliseconds" property specifying the delay duration in milliseconds.
- */delayBy(timeSpan: {milliseconds: number}): this
- ;
+ */ 
+delayBy(timeSpan: {milliseconds: number}): this;
 
 } 

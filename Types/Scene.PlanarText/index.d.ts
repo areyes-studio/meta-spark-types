@@ -1,11 +1,7 @@
-/// <reference path="../Reactive.StringSignal/index.d.ts" />
-/// <reference path="../Materials.MaterialBase/index.d.ts" />
-/// <reference path="../number/index.d.ts" />
 /// <reference path="../Fonts.FontId/index.d.ts" />
-/// <reference path="../?number/index.d.ts" />
-/// <reference path="../boolean/index.d.ts" />
+/// <reference path="../Materials.MaterialBase/index.d.ts" />
+/// <reference path="../Reactive.StringSignal/index.d.ts" />
 /// <reference path="../Scene.TextAlignmentWrapper/index.d.ts" />
-/// <reference path="../Promise/index.d.ts" />
 declare interface PlanarText {
 /** 
 * ```
@@ -98,7 +94,7 @@ alignment: TextAlignmentWrapper;
  * 
  * Returns a promise that is resolved with the material associated with a given scene object or null if no material was assigned.
  * 
- */getMaterial(): Promise<MaterialBase>
- ;
+ */ 
+getMaterial(): Promise<MaterialBase>;
 
 } 

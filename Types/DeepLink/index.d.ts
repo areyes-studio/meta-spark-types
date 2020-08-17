@@ -1,4 +1,3 @@
-/// <reference path="../{[key:/index.d.ts" />
 declare namespace DeepLinkModule {
 /** 
 * ```
@@ -8,6 +7,6 @@ declare namespace DeepLinkModule {
 
 Specifies a collection of key/value pairs passed from the external app.
 */ 
-const arguments: {[key:;
+const arguments: any;
 } 
 export = DeepLinkModule;

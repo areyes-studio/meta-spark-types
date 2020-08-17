@@ -1,7 +1,5 @@
-/// <reference path="../string/index.d.ts" />
-/// <reference path="../boolean/index.d.ts" />
-/// <reference path="../RecognitionTracking.Tracking/index.d.ts" />
 /// <reference path="../Reactive.EventSource/index.d.ts" />
+/// <reference path="../RecognitionTracking.Tracking/index.d.ts" />
 declare interface Recognition {
 /** 
 * ```

@@ -1,4 +1,3 @@
-/// <reference path="../TouchGestures.Gesture.Type/index.d.ts" />
 /// <reference path="../Reactive.StringSignal/index.d.ts" />
 declare interface Gesture {
 /** 
@@ -11,7 +10,7 @@ Specifies a [`TouchGesturesModule.Gesture.Type`](/docs/camera-effects/reference/
 
 To use this property, enable pre-release APIs in your project manifest.
 */ 
-type: Gesture;
+type: Type;
 /** 
 * ```
 (get) state: StringSignal

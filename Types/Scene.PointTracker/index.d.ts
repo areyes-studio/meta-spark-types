@@ -1,8 +1,6 @@
-/// <reference path="../Reactive.StringSignal/index.d.ts" />
 /// <reference path="../Reactive.Point2D/index.d.ts" />
-/// <reference path="../number/index.d.ts" />
 /// <reference path="../Reactive.Point2DSignal/index.d.ts" />
-/// <reference path="../void/index.d.ts" />
+/// <reference path="../Reactive.StringSignal/index.d.ts" />
 declare interface PointTracker {
 /** 
 * ```
@@ -37,13 +35,11 @@ confidence: StringSignal | string;
  *   pointTracker.trackPoint(gesture.location, gesture.state);
  * });
  *  
- */trackPoint(screenLocation: Point2D): void
- ;
+ */ 
+trackPoint(screenLocation: Point2D): void;
 
-trackPoint(screenX: number, screenY: number): void
- ;
+trackPoint(screenX: number, screenY: number): void;
 
-trackPoint(screenLocation: Point2DSignal, gestureState: StringSignal | string): void
- ;
+trackPoint(screenLocation: Point2DSignal, gestureState: StringSignal | string): void;
 
 } 

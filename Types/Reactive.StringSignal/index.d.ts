@@ -1,12 +1,7 @@
-/// <reference path="../string/index.d.ts" />
-/// <reference path="../Reactive.StringSignal/index.d.ts" />
 /// <reference path="../Reactive.BoolSignal/index.d.ts" />
 /// <reference path="../Reactive.EventSource/index.d.ts" />
-/// <reference path="../number/index.d.ts" />
-/// <reference path="../Array/index.d.ts" />
+/// <reference path="../Reactive.StringSignal/index.d.ts" />
 /// <reference path="../Reactive.StringSignalHistory/index.d.ts" />
-/// <reference path="../ConstStringSignal/index.d.ts" />
-/// <reference path="../this/index.d.ts" />
 declare interface StringSignal {
 /** 
 * ```
@@ -27,8 +22,8 @@ lastValue: string;
  * Returns a Boolean signal that takes the value of `true` every time when the value of the left-hand-side signal is **equal** to the value of the right-hand-side one, and the value of `false` all other time.
  * 
  * **See Also**: `ReactiveModule.eq`
- */eq(other: StringSignal | string): BoolSignal
- ;
+ */ 
+eq(other: StringSignal | string): BoolSignal;
 
 /** 
 *  
@@ -38,8 +33,8 @@ lastValue: string;
  * Returns a `StringSignal` containing the concatenation of the values specified by the input signals.
  * 
  * **See Also**: `ReactiveModule.concat`
- */concat(other: StringSignal | string): StringSignal
- ;
+ */ 
+concat(other: StringSignal | string): StringSignal;
 
 /** 
 *  
@@ -47,8 +42,8 @@ lastValue: string;
  *  
  * 
  * Returns a `StringSignal` containing a constant value which is the value of the specified signal immediately after `pin` is called.
- */pin(): StringSignal
- ;
+ */ 
+pin(): StringSignal;
 
 /** 
 *  
@@ -58,8 +53,8 @@ lastValue: string;
  * Returns a Boolean signal that takes the value of `true` every time when the value of the left-hand-side signal is **not equal** to the value of the right-hand-side one, and the value of `false` all other time.
  * 
  * **See Also**: `ReactiveModule.ne`
- */ne(other: StringSignal | string): BoolSignal
- ;
+ */ 
+ne(other: StringSignal | string): BoolSignal;
 
 /** 
 * 
@@ -76,11 +71,10 @@ lastValue: string;
  * 
  * **Note**: By default, there is no event fired for the initial value of the signal. If `config.fireOnInitialValue` is set to `true` then an event for initial signal value is also emitted. `oldValue` is unset for this initial event.
  * 
- */monitor(): EventSource
- ;
+ */ 
+monitor(): EventSource;
 
-monitor(config: { fireOnInitialValue: ?boolean}): EventSource
- ;
+monitor(config: { fireOnInitialValue: ?boolean}): EventSource;
 
 /** 
 *  
@@ -91,11 +85,10 @@ monitor(config: { fireOnInitialValue: ?boolean}): EventSource
  * Returns an object used to access signal values from past frames. The amount of frames tracked is customizable via `framesCount` parameter.
  * Historical signal values are going to be initialized with signal value at call time or using `initialValues` if provided.
  * 
- */history(framesCount: number): StringSignalHistory
- ;
+ */ 
+history(framesCount: number): StringSignalHistory;
 
-history(framesCount: number, initialValues: Array<string>): StringSignalHistory
- ;
+history(framesCount: number, initialValues: Array<string>): StringSignalHistory;
 
 /** 
 *  
@@ -104,15 +97,15 @@ history(framesCount: number, initialValues: Array<string>): StringSignalHistory
  * 
  * Returns a `ConstStringSignal` containing a constant value which is the last value of the specified signal before `pinLastValue` is called.
  * ConstStringSignal can be passed to a functions which accept strings
- */pinLastValue(): ConstStringSignal
- ;
+ */ 
+pinLastValue(): ConstStringSignal;
 
 /** 
 *  
  * delayBy(timeSpan: {milliseconds: number}): this
  *  
  * Delays a signal. The argument is an object with a "milliseconds" property specifying the delay duration in milliseconds.
- */delayBy(timeSpan: {milliseconds: number}): this
- ;
+ */ 
+delayBy(timeSpan: {milliseconds: number}): this;
 
 } 

@@ -1,6 +1,4 @@
-/// <reference path="../string/index.d.ts" />
-/// <reference path="../EventSource<RequestFailure>/index.d.ts" />
-/// <reference path="../void/index.d.ts" />
+/// <reference path="../Reactive.EventSource/index.d.ts" />
 declare interface RequestedEffect {
 /** 
 * ```
@@ -29,7 +27,7 @@ onApplyFailure: EventSource<RequestFailure>;
  *  
  * 
  * Attempts to apply the effect (i.e. load) that this RequestedEffect represents.
- */apply(): void
- ;
+ */ 
+apply(): void;
 
 } 

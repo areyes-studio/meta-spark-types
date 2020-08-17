@@ -1,5 +1,4 @@
-/// <reference path="../Signal<AugmentationInstanceState>/index.d.ts" />
-/// <reference path="../Promise/index.d.ts" />
+/// <reference path="../Augmentations.AugmentationInstanceState/index.d.ts" />
 declare interface AugmentationInstance {
 /** 
 * ```
@@ -12,7 +11,7 @@ state: Signal<AugmentationInstanceState>;
 *  
  * remove(): Promise<boolean>
  *  
- */remove(): Promise<boolean>
- ;
+ */ 
+remove(): Promise<boolean>;
 
 } 

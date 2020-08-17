@@ -1,8 +1,5 @@
 /// <reference path="../Reactive.BoolSignal/index.d.ts" />
-/// <reference path="../string/index.d.ts" />
 /// <reference path="../Scene.SceneObjectBase/index.d.ts" />
-/// <reference path="../config/index.d.ts" />
-/// <reference path="../Promise/index.d.ts" />
 declare interface Scene {
 /** 
 * ```
@@ -20,8 +17,8 @@ hidden: BoolSignal | boolean;
  * 
  * Returns a child object by name. An exception is thrown if the object isn't found.
  * **See Also**: `SceneObjectBase.find`, `SceneModule.root`
- */child(name: string): any
- ;
+ */ 
+child(name: string): any;
 
 /** 
 *  
@@ -32,8 +29,8 @@ hidden: BoolSignal | boolean;
  *  **Note**: object D is considered to be a descendant of object P if either D is a child of P or if such an object C which is a child of P exists that D is a descendant of C.
  * 
  *  **See Also**: `SceneObjectBase.child`, `SceneModule.root`.
- */find(name: string): any
- ;
+ */ 
+find(name: string): any;
 
 /** 
 *  
@@ -45,8 +42,8 @@ hidden: BoolSignal | boolean;
  * Empty array is returned in no objects are found.
  * 
  * **See Also**: `SceneObjectBase.findFirst`, `SceneObjectBase.findByPath`, `SceneModule.root`.
- */findAll(name: string, config?: {recursive: boolean}): Promise<Array<any>>
- ;
+ */ 
+findAll(name: string, config?: {recursive: boolean}): Promise<Array<any>>;
 
 /** 
 *  
@@ -76,8 +73,8 @@ hidden: BoolSignal | boolean;
  * **Note**: object D is considered to be a descendant of object P if either D is a child of P or if such an object C which is a child of P exists that D is a descendant of C.
  * 
  * **See Also**: `SceneObjectBase.findAll`, `SceneObjectBase.findFirst`, `SceneModule.root`.
- */findByPath(pathQuery: string, config?: {limit: number}): Promise<Array<any>>
- ;
+ */ 
+findByPath(pathQuery: string, config?: {limit: number}): Promise<Array<any>>;
 
 /** 
 *  
@@ -88,7 +85,7 @@ hidden: BoolSignal | boolean;
  * `recursive` param of `config` controls whenever the find should be performed recursively (`true` by default).
  * 
  * **See Also**: `SceneObjectBase.findAll`, `SceneObjectBase.findByPath`, `SceneModule.root`.
- */findFirst(name: string, config?: {recursive: boolean}): Promise<any>
- ;
+ */ 
+findFirst(name: string, config?: {recursive: boolean}): Promise<any>;
 
 } 

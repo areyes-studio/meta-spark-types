@@ -1,4 +1,3 @@
-/// <reference path="../number/index.d.ts" />
 declare interface Point2D {
 /** 
 * ```

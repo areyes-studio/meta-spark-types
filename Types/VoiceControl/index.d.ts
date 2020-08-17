@@ -1,6 +1,4 @@
-/// <reference path="../string/index.d.ts" />
 /// <reference path="../Reactive.EventSource/index.d.ts" />
-/// <reference path="../IntentSpec/index.d.ts" />
 declare namespace VoiceControlModule {
 /** 
 *  
@@ -8,8 +6,8 @@ declare namespace VoiceControlModule {
  *  
  * 
  * Returns an `EventSource` object that fires when Assistant can match a voice to the command string.
- */function monitorCommand(command: string): EventSource<void>
- ;
+ */ 
+function monitorCommand(command: string): EventSource<void>;
 
 /** 
 *  
@@ -17,8 +15,8 @@ declare namespace VoiceControlModule {
  *  
  * 
  * Returns an `EventSource` object that fires when Assistant infers that a given intent has been invoked.
- */function monitorIntent(intentSpec: IntentSpec): EventSource<Object>
- ;
+ */ 
+function monitorIntent(intentSpec: IntentSpec): EventSource<Object>;
 
 } 
 export = VoiceControlModule;

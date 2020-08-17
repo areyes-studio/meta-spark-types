@@ -1,6 +1,5 @@
-/// <reference path="../Reactive.ScalarSignal/index.d.ts" />
-/// <reference path="../number/index.d.ts" />
 /// <reference path="../HandTracking.Hand/index.d.ts" />
+/// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 declare namespace HandTrackingModule {
 /** 
 * ```
@@ -17,8 +16,8 @@ const count: ScalarSignal | number;
  *  
  * 
  * Returns the `Hand` indicated by index.
- */function hand(index: number): Hand
- ;
+ */ 
+function hand(index: number): Hand;
 
 } 
 export = HandTrackingModule;

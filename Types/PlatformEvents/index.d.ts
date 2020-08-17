@@ -1,6 +1,4 @@
 /// <reference path="../Reactive.EventSource/index.d.ts" />
-/// <reference path="../Object/index.d.ts" />
-/// <reference path="../void/index.d.ts" />
 declare namespace PlatformEventsModule {
 /** 
 * ```
@@ -18,8 +16,8 @@ const allEvents: EventSource;
  *  
  * 
  * Send a given event in a form of any Object to the platform-specific implementation.
- */function send(event: Object): void
- ;
+ */ 
+function send(event: Object): void;
 
 } 
 export = PlatformEventsModule;
