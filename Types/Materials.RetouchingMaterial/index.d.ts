@@ -37,4 +37,4 @@ skinSmoothingFactor: ScalarSignal | number;
 Specifies the simulated teeth whitening factor.
 */ 
 teethWhiteningFactor: ScalarSignal | number;
-} 
+}

@@ -388,4 +388,4 @@ polylineFromRecord(record: SignalRecord): ScalarSampler;
  */ 
 sequence(config: {knots?: Array<number>, samplers?: ArrayOfScalarSamplers | Array<ArrayOfScalarSamplers>}): ScalarSampler | ArrayOfScalarSamplers;
 
-} 
+}

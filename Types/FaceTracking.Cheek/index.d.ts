@@ -20,4 +20,4 @@ Specifies a `PointSignal` representing the cheekbone in the face local coordinat
 **See Also**: `Face.cameraTransform` to convert the point to the coordinate system of the camera.
 */ 
 cheekbone: PointSignal;
-} 
+}

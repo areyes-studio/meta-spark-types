@@ -45,4 +45,4 @@ at(index: number): EventSource;
  */ 
 frame(relativeFrame: number): EventSource;
 
-} 
+}

@@ -58,4 +58,4 @@ center: Point2DSignal;
  */ 
 history(framesCount: number): BoundingBoxSignalHistory;
 
-} 
+}

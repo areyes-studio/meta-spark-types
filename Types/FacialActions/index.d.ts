@@ -262,5 +262,5 @@ function upperLipRaiserLeft(face: Face): ScalarSignal;
  */ 
 function upperLipRaiserRight(face: Face): ScalarSignal;
 
-} 
+}
 export = FacialActionsModule;

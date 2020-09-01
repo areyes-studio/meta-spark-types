@@ -22,4 +22,4 @@ material: MaterialBase;
  */ 
 getMaterial(): Promise<MaterialBase>;
 
-} 
+}

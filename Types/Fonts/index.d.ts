@@ -2,23 +2,20 @@
 declare namespace FontsModule {
 /** 
 *  
- * get(fontName: string): FontId
+ * findFirst(fontName: string): Promise<FontId | null>
  *  
  * 
- * Returns a font object identified by the `fontName` argument.
- * 
- * Throws an exception if there is no such font in the project.
+ * Returns a promise that is resolved with the font identifier of a requested name or null if none was found.
+ * **See Also**: `FontsModule.findUsingPattern`, `FontsModule.getAll`.
  */ 
-function get(fontName: string): FontId;
+function findFirst(fontName: string): Promise<FontId | null>;
 
 /** 
 *  
- * findUsingPattern(namePattern: string): Promise<Array<FontId>>
- * findUsingPattern(namePattern: string, config: {limit: number}): Promise<Array<FontId>>
+ * findUsingPattern(namePattern: string, config?: {limit: number}): Promise<Array<FontId>>
  *  
  * 
  * Returns a promise that is resolved with the all of the font identifiers matching the name pattern or empty array if none was found.
- * 
  * Pattern format:
  * `*` matches any characters sequence.
  * `\` can be used to include in pattern any of the control characters (including '\' itself)
@@ -33,33 +30,27 @@ function get(fontName: string): FontId;
  * 
  * **See Also**: `FontsModule.getAll`, `FontsModule.findFirst`.
  */ 
-function findUsingPattern(namePattern: string): Promise<Array<FontId>>;
-
-function findUsingPattern(namePattern: string, config: {limit: number}): Promise<Array<FontId>>;
+function findUsingPattern(namePattern: string, config?: {limit: number}): Promise<Array<FontId>>;
 
 /** 
-* 
+*  
+ * get(fontName: string): FontId
  *  
+ * 
+ * Returns a font object identified by the `fontName` argument.
+ * Throws an exception if there is no such font in the project.
+ */ 
+function get(fontName: string): FontId;
+
+/** 
+*  
  * getAll(): Promise<Array<FontId>>
  *  
  * 
  * Returns a promise that is resolved with all of the font identifiers.
  * **See Also**: `FontsModule.findUsingPattern`, `FontsModule.findFirst`.
- *         
  */ 
 function getAll(): Promise<Array<FontId>>;
 
-/** 
-* 
- *  
- * findFirst(name: string): Promise<FontId>
- *  
- * 
- * Returns a promise that is resolved with the font identifier of a requested name or null if none was found.
- * **See Also**: `FontsModule.findUsingPattern`, `FontsModule.getAll`.
- *         
- */ 
-function findFirst(name: string): Promise<FontId>;
-
-} 
+}
 export = FontsModule;

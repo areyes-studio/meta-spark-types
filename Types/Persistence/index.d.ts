@@ -24,5 +24,5 @@ const sharedScope: Object;
 Gets an object corresponding to the capture scope.
 */ 
 const captureScope: Object;
-} 
+}
 export = PersistenceModule;

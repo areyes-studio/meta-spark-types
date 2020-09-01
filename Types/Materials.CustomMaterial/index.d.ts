@@ -105,4 +105,4 @@ setFloatParameter(paramName: string, source: ScalarSignal | number): Promise<voi
  */ 
 setTexture(paramName: string, texture: TextureBase): Promise<void>;
 
-} 
+}

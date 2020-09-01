@@ -19,5 +19,5 @@ const count: ScalarSignal | number;
  */ 
 function body(index: number): Body;
 
-} 
+}
 export = BodyTrackingModule;

@@ -36,4 +36,4 @@ sizeU: ScalarSignal | number;
 Specifies the vertical span in UV texture coordinates.
 */ 
 sizeV: ScalarSignal | number;
-} 
+}

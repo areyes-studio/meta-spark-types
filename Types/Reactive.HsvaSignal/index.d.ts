@@ -58,4 +58,4 @@ toRGBA(): RgbaSignal;
  */ 
 toVec4(): Point4DSignal;
 
-} 
+}

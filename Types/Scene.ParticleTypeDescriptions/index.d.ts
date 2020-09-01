@@ -20,4 +20,4 @@ count: number;
  */ 
 get(index: number): ParticleTypeDescription;
 
-} 
+}

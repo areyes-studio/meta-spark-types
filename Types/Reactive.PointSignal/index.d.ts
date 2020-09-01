@@ -1,7 +1,6 @@
 /// <reference path="../Reactive.Point2DSignal/index.d.ts" />
 /// <reference path="../Reactive.Point3D/index.d.ts" />
 /// <reference path="../Reactive.Point4DSignal/index.d.ts" />
-/// <reference path="../Reactive.PointSignal/index.d.ts" />
 /// <reference path="../Reactive.PointSignalHistory/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 /// <reference path="../Reactive.TransformSignal/index.d.ts" />
@@ -444,4 +443,4 @@ distance(other: PointSignal): ScalarSignal;
  */ 
 delayBy(timeSpan: {milliseconds: number}): this;
 
-} 
+}

@@ -1,14 +1,7 @@
 /// <reference path="../Augmentations.AugmentationInstance/index.d.ts" />
-/// <reference path="../Augmentations.AugmentationState/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
+/// <reference path="../Reactive.StringSignal/index.d.ts" />
 declare interface Augmentation {
-/** 
-* ```
-(get) state: Signal<AugmentationState>
-(set) (Not Available)
-```
-*/ 
-state: Signal<AugmentationState>;
 /** 
 * ```
 (get) downloadProgress: ScalarSignal
@@ -17,10 +10,20 @@ state: Signal<AugmentationState>;
 */ 
 downloadProgress: ScalarSignal | number;
 /** 
-*  
- * instantiate(config: any): Promise<AugmentationInstance>
- *  
- */ 
-instantiate(config: any): Promise<AugmentationInstance>;
+* ```
+(get) state: StringSignal
+(set) (Not Available)
+```
 
-} 
+Return `StringSignal` with possible values defined by enum `Augmentation.AugmentationState`
+*/ 
+state: StringSignal | string;
+/** 
+*  
+ * instantiate(config: {[key: string]: any}): Promise<AugmentationInstance>
+ *  
+ * 
+ */ 
+instantiate(config: {[key: string]: any}): Promise<AugmentationInstance>;
+
+}

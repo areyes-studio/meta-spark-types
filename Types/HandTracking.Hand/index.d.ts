@@ -227,4 +227,4 @@ thumbTip: PointSignal;
 Specifies the 3D position of the wrist center point of the hand.
 */ 
 wrist: PointSignal;
-} 
+}

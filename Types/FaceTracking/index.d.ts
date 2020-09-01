@@ -57,5 +57,5 @@ function createFaceTrackerSceneObject(initialState?: {[key: string]: any}): Prom
  */ 
 function face(index: number): Face;
 
-} 
+}
 export = FaceTrackingModule;

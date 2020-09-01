@@ -3,22 +3,6 @@
 declare namespace AudioModule {
 /** 
 *  
- * getPlaybackController(name: String): PlaybackController
- *  
- * Get a playback controller from assets by name.
- */ 
-function getPlaybackController(name: String): PlaybackController;
-
-/** 
-*  
- * getAudioPlaybackController(name: String): Promise<PlaybackController>
- *  
- * Get a playback controller from assets by name.
- */ 
-function getAudioPlaybackController(name: String): Promise<PlaybackController>;
-
-/** 
-*  
  * getAudioComponent(id: string): AudioComponent
  *  
  * 
@@ -26,5 +10,23 @@ function getAudioPlaybackController(name: String): Promise<PlaybackController>;
  */ 
 function getAudioComponent(id: string): AudioComponent;
 
-} 
+/** 
+*  
+ * getAudioPlaybackController(name: string): Promise<PlaybackController>
+ *  
+ * 
+ * Get a playback controller from assets by name.
+ */ 
+function getAudioPlaybackController(name: string): Promise<PlaybackController>;
+
+/** 
+*  
+ * getPlaybackController(name: string): PlaybackController
+ *  
+ * 
+ * Get a playback controller from assets by name.
+ */ 
+function getPlaybackController(name: string): PlaybackController;
+
+}
 export = AudioModule;

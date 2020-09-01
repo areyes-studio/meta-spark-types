@@ -67,5 +67,5 @@ function timeDriver(params?: {durationMilliseconds?: number, loopCount?: number,
  */ 
 function valueDriver(value: ScalarSignal | number, min: number, max: number): ValueDriver;
 
-} 
+}
 export = AnimationModule;

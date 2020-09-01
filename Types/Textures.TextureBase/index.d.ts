@@ -47,4 +47,4 @@ signal: ShaderSignal;
 Gets the width of the texture in pixels.
 */ 
 width: ScalarSignal | number;
-} 
+}

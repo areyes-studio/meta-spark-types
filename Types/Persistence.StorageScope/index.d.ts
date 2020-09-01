@@ -28,4 +28,4 @@ set(key: String, value: Object): Promise<>;
  */ 
 remove(key: String): Promise<>;
 
-} 
+}

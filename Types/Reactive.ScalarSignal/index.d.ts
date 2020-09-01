@@ -3,12 +3,161 @@
 /// <reference path="../Reactive.Point2DSignal/index.d.ts" />
 /// <reference path="../Reactive.Point4DSignal/index.d.ts" />
 /// <reference path="../Reactive.PointSignal/index.d.ts" />
-/// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignalHistory/index.d.ts" />
 /// <reference path="../Reactive.StringSignal/index.d.ts" />
 /// <reference path="../Reactive.TransformSignal/index.d.ts" />
 /// <reference path="../Reactive.VectorSignal/index.d.ts" />
-declare interface ScalarSignal {
+declare module "ReactiveModule" {
+global {
+interface Number {
+lastValue: number;
+lt(other: ScalarSignal | number): BoolSignal;
+
+ceil(): ScalarSignal;
+
+eq(other: ScalarSignal | number): BoolSignal;
+
+delayBy(timeSpan: {milliseconds: number}): this;
+
+fromRange(x: ScalarSignal | number, min: ScalarSignal | number, max: ScalarSignal | number): ScalarSignal;
+
+magnitude(): ScalarSignal;
+
+schmittTrigger(config: { low: number, high: number, initialValue: ?boolean}): BoolSignal;
+
+ne(other: ScalarSignal | number): BoolSignal;
+
+gt(other: ScalarSignal | number): BoolSignal;
+
+cross(other: VectorSignal): VectorSignal;
+
+expSmooth(dampFactor: number): ScalarSignal;
+
+ge(other: ScalarSignal | number): BoolSignal;
+
+pin(): ScalarSignal;
+
+le(other: ScalarSignal | number): BoolSignal;
+
+mod(other: ScalarSignal | number): ScalarSignal;
+
+history(framesCount: number): ScalarSignalHistory;
+
+history(framesCount: number, initialValues: Array<number>): ScalarSignalHistory;
+
+multiTrigger(threshold: number): EventSource;
+
+sqrt(): ScalarSignal;
+
+monitor(): EventSource;
+
+monitor(config: { fireOnInitialValue: ?boolean}): EventSource;
+
+abs(): ScalarSignal;
+
+floor(): ScalarSignal;
+
+pinLastValue(): ConstScalarSignal;
+
+smoothStep(x: ScalarSignal | number, edge0: ScalarSignal | number, edge1: ScalarSignal | number): ScalarSignal;
+
+dot(other: VectorSignal): ScalarSignal;
+
+sign(): ScalarSignal;
+
+toString(): StringSignal;
+
+add(other: ScalarSignal | number): ScalarSignal;
+
+add(other: VectorSignal): PointSignal;
+
+add(other: VectorSignal): VectorSignal;
+
+add(other: PointSignal): PointSignal;
+
+sum(other: ScalarSignal | number): ScalarSignal;
+
+sum(other: VectorSignal): PointSignal;
+
+sum(other: VectorSignal): VectorSignal;
+
+sum(other: PointSignal): PointSignal;
+
+sub(other: ScalarSignal | number): ScalarSignal;
+
+sub(other: PointSignal): VectorSignal;
+
+sub(other: VectorSignal): PointSignal;
+
+sub(other: VectorSignal): VectorSignal;
+
+div(other: ScalarSignal | number): ScalarSignal;
+
+reflect(normal: VectorSignal): VectorSignal;
+
+neg(): ScalarSignal;
+
+neg(): VectorSignal;
+
+interval(threshold: number): EventSource;
+
+min(other: ScalarSignal | number): ScalarSignal;
+
+min(other: ScalarSignal | number): Point2DSignal;
+
+min(other: ScalarSignal | number): VectorSignal;
+
+pow(exponent: ScalarSignal | number): ScalarSignal;
+
+mul(other: ScalarSignal | number): ScalarSignal;
+
+mul(other: VectorSignal): VectorSignal;
+
+mul(other: ScalarSignal | number): VectorSignal;
+
+atan2(other: ScalarSignal | number): ScalarSignal;
+
+clamp(min: ScalarSignal | number, max: ScalarSignal | number): ScalarSignal;
+
+clamp(min: ScalarSignal | number, max: ScalarSignal | number): Point2DSignal;
+
+clamp(min: ScalarSignal | number, max: ScalarSignal | number): VectorSignal;
+
+toRange(x: ScalarSignal | number, min: ScalarSignal | number, max: ScalarSignal | number): ScalarSignal;
+
+max(other: ScalarSignal | number): ScalarSignal;
+
+max(other: ScalarSignal | number): Point2DSignal;
+
+max(other: ScalarSignal | number): VectorSignal;
+
+mix(signal: ScalarSignal | number, factor: ScalarSignal | number): ScalarSignal;
+
+mix(signal: Point2DSignal, factor: ScalarSignal | number): Point2DSignal;
+
+mix(signal: PointSignal, factor: ScalarSignal | number): PointSignal;
+
+mix(signal: VectorSignal, factor: ScalarSignal | number): VectorSignal;
+
+mix(signal: Point4DSignal, factor: ScalarSignal | number): Point4DSignal;
+
+mix(signal: TransformSignal, factor: ScalarSignal | number): TransformSignal;
+
+round(): ScalarSignal;
+
+format(formatString: string): StringSignal;
+
+magnitudeSquared(): ScalarSignal;
+
+normalize(): VectorSignal;
+
+trigger(threshold: number): EventSource;
+
+distance(other: PointSignal): ScalarSignal;
+
+}
+}
+export interface ScalarSignal extends Number {
 /** 
 * ```
 (get) lastValue: number
@@ -622,4 +771,5 @@ trigger(threshold: number): EventSource;
  */ 
 distance(other: PointSignal): ScalarSignal;
 
-} 
+}
+}

@@ -27,4 +27,4 @@ forCaptureOutput: BoolSignal | boolean;
 Specifies whether the object is visible on the overlay output.
 */ 
 forOverlayOutput: BoolSignal | boolean;
-} 
+}

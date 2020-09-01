@@ -19,5 +19,5 @@ const count: ScalarSignal | number;
  */ 
 function face(index: number): Face2D;
 
-} 
+}
 export = FaceTracking2DModule;

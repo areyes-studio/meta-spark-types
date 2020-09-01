@@ -45,4 +45,4 @@ at(index: number): BoundingBoxSignal;
  */ 
 frame(relativeFrame: number): BoundingBoxSignal;
 
-} 
+}

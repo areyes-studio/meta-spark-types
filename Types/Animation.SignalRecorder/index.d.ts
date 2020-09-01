@@ -30,4 +30,4 @@ recordCount: ScalarSignal | number;
  */ 
 stop(): SignalRecord;
 
-} 
+}

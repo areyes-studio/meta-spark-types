@@ -1,4 +1,3 @@
-/// <reference path="../Reactive.EventSource/index.d.ts" />
 /// <reference path="../Reactive.EventSourceHistory/index.d.ts" />
 /// <reference path="../Reactive.Subscription/index.d.ts" />
 declare interface EventSource {
@@ -76,4 +75,4 @@ select(property: string): EventSource;
  */ 
 take(count: number): EventSource;
 
-} 
+}

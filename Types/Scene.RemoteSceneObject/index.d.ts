@@ -9,4 +9,4 @@ declare interface RemoteSceneObject {
 Specifies the Remote 3D model indentifier.
 */ 
 remoteModelIdentifier: StringSignal | string;
-} 
+}

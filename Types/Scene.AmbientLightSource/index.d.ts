@@ -19,4 +19,4 @@ color: ColorSignal;
 Specifies the intensity of this light source, usually between 0.0 and 1.0.
 */ 
 intensity: ScalarSignal | number;
-} 
+}

@@ -30,4 +30,4 @@ Specifies a `PointSignal` representing the top of the eyebrow in the face local 
 **See Also**: `Face.cameraTransform` to convert the point to the coordinate system of the camera.
 */ 
 top: PointSignal;
-} 
+}

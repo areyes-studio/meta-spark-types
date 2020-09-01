@@ -175,4 +175,4 @@ getVectorOutput(name: String): VectorSignal;
  */ 
 getShaderOutput(name: String): ShaderSignal;
 
-} 
+}

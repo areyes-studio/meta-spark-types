@@ -61,4 +61,4 @@ Specifies a `PointSignal` representing the center of the upper eyelid in the fac
 **See Also**: `Face.cameraTransform` to convert the point to the coordinate system of the camera.
 */ 
 upperEyelidCenter: PointSignal;
-} 
+}

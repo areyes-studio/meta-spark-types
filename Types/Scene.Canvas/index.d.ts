@@ -89,4 +89,4 @@ setMode(mode: Signal<SceneModule.RenderMode>): void;
 
 setMode(mode: Signal<SceneModule.RenderMode>, config: { fallback: SceneModule.RenderMode }): void;
 
-} 
+}

@@ -37,4 +37,4 @@ name: string;
  */ 
 getPrefab(): Promise<Prefab>;
 
-} 
+}

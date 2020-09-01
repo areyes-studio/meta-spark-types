@@ -94,5 +94,5 @@ function unprojectToFocalPlane(location: Point2DSignal): PointSignal;
  */ 
 function unprojectWithDepth(location: Point2DSignal, depth: number): PointSignal;
 
-} 
+}
 export = SceneModule;

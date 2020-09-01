@@ -8,5 +8,5 @@ declare namespace RandomModule {
  */ 
 function random(): number;
 
-} 
+}
 export = RandomModule;

@@ -258,5 +258,5 @@ function onNod(face: Face, config?: {angle?: number, period?: number, swings?: n
  */ 
 function onShake(face: Face, config?: {angle?: number, period?: number, swings?: number}): EventSource;
 
-} 
+}
 export = FaceGesturesModule;

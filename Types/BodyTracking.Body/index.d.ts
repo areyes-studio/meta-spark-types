@@ -29,4 +29,4 @@ id: StringSignal | string;
 Returns a `BoolSignal` object.
 */ 
 isTracking: BoolSignal | boolean;
-} 
+}

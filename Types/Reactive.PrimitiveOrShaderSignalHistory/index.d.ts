@@ -45,4 +45,4 @@ at(index: number): PrimitiveOrShaderSignal;
  */ 
 frame(relativeFrame: number): PrimitiveOrShaderSignal;
 
-} 
+}

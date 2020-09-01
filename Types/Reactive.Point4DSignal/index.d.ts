@@ -1,6 +1,5 @@
 /// <reference path="../Reactive.HsvaSignal/index.d.ts" />
 /// <reference path="../Reactive.Point2DSignal/index.d.ts" />
-/// <reference path="../Reactive.Point4DSignal/index.d.ts" />
 /// <reference path="../Reactive.Point4DSignalHistory/index.d.ts" />
 /// <reference path="../Reactive.PointSignal/index.d.ts" />
 /// <reference path="../Reactive.RgbaSignal/index.d.ts" />
@@ -486,4 +485,4 @@ normalize(): VectorSignal;
  */ 
 distance(other: PointSignal): ScalarSignal;
 
-} 
+}

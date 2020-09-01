@@ -33,4 +33,4 @@ Specifies the distance between focal plane and camera. Measured in 3D units.
 
 */ 
 distance: ScalarSignal | number;
-} 
+}

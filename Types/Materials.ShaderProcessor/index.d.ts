@@ -83,4 +83,4 @@ setBoolParameter(paramName: string, source: BoolSignal | boolean): Promise<void>
  */ 
 setFloatParameter(paramName: string, source: ScalarSignal | number): Promise<void>;
 
-} 
+}

@@ -1,6 +1,5 @@
 /// <reference path="../Reactive.Point4DSignal/index.d.ts" />
 /// <reference path="../Reactive.PointSignal/index.d.ts" />
-/// <reference path="../Reactive.QuaternionSignal/index.d.ts" />
 /// <reference path="../Reactive.QuaternionSignalHistory/index.d.ts" />
 /// <reference path="../Reactive.Rotation/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
@@ -137,4 +136,4 @@ history(framesCount: number, initialValues: Array<Rotation>): QuaternionSignalHi
  */ 
 angleTo(signal: QuaternionSignal): ScalarSignal;
 
-} 
+}

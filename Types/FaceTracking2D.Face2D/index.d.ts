@@ -20,4 +20,4 @@ A `BoolSignal` indicating whether the face was tracked this frame.
 If the face was not tracked, other properties represent the most recent tracked frame.
 */ 
 isTracked: BoolSignal | boolean;
-} 
+}

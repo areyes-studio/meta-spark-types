@@ -42,4 +42,4 @@ trackPoint(screenX: number, screenY: number): void;
 
 trackPoint(screenLocation: Point2DSignal, gestureState: StringSignal | string): void;
 
-} 
+}

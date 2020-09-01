@@ -8,5 +8,5 @@ declare namespace NativeNavigationModule {
  */ 
 function navigateTo(url: string): void;
 
-} 
+}
 export = NativeNavigationModule;

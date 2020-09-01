@@ -151,4 +151,4 @@ getNormal(): Promise<TextureBase | null>;
  */ 
 setNormal(texture: TextureBase | null): Promise<void>;
 
-} 
+}

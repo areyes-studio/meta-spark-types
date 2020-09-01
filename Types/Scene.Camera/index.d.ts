@@ -13,4 +13,4 @@ This can be used to convert points between screen and world space.
 
 */ 
 focalPlane: FocalPlane;
-} 
+}

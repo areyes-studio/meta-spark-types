@@ -56,4 +56,4 @@ toHSVA(): HsvaSignal;
  */ 
 toVec4(): Point4DSignal;
 
-} 
+}

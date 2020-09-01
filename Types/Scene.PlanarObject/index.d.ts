@@ -191,4 +191,4 @@ Represents the current 2D bounds relative to the parent element. This is the res
 **Note**: The `SceneObjectBase.transform` property doesn't affect the layout, the transformation it specifies is applied on top of it.
 */ 
 bounds: Bounds2D;
-} 
+}

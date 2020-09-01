@@ -1,6 +1,5 @@
 /// <reference path="../Reactive.PointSignal/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
-/// <reference path="../Reactive.TransformSignal/index.d.ts" />
 /// <reference path="../Reactive.TransformSignalHistory/index.d.ts" />
 /// <reference path="../Reactive.VectorSignal/index.d.ts" />
 declare interface TransformSignal {
@@ -193,4 +192,4 @@ applyToVector(signal: VectorSignal): VectorSignal;
  */ 
 history(framesCount: number): TransformSignalHistory;
 
-} 
+}

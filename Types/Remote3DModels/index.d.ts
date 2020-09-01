@@ -1,12 +1,12 @@
-/// <reference path="../Reactive.EventSource/index.d.ts" />
 declare namespace Remote3DModelsModule {
 /** 
 *  
- *   fetch(url: url): EventSource
- *    
- *   Returns a EventSource for the result of the call. A `then(onSuccess(identifier), onFailure(reason))`.
+ * fetch(url: string): Promise<string>
+ *  
+ * 
+ * Returns a promise which is resolved with remote model identifier or error.
  */ 
-function fetch(url: url): EventSource;
+function fetch(url: string): Promise<string>;
 
-} 
+}
 export = Remote3DModelsModule;

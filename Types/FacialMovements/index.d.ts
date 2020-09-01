@@ -235,5 +235,5 @@ function rightUpperLipUp(face: Face): ScalarSignal;
  */ 
 function upperLipOut(face: Face): ScalarSignal;
 
-} 
+}
 export = FacialMovementsModule;

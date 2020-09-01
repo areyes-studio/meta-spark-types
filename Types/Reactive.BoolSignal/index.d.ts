@@ -1,9 +1,56 @@
-/// <reference path="../Reactive.BoolSignal/index.d.ts" />
 /// <reference path="../Reactive.BoolSignalHistory/index.d.ts" />
 /// <reference path="../Reactive.EventSource/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 /// <reference path="../Reactive.StringSignal/index.d.ts" />
-declare interface BoolSignal {
+declare module "ReactiveModule" {
+global {
+interface Boolean {
+lastValue: boolean;
+eq(other: BoolSignal | boolean): BoolSignal;
+
+or(other: BoolSignal | boolean): BoolSignal;
+
+not(): BoolSignal;
+
+xor(other: BoolSignal | boolean): BoolSignal;
+
+pin(): BoolSignal;
+
+ne(other: BoolSignal | boolean): BoolSignal;
+
+ifThenElse(thenValue: EventSource, elseValue: EventSource): EventSource;
+
+ifThenElse(thenValue: ScalarSignal | number, elseValue: ScalarSignal | number): ScalarSignal;
+
+ifThenElse(thenValue: StringSignal | string, elseValue: StringSignal | string): StringSignal;
+
+ifThenElse(thenValue: BoolSignal | boolean, elseValue: BoolSignal | boolean): BoolSignal;
+
+monitor(): EventSource;
+
+monitor(config: { fireOnInitialValue: ?boolean}): EventSource;
+
+history(framesCount: number): BoolSignalHistory;
+
+history(framesCount: number, initialValues: Array<boolean>): BoolSignalHistory;
+
+pinLastValue(): ConstBoolSignal;
+
+and(other: BoolSignal | boolean): BoolSignal;
+
+onOn(): EventSource;
+
+onOn(config: { fireOnInitialValue: ?boolean}): EventSource;
+
+onOff(): EventSource;
+
+onOff(config: { fireOnInitialValue: ?boolean}): EventSource;
+
+delayBy(timeSpan: {milliseconds: number}): this;
+
+}
+}
+export interface BoolSignal extends Boolean {
 /** 
 * ```
 (get) lastValue: boolean
@@ -202,4 +249,5 @@ onOff(config: { fireOnInitialValue: ?boolean}): EventSource;
  */ 
 delayBy(timeSpan: {milliseconds: number}): this;
 
-} 
+}
+}

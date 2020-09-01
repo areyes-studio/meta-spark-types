@@ -7,5 +7,5 @@ declare namespace RecognitionTrackingModule {
 ```
 */ 
 const onTargetRecognized: EventSource;
-} 
+}
 export = RecognitionTrackingModule;

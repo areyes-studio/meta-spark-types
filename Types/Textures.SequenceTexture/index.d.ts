@@ -9,4 +9,4 @@ declare interface SequenceTexture {
 Specifies the current frame in the animated sequence.
 */ 
 currentFrame: ScalarSignal | number;
-} 
+}

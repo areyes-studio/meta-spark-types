@@ -94,4 +94,4 @@ Gets the left leg component of this person.
 
 */ 
 leftLeg: LeftLeg;
-} 
+}

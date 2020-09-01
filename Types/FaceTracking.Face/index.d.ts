@@ -141,4 +141,4 @@ rightEyebrow: Eyebrow;
  */ 
 point(u: ScalarSignal | number, v: ScalarSignal | number): PointSignal;
 
-} 
+}

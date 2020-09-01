@@ -11,5 +11,5 @@ Specifies a `TransformSignal` representing the device transformation relative to
 
 */ 
 const worldTransform: TransformSignal;
-} 
+}
 export = DeviceMotionModule;

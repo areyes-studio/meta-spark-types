@@ -19,4 +19,4 @@ getModuleNames(): Promise<Array<string>>;
  */ 
 getTypeDescriptions(): Promise<Object>;
 
-} 
+}

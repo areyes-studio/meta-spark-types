@@ -30,4 +30,4 @@ onApplyFailure: EventSource<RequestFailure>;
  */ 
 apply(): void;
 
-} 
+}

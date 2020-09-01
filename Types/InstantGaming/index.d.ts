@@ -14,5 +14,5 @@ const events: EventSource;
  */ 
 function showGame(event: Object): void;
 
-} 
+}
 export = InstantGamingModule;

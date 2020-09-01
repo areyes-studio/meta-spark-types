@@ -45,4 +45,4 @@ at(index: number): TransformSignal;
  */ 
 frame(relativeFrame: number): TransformSignal;
 
-} 
+}

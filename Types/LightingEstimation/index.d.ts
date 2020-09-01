@@ -8,5 +8,5 @@ declare namespace LightingEstimationModule {
 Specifies a number that represents the brightness of the frame.
 */ 
 const frameBrightness: ScalarSignal | number;
-} 
+}
 export = LightingEstimationModule;

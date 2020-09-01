@@ -31,4 +31,4 @@ visible: BoolSignal | boolean;
  */ 
 configure(config: {items: Array<{id?: string, image_texture: ImageTexture | string, title?: string}>, selectedIndex?: number}): void;
 
-} 
+}

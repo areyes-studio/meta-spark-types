@@ -89,4 +89,4 @@ setPulse(name: String, signal: EventSource): Promise<void>;
  */ 
 setPoint2D(name: String, signal: Point2DSignal): Promise<void>;
 
-} 
+}

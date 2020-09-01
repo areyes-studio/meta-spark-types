@@ -6,8 +6,7 @@ declare interface FontId {
 ```
 
 Specifies the font name. It should be unique.
-
 **See Also**: `FontsModule.get`.
 */ 
 name: string;
-} 
+}

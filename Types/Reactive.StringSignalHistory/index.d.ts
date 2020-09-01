@@ -45,4 +45,4 @@ at(index: number): StringSignal;
  */ 
 frame(relativeFrame: number): StringSignal;
 
-} 
+}

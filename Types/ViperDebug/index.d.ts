@@ -27,5 +27,5 @@ function setViperOnlyMode() : void;
  */ 
 function clearViperOnlyMode() : void;
 
-} 
+}
 export = ViperDebugModule;

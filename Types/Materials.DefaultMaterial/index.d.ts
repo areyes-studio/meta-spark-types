@@ -82,4 +82,4 @@ getMultiply(): Promise<TextureBase | null>;
  */ 
 getReflective(): Promise<TextureBase | null>;
 
-} 
+}

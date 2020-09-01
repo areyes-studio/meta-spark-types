@@ -83,4 +83,4 @@ movePlane(screenLocation: Point2DSignal, gestureState: StringSignal | string): v
  */ 
 removePlane(): void;
 
-} 
+}

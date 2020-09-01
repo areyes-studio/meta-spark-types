@@ -109,4 +109,4 @@ setTexture(signal: ShaderSignal, config: {textureSlotName: DefaultMaterialTextur
  */ 
 setTextureSlot(textureSlotName: String, signal: ShaderSignal): void;
 
-} 
+}

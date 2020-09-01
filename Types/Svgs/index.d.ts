@@ -61,5 +61,5 @@ function getAll(): Promise<Array<Svg>>;
  */ 
 function findFirst(name: string): Promise<Svg>;
 
-} 
+}
 export = SvgsModule;

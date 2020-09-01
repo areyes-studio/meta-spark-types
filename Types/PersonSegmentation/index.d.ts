@@ -16,19 +16,17 @@ const foregroundPercent: ScalarSignal | number;
 (set) (Not Available)
 ```
 
-Represents whether there is anybody in the scene (TRUE/FALSE), based on whether the percentage of foreground is larger than a threshold.
+Represents whether there is anybody in the scene (`true`/`false`), based on whether the percentage of foreground is larger than a threshold.
 */ 
 const hasForeground: BoolSignal | boolean;
 /** 
 * ```
 (get) (Not Available)
-(set) isEnabled: BoolSignal
+(set) isEnabled: BoolSignal | boolean
 ```
 
 Specifies whether the segmentation should be enabled. Default value is 'true'.
-
-**Note**: This API is not accessible in Blocks.
 */ 
 const isEnabled: BoolSignal | boolean;
-} 
+}
 export = PersonSegmentationModule;

@@ -45,4 +45,4 @@ at(index: number): PointSignal;
  */ 
 frame(relativeFrame: number): PointSignal;
 
-} 
+}

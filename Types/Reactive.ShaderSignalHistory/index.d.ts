@@ -45,4 +45,4 @@ at(index: number): ShaderSignal;
  */ 
 frame(relativeFrame: number): ShaderSignal;
 
-} 
+}

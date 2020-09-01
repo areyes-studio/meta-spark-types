@@ -27,4 +27,4 @@ forFrontCamera: BoolSignal | boolean;
 Specifies whether the object is visible when the back camera is the active one.
 */ 
 forBackCamera: BoolSignal | boolean;
-} 
+}

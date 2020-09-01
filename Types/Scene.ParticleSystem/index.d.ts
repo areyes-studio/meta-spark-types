@@ -417,4 +417,4 @@ getTypes(): Promise<Array<ParticleTypeDescription>>;
  */ 
 getMaterial(): Promise<MaterialBase>;
 
-} 
+}

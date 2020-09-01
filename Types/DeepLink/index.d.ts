@@ -8,5 +8,5 @@ declare namespace DeepLinkModule {
 Specifies a collection of key/value pairs passed from the external app.
 */ 
 const arguments: any;
-} 
+}
 export = DeepLinkModule;

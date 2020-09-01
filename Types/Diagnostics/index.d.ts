@@ -50,5 +50,5 @@ function log(content: Object): void;
  */ 
 function watch(tag: string, signal: BoolSignal | ScalarSignal | StringSignal | boolean | number | string): void;
 
-} 
+}
 export = DiagnosticsModule;

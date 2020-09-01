@@ -59,5 +59,5 @@ function get(textureName: string): TextureBase;
  */ 
 function getAll(): Promise<Array<TextureBase>>;
 
-} 
+}
 export = TexturesModule;

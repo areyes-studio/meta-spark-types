@@ -28,4 +28,4 @@ transformParameterAtIndex(index: number): AudioTransformParameterWrapper;
  */ 
 transformParameterByName(parameterName: string): AudioTransformParameterWrapper;
 
-} 
+}

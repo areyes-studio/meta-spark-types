@@ -58,5 +58,5 @@ const previewScreenScale: ScalarSignal | number;
 Specifies a `Point2DSignal` describing the size of the preview, in pixels.
 */ 
 const previewSize: Point2DSignal;
-} 
+}
 export = CameraInfoModule;

@@ -81,4 +81,4 @@ Specifies a `ScalarSignal` indicating how high or low the mouth angles are with 
 Mouth angles higher than the lip center yield positive curvature, lowering the mouth angles makes it negative.
 */ 
 upperLipCurvature: ScalarSignal | number;
-} 
+}

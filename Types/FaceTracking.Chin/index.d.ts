@@ -10,4 +10,4 @@ Specifies a `PointSignal` representing the location of the tip of the chin in th
 **See Also**: `Face.cameraTransform` to convert the point to the coordinate system of the camera.
 */ 
 tip: PointSignal;
-} 
+}

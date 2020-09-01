@@ -27,4 +27,4 @@ getAtIndex(index: number): BlendShape;
  */ 
 getByName(name: String): BlendShape;
 
-} 
+}

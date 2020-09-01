@@ -12,4 +12,4 @@ Specifies the svg name. This is the unique identifier of the svg.
 **See Also**: `SvgsModule.get`.
 */ 
 name: string;
-} 
+}

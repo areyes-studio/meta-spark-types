@@ -431,5 +431,5 @@ function colorSpaceConvert(color: PointSignal, config: {inColorSpace: Shaders.Co
 
 function colorSpaceConvert(color: Point4DSignal, config: {inColorSpace: Shaders.ColorSpace, outColorSpace: Shaders.ColorSpace}): Point4DSignal;
 
-} 
+}
 export = ShadersModule;

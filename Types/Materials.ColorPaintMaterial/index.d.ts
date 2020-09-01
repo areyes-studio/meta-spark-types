@@ -18,4 +18,4 @@ backgroundInfluence: ScalarSignal | number;
 Specifies the simulated paint brightness.
 */ 
 paintBrightness: ScalarSignal | number;
-} 
+}

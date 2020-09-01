@@ -45,4 +45,4 @@ at(index: number): ScalarSignal;
  */ 
 frame(relativeFrame: number): ScalarSignal;
 
-} 
+}

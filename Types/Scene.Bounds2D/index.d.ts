@@ -40,4 +40,4 @@ width: ScalarSignal | number;
 Specifies the height of the scene element boundaries. Measured in 3D units.
 */ 
 height: ScalarSignal | number;
-} 
+}

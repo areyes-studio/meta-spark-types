@@ -22,4 +22,4 @@ Gets the 2D foot position.
 
 */ 
 foot: Point2DSignal;
-} 
+}

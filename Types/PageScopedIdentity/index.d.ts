@@ -9,5 +9,5 @@ declare namespace PageScopedIdentityModule {
  */ 
 function getPageScopedID(): Promise<String>;
 
-} 
+}
 export = PageScopedIdentityModule;

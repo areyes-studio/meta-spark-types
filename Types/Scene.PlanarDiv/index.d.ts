@@ -1,2 +1,2 @@
 declare interface PlanarDiv {
-} 
+}

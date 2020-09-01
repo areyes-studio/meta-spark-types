@@ -63,4 +63,4 @@ angry: ScalarSignal | number;
 Specifies a `ScalarSignal` that is the total number of reactions on this live stream. This may exceed the sum of the individual reaction counts (like, love, etc.) if a seasonal reaction (such as thankful) is available and is used by viewers.
 */ 
 total: ScalarSignal | number;
-} 
+}

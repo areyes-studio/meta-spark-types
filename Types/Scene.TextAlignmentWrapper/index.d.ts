@@ -19,4 +19,4 @@ vertical: Signal<VerticalTextAlignment>;
 Specifies the horizontal text alignment.
 */ 
 horizontal: Signal<TextAlignment>;
-} 
+}

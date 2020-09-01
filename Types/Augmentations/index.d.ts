@@ -2,31 +2,35 @@
 declare namespace AugmentationsModule {
 /** 
 *  
- * instantiate(effectPath: string, config: any): Promise<string>
- *  
- */ 
-function instantiate(effectPath: string, config: any): Promise<string>;
-
-/** 
-*  
- * remove(token: string): Promise<string>
- *  
- */ 
-function remove(token: string): Promise<string>;
-
-/** 
-*  
  * getConfig(): Promise<any>
  *  
+ * 
  */ 
 function getConfig(): Promise<any>;
 
 /** 
 *  
- * requestAugmentation(params: any): Promise<Augmentation>
+ * instantiate(effectPath: string, config: {[key: string]: any}): Promise<string>
  *  
+ * 
  */ 
-function requestAugmentation(params: any): Promise<Augmentation>;
+function instantiate(effectPath: string, config: {[key: string]: any}): Promise<string>;
 
-} 
+/** 
+*  
+ * remove(token: string): Promise<string>
+ *  
+ * 
+ */ 
+function remove(token: string): Promise<string>;
+
+/** 
+*  
+ * requestAugmentation(params: {[key: string]: any}): Promise<Augmentation>
+ *  
+ * 
+ */ 
+function requestAugmentation(params: {[key: string]: any}): Promise<Augmentation>;
+
+}
 export = AugmentationsModule;

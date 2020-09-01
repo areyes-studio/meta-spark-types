@@ -77,4 +77,4 @@ Gets the 2D chin position.
 
 */ 
 chin: Point2DSignal;
-} 
+}

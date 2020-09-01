@@ -88,5 +88,5 @@ function setInterval(callback: Function, delay: Number): Subscription;
  */ 
 function clearInterval(timer: Subscription): void;
 
-} 
+}
 export = TimeModule;

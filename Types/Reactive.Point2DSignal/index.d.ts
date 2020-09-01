@@ -1,5 +1,4 @@
 /// <reference path="../Reactive.Point2D/index.d.ts" />
-/// <reference path="../Reactive.Point2DSignal/index.d.ts" />
 /// <reference path="../Reactive.Point2DSignalHistory/index.d.ts" />
 /// <reference path="../Reactive.Point4DSignal/index.d.ts" />
 /// <reference path="../Reactive.PointSignal/index.d.ts" />
@@ -434,4 +433,4 @@ cross(other: VectorSignal): VectorSignal;
  */ 
 distance(other: PointSignal): ScalarSignal;
 
-} 
+}

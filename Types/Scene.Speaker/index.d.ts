@@ -46,4 +46,4 @@ audioTransformAtIndex(index: number): AudioTransformWrapper;
  */ 
 isPlaying(audioSource: AudioSource): BoolSignal;
 
-} 
+}

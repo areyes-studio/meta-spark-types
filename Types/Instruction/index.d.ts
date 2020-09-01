@@ -34,5 +34,5 @@ const automaticHintsEnabled: BoolSignal | boolean;
  */ 
 function bind(enabled: BooleanSignal, token: StringSignal | string): void;
 
-} 
+}
 export = InstructionModule;

@@ -22,4 +22,4 @@ Retrieves the maximum point of object's bounding box in object's local coordinat
 **NOTE**: There is 1 frame delay in this value.
 */ 
 max: PointSignal;
-} 
+}

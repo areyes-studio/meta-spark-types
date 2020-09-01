@@ -1,17 +1,20 @@
-/// <reference path="../Augmentations.AugmentationInstanceState/index.d.ts" />
+/// <reference path="../Reactive.StringSignal/index.d.ts" />
 declare interface AugmentationInstance {
 /** 
 * ```
-(get) state: Signal<AugmentationInstanceState>
+(get) state: StringSignal
 (set) (Not Available)
 ```
+
+Return `StringSignal` with possible values defined by enum `AugmentationInstance.AugmentationInstanceState`
 */ 
-state: Signal<AugmentationInstanceState>;
+state: StringSignal | string;
 /** 
 *  
- * remove(): Promise<boolean>
+ * remove(): Promise<void>
  *  
+ * 
  */ 
-remove(): Promise<boolean>;
+remove(): Promise<void>;
 
-} 
+}

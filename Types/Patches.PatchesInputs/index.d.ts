@@ -80,4 +80,4 @@ setString(name: string, signal: StringSignal | string): Promise<void>;
  */ 
 setVector(name: string, signal: VectorSignal): Promise<void>;
 
-} 
+}

@@ -29,4 +29,4 @@ url: StringSignal | string;
 Specifies a `StringSignal` representing the loading state of the external prefab. The value of the signal is guaranteed to be a member of the `ReactivePrefabsModule.State` enumeration.
 */ 
 state: Signal<PrefabsModule.State>;
-} 
+}

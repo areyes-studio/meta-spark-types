@@ -18,4 +18,4 @@ state: StringSignal | string;
 Specifies the URL of the texture to be downloaded.
 */ 
 url: StringSignal | string;
-} 
+}

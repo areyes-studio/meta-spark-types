@@ -19,4 +19,4 @@ value: ScalarSignal | number;
 Will instruct slider to be visible or not visible, according to passed boolean value.
 */ 
 visible: BoolSignal | boolean;
-} 
+}

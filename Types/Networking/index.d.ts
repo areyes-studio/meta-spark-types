@@ -11,5 +11,5 @@ declare namespace NetworkingModule {
  */ 
 function fetch(url: string, request?: {body: string, headers: {[key: string]: string}, method: string}): Promise<ResponseObject>;
 
-} 
+}
 export = NetworkingModule;

@@ -36,5 +36,5 @@ const locale: StringSignal | string;
 Provides the ISO 3166-1 region identifier, e.g. `US`, or `HK`.
 */ 
 const region: StringSignal | string;
-} 
+}
 export = LocaleModule;

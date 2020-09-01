@@ -16,5 +16,5 @@ const crop: BoundingBoxSignal;
 The number of people tracked by the model.
 */ 
 const count: number;
-} 
+}
 export = PortalWorldModelModule;

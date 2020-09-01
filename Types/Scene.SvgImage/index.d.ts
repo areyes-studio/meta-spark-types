@@ -18,4 +18,4 @@ svg: Svg;
  */ 
 getSvg(): Promise<Svg>;
 
-} 
+}

@@ -31,4 +31,4 @@ getMaterial(): Promise<MaterialBase>;
  */ 
 setMaterial(MaterialBase): Promise;
 
-} 
+}

@@ -161,4 +161,4 @@ getShader(name: String): Promise<ShaderSignal>;
  */ 
 getShaderOrFallback(name: String, fallback: ShaderSignal): ShaderSignal;
 
-} 
+}

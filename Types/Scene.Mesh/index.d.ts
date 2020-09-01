@@ -80,4 +80,4 @@ getBlendShapes(): Promise<Array<BlendShape>>;
  */ 
 getSurfaces(): Promise<Array<MeshSurface>>;
 
-} 
+}

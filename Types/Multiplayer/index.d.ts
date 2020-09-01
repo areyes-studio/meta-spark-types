@@ -117,5 +117,5 @@ function getState(key: string): ScalarSignal | BoolSignal | StringSignal;
  */ 
 function activate(metadata: { [key: string] : StateSignalType }): void;
 
-} 
+}
 export = MultiplayerModule;

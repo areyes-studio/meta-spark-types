@@ -11,4 +11,4 @@ declare interface PrimitiveOrShaderSignal {
  */ 
 history(framesCount: number): PrimitiveOrShaderSignalHistory;
 
-} 
+}

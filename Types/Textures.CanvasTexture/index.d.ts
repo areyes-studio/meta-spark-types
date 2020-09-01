@@ -20,4 +20,4 @@ addPath(startProgress: ScalarSignal | number, endProgress: ScalarSignal | number
  */ 
 clearPaths(): void;
 
-} 
+}

@@ -67,5 +67,5 @@ function setText(nodeName: string, text: string): void;
  */ 
 function enterTextEditMode(nodeName: string): Promise<boolean>;
 
-} 
+}
 export = NativeUIModule;

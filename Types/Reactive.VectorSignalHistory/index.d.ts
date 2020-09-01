@@ -45,4 +45,4 @@ at(index: number): VectorSignal;
  */ 
 frame(relativeFrame: number): VectorSignal;
 
-} 
+}

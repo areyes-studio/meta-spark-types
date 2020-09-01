@@ -45,4 +45,4 @@ at(index: number): BoolSignal;
  */ 
 frame(relativeFrame: number): BoolSignal;
 
-} 
+}

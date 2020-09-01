@@ -46,4 +46,4 @@ startHashtagCounter(): EventSource;
  */ 
 startHashtagVote(): EventSource;
 
-} 
+}

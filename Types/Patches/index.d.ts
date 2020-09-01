@@ -172,5 +172,5 @@ function setStringValue(name: string, signal: StringSignal | string): void;
  */ 
 function setVectorValue(name: string, signal: VectorSignal): void;
 
-} 
+}
 export = PatchesModule;

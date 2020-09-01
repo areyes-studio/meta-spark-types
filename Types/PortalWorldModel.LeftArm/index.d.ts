@@ -33,4 +33,4 @@ Gets the 2D wrist position.
 
 */ 
 wrist: Point2DSignal;
-} 
+}

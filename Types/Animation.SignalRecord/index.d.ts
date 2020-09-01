@@ -35,4 +35,4 @@ timestampsString: string;
 Returns the array of values (as doubles to 4 decimal precision) of this SignalRecord as a string.
 */ 
 valuesString: string;
-} 
+}

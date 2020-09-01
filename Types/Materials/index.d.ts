@@ -113,5 +113,5 @@ function get(materialName: string): MaterialBase;
  */ 
 function getAll(): Promise<Array<MaterialBase>>;
 
-} 
+}
 export = MaterialsModule;

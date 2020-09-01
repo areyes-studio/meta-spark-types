@@ -40,4 +40,4 @@ Specifies a `PointSignal` representing the location of the tip of the nose in th
 **See Also**: `Face.cameraTransform` to convert the point to the coordinate system of the camera.
 */ 
 tip: PointSignal;
-} 
+}

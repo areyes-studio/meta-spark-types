@@ -7,7 +7,7 @@ declare namespace PrefabsModule {
  * 
  * Returns a prefab object, derived from `Prefab`, that is specified by `prefabName`. An exception is thrown when prefab isn't found. At the moment we have only one type:
  * 
- *   * `PrefabGltf`
+ *   * `Prefab`
  * 
  * **See Also**: `Prefab.name`.
  */ 
@@ -63,5 +63,5 @@ function getAll(): Promise<Array<Prefab>>;
  */ 
 function findFirst(name: string): Promise<Prefab>;
 
-} 
+}
 export = PrefabsModule;

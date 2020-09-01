@@ -19,5 +19,5 @@ const count: ScalarSignal | number;
  */ 
 function hand(index: number): Hand;
 
-} 
+}
 export = HandTrackingModule;

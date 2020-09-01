@@ -45,4 +45,4 @@ at(index: number): QuaternionSignal;
  */ 
 frame(relativeFrame: number): QuaternionSignal;
 
-} 
+}

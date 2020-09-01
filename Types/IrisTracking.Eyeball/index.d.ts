@@ -28,4 +28,4 @@ iris: PointSignal;
 Specifies the rotation of the eyeball around its center.
 */ 
 rotation: QuaternionSignal;
-} 
+}

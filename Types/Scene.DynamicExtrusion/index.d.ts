@@ -98,4 +98,4 @@ clear(): void;
  */ 
 undo(): void;
 
-} 
+}

@@ -39,5 +39,5 @@ function getAppScopedID(): Promise<String>;
  */ 
 function getFullName(): Promise<String>;
 
-} 
+}
 export = IdentityModule;

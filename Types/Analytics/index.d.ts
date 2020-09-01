@@ -29,5 +29,5 @@ const productName: StringSignal | string;
  */ 
 function logEvent(eventName: string, extras: any): void;
 
-} 
+}
 export = AnalyticsModule;

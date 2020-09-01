@@ -3,7 +3,6 @@
 /// <reference path="../Reactive.PointSignal/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 /// <reference path="../Reactive.TransformSignal/index.d.ts" />
-/// <reference path="../Reactive.VectorSignal/index.d.ts" />
 /// <reference path="../Reactive.VectorSignalHistory/index.d.ts" />
 declare interface VectorSignal {
 /** 
@@ -440,4 +439,4 @@ distance(other: PointSignal): ScalarSignal;
  */ 
 delayBy(timeSpan: {milliseconds: number}): this;
 
-} 
+}

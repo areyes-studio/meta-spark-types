@@ -35,30 +35,12 @@ fontSize: number;
 /** 
 * ```
 (get) (Not Available)
-(set) font: FontId
+(set) scaleToFit: boolean
 ```
 
-Sets the given font from the fonts registry.
+Specifies if the text is scaled to fit the container.
 */ 
-font: FontId;
-/** 
-* ```
-(get) (Not Available)
-(set) leading: ?number
-```
-
-Specifies the line spacing. This is the distance between the baselines in the text. If unspecified, spacing defaults to the font size.
-*/ 
-leading? : number;
-/** 
-* ```
-(get) (Not Available)
-(set) maxLines: ?number
-```
-
-Specifies the maximum number of lines for the text. If unspecified, the number of lines is unrestricted.
-*/ 
-maxLines? : number;
+scaleToFit: boolean;
 /** 
 * ```
 (get) (Not Available)
@@ -71,12 +53,30 @@ tracking: number;
 /** 
 * ```
 (get) (Not Available)
-(set) scaleToFit: boolean
+(set) maxLines: ?number
 ```
 
-Specifies if the text is scaled to fit the container.
+Specifies the maximum number of lines for the text. If unspecified, the number of lines is unrestricted.
 */ 
-scaleToFit: boolean;
+maxLines? : number;
+/** 
+* ```
+(get) (Not Available)
+(set) leading: ?number
+```
+
+Specifies the line spacing. This is the distance between the baselines in the text. If unspecified, spacing defaults to the font size.
+*/ 
+leading? : number;
+/** 
+* ```
+(get) (Not Available)
+(set) font: FontId
+```
+
+Sets the given font from the fonts registry.
+*/ 
+font: FontId;
 /** 
 * ```
 (get) alignment: TextAlignmentWrapper
@@ -97,4 +97,4 @@ alignment: TextAlignmentWrapper;
  */ 
 getMaterial(): Promise<MaterialBase>;
 
-} 
+}

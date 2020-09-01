@@ -9,4 +9,4 @@ declare interface AudioComponent {
  */ 
 getParameterValue(parameterName: string): ScalarSignal;
 
-} 
+}

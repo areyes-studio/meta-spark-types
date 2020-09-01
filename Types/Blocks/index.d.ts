@@ -33,5 +33,5 @@ const outputs: BlockInstanceOutputs;
  */ 
 function instantiate(prototypeName: string, initialState: object): Promise<BlockSceneRoot>;
 
-} 
+}
 export = BlocksModule;

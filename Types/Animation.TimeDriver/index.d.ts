@@ -66,4 +66,4 @@ start(): void;
  */ 
 stop(): void;
 
-} 
+}

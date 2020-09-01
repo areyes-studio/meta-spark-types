@@ -9,4 +9,4 @@ declare interface ComposedMaterial {
  */ 
 setParameter(parameterName: string, signal: ISignal): void;
 
-} 
+}

@@ -10,5 +10,5 @@ declare namespace SceneUnderstandingModule {
  */ 
 function category(category: SceneCategories): SceneCategory;
 
-} 
+}
 export = SceneUnderstandingModule;

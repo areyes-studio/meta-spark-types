@@ -18,5 +18,5 @@ function monitorCommand(command: string): EventSource<void>;
  */ 
 function monitorIntent(intentSpec: IntentSpec): EventSource<Object>;
 
-} 
+}
 export = VoiceControlModule;

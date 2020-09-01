@@ -141,4 +141,4 @@ lookAt(targetPosition: PointSignal): TransformSignal;
 
 lookAt(targetPosition: PointSignal, selfUp: VectorSignal): TransformSignal;
 
-} 
+}

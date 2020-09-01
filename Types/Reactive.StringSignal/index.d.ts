@@ -1,8 +1,33 @@
 /// <reference path="../Reactive.BoolSignal/index.d.ts" />
 /// <reference path="../Reactive.EventSource/index.d.ts" />
-/// <reference path="../Reactive.StringSignal/index.d.ts" />
 /// <reference path="../Reactive.StringSignalHistory/index.d.ts" />
-declare interface StringSignal {
+declare module "ReactiveModule" {
+global {
+interface String {
+lastValue: string;
+eq(other: StringSignal | string): BoolSignal;
+
+concat(other: StringSignal | string): StringSignal;
+
+pin(): StringSignal;
+
+ne(other: StringSignal | string): BoolSignal;
+
+monitor(): EventSource;
+
+monitor(config: { fireOnInitialValue: ?boolean}): EventSource;
+
+history(framesCount: number): StringSignalHistory;
+
+history(framesCount: number, initialValues: Array<string>): StringSignalHistory;
+
+pinLastValue(): ConstStringSignal;
+
+delayBy(timeSpan: {milliseconds: number}): this;
+
+}
+}
+export interface StringSignal extends String {
 /** 
 * ```
 (get) lastValue: string
@@ -108,4 +133,5 @@ pinLastValue(): ConstStringSignal;
  */ 
 delayBy(timeSpan: {milliseconds: number}): this;
 
-} 
+}
+}

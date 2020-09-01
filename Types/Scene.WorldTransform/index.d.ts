@@ -169,4 +169,4 @@ applyTo(transform: TransformSignal): TransformSignal;
  */ 
 applyToVector(signal: VectorSignal): VectorSignal;
 
-} 
+}

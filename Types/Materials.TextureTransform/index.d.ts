@@ -45,4 +45,4 @@ scaleU: ScalarSignal | number;
 Specifies the scale along the V - axis of the texture coordinates system.
 */ 
 scaleV: ScalarSignal | number;
-} 
+}

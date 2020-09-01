@@ -22,4 +22,4 @@ Gets the 2D right hip position.
 
 */ 
 rightHip: Point2DSignal;
-} 
+}

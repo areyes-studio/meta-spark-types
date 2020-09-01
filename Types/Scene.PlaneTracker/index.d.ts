@@ -46,16 +46,6 @@ Specifies if this tracker object should track horizontal plane or moving object.
 mode: Signal<SceneModule.TrackingMode>;
 /** 
 *  
- * hitTest(screenLocation: Point2D): Point3D
- *  
- * 
- * Returns a point on tracked plane in local coordinates of PlaneTracker (in 3D units).
- * Returns null if tracked plane is not found at given screen point.
- */ 
-hitTest(screenLocation: Point2D): Point3D;
-
-/** 
-*  
  * performHitTest(screenXLocation: number, screenYLocation: number): Promise<Point3D>
  * performHitTest(screenLocation: Point2D): Promise<Point3D>
  *  
@@ -94,6 +84,16 @@ trackPoint(screenLocation: Point2DSignal, gestureState: StringSignal | string): 
 
 /** 
 *  
+ * hitTest(screenLocation: Point2D): Point3D
+ *  
+ * 
+ * Returns a point on tracked plane in local coordinates of PlaneTracker (in 3D units).
+ * Returns null if tracked plane is not found at given screen point.
+ */ 
+hitTest(screenLocation: Point2D): Point3D;
+
+/** 
+*  
  * setMode(mode: Signal<SceneModule.TrackingMode>): void
  * setMode(mode: Signal<SceneModule.TrackingMode>, config: { fallback: SceneModule.TrackingMode }): void
  *  
@@ -109,7 +109,8 @@ setMode(mode: Signal<SceneModule.TrackingMode>): void;
 setMode(mode: Signal<SceneModule.TrackingMode>, config: { fallback: SceneModule.TrackingMode }): void;
 
 /** 
-*  
+* 
+ *  
  * trackTexture(texture: ImageTexture): void
  * trackTexture(texture: ExternalTexture): void
  *  
@@ -121,9 +122,10 @@ setMode(mode: Signal<SceneModule.TrackingMode>, config: { fallback: SceneModule.
  * ensure that the texture is in an 'Available' state, else the pending or
  * fallback textures may be used instead.
  *  
+ * 
  */ 
 trackTexture(texture: ImageTexture): void;
 
 trackTexture(texture: ExternalTexture): void;
 
-} 
+}

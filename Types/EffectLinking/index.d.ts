@@ -11,5 +11,5 @@ declare namespace EffectLinkingModule {
  */ 
 function requestEffect(requestEffectParams: {[key: string]: string}): RequestedEffect;
 
-} 
+}
 export = EffectLinkingModule;

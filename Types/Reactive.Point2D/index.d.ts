@@ -17,4 +17,4 @@ x: number;
 Specifies the vertical coordinate.
 */ 
 y: number;
-} 
+}

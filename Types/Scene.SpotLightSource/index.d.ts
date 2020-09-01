@@ -37,4 +37,4 @@ angleInner: ScalarSignal | number;
 Specifies the outer angle of the spotlight cone, everything outside is not illuminated. In radians.
 */ 
 angleOuter: ScalarSignal | number;
-} 
+}

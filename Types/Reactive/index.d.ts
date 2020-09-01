@@ -1028,5 +1028,5 @@ function cross(v1: VectorSignal, v2: VectorSignal): VectorSignal;
  */ 
 function distance(v1: PointSignal, v2: PointSignal): ScalarSignal;
 
-} 
+}
 export = ReactiveModule;

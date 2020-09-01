@@ -23,4 +23,4 @@ globalTransform: TransformSignal;
 ```
 */ 
 targetAspectRatio: ScalarSignal | number;
-} 
+}

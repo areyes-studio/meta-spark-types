@@ -19,5 +19,5 @@ function leftEyeball(face: Face): Eyeball;
  */ 
 function rightEyeball(face: Face): Eyeball;
 
-} 
+}
 export = IrisTrackingModule;

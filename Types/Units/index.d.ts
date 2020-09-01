@@ -53,5 +53,5 @@ function mm(millimeters: number): number;
  */ 
 function yd(yards: number): number;
 
-} 
+}
 export = UnitsModule;

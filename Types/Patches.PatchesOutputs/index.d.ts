@@ -151,4 +151,4 @@ getVector(name: string): Promise<VectorSignal>;
  */ 
 getVectorOrFallback(name: string, fallback: VectorSignal): VectorSignal;
 
-} 
+}

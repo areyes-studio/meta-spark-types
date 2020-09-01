@@ -19,5 +19,5 @@ const allEvents: EventSource;
  */ 
 function send(event: Object): void;
 
-} 
+}
 export = PlatformEventsModule;
