@@ -1,9 +1,9 @@
 /** 
  * The `CullMode` enum describes how material is culled.
- * @property FRONT Cull front-facing geometry.
  * @property BACK Cull back-facing geometry.
+ * @property FRONT Cull front-facing geometry.
  */ 
 declare interface CullMode{ 
-FRONT, 
 BACK, 
+FRONT, 
 } 

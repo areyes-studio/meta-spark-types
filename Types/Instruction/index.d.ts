@@ -3,15 +3,6 @@
 declare namespace InstructionModule {
 /** 
 * ```
-(get) automaticInstructionsEnabled: boolean
-(set) automaticInstructionsEnabled: boolean
-```
-
-Specifies whether or not automatic instructions are enabled.
-*/ 
-const automaticInstructionsEnabled: boolean;
-/** 
-* ```
 (get) automaticHintsEnabled: BoolSignal
 (set) automaticHintsEnabled: BoolSignal
 ```
@@ -19,6 +10,15 @@ const automaticInstructionsEnabled: boolean;
 Specifies whether or not automatic instruction hints are enabled.
 */ 
 const automaticHintsEnabled: BoolSignal | boolean;
+/** 
+* ```
+(get) automaticInstructionsEnabled: boolean
+(set) automaticInstructionsEnabled: boolean
+```
+
+Specifies whether or not automatic instructions are enabled.
+*/ 
+const automaticInstructionsEnabled: boolean;
 /** 
 *  
  * bind(enabled: BooleanSignal, token: StringSignal): void

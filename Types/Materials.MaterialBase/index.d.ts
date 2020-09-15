@@ -102,11 +102,11 @@ setTexture(signal: ShaderSignal, config: {textureSlotName: DefaultMaterialTextur
 
 /** 
 *  
- * setTextureSlot(textureSlotName: String, signal: ShaderSignal): void
+ * setTextureSlot(textureSlotName: string, signal: ShaderSignal): void
  *  
  * 
  * Assigns a ShaderSignal to the specified texture slot.
  */ 
-setTextureSlot(textureSlotName: String, signal: ShaderSignal): void;
+setTextureSlot(textureSlotName: string, signal: ShaderSignal): void;
 
 }

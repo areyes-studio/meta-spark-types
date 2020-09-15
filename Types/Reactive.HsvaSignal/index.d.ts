@@ -4,6 +4,24 @@
 declare interface HsvaSignal {
 /** 
 * ```
+(get) alpha: ScalarSignal
+(set) (Not Available)
+```
+
+Returns the value of the `alpha` channel of this signal.
+*/ 
+alpha: ScalarSignal | number;
+/** 
+* ```
+(get) brightness: ScalarSignal
+(set) (Not Available)
+```
+
+Returns the value of the `brightness`(`value`) channel of this signal.
+*/ 
+brightness: ScalarSignal | number;
+/** 
+* ```
 (get) hue: ScalarSignal
 (set) (Not Available)
 ```
@@ -20,24 +38,6 @@ hue: ScalarSignal | number;
 Returns the value of the `saturation` channel of this signal.
 */ 
 saturation: ScalarSignal | number;
-/** 
-* ```
-(get) brightness: ScalarSignal
-(set) (Not Available)
-```
-
-Returns the value of the `brightness`(`value`) channel of this signal.
-*/ 
-brightness: ScalarSignal | number;
-/** 
-* ```
-(get) alpha: ScalarSignal
-(set) (Not Available)
-```
-
-Returns the value of the `alpha` channel of this signal.
-*/ 
-alpha: ScalarSignal | number;
 /** 
 *  
  * toRGBA(): RgbaSignal

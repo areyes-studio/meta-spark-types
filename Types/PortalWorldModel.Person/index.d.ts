@@ -20,28 +20,6 @@ box: BoundingBox;
 /** 
 * 
 ```
-(get) poseId: number
-(set) (Not Available)
-```
-
-Gets the unique pose ID of the given person.
-
-*/ 
-poseId: number;
-/** 
-* 
-```
-(get) rightLeg: RightLeg
-(set) (Not Available)
-```
-
-Gets the right leg component of this person.
-
-*/ 
-rightLeg: RightLeg;
-/** 
-* 
-```
 (get) head: Head
 (set) (Not Available)
 ```
@@ -64,6 +42,28 @@ leftArm: LeftArm;
 /** 
 * 
 ```
+(get) leftLeg: LeftLeg
+(set) (Not Available)
+```
+
+Gets the left leg component of this person.
+
+*/ 
+leftLeg: LeftLeg;
+/** 
+* 
+```
+(get) poseId: number
+(set) (Not Available)
+```
+
+Gets the unique pose ID of the given person.
+
+*/ 
+poseId: number;
+/** 
+* 
+```
 (get) rightArm: RightArm
 (set) (Not Available)
 ```
@@ -75,6 +75,17 @@ rightArm: RightArm;
 /** 
 * 
 ```
+(get) rightLeg: RightLeg
+(set) (Not Available)
+```
+
+Gets the right leg component of this person.
+
+*/ 
+rightLeg: RightLeg;
+/** 
+* 
+```
 (get) torso: Torso
 (set) (Not Available)
 ```
@@ -83,15 +94,4 @@ Gets the torso component of this person.
 
 */ 
 torso: Torso;
-/** 
-* 
-```
-(get) leftLeg: LeftLeg
-(set) (Not Available)
-```
-
-Gets the left leg component of this person.
-
-*/ 
-leftLeg: LeftLeg;
 }

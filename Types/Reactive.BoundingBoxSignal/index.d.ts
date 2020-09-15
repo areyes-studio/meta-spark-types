@@ -4,6 +4,33 @@
 declare interface BoundingBoxSignal {
 /** 
 * ```
+(get) center: Point2DSignal
+(set) (Not Available)
+```
+
+Represents the center of the bounding box, in normalized screen space units.
+*/ 
+center: Point2DSignal;
+/** 
+* ```
+(get) height: ScalarSignal
+(set) (Not Available)
+```
+
+Represents the height of the bounding box, in normalized screen space units.
+*/ 
+height: ScalarSignal | number;
+/** 
+* ```
+(get) width: ScalarSignal
+(set) (Not Available)
+```
+
+Represents the width of the bounding box, in normalized screen space units.
+*/ 
+width: ScalarSignal | number;
+/** 
+* ```
 (get) x: ScalarSignal
 (set) (Not Available)
 ```
@@ -20,33 +47,6 @@ x: ScalarSignal | number;
 Represents the Y-position of top left corner of the bounding box, in normalized screen space units.
 */ 
 y: ScalarSignal | number;
-/** 
-* ```
-(get) width: ScalarSignal
-(set) (Not Available)
-```
-
-Represents the width of the bounding box, in normalized screen space units.
-*/ 
-width: ScalarSignal | number;
-/** 
-* ```
-(get) height: ScalarSignal
-(set) (Not Available)
-```
-
-Represents the height of the bounding box, in normalized screen space units.
-*/ 
-height: ScalarSignal | number;
-/** 
-* ```
-(get) center: Point2DSignal
-(set) (Not Available)
-```
-
-Represents the center of the bounding box, in normalized screen space units.
-*/ 
-center: Point2DSignal;
 /** 
 *  
  * history(framesCount: number): BoundingBoxSignalHistory

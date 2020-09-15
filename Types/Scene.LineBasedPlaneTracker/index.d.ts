@@ -20,33 +20,6 @@ Possible values:
 planeType: StringSignal | string;
 /** 
 *  
- *          resetPlane(screenLocation: Point2D): void
- *          resetPlane(screenX: number, screenY: number): void
- *          resetPlane(screenLocation: Point2D, planeType : PlaneType): void
- *          resetPlane(screenX: number, screenY: number, planeType : PlaneType): void
- *           
- * 
- *          Sets a new plane or resets an existing plane in 3d space.
- *          The 3d plane will be centered along the viewing ray defined by the given screen coordinate.
- *          The position of the plane is constantly tracked.
- *          This object's transform will be modified.
- * 
- *           
- *          TouchGestures.onTap().subscribe(function(gesture) {
- *            lineBasedTracker.resetPlane(gesture.location, PlaneType.HORZONTAL);
- *          });
- *           
- */ 
-resetPlane(screenLocation: Point2D): void;
-
-resetPlane(screenX: number, screenY: number): void;
-
-resetPlane(screenLocation: Point2D, planeType: PlaneType): void;
-
-resetPlane(screenX: number, screenY: number, planeType: PlaneType): void;
-
-/** 
-*  
  * movePlane(screenLocation: Point2D): void
  * movePlane(screenX: number, screenY: number): void
  * movePlane(screenLocation: Point2DSignal, gestureState: StringSignal): void
@@ -82,5 +55,32 @@ movePlane(screenLocation: Point2DSignal, gestureState: StringSignal | string): v
  *  
  */ 
 removePlane(): void;
+
+/** 
+*  
+ *          resetPlane(screenLocation: Point2D): void
+ *          resetPlane(screenX: number, screenY: number): void
+ *          resetPlane(screenLocation: Point2D, planeType : PlaneType): void
+ *          resetPlane(screenX: number, screenY: number, planeType : PlaneType): void
+ *           
+ * 
+ *          Sets a new plane or resets an existing plane in 3d space.
+ *          The 3d plane will be centered along the viewing ray defined by the given screen coordinate.
+ *          The position of the plane is constantly tracked.
+ *          This object's transform will be modified.
+ * 
+ *           
+ *          TouchGestures.onTap().subscribe(function(gesture) {
+ *            lineBasedTracker.resetPlane(gesture.location, PlaneType.HORZONTAL);
+ *          });
+ *           
+ */ 
+resetPlane(screenLocation: Point2D): void;
+
+resetPlane(screenX: number, screenY: number): void;
+
+resetPlane(screenLocation: Point2D, planeType: PlaneType): void;
+
+resetPlane(screenX: number, screenY: number, planeType: PlaneType): void;
 
 }

@@ -15,6 +15,17 @@ Specifies the baseColor texture of the material.
 baseColor: TextureBase | null;
 /** 
 * ```
+(get) baseColorFactor: RgbaSignal
+(set) baseColorFactor: ColorSignal
+```
+
+Specifies a `ColorSignal` for a base color factor. A `ColorSignal` may be created using the `RGBA()` and `HSVA()` methods of the `Reactive` module.
+Note that RgbaSignal is always returned.
+**See Also**: `ReactiveModule.RGBA` and `ReactiveModule.HSVA`.
+*/ 
+baseColorFactor: RgbaSignal;
+/** 
+* ```
 (get) baseColorTextureTransform: TextureTransform
 (set) baseColorTextureTransform: TextureTransformSignal
 ```
@@ -94,17 +105,6 @@ normalTextureTransform: TextureTransform;
 Specifies the roughness factor.
 */ 
 roughnessFactor: ScalarSignal | number;
-/** 
-* ```
-(get) baseColorFactor: RgbaSignal
-(set) baseColorFactor: ColorSignal
-```
-
-Specifies a `ColorSignal` for a base color factor. A `ColorSignal` may be created using the `RGBA()` and `HSVA()` methods of the `Reactive` module.
-Note that RgbaSignal is always returned.
-**See Also**: `ReactiveModule.RGBA` and `ReactiveModule.HSVA`.
-*/ 
-baseColorFactor: RgbaSignal;
 /** 
 *  
  * getBaseColor(): Promise<TextureBase | null>

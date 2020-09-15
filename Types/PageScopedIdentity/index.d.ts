@@ -1,13 +1,12 @@
 declare namespace PageScopedIdentityModule {
 /** 
 *  
- *     getPageScopedID(): Promise<String>
- *    
+ * getPageScopedID(): Promise<string>
+ *  
  * 
- * 
- *   Returns a `JS Promise` which will be fulfilled with Page Scoped ID `String` object or an error.
+ * Returns a `JS Promise` which will be fulfilled with Page Scoped ID `string` object or an error.
  */ 
-function getPageScopedID(): Promise<String>;
+function getPageScopedID(): Promise<string>;
 
 }
 export = PageScopedIdentityModule;

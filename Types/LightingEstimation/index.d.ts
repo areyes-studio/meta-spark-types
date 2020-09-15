@@ -3,9 +3,10 @@ declare namespace LightingEstimationModule {
 /** 
 * ```
 (get) frameBrightness: ScalarSignal
+(set) (Not Available)
 ```
 
-Specifies a number that represents the brightness of the frame.
+Returns a number that represents the brightness of the frame.
 */ 
 const frameBrightness: ScalarSignal | number;
 }

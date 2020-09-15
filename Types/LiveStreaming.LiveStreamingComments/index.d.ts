@@ -12,24 +12,6 @@ The stream will only return comments that are displayed on the broadcaster's scr
 stream: EventSource;
 /** 
 *  
- * startMatchCounter(matchStrings: Array<string>, isCaseSensitive: boolean): EventSource
- *  
- * 
- * Returns an `EventSource` that emits an update every time there is a change in the count of comments on the Live stream that match one or more target strings. The `matchStrings` argument is an array of strings to search for in comments. The `isCaseSensitive` determines whether the string matching respects letter case. You may `subscribe()` to the `EventSource` and provide a callback that receives a single argument, which will be a JavaScript Object containing matched strings to comment counts. Up to 20 match strings may be requested in one counter. A maximum of 10 counter/vote subscriptions may be active at a time. If one is created beyond that limit then the oldest one will not receive any more updates. The subscription will receive a maximum of one update per second.
- */ 
-startMatchCounter(matchStrings: Array<string>, isCaseSensitive: boolean): EventSource;
-
-/** 
-*  
- * startMatchVote(matchStrings: Array<string>, isCaseSensitive: boolean): EventSource
- *  
- * 
- * This method is identical to `startMatchCounter()` except that for each user only the first matched string appearing in the comment will be counted.
- */ 
-startMatchVote(matchStrings: Array<string>, isCaseSensitive: boolean): EventSource;
-
-/** 
-*  
  * startHashtagCounter(): EventSource
  *  
  * 
@@ -45,5 +27,23 @@ startHashtagCounter(): EventSource;
  * This method is identical to `startHashtagCounter()` except that for each user only the first hashtag appeared in his/her comments will be counted.
  */ 
 startHashtagVote(): EventSource;
+
+/** 
+*  
+ * startMatchCounter(matchStrings: Array<string>, isCaseSensitive: boolean): EventSource
+ *  
+ * 
+ * Returns an `EventSource` that emits an update every time there is a change in the count of comments on the Live stream that match one or more target strings. The `matchStrings` argument is an array of strings to search for in comments. The `isCaseSensitive` determines whether the string matching respects letter case. You may `subscribe()` to the `EventSource` and provide a callback that receives a single argument, which will be a JavaScript Object containing matched strings to comment counts. Up to 20 match strings may be requested in one counter. A maximum of 10 counter/vote subscriptions may be active at a time. If one is created beyond that limit then the oldest one will not receive any more updates. The subscription will receive a maximum of one update per second.
+ */ 
+startMatchCounter(matchStrings: Array<string>, isCaseSensitive: boolean): EventSource;
+
+/** 
+*  
+ * startMatchVote(matchStrings: Array<string>, isCaseSensitive: boolean): EventSource
+ *  
+ * 
+ * This method is identical to `startMatchCounter()` except that for each user only the first matched string appearing in the comment will be counted.
+ */ 
+startMatchVote(matchStrings: Array<string>, isCaseSensitive: boolean): EventSource;
 
 }

@@ -3,24 +3,6 @@
 declare interface SpotLightSource {
 /** 
 * ```
-(get) (Not Available)
-(set) color: ColorSignal
-```
-
-Specifies the color of this light source.
-*/ 
-color: ColorSignal;
-/** 
-* ```
-(get) intensity: ScalarSignal
-(set) intensity: ScalarSignal
-```
-
-Specifies the intensity of this light source, usually between 0.0 and 1.0.
-*/ 
-intensity: ScalarSignal | number;
-/** 
-* ```
 (get) angleInner: ScalarSignal
 (set) angleInner: ScalarSignal
 ```
@@ -37,4 +19,22 @@ angleInner: ScalarSignal | number;
 Specifies the outer angle of the spotlight cone, everything outside is not illuminated. In radians.
 */ 
 angleOuter: ScalarSignal | number;
+/** 
+* ```
+(get) (Not Available)
+(set) color: ColorSignal
+```
+
+Specifies the color of this light source.
+*/ 
+color: ColorSignal;
+/** 
+* ```
+(get) intensity: ScalarSignal
+(set) intensity: ScalarSignal
+```
+
+Specifies the intensity of this light source, usually between 0.0 and 1.0.
+*/ 
+intensity: ScalarSignal | number;
 }

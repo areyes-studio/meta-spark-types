@@ -4,22 +4,13 @@
 declare interface RgbaSignal {
 /** 
 * ```
-(get) red: ScalarSignal
+(get) alpha: ScalarSignal
 (set) (Not Available)
 ```
 
-Returns the value of the red channel between 0 and 1.0.
+Returns the value of the alpha channel between 0 and 1.0.
 */ 
-red: ScalarSignal | number;
-/** 
-* ```
-(get) green: ScalarSignal
-(set) (Not Available)
-```
-
-Returns the value of the green channel between 0 and 1.0.
-*/ 
-green: ScalarSignal | number;
+alpha: ScalarSignal | number;
 /** 
 * ```
 (get) blue: ScalarSignal
@@ -31,13 +22,22 @@ Returns the value of the blue channel between 0 and 1.0.
 blue: ScalarSignal | number;
 /** 
 * ```
-(get) alpha: ScalarSignal
+(get) green: ScalarSignal
 (set) (Not Available)
 ```
 
-Returns the value of the alpha channel between 0 and 1.0.
+Returns the value of the green channel between 0 and 1.0.
 */ 
-alpha: ScalarSignal | number;
+green: ScalarSignal | number;
+/** 
+* ```
+(get) red: ScalarSignal
+(set) (Not Available)
+```
+
+Returns the value of the red channel between 0 and 1.0.
+*/ 
+red: ScalarSignal | number;
 /** 
 *  
  * toHSVA(): HsvaSignal

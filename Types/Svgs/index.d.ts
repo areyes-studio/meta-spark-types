@@ -1,15 +1,16 @@
 /// <reference path="../Svgs.Svg/index.d.ts" />
 declare namespace SvgsModule {
 /** 
-*  
- * get(svgName: string): Svg
+* 
+ *  
+ * findFirst(name: string): Promise<Svg>
  *  
  * 
- * Returns a svg object identified by the `svgName` argument.
- * 
- * Throws an exception if there is no such identifier in the project.
+ * Returns a promise that is resolved with the svg of a requested name or null if none was found.
+ * **See Also**: `Svgs.findUsingPattern`, `Svgs.getAll`.
+ *     
  */ 
-function get(svgName: string): Svg;
+function findFirst(name: string): Promise<Svg>;
 
 /** 
 *  
@@ -38,6 +39,17 @@ function findUsingPattern(namePattern: string): Promise<Array<Svg>>;
 function findUsingPattern(namePattern: string, config: {limit: number}): Promise<Array<Svg>>;
 
 /** 
+*  
+ * get(svgName: string): Svg
+ *  
+ * 
+ * Returns a svg object identified by the `svgName` argument.
+ * 
+ * Throws an exception if there is no such identifier in the project.
+ */ 
+function get(svgName: string): Svg;
+
+/** 
 * 
  *  
  * getAll(): Promise<Array<Svg>>
@@ -48,18 +60,6 @@ function findUsingPattern(namePattern: string, config: {limit: number}): Promise
  *     
  */ 
 function getAll(): Promise<Array<Svg>>;
-
-/** 
-* 
- *  
- * findFirst(name: string): Promise<Svg>
- *  
- * 
- * Returns a promise that is resolved with the svg of a requested name or null if none was found.
- * **See Also**: `Svgs.findUsingPattern`, `Svgs.getAll`.
- *     
- */ 
-function findFirst(name: string): Promise<Svg>;
 
 }
 export = SvgsModule;

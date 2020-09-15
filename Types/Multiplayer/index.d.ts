@@ -4,15 +4,6 @@
 declare namespace MultiplayerModule {
 /** 
 * ```
-             (get) viewerId: StringSignal
-             (set) (Not Available)
-             ```
-
-             Contains the viewerId of the user using this effect as a string signal
-*/ 
-const viewerId: StringSignal | string;
-/** 
-* ```
              (get) message: { [key: string] : string }
              (set) (Not Available)
              ```
@@ -32,17 +23,6 @@ const message: any;
 const numParticipants: ScalarSignal | number;
 /** 
 * ```
-              (get) participants: Array<string>
-              (set) (Not Available)
-              ```
-              ** DEPRECATED **
-              ** Please use `onParticipantsChanged` property instead. **
-
-              Returns an array of participant id's of people currently using the effect in the call
-*/ 
-const participants: Array<string>;
-/** 
-* ```
                (get) onParticipantsChanged: Array<string>
                (set) (Not Available)
                ```
@@ -54,40 +34,39 @@ const participants: Array<string>;
 */ 
 const onParticipantsChanged: Array<string>;
 /** 
-*  
- *               getViewerID(): string
- *                
- *               ** DEPRECATED **
- *               ** Please use `viewerId` property instead. **
- * 
- *               Returns the viewerID of this user.
- */ 
-function getViewerID(): string;
+* ```
+              (get) participants: Array<string>
+              (set) (Not Available)
+              ```
+              ** DEPRECATED **
+              ** Please use `onParticipantsChanged` property instead. **
 
+              Returns an array of participant id's of people currently using the effect in the call
+*/ 
+const participants: Array<string>;
 /** 
-*  
- *              sendStateUpdate(state: { [key: string] : string }): void
- *               
- * 
- *              Sends the latest state snapshot (with values serialized to strings)
- *              to other peers using this effect within an RTC call.
- *              The keys here should always be a subset of the of keys in `activate`.
- * 
- *              For example: { "numPlayers": "2", "scores": "2,5" }
- */ 
-function sendStateUpdate(state: { [key: string] : string }): void;
+* ```
+             (get) viewerId: StringSignal
+             (set) (Not Available)
+             ```
 
+             Contains the viewerId of the user using this effect as a string signal
+*/ 
+const viewerId: StringSignal | string;
 /** 
-*  
- *              sendMessage(message: { [key: string] : string }): void
- *               
+* 
+ *  
+ * activate(metadata: { [key: string] : StateSignalType }): void
+ *  
  * 
- *              Sends a message to the initiator of the multiplayer effect
- *              within an RTC call. Should only have one entry.
+ * Sets up the initial state signals. Input is the metadata of state types
+ * defined as a mapping from the state key (string) to state types
+ * (enum StateSignalType).
  * 
- *              For example: { "miss": "4" }
+ * For example: { numPlayers: StateSignalType::SCALAR, scores: StateSignalType::STRING }
+ *     
  */ 
-function sendMessage(message: { [key: string] : string }): void;
+function activate(metadata: { [key: string] : StateSignalType }): void;
 
 /** 
 *  
@@ -103,19 +82,40 @@ function sendMessage(message: { [key: string] : string }): void;
 function getState(key: string): ScalarSignal | BoolSignal | StringSignal;
 
 /** 
-* 
- *  
- * activate(metadata: { [key: string] : StateSignalType }): void
- *  
+*  
+ *               getViewerID(): string
+ *                
+ *               ** DEPRECATED **
+ *               ** Please use `viewerId` property instead. **
  * 
- * Sets up the initial state signals. Input is the metadata of state types
- * defined as a mapping from the state key (string) to state types
- * (enum StateSignalType).
- * 
- * For example: { numPlayers: StateSignalType::SCALAR, scores: StateSignalType::STRING }
- *     
+ *               Returns the viewerID of this user.
  */ 
-function activate(metadata: { [key: string] : StateSignalType }): void;
+function getViewerID(): string;
+
+/** 
+*  
+ *              sendMessage(message: { [key: string] : string }): void
+ *               
+ * 
+ *              Sends a message to the initiator of the multiplayer effect
+ *              within an RTC call. Should only have one entry.
+ * 
+ *              For example: { "miss": "4" }
+ */ 
+function sendMessage(message: { [key: string] : string }): void;
+
+/** 
+*  
+ *              sendStateUpdate(state: { [key: string] : string }): void
+ *               
+ * 
+ *              Sends the latest state snapshot (with values serialized to strings)
+ *              to other peers using this effect within an RTC call.
+ *              The keys here should always be a subset of the of keys in `activate`.
+ * 
+ *              For example: { "numPlayers": "2", "scores": "2,5" }
+ */ 
+function sendStateUpdate(state: { [key: string] : string }): void;
 
 }
 export = MultiplayerModule;

@@ -10,12 +10,12 @@
 declare interface BlockInstanceInputs {
 /** 
 *  
- * setScalar(name: String, signal: ScalarSignal): Promise<void>
+ * setBoolean(name: String, signal: BoolSignal): Promise<void>
  *  
  * 
- * Sends a `ScalarSignal` to the Block's input with the given `name`. Returns a promise that is fulfilled if the operation succeeds and is rejected if the operation fails, such as if no input exists with the given name, or if the input's type is not a `ScalarSignal`.
+ * Sends a `BoolSignal` to the Block's input with the given `name`. Returns a promise that is fulfilled if the operation succeeds and is rejected if the operation fails, such as if no input exists with the given name, or if the input's type is not a `BoolSignal`.
  */ 
-setScalar(name: String, signal: ScalarSignal | number): Promise<void>;
+setBoolean(name: String, signal: BoolSignal | boolean): Promise<void>;
 
 /** 
 *  
@@ -28,33 +28,6 @@ setColor(name: String, signal: ColorSignal): Promise<void>;
 
 /** 
 *  
- * setString(name: String, signal: StringSignal): Promise<void>
- *  
- * 
- * Sends a `StringSignal` to the Block's input with the given `name`. Returns a promise that is fulfilled if the operation succeeds and is rejected if the operation fails, such as if no input exists with the given name, or if the input's type is not a `StringSignal`.
- */ 
-setString(name: String, signal: StringSignal | string): Promise<void>;
-
-/** 
-*  
- * setBoolean(name: String, signal: BoolSignal): Promise<void>
- *  
- * 
- * Sends a `BoolSignal` to the Block's input with the given `name`. Returns a promise that is fulfilled if the operation succeeds and is rejected if the operation fails, such as if no input exists with the given name, or if the input's type is not a `BoolSignal`.
- */ 
-setBoolean(name: String, signal: BoolSignal | boolean): Promise<void>;
-
-/** 
-*  
- * setShader(name: String, signal: ShaderSignal): Promise<void>
- *  
- * 
- * Sends a `ShaderSignal` to the Block's input with the given `name`. Returns a promise that is fulfilled if the operation succeeds and is rejected if the operation fails, such as if no input exists with the given name, or if the input's type is not a `ShaderSignal`.
- */ 
-setShader(name: String, signal: ShaderSignal): Promise<void>;
-
-/** 
-*  
  * setPoint(name: String, signal: PointSignal): Promise<void>
  *  
  * 
@@ -64,12 +37,12 @@ setPoint(name: String, signal: PointSignal): Promise<void>;
 
 /** 
 *  
- * setVector(name: String, signal: VectorSignal): Promise<void>
+ * setPoint2D(name: String, signal: Point2DSignal): Promise<void>
  *  
  * 
- * Sends a `VectorSignal` to the Block's input with the given `name`. Returns a promise that is fulfilled if the operation succeeds and is rejected if the operation fails, such as if no input exists with the given name, or if the input's type is not a `VectorSignal`.
+ * Sends a `Point2DSignal` to the Block's input with the given `name`. Returns a promise that is fulfilled if the operation succeeds and is rejected if the operation fails, such as if no input exists with the given name, or if the input's type is not a `Point2DSignal`.
  */ 
-setVector(name: String, signal: VectorSignal): Promise<void>;
+setPoint2D(name: String, signal: Point2DSignal): Promise<void>;
 
 /** 
 *  
@@ -82,11 +55,38 @@ setPulse(name: String, signal: EventSource): Promise<void>;
 
 /** 
 *  
- * setPoint2D(name: String, signal: Point2DSignal): Promise<void>
+ * setScalar(name: String, signal: ScalarSignal): Promise<void>
  *  
  * 
- * Sends a `Point2DSignal` to the Block's input with the given `name`. Returns a promise that is fulfilled if the operation succeeds and is rejected if the operation fails, such as if no input exists with the given name, or if the input's type is not a `Point2DSignal`.
+ * Sends a `ScalarSignal` to the Block's input with the given `name`. Returns a promise that is fulfilled if the operation succeeds and is rejected if the operation fails, such as if no input exists with the given name, or if the input's type is not a `ScalarSignal`.
  */ 
-setPoint2D(name: String, signal: Point2DSignal): Promise<void>;
+setScalar(name: String, signal: ScalarSignal | number): Promise<void>;
+
+/** 
+*  
+ * setShader(name: String, signal: ShaderSignal): Promise<void>
+ *  
+ * 
+ * Sends a `ShaderSignal` to the Block's input with the given `name`. Returns a promise that is fulfilled if the operation succeeds and is rejected if the operation fails, such as if no input exists with the given name, or if the input's type is not a `ShaderSignal`.
+ */ 
+setShader(name: String, signal: ShaderSignal): Promise<void>;
+
+/** 
+*  
+ * setString(name: String, signal: StringSignal): Promise<void>
+ *  
+ * 
+ * Sends a `StringSignal` to the Block's input with the given `name`. Returns a promise that is fulfilled if the operation succeeds and is rejected if the operation fails, such as if no input exists with the given name, or if the input's type is not a `StringSignal`.
+ */ 
+setString(name: String, signal: StringSignal | string): Promise<void>;
+
+/** 
+*  
+ * setVector(name: String, signal: VectorSignal): Promise<void>
+ *  
+ * 
+ * Sends a `VectorSignal` to the Block's input with the given `name`. Returns a promise that is fulfilled if the operation succeeds and is rejected if the operation fails, such as if no input exists with the given name, or if the input's type is not a `VectorSignal`.
+ */ 
+setVector(name: String, signal: VectorSignal): Promise<void>;
 
 }

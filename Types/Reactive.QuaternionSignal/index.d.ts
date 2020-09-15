@@ -52,15 +52,6 @@ Represents the Z component of the quaternion.
 z: ScalarSignal | number;
 /** 
 *  
- * conjugate(): QuaternionSignal
- *  
- * 
- * Returns the rotational conjugate of this quaternion. The conjugate of a quaternion represents the same rotation in the opposite direction about the rotational axis.
- */ 
-conjugate(): QuaternionSignal;
-
-/** 
-*  
  * angleAxis(): Point4DSignal
  *  
  * 
@@ -70,30 +61,21 @@ angleAxis(): Point4DSignal;
 
 /** 
 *  
- * mix(signal: QuaternionSignal, factor: ScalarSignal): QuaternionSignal
+ * angleTo(signal: QuaternionSignal): ScalarSignal
  *  
  * 
- * Returns a signal with the value that is the linear interpolation between this and another signal by a given factor.
+ * Returns a signal with the value that is the angular distance between this quaternion and the provided quaternion, in radians.
  */ 
-mix(signal: QuaternionSignal, factor: ScalarSignal | number): QuaternionSignal;
+angleTo(signal: QuaternionSignal): ScalarSignal;
 
 /** 
 *  
- * slerp(signal: QuaternionSignal, factor: ScalarSignal): QuaternionSignal
- *  
- * 
- * Returns a signal with the value that is the spherical linear interpolation between this and another signal by a given factor.
- */ 
-slerp(signal: QuaternionSignal, factor: ScalarSignal | number): QuaternionSignal;
-
-/** 
-*  
- * invert(): QuaternionSignal
+ * conjugate(): QuaternionSignal
  *  
  * 
  * Returns the rotational conjugate of this quaternion. The conjugate of a quaternion represents the same rotation in the opposite direction about the rotational axis.
  */ 
-invert(): QuaternionSignal;
+conjugate(): QuaternionSignal;
 
 /** 
 *  
@@ -103,15 +85,6 @@ invert(): QuaternionSignal;
  * Returns a scalar signal with the value that is the dot product of the given signals.
  */ 
 dot(signal: QuaternionSignal): ScalarSignal;
-
-/** 
-*  
- * mul(signal: QuaternionSignal): QuaternionSignal
- *  
- * 
- * Returns a signal with the value that is the product of the values of the given signals.
- */ 
-mul(signal: QuaternionSignal): QuaternionSignal;
 
 /** 
 *  
@@ -129,11 +102,38 @@ history(framesCount: number, initialValues: Array<Rotation>): QuaternionSignalHi
 
 /** 
 *  
- * angleTo(signal: QuaternionSignal): ScalarSignal
+ * invert(): QuaternionSignal
  *  
  * 
- * Returns a signal with the value that is the angular distance between this quaternion and the provided quaternion, in radians.
+ * Returns the rotational conjugate of this quaternion. The conjugate of a quaternion represents the same rotation in the opposite direction about the rotational axis.
  */ 
-angleTo(signal: QuaternionSignal): ScalarSignal;
+invert(): QuaternionSignal;
+
+/** 
+*  
+ * mix(signal: QuaternionSignal, factor: ScalarSignal): QuaternionSignal
+ *  
+ * 
+ * Returns a signal with the value that is the linear interpolation between this and another signal by a given factor.
+ */ 
+mix(signal: QuaternionSignal, factor: ScalarSignal | number): QuaternionSignal;
+
+/** 
+*  
+ * mul(signal: QuaternionSignal): QuaternionSignal
+ *  
+ * 
+ * Returns a signal with the value that is the product of the values of the given signals.
+ */ 
+mul(signal: QuaternionSignal): QuaternionSignal;
+
+/** 
+*  
+ * slerp(signal: QuaternionSignal, factor: ScalarSignal): QuaternionSignal
+ *  
+ * 
+ * Returns a signal with the value that is the spherical linear interpolation between this and another signal by a given factor.
+ */ 
+slerp(signal: QuaternionSignal, factor: ScalarSignal | number): QuaternionSignal;
 
 }

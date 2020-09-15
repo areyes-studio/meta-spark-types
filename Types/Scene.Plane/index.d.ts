@@ -3,24 +3,6 @@
 declare interface Plane {
 /** 
 * ```
-(get) x: ScalarSignal
-(set) x: ScalarSignal
-```
-
-Specifies the horizontal offset, in 3D units.
-*/ 
-x: ScalarSignal | number;
-/** 
-* ```
-(get) width: ScalarSignal
-(set) width: ScalarSignal
-```
-
-Specifies the horizontal size, in 3D units.
-*/ 
-width: ScalarSignal | number;
-/** 
-* ```
 (get) height: ScalarSignal
 (set) height: ScalarSignal
 ```
@@ -28,15 +10,6 @@ width: ScalarSignal | number;
 Specifies the vertical size, in 3D units.
 */ 
 height: ScalarSignal | number;
-/** 
-* ```
-(get) y: ScalarSignal
-(set) y: ScalarSignal
-```
-
-Specifies the vertical offset, in 3D units.
-*/ 
-y: ScalarSignal | number;
 /** 
 * 
 ```
@@ -48,6 +21,33 @@ Specifies the material of the scene object.
 
 */ 
 material: MaterialBase;
+/** 
+* ```
+(get) width: ScalarSignal
+(set) width: ScalarSignal
+```
+
+Specifies the horizontal size, in 3D units.
+*/ 
+width: ScalarSignal | number;
+/** 
+* ```
+(get) x: ScalarSignal
+(set) x: ScalarSignal
+```
+
+Specifies the horizontal offset, in 3D units.
+*/ 
+x: ScalarSignal | number;
+/** 
+* ```
+(get) y: ScalarSignal
+(set) y: ScalarSignal
+```
+
+Specifies the vertical offset, in 3D units.
+*/ 
+y: ScalarSignal | number;
 /** 
 * 
  *  

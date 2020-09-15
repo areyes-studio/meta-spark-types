@@ -9,13 +9,6 @@ declare interface AudioTransformWrapper {
 effectName: string;
 /** 
 *  
- * transformParametersCount(): number
- *  
- */ 
-transformParametersCount(): number;
-
-/** 
-*  
  * transformParameterAtIndex(index: number): AudioTransformParameterWrapper
  *  
  */ 
@@ -27,5 +20,12 @@ transformParameterAtIndex(index: number): AudioTransformParameterWrapper;
  *  
  */ 
 transformParameterByName(parameterName: string): AudioTransformParameterWrapper;
+
+/** 
+*  
+ * transformParametersCount(): number
+ *  
+ */ 
+transformParametersCount(): number;
 
 }

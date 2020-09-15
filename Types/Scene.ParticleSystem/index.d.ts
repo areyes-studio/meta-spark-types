@@ -12,35 +12,6 @@
 declare interface ParticleSystem {
 /** 
 * ```
-(get) opticalFlowSensitivity: ScalarSignal
-(set) opticalFlowSensitivity: ScalarSignal
-```
-
-Specifies the optical flow sensitivity.
-*/ 
-opticalFlowSensitivity: ScalarSignal | number;
-/** 
-* ```
-(get) initialVelocityMagnitudePercentageDelta: ScalarSignal
-(set) initialVelocityMagnitudePercentageDelta: ScalarSignal
-```
-
-Specifies the percentage delta value, between 0.0 and 1.0, for the `initialVelocityMagnitude` property. The initial velocity magnitude is randomized uniformly in the range `[initialVelocityMagnitude * (1 - d); initialVelocityMagnitude * (1 + d)]` for each particle.
-
-**Note**: The behavior is undefined for values outside the valid range.
-*/ 
-initialVelocityMagnitudePercentageDelta: ScalarSignal | number;
-/** 
-* ```
-(get) sprayAngleDelta: PointSignal
-(set) sprayAngleDelta: PointSignal
-```
-
-Specifies the absolute delta value for the `sprayAngle` property. The initial velocity angle is randomized uniformly in the range `[sprayAngle - sprayAngleDelta; sprayAngle + sprayAngleDelta]` for each particle.
-*/ 
-sprayAngleDelta: PointSignal;
-/** 
-* ```
 (get) (Not Available)
 (set) acceleration: VectorSignal
 ```
@@ -50,13 +21,31 @@ Specifies the acceleration vector for particles of this emitter.
 acceleration: VectorSignal;
 /** 
 * ```
-(get) linearDamping: ScalarSignal
-(set) linearDamping: ScalarSignal
+(get) angularVelocity: PointSignal
+(set) angularVelocity: PointSignal
 ```
 
-Specifies the mean linear damping of each particle.
+Specifies the mean angular velocity of each particle, in radians-per-second.
 */ 
-linearDamping: ScalarSignal | number;
+angularVelocity: PointSignal;
+/** 
+* ```
+(get) angularVelocityDelta: PointSignal
+(set) angularVelocityDelta: PointSignal
+```
+
+Specifies the absolute delta value for the `angularVelocity` property. The angular velocity is randomized uniformly in the range `[angularVelocity - angularVelocityDelta; angularVelocity + angularVelocityDelta]` for each particle.
+*/ 
+angularVelocityDelta: PointSignal;
+/** 
+* ```
+(get) birthrate: ScalarSignal
+(set) birthrate: ScalarSignal
+```
+
+Specifies the particle birthrate, in number of particles per second.
+*/ 
+birthrate: ScalarSignal | number;
 /** 
 * ```
 (get) birthrateDelta: ScalarSignal
@@ -70,120 +59,17 @@ Specifies the percentage delta value, between 0.0 and 1.0, for the `birthrate` p
 birthrateDelta: ScalarSignal | number;
 /** 
 * ```
-(get) innerRadius: ScalarSignal
-(set) innerRadius: ScalarSignal
+(get) (Not Available)
+(set) colorModulationHSVA: HsvaSignal
 ```
 
-Specifies the radius of the inner circle when using the ring emitter for the particle system. The particles spawn between `innerRadius` and `outerRadius`.
+Specifies the mean color for modulating the particle material.
 
-**Note**: `outerRadius` must be greater-than or equal to `innerRadius`.
+**Note**: `colorModulationHSVA` can only be an instance of `HsvaSignal`, it cannot be specified in other color space like RGBA.
+
+**Note**: the modulation itself happens in RGBA space. Each of the RGBA components specified by the modulation is multiplied to the corresponding component specified by the particle material.
 */ 
-innerRadius: ScalarSignal | number;
-/** 
-* ```
-(get) scaleDelta: ScalarSignal
-(set) scaleDelta: ScalarSignal
-```
-
-Specifies the percentage delta value, between 0.0 and 1.0, for the `scale` property. The scale is randomized uniformly in the range `[scale * (1 - d); scale * (1 + d)]` for each particle.
-
-**Note**: The behavior is undefined for values outside the valid range.
-*/ 
-scaleDelta: ScalarSignal | number;
-/** 
-* ```
-(get) linearDampingPercentageDelta: ScalarSignal
-(set) linearDampingPercentageDelta: ScalarSignal
-```
-
-Specifies the percentage delta value, between 0.0 and 1.0, for the `linearDamping` property. The linear dumping is randomized uniformly in the range `[linearDamping * (1 - d); linearDamping * (1 + d)]` for each particle.
-
-**Note**: The behavior is undefined for values outside the valid range.
-*/ 
-linearDampingPercentageDelta: ScalarSignal | number;
-/** 
-* ```
-(get) scale: ScalarSignal
-(set) scale: ScalarSignal
-```
-
-Specifies the mean size of each particle, in 3d units.
-*/ 
-scale: ScalarSignal | number;
-/** 
-* ```
-(get) angularVelocity: PointSignal
-(set) angularVelocity: PointSignal
-```
-
-Specifies the mean angular velocity of each particle, in radians-per-second.
-*/ 
-angularVelocity: PointSignal;
-/** 
-* ```
-(get) rotationalDamping: ScalarSignal
-(set) rotationalDamping: ScalarSignal
-```
-
-Specifies the mean rotational damping of each particle.
-*/ 
-rotationalDamping: ScalarSignal | number;
-/** 
-* ```
-(get) lifetimeSecondsPercentageDelta: ScalarSignal
-(set) lifetimeSecondsPercentageDelta: ScalarSignal
-```
-
-Specifies the percentage delta value, between 0.0 and 1.0, for the `lifetimeSeconds` property. The lifetime is randomized uniformly in the range `[lifetimeSeconds * (1 - d); lifetimeSeconds * (1 + d)]` for each particle.
-
-**Note**: The behavior is undefined for values outside the valid range.
-*/ 
-lifetimeSecondsPercentageDelta: ScalarSignal | number;
-/** 
-* ```
-(get) initialVelocityMagnitude: ScalarSignal
-(set) initialVelocityMagnitude: ScalarSignal
-```
-
-Specifies the mean initial velocity magnitude of each particle.
-*/ 
-initialVelocityMagnitude: ScalarSignal | number;
-/** 
-* ```
-(get) birthrate: ScalarSignal
-(set) birthrate: ScalarSignal
-```
-
-Specifies the particle birthrate, in number of particles per second.
-*/ 
-birthrate: ScalarSignal | number;
-/** 
-* ```
-(get) sprayAngle: PointSignal
-(set) sprayAngle: PointSignal
-```
-
-Specifies the mean spray angle of the emitter, in radians.
-*/ 
-sprayAngle: PointSignal;
-/** 
-* ```
-(get) initialVelocityAngle: ScalarSignal
-(set) initialVelocityAngle: ScalarSignal
-```
-
-Specifies the mean initial velocity angle of each particle, in radians.
-*/ 
-initialVelocityAngle: ScalarSignal | number;
-/** 
-* ```
-(get) initialVelocityAngleDelta: ScalarSignal
-(set) initialVelocityAngleDelta: ScalarSignal
-```
-
-Specifies the absolute delta value for the `initialVelocityAngle` property. The initial velocity angle is randomized uniformly in the range `[initialVelocityAngle - initialVelocityAngleDelta; initialVelocityAngle + initialVelocityAngleDelta]` for each particle.
-*/ 
-initialVelocityAngleDelta: ScalarSignal | number;
+colorModulationHSVA: HsvaSignal;
 /** 
 * ```
 (get) (Not Available)
@@ -199,6 +85,17 @@ Specifies the absolute delta value for the `colorModulationHSVA` property. The m
 **Note**: the modulation itself happens in RGBA space. Each of the RGBA components specified by the modulation is multiplied to the corresponding component specified by the particle material.
 */ 
 colorModulationHSVADelta: HsvaSignal;
+/** 
+* ```
+(get) (Not Available)
+(set) hsvaColorModulationModifier: ColorSampler
+```
+
+Specifies the modifier that will be added to the particle color according to the supplied sampler relative to the current relative lifetime of the particle. In other words, if the lifetime is 4 seconds and the particle has lived for is 3 seconds, the modifier will be sampled at 3/4 = 0.75.
+
+**Note**: the modifier works in the HSVA color space, i.e. using values interpolated in RGBA won't add the corresponding R, G or B values to the current color but rather the converted HSV color will be added.
+*/ 
+hsvaColorModulationModifier: ColorSampler;
 /** 
 * ```
 (get) initialRotation: ScalarSignal
@@ -219,91 +116,53 @@ Specifies the absolute delta value for the `initialRotation` property. The initi
 initialRotationDelta: ScalarSignal | number;
 /** 
 * ```
-(get) (Not Available)
-(set) hsvaColorModulationModifier: ColorSampler
+(get) initialVelocityAngle: ScalarSignal
+(set) initialVelocityAngle: ScalarSignal
 ```
 
-Specifies the modifier that will be added to the particle color according to the supplied sampler relative to the current relative lifetime of the particle. In other words, if the lifetime is 4 seconds and the particle has lived for is 3 seconds, the modifier will be sampled at 3/4 = 0.75.
-
-**Note**: the modifier works in the HSVA color space, i.e. using values interpolated in RGBA won't add the corresponding R, G or B values to the current color but rather the converted HSV color will be added.
+Specifies the mean initial velocity angle of each particle, in radians.
 */ 
-hsvaColorModulationModifier: ColorSampler;
+initialVelocityAngle: ScalarSignal | number;
 /** 
 * ```
-(get) (Not Available)
-(set) positionDelta: VectorSignal
+(get) initialVelocityAngleDelta: ScalarSignal
+(set) initialVelocityAngleDelta: ScalarSignal
 ```
 
-Specifies the absolute delta value for the `position` property. The position is randomized uniformly in the axis-aligned bounding box with corners `position - d` and `position + d` for each particle.
-
-**Note**: all the coordinates must be non-negative. For negative values, the absolute value is used.
+Specifies the absolute delta value for the `initialVelocityAngle` property. The initial velocity angle is randomized uniformly in the range `[initialVelocityAngle - initialVelocityAngleDelta; initialVelocityAngle + initialVelocityAngleDelta]` for each particle.
 */ 
-positionDelta: VectorSignal;
+initialVelocityAngleDelta: ScalarSignal | number;
 /** 
 * ```
-(get) particleRotation: PointSignal
-(set) particleRotation: PointSignal
+(get) initialVelocityMagnitude: ScalarSignal
+(set) initialVelocityMagnitude: ScalarSignal
 ```
 
-Specifies the mean rotation of each particle, in radians.
+Specifies the mean initial velocity magnitude of each particle.
 */ 
-particleRotation: PointSignal;
+initialVelocityMagnitude: ScalarSignal | number;
 /** 
 * ```
-(get) rotationalVelocityDelta: ScalarSignal
-(set) rotationalVelocityDelta: ScalarSignal
+(get) initialVelocityMagnitudePercentageDelta: ScalarSignal
+(set) initialVelocityMagnitudePercentageDelta: ScalarSignal
 ```
 
-Specifies the absolute delta value for the `rotationalVelocity` property. The rotation velocity is randomized uniformly in the range `[rotationalVelocity - rotationalVelocityDelta; rotationalVelocity + rotationalVelocityDelta]` for each particle.
+Specifies the percentage delta value, between 0.0 and 1.0, for the `initialVelocityMagnitude` property. The initial velocity magnitude is randomized uniformly in the range `[initialVelocityMagnitude * (1 - d); initialVelocityMagnitude * (1 + d)]` for each particle.
+
+**Note**: The behavior is undefined for values outside the valid range.
 */ 
-rotationalVelocityDelta: ScalarSignal | number;
+initialVelocityMagnitudePercentageDelta: ScalarSignal | number;
 /** 
 * ```
-(get) types: ParticleTypeDescriptions
-(set) (Not Available)
+(get) innerRadius: ScalarSignal
+(set) innerRadius: ScalarSignal
 ```
 
-Retrieves the ParticleTypeDescriptions
-*/ 
-types: ParticleTypeDescriptions;
-/** 
-* ```
-(get) angularVelocityDelta: PointSignal
-(set) angularVelocityDelta: PointSignal
-```
+Specifies the radius of the inner circle when using the ring emitter for the particle system. The particles spawn between `innerRadius` and `outerRadius`.
 
-Specifies the absolute delta value for the `angularVelocity` property. The angular velocity is randomized uniformly in the range `[angularVelocity - angularVelocityDelta; angularVelocity + angularVelocityDelta]` for each particle.
+**Note**: `outerRadius` must be greater-than or equal to `innerRadius`.
 */ 
-angularVelocityDelta: PointSignal;
-/** 
-* ```
-(get) particleRotationDelta: PointSignal
-(set) particleRotationDelta: PointSignal
-```
-
-Specifies the absolute delta value for the `particleRotation` property. The particle rotation is randomized uniformly in the range `[particleRotation - particleRotationDelta; particleRotation + particleRotationDelta]` for each particle.
-*/ 
-particleRotationDelta: PointSignal;
-/** 
-* ```
-(get) (Not Available)
-(set) positionModifier: ArrayOfScalarSamplers
-```
-
-Specifies the modifier that will be added to the particle position according to the supplied sampler relative to the current relative lifetime of the particle. In other words, if the lifetime is 4 seconds and the particle has lived for is 3 seconds, the modifier will be sampled at 3/4 = 0.75.
-
-**Note**: the specified array of samplers must contain exactly 3 elements, interpreted as X,Y,Z values.
-*/ 
-positionModifier: ArrayOfScalarSamplers;
-/** 
-* ```
-(get) rotationalVelocity: ScalarSignal
-(set) rotationalVelocity: ScalarSignal
-```
-
-Specifies the mean rotational velocity of each particle, in radians-per-second.
-*/ 
-rotationalVelocity: ScalarSignal | number;
+innerRadius: ScalarSignal | number;
 /** 
 * ```
 (get) lifetimeSeconds: ScalarSignal
@@ -315,28 +174,35 @@ Specifies the mean lifetime of each particle, in seconds.
 lifetimeSeconds: ScalarSignal | number;
 /** 
 * ```
-(get) (Not Available)
-(set) colorModulationHSVA: HsvaSignal
+(get) lifetimeSecondsPercentageDelta: ScalarSignal
+(set) lifetimeSecondsPercentageDelta: ScalarSignal
 ```
 
-Specifies the mean color for modulating the particle material.
-
-**Note**: `colorModulationHSVA` can only be an instance of `HsvaSignal`, it cannot be specified in other color space like RGBA.
-
-**Note**: the modulation itself happens in RGBA space. Each of the RGBA components specified by the modulation is multiplied to the corresponding component specified by the particle material.
-*/ 
-colorModulationHSVA: HsvaSignal;
-/** 
-* ```
-(get) rotationalDampingPercentageDelta: ScalarSignal
-(set) rotationalDampingPercentageDelta: ScalarSignal
-```
-
-Specifies the percentage delta value, between 0.0 and 1.0, for the `rotationalDamping` property. The rotational dumping is randomized uniformly in the range `[rotationalDamping * (1 - d); rotationalDamping * (1 + d)]` for each particle.
+Specifies the percentage delta value, between 0.0 and 1.0, for the `lifetimeSeconds` property. The lifetime is randomized uniformly in the range `[lifetimeSeconds * (1 - d); lifetimeSeconds * (1 + d)]` for each particle.
 
 **Note**: The behavior is undefined for values outside the valid range.
 */ 
-rotationalDampingPercentageDelta: ScalarSignal | number;
+lifetimeSecondsPercentageDelta: ScalarSignal | number;
+/** 
+* ```
+(get) linearDamping: ScalarSignal
+(set) linearDamping: ScalarSignal
+```
+
+Specifies the mean linear damping of each particle.
+*/ 
+linearDamping: ScalarSignal | number;
+/** 
+* ```
+(get) linearDampingPercentageDelta: ScalarSignal
+(set) linearDampingPercentageDelta: ScalarSignal
+```
+
+Specifies the percentage delta value, between 0.0 and 1.0, for the `linearDamping` property. The linear dumping is randomized uniformly in the range `[linearDamping * (1 - d); linearDamping * (1 + d)]` for each particle.
+
+**Note**: The behavior is undefined for values outside the valid range.
+*/ 
+linearDampingPercentageDelta: ScalarSignal | number;
 /** 
 * 
 ```
@@ -350,24 +216,13 @@ Specifies the material of the scene object.
 material: MaterialBase;
 /** 
 * ```
-(get) (Not Available)
-(set) sizeModifier: ScalarSampler
+(get) opticalFlowSensitivity: ScalarSignal
+(set) opticalFlowSensitivity: ScalarSignal
 ```
 
-Specifies the modifier that will be added to the particle size according to the supplied sampler relative to the current relative lifetime of the particle. In other words, if the lifetime is 4 seconds and the particle has lived for is 3 seconds, the modifier will be sampled at 3/4 = 0.75.
+Specifies the optical flow sensitivity.
 */ 
-sizeModifier: ScalarSampler;
-/** 
-* ```
-(get) (Not Available)
-(set) velocityModifier: ArrayOfScalarSamplers
-```
-
-Specifies the modifier that will be added to the particle velocity according to the supplied sampler relative to the current relative lifetime of the particle. In other words, if the lifetime is 4 seconds and the particle has lived for is 3 seconds, the modifier will be sampled at 3/4 = 0.75.
-
-**Note**: the specified array of samplers must contain exactly 3 elements, interpreted as X,Y,Z values.
-*/ 
-velocityModifier: ArrayOfScalarSamplers;
+opticalFlowSensitivity: ScalarSignal | number;
 /** 
 * ```
 (get) outerRadius: ScalarSignal
@@ -381,13 +236,22 @@ Specifies the radius of the outer circle when using the ring emitter for the par
 outerRadius: ScalarSignal | number;
 /** 
 * ```
-(get) worldSpace: BoolSignal
-(set) worldSpace: BoolSignal
+(get) particleRotation: PointSignal
+(set) particleRotation: PointSignal
 ```
 
-Specifies whether the particles will move with the emitter or will have their own position after being emitted.
+Specifies the mean rotation of each particle, in radians.
 */ 
-worldSpace: BoolSignal | boolean;
+particleRotation: PointSignal;
+/** 
+* ```
+(get) particleRotationDelta: PointSignal
+(set) particleRotationDelta: PointSignal
+```
+
+Specifies the absolute delta value for the `particleRotation` property. The particle rotation is randomized uniformly in the range `[particleRotation - particleRotationDelta; particleRotation + particleRotationDelta]` for each particle.
+*/ 
+particleRotationDelta: PointSignal;
 /** 
 * ```
 (get) (Not Available)
@@ -398,14 +262,141 @@ Specifies the mean spawn position of each particle.
 */ 
 position: PointSignal;
 /** 
-*  
- * getTypes(): Promise<Array<ParticleTypeDescription>>
- *  
- * 
- * Retrieves the array of ParticleTypeDescription objects
- */ 
-getTypes(): Promise<Array<ParticleTypeDescription>>;
+* ```
+(get) (Not Available)
+(set) positionDelta: VectorSignal
+```
 
+Specifies the absolute delta value for the `position` property. The position is randomized uniformly in the axis-aligned bounding box with corners `position - d` and `position + d` for each particle.
+
+**Note**: all the coordinates must be non-negative. For negative values, the absolute value is used.
+*/ 
+positionDelta: VectorSignal;
+/** 
+* ```
+(get) (Not Available)
+(set) positionModifier: ArrayOfScalarSamplers
+```
+
+Specifies the modifier that will be added to the particle position according to the supplied sampler relative to the current relative lifetime of the particle. In other words, if the lifetime is 4 seconds and the particle has lived for is 3 seconds, the modifier will be sampled at 3/4 = 0.75.
+
+**Note**: the specified array of samplers must contain exactly 3 elements, interpreted as X,Y,Z values.
+*/ 
+positionModifier: ArrayOfScalarSamplers;
+/** 
+* ```
+(get) rotationalDamping: ScalarSignal
+(set) rotationalDamping: ScalarSignal
+```
+
+Specifies the mean rotational damping of each particle.
+*/ 
+rotationalDamping: ScalarSignal | number;
+/** 
+* ```
+(get) rotationalDampingPercentageDelta: ScalarSignal
+(set) rotationalDampingPercentageDelta: ScalarSignal
+```
+
+Specifies the percentage delta value, between 0.0 and 1.0, for the `rotationalDamping` property. The rotational dumping is randomized uniformly in the range `[rotationalDamping * (1 - d); rotationalDamping * (1 + d)]` for each particle.
+
+**Note**: The behavior is undefined for values outside the valid range.
+*/ 
+rotationalDampingPercentageDelta: ScalarSignal | number;
+/** 
+* ```
+(get) rotationalVelocity: ScalarSignal
+(set) rotationalVelocity: ScalarSignal
+```
+
+Specifies the mean rotational velocity of each particle, in radians-per-second.
+*/ 
+rotationalVelocity: ScalarSignal | number;
+/** 
+* ```
+(get) rotationalVelocityDelta: ScalarSignal
+(set) rotationalVelocityDelta: ScalarSignal
+```
+
+Specifies the absolute delta value for the `rotationalVelocity` property. The rotation velocity is randomized uniformly in the range `[rotationalVelocity - rotationalVelocityDelta; rotationalVelocity + rotationalVelocityDelta]` for each particle.
+*/ 
+rotationalVelocityDelta: ScalarSignal | number;
+/** 
+* ```
+(get) scale: ScalarSignal
+(set) scale: ScalarSignal
+```
+
+Specifies the mean size of each particle, in 3d units.
+*/ 
+scale: ScalarSignal | number;
+/** 
+* ```
+(get) scaleDelta: ScalarSignal
+(set) scaleDelta: ScalarSignal
+```
+
+Specifies the percentage delta value, between 0.0 and 1.0, for the `scale` property. The scale is randomized uniformly in the range `[scale * (1 - d); scale * (1 + d)]` for each particle.
+
+**Note**: The behavior is undefined for values outside the valid range.
+*/ 
+scaleDelta: ScalarSignal | number;
+/** 
+* ```
+(get) (Not Available)
+(set) sizeModifier: ScalarSampler
+```
+
+Specifies the modifier that will be added to the particle size according to the supplied sampler relative to the current relative lifetime of the particle. In other words, if the lifetime is 4 seconds and the particle has lived for is 3 seconds, the modifier will be sampled at 3/4 = 0.75.
+*/ 
+sizeModifier: ScalarSampler;
+/** 
+* ```
+(get) sprayAngle: PointSignal
+(set) sprayAngle: PointSignal
+```
+
+Specifies the mean spray angle of the emitter, in radians.
+*/ 
+sprayAngle: PointSignal;
+/** 
+* ```
+(get) sprayAngleDelta: PointSignal
+(set) sprayAngleDelta: PointSignal
+```
+
+Specifies the absolute delta value for the `sprayAngle` property. The initial velocity angle is randomized uniformly in the range `[sprayAngle - sprayAngleDelta; sprayAngle + sprayAngleDelta]` for each particle.
+*/ 
+sprayAngleDelta: PointSignal;
+/** 
+* ```
+(get) types: ParticleTypeDescriptions
+(set) (Not Available)
+```
+
+Retrieves the ParticleTypeDescriptions
+*/ 
+types: ParticleTypeDescriptions;
+/** 
+* ```
+(get) (Not Available)
+(set) velocityModifier: ArrayOfScalarSamplers
+```
+
+Specifies the modifier that will be added to the particle velocity according to the supplied sampler relative to the current relative lifetime of the particle. In other words, if the lifetime is 4 seconds and the particle has lived for is 3 seconds, the modifier will be sampled at 3/4 = 0.75.
+
+**Note**: the specified array of samplers must contain exactly 3 elements, interpreted as X,Y,Z values.
+*/ 
+velocityModifier: ArrayOfScalarSamplers;
+/** 
+* ```
+(get) worldSpace: BoolSignal
+(set) worldSpace: BoolSignal
+```
+
+Specifies whether the particles will move with the emitter or will have their own position after being emitted.
+*/ 
+worldSpace: BoolSignal | boolean;
 /** 
 * 
  *  
@@ -416,5 +407,14 @@ getTypes(): Promise<Array<ParticleTypeDescription>>;
  * 
  */ 
 getMaterial(): Promise<MaterialBase>;
+
+/** 
+*  
+ * getTypes(): Promise<Array<ParticleTypeDescription>>
+ *  
+ * 
+ * Retrieves the array of ParticleTypeDescription objects
+ */ 
+getTypes(): Promise<Array<ParticleTypeDescription>>;
 
 }

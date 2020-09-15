@@ -16,12 +16,10 @@ Note: To access this property you need to enable the AudioSourceVolume API capab
 volume: ScalarSignal | number;
 /** 
 *  
- * minProgress(audioSource: AudioSource): ScalarSignal
+ * audioTransformAtIndex(index: number): AudioTransformWrapper
  *  
- * 
- * Returns a `ScalarSignal` indicating the timestamp of the played audio source instance with lowest timestamp. A value of zero is returned if the audio source is not currently playing.
  */ 
-minProgress(audioSource: AudioSource): ScalarSignal;
+audioTransformAtIndex(index: number): AudioTransformWrapper;
 
 /** 
 *  
@@ -32,18 +30,20 @@ audioTransformsCount(): number;
 
 /** 
 *  
- * audioTransformAtIndex(index: number): AudioTransformWrapper
- *  
- */ 
-audioTransformAtIndex(index: number): AudioTransformWrapper;
-
-/** 
-*  
  * isPlaying(audioSource: AudioSource): BoolSignal
  *  
  * 
  * Returns a `BooleanSignal` indicating whether the specified audio source is playing.
  */ 
 isPlaying(audioSource: AudioSource): BoolSignal;
+
+/** 
+*  
+ * minProgress(audioSource: AudioSource): ScalarSignal
+ *  
+ * 
+ * Returns a `ScalarSignal` indicating the timestamp of the played audio source instance with lowest timestamp. A value of zero is returned if the audio source is not currently playing.
+ */ 
+minProgress(audioSource: AudioSource): ScalarSignal;
 
 }

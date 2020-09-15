@@ -3,51 +3,6 @@
 declare interface EventSource {
 /** 
 *  
- * subscribe(callback: (event: mixed) => void): Subscription
- *  
- * 
- * Sets a callback for the event source. The callback will be invoked every time an event is emitted from this `EventSource`.
- * 
- * **See Also**: `Subscription.unsubscribe`.
- * 
- * **Note**: `subscribe` and `subscribeOnNext` functions are completely equivalent.
- */ 
-subscribe(callback: (event: mixed) => void): Subscription;
-
-/** 
-*  
- * subscribeWithSnapshot(snapshot: { [name: string]: Signal}, callback: (event: mixed, snapshot: mixed) => void): Subscription
- *  
- * 
- * Sets a callback for the event source, similar to `Subscribe` function, but with additional `Snapshot` parameter.
- * `Snapshot` is a dictionary of String/Bool/Scalar signals, which will be passed as JSON to the callback function using lastValue from requested signals
- */ 
-subscribeWithSnapshot(snapshot: { [name: string]: Signal}, callback: (event: mixed, snapshot: mixed) => void): Subscription;
-
-/** 
-*  
- * subscribeOnNext(callback: (event: mixed) => void): Subscription
- *  
- * 
- * Sets a callback for the event source. The callback will be invoked every time an event is emitted from this `EventSource`.
- * 
- * **See Also**: `Subscription.unsubscribe`.
- * 
- * **Note**: `subscribe` and `subscribeOnNext` functions are completely equivalent.
- */ 
-subscribeOnNext(callback: (event: mixed) => void): Subscription;
-
-/** 
-*  
- * skip(count: number): EventSource
- *  
- * 
- * Yields a filtered event source: the first `count` events from the original source are dropped, and subsequent ones signaled.
- */ 
-skip(count: number): EventSource;
-
-/** 
-*  
  * history(framesCount: number): EventSourceHistory
  *  
  * 
@@ -65,6 +20,51 @@ history(framesCount: number): EventSourceHistory;
  * Converts event source by selecting a property in the event object. Events without specified property are ignored.
  */ 
 select(property: string): EventSource;
+
+/** 
+*  
+ * skip(count: number): EventSource
+ *  
+ * 
+ * Yields a filtered event source: the first `count` events from the original source are dropped, and subsequent ones signaled.
+ */ 
+skip(count: number): EventSource;
+
+/** 
+*  
+ * subscribe(callback: (event: mixed) => void): Subscription
+ *  
+ * 
+ * Sets a callback for the event source. The callback will be invoked every time an event is emitted from this `EventSource`.
+ * 
+ * **See Also**: `Subscription.unsubscribe`.
+ * 
+ * **Note**: `subscribe` and `subscribeOnNext` functions are completely equivalent.
+ */ 
+subscribe(callback: (event: mixed) => void): Subscription;
+
+/** 
+*  
+ * subscribeOnNext(callback: (event: mixed) => void): Subscription
+ *  
+ * 
+ * Sets a callback for the event source. The callback will be invoked every time an event is emitted from this `EventSource`.
+ * 
+ * **See Also**: `Subscription.unsubscribe`.
+ * 
+ * **Note**: `subscribe` and `subscribeOnNext` functions are completely equivalent.
+ */ 
+subscribeOnNext(callback: (event: mixed) => void): Subscription;
+
+/** 
+*  
+ * subscribeWithSnapshot(snapshot: { [name: string]: Signal}, callback: (event: mixed, snapshot: mixed) => void): Subscription
+ *  
+ * 
+ * Sets a callback for the event source, similar to `Subscribe` function, but with additional `Snapshot` parameter.
+ * `Snapshot` is a dictionary of String/Bool/Scalar signals, which will be passed as JSON to the callback function using lastValue from requested signals
+ */ 
+subscribeWithSnapshot(snapshot: { [name: string]: Signal}, callback: (event: mixed, snapshot: mixed) => void): Subscription;
 
 /** 
 *  

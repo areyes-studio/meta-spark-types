@@ -11,15 +11,6 @@ get(key: String): Promise<Object>;
 
 /** 
 *  
- * set(key: String, value: Object): Promise<>
- *  
- * Sets the value for the key.
- * Returns a `JS Promise` or an error.
- */ 
-set(key: String, value: Object): Promise<>;
-
-/** 
-*  
  * remove(key: String): Promise<>
  *  
  * 
@@ -27,5 +18,14 @@ set(key: String, value: Object): Promise<>;
  * Returns a `Promise` that resolves to nothing or an error.
  */ 
 remove(key: String): Promise<>;
+
+/** 
+*  
+ * set(key: String, value: Object): Promise<>
+ *  
+ * Sets the value for the key.
+ * Returns a `JS Promise` or an error.
+ */ 
+set(key: String, value: Object): Promise<>;
 
 }

@@ -3,14 +3,14 @@ declare interface FocalPlane {
 /** 
 * 
 ```
-(get) width: ScalarSignal
+(get) distance: ScalarSignal
 (set) (Not Available)
 ```
 
-Specifies the width of the focal plane. Measured in 3D units.
+Specifies the distance between focal plane and camera. Measured in 3D units.
 
 */ 
-width: ScalarSignal | number;
+distance: ScalarSignal | number;
 /** 
 * 
 ```
@@ -25,12 +25,12 @@ height: ScalarSignal | number;
 /** 
 * 
 ```
-(get) distance: ScalarSignal
+(get) width: ScalarSignal
 (set) (Not Available)
 ```
 
-Specifies the distance between focal plane and camera. Measured in 3D units.
+Specifies the width of the focal plane. Measured in 3D units.
 
 */ 
-distance: ScalarSignal | number;
+width: ScalarSignal | number;
 }

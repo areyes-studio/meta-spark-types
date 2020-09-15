@@ -6,17 +6,15 @@ declare module "ReactiveModule" {
 global {
 interface Boolean {
 lastValue: boolean;
+and(other: BoolSignal | boolean): BoolSignal;
+
+delayBy(timeSpan: {milliseconds: number}): this;
+
 eq(other: BoolSignal | boolean): BoolSignal;
 
-or(other: BoolSignal | boolean): BoolSignal;
+history(framesCount: number): BoolSignalHistory;
 
-not(): BoolSignal;
-
-xor(other: BoolSignal | boolean): BoolSignal;
-
-pin(): BoolSignal;
-
-ne(other: BoolSignal | boolean): BoolSignal;
+history(framesCount: number, initialValues: Array<boolean>): BoolSignalHistory;
 
 ifThenElse(thenValue: EventSource, elseValue: EventSource): EventSource;
 
@@ -30,23 +28,25 @@ monitor(): EventSource;
 
 monitor(config: { fireOnInitialValue: ?boolean}): EventSource;
 
-history(framesCount: number): BoolSignalHistory;
+ne(other: BoolSignal | boolean): BoolSignal;
 
-history(framesCount: number, initialValues: Array<boolean>): BoolSignalHistory;
-
-pinLastValue(): ConstBoolSignal;
-
-and(other: BoolSignal | boolean): BoolSignal;
-
-onOn(): EventSource;
-
-onOn(config: { fireOnInitialValue: ?boolean}): EventSource;
+not(): BoolSignal;
 
 onOff(): EventSource;
 
 onOff(config: { fireOnInitialValue: ?boolean}): EventSource;
 
-delayBy(timeSpan: {milliseconds: number}): this;
+onOn(): EventSource;
+
+onOn(config: { fireOnInitialValue: ?boolean}): EventSource;
+
+or(other: BoolSignal | boolean): BoolSignal;
+
+pin(): BoolSignal;
+
+pinLastValue(): ConstBoolSignal;
+
+xor(other: BoolSignal | boolean): BoolSignal;
 
 }
 }
@@ -64,6 +64,25 @@ Specifies a Boolean representing the last value of the signal.
 lastValue: boolean;
 /** 
 *  
+ * and(other: BoolSignal): BoolSignal
+ *  
+ * 
+ * Returns a signal with the value that is the logical conjunction of the values of the given signals. It is `true` every time both input signals are `true` and `false` at all other times.
+ * 
+ * **See Also**: `ReactiveModule.and`
+ */ 
+and(other: BoolSignal | boolean): BoolSignal;
+
+/** 
+*  
+ * delayBy(timeSpan: {milliseconds: number}): this
+ *  
+ * Delays a signal. The argument is an object with a "milliseconds" property specifying the delay duration in milliseconds.
+ */ 
+delayBy(timeSpan: {milliseconds: number}): this;
+
+/** 
+*  
  * eq(other: BoolSignal): BoolSignal
  *  
  * 
@@ -75,58 +94,17 @@ eq(other: BoolSignal | boolean): BoolSignal;
 
 /** 
 *  
- * or(other: BoolSignal): BoolSignal
+ * history(framesCount: number): BoolSignalHistory
+ * history(framesCount: number, initialValues: Array<boolean>): BoolSignalHistory
  *  
  * 
- * Returns a signal with the value that is the logical disjunction of the values of the given signals. It is `true` every time at least one of the input signals is `true` and `false` at all other times.
+ * Returns an object used to access signal values from past frames. The amount of frames tracked is customizable via `framesCount` parameter.
+ * Historical signal values are going to be initialized with signal value at call time or using `initialValues` if provided.
  * 
- * **See Also**: `ReactiveModule.or`
  */ 
-or(other: BoolSignal | boolean): BoolSignal;
+history(framesCount: number): BoolSignalHistory;
 
-/** 
-*  
- * not(): BoolSignal
- *  
- * 
- * Returns a signal with the logically negated value of the given signal.
- * 
- * **See Also**: `ReactiveModule.not`
- */ 
-not(): BoolSignal;
-
-/** 
-*  
- * xor(other: BoolSignal): BoolSignal
- *  
- * 
- * Returns a signal with the value that is the logical exclusive disjunction of the values of the given signals. It is `true` every time exactly one of the input signals is `true` and `false` at all other times.
- * 
- * **Note**: It is equivalent to `BoolSignal.ne`.
- * 
- * **See Also**: `ReactiveModule.xor`
- */ 
-xor(other: BoolSignal | boolean): BoolSignal;
-
-/** 
-*  
- * pin(): BoolSignal
- *  
- * 
- * Returns a `BoolSignal` containing a constant value which is the value of the specified signal immediately after `pin` is called.
- */ 
-pin(): BoolSignal;
-
-/** 
-*  
- * ne(other: BoolSignal): BoolSignal
- *  
- * 
- * Returns a Boolean signal that takes the value of `true` every time when the value of the left-hand-side signal is **not equal** to the value of the right-hand-side one, and the value of `false` all other time.
- * 
- * **See Also**: `ReactiveModule.ne`
- */ 
-ne(other: BoolSignal | boolean): BoolSignal;
+history(framesCount: number, initialValues: Array<boolean>): BoolSignalHistory;
 
 /** 
 *  
@@ -168,58 +146,25 @@ monitor(config: { fireOnInitialValue: ?boolean}): EventSource;
 
 /** 
 *  
- * history(framesCount: number): BoolSignalHistory
- * history(framesCount: number, initialValues: Array<boolean>): BoolSignalHistory
+ * ne(other: BoolSignal): BoolSignal
  *  
  * 
- * Returns an object used to access signal values from past frames. The amount of frames tracked is customizable via `framesCount` parameter.
- * Historical signal values are going to be initialized with signal value at call time or using `initialValues` if provided.
+ * Returns a Boolean signal that takes the value of `true` every time when the value of the left-hand-side signal is **not equal** to the value of the right-hand-side one, and the value of `false` all other time.
  * 
+ * **See Also**: `ReactiveModule.ne`
  */ 
-history(framesCount: number): BoolSignalHistory;
-
-history(framesCount: number, initialValues: Array<boolean>): BoolSignalHistory;
+ne(other: BoolSignal | boolean): BoolSignal;
 
 /** 
 *  
- * pinLastValue(): ConstBoolSignal
+ * not(): BoolSignal
  *  
  * 
- * Returns a `ConstBoolSignal` containing a constant value which is the last value of the specified signal before `pinLastValue` is called.
- * ConstBoolSignal can be passed to a functions which accept bool.
+ * Returns a signal with the logically negated value of the given signal.
+ * 
+ * **See Also**: `ReactiveModule.not`
  */ 
-pinLastValue(): ConstBoolSignal;
-
-/** 
-*  
- * and(other: BoolSignal): BoolSignal
- *  
- * 
- * Returns a signal with the value that is the logical conjunction of the values of the given signals. It is `true` every time both input signals are `true` and `false` at all other times.
- * 
- * **See Also**: `ReactiveModule.and`
- */ 
-and(other: BoolSignal | boolean): BoolSignal;
-
-/** 
-* 
- *  
- * onOn(): EventSource
- * onOn(config: { fireOnInitialValue: ?boolean}): EventSource
- *  
- * 
- * Returns an `EventSource` that emits an event every time the value of the input signal changes to `true`. The event contains a JSON object with the old and new values in the format:
- * 
- *  
- * { "oldValue": val, "newValue": val }
- *  
- * 
- * **Note**: By default, there is no event fired for the initial value of the signal if it's `true` straight away. If `config.fireOnInitialValue` is set to `true` then an event for initial signal value is also emitted. `oldValue` is unset for this initial event.
- * 
- */ 
-onOn(): EventSource;
-
-onOn(config: { fireOnInitialValue: ?boolean}): EventSource;
+not(): BoolSignal;
 
 /** 
 * 
@@ -242,12 +187,67 @@ onOff(): EventSource;
 onOff(config: { fireOnInitialValue: ?boolean}): EventSource;
 
 /** 
-*  
- * delayBy(timeSpan: {milliseconds: number}): this
+* 
  *  
- * Delays a signal. The argument is an object with a "milliseconds" property specifying the delay duration in milliseconds.
+ * onOn(): EventSource
+ * onOn(config: { fireOnInitialValue: ?boolean}): EventSource
+ *  
+ * 
+ * Returns an `EventSource` that emits an event every time the value of the input signal changes to `true`. The event contains a JSON object with the old and new values in the format:
+ * 
+ *  
+ * { "oldValue": val, "newValue": val }
+ *  
+ * 
+ * **Note**: By default, there is no event fired for the initial value of the signal if it's `true` straight away. If `config.fireOnInitialValue` is set to `true` then an event for initial signal value is also emitted. `oldValue` is unset for this initial event.
+ * 
  */ 
-delayBy(timeSpan: {milliseconds: number}): this;
+onOn(): EventSource;
+
+onOn(config: { fireOnInitialValue: ?boolean}): EventSource;
+
+/** 
+*  
+ * or(other: BoolSignal): BoolSignal
+ *  
+ * 
+ * Returns a signal with the value that is the logical disjunction of the values of the given signals. It is `true` every time at least one of the input signals is `true` and `false` at all other times.
+ * 
+ * **See Also**: `ReactiveModule.or`
+ */ 
+or(other: BoolSignal | boolean): BoolSignal;
+
+/** 
+*  
+ * pin(): BoolSignal
+ *  
+ * 
+ * Returns a `BoolSignal` containing a constant value which is the value of the specified signal immediately after `pin` is called.
+ */ 
+pin(): BoolSignal;
+
+/** 
+*  
+ * pinLastValue(): ConstBoolSignal
+ *  
+ * 
+ * Returns a `ConstBoolSignal` containing a constant value which is the last value of the specified signal before `pinLastValue` is called.
+ * ConstBoolSignal can be passed to a functions which accept bool.
+ */ 
+pinLastValue(): ConstBoolSignal;
+
+/** 
+*  
+ * xor(other: BoolSignal): BoolSignal
+ *  
+ * 
+ * Returns a signal with the value that is the logical exclusive disjunction of the values of the given signals. It is `true` every time exactly one of the input signals is `true` and `false` at all other times.
+ * 
+ * **Note**: It is equivalent to `BoolSignal.ne`.
+ * 
+ * **See Also**: `ReactiveModule.xor`
+ */ 
+xor(other: BoolSignal | boolean): BoolSignal;
 
 }
 }

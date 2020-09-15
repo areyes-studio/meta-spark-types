@@ -3,6 +3,29 @@
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 declare interface Canvas {
 /** 
+* 
+```
+(get) bounds: Bounds2D
+(set) (Not Available)
+```
+
+Represents the current 2D bounds relative to the parent element. This is the result of the layout calculation. Values are measured in 3D units.
+
+**Note**: The `Canvas.transform` property doesn't affect the layout, the transformation it specifies is applied on top of it.
+
+*/ 
+bounds: Bounds2D;
+/** 
+* ```
+(get) height: ScalarSignal
+(set) height: ScalarSignal
+```
+
+Specifies the vertical size, in 3D units.
+**Note:** this is only effective when `renderMode` property is set to WORLD_SPACE.
+*/ 
+height: ScalarSignal | number;
+/** 
 * ```
 (get) mode: Signal<SceneModule.RenderMode>
 (set) mode: Signal<SceneModule.RenderMode>
@@ -19,16 +42,6 @@ In WORLD_SPACE Canvas behaves as regular 3D object and is sized according to `wi
 mode: Signal<SceneModule.RenderMode>;
 /** 
 * ```
-(get) width: ScalarSignal
-(set) width: ScalarSignal
-```
-
-Specifies the horizontal size, in 3D units.
-**Note:** this is only effective when `renderMode` property is set to WORLD_SPACE.
-*/ 
-width: ScalarSignal | number;
-/** 
-* ```
 (get) renderMode: SceneModule.RenderMode
 (set) renderMode: SceneModule.RenderMode
 ```
@@ -40,16 +53,6 @@ In WORLD_SPACE Canvas behaves as regular 3D object and is sized according to `wi
 renderMode: RenderMode;
 /** 
 * ```
-(get) height: ScalarSignal
-(set) height: ScalarSignal
-```
-
-Specifies the vertical size, in 3D units.
-**Note:** this is only effective when `renderMode` property is set to WORLD_SPACE.
-*/ 
-height: ScalarSignal | number;
-/** 
-* ```
 (get) useSafeAreaMargins: BoolSignal
 (set) useSafeAreaMargins: BoolSignal
 ```
@@ -59,18 +62,15 @@ Specifies if Canvas should automatically include SafeArea margin to its content.
 */ 
 useSafeAreaMargins: BoolSignal | boolean;
 /** 
-* 
+* ```
+(get) width: ScalarSignal
+(set) width: ScalarSignal
 ```
-(get) bounds: Bounds2D
-(set) (Not Available)
-```
 
-Represents the current 2D bounds relative to the parent element. This is the result of the layout calculation. Values are measured in 3D units.
-
-**Note**: The `Canvas.transform` property doesn't affect the layout, the transformation it specifies is applied on top of it.
-
+Specifies the horizontal size, in 3D units.
+**Note:** this is only effective when `renderMode` property is set to WORLD_SPACE.
 */ 
-bounds: Bounds2D;
+width: ScalarSignal | number;
 /** 
 *  
  * setMode(mode: Signal<SceneModule.RenderMode>): void

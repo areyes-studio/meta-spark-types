@@ -2,25 +2,20 @@
 declare namespace PrefabsModule {
 /** 
 *  
- * get(prefabName: string): Prefab
+ * findFirst(name: string): Promise<Prefab | null>
  *  
  * 
- * Returns a prefab object, derived from `Prefab`, that is specified by `prefabName`. An exception is thrown when prefab isn't found. At the moment we have only one type:
- * 
- *   * `Prefab`
- * 
- * **See Also**: `Prefab.name`.
+ * Returns a promise that is resolved with the prefab of a requested name or null if none was found.
+ * **See Also**: `Prefabs.findUsingPattern`, `Prefabs.getAll`.
  */ 
-function get(prefabName: string): Prefab;
+function findFirst(name: string): Promise<Prefab | null>;
 
 /** 
 *  
- * findUsingPattern(namePattern: string): Promise<Array<Prefab>>
- * findUsingPattern(namePattern: string, config: {limit: number}): Promise<Array<Prefab>>
+ * findUsingPattern(namePattern: string, config?: {limit: number}): Promise<Array<Prefab>>
  *  
  * 
  * Returns a promise that is resolved with the all of the prefabs matching the name pattern or empty array if none was found.
- * 
  * Pattern format:
  * `*` matches any characters sequence.
  * `\` can be used to include in pattern any of the control characters (including '\' itself)
@@ -35,33 +30,29 @@ function get(prefabName: string): Prefab;
  * 
  * **See Also**: `Prefabs.getAll`, `Prefabs.findFirst`.
  */ 
-function findUsingPattern(namePattern: string): Promise<Array<Prefab>>;
-
-function findUsingPattern(namePattern: string, config: {limit: number}): Promise<Array<Prefab>>;
+function findUsingPattern(namePattern: string, config?: {limit: number}): Promise<Array<Prefab>>;
 
 /** 
-* 
+*  
+ * get(prefabName: string): Prefab
  *  
+ * 
+ * Returns a prefab object, derived from `Prefab`, that is specified by `prefabName`. An exception is thrown when prefab isn't found. At the moment we have only one type:
+ *   * `Prefab`
+ * 
+ * **See Also**: `Prefab.name`.
+ */ 
+function get(prefabName: string): Prefab;
+
+/** 
+*  
  * getAll(): Promise<Array<Prefab>>
  *  
  * 
  * Returns a promise that is resolved with all of the prefabs.
  * **See Also**: `Prefabs.findUsingPattern`, `Prefabs.findFirst`.
- *           
  */ 
 function getAll(): Promise<Array<Prefab>>;
-
-/** 
-* 
- *  
- * findFirst(name: string): Promise<Prefab>
- *  
- * 
- * Returns a promise that is resolved with the prefab of a requested name or null if none was found.
- * **See Also**: `Prefabs.findUsingPattern`, `Prefabs.getAll`.
- *           
- */ 
-function findFirst(name: string): Promise<Prefab>;
 
 }
 export = PrefabsModule;

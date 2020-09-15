@@ -32,6 +32,16 @@ function enterRawTextEditMode(nodeName: string): Promise<boolean>;
 
 /** 
 *  
+ * enterTextEditMode(nodeName: string): Promise<boolean>
+ *  
+ * 
+ * Requests user input for given node.
+ * Returns a promise that is resolved with boolean value representing whenever the request succeeded.
+ */ 
+function enterTextEditMode(nodeName: string): Promise<boolean>;
+
+/** 
+*  
  * exitRawTextEditMode(): Promise<boolean>
  *  
  * 
@@ -56,16 +66,6 @@ function getText(nodeName: string): StringSignal;
  * Sets the text to the provided value for the node with a given name.
  */ 
 function setText(nodeName: string, text: string): void;
-
-/** 
-*  
- * enterTextEditMode(nodeName: string): Promise<boolean>
- *  
- * 
- * Requests user input for given node.
- * Returns a promise that is resolved with boolean value representing whenever the request succeeded.
- */ 
-function enterTextEditMode(nodeName: string): Promise<boolean>;
 
 }
 export = NativeUIModule;

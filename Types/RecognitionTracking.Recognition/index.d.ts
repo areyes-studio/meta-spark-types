@@ -3,13 +3,6 @@
 declare interface Recognition {
 /** 
 * ```
-(get) metadata: string
-(set) (Not Available)
-```
-*/ 
-metadata: string;
-/** 
-* ```
 (get) hasTracking: boolean
 (set) (Not Available)
 ```
@@ -17,11 +10,11 @@ metadata: string;
 hasTracking: boolean;
 /** 
 * ```
-(get) tracking: Tracking
+(get) metadata: string
 (set) (Not Available)
 ```
 */ 
-tracking: Tracking;
+metadata: string;
 /** 
 * ```
 (get) onLost: EventSource
@@ -29,4 +22,11 @@ tracking: Tracking;
 ```
 */ 
 onLost: EventSource;
+/** 
+* ```
+(get) tracking: Tracking
+(set) (Not Available)
+```
+*/ 
+tracking: Tracking;
 }

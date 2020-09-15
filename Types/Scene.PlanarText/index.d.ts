@@ -5,13 +5,40 @@
 declare interface PlanarText {
 /** 
 * ```
-(get) text: StringSignal
-(set) text: StringSignal
+(get) alignment: TextAlignmentWrapper
+(set) (Not Available)
 ```
 
-Specifies the text displayed.
+Represents the `TextAlignmentWrapper` that contains parameters that specify the text alignment.
 */ 
-text: StringSignal | string;
+alignment: TextAlignmentWrapper;
+/** 
+* ```
+(get) (Not Available)
+(set) font: FontId
+```
+
+Sets the given font from the fonts registry.
+*/ 
+font: FontId;
+/** 
+* ```
+(get) (Not Available)
+(set) fontSize: number
+```
+
+Specifies the font size of the text.
+*/ 
+fontSize: number;
+/** 
+* ```
+(get) (Not Available)
+(set) leading: ?number
+```
+
+Specifies the line spacing. This is the distance between the baselines in the text. If unspecified, spacing defaults to the font size.
+*/ 
+leading? : number;
 /** 
 * 
 ```
@@ -26,12 +53,12 @@ material: MaterialBase;
 /** 
 * ```
 (get) (Not Available)
-(set) fontSize: number
+(set) maxLines: ?number
 ```
 
-Specifies the font size of the text.
+Specifies the maximum number of lines for the text. If unspecified, the number of lines is unrestricted.
 */ 
-fontSize: number;
+maxLines? : number;
 /** 
 * ```
 (get) (Not Available)
@@ -43,6 +70,15 @@ Specifies if the text is scaled to fit the container.
 scaleToFit: boolean;
 /** 
 * ```
+(get) text: StringSignal
+(set) text: StringSignal
+```
+
+Specifies the text displayed.
+*/ 
+text: StringSignal | string;
+/** 
+* ```
 (get) (Not Available)
 (set) tracking: number
 ```
@@ -50,42 +86,6 @@ scaleToFit: boolean;
 Specifies the text spacing. This is the additional distance between letters. Default is zero. Can be negative.
 */ 
 tracking: number;
-/** 
-* ```
-(get) (Not Available)
-(set) maxLines: ?number
-```
-
-Specifies the maximum number of lines for the text. If unspecified, the number of lines is unrestricted.
-*/ 
-maxLines? : number;
-/** 
-* ```
-(get) (Not Available)
-(set) leading: ?number
-```
-
-Specifies the line spacing. This is the distance between the baselines in the text. If unspecified, spacing defaults to the font size.
-*/ 
-leading? : number;
-/** 
-* ```
-(get) (Not Available)
-(set) font: FontId
-```
-
-Sets the given font from the fonts registry.
-*/ 
-font: FontId;
-/** 
-* ```
-(get) alignment: TextAlignmentWrapper
-(set) (Not Available)
-```
-
-Represents the `TextAlignmentWrapper` that contains parameters that specify the text alignment.
-*/ 
-alignment: TextAlignmentWrapper;
 /** 
 * 
  *  

@@ -3,13 +3,13 @@
 declare interface BlendShape {
 /** 
 * ```
-(get) weight: ScalarSignal
-(set) weight: ScalarSignal
+(get) name: string
+(set) (Not Available)
 ```
 
-Specifies the weight of the blend shape.
+Retrieves the name of the BlendShape.
 */ 
-weight: ScalarSignal | number;
+name: string;
 /** 
 * ```
 (get) prefabName: string
@@ -21,19 +21,21 @@ Specifies the name of prefab for BlendShape. This is the unique identifier of th
 prefabName: string;
 /** 
 * ```
-(get) name: string
-(set) (Not Available)
+(get) weight: ScalarSignal
+(set) weight: ScalarSignal
 ```
 
-Retrieves the name of the BlendShape.
+Specifies the weight of the blend shape.
 */ 
-name: string;
+weight: ScalarSignal | number;
 /** 
-*  
+* 
+ *  
  * getPrefab(): Promise<Prefab>
  *  
  * 
  * Returns a promise that is resolved with the prefab associated with a given BlendShape or null if no prefab was assigned.
+ * 
  */ 
 getPrefab(): Promise<Prefab>;
 

@@ -3,14 +3,14 @@ declare interface Head {
 /** 
 * 
 ```
-(get) top: Point2DSignal
+(get) chin: Point2DSignal
 (set) (Not Available)
 ```
 
-Gets the 2D head top position.
+Gets the 2D chin position.
 
 */ 
-top: Point2DSignal;
+chin: Point2DSignal;
 /** 
 * 
 ```
@@ -22,6 +22,17 @@ Gets the 2D left ear position.
 
 */ 
 leftEar: Point2DSignal;
+/** 
+* 
+```
+(get) leftEye: Point2DSignal
+(set) (Not Available)
+```
+
+Gets the 2D left eye position.
+
+*/ 
+leftEye: Point2DSignal;
 /** 
 * 
 ```
@@ -58,23 +69,12 @@ rightEye: Point2DSignal;
 /** 
 * 
 ```
-(get) leftEye: Point2DSignal
+(get) top: Point2DSignal
 (set) (Not Available)
 ```
 
-Gets the 2D left eye position.
+Gets the 2D head top position.
 
 */ 
-leftEye: Point2DSignal;
-/** 
-* 
-```
-(get) chin: Point2DSignal
-(set) (Not Available)
-```
-
-Gets the 2D chin position.
-
-*/ 
-chin: Point2DSignal;
+top: Point2DSignal;
 }

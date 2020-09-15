@@ -1,43 +1,39 @@
 declare namespace IdentityModule {
 /** 
 *  
- *   getAccessToken(): Promise<String>
+ * getAccessToken(): Promise<string>
  *  
  * 
- * 
- * Returns a `JS Promise` which will be fulfilled with Access Token `String` object or an error.
+ * Returns a `JS Promise` which will be fulfilled with Access Token `string` object or an error.
  */ 
-function getAccessToken(): Promise<String>;
+function getAccessToken(): Promise<string>;
 
 /** 
 *  
- * getEmailAddress(): Promise<String>
+ * getAppScopedID(): Promise<string>
  *  
  * 
- * 
- * Returns a `JS Promise` which will be fulfilled with user Email Address `String` object or an error.
+ * Returns a `JS Promise` which will be fulfilled with App Scope ID `string` object or an error.
  */ 
-function getEmailAddress(): Promise<String>;
+function getAppScopedID(): Promise<string>;
 
 /** 
 *  
- * getAppScopedID(): Promise<String>
+ * getEmailAddress(): Promise<string>
  *  
  * 
- * 
- * Returns a `JS Promise` which will be fulfilled with App Scope ID `String` object or an error.
+ * Returns a `JS Promise` which will be fulfilled with user Email Address `string` object or an error.
  */ 
-function getAppScopedID(): Promise<String>;
+function getEmailAddress(): Promise<string>;
 
 /** 
 *  
- * getFullName(): Promise<String>
+ * getFullName(): Promise<string>
  *  
  * 
- * 
- * Returns a `JS Promise` which will be fulfilled with user Full Name `String` object or an error.
+ * Returns a `JS Promise` which will be fulfilled with user Full Name `string` object or an error.
  */ 
-function getFullName(): Promise<String>;
+function getFullName(): Promise<string>;
 
 }
 export = IdentityModule;

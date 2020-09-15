@@ -13,6 +13,15 @@ Provides access to a `LiveStreamingComments` object that encapsulates data about
 const comments: LiveStreamingComments;
 /** 
 * ```
+(get) concurrentViewerCount: ScalarSignal
+(set) (Not Available)
+```
+
+ Provides access to a `ScalarSignal` that encapsulates the number of concurrent viewers of the live stream.
+*/ 
+const concurrentViewerCount: ScalarSignal | number;
+/** 
+* ```
 (get) reactions: LiveStreamingReactions
 (set) (Not Available)
 ```
@@ -29,14 +38,5 @@ const reactions: LiveStreamingReactions;
  Specifies a `LiveStreaming.State` enum value indicating the broadcast state.
 */ 
 const state: Signal<LiveStreamingModule.State>;
-/** 
-* ```
-(get) concurrentViewerCount: ScalarSignal
-(set) (Not Available)
-```
-
- Provides access to a `ScalarSignal` that encapsulates the number of concurrent viewers of the live stream.
-*/ 
-const concurrentViewerCount: ScalarSignal | number;
 }
 export = LiveStreamingModule;

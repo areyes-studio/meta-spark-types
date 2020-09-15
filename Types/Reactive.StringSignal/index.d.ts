@@ -5,25 +5,25 @@ declare module "ReactiveModule" {
 global {
 interface String {
 lastValue: string;
-eq(other: StringSignal | string): BoolSignal;
-
 concat(other: StringSignal | string): StringSignal;
 
-pin(): StringSignal;
+delayBy(timeSpan: {milliseconds: number}): this;
 
-ne(other: StringSignal | string): BoolSignal;
-
-monitor(): EventSource;
-
-monitor(config: { fireOnInitialValue: ?boolean}): EventSource;
+eq(other: StringSignal | string): BoolSignal;
 
 history(framesCount: number): StringSignalHistory;
 
 history(framesCount: number, initialValues: Array<string>): StringSignalHistory;
 
-pinLastValue(): ConstStringSignal;
+monitor(): EventSource;
 
-delayBy(timeSpan: {milliseconds: number}): this;
+monitor(config: { fireOnInitialValue: ?boolean}): EventSource;
+
+ne(other: StringSignal | string): BoolSignal;
+
+pin(): StringSignal;
+
+pinLastValue(): ConstStringSignal;
 
 }
 }
@@ -41,17 +41,6 @@ Specifies a string that represents the last value of the signal.
 lastValue: string;
 /** 
 *  
- * eq(other: StringSignal): BoolSignal
- *  
- * 
- * Returns a Boolean signal that takes the value of `true` every time when the value of the left-hand-side signal is **equal** to the value of the right-hand-side one, and the value of `false` all other time.
- * 
- * **See Also**: `ReactiveModule.eq`
- */ 
-eq(other: StringSignal | string): BoolSignal;
-
-/** 
-*  
  * concat(other: StringSignal): StringSignal
  *  
  * 
@@ -63,23 +52,36 @@ concat(other: StringSignal | string): StringSignal;
 
 /** 
 *  
- * pin(): StringSignal
+ * delayBy(timeSpan: {milliseconds: number}): this
  *  
- * 
- * Returns a `StringSignal` containing a constant value which is the value of the specified signal immediately after `pin` is called.
+ * Delays a signal. The argument is an object with a "milliseconds" property specifying the delay duration in milliseconds.
  */ 
-pin(): StringSignal;
+delayBy(timeSpan: {milliseconds: number}): this;
 
 /** 
 *  
- * ne(other: StringSignal): BoolSignal
+ * eq(other: StringSignal): BoolSignal
  *  
  * 
- * Returns a Boolean signal that takes the value of `true` every time when the value of the left-hand-side signal is **not equal** to the value of the right-hand-side one, and the value of `false` all other time.
+ * Returns a Boolean signal that takes the value of `true` every time when the value of the left-hand-side signal is **equal** to the value of the right-hand-side one, and the value of `false` all other time.
  * 
- * **See Also**: `ReactiveModule.ne`
+ * **See Also**: `ReactiveModule.eq`
  */ 
-ne(other: StringSignal | string): BoolSignal;
+eq(other: StringSignal | string): BoolSignal;
+
+/** 
+*  
+ * history(framesCount: number): StringSignalHistory
+ * history(framesCount: number, initialValues: Array<string>): StringSignalHistory
+ *  
+ * 
+ * Returns an object used to access signal values from past frames. The amount of frames tracked is customizable via `framesCount` parameter.
+ * Historical signal values are going to be initialized with signal value at call time or using `initialValues` if provided.
+ * 
+ */ 
+history(framesCount: number): StringSignalHistory;
+
+history(framesCount: number, initialValues: Array<string>): StringSignalHistory;
 
 /** 
 * 
@@ -103,17 +105,23 @@ monitor(config: { fireOnInitialValue: ?boolean}): EventSource;
 
 /** 
 *  
- * history(framesCount: number): StringSignalHistory
- * history(framesCount: number, initialValues: Array<string>): StringSignalHistory
+ * ne(other: StringSignal): BoolSignal
  *  
  * 
- * Returns an object used to access signal values from past frames. The amount of frames tracked is customizable via `framesCount` parameter.
- * Historical signal values are going to be initialized with signal value at call time or using `initialValues` if provided.
+ * Returns a Boolean signal that takes the value of `true` every time when the value of the left-hand-side signal is **not equal** to the value of the right-hand-side one, and the value of `false` all other time.
  * 
+ * **See Also**: `ReactiveModule.ne`
  */ 
-history(framesCount: number): StringSignalHistory;
+ne(other: StringSignal | string): BoolSignal;
 
-history(framesCount: number, initialValues: Array<string>): StringSignalHistory;
+/** 
+*  
+ * pin(): StringSignal
+ *  
+ * 
+ * Returns a `StringSignal` containing a constant value which is the value of the specified signal immediately after `pin` is called.
+ */ 
+pin(): StringSignal;
 
 /** 
 *  
@@ -124,14 +132,6 @@ history(framesCount: number, initialValues: Array<string>): StringSignalHistory;
  * ConstStringSignal can be passed to a functions which accept strings
  */ 
 pinLastValue(): ConstStringSignal;
-
-/** 
-*  
- * delayBy(timeSpan: {milliseconds: number}): this
- *  
- * Delays a signal. The argument is an object with a "milliseconds" property specifying the delay duration in milliseconds.
- */ 
-delayBy(timeSpan: {milliseconds: number}): this;
 
 }
 }
