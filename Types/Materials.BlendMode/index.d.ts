@@ -1,4 +1,4 @@
-/** 
+/**
  * The `BlendMode` enum describes how material is blended.
  * @property ADD Adds pixel values of the source to the destination.
  * @property ALPHA Linear interpolation between the pixels of the source and destination as specified by the alpha values of the source.
@@ -7,13 +7,13 @@
  * @property REPLACE The non-transparent pixels of the source replace corresponding pixels of the destination.
  * @property SCREEN Values of each pixels in the source and destination are inverted, multiplied, and then inverted again.
  * @property SUBTRACT Subtracts pixel values of the source from the destination. In case of negative values, black is displayed.
- */ 
-declare interface BlendMode{ 
-ADD, 
-ALPHA, 
-ASSOCIATIVE_ALPHA, 
-MULTIPLY, 
-REPLACE, 
-SCREEN, 
-SUBTRACT, 
-} 
+ */
+declare interface BlendMode{
+ADD,
+ALPHA,
+ASSOCIATIVE_ALPHA,
+MULTIPLY,
+REPLACE,
+SCREEN,
+SUBTRACT,
+}

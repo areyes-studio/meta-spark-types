@@ -3,7 +3,7 @@
 /// <reference path="../Reactive.Point2DSignal/index.d.ts" />
 /// <reference path="../Reactive.StringSignal/index.d.ts" />
 declare interface LineBasedPlaneTracker {
-/** 
+/**
 * ```
 (get) planeType: StringSignal
 (set) (Not Available)
@@ -16,9 +16,9 @@ Possible values:
 - HORIZONTAL_FLOOR
 - HORIZONTAL_CEILING
 - VERTICAL
-*/ 
+*/
 planeType: StringSignal | string;
-/** 
+/**
 *  
  * movePlane(screenLocation: Point2D): void
  * movePlane(screenX: number, screenY: number): void
@@ -34,14 +34,14 @@ planeType: StringSignal | string;
  *   lineBasedTracker.movePlane(gesture.location);
  * });
  *  
- */ 
+ */
 movePlane(screenLocation: Point2D): void;
 
 movePlane(screenX: number, screenY: number): void;
 
 movePlane(screenLocation: Point2DSignal, gestureState: StringSignal | string): void;
 
-/** 
+/**
 *  
  * removePlane(): void
  *  
@@ -53,10 +53,10 @@ movePlane(screenLocation: Point2DSignal, gestureState: StringSignal | string): v
  *   lineBasedTracker.removePlane();
  * });
  *  
- */ 
+ */
 removePlane(): void;
 
-/** 
+/**
 *  
  *          resetPlane(screenLocation: Point2D): void
  *          resetPlane(screenX: number, screenY: number): void
@@ -74,7 +74,7 @@ removePlane(): void;
  *            lineBasedTracker.resetPlane(gesture.location, PlaneType.HORZONTAL);
  *          });
  *           
- */ 
+ */
 resetPlane(screenLocation: Point2D): void;
 
 resetPlane(screenX: number, screenY: number): void;

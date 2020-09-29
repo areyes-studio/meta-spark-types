@@ -1,16 +1,16 @@
 /// <reference path="../Prefabs.Prefab/index.d.ts" />
 declare namespace PrefabsModule {
-/** 
+/**
 *  
  * findFirst(name: string): Promise<Prefab | null>
  *  
  * 
  * Returns a promise that is resolved with the prefab of a requested name or null if none was found.
  * **See Also**: `Prefabs.findUsingPattern`, `Prefabs.getAll`.
- */ 
+ */
 function findFirst(name: string): Promise<Prefab | null>;
 
-/** 
+/**
 *  
  * findUsingPattern(namePattern: string, config?: {limit: number}): Promise<Array<Prefab>>
  *  
@@ -29,10 +29,10 @@ function findFirst(name: string): Promise<Prefab | null>;
  * `limit` parameter describes if `findUsingPattern` should finish the search if it finds specified number of results (default is no limit). Non-positive values for limit are treated as unlimited.
  * 
  * **See Also**: `Prefabs.getAll`, `Prefabs.findFirst`.
- */ 
+ */
 function findUsingPattern(namePattern: string, config?: {limit: number}): Promise<Array<Prefab>>;
 
-/** 
+/**
 *  
  * get(prefabName: string): Prefab
  *  
@@ -41,17 +41,17 @@ function findUsingPattern(namePattern: string, config?: {limit: number}): Promis
  *   * `Prefab`
  * 
  * **See Also**: `Prefab.name`.
- */ 
+ */
 function get(prefabName: string): Prefab;
 
-/** 
+/**
 *  
  * getAll(): Promise<Array<Prefab>>
  *  
  * 
  * Returns a promise that is resolved with all of the prefabs.
  * **See Also**: `Prefabs.findUsingPattern`, `Prefabs.findFirst`.
- */ 
+ */
 function getAll(): Promise<Array<Prefab>>;
 
 }

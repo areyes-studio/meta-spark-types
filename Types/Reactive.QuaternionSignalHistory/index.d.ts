@@ -1,6 +1,6 @@
 /// <reference path="../Reactive.QuaternionSignal/index.d.ts" />
 declare interface QuaternionSignalHistory {
-/** 
+/**
 * 
 ```
 (get) length: number
@@ -9,9 +9,9 @@ declare interface QuaternionSignalHistory {
 
 Returns how many frames are being tracked by this history object.
 
-*/ 
+*/
 length: number;
-/** 
+/**
 * 
  *  
  * at(index: number): QuaternionSignal
@@ -25,10 +25,10 @@ length: number;
  * **Note**: See also `SignalHistory.frame` method which uses more intuitive negative indexing.
  * **Note**: You can use `SignalHistory[0]` to achieve same effect as calling `SignalHistory.at(0)`
  * 
- */ 
+ */
 at(index: number): QuaternionSignal;
 
-/** 
+/**
 * 
  *  
  * frame(relativeFrame: number): QuaternionSignal
@@ -42,7 +42,7 @@ at(index: number): QuaternionSignal;
  * **Note**: See also `SignalHistory.at` method for approach which is index based.
  * **Note**: You can use `SignalHistory[-1]` to achieve same effect as calling `SignalHistory.frame(-1)`
  * 
- */ 
+ */
 frame(relativeFrame: number): QuaternionSignal;
 
 }

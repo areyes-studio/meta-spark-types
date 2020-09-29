@@ -1,6 +1,6 @@
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 declare interface FocalPlane {
-/** 
+/**
 * 
 ```
 (get) distance: ScalarSignal
@@ -9,9 +9,9 @@ declare interface FocalPlane {
 
 Specifies the distance between focal plane and camera. Measured in 3D units.
 
-*/ 
+*/
 distance: ScalarSignal | number;
-/** 
+/**
 * 
 ```
 (get) height: ScalarSignal
@@ -20,9 +20,9 @@ distance: ScalarSignal | number;
 
 Specifies the height of the focal plane. Measured in 3D units.
 
-*/ 
+*/
 height: ScalarSignal | number;
-/** 
+/**
 * 
 ```
 (get) width: ScalarSignal
@@ -31,6 +31,6 @@ height: ScalarSignal | number;
 
 Specifies the width of the focal plane. Measured in 3D units.
 
-*/ 
+*/
 width: ScalarSignal | number;
 }

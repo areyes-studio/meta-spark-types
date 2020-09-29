@@ -1,6 +1,6 @@
 /// <reference path="../Reactive.Point2DSignal/index.d.ts" />
 declare interface RightLeg {
-/** 
+/**
 * 
 ```
 (get) foot: Point2DSignal
@@ -9,9 +9,9 @@ declare interface RightLeg {
 
 Gets the 2D foot position.
 
-*/ 
+*/
 foot: Point2DSignal;
-/** 
+/**
 * 
 ```
 (get) knee: Point2DSignal
@@ -20,6 +20,6 @@ foot: Point2DSignal;
 
 Gets the 2D knee position.
 
-*/ 
+*/
 knee: Point2DSignal;
 }

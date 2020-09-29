@@ -1,6 +1,6 @@
 /// <reference path="../Reactive.Point2DSignal/index.d.ts" />
 declare interface Point2DSignalHistory {
-/** 
+/**
 * 
 ```
 (get) length: number
@@ -9,9 +9,9 @@ declare interface Point2DSignalHistory {
 
 Returns how many frames are being tracked by this history object.
 
-*/ 
+*/
 length: number;
-/** 
+/**
 * 
  *  
  * at(index: number): Point2DSignal
@@ -25,10 +25,10 @@ length: number;
  * **Note**: See also `SignalHistory.frame` method which uses more intuitive negative indexing.
  * **Note**: You can use `SignalHistory[0]` to achieve same effect as calling `SignalHistory.at(0)`
  * 
- */ 
+ */
 at(index: number): Point2DSignal;
 
-/** 
+/**
 * 
  *  
  * frame(relativeFrame: number): Point2DSignal
@@ -42,7 +42,7 @@ at(index: number): Point2DSignal;
  * **Note**: See also `SignalHistory.at` method for approach which is index based.
  * **Note**: You can use `SignalHistory[-1]` to achieve same effect as calling `SignalHistory.frame(-1)`
  * 
- */ 
+ */
 frame(relativeFrame: number): Point2DSignal;
 
 }

@@ -1,16 +1,16 @@
 /// <reference path="../Fonts.FontId/index.d.ts" />
 declare namespace FontsModule {
-/** 
+/**
 *  
  * findFirst(fontName: string): Promise<FontId | null>
  *  
  * 
  * Returns a promise that is resolved with the font identifier of a requested name or null if none was found.
  * **See Also**: `FontsModule.findUsingPattern`, `FontsModule.getAll`.
- */ 
+ */
 function findFirst(fontName: string): Promise<FontId | null>;
 
-/** 
+/**
 *  
  * findUsingPattern(namePattern: string, config?: {limit: number}): Promise<Array<FontId>>
  *  
@@ -29,27 +29,27 @@ function findFirst(fontName: string): Promise<FontId | null>;
  * `limit` parameter describes if `findUsingPattern` should finish the search if it finds specified number of results (default is no limit). Non-positive values for limit are treated as unlimited.
  * 
  * **See Also**: `FontsModule.getAll`, `FontsModule.findFirst`.
- */ 
+ */
 function findUsingPattern(namePattern: string, config?: {limit: number}): Promise<Array<FontId>>;
 
-/** 
+/**
 *  
  * get(fontName: string): FontId
  *  
  * 
  * Returns a font object identified by the `fontName` argument.
  * Throws an exception if there is no such font in the project.
- */ 
+ */
 function get(fontName: string): FontId;
 
-/** 
+/**
 *  
  * getAll(): Promise<Array<FontId>>
  *  
  * 
  * Returns a promise that is resolved with all of the font identifiers.
  * **See Also**: `FontsModule.findUsingPattern`, `FontsModule.findFirst`.
- */ 
+ */
 function getAll(): Promise<Array<FontId>>;
 
 }

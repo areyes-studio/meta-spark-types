@@ -1,4 +1,4 @@
-/** 
+/**
  * The `BlendMode` enum describes the blending mode.
  * @property ADD Blends two colors using the Add blend mode.
  * @property BURN Blends two colors using the Burn blend mode.
@@ -13,19 +13,19 @@
  * @property PLUSDARKER Blends two colors using the PlusDarker blend mode.
  * @property SCREEN Blends two colors using the Screen blend mode.
  * @property SUBTRACT Blends two colors using the Subtract blend mode.
- */ 
-declare interface BlendMode{ 
-ADD, 
-BURN, 
-DIFFERENCE, 
-DIVIDE, 
-DODGE, 
-MAX, 
-MIN, 
-MULTIPLY, 
-NORMAL, 
-OVERLAY, 
-PLUSDARKER, 
-SCREEN, 
-SUBTRACT, 
-} 
+ */
+declare interface BlendMode{
+ADD,
+BURN,
+DIFFERENCE,
+DIVIDE,
+DODGE,
+MAX,
+MIN,
+MULTIPLY,
+NORMAL,
+OVERLAY,
+PLUSDARKER,
+SCREEN,
+SUBTRACT,
+}

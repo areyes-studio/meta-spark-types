@@ -2,7 +2,7 @@
 /// <reference path="../Reactive.Point2DSignal/index.d.ts" />
 /// <reference path="../Reactive.StringSignal/index.d.ts" />
 declare interface PointTracker {
-/** 
+/**
 * ```
 (get) confidence: StringSignal
 (set) (Not Available)
@@ -15,9 +15,9 @@ Possible values:
 - MEDIUM
 - LOW
 - NOT_TRACKING
-*/ 
+*/
 confidence: StringSignal | string;
-/** 
+/**
 *  
  * trackPoint(screenLocation: Point2D): void
  * trackPoint(screenX: number, screenY: number): void
@@ -35,7 +35,7 @@ confidence: StringSignal | string;
  *   pointTracker.trackPoint(gesture.location, gesture.state);
  * });
  *  
- */ 
+ */
 trackPoint(screenLocation: Point2D): void;
 
 trackPoint(screenX: number, screenY: number): void;

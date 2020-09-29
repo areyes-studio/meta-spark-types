@@ -1,16 +1,16 @@
 /// <reference path="../Textures.TextureBase/index.d.ts" />
 declare namespace TexturesModule {
-/** 
+/**
 *  
  * findFirst(textureName: string): Promise<TextureBase | null>
  *  
  * 
  * Returns a promise that is resolved with the texture of a requested name or null if none was found.
  * **See Also**: `Textures.findUsingPattern`, `Textures.getAll`.
- */ 
+ */
 function findFirst(textureName: string): Promise<TextureBase | null>;
 
-/** 
+/**
 *  
  * findUsingPattern(namePattern: string, config?: {limit: number}): Promise<Array<TextureBase>>
  *  
@@ -29,10 +29,10 @@ function findFirst(textureName: string): Promise<TextureBase | null>;
  * `limit` parameter describes if `findUsingPattern` should finish the search if it finds specified number of results (default is no limit). Non-positive values for limit are treated as unlimited.
  * 
  * **See Also**: `Textures.getAll`, `Textures.findFirst`.
- */ 
+ */
 function findUsingPattern(namePattern: string, config?: {limit: number}): Promise<Array<TextureBase>>;
 
-/** 
+/**
 *  
  * get(textureName: string): TextureBase
  *  
@@ -46,17 +46,17 @@ function findUsingPattern(namePattern: string, config?: {limit: number}): Promis
  * * `SequenceTexture`
  * 
  * **See Also**: `TextureBase.name`.
- */ 
+ */
 function get(textureName: string): TextureBase;
 
-/** 
+/**
 *  
  * getAll(): Promise<Array<TextureBase>>
  *  
  * 
  * Returns a promise that is resolved with all of the textures.
  * **See Also**: `Textures.findUsingPattern`, `Textures.findFirst`.
- */ 
+ */
 function getAll(): Promise<Array<TextureBase>>;
 
 }

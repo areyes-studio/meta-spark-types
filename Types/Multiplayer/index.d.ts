@@ -2,7 +2,7 @@
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 /// <reference path="../Reactive.StringSignal/index.d.ts" />
 declare namespace MultiplayerModule {
-/** 
+/**
 * ```
              (get) message: { [key: string] : string }
              (set) (Not Available)
@@ -10,18 +10,18 @@ declare namespace MultiplayerModule {
 
              Receives the latest incoming message from the peers using the effect.
              Received message should contain only one entry.
-*/ 
+*/
 const message: any;
-/** 
+/**
 * ```
              (get) numParticipants: ScalarSignal
              (set) (Not Available)
              ```
 
              Scalar signal of the number of participants currently using the effect in the call
-*/ 
+*/
 const numParticipants: ScalarSignal | number;
-/** 
+/**
 * ```
                (get) onParticipantsChanged: Array<string>
                (set) (Not Available)
@@ -31,9 +31,9 @@ const numParticipants: ScalarSignal | number;
 
                Triggered when the participants of the call has changed, returning an array of
                the current participant's ids.
-*/ 
+*/
 const onParticipantsChanged: Array<string>;
-/** 
+/**
 * ```
               (get) participants: Array<string>
               (set) (Not Available)
@@ -42,18 +42,18 @@ const onParticipantsChanged: Array<string>;
               ** Please use `onParticipantsChanged` property instead. **
 
               Returns an array of participant id's of people currently using the effect in the call
-*/ 
+*/
 const participants: Array<string>;
-/** 
+/**
 * ```
              (get) viewerId: StringSignal
              (set) (Not Available)
              ```
 
              Contains the viewerId of the user using this effect as a string signal
-*/ 
+*/
 const viewerId: StringSignal | string;
-/** 
+/**
 * 
  *  
  * activate(metadata: { [key: string] : StateSignalType }): void
@@ -65,10 +65,10 @@ const viewerId: StringSignal | string;
  * 
  * For example: { numPlayers: StateSignalType::SCALAR, scores: StateSignalType::STRING }
  *     
- */ 
+ */
 function activate(metadata: { [key: string] : StateSignalType }): void;
 
-/** 
+/**
 *  
  *              getState(key: string): ScalarSignal | BoolSignal | StringSignal
  *               
@@ -78,10 +78,10 @@ function activate(metadata: { [key: string] : StateSignalType }): void;
  * 
  *              String input will match keys defined from the metadata.
  *              Output signal type is dependent on the `keyType` enum from metadata.
- */ 
+ */
 function getState(key: string): ScalarSignal | BoolSignal | StringSignal;
 
-/** 
+/**
 *  
  *               getViewerID(): string
  *                
@@ -89,10 +89,10 @@ function getState(key: string): ScalarSignal | BoolSignal | StringSignal;
  *               ** Please use `viewerId` property instead. **
  * 
  *               Returns the viewerID of this user.
- */ 
+ */
 function getViewerID(): string;
 
-/** 
+/**
 *  
  *              sendMessage(message: { [key: string] : string }): void
  *               
@@ -101,10 +101,10 @@ function getViewerID(): string;
  *              within an RTC call. Should only have one entry.
  * 
  *              For example: { "miss": "4" }
- */ 
+ */
 function sendMessage(message: { [key: string] : string }): void;
 
-/** 
+/**
 *  
  *              sendStateUpdate(state: { [key: string] : string }): void
  *               
@@ -114,7 +114,7 @@ function sendMessage(message: { [key: string] : string }): void;
  *              The keys here should always be a subset of the of keys in `activate`.
  * 
  *              For example: { "numPlayers": "2", "scores": "2,5" }
- */ 
+ */
 function sendStateUpdate(state: { [key: string] : string }): void;
 
 }

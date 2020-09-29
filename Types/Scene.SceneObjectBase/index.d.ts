@@ -6,61 +6,61 @@
 /// <reference path="../Reactive.TransformSignal/index.d.ts" />
 /// <reference path="../Scene.WorldTransform/index.d.ts" />
 declare interface SceneObjectBase {
-/** 
+/**
 * ```
 (get) boundingBox: BoundingBox
 (set) (Not Available)
 ```
 
 Retrieves the object's bounding box
-*/ 
+*/
 boundingBox: BoundingBox;
-/** 
+/**
 * ```
 (get) boundingBoxVisible: BoolSignal
 (set) (Not Available)
 ```
 
 Represents whether or not the bounding box for the object is visible.
-*/ 
+*/
 boundingBoxVisible: BoolSignal | boolean;
-/** 
+/**
 * ```
 (get) cameraVisibility: CameraVisibility
 (set) (Not Available)
 ```
 
 Represents the `CameraVisibility` that contains a set of flags that specify the scene object (and its descendants) visibility depending on the active camera.
-*/ 
+*/
 cameraVisibility: CameraVisibility;
-/** 
+/**
 * ```
 (get) hidden: BoolSignal
 (set) hidden: BoolSignal
 ```
 
 Specifies whether the scene object and its descendants are hidden.
-*/ 
+*/
 hidden: BoolSignal | boolean;
-/** 
+/**
 * ```
 (get) identifier: string
 (set) (Not Available)
 ```
 
 Specifies the scene object unique identifier. This value is specified internally in AR Studio.
-*/ 
+*/
 identifier: string;
-/** 
+/**
 * ```
 (get) materialIdentifier: string
 (set) (Not Available)
 ```
 
 Specifies the unique material identifier assigned to scene object. This value is specified internally in AR Studio.
-*/ 
+*/
 materialIdentifier: string;
-/** 
+/**
 * ```
 (get) name: string
 (set) (Not Available)
@@ -70,36 +70,36 @@ Specifies the scene object name. This is the unique identifier of the object wit
 **Note**: the object name is specified in AR Studio UI during design time.
 **Note**: the object name must only be unique withing the list of direct siblings. There can be more than object with the same name in the scene as soon as they have different parents.
 **See Also**: `SceneObjectBase.child`, `SceneObjectBase.find`, `SceneModule.root`.
-*/ 
+*/
 name: string;
-/** 
+/**
 * ```
 (get) outputVisibility: OutputVisibility
 (set) (Not Available)
 ```
 
 Represents the `OutputVisibility` that contains a set of flags that specify the scene object (and its descendants) visibility depending on the output.
-*/ 
+*/
 outputVisibility: OutputVisibility;
-/** 
+/**
 * ```
 (get) parentWorldTransform: TransformSignal
 (set) (Not Available)
 ```
 
 Specifies a `TransformSignal` object describing the parent's transformation relative to world coordinate system.
-*/ 
+*/
 parentWorldTransform: TransformSignal;
-/** 
+/**
 * ```
 (get) transform: Transform
 (set) transform: TransformSignal
 ```
 
 Represents the object transformation, in object's local coordinate system.
-*/ 
+*/
 transform: Transform;
-/** 
+/**
 * ```
 (get) worldTransform: WorldTransform
 (set) worldTransform: TransformSignal
@@ -107,9 +107,9 @@ transform: Transform;
 
 Specifies a `TransformSignal` object describing the object's transformation relative to world coordinate system.
 World transform in not yet supported for Canvas and Legacy canvas. Accessing this property from such objects or any of their children is not allowed.
-*/ 
+*/
 worldTransform: WorldTransform;
-/** 
+/**
 *  
  * addChild(child: SceneObjectBase | string): Promise<void>
  *  
@@ -118,20 +118,20 @@ worldTransform: WorldTransform;
  * Please note the following specific behavior when using this API:
  * - Adding an object as a child automatically removes it from any other parent.
  * - Adding a child that was created in Studio is not allowed.
- */ 
+ */
 addChild(child: any | string): Promise<void>;
 
-/** 
+/**
 *  
  * child(name: string): SceneObjectBase
  *  
  * 
  * Returns a child object by name. An exception is thrown if the object isn't found.
  * **See Also**: `SceneObjectBase.find`, `SceneModule.root`
- */ 
+ */
 child(name: string): any;
 
-/** 
+/**
 *  
  * find(name: string): SceneObjectBase
  *  
@@ -140,10 +140,10 @@ child(name: string): any;
  *  **Note**: object D is considered to be a descendant of object P if either D is a child of P or if such an object C which is a child of P exists that D is a descendant of C.
  * 
  *  **See Also**: `SceneObjectBase.child`, `SceneModule.root`.
- */ 
+ */
 find(name: string): any;
 
-/** 
+/**
 *  
  * findAll(name: string, config?: {recursive: boolean}): Promise<Array<SceneObjectBase>>
  *  
@@ -153,10 +153,10 @@ find(name: string): any;
  * Empty array is returned in no objects are found.
  * 
  * **See Also**: `SceneObjectBase.findFirst`, `SceneObjectBase.findByPath`, `SceneModule.root`.
- */ 
+ */
 findAll(name: string, config?: {recursive: boolean}): Promise<Array<any>>;
 
-/** 
+/**
 *  
  * findByPath(pathQuery: string, config?: {limit: number}): Promise<Array<SceneObjectBase>>
  *  
@@ -184,10 +184,10 @@ findAll(name: string, config?: {recursive: boolean}): Promise<Array<any>>;
  * **Note**: object D is considered to be a descendant of object P if either D is a child of P or if such an object C which is a child of P exists that D is a descendant of C.
  * 
  * **See Also**: `SceneObjectBase.findAll`, `SceneObjectBase.findFirst`, `SceneModule.root`.
- */ 
+ */
 findByPath(pathQuery: string, config?: {limit: number}): Promise<Array<any>>;
 
-/** 
+/**
 *  
  * findFirst(name: string, config?: {recursive: boolean}): Promise<SceneObjectBase | null>
  *  
@@ -196,10 +196,10 @@ findByPath(pathQuery: string, config?: {limit: number}): Promise<Array<any>>;
  * `recursive` param of `config` controls whenever the find should be performed recursively (`true` by default).
  * 
  * **See Also**: `SceneObjectBase.findAll`, `SceneObjectBase.findByPath`, `SceneModule.root`.
- */ 
+ */
 findFirst(name: string, config?: {recursive: boolean}): Promise<any | null>;
 
-/** 
+/**
 *  
  * removeChild(child: SceneObjectBase | string): Promise<void>
  *  
@@ -209,10 +209,10 @@ findFirst(name: string, config?: {recursive: boolean}): Promise<any | null>;
  * - Removing a child that was created in Studio isn't allowed.
  * - Removing a child that is not present under a given parent isn't allowed.
  * - Removing a child doesn't unbind any of it's properties.
- */ 
+ */
 removeChild(child: any | string): Promise<void>;
 
-/** 
+/**
 *  
  * removeFromParent(): Promise<void>
  *  
@@ -222,7 +222,7 @@ removeChild(child: any | string): Promise<void>;
  * - Removing a child that was created in Studio isn't allowed.
  * - Removing a child that is not present under a given parent isn't allowed.
  * - Removing a child doesn't unbind any of it's properties.
- */ 
+ */
 removeFromParent(): Promise<void>;
 
 }

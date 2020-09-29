@@ -6,7 +6,7 @@
 /// <reference path="../PortalWorldModel.RightLeg/index.d.ts" />
 /// <reference path="../PortalWorldModel.Torso/index.d.ts" />
 declare interface Person {
-/** 
+/**
 * 
 ```
 (get) box: BoundingBox
@@ -15,9 +15,9 @@ declare interface Person {
 
 Gets the pose bounding box of the given person.
 
-*/ 
+*/
 box: BoundingBox;
-/** 
+/**
 * 
 ```
 (get) head: Head
@@ -26,9 +26,9 @@ box: BoundingBox;
 
 Gets the head component of this person.
 
-*/ 
+*/
 head: Head;
-/** 
+/**
 * 
 ```
 (get) leftArm: LeftArm
@@ -37,9 +37,9 @@ head: Head;
 
 Gets the left arm component of this person.
 
-*/ 
+*/
 leftArm: LeftArm;
-/** 
+/**
 * 
 ```
 (get) leftLeg: LeftLeg
@@ -48,9 +48,9 @@ leftArm: LeftArm;
 
 Gets the left leg component of this person.
 
-*/ 
+*/
 leftLeg: LeftLeg;
-/** 
+/**
 * 
 ```
 (get) poseId: number
@@ -59,9 +59,9 @@ leftLeg: LeftLeg;
 
 Gets the unique pose ID of the given person.
 
-*/ 
+*/
 poseId: number;
-/** 
+/**
 * 
 ```
 (get) rightArm: RightArm
@@ -70,9 +70,9 @@ poseId: number;
 
 Gets the right arm component of this person.
 
-*/ 
+*/
 rightArm: RightArm;
-/** 
+/**
 * 
 ```
 (get) rightLeg: RightLeg
@@ -81,9 +81,9 @@ rightArm: RightArm;
 
 Gets the right leg component of this person.
 
-*/ 
+*/
 rightLeg: RightLeg;
-/** 
+/**
 * 
 ```
 (get) torso: Torso
@@ -92,6 +92,6 @@ rightLeg: RightLeg;
 
 Gets the torso component of this person.
 
-*/ 
+*/
 torso: Torso;
 }

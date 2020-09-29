@@ -1,16 +1,16 @@
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 /// <reference path="../Reactive.Subscription/index.d.ts" />
 declare namespace TimeModule {
-/** 
+/**
 * ```
 (get) ms: ScalarSignal
 (set) (Not Available)
 ```
 
 Specifies a `ScalarSignal` indicating the number of milliseconds elapsed since the first frame.
-*/ 
+*/
 const ms: ScalarSignal | number;
-/** 
+/**
 *  
  * clearInterval(timer: Subscription): void
  *  
@@ -18,10 +18,10 @@ const ms: ScalarSignal | number;
  * Cancels a callback set by `setInterval`. This function is provided as a to match the traditional JS `clearInterval` API.
  * 
  * **Note**: This is equivalent to `Subscription.unsubscribe`.
- */ 
+ */
 function clearInterval(timer: Subscription): void;
 
-/** 
+/**
 *  
  * clearTimeout(timer: Subscription): void
  *  
@@ -29,10 +29,10 @@ function clearInterval(timer: Subscription): void;
  * Cancels a callback set by `setTimeout`. This has no effect if the timeout has already been triggered. This function is provided as a to match the traditional JS `clearTimeout` API.
  * 
  * **Note**: This is equivalent to `Subscription.unsubscribe`.
- */ 
+ */
 function clearTimeout(timer: Subscription): void;
 
-/** 
+/**
 *  
  * setInterval(callback: Function, delay: Number): Subscription
  *  
@@ -40,10 +40,10 @@ function clearTimeout(timer: Subscription): void;
  * Returns a `Subscription` object. The function specified by `callback` is called at intervals specified by `delay` in milliseconds. The `setInterval` will continue calling the `callback` until `TimeModule.clearInterval` is called. The `callback` is a function that has one argument, the elapsed time since the timer started. An exception is thrown when the `delay` is zero or less.
  * 
  * **Note**: An interval can be canceled either via `Subscription.unsubscribe` or `TimeModule.clearInterval`.
- */ 
+ */
 function setInterval(callback: Function, delay: Number): Subscription;
 
-/** 
+/**
 *  
  * setIntervalWithSnapshot(snapshot: { [name: string]: Signal}, callback: Function, delay: Number): Subscription
  *  
@@ -56,10 +56,10 @@ function setInterval(callback: Function, delay: Number): Subscription;
  * An exception is thrown when the `delay` is zero or less.
  * 
  * **Note**: An interval can be canceled either via `Subscription.unsubscribe` or `TimeModule.clearInterval`.
- */ 
+ */
 function setIntervalWithSnapshot(snapshot: { [name: string]: Signal}, callback: Function, delay: Number): Subscription;
 
-/** 
+/**
 *  
  * setTimeout(callback: Function, delay: Number): Subscription
  *  
@@ -69,10 +69,10 @@ function setIntervalWithSnapshot(snapshot: { [name: string]: Signal}, callback: 
  * **Note**: A timeout can be canceled either via `Subscription.unsubscribe` or `TimeModule.clearTimeout`.
  * 
  * **Note**: This is equivalent to `Time.ms.sub(Time.ms.pin()).trigger(delay).subscribe(callback)`.
- */ 
+ */
 function setTimeout(callback: Function, delay: Number): Subscription;
 
-/** 
+/**
 *  
  * setTimeoutWithSnapshot(snapshot: { [name: string]: Signal}, callback: Function, delay: Number): Subscription
  *  
@@ -85,7 +85,7 @@ function setTimeout(callback: Function, delay: Number): Subscription;
  * **Note**: A timeout can be canceled either via `Subscription.unsubscribe` or `TimeModule.clearTimeout`.
  * 
  * **Note**: This is equivalent to `Time.ms.sub(Time.ms.pin()).trigger(delay).subscribeWithSnapshot(snapshot, callback)`.
- */ 
+ */
 function setTimeoutWithSnapshot(snapshot: { [name: string]: Signal}, callback: Function, delay: Number): Subscription;
 
 }

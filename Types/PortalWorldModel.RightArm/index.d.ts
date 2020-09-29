@@ -1,6 +1,6 @@
 /// <reference path="../Reactive.Point2DSignal/index.d.ts" />
 declare interface RightArm {
-/** 
+/**
 * 
 ```
 (get) elbow: Point2DSignal
@@ -9,9 +9,9 @@ declare interface RightArm {
 
 Gets the 2D elbow position.
 
-*/ 
+*/
 elbow: Point2DSignal;
-/** 
+/**
 * 
 ```
 (get) shoulder: Point2DSignal
@@ -20,9 +20,9 @@ elbow: Point2DSignal;
 
 Gets the 2D shoulder position.
 
-*/ 
+*/
 shoulder: Point2DSignal;
-/** 
+/**
 * 
 ```
 (get) wrist: Point2DSignal
@@ -31,6 +31,6 @@ shoulder: Point2DSignal;
 
 Gets the 2D wrist position.
 
-*/ 
+*/
 wrist: Point2DSignal;
 }

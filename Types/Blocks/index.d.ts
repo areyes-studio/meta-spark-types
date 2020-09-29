@@ -2,25 +2,25 @@
 /// <reference path="../Scene.BlockInstanceOutputs/index.d.ts" />
 /// <reference path="../Scene.BlockSceneRoot/index.d.ts" />
 declare namespace BlocksModule {
-/** 
+/**
 * ```
 (get) inputs: BlockInstanceInputs
 (set) (Not Available)
 ```
 
 Get an object encapsulating all inputs for this Block.
-*/ 
+*/
 const inputs: BlockInstanceInputs;
-/** 
+/**
 * ```
 (get) outputs: BlockInstanceOutputs
 (set) (Not Available)
 ```
 
 Gets an object encapsulating all outputs for this Block.
-*/ 
+*/
 const outputs: BlockInstanceOutputs;
-/** 
+/**
 *  
  * instantiate(prototypeName: string, initialState: object): Promise<BlockSceneRoot>
  *  
@@ -30,7 +30,7 @@ const outputs: BlockInstanceOutputs;
  * Any `Block` object extends `SceneObjectBase`, inheriting all base properties
  * and allowing to use it as a child of any other object.
  * Please note, new Blocks are assigned a globally unique `identifier`.
- */ 
+ */
 function instantiate(prototypeName: string, initialState: object): Promise<BlockSceneRoot>;
 
 }

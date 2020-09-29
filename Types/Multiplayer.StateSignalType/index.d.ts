@@ -1,5 +1,5 @@
-/** 
+/**
  * 
- */ 
-declare interface StateSignalType{ 
-} 
+ */
+declare interface StateSignalType{
+}

@@ -5,7 +5,7 @@
 /// <reference path="../Reactive.Point3D/index.d.ts" />
 /// <reference path="../Reactive.StringSignal/index.d.ts" />
 declare interface PlaneTracker {
-/** 
+/**
 * ```
 (get) confidence: StringSignal
 (set) (Not Available)
@@ -18,9 +18,9 @@ Possible values:
 - MEDIUM
 - LOW
 - NOT_TRACKING
-*/ 
+*/
 confidence: StringSignal | string;
-/** 
+/**
 * ```
 (get) mode: Signal<SceneModule.TrackingMode>
 (set) mode: Signal<SceneModule.TrackingMode>
@@ -31,9 +31,9 @@ Specifies if this tracker object should track horizontal plane or moving object.
 **Note:** on invalid value provided in setter, the mode will default to `SceneModule.TrackingMode.PLANE`.
 
 **See Also**: `PlaneTracker.setMode`.
-*/ 
+*/
 mode: Signal<SceneModule.TrackingMode>;
-/** 
+/**
 * ```
  (get) trackingMode: SceneModule.TrackingMode
  (set) trackingMode: SceneModule.TrackingMode
@@ -42,19 +42,19 @@ mode: Signal<SceneModule.TrackingMode>;
  Specifies if this tracker object should track horizontal plane or moving object.
 
  **See Also**: `PlaneTracker.mode` and `PlaneTracker.setMode`.
-*/ 
+*/
 trackingMode: TrackingMode;
-/** 
+/**
 *  
  * hitTest(screenLocation: Point2D): Point3D
  *  
  * 
  * Returns a point on tracked plane in local coordinates of PlaneTracker (in 3D units).
  * Returns null if tracked plane is not found at given screen point.
- */ 
+ */
 hitTest(screenLocation: Point2D): Point3D;
 
-/** 
+/**
 *  
  * performHitTest(screenXLocation: number, screenYLocation: number): Promise<Point3D>
  * performHitTest(screenLocation: Point2D): Promise<Point3D>
@@ -62,12 +62,12 @@ hitTest(screenLocation: Point2D): Point3D;
  * 
  * Returns a promise that is resolved with a point on tracked plane in local coordinates of PlaneTracker (in 3D units)
  * or null if plane is not found at given screen location.
- */ 
+ */
 performHitTest(screenXLocation: number, screenYLocation: number): Promise<Point3D>;
 
 performHitTest(screenLocation: Point2D): Promise<Point3D>;
 
-/** 
+/**
 *  
  * setMode(mode: Signal<SceneModule.TrackingMode>): void
  * setMode(mode: Signal<SceneModule.TrackingMode>, config: { fallback: SceneModule.TrackingMode }): void
@@ -78,12 +78,12 @@ performHitTest(screenLocation: Point2D): Promise<Point3D>;
  * **Note:** on invalid value provided in setter, the mode will default to `fallback` (or `SceneModule.TrackingMode.PLANE` if fallback is not specified).
  * 
  * **See Also**: `PlaneTracker.mode`.
- */ 
+ */
 setMode(mode: Signal<SceneModule.TrackingMode>): void;
 
 setMode(mode: Signal<SceneModule.TrackingMode>, config: { fallback: SceneModule.TrackingMode }): void;
 
-/** 
+/**
 *  
  * trackPoint(screenLocation: Point2D): void
  * trackPoint(screenX: number, screenY: number): void
@@ -101,14 +101,14 @@ setMode(mode: Signal<SceneModule.TrackingMode>, config: { fallback: SceneModule.
  *   planeTracker.trackPoint(gesture.location, gesture.state);
  * });
  *  
- */ 
+ */
 trackPoint(screenLocation: Point2D): void;
 
 trackPoint(screenX: number, screenY: number): void;
 
 trackPoint(screenLocation: Point2DSignal, gestureState: StringSignal | string): void;
 
-/** 
+/**
 * 
  *  
  * trackTexture(texture: ImageTexture): void
@@ -123,7 +123,7 @@ trackPoint(screenLocation: Point2DSignal, gestureState: StringSignal | string): 
  * fallback textures may be used instead.
  *  
  * 
- */ 
+ */
 trackTexture(texture: ImageTexture): void;
 
 trackTexture(texture: ExternalTexture): void;

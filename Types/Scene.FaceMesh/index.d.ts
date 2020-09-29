@@ -1,6 +1,6 @@
 /// <reference path="../Materials.MaterialBase/index.d.ts" />
 declare interface FaceMesh {
-/** 
+/**
 * 
 ```
 (get) material: MaterialBase
@@ -9,9 +9,9 @@ declare interface FaceMesh {
 
 Specifies the material of the scene object.
 
-*/ 
+*/
 material: MaterialBase;
-/** 
+/**
 * 
  *  
  * getMaterial(): Promise<MaterialBase>
@@ -19,7 +19,7 @@ material: MaterialBase;
  * 
  * Returns a promise that is resolved with the material associated with a given scene object or null if no material was assigned.
  * 
- */ 
+ */
 getMaterial(): Promise<MaterialBase>;
 
 }

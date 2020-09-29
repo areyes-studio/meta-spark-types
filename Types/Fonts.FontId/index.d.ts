@@ -1,5 +1,5 @@
 declare interface FontId {
-/** 
+/**
 * ```
 (get) name: string
 (set) (Not Available)
@@ -7,6 +7,6 @@ declare interface FontId {
 
 Specifies the font name. It should be unique.
 **See Also**: `FontsModule.get`.
-*/ 
+*/
 name: string;
 }

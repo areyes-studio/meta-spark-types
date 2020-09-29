@@ -1,5 +1,5 @@
 declare namespace WeatherModule {
-/** 
+/**
 *  
  * getWeather(): Promise<{currentConditionCode?: string, preferredTempUnit?: string, sunriseHour?: number, sunriseMinute?: number, sunsetHour?: number, sunsetMinute?: number, tempCelsius?: number, tempFahrenheit?: number}>
  *  
@@ -14,7 +14,7 @@ declare namespace WeatherModule {
  * - `tempCelsius` - current temperature in Celsius
  * - `tempFahrenheit` - current temperature in Fahrenheit
  * - `currentConditionCode` - string describing current weather conditions
- */ 
+ */
 function getWeather(): Promise<{currentConditionCode?: string, preferredTempUnit?: string, sunriseHour?: number, sunriseMinute?: number, sunsetHour?: number, sunsetMinute?: number, tempCelsius?: number, tempFahrenheit?: number}>;
 
 }
