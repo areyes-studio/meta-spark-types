@@ -11,16 +11,14 @@ Specifies the vertical size, in 3D units.
 */
 height: ScalarSignal | number;
 /**
-* 
-```
-(get) material: MaterialBase
-(set) material: MaterialBase
+* ```
+(get) material: MaterialBase | null
+(set) material: MaterialBase | null
 ```
 
 Specifies the material of the scene object.
-
 */
-material: MaterialBase;
+material: MaterialBase | null;
 /**
 * ```
 (get) width: ScalarSignal
@@ -49,14 +47,12 @@ Specifies the vertical offset, in 3D units.
 */
 y: ScalarSignal | number;
 /**
-* 
- *  
- * getMaterial(): Promise<MaterialBase>
+*  
+ * getMaterial(): Promise<MaterialBase | null>
  *  
  * 
  * Returns a promise that is resolved with the material associated with a given scene object or null if no material was assigned.
- * 
  */
-getMaterial(): Promise<MaterialBase>;
+getMaterial(): Promise<MaterialBase | null>;
 
 }

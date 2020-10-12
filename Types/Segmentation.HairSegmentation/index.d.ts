@@ -9,7 +9,7 @@ declare interface HairSegmentation {
   (set) (Not Available)
   ```
 
-  Average color of the person or hair in the scene.
+  Average color of hair in the scene.
   
 */
 averageColor: RgbaSignal;
@@ -31,7 +31,7 @@ enabled: BoolSignal | boolean;
   (set) (Not Available)
   ```
 
-  Represents the percentage of screen space occupied by person or hair.
+  Represents the percentage of screen space occupied by hair.
   
 */
 foregroundPercent: ScalarSignal | number;
@@ -42,7 +42,7 @@ foregroundPercent: ScalarSignal | number;
   (set) (Not Available)
   ```
 
-  Represents whether there is person or hair in the scene (`true`/`false`).
+  Represents whether there is hair in the scene (`true`/`false`).
   
 */
 hasForeground: BoolSignal | boolean;

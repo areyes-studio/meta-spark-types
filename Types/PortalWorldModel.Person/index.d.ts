@@ -1,97 +1,80 @@
-/// <reference path="../Scene.BoundingBox/index.d.ts" />
+/// <reference path="../PortalWorldModel.Arm/index.d.ts" />
+/// <reference path="../Reactive.BoundingBoxSignal/index.d.ts" />
 /// <reference path="../PortalWorldModel.Head/index.d.ts" />
-/// <reference path="../PortalWorldModel.LeftArm/index.d.ts" />
-/// <reference path="../PortalWorldModel.LeftLeg/index.d.ts" />
-/// <reference path="../PortalWorldModel.RightArm/index.d.ts" />
-/// <reference path="../PortalWorldModel.RightLeg/index.d.ts" />
+/// <reference path="../PortalWorldModel.Leg/index.d.ts" />
+/// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 /// <reference path="../PortalWorldModel.Torso/index.d.ts" />
 declare interface Person {
 /**
-* 
-```
-(get) box: BoundingBox
+* ```
+(get) box: BoundingBoxSignal
 (set) (Not Available)
 ```
 
 Gets the pose bounding box of the given person.
-
 */
-box: BoundingBox;
+box: BoundingBoxSignal;
 /**
-* 
-```
+* ```
 (get) head: Head
 (set) (Not Available)
 ```
 
 Gets the head component of this person.
-
 */
 head: Head;
 /**
-* 
-```
-(get) leftArm: LeftArm
+* ```
+(get) leftArm: Arm
 (set) (Not Available)
 ```
 
 Gets the left arm component of this person.
-
 */
-leftArm: LeftArm;
+leftArm: Arm;
 /**
-* 
-```
-(get) leftLeg: LeftLeg
+* ```
+(get) leftLeg: Leg
 (set) (Not Available)
 ```
 
 Gets the left leg component of this person.
-
 */
-leftLeg: LeftLeg;
+leftLeg: Leg;
 /**
-* 
-```
-(get) poseId: number
+* ```
+(get) poseId: ScalarSignal
 (set) (Not Available)
 ```
 
 Gets the unique pose ID of the given person.
-
 */
-poseId: number;
+poseId: ScalarSignal | number;
 /**
-* 
-```
-(get) rightArm: RightArm
+* ```
+(get) rightArm: Arm
 (set) (Not Available)
 ```
 
 Gets the right arm component of this person.
-
 */
-rightArm: RightArm;
+rightArm: Arm;
 /**
-* 
-```
-(get) rightLeg: RightLeg
+* ```
+(get) rightLeg: Leg
 (set) (Not Available)
 ```
 
 Gets the right leg component of this person.
-
 */
-rightLeg: RightLeg;
+rightLeg: Leg;
 /**
-* 
-```
+* ```
 (get) torso: Torso
 (set) (Not Available)
 ```
 
 Gets the torso component of this person.
-
 */
 torso: Torso;
 }

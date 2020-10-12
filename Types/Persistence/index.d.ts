@@ -2,23 +2,26 @@
 declare namespace PersistenceModule {
 /**
 * ```
-(get) captureScope: Object
+(get) captureScope: StorageScope
+(set) (Not Available)
 ```
 
-Gets an object corresponding to the capture scope.
+Gets an instance of StorageScope corresponding to the capture scope.
 */
-const captureScope: Object;
+const captureScope: StorageScope;
 /**
 * ```
-(get) sharedScope: Object
+(get) sharedScope: StorageScope
+(set) (Not Available)
 ```
 
-Gets an object corresponding to the shared scope.
+Gets an instance of StorageScope corresponding to the shared scope.
 */
-const sharedScope: Object;
+const sharedScope: StorageScope;
 /**
 * ```
 (get) userScope: StorageScope
+(set) (Not Available)
 ```
 
 Gets an instance of StorageScope corresponding to the user scope.

@@ -86,11 +86,11 @@ Specifies the text spacing. This is the additional distance between letters. Def
 tracking: number;
 /**
 *  
- * getMaterial(): Promise<MaterialBase>
+ * getMaterial(): Promise<MaterialBase | null>
  *  
  * 
  * Returns a promise that is resolved with the material associated with a given scene object or null if no material was assigned.
  */
-getMaterial(): Promise<MaterialBase>;
+getMaterial(): Promise<MaterialBase | null>;
 
 }
