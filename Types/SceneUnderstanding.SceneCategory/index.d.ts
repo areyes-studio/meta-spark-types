@@ -2,9 +2,11 @@
 declare interface SceneCategory {
 /**
 * ```
-                        (get) found: BoolSignal
-                        ```
-                        Specifies a `BoolSignal` that takes the value of `true` whenever the scene captured by the camera is that category, `false` otherwise. Default value is 'false'.
+(get) found: BoolSignal
+(set) (Not Available)
+```
+
+Specifies a `BoolSignal` that takes the value of `true` whenever the scene captured by the camera is that category, `false` otherwise. Default value is 'false'.
 */
 found: BoolSignal | boolean;
 }

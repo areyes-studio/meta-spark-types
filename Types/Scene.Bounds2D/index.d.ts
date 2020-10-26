@@ -25,7 +25,6 @@ width: ScalarSignal | number;
 ```
 
 Specifies the left boundary of the scene element. Relative to the parent object bounds. Measured in 3D units.
-
 **Note**: the offset is measured from the parent's left boundary, which might be different from the parent's origin.
 */
 x: ScalarSignal | number;
@@ -36,7 +35,6 @@ x: ScalarSignal | number;
 ```
 
 Specifies the top boundary of the scene element. Relative to the parent object bounds. Measured in 3D units.
-
 **Note**: the offset is measured from the parent's top boundary, which might be different from the parent's origin.
 */
 y: ScalarSignal | number;

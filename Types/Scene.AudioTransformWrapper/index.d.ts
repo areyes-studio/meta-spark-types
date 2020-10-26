@@ -11,20 +11,23 @@ effectName: string;
 *  
  * transformParameterAtIndex(index: number): AudioTransformParameterWrapper
  *  
+ * 
  */
 transformParameterAtIndex(index: number): AudioTransformParameterWrapper;
 
 /**
 *  
- * transformParameterByName(parameterName: string): AudioTransformParameterWrapper
+ * transformParameterByName(name: string): AudioTransformParameterWrapper
  *  
+ * 
  */
-transformParameterByName(parameterName: string): AudioTransformParameterWrapper;
+transformParameterByName(name: string): AudioTransformParameterWrapper;
 
 /**
 *  
  * transformParametersCount(): number
  *  
+ * 
  */
 transformParametersCount(): number;
 

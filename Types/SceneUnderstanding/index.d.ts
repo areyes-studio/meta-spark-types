@@ -3,10 +3,10 @@
 declare namespace SceneUnderstandingModule {
 /**
 *  
- *                         category(category: SceneCategories): SceneCategory
- *                          
+ * category(category: SceneCategories): SceneCategory
+ *  
  * 
- *                         Returns a `SceneCategory` object capable of identifying if the scene captured by the camera is that category.
+ * Returns a `SceneCategory` object capable of identifying if the scene captured by the camera is that category.
  */
 function category(category: SceneCategories): SceneCategory;
 

@@ -37,6 +37,15 @@ Specifies the texture that forms the basis of this material.
 diffuse: TextureBase | null;
 /**
 * ```
+(get) diffuse: TextureBase | null
+(set) diffuse: TextureBase | null
+```
+
+Specifies the texture that forms the basis of this material.
+*/
+diffuse: TextureBase | null;
+/**
+* ```
 (get) diffuseTextureTransform: TextureTransform
 (set) diffuseTextureTransform: TextureTransformSignal
 ```
