@@ -10,165 +10,169 @@
 /// <reference path="../Reactive.VectorSignal/index.d.ts" />
 declare interface BlockSceneRoot {
 /**
-* ```
+* 
+```
 (get) inputs: BlockInstanceInputs
 (set) (Not Available)
 ```
 
 Returns an object encapsulating all input setters for the Block Instance.
+
 */
 inputs: BlockInstanceInputs;
 /**
-* ```
+* 
+```
 (get) outputs: BlockInstanceOutputs
 (set) (Not Available)
 ```
 
 Returns an object encapsulating all outputs getters for the Block Instance.
+
 */
 outputs: BlockInstanceOutputs;
 /**
 *  
- * getBooleanOutput(name: string): BoolSignal
+ * getBooleanOutput(name: String): BoolSignal
  *  
  * 
  * Returns a `BoolSignal` for a named Block output.
  */
-getBooleanOutput(name: string): BoolSignal;
+getBooleanOutput(name: String): BoolSignal;
 
 /**
 *  
- * getColorOutput(name: string): ColorSignal
+ * getColorOutput(name: String): ColorSignal
  *  
  * 
  * Returns a `ColorSignal` for a named Block output.
  */
-getColorOutput(name: string): ColorSignal;
+getColorOutput(name: String): ColorSignal;
 
 /**
 *  
- * getPixelPointOutput(name: string): Point2DSignal
+ * getPixelPointOutput(name: String): Point2DSignal
  *  
  * 
  * Returns a `Point2DSignal` for a named Block output.
  */
-getPixelPointOutput(name: string): Point2DSignal;
+getPixelPointOutput(name: String): Point2DSignal;
 
 /**
 *  
- * getPointOutput(name: string): PointSignal
+ * getPointOutput(name: String): PointSignal
  *  
  * 
  * Returns a `PointSignal` for a named Block output.
  */
-getPointOutput(name: string): PointSignal;
+getPointOutput(name: String): PointSignal;
 
 /**
 *  
- * getScalarOutput(name: string): ScalarSignal
+ * getScalarOutput(name: String): ScalarSignal
  *  
  * 
  * Returns a `ScalarSignal` for a named Block output.
  */
-getScalarOutput(name: string): ScalarSignal;
+getScalarOutput(name: String): ScalarSignal;
 
 /**
 *  
- * getShaderOutput(name: string): ShaderSignal
+ * getShaderOutput(name: String): ShaderSignal
  *  
  * 
  * Returns a `ShaderSignal` for a named Block output.
  */
-getShaderOutput(name: string): ShaderSignal;
+getShaderOutput(name: String): ShaderSignal;
 
 /**
 *  
- * getStringOutput(name: string): StringSignal
+ * getStringOutput(name: String): StringSignal
  *  
  * 
  * Returns a `StringSignal` for a named Block output.
  */
-getStringOutput(name: string): StringSignal;
+getStringOutput(name: String): StringSignal;
 
 /**
 *  
- * getVectorOutput(name: string): VectorSignal
+ * getVectorOutput(name: String): VectorSignal
  *  
  * 
  * Returns a `VectorSignal` for a named Block output.
  */
-getVectorOutput(name: string): VectorSignal;
+getVectorOutput(name: String): VectorSignal;
 
 /**
 *  
- * setBooleanInput(name: string, signal: BoolSignal): void
+ * setBooleanInput(name: String, signal: BoolSignal): void
  *  
  * 
  * Binds a `BoolSignal` to a named Block input.
  */
-setBooleanInput(name: string, signal: BoolSignal | boolean): void;
+setBooleanInput(name: String, signal: BoolSignal | boolean): void;
 
 /**
 *  
- * setColorInput(name: string, signal: ColorSignal): void
+ * setColorInput(name: String, signal: ColorSignal): void
  *  
  * 
  * Binds a `ColorSignal` to a named Block input.
  */
-setColorInput(name: string, signal: ColorSignal): void;
+setColorInput(name: String, signal: ColorSignal): void;
 
 /**
 *  
- * setPixelPointInput(name: string, signal: Point2DSignal): void
+ * setPixelPointInput(name: String, signal: Point2DSignal): void
  *  
  * 
  * Binds a `Point2DSignal` to a named Block input.
  */
-setPixelPointInput(name: string, signal: Point2DSignal): void;
+setPixelPointInput(name: String, signal: Point2DSignal): void;
 
 /**
 *  
- * setPointInput(name: string, signal: PointSignal): void
+ * setPointInput(name: String, signal: PointSignal): void
  *  
  * 
  * Binds a `PointSignal` to a named Block input.
  */
-setPointInput(name: string, signal: PointSignal): void;
+setPointInput(name: String, signal: PointSignal): void;
 
 /**
 *  
- * setScalarInput(name: string, signal: ScalarSignal): void
+ * setScalarInput(name: String, signal: ScalarSignal): void
  *  
  * 
  * Binds a `ScalarSignal` to a named Block input.
  */
-setScalarInput(name: string, signal: ScalarSignal | number): void;
+setScalarInput(name: String, signal: ScalarSignal | number): void;
 
 /**
 *  
- * setShaderInput(name: string, signal: ShaderSignal): void
+ * setShaderInput(name: String, signal: ShaderSignal): void
  *  
  * 
  * Binds a `ShaderSignal` to a named Block input.
  */
-setShaderInput(name: string, signal: ShaderSignal): void;
+setShaderInput(name: String, signal: ShaderSignal): void;
 
 /**
 *  
- * setStringInput(name: string, signal: StringSignal): void
+ * setStringInput(name: String, signal: StringSignal): void
  *  
  * 
  * Binds a `StringSignal` to a named Block input.
  */
-setStringInput(name: string, signal: StringSignal | string): void;
+setStringInput(name: String, signal: StringSignal | string): void;
 
 /**
 *  
- * setVectorInput(name: string, signal: VectorSignal): void
+ * setVectorInput(name: String, signal: VectorSignal): void
  *  
  * 
  * Binds a `VectorSignal` to a named Block input.
  */
-setVectorInput(name: string, signal: VectorSignal): void;
+setVectorInput(name: String, signal: VectorSignal): void;
 
 }

@@ -1,3 +1,4 @@
+/// <reference path="../Prefabs.Prefab/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 declare interface BlendShape {
 /**
@@ -15,7 +16,7 @@ name: string;
 (set) (Not Available)
 ```
 
-Specifies the name of prefab for Mesh. This is the unique identifier of the prefab.
+Specifies the name of prefab for BlendShape. This is the unique identifier of the prefab.
 */
 prefabName: string;
 /**
@@ -28,12 +29,14 @@ Specifies the weight of the blend shape.
 */
 weight: ScalarSignal | number;
 /**
-*  
- * getPrefab(): Promise<Prefab | null>
+* 
+ *  
+ * getPrefab(): Promise<Prefab>
  *  
  * 
- * Returns a promise that is resolved with the prefab associated with a given {} or null if no prefab was assigned.
+ * Returns a promise that is resolved with the prefab associated with a given BlendShape or null if no prefab was assigned.
+ * 
  */
-getPrefab(): Promise<Prefab | null>;
+getPrefab(): Promise<Prefab>;
 
 }

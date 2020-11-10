@@ -148,6 +148,15 @@ Specifies the 3D position of the distal joint of the ring finger.
 ringFingerDistal: PointSignal;
 /**
 * ```
+(get) ringFingerLeftSide: PointSignal
+(set) (Not Available)
+```
+
+Specifies the 3D position of the left side of the ring finger.
+*/
+ringFingerLeftSide: PointSignal;
+/**
+* ```
 (get) ringFingerProximal: PointSignal
 (set) (Not Available)
 ```
@@ -155,6 +164,15 @@ ringFingerDistal: PointSignal;
 Specifies the 3D position of the proximal joint of the ring finger.
 */
 ringFingerProximal: PointSignal;
+/**
+* ```
+(get) ringFingerRightSide: PointSignal
+(set) (Not Available)
+```
+
+Specifies the 3D position of the right side of the ring finger.
+*/
+ringFingerRightSide: PointSignal;
 /**
 * ```
 (get) ringFingerTip: PointSignal

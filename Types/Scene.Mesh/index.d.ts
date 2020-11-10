@@ -2,6 +2,7 @@
 /// <reference path="../Scene.BlendShapesMesh/index.d.ts" />
 /// <reference path="../Materials.MaterialBase/index.d.ts" />
 /// <reference path="../Scene.MeshSurface/index.d.ts" />
+/// <reference path="../Prefabs.Prefab/index.d.ts" />
 declare interface Mesh {
 /**
 * ```
@@ -13,14 +14,16 @@ Returns the set of blendshapes that this mesh contains.
 */
 blendShapes: BlendShapesMesh;
 /**
-* ```
-(get) material: MaterialBase | null
-(set) material: MaterialBase | null
+* 
+```
+(get) material: MaterialBase
+(set) material: MaterialBase
 ```
 
 Specifies the material of the scene object.
+
 */
-material: MaterialBase | null;
+material: MaterialBase;
 /**
 * ```
 (get) materialIdentifier: string
@@ -49,22 +52,26 @@ prefabName: string;
 getBlendShapes(): Promise<Array<BlendShape>>;
 
 /**
-*  
- * getMaterial(): Promise<MaterialBase | null>
+* 
+ *  
+ * getMaterial(): Promise<MaterialBase>
  *  
  * 
  * Returns a promise that is resolved with the material associated with a given scene object or null if no material was assigned.
+ * 
  */
-getMaterial(): Promise<MaterialBase | null>;
+getMaterial(): Promise<MaterialBase>;
 
 /**
-*  
- * getPrefab(): Promise<Prefab | null>
+* 
+ *  
+ * getPrefab(): Promise<Prefab>
  *  
  * 
- * Returns a promise that is resolved with the prefab associated with a given {} or null if no prefab was assigned.
+ * Returns a promise that is resolved with the prefab associated with a given Mesh or null if no prefab was assigned.
+ * 
  */
-getPrefab(): Promise<Prefab | null>;
+getPrefab(): Promise<Prefab>;
 
 /**
 *  

@@ -1,5 +1,4 @@
 /// <reference path="../Reactive.BoolSignal/index.d.ts" />
-/// <reference path="../Scene.OutputVisibility/index.d.ts" />
 /// <reference path="../Scene.SceneObjectBase/index.d.ts" />
 declare interface Scene {
 /**
@@ -11,15 +10,6 @@ declare interface Scene {
 Specifies whether the scene and its descendants are hidden.
 */
 hidden: BoolSignal | boolean;
-/**
-* ```
-(get) outputVisibility: OutputVisibility
-(set) (Not Available)
-```
-
-Represents the `OutputVisibility` that contains a set of flags that specify the overall scene visibility depending on the output.
-*/
-outputVisibility: OutputVisibility;
 /**
 *  
  * child(name: string): SceneObjectBase

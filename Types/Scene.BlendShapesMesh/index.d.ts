@@ -20,11 +20,11 @@ getAtIndex(index: number): BlendShape;
 
 /**
 *  
- * getByName(name: string): BlendShape
+ * getByName(name: String): BlendShape
  *  
  * 
  * Returns the blendshape with the given name.
  */
-getByName(name: string): BlendShape;
+getByName(name: String): BlendShape;
 
 }

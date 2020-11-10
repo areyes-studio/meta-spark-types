@@ -1,15 +1,5 @@
 /// <reference path="../Reactive.EventSource/index.d.ts" />
-/// <reference path="../Reactive.StringSignal/index.d.ts" />
 declare namespace VoiceControlModule {
-/**
-* ```
-(get) deviceWakeWord: StringSignal
-(set) (Not Available)
-```
-
-Returns the wake word required to activate voice control on this device
-*/
-const deviceWakeWord: StringSignal | string;
 /**
 *  
  * monitorCommand(command: string): EventSource<void>

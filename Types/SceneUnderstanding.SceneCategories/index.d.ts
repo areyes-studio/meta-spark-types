@@ -1,6 +1,5 @@
 /**
- * The `SceneCategories` enum lists possible objects that can be recognized in a scene
-by the `SceneUnderstanding` module
+ * The `SceneCategories` enum lists possible objects that can be recognized in a scene by the `SceneUnderstanding` module
  * @property AIRPLANE Indicates that the scene contains an airplane
  * @property ANIMAL Indicates that the scene contains an animal
  * @property BEACH Indicates that the scene contains a beach

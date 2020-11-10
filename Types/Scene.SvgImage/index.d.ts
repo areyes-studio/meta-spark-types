@@ -11,11 +11,11 @@ Sets the given svg from the svg registry to the svg image scene object.
 svg: Svg;
 /**
 *  
- * getSvg(): Promise<Svg | null>
+ * getSvg(): Promise<Svg>
  *  
  * 
  * Retrieves a previously set Svg to a given svg image scene object.
  */
-getSvg(): Promise<Svg | null>;
+getSvg(): Promise<Svg>;
 
 }

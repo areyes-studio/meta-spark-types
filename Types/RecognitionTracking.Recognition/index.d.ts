@@ -17,11 +17,11 @@ hasTracking: boolean;
 metadata: string;
 /**
 * ```
-(get) onLost: EventSource<void>
+(get) onLost: EventSource
 (set) (Not Available)
 ```
 */
-onLost: EventSource<void>;
+onLost: EventSource;
 /**
 * ```
 (get) tracking: Tracking

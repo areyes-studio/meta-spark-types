@@ -10,191 +10,155 @@
 declare interface BlockInstanceOutputs {
 /**
 *  
- * getBoolean(name: string): Promise<BoolSignal>
+ * getBoolean(name: String): Promise<BoolSignal>
  *  
  * 
- * Returns a promise that is resolved with a `BoolSignal` from the Block output with the given `name`. Fails the promise if no
- * output with that `name` is present in the Block or if the output with that `name` is not of type `BoolSignal`.
+ * Returns a promise that is resolved with a `BoolSignal` from the Block output with the given `name`. Fails the promise if no output with that `name` is present in the Block or if the output with that `name` is not of type `BoolSignal`.
  */
-getBoolean(name: string): Promise<BoolSignal>;
+getBoolean(name: String): Promise<BoolSignal>;
+
+/**
+*  getBooleanOrFallback(name: String, fallback: BoolSignal): BoolSignal
+ *  
+ * 
+ * Returns a `BoolSignal` from the Block output with the given `name`. Returns the `fallback` if any error happens, such as if no output with that `name` is present in the Block, or if the output with that `name` is not of type `BoolSignal`.
+ */
+getBooleanOrFallback(name: String, fallback: BoolSignal | boolean): BoolSignal;
 
 /**
 *  
- * getBooleanOrFallback(name: string, fallback: BoolSignal): BoolSignal
+ * getColor(name: String): Promise<ColorSignal>
  *  
  * 
- * Returns a `BoolSignal` from the Block output with the given name.
- * Returns the `fallback` if any error happens, such as if no output with that `name` is present in the Block,
- * or if the output with that name is not of type BoolSignal.
+ * Returns a promise that is resolved with a `ColorSignal` from the Block output with the given `name`. Fails the promise if no output with that `name` is present in the Block or if the output with that `name` is not of type `ColorSignal`.
  */
-getBooleanOrFallback(name: string, fallback: BoolSignal | boolean): BoolSignal;
+getColor(name: String): Promise<ColorSignal>;
+
+/**
+*  getColorOrFallback(name: String, fallback: ColorSignal): ColorSignal
+ *  
+ * 
+ * Returns a `ColorSignal` from the Block output with the given `name`. Returns the `fallback` if any error happens, such as if no output with that `name` is present in the Block, or if the output with that `name` is not of type `ColorSignal`.
+ */
+getColorOrFallback(name: String, fallback: ColorSignal): ColorSignal;
 
 /**
 *  
- * getColor(name: string): Promise<ColorSignal>
+ * getPoint(name: String): Promise<PointSignal>
  *  
  * 
- * Returns a promise that is resolved with a `ColorSignal` from the Block output with the given `name`. Fails the promise if no
- * output with that `name` is present in the Block or if the output with that `name` is not of type `ColorSignal`.
+ * Returns a promise that is resolved with a `PointSignal` from the Block output with the given `name`. Fails the promise if no output with that `name` is present in the Block or if the output with that `name` is not of type `PointSignal`.
  */
-getColor(name: string): Promise<ColorSignal>;
+getPoint(name: String): Promise<PointSignal>;
 
 /**
 *  
- * getColorOrFallback(name: string, fallback: ColorSignal): ColorSignal
+ * getPoint2D(name: String): Promise<Point2DSignal>
  *  
  * 
- * Returns a `ColorSignal` from the Block output with the given `name`.
- * Returns the `fallback` if any error happens, such as if no output with that `name` is present in the Block, or if the
- * output with that `name` is not of type `ColorSignal'.
+ * Returns a promise that is resolved with a `Point2DSignal` from the Block output with the given `name`. Fails the promise if no output with that `name` is present in the Block or if the output with that `name` is not of type `Point2DSignal`.
  */
-getColorOrFallback(name: string, fallback: ColorSignal): ColorSignal;
+getPoint2D(name: String): Promise<Point2DSignal>;
+
+/**
+*  getPoint2DOrFallback(name: String, fallback: Point2DSignal): Point2DSignal
+ *  
+ * 
+ * Returns a `Point2DSignal` from the Block output with the given `name`. Returns the `fallback` if any error happens, such as if no output with that `name` is present in the Block, or if the output with that `name` is not of type `Point2DSignal`.
+ */
+getPoint2DOrFallback(name: String, fallback: Point2DSignal): Point2DSignal;
+
+/**
+*  getPointOrFallback(name: String, fallback: PointSignal): PointSignal
+ *  
+ * 
+ * Returns a `PointSignal` from the Block output with the given `name`. Returns the `fallback` if any error happens, such as if no output with that `name` is present in the Block, or if the output with that `name` is not of type `PointSignal`.
+ */
+getPointOrFallback(name: String, fallback: PointSignal): PointSignal;
 
 /**
 *  
- * getPoint(name: string): Promise<PointSignal>
+ * getPulse(name: String): Promise<EventSource>
  *  
  * 
- * Returns a promise that is resolved with a `PointSignal` from the Block output with the given `name`. Fails the promise if no
- * output with that `name` is present in the Block or if the output with that `name` is not of type `PointSignal`.
+ * Returns a promise that is resolved with a `EventSource` from the Block output with the given `name`. Fails the promise if no output with that `name` is present in the Block or if the output with that `name` is not of type `EventSource`.
  */
-getPoint(name: string): Promise<PointSignal>;
+getPulse(name: String): Promise<EventSource>;
+
+/**
+*  getPulseOrFallback(name: String, fallback: EventSource): EventSource
+ *  
+ * 
+ * Returns a `EventSource` from the Block output with the given `name`. Returns the `fallback` if any error happens, such as if no output with that `name` is present in the Block, or if the output with that `name` is not of type `EventSource`.
+ */
+getPulseOrFallback(name: String, fallback: EventSource): EventSource;
 
 /**
 *  
- * getPoint2D(name: string): Promise<Point2DSignal>
+ * getScalar(name: String): Promise<ScalarSignal>
  *  
  * 
- * Returns a promise that is resolved with a `Point2DSignal` from the Block output with the given `name`. Fails the promise if no
- * output with that `name` is present in the Block or if the output with that `name` is not of type `Point2DSignal`.
+ * Returns a promise that is resolved with a `ScalarSignal` from the Block output with the given `name`. Fails the promise if no output with that `name` is present in the Block or if the output with that `name` is not of type `ScalarSignal`.
  */
-getPoint2D(name: string): Promise<Point2DSignal>;
+getScalar(name: String): Promise<ScalarSignal>;
+
+/**
+*  getScalarOrFallback(name: String, fallback: ScalarSignal): ScalarSignal
+ *  
+ * 
+ * Returns a `ScalarSignal` from the Block output with the given `name`. Returns the `fallback` if any error happens, such as if no output with that `name` is present in the Block, or if the output with that `name` is not of type `ScalarSignal`.
+ */
+getScalarOrFallback(name: String, fallback: ScalarSignal | number): ScalarSignal;
 
 /**
 *  
- * getPoint2DOrFallback(name: string, fallback: Point2DSignal): Point2DSignal
+ * getShader(name: String): Promise<ShaderSignal>
  *  
  * 
- * Returns a `Point2DSignal` from the Block output with the given `name`.
- * Returns the `fallback` if any error happens, such as if no output with that `name` is present in the Block, or if the
- * output with that `name` is not of type `Point2DSignal'.
+ * Returns a promise that is resolved with a `ShaderSignal` from the Block output with the given `name`. Fails the promise if no output with that `name` is present in the Block or if the output with that `name` is not of type `ShaderSignal`.
  */
-getPoint2DOrFallback(name: string, fallback: Point2DSignal): Point2DSignal;
+getShader(name: String): Promise<ShaderSignal>;
+
+/**
+*  getShaderOrFallback(name: String, fallback: ShaderSignal): ShaderSignal
+ *  
+ * 
+ * Returns a `ShaderSignal` from the Block output with the given `name`. Returns the `fallback` if any error happens, such as if no output with that `name` is present in the Block, or if the output with that `name` is not of type `ShaderSignal`.
+ */
+getShaderOrFallback(name: String, fallback: ShaderSignal): ShaderSignal;
 
 /**
 *  
- * getPointOrFallback(name: string, fallback: PointSignal): PointSignal
+ * getString(name: String): Promise<StringSignal>
  *  
  * 
- * Returns a `PointSignal` from the Block output with the given `name`.
- * Returns the `fallback` if any error happens, such as if no output with that `name` is present in the Block, or if the
- * output with that `name` is not of type `PointSignal'.
+ * Returns a promise that is resolved with a `StringSignal` from the Block output with the given `name`. Fails the promise if no output with that `name` is present in the Block or if the output with that `name` is not of type `StringSignal`.
  */
-getPointOrFallback(name: string, fallback: PointSignal): PointSignal;
+getString(name: String): Promise<StringSignal>;
+
+/**
+*  getStringOrFallback(name: String, fallback: StringSignal): StringSignal
+ *  
+ * 
+ * Returns a `StringSignal` from the Block output with the given `name`. Returns the `fallback` if any error happens, such as if no output with that `name` is present in the Block, or if the output with that `name` is not of type `StringSignal`.
+ */
+getStringOrFallback(name: String, fallback: StringSignal | string): StringSignal;
 
 /**
 *  
- * getPulse(name: string): Promise<EventSource<any>>
+ * getVector(name: String): Promise<VectorSignal>
  *  
  * 
- * Returns a promise that is resolved with a `EventSource` from the Block output with the given `name`. Fails the promise if no
- * output with that `name` is present in the Block or if the output with that `name` is not of type `EventSource`.
+ * Returns a promise that is resolved with a `VectorSignal` from the Block output with the given `name`. Fails the promise if no output with that `name` is present in the Block or if the output with that `name` is not of type `VectorSignal`.
  */
-getPulse(name: string): Promise<EventSource<any>>;
+getVector(name: String): Promise<VectorSignal>;
 
 /**
-*  
- * getPulseOrFallback(name: string, fallback: EventSource<any>): EventSource<any>
+*  getVectorOrFallback(name: String, fallback: VectorSignal): VectorSignal
  *  
  * 
- * Returns an `EventSource` from the Block output with the given `name`.
- * Returns the `fallback` if any error happens, such as if no output with that `name` is present in the Block, or if the
- * output with that `name` is not of type `EventSource'.
+ * Returns a `VectorSignal` from the Block output with the given `name`. Returns the `fallback` if any error happens, such as if no output with that `name` is present in the Block, or if the output with that `name` is not of type `VectorSignal`.
  */
-getPulseOrFallback(name: string, fallback: EventSource<any>): EventSource<any>;
-
-/**
-*  
- * getScalar(name: string): Promise<ScalarSignal>
- *  
- * 
- * Returns a promise that is resolved with a `ScalarSignal` from the Block output with the given `name`. Fails the promise if no
- * output with that `name` is present in the Block or if the output with that `name` is not of type `ScalarSignal`.
- */
-getScalar(name: string): Promise<ScalarSignal>;
-
-/**
-*  
- * getScalarOrFallback(name: string, fallback: ScalarSignal): ScalarSignal
- *  
- * 
- * Returns a `ScalarSignal` from the Block output with the given `name`.
- * Returns the `fallback` if any error happens, such as if no output with that `name` is present in the Block, or if the
- * output with that `name` is not of type `ScalarSignal'.
- */
-getScalarOrFallback(name: string, fallback: ScalarSignal | number): ScalarSignal;
-
-/**
-*  
- * getShader(name: string): Promise<ShaderSignal>
- *  
- * 
- * Returns a promise that is resolved with a `ShaderSignal` from the Block output with the given `name`. Fails the promise if no
- * output with that `name` is present in the Block or if the output with that `name` is not of type `ShaderSignal`.
- */
-getShader(name: string): Promise<ShaderSignal>;
-
-/**
-*  
- * getShaderOrFallback(name: string, fallback: ShaderSignal): ShaderSignal
- *  
- * 
- * Returns a `ShaderSignal` from the Block output with the given `name`.
- * Returns the `fallback` if any error happens, such as if no output with that `name` is present in the Block, or if the
- * output with that `name` is not of type `ShaderSignal'.
- */
-getShaderOrFallback(name: string, fallback: ShaderSignal): ShaderSignal;
-
-/**
-*  
- * getString(name: string): Promise<StringSignal>
- *  
- * 
- * Returns a promise that is resolved with a `StringSignal` from the Block output with the given `name`. Fails the promise if no
- * output with that `name` is present in the Block or if the output with that `name` is not of type `StringSignal`.
- */
-getString(name: string): Promise<StringSignal>;
-
-/**
-*  
- * getStringOrFallback(name: string, fallback: StringSignal): StringSignal
- *  
- * 
- * Returns a `StringSignal` from the Block output with the given `name`.
- * Returns the `fallback` if any error happens, such as if no output with that `name` is present in the Block, or if the
- * output with that `name` is not of type `StringSignal'.
- */
-getStringOrFallback(name: string, fallback: StringSignal | string): StringSignal;
-
-/**
-*  
- * getVector(name: string): Promise<VectorSignal>
- *  
- * 
- * Returns a promise that is resolved with a `VectorSignal` from the Block output with the given `name`. Fails the promise if no
- * output with that `name` is present in the Block or if the output with that `name` is not of type `VectorSignal`.
- */
-getVector(name: string): Promise<VectorSignal>;
-
-/**
-*  
- * getVectorOrFallback(name: string, fallback: VectorSignal): VectorSignal
- *  
- * 
- * Returns a `VectorSignal` from the Block output with the given `name`.
- * Returns the `fallback` if any error happens, such as if no output with that `name` is present in the Block, or if the
- * output with that `name` is not of type `VectorSignal'.
- */
-getVectorOrFallback(name: string, fallback: VectorSignal): VectorSignal;
+getVectorOrFallback(name: String, fallback: VectorSignal): VectorSignal;
 
 }
