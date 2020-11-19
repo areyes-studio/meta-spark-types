@@ -44,7 +44,7 @@ Specifies the material blend mode.
 blendMode: Signal<MaterialsModule.BlendMode>;
 /**
 * ```
-(get) emissive: TextureBase | null
+(get) (Not Available)
 (set) emissive: TextureBase | null
 ```
 

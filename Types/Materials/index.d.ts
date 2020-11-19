@@ -93,18 +93,6 @@ function findUsingPattern(namePattern: string, config?: {limit: number}): Promis
 
 /**
 *  
- * get(materialName: string): MaterialBase
- *  
- * 
- * Returns a `MaterialBase` class that represents the material specified by the `materialName` parameter. The materials are defined in the AR Studio project.
- * An exception is thrown when the identifier isn't found in the project.
- * 
- * **See Also**: `MaterialBase.name`.
- */
-function get(materialName: string): MaterialBase;
-
-/**
-*  
  * getAll(): Promise<Array<MaterialBase>>
  *  
  * 

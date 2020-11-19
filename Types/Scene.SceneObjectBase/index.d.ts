@@ -53,15 +53,6 @@ Specifies the scene object unique identifier. This value is specified internally
 identifier: string;
 /**
 * ```
-(get) materialIdentifier: string
-(set) (Not Available)
-```
-
-Specifies the unique material identifier assigned to scene object. This value is specified internally in AR Studio.
-*/
-materialIdentifier: string;
-/**
-* ```
 (get) name: string
 (set) (Not Available)
 ```
@@ -120,28 +111,6 @@ worldTransform: WorldTransform;
  * - Adding a child that was created in Studio is not allowed.
  */
 addChild(child: any | string): Promise<void>;
-
-/**
-*  
- * child(name: string): SceneObjectBase
- *  
- * 
- * Returns a child object by name. An exception is thrown if the object isn't found.
- * **See Also**: `SceneObjectBase.find`, `SceneModule.root`
- */
-child(name: string): any;
-
-/**
-*  
- * find(name: string): SceneObjectBase
- *  
- * 
- * Returns a descendant object by name. An exception is thrown if the object isn't found or if more than one is found.
- *  **Note**: object D is considered to be a descendant of object P if either D is a child of P or if such an object C which is a child of P exists that D is a descendant of C.
- * 
- *  **See Also**: `SceneObjectBase.child`, `SceneModule.root`.
- */
-find(name: string): any;
 
 /**
 *  

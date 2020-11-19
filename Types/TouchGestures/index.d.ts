@@ -11,8 +11,8 @@ declare namespace TouchGesturesModule {
  * onLongPress(options?: SceneObjectBase | {normalizeCoordinates?: false | true, object?: SceneObjectBase}): EventSource<LongPressGesture>
  *  
  * 
- * Returns an [`EventSource`](/docs/camera-effects/reference/reactive_module/eventsource_class), to which you may subscribe,
- * that emits a [`LongPressGesture`](/docs/camera-effects/reference/touchgestures_module/longpressgesture_class) object for each long-press interaction.
+ * Returns an [`EventSource`](/classes/reactivemodule.eventsource), to which you may subscribe,
+ * that emits a [`LongPressGesture`](/classes/touchgesturesmodule.longpressgesture) object for each long-press interaction.
  * When `options` is specified, only events for the specified object are emitted.
  * Otherwise - events for entire preview screen are emitted.
  */
@@ -23,8 +23,8 @@ function onLongPress(options?: any | {normalizeCoordinates?: false | true, objec
  * onPan(options?: SceneObjectBase | {normalizeCoordinates?: false | true, object?: SceneObjectBase}): EventSource<PanGesture>
  *  
  * 
- * Returns an [`EventSource`](/docs/camera-effects/reference/reactive_module/eventsource_class), to which you may subscribe,
- * that emits a [`PanGesture`](/docs/camera-effects/reference/touchgestures_module/pangesture_class) object for each pan interaction.
+ * Returns an [`EventSource`](/classes/reactivemodule.eventsource), to which you may subscribe,
+ * that emits a [`PanGesture`](/classes/touchgesturesmodule.pangesture) object for each pan interaction.
  * When `options` is specified, only events for the specified object are emitted.
  * Otherwise - events for entire preview screen are emitted.
  */
@@ -35,8 +35,8 @@ function onPan(options?: any | {normalizeCoordinates?: false | true, object?: an
  * onPinch(options?: SceneObjectBase | {normalizeCoordinates?: false | true, object?: SceneObjectBase}): EventSource<PinchGesture>
  *  
  * 
- * Returns an [`EventSource`](/docs/camera-effects/reference/reactive_module/eventsource_class), to which you may subscribe,
- * that emits a [`PinchGesture`](/docs/camera-effects/reference/touchgestures_module/pinchgesture_class) object for each pinch interaction.
+ * Returns an [`EventSource`](/classes/reactivemodule.eventsource), to which you may subscribe,
+ * that emits a [`PinchGesture`](/classes/touchgesturesmodule.pinchgesture) object for each pinch interaction.
  * When `options` is specified, only events for the specified object are emitted.
  * Otherwise - events for entire preview screen are emitted.
  */
@@ -47,7 +47,7 @@ function onPinch(options?: any | {normalizeCoordinates?: false | true, object?: 
  * onRawTouch(options?: SceneObjectBase | {normalizeCoordinates?: false | true, object?: SceneObjectBase}): EventSource<RawTouchGesture>
  *  
  * 
- * Returns an [`EventSource`](/docs/camera-effects/reference/reactive_module/eventsource_class),
+ * Returns an [`EventSource`](/classes/reactivemodule.eventsource),
  * to which you may subscribe, that emits a `RawTouch` object for each touch interaction.
  * When `options` is specified, only events for the specified object are emitted.
  * Otherwise - events for entire preview screen are emitted.
@@ -59,8 +59,8 @@ function onRawTouch(options?: any | {normalizeCoordinates?: false | true, object
  * onRotate(options?: SceneObjectBase | {normalizeCoordinates?: false | true, object?: SceneObjectBase}): EventSource<RotateGesture>
  *  
  * 
- * Returns an [`EventSource`](/docs/camera-effects/reference/reactive_module/eventsource_class), to which you may subscribe,
- * that emits a [`RotateGesture`](/docs/camera-effects/reference/touchgestures_module/rotategesture_class) object for each rotate interaction.
+ * Returns an [`EventSource`](/classes/reactivemodule.eventsource), to which you may subscribe,
+ * that emits a [`RotateGesture`](/classes/touchgesturesmodule.rotategesture) object for each rotate interaction.
  * When `options` is specified, only events for the specified object are emitted.
  * Otherwise - events for entire preview screen are emitted.
  */
@@ -71,8 +71,8 @@ function onRotate(options?: any | {normalizeCoordinates?: false | true, object?:
  * onTap(options?: SceneObjectBase | {normalizeCoordinates?: false | true, object?: SceneObjectBase}): EventSource<TapGesture>
  *  
  * 
- * Returns an [`EventSource`](/docs/camera-effects/reference/reactive_module/eventsource_class), to which you may subscribe,
- * that emits a [`TapGesture`](/docs/camera-effects/reference/touchgestures_module/tapgesture_class) object for each tap interaction.
+ * Returns an [`EventSource`](/classes/reactivemodule.eventsource), to which you may subscribe,
+ * that emits a [`TapGesture`](/classes/touchgesturesmodule.tapgesture) object for each tap interaction.
  * When `options` is specified, only events for the specified object are emitted.
  * Otherwise - events for entire preview screen are emitted.
  */

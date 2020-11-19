@@ -14,25 +14,6 @@ Object containing available module and types information.
 const typeSystem: TypeSystemMetadata;
 /**
 *  
- * getModuleNames(): Array<string>
- *  
- * 
- * Returns an array of names of all the scripting modules that can be loaded through a `require` call.
- * Note: This set of modules is based on the list of enabled capabilities.
- */
-function getModuleNames(): Array<string>;
-
-/**
-*  
- * getTypeDescriptions(): Object
- *  
- * 
- * Finds the descriptions for each type in the effect.
- */
-function getTypeDescriptions(): Object;
-
-/**
-*  
  * log(content: Object): void
  *  
  * 

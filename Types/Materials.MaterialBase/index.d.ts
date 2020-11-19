@@ -28,6 +28,15 @@ Specifies the material cull mode.
 cullMode: Signal<MaterialsModule.CullMode>;
 /**
 * ```
+(get) (Not Available)
+(set) diffuse: TextureBase | null
+```
+
+Specifies the texture that forms the basis of this material.
+*/
+diffuse: TextureBase | null;
+/**
+* ```
 (get) diffuse: TextureBase | null
 (set) diffuse: TextureBase | null
 ```

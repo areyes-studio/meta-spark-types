@@ -34,16 +34,6 @@ function findUsingPattern(namePattern: string, config?: {limit: number}): Promis
 
 /**
 *  
- * get(svgName: string): Svg
- *  
- * 
- * Returns a svg object identified by the `svgName` argument.
- * Throws an exception if there is no such identifier in the project.
- */
-function get(svgName: string): Svg;
-
-/**
-*  
  * getAll(): Promise<Array<Svg>>
  *  
  * 

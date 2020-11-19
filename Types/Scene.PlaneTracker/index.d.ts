@@ -27,33 +27,11 @@ confidence: StringSignal | string;
 ```
 
 Specifies if this tracker object should track horizontal plane or moving object.
-
 **Note:** on invalid value provided in setter, the mode will default to `SceneModule.TrackingMode.PLANE`.
 
 **See Also**: `PlaneTracker.setMode`.
 */
 mode: Signal<SceneModule.TrackingMode>;
-/**
-* ```
- (get) trackingMode: SceneModule.TrackingMode
- (set) trackingMode: SceneModule.TrackingMode
- ```
-
- Specifies if this tracker object should track horizontal plane or moving object.
-
- **See Also**: `PlaneTracker.mode` and `PlaneTracker.setMode`.
-*/
-trackingMode: TrackingMode;
-/**
-*  
- * hitTest(screenLocation: Point2D): Point3D
- *  
- * 
- * Returns a point on tracked plane in local coordinates of PlaneTracker (in 3D units).
- * Returns null if tracked plane is not found at given screen point.
- */
-hitTest(screenLocation: Point2D): Point3D;
-
 /**
 *  
  * performHitTest(screenXLocation: number, screenYLocation: number): Promise<Point3D>
@@ -69,19 +47,15 @@ performHitTest(screenLocation: Point2D): Promise<Point3D>;
 
 /**
 *  
- * setMode(mode: Signal<SceneModule.TrackingMode>): void
- * setMode(mode: Signal<SceneModule.TrackingMode>, config: { fallback: SceneModule.TrackingMode }): void
+ * setMode(mode: Signal<SceneModule.TrackingMode>, config?: {fallback: SceneModule.TrackingMode}): void
  *  
  * 
  * Specifies if this tracker object should track horizontal plane or moving object.
- * 
  * **Note:** on invalid value provided in setter, the mode will default to `fallback` (or `SceneModule.TrackingMode.PLANE` if fallback is not specified).
  * 
  * **See Also**: `PlaneTracker.mode`.
  */
-setMode(mode: Signal<SceneModule.TrackingMode>): void;
-
-setMode(mode: Signal<SceneModule.TrackingMode>, config: { fallback: SceneModule.TrackingMode }): void;
+setMode(mode: Signal<SceneModule.TrackingMode>, config?: {fallback: SceneModule.TrackingMode}): void;
 
 /**
 *  
@@ -93,9 +67,7 @@ setMode(mode: Signal<SceneModule.TrackingMode>, config: { fallback: SceneModule.
  * PlaneTracker origin is bound to a point in 3d space, located on detected plane.
  * This method updates PlaneTracker to track 3d point currently under given screen coordiantes.
  * This also triggers new plane detection, in result this object's transform will be modified.
- * 
  * Version with signal parameters can be used in touch gestures for continuous updating:
- * 
  *  
  * TouchGestures.onPan().subscribe(function(gesture) {
  *   planeTracker.trackPoint(gesture.location, gesture.state);
@@ -109,23 +81,16 @@ trackPoint(screenX: number, screenY: number): void;
 trackPoint(screenLocation: Point2DSignal, gestureState: StringSignal | string): void;
 
 /**
-* 
- *  
- * trackTexture(texture: ImageTexture): void
- * trackTexture(texture: ExternalTexture): void
+*  
+ * trackTexture(texture: ImageTexture | ExternalTexture): void
  *  
  * 
  * This method updates PlaneTracker to track against a texture.
  * The center of the texture is the origin of the PlaneTracker.
- * 
  * For the ExternalTexture version of this function call, care should be taken to
  * ensure that the texture is in an 'Available' state, else the pending or
  * fallback textures may be used instead.
- *  
- * 
  */
-trackTexture(texture: ImageTexture): void;
-
-trackTexture(texture: ExternalTexture): void;
+trackTexture(texture: ExternalTexture | ImageTexture): void;
 
 }

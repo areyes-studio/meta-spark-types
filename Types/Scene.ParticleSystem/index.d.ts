@@ -4,7 +4,6 @@
 /// <reference path="../Reactive.HsvaSignal/index.d.ts" />
 /// <reference path="../Materials.MaterialBase/index.d.ts" />
 /// <reference path="../Scene.ParticleTypeDescription/index.d.ts" />
-/// <reference path="../Scene.ParticleTypeDescriptions/index.d.ts" />
 /// <reference path="../Reactive.PointSignal/index.d.ts" />
 /// <reference path="../Animation.ScalarSampler/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
@@ -368,15 +367,6 @@ sprayAngle: PointSignal;
 Specifies the absolute delta value for the `sprayAngle` property. The initial velocity angle is randomized uniformly in the range `[sprayAngle - sprayAngleDelta; sprayAngle + sprayAngleDelta]` for each particle.
 */
 sprayAngleDelta: PointSignal;
-/**
-* ```
-(get) types: ParticleTypeDescriptions
-(set) (Not Available)
-```
-
-Retrieves the ParticleTypeDescriptions
-*/
-types: ParticleTypeDescriptions;
 /**
 * ```
 (get) (Not Available)

@@ -1,4 +1,5 @@
 /// <reference path="../Reactive.BoolSignal/index.d.ts" />
+/// <reference path="../Scene.OutputVisibility/index.d.ts" />
 /// <reference path="../Scene.SceneObjectBase/index.d.ts" />
 declare interface Scene {
 /**
@@ -11,27 +12,14 @@ Specifies whether the scene and its descendants are hidden.
 */
 hidden: BoolSignal | boolean;
 /**
-*  
- * child(name: string): SceneObjectBase
- *  
- * 
- * Returns a child object by name. An exception is thrown if the object isn't found.
- * **See Also**: `SceneObjectBase.find`, `SceneModule.root`
- */
-child(name: string): any;
+* ```
+(get) outputVisibility: OutputVisibility
+(set) (Not Available)
+```
 
-/**
-*  
- * find(name: string): SceneObjectBase
- *  
- * 
- * Returns a descendant object by name. An exception is thrown if the object isn't found or if more than one is found.
- *  **Note**: object D is considered to be a descendant of object P if either D is a child of P or if such an object C which is a child of P exists that D is a descendant of C.
- * 
- *  **See Also**: `SceneObjectBase.child`, `SceneModule.root`.
- */
-find(name: string): any;
-
+Represents the `OutputVisibility` that contains a set of flags that specify the overall scene visibility depending on the output.
+*/
+outputVisibility: OutputVisibility;
 /**
 *  
  * findAll(name: string, config?: {recursive: boolean}): Promise<Array<SceneObjectBase>>

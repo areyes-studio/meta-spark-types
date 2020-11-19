@@ -34,18 +34,6 @@ function findUsingPattern(namePattern: string, config?: {limit: number}): Promis
 
 /**
 *  
- * get(prefabName: string): Prefab
- *  
- * 
- * Returns a prefab object, derived from `Prefab`, that is specified by `prefabName`. An exception is thrown when prefab isn't found. At the moment we have only one type:
- *   * `Prefab`
- * 
- * **See Also**: `Prefab.name`.
- */
-function get(prefabName: string): Prefab;
-
-/**
-*  
  * getAll(): Promise<Array<Prefab>>
  *  
  * 

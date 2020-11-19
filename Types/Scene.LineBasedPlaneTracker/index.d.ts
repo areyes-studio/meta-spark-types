@@ -5,7 +5,7 @@
 declare interface LineBasedPlaneTracker {
 /**
 * ```
-(get) planeType: StringSignal
+(get) planeType: Signal<PlaneType>
 (set) (Not Available)
 ```
 
@@ -17,7 +17,7 @@ Possible values:
 - HORIZONTAL_CEILING
 - VERTICAL
 */
-planeType: StringSignal | string;
+planeType: Signal<PlaneType>;
 /**
 *  
  * movePlane(screenLocation: Point2D): void
@@ -28,7 +28,6 @@ planeType: StringSignal | string;
  * Moves this object along an existing 3d plane.
  * The 3d plane will be centered along the viewing ray defined by the given screen coordinate.
  * This object's transform will be modified.
- * 
  *  
  * TouchGestures.onPan().subscribe(function(gesture) {
  *   lineBasedTracker.movePlane(gesture.location);
@@ -47,7 +46,6 @@ movePlane(screenLocation: Point2DSignal, gestureState: StringSignal | string): v
  *  
  * 
  * Removes an existing 3d plane and does not track the position anymore.
- * 
  *  
  * TouchGestures.onTap().subscribe(function(gesture) {
  *   lineBasedTracker.removePlane();
@@ -58,29 +56,22 @@ removePlane(): void;
 
 /**
 *  
- *          resetPlane(screenLocation: Point2D): void
- *          resetPlane(screenX: number, screenY: number): void
- *          resetPlane(screenLocation: Point2D, planeType : PlaneType): void
- *          resetPlane(screenX: number, screenY: number, planeType : PlaneType): void
- *           
+ * resetPlane(screenLocation: Point2D, planeType?: PlaneType): void
+ * resetPlane(screenX: number, screenY: number, planeType?: PlaneType): void
+ *  
  * 
- *          Sets a new plane or resets an existing plane in 3d space.
- *          The 3d plane will be centered along the viewing ray defined by the given screen coordinate.
- *          The position of the plane is constantly tracked.
- *          This object's transform will be modified.
- * 
- *           
- *          TouchGestures.onTap().subscribe(function(gesture) {
- *            lineBasedTracker.resetPlane(gesture.location, PlaneType.HORZONTAL);
- *          });
- *           
+ * Sets a new plane or resets an existing plane in 3d space.
+ * The 3d plane will be centered along the viewing ray defined by the given screen coordinate.
+ * The position of the plane is constantly tracked.
+ * This object's transform will be modified.
+ *  
+ * TouchGestures.onTap().subscribe(function(gesture) {
+ *   lineBasedTracker.resetPlane(gesture.location, PlaneType.HORZONTAL);
+ * });
+ *  
  */
-resetPlane(screenLocation: Point2D): void;
+resetPlane(screenLocation: Point2D, planeType?: PlaneType): void;
 
-resetPlane(screenX: number, screenY: number): void;
-
-resetPlane(screenLocation: Point2D, planeType: PlaneType): void;
-
-resetPlane(screenX: number, screenY: number, planeType: PlaneType): void;
+resetPlane(screenX: number, screenY: number, planeType?: PlaneType): void;
 
 }

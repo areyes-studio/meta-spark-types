@@ -36,7 +36,7 @@ Note that RgbaSignal is always returned.
 diffuseColorFactor: RgbaSignal;
 /**
 * ```
-(get) emissive: TextureBase | null
+(get) (Not Available)
 (set) emissive: TextureBase | null
 ```
 
@@ -65,7 +65,7 @@ Note that RgbaSignal is always returned.
 emmisiveColorFactor: RgbaSignal;
 /**
 * ```
-(get) multiply: TextureBase | null
+(get) (Not Available)
 (set) multiply: TextureBase | null
 ```
 
@@ -83,7 +83,7 @@ Specifies the coordinates transform of the multiplicative texture of this materi
 multiplyTextureTransform: TextureTransform;
 /**
 * ```
-(get) reflective: TextureBase | null
+(get) (Not Available)
 (set) reflective: TextureBase | null
 ```
 

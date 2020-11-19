@@ -34,16 +34,6 @@ function findUsingPattern(namePattern: string, config?: {limit: number}): Promis
 
 /**
 *  
- * get(fontName: string): FontId
- *  
- * 
- * Returns a font object identified by the `fontName` argument.
- * Throws an exception if there is no such font in the project.
- */
-function get(fontName: string): FontId;
-
-/**
-*  
  * getAll(): Promise<Array<FontId>>
  *  
  * 

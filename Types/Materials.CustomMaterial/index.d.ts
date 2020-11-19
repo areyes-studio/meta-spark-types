@@ -4,23 +4,13 @@
 declare interface CustomMaterial {
 /**
 *  
- * boolParameter(paramName: string): BoolValue
+ * getAllParameters(): Promise<{[key: string]: BoolSignal | ScalarSignal}>
  *  
  * 
- * Returns the Boolean value indicated by the `paramName` argument. An exception is thrown when the identifier isn't found in the material.
- * **See Also**: `CustomMaterial.setBoolParameter`.
+ * Get all parameters that are currently set on this custom material.
+ * The result in a promise only contains float and boolean parameters that were set before on this material.
  */
-boolParameter(paramName: string): BoolValue;
-
-/**
-*  
- * floatParameter(paramName: string): ScalarValue
- *  
- * 
- * Returns the `ScalarValue` value representing the shader parameter indicated by the `paramName` argument. An exception is thrown when the identifier isn't found in the material.
- * **See Also**: `CustomMaterial.setFloatParameter`.
- */
-floatParameter(paramName: string): ScalarValue;
+getAllParameters(): Promise<{[key: string]: BoolSignal | ScalarSignal}>;
 
 /**
 *  
@@ -93,6 +83,17 @@ setBoolParameter(paramName: string, source: BoolSignal | boolean): Promise<void>
  * **See Also**: `CustomMaterial.getFloatParameter`, `CustomMaterial.getFloatParameterOrFallback`.
  */
 setFloatParameter(paramName: string, source: ScalarSignal | number): Promise<void>;
+
+/**
+*  
+ * setParameters(params: {[key: string]: BoolSignal | ScalarSignal}): Promise<void>
+ *  
+ * 
+ * Set multiple shader parameters on this custom material.
+ * The result in a promise that is resolved successfully if all parameters were set.
+ * Trying to set empty set of parameters is valid, results in a no-op.
+ */
+setParameters(params: {[key: string]: BoolSignal | ScalarSignal}): Promise<void>;
 
 /**
 *  
