@@ -27,11 +27,32 @@ confidence: StringSignal | string;
  * PointTracker origin is bound to a point in 3d space, located on detected point.
  * This method updates PointTracker to track 3d point currently under given screen coordiantes.
  * This also triggers new point detection, in result this object's transform will be modified.
- * 
  * Version with signal parameters can be used in touch gestures for continuous updating:
- * 
  *  
- * TouchGestures.onPan().subscribe(function(gesture) {
+ *   TouchGestures.onPan().subscribe(function(gesture) {
+ *   pointTracker.trackPoint(gesture.location, gesture.state);
+ * });
+ *  
+ */
+trackPoint(screenLocation: Point2D): void;
+
+trackPoint(screenX: number, screenY: number): void;
+
+trackPoint(screenLocation: Point2DSignal, gestureState: StringSignal | string): void;
+
+/**
+*  
+ * trackPoint(screenLocation: Point2D): void
+ * trackPoint(screenX: number, screenY: number): void
+ * trackPoint(screenLocation: Point2DSignal, gestureState: StringSignal): void
+ *  
+ * 
+ * PointTracker origin is bound to a point in 3d space, located on detected point.
+ * This method updates PointTracker to track 3d point currently under given screen coordiantes.
+ * This also triggers new point detection, in result this object's transform will be modified.
+ * Version with signal parameters can be used in touch gestures for continuous updating:
+ *  
+ *   TouchGestures.onPan().subscribe(function(gesture) {
  *   pointTracker.trackPoint(gesture.location, gesture.state);
  * });
  *  

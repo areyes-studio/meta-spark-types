@@ -1,4 +1,4 @@
-/// <reference path="../Prefabs.State/index.d.ts" />
+/// <reference path="../Textures.GalleryTexture.State/index.d.ts" />
 declare interface GalleryTexture {
 /**
 * ```

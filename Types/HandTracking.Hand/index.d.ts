@@ -1,7 +1,17 @@
+/// <reference path="../Reactive.BoundingBoxSignal/index.d.ts" />
 /// <reference path="../Reactive.PointSignal/index.d.ts" />
 /// <reference path="../Reactive.StringSignal/index.d.ts" />
 /// <reference path="../Reactive.TransformSignal/index.d.ts" />
 declare interface Hand {
+/**
+* ```
+(get) boundingBox: BoundingBoxSignal
+(set) (Not Available)
+```
+
+Specifies the 2D position and size of a bounding box around a detected hand
+*/
+boundingBox: BoundingBoxSignal;
 /**
 * ```
 (get) cameraTransform: TransformSignal
