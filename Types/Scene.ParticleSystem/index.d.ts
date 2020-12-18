@@ -51,8 +51,8 @@ birthrate: ScalarSignal | number;
 (set) birthrateDelta: ScalarSignal
 ```
 
-Specifies the percentage delta value, between 0.0 and 1.0, for the `birthrate` property. Whenever a particle is spawned, an "instantaneous birthrate" is chosen uniformly in the range `[birthrate * (1 - d); birthrate * (1 + d)]` and the next particle will be spawned in (1/instantaneous birthrate) seconds.
-
+Specifies the percentage delta value, between 0.0 and 1.0, for the `birthrate` property.
+Whenever a particle is spawned, an "instantaneous birthrate" is chosen uniformly in the range `[birthrate * (1 - d); birthrate * (1 + d)]` and the next particle will be spawned in (1/instantaneous birthrate) seconds.
 **Note**: The behavior is undefined for values outside the valid range.
 */
 birthrateDelta: ScalarSignal | number;
@@ -63,7 +63,6 @@ birthrateDelta: ScalarSignal | number;
 ```
 
 Specifies the mean color for modulating the particle material.
-
 **Note**: `colorModulationHSVA` can only be an instance of `HsvaSignal`, it cannot be specified in other color space like RGBA.
 
 **Note**: the modulation itself happens in RGBA space. Each of the RGBA components specified by the modulation is multiplied to the corresponding component specified by the particle material.
@@ -76,7 +75,6 @@ colorModulationHSVA: HsvaSignal;
 ```
 
 Specifies the absolute delta value for the `colorModulationHSVA` property. The modulation color will be randomized uniformly in the axis-aligned bounding box in the HSVA space with corners `colorModulationHSVA - d` and `colorModulationHSVA + d` for each particle.
-
 **Note**: `colorModulationHSVA` can only be an instance of `HsvaSignal`, it cannot be specified in other color space like RGBA.
 
 **Note**: if the hue component of the randomized modulation color is outside of the [0, 1] interval, it is taken modulo 1.0. If any of the saturation, value or alpha components is outside of the [0, 1] interval, its value is clamped.
@@ -91,7 +89,6 @@ colorModulationHSVADelta: HsvaSignal;
 ```
 
 Specifies the modifier that will be added to the particle color according to the supplied sampler relative to the current relative lifetime of the particle. In other words, if the lifetime is 4 seconds and the particle has lived for is 3 seconds, the modifier will be sampled at 3/4 = 0.75.
-
 **Note**: the modifier works in the HSVA color space, i.e. using values interpolated in RGBA won't add the corresponding R, G or B values to the current color but rather the converted HSV color will be added.
 */
 hsvaColorModulationModifier: ColorSampler;
@@ -147,7 +144,6 @@ initialVelocityMagnitude: ScalarSignal | number;
 ```
 
 Specifies the percentage delta value, between 0.0 and 1.0, for the `initialVelocityMagnitude` property. The initial velocity magnitude is randomized uniformly in the range `[initialVelocityMagnitude * (1 - d); initialVelocityMagnitude * (1 + d)]` for each particle.
-
 **Note**: The behavior is undefined for values outside the valid range.
 */
 initialVelocityMagnitudePercentageDelta: ScalarSignal | number;
@@ -158,7 +154,6 @@ initialVelocityMagnitudePercentageDelta: ScalarSignal | number;
 ```
 
 Specifies the radius of the inner circle when using the ring emitter for the particle system. The particles spawn between `innerRadius` and `outerRadius`.
-
 **Note**: `outerRadius` must be greater-than or equal to `innerRadius`.
 */
 innerRadius: ScalarSignal | number;
@@ -178,7 +173,6 @@ lifetimeSeconds: ScalarSignal | number;
 ```
 
 Specifies the percentage delta value, between 0.0 and 1.0, for the `lifetimeSeconds` property. The lifetime is randomized uniformly in the range `[lifetimeSeconds * (1 - d); lifetimeSeconds * (1 + d)]` for each particle.
-
 **Note**: The behavior is undefined for values outside the valid range.
 */
 lifetimeSecondsPercentageDelta: ScalarSignal | number;
@@ -198,21 +192,18 @@ linearDamping: ScalarSignal | number;
 ```
 
 Specifies the percentage delta value, between 0.0 and 1.0, for the `linearDamping` property. The linear dumping is randomized uniformly in the range `[linearDamping * (1 - d); linearDamping * (1 + d)]` for each particle.
-
 **Note**: The behavior is undefined for values outside the valid range.
 */
 linearDampingPercentageDelta: ScalarSignal | number;
 /**
-* 
-```
-(get) material: MaterialBase
-(set) material: MaterialBase
+* ```
+(get) material: MaterialBase | null
+(set) material: MaterialBase | null
 ```
 
 Specifies the material of the scene object.
-
 */
-material: MaterialBase;
+material: MaterialBase | null;
 /**
 * ```
 (get) opticalFlowSensitivity: ScalarSignal
@@ -229,7 +220,6 @@ opticalFlowSensitivity: ScalarSignal | number;
 ```
 
 Specifies the radius of the outer circle when using the ring emitter for the particle system. The particles spawn between `innerRadius` and `outerRadius`.
-
 **Note**: `outerRadius` must be greater-than or equal to `innerRadius`.
 */
 outerRadius: ScalarSignal | number;
@@ -267,7 +257,6 @@ position: PointSignal;
 ```
 
 Specifies the absolute delta value for the `position` property. The position is randomized uniformly in the axis-aligned bounding box with corners `position - d` and `position + d` for each particle.
-
 **Note**: all the coordinates must be non-negative. For negative values, the absolute value is used.
 */
 positionDelta: VectorSignal;
@@ -278,7 +267,6 @@ positionDelta: VectorSignal;
 ```
 
 Specifies the modifier that will be added to the particle position according to the supplied sampler relative to the current relative lifetime of the particle. In other words, if the lifetime is 4 seconds and the particle has lived for is 3 seconds, the modifier will be sampled at 3/4 = 0.75.
-
 **Note**: the specified array of samplers must contain exactly 3 elements, interpreted as X,Y,Z values.
 */
 positionModifier: ArrayOfScalarSamplers;
@@ -298,7 +286,6 @@ rotationalDamping: ScalarSignal | number;
 ```
 
 Specifies the percentage delta value, between 0.0 and 1.0, for the `rotationalDamping` property. The rotational dumping is randomized uniformly in the range `[rotationalDamping * (1 - d); rotationalDamping * (1 + d)]` for each particle.
-
 **Note**: The behavior is undefined for values outside the valid range.
 */
 rotationalDampingPercentageDelta: ScalarSignal | number;
@@ -336,7 +323,6 @@ scale: ScalarSignal | number;
 ```
 
 Specifies the percentage delta value, between 0.0 and 1.0, for the `scale` property. The scale is randomized uniformly in the range `[scale * (1 - d); scale * (1 + d)]` for each particle.
-
 **Note**: The behavior is undefined for values outside the valid range.
 */
 scaleDelta: ScalarSignal | number;
@@ -374,7 +360,6 @@ sprayAngleDelta: PointSignal;
 ```
 
 Specifies the modifier that will be added to the particle velocity according to the supplied sampler relative to the current relative lifetime of the particle. In other words, if the lifetime is 4 seconds and the particle has lived for is 3 seconds, the modifier will be sampled at 3/4 = 0.75.
-
 **Note**: the specified array of samplers must contain exactly 3 elements, interpreted as X,Y,Z values.
 */
 velocityModifier: ArrayOfScalarSamplers;
@@ -388,22 +373,20 @@ Specifies whether the particles will move with the emitter or will have their ow
 */
 worldSpace: BoolSignal | boolean;
 /**
-* 
- *  
- * getMaterial(): Promise<MaterialBase>
+*  
+ * getMaterial(): Promise<MaterialBase | null>
  *  
  * 
  * Returns a promise that is resolved with the material associated with a given scene object or null if no material was assigned.
- * 
  */
-getMaterial(): Promise<MaterialBase>;
+getMaterial(): Promise<MaterialBase | null>;
 
 /**
 *  
  * getTypes(): Promise<Array<ParticleTypeDescription>>
  *  
  * 
- * Retrieves the array of ParticleTypeDescription objects
+ * Retrieves the array of ParticleTypeDescription objects.
  */
 getTypes(): Promise<Array<ParticleTypeDescription>>;
 
