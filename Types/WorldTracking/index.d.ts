@@ -93,14 +93,5 @@ function onTrackableAdded(trackable: ARTrackable) : void;
  */
 function onTrackableDeleted(trackable: ARTrackable) : void;
 
-/**
-*  
- * onTrackableUpdated(trackable: ARTrackable) : void
- *  
- * Returns an [`EventSource`](/classes/reactivemodule.eventsource), to which you may subscribe,
- * that emits an ARTrackable each time a trackable is updated.
- */
-function onTrackableUpdated(trackable: ARTrackable) : void;
-
 }
 export = WorldTrackingModule;

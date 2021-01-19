@@ -2,13 +2,14 @@
 declare interface ExternalTexture {
 /**
 * ```
-(get) state: StringSignal
+(get) state: Signal<ExternalTexture.State>
 (set) (Not Available)
 ```
 
-Specifies a `StringSignal` representing the loading state of the external texture. The value of the signal is guaranteed to be a member of the `TexturesModule.ExternalTexture.State` enumeration.
+Specifies a `Signal<ExternalTexture.State>` representing the loading state of the external texture.
+The value of the signal is guaranteed to be a member of the `TexturesModule.ExternalTexture.State` enumeration.
 */
-state: StringSignal | string;
+state: Signal<ExternalTexture.State>;
 /**
 * ```
 (get) url: StringSignal

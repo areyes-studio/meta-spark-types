@@ -1,4 +1,4 @@
-/// <reference path="../WorldTracking.ARPlaneTrackable/index.d.ts" />
+/// <reference path="../WorldTracking.ARTrackable/index.d.ts" />
 /// <reference path="../WorldTracking.HitTestType/index.d.ts" />
 /// <reference path="../Reactive.Point2DSignal/index.d.ts" />
 /// <reference path="../Reactive.StringSignal/index.d.ts" />
@@ -6,13 +6,13 @@
 declare interface ARReferencePoint {
 /**
 * ```
-(get) plane: ARPlaneTrackable
+(get) plane: ARTrackable
 (set) (Not Available)
 ```
 Returns the surface plane that the reference point is currently snapped to, if the optional `snapToPlane` argument was passed
 when the `move()` method was called.
 */
-plane: ARPlaneTrackable;
+plane: ARTrackable;
 /**
 * ```
 (get) transform: TransformSignal

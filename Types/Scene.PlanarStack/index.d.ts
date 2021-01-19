@@ -21,13 +21,13 @@ Specifies the distribution of the stack children
 childDistribute: Signal<SceneModule.StackDistribute>;
 /**
 * ```
-(get) direction: Signal<SceneModule.StackDirection>
-(set) direction: Signal<SceneModule.StackDirection>
+(get) direction: Signal<SceneModule.Direction>
+(set) direction: Signal<SceneModule.Direction>
 ```
 
 Specifies the direction of the stack layout.
 */
-direction: Signal<SceneModule.StackDirection>;
+direction: Signal<SceneModule.Direction>;
 /**
 * ```
 (get) gap: ScalarSignal

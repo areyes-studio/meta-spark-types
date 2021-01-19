@@ -4,6 +4,7 @@
 /// <reference path="../Reactive.Point2DSignal/index.d.ts" />
 /// <reference path="../Reactive.Point3D/index.d.ts" />
 /// <reference path="../Reactive.StringSignal/index.d.ts" />
+/// <reference path="../Scene.TrackingMode/index.d.ts" />
 declare interface PlaneTracker {
 /**
 * ```
@@ -22,16 +23,16 @@ Possible values:
 confidence: StringSignal | string;
 /**
 * ```
-(get) mode: Signal<SceneModule.TrackingMode>
-(set) mode: Signal<SceneModule.TrackingMode>
+(get) mode: Signal<TrackingMode>
+(set) mode: Signal<TrackingMode>
 ```
 
 Specifies if this tracker object should track horizontal plane or moving object.
-**Note:** on invalid value provided in setter, the mode will default to `SceneModule.TrackingMode.PLANE`.
+**Note:** on invalid value provided in setter, the mode will default to `TrackingMode.PLANE`.
 
 **See Also**: `PlaneTracker.setMode`.
 */
-mode: Signal<SceneModule.TrackingMode>;
+mode: Signal<TrackingMode>;
 /**
 *  
  * performHitTest(screenXLocation: number, screenYLocation: number): Promise<Point3D>
@@ -47,15 +48,15 @@ performHitTest(screenLocation: Point2D): Promise<Point3D>;
 
 /**
 *  
- * setMode(mode: Signal<SceneModule.TrackingMode>, config?: {fallback: SceneModule.TrackingMode}): void
+ * setMode(mode: Signal<TrackingMode>, config?: {fallback: TrackingMode}): void
  *  
  * 
  * Specifies if this tracker object should track horizontal plane or moving object.
- * **Note:** on invalid value provided in setter, the mode will default to `fallback` (or `SceneModule.TrackingMode.PLANE` if fallback is not specified).
+ * **Note:** on invalid value provided in setter, the mode will default to `fallback` (or `TrackingMode.PLANE` if fallback is not specified).
  * 
  * **See Also**: `PlaneTracker.mode`.
  */
-setMode(mode: Signal<SceneModule.TrackingMode>, config?: {fallback: SceneModule.TrackingMode}): void;
+setMode(mode: Signal<TrackingMode>, config?: {fallback: TrackingMode}): void;
 
 /**
 *  
