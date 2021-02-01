@@ -1,3 +1,5 @@
+/// <reference path="../Animation.AnimationClips/index.d.ts" />
+/// <reference path="../Animation.AnimationPlaybackControllers/index.d.ts" />
 /// <reference path="../Animation.ArrayOfScalarSamplers/index.d.ts" />
 /// <reference path="../Animation.ArrayOfScalarSignals/index.d.ts" />
 /// <reference path="../Animation.ColorSampler/index.d.ts" />
@@ -11,6 +13,24 @@
 /// <reference path="../Animation.TimeDriver/index.d.ts" />
 /// <reference path="../Animation.ValueDriver/index.d.ts" />
 declare namespace AnimationModule {
+/**
+* ```
+(get) animationClips: AnimationClips
+(set) (Not Available)
+```
+
+Get an object that allows access to animation clips.
+*/
+const animationClips: AnimationClips;
+/**
+* ```
+(get) playbackControllers: AnimationPlaybackControllers
+(set) (Not Available)
+```
+
+Get an object that allows access to animation playback controllers.
+*/
+const playbackControllers: AnimationPlaybackControllers;
 /**
 * ```
 (get) samplers: SamplerFactory
