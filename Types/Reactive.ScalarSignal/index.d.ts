@@ -3,7 +3,7 @@
 /// <reference path="../Reactive.Point2DSignal/index.d.ts" />
 /// <reference path="../Reactive.Point4DSignal/index.d.ts" />
 /// <reference path="../Reactive.PointSignal/index.d.ts" />
-/// <reference path="../Reactive.ScalarSignalHistory/index.d.ts" />
+/// <reference path="../Reactive.SignalHistory/index.d.ts" />
 /// <reference path="../Reactive.StringSignal/index.d.ts" />
 /// <reference path="../Reactive.TransformSignal/index.d.ts" />
 /// <reference path="../Reactive.VectorSignal/index.d.ts" />
@@ -55,9 +55,9 @@ ge(other: ScalarSignal | number): BoolSignal;
 
 gt(other: ScalarSignal | number): BoolSignal;
 
-history(framesCount: number): ScalarSignalHistory;
+history(framesCount: number): SignalHistory<Scalar>;
 
-history(framesCount: number, initialValues: Array<number>): ScalarSignalHistory;
+history(framesCount: number, initialValues: Array<number>): SignalHistory<Scalar>;
 
 interval(threshold: number): EventSource;
 
@@ -371,18 +371,19 @@ ge(other: ScalarSignal | number): BoolSignal;
 gt(other: ScalarSignal | number): BoolSignal;
 
 /**
-*  
- * history(framesCount: number): ScalarSignalHistory
- * history(framesCount: number, initialValues: Array<number>): ScalarSignalHistory
+* 
+ *  
+ * history(framesCount: number): SignalHistory<Scalar>
+ * history(framesCount: number, initialValues: Array<number>): SignalHistory<Scalar>
  *  
  * 
  * Returns an object used to access signal values from past frames. The amount of frames tracked is customizable via `framesCount` parameter.
  * Historical signal values are going to be initialized with signal value at call time or using `initialValues` if provided.
  * 
  */
-history(framesCount: number): ScalarSignalHistory;
+history(framesCount: number): SignalHistory<Scalar>;
 
-history(framesCount: number, initialValues: Array<number>): ScalarSignalHistory;
+history(framesCount: number, initialValues: Array<number>): SignalHistory<Scalar>;
 
 /**
 *  

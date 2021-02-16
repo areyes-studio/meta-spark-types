@@ -1,14 +1,15 @@
 /// <reference path="../TouchGestures.GestureType/index.d.ts" />
+/// <reference path="../TouchGestures.Gesture.State/index.d.ts" />
 declare interface Gesture {
 /**
 * ```
-(get) state: Signal<GestureState>
+(get) state: Signal<State>
 (set) (Not Available)
 ```
 
 Returns a `Signal` that represents the current state of the gesture.
 */
-state: Signal<GestureState>;
+state: Signal<State>;
 /**
 * ```
 (get) type: GestureType

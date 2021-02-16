@@ -1,8 +1,8 @@
 /// <reference path="../Reactive.Point4DSignal/index.d.ts" />
 /// <reference path="../Reactive.PointSignal/index.d.ts" />
-/// <reference path="../Reactive.QuaternionSignalHistory/index.d.ts" />
 /// <reference path="../Reactive.Rotation/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
+/// <reference path="../Reactive.SignalHistory/index.d.ts" />
 declare interface QuaternionSignal {
 /**
 * ```
@@ -87,18 +87,19 @@ conjugate(): QuaternionSignal;
 dot(signal: QuaternionSignal): ScalarSignal;
 
 /**
-*  
- * history(framesCount: number): QuaternionSignalHistory
- * history(framesCount: number, initialValues: Array<Rotation>): QuaternionSignalHistory
+* 
+ *  
+ * history(framesCount: number): SignalHistory<Quaternion>
+ * history(framesCount: number, initialValues: Array<Rotation>): SignalHistory<Quaternion>
  *  
  * 
  * Returns an object used to access signal values from past frames. The amount of frames tracked is customizable via `framesCount` parameter.
  * Historical signal values are going to be initialized with signal value at call time or using `initialValues` if provided.
  * 
  */
-history(framesCount: number): QuaternionSignalHistory;
+history(framesCount: number): SignalHistory<Quaternion>;
 
-history(framesCount: number, initialValues: Array<Rotation>): QuaternionSignalHistory;
+history(framesCount: number, initialValues: Array<Rotation>): SignalHistory<Quaternion>;
 
 /**
 *  
@@ -126,6 +127,15 @@ mix(signal: QuaternionSignal, factor: ScalarSignal | number): QuaternionSignal;
  * Returns a signal with the value that is the product of the values of the given signals.
  */
 mul(signal: QuaternionSignal): QuaternionSignal;
+
+/**
+*  
+ * pinLastValue(): QuaternionSignal
+ *  
+ * 
+ * Returns a new `QuaternionSignal` containing a constant value which is the last value of the specified signal before `pinLastValue` is called.
+ */
+pinLastValue(): QuaternionSignal;
 
 /**
 *  

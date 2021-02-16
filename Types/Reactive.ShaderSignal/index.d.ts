@@ -2,7 +2,7 @@
 /// <reference path="../Reactive.Point4DSignal/index.d.ts" />
 /// <reference path="../Reactive.PointSignal/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
-/// <reference path="../Reactive.ShaderSignalHistory/index.d.ts" />
+/// <reference path="../Reactive.SignalHistory/index.d.ts" />
 /// <reference path="../Reactive.TransformSignal/index.d.ts" />
 /// <reference path="../Reactive.VectorSignal/index.d.ts" />
 declare interface ShaderSignal {
@@ -177,15 +177,16 @@ floor(): ScalarSignal;
 fromRange(x: ScalarSignal | number, min: ScalarSignal | number, max: ScalarSignal | number): ScalarSignal;
 
 /**
-*  
- * history(framesCount: number): ShaderSignalHistory
+* 
+ *  
+ * history(framesCount: number): SignalHistory<Shader>
  *  
  * 
  * Returns an object used to access signal values from past frames. The amount of frames tracked is customizable via `framesCount` parameter.
  * Historical signal values are going to be initialized with signal value at call time or using `initialValues` if provided.
  * 
  */
-history(framesCount: number): ShaderSignalHistory;
+history(framesCount: number): SignalHistory<Shader>;
 
 /**
 *  

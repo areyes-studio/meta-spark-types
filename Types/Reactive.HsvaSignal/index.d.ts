@@ -40,6 +40,15 @@ Returns the value of the `saturation` channel of this signal.
 saturation: ScalarSignal | number;
 /**
 *  
+ * pinLastValue(): HsvaSignal
+ *  
+ * 
+ * Returns a new `HsvaSignal` containing a constant value which is the last value of the specified signal before `pinLastValue` is called.
+ */
+pinLastValue(): HsvaSignal;
+
+/**
+*  
  * toRGBA(): RgbaSignal
  *  
  * 

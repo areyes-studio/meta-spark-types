@@ -1,8 +1,8 @@
 /// <reference path="../Reactive.Point2DSignal/index.d.ts" />
 /// <reference path="../Reactive.Point3D/index.d.ts" />
 /// <reference path="../Reactive.Point4DSignal/index.d.ts" />
-/// <reference path="../Reactive.PointSignalHistory/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
+/// <reference path="../Reactive.SignalHistory/index.d.ts" />
 /// <reference path="../Reactive.TransformSignal/index.d.ts" />
 /// <reference path="../Reactive.VectorSignal/index.d.ts" />
 declare interface PointSignal {
@@ -187,18 +187,19 @@ floor(): ScalarSignal;
 fromRange(x: ScalarSignal | number, min: ScalarSignal | number, max: ScalarSignal | number): ScalarSignal;
 
 /**
-*  
- * history(framesCount: number): PointSignalHistory
- * history(framesCount: number, initialValues: Array<Point3D>): PointSignalHistory
+* 
+ *  
+ * history(framesCount: number): SignalHistory<Point>
+ * history(framesCount: number, initialValues: Array<Point3D>): SignalHistory<Point>
  *  
  * 
  * Returns an object used to access signal values from past frames. The amount of frames tracked is customizable via `framesCount` parameter.
  * Historical signal values are going to be initialized with signal value at call time or using `initialValues` if provided.
  * 
  */
-history(framesCount: number): PointSignalHistory;
+history(framesCount: number): SignalHistory<Point>;
 
-history(framesCount: number, initialValues: Array<Point3D>): PointSignalHistory;
+history(framesCount: number, initialValues: Array<Point3D>): SignalHistory<Point>;
 
 /**
 *  
@@ -324,6 +325,15 @@ neg(): VectorSignal;
  * Returns the normalized (unit) vector in the direction of the original vector as a `VectorSignal`.
  */
 normalize(): VectorSignal;
+
+/**
+*  
+ * pinLastValue(): PointSignal
+ *  
+ * 
+ * Returns a new `PointSignal` containing a constant value which is the last value of the specified signal before `pinLastValue` is called.
+ */
+pinLastValue(): PointSignal;
 
 /**
 *  

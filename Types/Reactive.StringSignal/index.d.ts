@@ -1,6 +1,6 @@
 /// <reference path="../Reactive.BoolSignal/index.d.ts" />
 /// <reference path="../Reactive.EventSource/index.d.ts" />
-/// <reference path="../Reactive.StringSignalHistory/index.d.ts" />
+/// <reference path="../Reactive.SignalHistory/index.d.ts" />
 declare module "ReactiveModule" {
 global {
 interface String {
@@ -11,9 +11,9 @@ delayBy(timeSpan: {milliseconds: number}): this;
 
 eq(other: StringSignal | string): BoolSignal;
 
-history(framesCount: number): StringSignalHistory;
+history(framesCount: number): SignalHistory<String>;
 
-history(framesCount: number, initialValues: Array<string>): StringSignalHistory;
+history(framesCount: number, initialValues: Array<string>): SignalHistory<String>;
 
 monitor(): EventSource;
 
@@ -70,18 +70,19 @@ delayBy(timeSpan: {milliseconds: number}): this;
 eq(other: StringSignal | string): BoolSignal;
 
 /**
-*  
- * history(framesCount: number): StringSignalHistory
- * history(framesCount: number, initialValues: Array<string>): StringSignalHistory
+* 
+ *  
+ * history(framesCount: number): SignalHistory<String>
+ * history(framesCount: number, initialValues: Array<string>): SignalHistory<String>
  *  
  * 
  * Returns an object used to access signal values from past frames. The amount of frames tracked is customizable via `framesCount` parameter.
  * Historical signal values are going to be initialized with signal value at call time or using `initialValues` if provided.
  * 
  */
-history(framesCount: number): StringSignalHistory;
+history(framesCount: number): SignalHistory<String>;
 
-history(framesCount: number, initialValues: Array<string>): StringSignalHistory;
+history(framesCount: number, initialValues: Array<string>): SignalHistory<String>;
 
 /**
 * 

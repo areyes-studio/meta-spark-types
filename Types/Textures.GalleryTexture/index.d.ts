@@ -1,4 +1,4 @@
-/// <reference path="../Textures.GalleryTexture.State/index.d.ts" />
+/// <reference path="../TouchGestures.Gesture.State/index.d.ts" />
 declare interface GalleryTexture {
 /**
 * ```

@@ -1,7 +1,8 @@
 /// <reference path="../Reactive.PointSignal/index.d.ts" />
 /// <reference path="../Reactive.QuaternionSignal/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
-/// <reference path="../Reactive.TransformSignalHistory/index.d.ts" />
+/// <reference path="../Reactive.SignalHistory/index.d.ts" />
+/// <reference path="../Scene.Transform/index.d.ts" />
 /// <reference path="../Reactive.VectorSignal/index.d.ts" />
 declare interface TransformSignal {
 /**
@@ -171,15 +172,16 @@ delayBy(timeSpan: {milliseconds: number}): this;
 expSmooth(dampFactor: number): TransformSignal;
 
 /**
-*  
- * history(framesCount: number): TransformSignalHistory
+* 
+ *  
+ * history(framesCount: number): SignalHistory<Transform>
  *  
  * 
  * Returns an object used to access signal values from past frames. The amount of frames tracked is customizable via `framesCount` parameter.
  * Historical signal values are going to be initialized with signal value at call time or using `initialValues` if provided.
  * 
  */
-history(framesCount: number): TransformSignalHistory;
+history(framesCount: number): SignalHistory<Transform>;
 
 /**
 *  
@@ -203,5 +205,14 @@ inverse(): TransformSignal;
 lookAt(targetPosition: PointSignal): TransformSignal;
 
 lookAt(targetPosition: PointSignal, selfUp: VectorSignal): TransformSignal;
+
+/**
+*  
+ * pinLastValue(): TransformSignal
+ *  
+ * 
+ * Returns a new `TransformSignal` containing a constant value which is the last value of the specified signal before `pinLastValue` is called.
+ */
+pinLastValue(): TransformSignal;
 
 }

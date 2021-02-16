@@ -40,6 +40,15 @@ Returns the value of the red channel between 0 and 1.0.
 red: ScalarSignal | number;
 /**
 *  
+ * pinLastValue(): RgbaSignal
+ *  
+ * 
+ * Returns a new `RgbaSignal` containing a constant value which is the last value of the specified signal before `pinLastValue` is called.
+ */
+pinLastValue(): RgbaSignal;
+
+/**
+*  
  * toHSVA(): HsvaSignal
  *  
  * 

@@ -22,6 +22,7 @@ const root: Scene;
  * - All objects must have an existing class.
  * - New objects always get assigned a globally unique `identifier`.`
  * - `initialState` is optional, but encouraged to be used.
+ * - `initialState` can contain any `key: value` pair for any settable property of the class being instantiated.
  * - `name` in `initialState` is being used, unless it's not provided - then `dynamicObject` is used.
  * )
  */

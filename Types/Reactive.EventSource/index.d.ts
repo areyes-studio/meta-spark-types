@@ -2,7 +2,8 @@
 /// <reference path="../Reactive.Subscription/index.d.ts" />
 declare interface EventSource {
 /**
-*  
+* 
+ *  
  * history(framesCount: number): EventSourceHistory
  *  
  * 
