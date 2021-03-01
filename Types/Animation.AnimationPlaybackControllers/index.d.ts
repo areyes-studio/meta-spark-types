@@ -5,7 +5,7 @@ declare interface AnimationPlaybackControllers {
  * findFirst(name: string): Promise<AnimationPlaybackController | null>
  *  
  * 
- * Find first animation clip that matches a given name pattern.
+ * Find first animation playback controller that matches a given name pattern.
  */
 findFirst(name: string): Promise<AnimationPlaybackController | null>;
 
@@ -14,7 +14,7 @@ findFirst(name: string): Promise<AnimationPlaybackController | null>;
  * findUsingPattern(namePattern: string, config?: {limit: number}): Promise<Array<AnimationPlaybackController>>
  *  
  * 
- * Find animation clips with names that match a given pattern.
+ * Find animation playback controllers with names that match a given pattern.
  */
 findUsingPattern(namePattern: string, config?: {limit: number}): Promise<Array<AnimationPlaybackController>>;
 
@@ -23,7 +23,7 @@ findUsingPattern(namePattern: string, config?: {limit: number}): Promise<Array<A
  * getAll(): Promise<Array<AnimationPlaybackController>>
  *  
  * 
- * Get all animation clips that are bundled in this effect.
+ * Get all animation playback controllers that are bundled in this effect.
  */
 getAll(): Promise<Array<AnimationPlaybackController>>;
 

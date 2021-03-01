@@ -7,7 +7,7 @@ declare interface AnimationPlaybackController {
 (set) (Not Available)
 ```
 
-Unique identifier of this animation clip.
+Unique identifier of this animation playback controller.
 */
 identifier: string;
 /**
@@ -26,7 +26,7 @@ looping: BoolSignal | boolean;
 (set) (Not Available)
 ```
 
-Name of this animation clip.
+Name of this animation playback controller.
 */
 name: string;
 /**

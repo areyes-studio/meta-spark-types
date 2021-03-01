@@ -3,47 +3,39 @@
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 declare interface HairSegmentation {
 /**
-* 
-  ```
-  (get) averageColor: RgbaSignal
-  (set) (Not Available)
-  ```
+* ```
+(get) averageColor: RgbaSignal
+(set) (Not Available)
+```
 
-  Average color of hair in the scene.
-  
+Average color of hair in the scene.
 */
 averageColor: RgbaSignal;
 /**
-* 
-  ```
-  (get) (Not Available)
-  (set) enabled: BoolSignal
-  ```
+* ```
+(get) (Not Available)
+(set) enabled: boolean
+```
 
-  Specifies whether the segmentation should be enabled. Default value is `true`.
-              
+Specifies whether the segmentation should be enabled. Default value is true.
 */
-enabled: BoolSignal | boolean;
+enabled: boolean;
 /**
-* 
-  ```
-  (get) foregroundPercent: ScalarSignal
-  (set) (Not Available)
-  ```
+* ```
+(get) foregroundPercent: ScalarSignal
+(set) (Not Available)
+```
 
-  Represents the percentage of screen space occupied by hair.
-  
+Represents the percentage of screen space occupied by hair.
 */
 foregroundPercent: ScalarSignal | number;
 /**
-* 
-  ```
-  (get) hasForeground: BoolSignal
-  (set) (Not Available)
-  ```
+* ```
+(get) hasForeground: BoolSignal
+(set) (Not Available)
+```
 
-  Represents whether there is hair in the scene (`true`/`false`).
-  
+Represents whether there is hair in the scene (true/false).
 */
 hasForeground: BoolSignal | boolean;
 }
