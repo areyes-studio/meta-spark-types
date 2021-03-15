@@ -50,10 +50,6 @@ function colorSpaceConvert(color: Point4DSignal | PointSignal | ShaderSignal, co
  */
 function composition(f: ShaderSignal, g: Point2DSignal | Point4DSignal | PointSignal | ScalarSignal | ShaderSignal | TransformSignal | VectorSignal | number): ShaderSignal;
 
-function function_f(A): B`;
-
-function type (for example, `function_g(I): A`), or a signal of `A`.;
-
 /**
 *  
  * derivative(v: ShaderSignal | number | ScalarSignal | Point2DSignal | PointSignal | Point4DSignal | VectorSignal, config: {derivativeType: DerivativeType}): ShaderSignal
@@ -97,8 +93,6 @@ function fragmentStage(v: Point2DSignal | Point4DSignal | PointSignal | ScalarSi
  */
 function functionScalar(): ShaderSignal;
 
-function function(ScalarSignal): ScalarSignal`;
-
 /**
 *  
  * functionVec2(): ShaderSignal
@@ -108,8 +102,6 @@ function function(ScalarSignal): ScalarSignal`;
  * returns: shader `function(Point2DSignal): Point2DSignal`
  */
 function functionVec2(): ShaderSignal;
-
-function function(Point2DSignal): Point2DSignal`;
 
 /**
 *  
@@ -121,8 +113,6 @@ function function(Point2DSignal): Point2DSignal`;
  */
 function functionVec3(): ShaderSignal;
 
-function function(PointSignal): PointSignal`;
-
 /**
 *  
  * functionVec4(): ShaderSignal
@@ -132,8 +122,6 @@ function function(PointSignal): PointSignal`;
  * returns: shader `function(Point4DSignal): Point4DSignal`
  */
 function functionVec4(): ShaderSignal;
-
-function function(Point4DSignal): Point4DSignal`;
 
 /**
 *  
@@ -145,8 +133,6 @@ function function(Point4DSignal): Point4DSignal`;
  */
 function gradient(config: {type: GradientType}): ShaderSignal;
 
-function function(Point2DSignal): ScalarSignal` representing a gradient defined by `config`;
-
 /**
 *  
  * renderTargetSize(): Point2DSignal
@@ -156,8 +142,6 @@ function function(Point2DSignal): ScalarSignal` representing a gradient defined 
  * returns: shader `function(): Point2DSignal`
  */
 function renderTargetSize(): Point2DSignal;
-
-function function(): Point2DSignal`;
 
 /**
 *  
@@ -171,12 +155,6 @@ function function(): Point2DSignal`;
  */
 function sdfAnnular(sdf: ShaderSignal, width: ScalarSignal | ShaderSignal | number): ShaderSignal;
 
-function function(Point2DSignal): ScalarSignal`;
-
-function function(): ScalarSignal`;
-
-function function(Point2DSignal): ScalarSignal`;
-
 /**
 *  
  * sdfCircle(center: ShaderSignal | Point2DSignal, radius: ShaderSignal | number | ScalarSignal): ShaderSignal
@@ -189,12 +167,6 @@ function function(Point2DSignal): ScalarSignal`;
  */
 function sdfCircle(center: Point2DSignal | ShaderSignal, radius: ScalarSignal | ShaderSignal | number): ShaderSignal;
 
-function function(): Point2DSignal`;
-
-function function(): ScalarSignal`;
-
-function function(Point2DSignal): ScalarSignal`;
-
 /**
 *  
  * sdfComplement(sdf: ShaderSignal): ShaderSignal
@@ -205,10 +177,6 @@ function function(Point2DSignal): ScalarSignal`;
  * returns: shader `function(Point2DSignal): ScalarSignal`
  */
 function sdfComplement(sdf: ShaderSignal): ShaderSignal;
-
-function function(Point2DSignal): ScalarSignal`;
-
-function function(Point2DSignal): ScalarSignal`;
 
 /**
 *  
@@ -222,12 +190,6 @@ function function(Point2DSignal): ScalarSignal`;
  */
 function sdfDifference(sdf1: ShaderSignal, sdf2: ShaderSignal): ShaderSignal;
 
-function function(Point2DSignal): ScalarSignal`;
-
-function function(Point2DSignal): ScalarSignal`;
-
-function function(Point2DSignal): ScalarSignal` which result is the product of substracting result of `sdf2` from result of `sdf1`;
-
 /**
 *  
  * sdfEllipse(center: ShaderSignal | Point2DSignal, halfSize: ShaderSignal | Point2DSignal): ShaderSignal
@@ -239,12 +201,6 @@ function function(Point2DSignal): ScalarSignal` which result is the product of s
  * returns: shader `function(Point2DSignal): ScalarSignal`
  */
 function sdfEllipse(center: Point2DSignal | ShaderSignal, halfSize: Point2DSignal | ShaderSignal): ShaderSignal;
-
-function function(): Point2DSignal`;
-
-function function(): Point2DSignal`;
-
-function function(Point2DSignal): ScalarSignal`;
 
 /**
 *  
@@ -259,14 +215,6 @@ function function(Point2DSignal): ScalarSignal`;
  */
 function sdfFlip(sdf: ShaderSignal, offset: Point2DSignal | ShaderSignal, normal: Point2DSignal | ShaderSignal): ShaderSignal;
 
-function function(Point2DSignal): ScalarSignal`;
-
-function function(): Point2DSignal`;
-
-function function(): Point2DSignal`;
-
-function function(Point2DSignal): ScalarSignal`;
-
 /**
 *  
  * sdfHalfPlane(offset: ShaderSignal | Point2DSignal, normal: ShaderSignal | Point2DSignal): ShaderSignal
@@ -279,12 +227,6 @@ function function(Point2DSignal): ScalarSignal`;
  */
 function sdfHalfPlane(offset: Point2DSignal | ShaderSignal, normal: Point2DSignal | ShaderSignal): ShaderSignal;
 
-function function(): Point2DSignal`;
-
-function function(): Point2DSignal`;
-
-function function(Point2DSignal): ScalarSignal`;
-
 /**
 *  
  * sdfIntersection(sdf1: ShaderSignal, sdf2: ShaderSignal): ShaderSignal
@@ -296,12 +238,6 @@ function function(Point2DSignal): ScalarSignal`;
  * returns: shader `function(Point2DSignal): ScalarSignal`
  */
 function sdfIntersection(sdf1: ShaderSignal, sdf2: ShaderSignal): ShaderSignal;
-
-function function(Point2DSignal): ScalarSignal`;
-
-function function(Point2DSignal): ScalarSignal`;
-
-function function(Point2DSignal): ScalarSignal`;
 
 /**
 *  
@@ -316,14 +252,6 @@ function function(Point2DSignal): ScalarSignal`;
  */
 function sdfLine(offset: Point2DSignal | ShaderSignal, normal: Point2DSignal | ShaderSignal, halfWidth: ScalarSignal | ShaderSignal | number): ShaderSignal;
 
-function function(): Point2DSignal`;
-
-function function(): Point2DSignal`;
-
-function function(): ScalarSignal`;
-
-function function(Point2DSignal): ScalarSignal`;
-
 /**
 *  
  * sdfMix(sdf1: ShaderSignal, sdf2: ShaderSignal, alpha: ShaderSignal | number | ScalarSignal): ShaderSignal
@@ -336,14 +264,6 @@ function function(Point2DSignal): ScalarSignal`;
  * returns: shader `function(Point2DSignal): ScalarSignal`
  */
 function sdfMix(sdf1: ShaderSignal, sdf2: ShaderSignal, alpha: ScalarSignal | ShaderSignal | number): ShaderSignal;
-
-function function(Point2DSignal): ScalarSignal`;
-
-function function(Point2DSignal): ScalarSignal`;
-
-function function(): ScalarSignal`;
-
-function function(Point2DSignal): ScalarSignal`;
 
 /**
 *  
@@ -358,14 +278,6 @@ function function(Point2DSignal): ScalarSignal`;
  */
 function sdfPolygon(center: Point2DSignal | ShaderSignal, radius: ScalarSignal | ShaderSignal | number, numSides: ScalarSignal | ShaderSignal | number, config: {sdfVariant: SdfVariant}): ShaderSignal;
 
-function function(): Point2DSignal`;
-
-function function(): ScalarSignal`;
-
-function function(): ScalarSignal`;
-
-function function(Point2DSignal): ScalarSignal`;
-
 /**
 *  
  * sdfRectangle(center: ShaderSignal | Point2DSignal, halfSize: ShaderSignal | Point2DSignal, config: {sdfVariant: SdfVariant}): ShaderSignal
@@ -377,12 +289,6 @@ function function(Point2DSignal): ScalarSignal`;
  * returns: shader `function(Point2DSignal): ScalarSignal`
  */
 function sdfRectangle(center: Point2DSignal | ShaderSignal, halfSize: Point2DSignal | ShaderSignal, config: {sdfVariant: SdfVariant}): ShaderSignal;
-
-function function(): Point2DSignal`;
-
-function function(): Point2DSignal`;
-
-function function(Point2DSignal): ScalarSignal`;
 
 /**
 *  
@@ -398,14 +304,6 @@ function function(Point2DSignal): ScalarSignal`;
  */
 function sdfRepeat(sdf: ShaderSignal, pivot: Point2DSignal | ShaderSignal, size: Point2DSignal | ShaderSignal): ShaderSignal;
 
-function function(Point2DSignal): ScalarSignal`;
-
-function function(): Point2DSignal`;
-
-function function(): Point2DSignal`;
-
-function function(Point2DSignal): ScalarSignal`;
-
 /**
 *  
  * sdfRotation(sdf: ShaderSignal, pivot: ShaderSignal | Point2DSignal, angle: ShaderSignal | number | ScalarSignal): ShaderSignal
@@ -418,14 +316,6 @@ function function(Point2DSignal): ScalarSignal`;
  * returns: shader `function(Point2DSignal): ScalarSignal`
  */
 function sdfRotation(sdf: ShaderSignal, pivot: Point2DSignal | ShaderSignal, angle: ScalarSignal | ShaderSignal | number): ShaderSignal;
-
-function function(Point2DSignal): ScalarSignal`;
-
-function function(): Point2DSignal`;
-
-function function(): ScalarSignal`;
-
-function function(Point2DSignal): ScalarSignal`;
 
 /**
 *  
@@ -442,16 +332,6 @@ function function(Point2DSignal): ScalarSignal`;
  */
 function sdfRotationalRepeat(sdf: ShaderSignal, pivot: Point2DSignal | ShaderSignal, radius: ScalarSignal | ShaderSignal | number, numTimes: ScalarSignal | ShaderSignal | number): ShaderSignal;
 
-function function(Point2DSignal): ScalarSignal`;
-
-function function(): Point2DSignal`;
-
-function function(): ScalarSignal`;
-
-function function(): ScalarSignal`;
-
-function function(Point2DSignal): ScalarSignal`;
-
 /**
 *  
  * sdfRound(sdf: ShaderSignal, radius: ShaderSignal | number | ScalarSignal): ShaderSignal
@@ -463,12 +343,6 @@ function function(Point2DSignal): ScalarSignal`;
  * returns: shader `function(Point2DSignal): ScalarSignal`
  */
 function sdfRound(sdf: ShaderSignal, radius: ScalarSignal | ShaderSignal | number): ShaderSignal;
-
-function function(Point2DSignal): ScalarSignal`;
-
-function function(): ScalarSignal`;
-
-function function(Point2DSignal): ScalarSignal`;
 
 /**
 *  
@@ -483,14 +357,6 @@ function function(Point2DSignal): ScalarSignal`;
  */
 function sdfScale(sdf: ShaderSignal, pivot: Point2DSignal | ShaderSignal, size: Point2DSignal | ShaderSignal): ShaderSignal;
 
-function function(Point2DSignal): ScalarSignal`;
-
-function function(): Point2DSignal`;
-
-function function(): Point2DSignal`;
-
-function function(Point2DSignal): ScalarSignal`;
-
 /**
 *  
  * sdfShear(sdf: ShaderSignal, pivot: ShaderSignal | Point2DSignal, shear: ShaderSignal | Point2DSignal): ShaderSignal
@@ -503,14 +369,6 @@ function function(Point2DSignal): ScalarSignal`;
  * returns: shader `function(Point2DSignal): ScalarSignal`
  */
 function sdfShear(sdf: ShaderSignal, pivot: Point2DSignal | ShaderSignal, shear: Point2DSignal | ShaderSignal): ShaderSignal;
-
-function function(Point2DSignal): ScalarSignal`;
-
-function function(): Point2DSignal`;
-
-function function(): Point2DSignal`;
-
-function function(Point2DSignal): ScalarSignal`;
 
 /**
 *  
@@ -525,14 +383,6 @@ function function(Point2DSignal): ScalarSignal`;
  */
 function sdfSmoothDifference(sdf1: ShaderSignal, sdf2: ShaderSignal, k: ScalarSignal | ShaderSignal | number): ShaderSignal;
 
-function function(Point2DSignal): ScalarSignal`;
-
-function function(Point2DSignal): ScalarSignal`;
-
-function function(): ScalarSignal`;
-
-function function(Point2DSignal): ScalarSignal`;
-
 /**
 *  
  * sdfSmoothIntersection(sdf1: ShaderSignal, sdf2: ShaderSignal, k: ShaderSignal | number | ScalarSignal): ShaderSignal
@@ -545,14 +395,6 @@ function function(Point2DSignal): ScalarSignal`;
  * returns: shader `function(Point2DSignal): ScalarSignal`
  */
 function sdfSmoothIntersection(sdf1: ShaderSignal, sdf2: ShaderSignal, k: ScalarSignal | ShaderSignal | number): ShaderSignal;
-
-function function(Point2DSignal): ScalarSignal`;
-
-function function(Point2DSignal): ScalarSignal`;
-
-function function(): ScalarSignal`;
-
-function function(Point2DSignal): ScalarSignal`;
 
 /**
 *  
@@ -567,14 +409,6 @@ function function(Point2DSignal): ScalarSignal`;
  */
 function sdfSmoothUnion(sdf1: ShaderSignal, sdf2: ShaderSignal, k: ScalarSignal | ShaderSignal | number): ShaderSignal;
 
-function function(Point2DSignal): ScalarSignal`;
-
-function function(Point2DSignal): ScalarSignal`;
-
-function function(): ScalarSignal`;
-
-function function(Point2DSignal): ScalarSignal`;
-
 /**
 *  
  * sdfStar(center: ShaderSignal | Point2DSignal, radius1: ShaderSignal | number | ScalarSignal, radius2: ShaderSignal | number | ScalarSignal, numSides: ShaderSignal | number | ScalarSignal): ShaderSignal
@@ -588,14 +422,6 @@ function function(Point2DSignal): ScalarSignal`;
  */
 function sdfStar(center: Point2DSignal | ShaderSignal, radius1: ScalarSignal | ShaderSignal | number, radius2: ScalarSignal | ShaderSignal | number, numSides: ScalarSignal | ShaderSignal | number): ShaderSignal;
 
-function function(): Point2DSignal`;
-
-function function(): ScalarSignal`;
-
-function function(): ScalarSignal`;
-
-function function(): ScalarSignal`;
-
 /**
 *  
  * sdfTranslation(sdf: ShaderSignal, offset: ShaderSignal | Point2DSignal): ShaderSignal
@@ -607,12 +433,6 @@ function function(): ScalarSignal`;
  * returns: shader `function(Point2DSignal): ScalarSignal`
  */
 function sdfTranslation(sdf: ShaderSignal, offset: Point2DSignal | ShaderSignal): ShaderSignal;
-
-function function(Point2DSignal): ScalarSignal`;
-
-function function(): Point2DSignal`;
-
-function function(Point2DSignal): ScalarSignal`;
 
 /**
 *  
@@ -627,14 +447,6 @@ function function(Point2DSignal): ScalarSignal`;
  */
 function sdfTwist(sdf: ShaderSignal, pivot: Point2DSignal | ShaderSignal, twist: ScalarSignal | ShaderSignal | number): ShaderSignal;
 
-function function(Point2DSignal): ScalarSignal`;
-
-function function(): Point2DSignal`;
-
-function function(): ScalarSignal`;
-
-function function(Point2DSignal): ScalarSignal`;
-
 /**
 *  
  * sdfUnion(sdf1: ShaderSignal, sdf2: ShaderSignal): ShaderSignal
@@ -646,12 +458,6 @@ function function(Point2DSignal): ScalarSignal`;
  * returns: shader `function(Point2DSignal): ScalarSignal`
  */
 function sdfUnion(sdf1: ShaderSignal, sdf2: ShaderSignal): ShaderSignal;
-
-function function(Point2DSignal): ScalarSignal`;
-
-function function(Point2DSignal): ScalarSignal`;
-
-function function(Point2DSignal): ScalarSignal`;
 
 /**
 *  
@@ -665,12 +471,6 @@ function function(Point2DSignal): ScalarSignal`;
  */
 function textureSampler(texture: ShaderSignal, uv: Point2DSignal | ShaderSignal): ShaderSignal;
 
-function function(Point2DSignal): ScalarSignal`, `function(Point2DSignal): Point2DSignal`, `function(Point2DSignal): PointSignal` or `function(Point2DSignal): Point4DSignal`;
-
-function function(): Point2DSignal`;
-
-function function(): ScalarSignal`, `function(): Point2DSignal`, `function(): PointSignal` or `function(): Point4DSignal` depending on underlying `texture` shader return type;
-
 /**
 *  
  * textureTransform(texture: ShaderSignal, transform: ShaderSignal): ShaderSignal
@@ -682,12 +482,6 @@ function function(): ScalarSignal`, `function(): Point2DSignal`, `function(): Po
  * returns: shader `function(Point2DSignal): ScalarSignal`, `function(Point2DSignal): Point2DSignal`, `function(Point2DSignal): PointSignal` or `function(Point2DSignal): Point4DSignal` depending on underlying `texture` shader return type
  */
 function textureTransform(texture: ShaderSignal, transform: ShaderSignal): ShaderSignal;
-
-function function(Point2DSignal): ScalarSignal`, `function(Point2DSignal): Point2DSignal`, `function(Point2DSignal): PointSignal` or `function(Point2DSignal): Point4DSignal`;
-
-function function(): Matrix3Signal`;
-
-function function(Point2DSignal): ScalarSignal`, `function(Point2DSignal): Point2DSignal`, `function(Point2DSignal): PointSignal` or `function(Point2DSignal): Point4DSignal` depending on underlying `texture` shader return type;
 
 /**
 *  
@@ -704,18 +498,6 @@ function function(Point2DSignal): ScalarSignal`, `function(Point2DSignal): Point
  * for `VertexAttribute.BASE_POSITION` a shader `function(): Point4DSignal`
  */
 function vertexAttribute(config: {variableName: VertexAttribute}): ShaderSignal;
-
-function function(): Point4DSignal`;
-
-function function(): PointSignal`;
-
-function function(): Point4DSignal`;
-
-function function(): Point2DSignal`;
-
-function function(): Point4DSignal`;
-
-function function(): Point4DSignal`;
 
 /**
 *  
@@ -736,26 +518,6 @@ function function(): Point4DSignal`;
  * for `BuiltinUniform.INV_P_MATRIX` a shader `function(): TransformSignal`
  */
 function vertexTransform(config: {variableName: BuiltinUniform}): ShaderSignal;
-
-function function(): TransformSignal`;
-
-function function(): TransformSignal`;
-
-function function(): TransformSignal`;
-
-function function(): TransformSignal`;
-
-function function(): TransformSignal`;
-
-function function(): TransformSignal`;
-
-function function(): Matrix3Signal`;
-
-function function(): TransformSignal`;
-
-function function(): TransformSignal`;
-
-function function(): TransformSignal`;
 
 }
 export = ShadersModule;
