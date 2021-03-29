@@ -1,5 +1,6 @@
+/// <reference path="../TouchGestures.Gesture/index.d.ts" />
 /// <reference path="../Reactive.Point2DSignal/index.d.ts" />
-declare interface RawTouchGesture {
+declare interface RawTouchGesture extends Gesture {
 /**
 * ```
 (get) location: Point2DSignal

@@ -1,2 +1,3 @@
-declare interface ImageTexture {
+/// <reference path="../Textures.TextureBase/index.d.ts" />
+declare interface ImageTexture extends TextureBase {
 }

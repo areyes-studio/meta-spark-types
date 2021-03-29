@@ -1,7 +1,7 @@
 /// <reference path="../Reactive.BoolSignal/index.d.ts" />
 /// <reference path="../Location.CoordinateSignal/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
-declare namespace LocationModule {
+declare class LocationModule {
 /**
 * ```
 (get) coordinate: CoordinateSignal
@@ -11,7 +11,7 @@ declare namespace LocationModule {
 Current device geolocation or 'Null Island' if invalid.
 **See**: `hasValidLocation`
 */
-const coordinate: CoordinateSignal;
+static readonly coordinate: CoordinateSignal;
 /**
 * ```
 (get) hasValidLocation: BoolSignal
@@ -21,7 +21,7 @@ const coordinate: CoordinateSignal;
 `BoolSignal` describing whenever or not the geolocation provided by
 `coordinate` property is valid.
 */
-const hasValidLocation: BoolSignal | boolean;
+static readonly hasValidLocation: BoolSignal;
 /**
 * ```
 (get) latitude: ScalarSignal
@@ -32,7 +32,7 @@ Current device latitue.
 **Note*: 0 if location is invalid.
 **See**: `hasValidLocation`
 */
-const latitude: ScalarSignal | number;
+static readonly latitude: ScalarSignal;
 /**
 * ```
 (get) longitude: ScalarSignal
@@ -43,6 +43,6 @@ Current device longitude.
 **Note*: 0 if location is invalid.
 **See**: `hasValidLocation`
 */
-const longitude: ScalarSignal | number;
+static readonly longitude: ScalarSignal;
 }
 export = LocationModule;

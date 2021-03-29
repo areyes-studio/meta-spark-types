@@ -1,33 +1,8 @@
 /// <reference path="../Reactive.BoolSignal/index.d.ts" />
 /// <reference path="../Reactive.EventSource/index.d.ts" />
+/// <reference path="../Reactive.ISignal/index.d.ts" />
 /// <reference path="../Reactive.SignalHistory/index.d.ts" />
-declare module "ReactiveModule" {
-global {
-interface String {
-lastValue: string;
-concat(other: StringSignal | string): StringSignal;
-
-delayBy(timeSpan: {milliseconds: number}): this;
-
-eq(other: StringSignal | string): BoolSignal;
-
-history(framesCount: number): SignalHistory<String>;
-
-history(framesCount: number, initialValues: Array<string>): SignalHistory<String>;
-
-monitor(): EventSource;
-
-monitor(config: { fireOnInitialValue: ?boolean}): EventSource;
-
-ne(other: StringSignal | string): BoolSignal;
-
-pin(): StringSignal;
-
-pinLastValue(): ConstStringSignal;
-
-}
-}
-export interface StringSignal extends String {
+declare interface StringSignal {
 /**
 * ```
 (get) lastValue: string
@@ -87,22 +62,22 @@ history(framesCount: number, initialValues: Array<string>): SignalHistory<String
 /**
 * 
  *  
- * monitor(): EventSource
- * monitor(config: { fireOnInitialValue: ?boolean}): EventSource
+ * monitor(): EventSource<{ oldValue: string, newValue: string }>
+ * monitor(config: { fireOnInitialValue?: boolean}): EventSource<{ oldValue: string, newValue: string }>
  *  
  * 
  * Returns an `EventSource` that emits an event every time the value of the input signal changes. The event contains a JSON object with the old and new values in the format:
  * 
  *  
- * { "oldValue": val, "newValue": val }
+ * { "oldValue": string, "newValue": string }
  *  
  * 
  * **Note**: By default, there is no event fired for the initial value of the signal. If `config.fireOnInitialValue` is set to `true` then an event for initial signal value is also emitted. `oldValue` is unset for this initial event.
  * 
  */
-monitor(): EventSource;
+monitor(): EventSource<{ oldValue: string, newValue: string }>;
 
-monitor(config: { fireOnInitialValue: ?boolean}): EventSource;
+monitor(config: { fireOnInitialValue?: boolean}): EventSource<{ oldValue: string, newValue: string }>;
 
 /**
 *  
@@ -134,5 +109,4 @@ pin(): StringSignal;
  */
 pinLastValue(): ConstStringSignal;
 
-}
 }

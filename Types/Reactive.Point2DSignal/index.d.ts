@@ -1,3 +1,4 @@
+/// <reference path="../Reactive.ISignal/index.d.ts" />
 /// <reference path="../Reactive.Point2D/index.d.ts" />
 /// <reference path="../Reactive.Point4DSignal/index.d.ts" />
 /// <reference path="../Reactive.PointSignal/index.d.ts" />
@@ -5,7 +6,7 @@
 /// <reference path="../Reactive.SignalHistory/index.d.ts" />
 /// <reference path="../Reactive.TransformSignal/index.d.ts" />
 /// <reference path="../Reactive.VectorSignal/index.d.ts" />
-declare interface Point2DSignal {
+declare interface Point2DSignal extends ISignal {
 /**
 * ```
 (get) height: ScalarSignal
@@ -14,7 +15,7 @@ declare interface Point2DSignal {
 
 Represents the width of the size, or the second element of the vector.
 */
-height: ScalarSignal | number;
+height: ScalarSignal;
 /**
 * ```
 (get) width: ScalarSignal
@@ -23,7 +24,7 @@ height: ScalarSignal | number;
 
 Represents the width of the size, or the first element of the vector.
 */
-width: ScalarSignal | number;
+width: ScalarSignal;
 /**
 * ```
 (get) x: ScalarSignal
@@ -32,7 +33,7 @@ width: ScalarSignal | number;
 
 Represents the X coordinate of the point, or the first element of the vector.
 */
-x: ScalarSignal | number;
+x: ScalarSignal;
 /**
 * ```
 (get) y: ScalarSignal
@@ -41,7 +42,7 @@ x: ScalarSignal | number;
 
 Represents the Y coordinate of the point, or the second element of the vector.
 */
-y: ScalarSignal | number;
+y: ScalarSignal;
 /**
 *  
  * abs(): ScalarSignal

@@ -8,7 +8,7 @@ declare interface Bounds2D {
 
 Specifies the height of the scene element boundaries. Measured in 3D units.
 */
-height: ScalarSignal | number;
+height: ScalarSignal;
 /**
 * ```
 (get) width: ScalarSignal
@@ -17,7 +17,7 @@ height: ScalarSignal | number;
 
 Specifies the width of the scene element boundaries. Measured in 3D units.
 */
-width: ScalarSignal | number;
+width: ScalarSignal;
 /**
 * ```
 (get) x: ScalarSignal
@@ -27,7 +27,7 @@ width: ScalarSignal | number;
 Specifies the left boundary of the scene element. Relative to the parent object bounds. Measured in 3D units.
 **Note**: the offset is measured from the parent's left boundary, which might be different from the parent's origin.
 */
-x: ScalarSignal | number;
+x: ScalarSignal;
 /**
 * ```
 (get) y: ScalarSignal
@@ -37,5 +37,5 @@ x: ScalarSignal | number;
 Specifies the top boundary of the scene element. Relative to the parent object bounds. Measured in 3D units.
 **Note**: the offset is measured from the parent's top boundary, which might be different from the parent's origin.
 */
-y: ScalarSignal | number;
+y: ScalarSignal;
 }

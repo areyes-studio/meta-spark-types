@@ -1,8 +1,9 @@
 /// <reference path="../Scene.BoundingBox/index.d.ts" />
+/// <reference path="../Reactive.ISignal/index.d.ts" />
 /// <reference path="../Reactive.Point2DSignal/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 /// <reference path="../Reactive.SignalHistory/index.d.ts" />
-declare interface BoundingBoxSignal {
+declare interface BoundingBoxSignal extends ISignal {
 /**
 * ```
 (get) center: Point2DSignal
@@ -20,7 +21,7 @@ center: Point2DSignal;
 
 Represents the height of the bounding box, in normalized screen space units.
 */
-height: ScalarSignal | number;
+height: ScalarSignal;
 /**
 * ```
 (get) width: ScalarSignal
@@ -29,7 +30,7 @@ height: ScalarSignal | number;
 
 Represents the width of the bounding box, in normalized screen space units.
 */
-width: ScalarSignal | number;
+width: ScalarSignal;
 /**
 * ```
 (get) x: ScalarSignal
@@ -38,7 +39,7 @@ width: ScalarSignal | number;
 
 Represents the X-position of top left corner of the bounding box, in normalized screen space units.
 */
-x: ScalarSignal | number;
+x: ScalarSignal;
 /**
 * ```
 (get) y: ScalarSignal
@@ -47,7 +48,7 @@ x: ScalarSignal | number;
 
 Represents the Y-position of top left corner of the bounding box, in normalized screen space units.
 */
-y: ScalarSignal | number;
+y: ScalarSignal;
 /**
 * 
  *  

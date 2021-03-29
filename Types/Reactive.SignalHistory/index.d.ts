@@ -1,4 +1,4 @@
-declare interface SignalHistory {
+declare interface SignalHistory<T> {
 /**
 * ```
 (get) length: number
@@ -10,7 +10,7 @@ Returns how many frames are being tracked by this history object.
 length: number;
 /**
 *  
- * at(index: number): undefined
+ * at(index: number): T
  *  
  * 
  * Returns a `Signal` for the history value at given index.
@@ -20,11 +20,11 @@ length: number;
  * Note: See also `SignalHistory.frame` method which uses more intuitive negative indexing.
  * Note: You can use `SignalHistory[0]` to achieve same effect as calling `SignalHistory.at(0)`
  */
-at(index: number): undefined;
+at(index: number): T;
 
 /**
 *  
- * frame(frame: number): undefined
+ * frame(frame: number): T
  *  
  * 
  * Returns a `Signal` for the history value at given frame relative to current one.
@@ -34,6 +34,6 @@ at(index: number): undefined;
  * Note: See also `SignalHistory.at` method for approach which is index based.
  * Note: You can use `SignalHistory[-1]` to achieve same effect as calling `SignalHistory.frame(-1)`
  */
-frame(frame: number): undefined;
+frame(frame: number): T;
 
 }

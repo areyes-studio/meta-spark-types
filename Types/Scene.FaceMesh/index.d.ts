@@ -1,5 +1,6 @@
 /// <reference path="../Materials.MaterialBase/index.d.ts" />
-declare interface FaceMesh {
+/// <reference path="../Scene.SceneObjectBase/index.d.ts" />
+declare interface FaceMesh extends SceneObjectBase {
 /**
 * ```
 (get) material: MaterialBase | null

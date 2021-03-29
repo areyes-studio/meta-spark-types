@@ -1,5 +1,5 @@
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
-declare interface ArrayOfScalarSignals {
+declare interface ArrayOfScalarSignals extends Array<ScalarSignal> {
 /**
 *  
  * get(index: number): ScalarSignal

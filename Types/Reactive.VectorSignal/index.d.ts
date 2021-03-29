@@ -1,10 +1,11 @@
+/// <reference path="../Reactive.ISignal/index.d.ts" />
 /// <reference path="../Reactive.Point2DSignal/index.d.ts" />
 /// <reference path="../Reactive.Point4DSignal/index.d.ts" />
 /// <reference path="../Reactive.PointSignal/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 /// <reference path="../Reactive.SignalHistory/index.d.ts" />
 /// <reference path="../Reactive.TransformSignal/index.d.ts" />
-declare interface VectorSignal {
+declare interface VectorSignal extends ISignal {
 /**
 * ```
 (get) x: ScalarSignal
@@ -13,7 +14,7 @@ declare interface VectorSignal {
 
 Represents the X component of the vector.
 */
-x: ScalarSignal | number;
+x: ScalarSignal;
 /**
 * ```
 (get) y: ScalarSignal
@@ -22,7 +23,7 @@ x: ScalarSignal | number;
 
 Represents the Y component of the vector.
 */
-y: ScalarSignal | number;
+y: ScalarSignal;
 /**
 * ```
 (get) z: ScalarSignal
@@ -31,7 +32,7 @@ y: ScalarSignal | number;
 
 Represents the Z component of the vector.
 */
-z: ScalarSignal | number;
+z: ScalarSignal;
 /**
 *  
  * abs(): ScalarSignal
@@ -188,14 +189,14 @@ fromRange(x: ScalarSignal | number, min: ScalarSignal | number, max: ScalarSigna
 /**
 * 
  *  
- * history(framesCount: number): SignalHistory<Vector>
+ * history(framesCount: number): SignalHistory<any>
  *  
  * 
  * Returns an object used to access signal values from past frames. The amount of frames tracked is customizable via `framesCount` parameter.
  * Historical signal values are going to be initialized with signal value at call time or using `initialValues` if provided.
  * 
  */
-history(framesCount: number): SignalHistory<Vector>;
+history(framesCount: number): SignalHistory<any>;
 
 /**
 *  

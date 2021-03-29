@@ -1,3 +1,4 @@
+/// <reference path="../Reactive.ISignal/index.d.ts" />
 /// <reference path="../Reactive.Point2DSignal/index.d.ts" />
 /// <reference path="../Reactive.Point3D/index.d.ts" />
 /// <reference path="../Reactive.Point4DSignal/index.d.ts" />
@@ -5,7 +6,7 @@
 /// <reference path="../Reactive.SignalHistory/index.d.ts" />
 /// <reference path="../Reactive.TransformSignal/index.d.ts" />
 /// <reference path="../Reactive.VectorSignal/index.d.ts" />
-declare interface PointSignal {
+declare interface PointSignal extends ISignal {
 /**
 * ```
 (get) x: ScalarSignal
@@ -14,7 +15,7 @@ declare interface PointSignal {
 
 Represents the X coordinate of the point.
 */
-x: ScalarSignal | number;
+x: ScalarSignal;
 /**
 * ```
 (get) y: ScalarSignal
@@ -23,7 +24,7 @@ x: ScalarSignal | number;
 
 Represents the Y coordinate of the point.
 */
-y: ScalarSignal | number;
+y: ScalarSignal;
 /**
 * ```
 (get) z: ScalarSignal
@@ -32,7 +33,7 @@ y: ScalarSignal | number;
 
 Represents the Z coordinate of the point.
 */
-z: ScalarSignal | number;
+z: ScalarSignal;
 /**
 *  
  * abs(): ScalarSignal
@@ -189,17 +190,17 @@ fromRange(x: ScalarSignal | number, min: ScalarSignal | number, max: ScalarSigna
 /**
 * 
  *  
- * history(framesCount: number): SignalHistory<Point>
- * history(framesCount: number, initialValues: Array<Point3D>): SignalHistory<Point>
+ * history(framesCount: number): SignalHistory<Point3D>
+ * history(framesCount: number, initialValues: Array<Point3D>): SignalHistory<Point3D>
  *  
  * 
  * Returns an object used to access signal values from past frames. The amount of frames tracked is customizable via `framesCount` parameter.
  * Historical signal values are going to be initialized with signal value at call time or using `initialValues` if provided.
  * 
  */
-history(framesCount: number): SignalHistory<Point>;
+history(framesCount: number): SignalHistory<Point3D>;
 
-history(framesCount: number, initialValues: Array<Point3D>): SignalHistory<Point>;
+history(framesCount: number, initialValues: Array<Point3D>): SignalHistory<Point3D>;
 
 /**
 *  

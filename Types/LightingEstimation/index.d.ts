@@ -1,5 +1,5 @@
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
-declare namespace LightingEstimationModule {
+declare class LightingEstimationModule {
 /**
 * ```
 (get) frameBrightness: ScalarSignal
@@ -8,6 +8,6 @@ declare namespace LightingEstimationModule {
 
 Returns a number that represents the brightness of the frame.
 */
-const frameBrightness: ScalarSignal | number;
+static readonly frameBrightness: ScalarSignal;
 }
 export = LightingEstimationModule;

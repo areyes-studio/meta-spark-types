@@ -1,5 +1,5 @@
 /// <reference path="../Segmentation.HairSegmentation/index.d.ts" />
-declare namespace SegmentationModule {
+declare class SegmentationModule {
 /**
 * ```
 (get) hair: HairSegmentation
@@ -8,6 +8,6 @@ declare namespace SegmentationModule {
 
 Specifies an instance of a `HairSegmentation` object.
 */
-const hair: HairSegmentation;
+static readonly hair: HairSegmentation;
 }
 export = SegmentationModule;

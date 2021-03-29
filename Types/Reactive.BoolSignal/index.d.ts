@@ -1,56 +1,9 @@
 /// <reference path="../Reactive.EventSource/index.d.ts" />
+/// <reference path="../Reactive.ISignal/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 /// <reference path="../Reactive.SignalHistory/index.d.ts" />
 /// <reference path="../Reactive.StringSignal/index.d.ts" />
-declare module "ReactiveModule" {
-global {
-interface Boolean {
-lastValue: boolean;
-and(other: BoolSignal | boolean): BoolSignal;
-
-delayBy(timeSpan: {milliseconds: number}): this;
-
-eq(other: BoolSignal | boolean): BoolSignal;
-
-history(framesCount: number): SignalHistory<Bool>;
-
-history(framesCount: number, initialValues: Array<boolean>): SignalHistory<Bool>;
-
-ifThenElse(thenValue: EventSource, elseValue: EventSource): EventSource;
-
-ifThenElse(thenValue: ScalarSignal | number, elseValue: ScalarSignal | number): ScalarSignal;
-
-ifThenElse(thenValue: StringSignal | string, elseValue: StringSignal | string): StringSignal;
-
-ifThenElse(thenValue: BoolSignal | boolean, elseValue: BoolSignal | boolean): BoolSignal;
-
-monitor(): EventSource;
-
-monitor(config: { fireOnInitialValue: ?boolean}): EventSource;
-
-ne(other: BoolSignal | boolean): BoolSignal;
-
-not(): BoolSignal;
-
-onOff(): EventSource;
-
-onOff(config: { fireOnInitialValue: ?boolean}): EventSource;
-
-onOn(): EventSource;
-
-onOn(config: { fireOnInitialValue: ?boolean}): EventSource;
-
-or(other: BoolSignal | boolean): BoolSignal;
-
-pin(): BoolSignal;
-
-pinLastValue(): ConstBoolSignal;
-
-xor(other: BoolSignal | boolean): BoolSignal;
-
-}
-}
-export interface BoolSignal extends Boolean {
+declare interface BoolSignal {
 /**
 * ```
 (get) lastValue: boolean
@@ -95,21 +48,21 @@ eq(other: BoolSignal | boolean): BoolSignal;
 /**
 * 
  *  
- * history(framesCount: number): SignalHistory<Bool>
- * history(framesCount: number, initialValues: Array<boolean>): SignalHistory<Bool>
+ * history(framesCount: number): SignalHistory<boolean>
+ * history(framesCount: number, initialValues: Array<boolean>): SignalHistory<boolean>
  *  
  * 
  * Returns an object used to access signal values from past frames. The amount of frames tracked is customizable via `framesCount` parameter.
  * Historical signal values are going to be initialized with signal value at call time or using `initialValues` if provided.
  * 
  */
-history(framesCount: number): SignalHistory<Bool>;
+history(framesCount: number): SignalHistory<boolean>;
 
-history(framesCount: number, initialValues: Array<boolean>): SignalHistory<Bool>;
+history(framesCount: number, initialValues: Array<boolean>): SignalHistory<boolean>;
 
 /**
 *  
- * ifThenElse(thenValue: EventSource, elseValue: EventSource): EventSource
+ * ifThenElse<T, U>(thenValue: EventSource<T>, elseValue: EventSource<U>): EventSource<T | U>
  * ifThenElse(thenValue: ScalarSignal, elseValue: ScalarSignal): ScalarSignal
  * ifThenElse(thenValue: StringSignal, elseValue: StringSignal): StringSignal
  * ifThenElse(thenValue: BoolSignal, elseValue: BoolSignal): BoolSignal
@@ -117,8 +70,6 @@ history(framesCount: number, initialValues: Array<boolean>): SignalHistory<Bool>
  * 
  * Returns a signal or an `EventSource` which at any point of time takes the value (passes the events in case of `EventSource`) of one or another inputs, depending on the momentary value of the given `BoolSignal`.
  */
-ifThenElse(thenValue: EventSource, elseValue: EventSource): EventSource;
-
 ifThenElse(thenValue: ScalarSignal | number, elseValue: ScalarSignal | number): ScalarSignal;
 
 ifThenElse(thenValue: StringSignal | string, elseValue: StringSignal | string): StringSignal;
@@ -128,22 +79,22 @@ ifThenElse(thenValue: BoolSignal | boolean, elseValue: BoolSignal | boolean): Bo
 /**
 * 
  *  
- * monitor(): EventSource
- * monitor(config: { fireOnInitialValue: ?boolean}): EventSource
+ * monitor(): EventSource<{ oldValue: boolean, newValue: boolean }>
+ * monitor(config: { fireOnInitialValue?: boolean}): EventSource<{ oldValue: boolean, newValue: boolean }>
  *  
  * 
  * Returns an `EventSource` that emits an event every time the value of the input signal changes. The event contains a JSON object with the old and new values in the format:
  * 
  *  
- * { "oldValue": val, "newValue": val }
+ * { "oldValue": boolean, "newValue": boolean }
  *  
  * 
  * **Note**: By default, there is no event fired for the initial value of the signal. If `config.fireOnInitialValue` is set to `true` then an event for initial signal value is also emitted. `oldValue` is unset for this initial event.
  * 
  */
-monitor(): EventSource;
+monitor(): EventSource<{ oldValue: boolean, newValue: boolean }>;
 
-monitor(config: { fireOnInitialValue: ?boolean}): EventSource;
+monitor(config: { fireOnInitialValue?: boolean}): EventSource<{ oldValue: boolean, newValue: boolean }>;
 
 /**
 *  
@@ -170,42 +121,42 @@ not(): BoolSignal;
 /**
 * 
  *  
- * onOff(): EventSource
- * onOff(config: { fireOnInitialValue: ?boolean}): EventSource
+ * onOff(): EventSource<{ oldValue: boolean, newValue: boolean }>
+ * onOff(config: { fireOnInitialValue?: boolean}): EventSource<{ oldValue: boolean, newValue: boolean }>
  *  
  * 
  * Returns an `EventSource` that emits an event every time the value of the input signal changes to `false`. The event contains a JSON object with the old and new values in the format:
  * 
  *  
- * { "oldValue": val, "newValue": val }
+ * { "oldValue": boolean, "newValue": boolean }
  *  
  * 
  * **Note**: By default, there is no event fired for the initial value of the signal if it's `false` straight away. If `config.fireOnInitialValue` is set to `true` then an event for initial signal value is also emitted. `oldValue` is unset for this initial event.
  * 
  */
-onOff(): EventSource;
+onOff(): EventSource<{ oldValue: boolean, newValue: boolean }>;
 
-onOff(config: { fireOnInitialValue: ?boolean}): EventSource;
+onOff(config: { fireOnInitialValue?: boolean}): EventSource<{ oldValue: boolean, newValue: boolean }>;
 
 /**
 * 
  *  
- * onOn(): EventSource
- * onOn(config: { fireOnInitialValue: ?boolean}): EventSource
+ * onOn(): EventSource<{ oldValue: boolean, newValue: boolean }>
+ * onOn(config: { fireOnInitialValue?: boolean}): EventSource<{ "oldValue": boolean, "newValue": boolean }>
  *  
  * 
  * Returns an `EventSource` that emits an event every time the value of the input signal changes to `true`. The event contains a JSON object with the old and new values in the format:
  * 
  *  
- * { "oldValue": val, "newValue": val }
+ * { "oldValue": boolean, "newValue": boolean }
  *  
  * 
  * **Note**: By default, there is no event fired for the initial value of the signal if it's `true` straight away. If `config.fireOnInitialValue` is set to `true` then an event for initial signal value is also emitted. `oldValue` is unset for this initial event.
  * 
  */
-onOn(): EventSource;
+onOn(): EventSource<{ oldValue: boolean, newValue: boolean }>;
 
-onOn(config: { fireOnInitialValue: ?boolean}): EventSource;
+onOn(config: { fireOnInitialValue?: boolean}): EventSource<{ "oldValue": boolean, "newValue": boolean }>;
 
 /**
 *  
@@ -250,5 +201,4 @@ pinLastValue(): ConstBoolSignal;
  */
 xor(other: BoolSignal | boolean): BoolSignal;
 
-}
 }

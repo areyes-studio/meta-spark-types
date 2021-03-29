@@ -1,4 +1,4 @@
-declare namespace DeepLinkModule {
+declare class DeepLinkModule {
 /**
 * ```
 (get) arguments: {[key: string]: Object}
@@ -7,6 +7,6 @@ declare namespace DeepLinkModule {
 
 Specifies a collection of key/value pairs passed from the external app.
 */
-const arguments: any;
+static readonly arguments: any;
 }
 export = DeepLinkModule;

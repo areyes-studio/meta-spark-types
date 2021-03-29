@@ -1,7 +1,9 @@
 /// <reference path="../Reactive.BoolSignal/index.d.ts" />
 /// <reference path="../Scene.Bounds2D/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
-declare interface Canvas {
+/// <reference path="../Scene.SceneObjectBase/index.d.ts" />
+/// <reference path="../Reactive.StringSignal/index.d.ts" />
+declare interface Canvas extends SceneObjectBase {
 /**
 * ```
 (get) bounds: Bounds2D
@@ -21,11 +23,11 @@ bounds: Bounds2D;
 Specifies the vertical size, in 3D units.
 **Note:** this is only effective when `renderMode` property is set to WORLD_SPACE.
 */
-height: ScalarSignal | number;
+height: ScalarSignal;
 /**
 * ```
-(get) mode: Signal<SceneModule.RenderMode>
-(set) mode: Signal<SceneModule.RenderMode>
+(get) mode: StringSignal<SceneModule.RenderMode>
+(set) mode: StringSignal<SceneModule.RenderMode>
 ```
 
 Specifies how Canvas should be rendered.
@@ -35,7 +37,7 @@ In WORLD_SPACE Canvas behaves as regular 3D object and is sized according to `wi
 
 **See Also**: `Canvas.setMode`.
 */
-mode: Signal<SceneModule.RenderMode>;
+mode: StringSignal<SceneModule.RenderMode>;
 /**
 * ```
 (get) useSafeAreaMargins: BoolSignal
@@ -45,7 +47,7 @@ mode: Signal<SceneModule.RenderMode>;
 Specifies if Canvas should automatically include SafeArea margin to its content.
 **Note:** this is only effective when `renderMode` property is set to SCREEN_SPACE.
 */
-useSafeAreaMargins: BoolSignal | boolean;
+useSafeAreaMargins: BoolSignal;
 /**
 * ```
 (get) width: ScalarSignal
@@ -55,10 +57,10 @@ useSafeAreaMargins: BoolSignal | boolean;
 Specifies the horizontal size, in 3D units.
 **Note:** this is only effective when `renderMode` property is set to WORLD_SPACE.
 */
-width: ScalarSignal | number;
+width: ScalarSignal;
 /**
 *  
- * setMode(v: Signal<SceneModule.RenderMode>, config?: {fallback: SceneModule.RenderMode}): void
+ * setMode(v: StringSignal<SceneModule.RenderMode>, config?: {fallback: SceneModule.RenderMode}): void
  *  
  * 
  * Specifies how Canvas should be rendered.
@@ -68,6 +70,6 @@ width: ScalarSignal | number;
  * 
  * **See Also**: `Canvas.mode`.
  */
-setMode(v: Signal<SceneModule.RenderMode>, config?: {fallback: SceneModule.RenderMode}): void;
+setMode(v: StringSignal<SceneModule.RenderMode>, config?: {fallback: SceneModule.RenderMode}): void;
 
 }

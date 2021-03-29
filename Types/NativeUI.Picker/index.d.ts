@@ -10,7 +10,7 @@ declare interface Picker {
 
 Represents the index of the selected item in the picker.
 */
-selectedIndex: ScalarSignal | number;
+selectedIndex: ScalarSignal;
 /**
 * ```
 (get) (Not Available)
@@ -19,7 +19,7 @@ selectedIndex: ScalarSignal | number;
 
 Will instruct picker to be visible or not visible, according to passed boolean value.
 */
-visible: BoolSignal | boolean;
+visible: BoolSignal;
 /**
 *  
  * configure(config: {items: Array<{id?: string, image_texture: ImageTexture | string, title?: string}>, selectedIndex?: number}): Promise<void>

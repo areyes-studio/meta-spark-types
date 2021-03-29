@@ -1,8 +1,9 @@
 /// <reference path="../Fonts.FontId/index.d.ts" />
 /// <reference path="../Materials.MaterialBase/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
+/// <reference path="../Scene.SceneObjectBase/index.d.ts" />
 /// <reference path="../Reactive.StringSignal/index.d.ts" />
-declare interface TextExtrusion {
+declare interface TextExtrusion extends SceneObjectBase {
 /**
 * ```
 (get) (Not Available)
@@ -21,7 +22,7 @@ backMaterial: MaterialBase | null;
 Text extrusion is only made through straight paths. This specifies the depth of the straight path of extrusion, starting from the position of textExtrusion scene object.
 **Note**: Default value is 10 mm.
 */
-depth: ScalarSignal | number;
+depth: ScalarSignal;
 /**
 * ```
 (get) (Not Available)
@@ -48,7 +49,7 @@ frontMaterial: MaterialBase | null;
 
 Specifies the letter spacing value.
 */
-letterSpacing: ScalarSignal | number;
+letterSpacing: ScalarSignal;
 /**
 * ```
 (get) lineSpacing: ScalarSignal
@@ -57,7 +58,7 @@ letterSpacing: ScalarSignal | number;
 
 Specifies the line spacing value.
 */
-lineSpacing: ScalarSignal | number;
+lineSpacing: ScalarSignal;
 /**
 * ```
 (get) (Not Available)
@@ -75,7 +76,7 @@ sideMaterial: MaterialBase | null;
 
 Specifies the text displayed.
 */
-text: StringSignal | string;
+text: StringSignal;
 /**
 *  
  * getBackMaterial(): Promise<MaterialBase | null>

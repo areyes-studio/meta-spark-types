@@ -1,5 +1,6 @@
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
-declare interface SequenceTexture {
+/// <reference path="../Textures.TextureBase/index.d.ts" />
+declare interface SequenceTexture extends TextureBase {
 /**
 * ```
 (get) currentFrame: ScalarSignal
@@ -8,5 +9,5 @@ declare interface SequenceTexture {
 
 Specifies the current frame in the animated sequence.
 */
-currentFrame: ScalarSignal | number;
+currentFrame: ScalarSignal;
 }

@@ -2,7 +2,7 @@
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 /// <reference path="../Reactive.StringSignal/index.d.ts" />
 /// <reference path="../Diagnostics.TypeSystemMetadata/index.d.ts" />
-declare namespace DiagnosticsModule {
+declare class DiagnosticsModule {
 /**
 * ```
 (get) typeSystem: TypeSystemMetadata
@@ -11,7 +11,7 @@ declare namespace DiagnosticsModule {
 
 Object containing available module and types information.
 */
-const typeSystem: TypeSystemMetadata;
+static readonly typeSystem: TypeSystemMetadata;
 /**
 *  
  * log(content: Object): void
@@ -20,7 +20,7 @@ const typeSystem: TypeSystemMetadata;
  * Flattens content to a string and prints it to the debug console.
  * Note: this function can be reassigned to any var (i.e. `foo.log = Diagnostics.log;`)
  */
-function log(content: Object): void;
+static log(content: Object): void;
 
 /**
 *  
@@ -29,7 +29,7 @@ function log(content: Object): void;
  * 
  * Adds the specified signal to the watch view in AR Studio with the specified tag.
  */
-function watch(tag: string, signal: BoolSignal | ScalarSignal | StringSignal | boolean | number | string): void;
+static watch(tag: string, signal: BoolSignal | ScalarSignal | StringSignal | boolean | number | string): void;
 
 }
 export = DiagnosticsModule;

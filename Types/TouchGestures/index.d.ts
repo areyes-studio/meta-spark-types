@@ -1,11 +1,13 @@
 /// <reference path="../Reactive.EventSource/index.d.ts" />
+/// <reference path="../TouchGestures.Gesture/index.d.ts" />
+/// <reference path="../TouchGestures.GestureType/index.d.ts" />
 /// <reference path="../TouchGestures.LongPressGesture/index.d.ts" />
 /// <reference path="../TouchGestures.PanGesture/index.d.ts" />
 /// <reference path="../TouchGestures.PinchGesture/index.d.ts" />
 /// <reference path="../TouchGestures.RawTouchGesture/index.d.ts" />
 /// <reference path="../TouchGestures.RotateGesture/index.d.ts" />
 /// <reference path="../TouchGestures.TapGesture/index.d.ts" />
-declare namespace TouchGesturesModule {
+declare class TouchGesturesModule {
 /**
 *  
  * onLongPress(options?: SceneObjectBase | {normalizeCoordinates?: false | true, object?: SceneObjectBase}): EventSource<LongPressGesture>
@@ -16,7 +18,7 @@ declare namespace TouchGesturesModule {
  * When `options` is specified, only events for the specified object are emitted.
  * Otherwise - events for entire preview screen are emitted.
  */
-function onLongPress(options?: any | {normalizeCoordinates?: false | true, object?: any}): EventSource<LongPressGesture>;
+static onLongPress(options?: SceneObjectBase | {normalizeCoordinates?: false | true, object?: SceneObjectBase}): EventSource<LongPressGesture>;
 
 /**
 *  
@@ -28,7 +30,7 @@ function onLongPress(options?: any | {normalizeCoordinates?: false | true, objec
  * When `options` is specified, only events for the specified object are emitted.
  * Otherwise - events for entire preview screen are emitted.
  */
-function onPan(options?: any | {normalizeCoordinates?: false | true, object?: any}): EventSource<PanGesture>;
+static onPan(options?: SceneObjectBase | {normalizeCoordinates?: false | true, object?: SceneObjectBase}): EventSource<PanGesture>;
 
 /**
 *  
@@ -40,7 +42,7 @@ function onPan(options?: any | {normalizeCoordinates?: false | true, object?: an
  * When `options` is specified, only events for the specified object are emitted.
  * Otherwise - events for entire preview screen are emitted.
  */
-function onPinch(options?: any | {normalizeCoordinates?: false | true, object?: any}): EventSource<PinchGesture>;
+static onPinch(options?: SceneObjectBase | {normalizeCoordinates?: false | true, object?: SceneObjectBase}): EventSource<PinchGesture>;
 
 /**
 *  
@@ -52,7 +54,7 @@ function onPinch(options?: any | {normalizeCoordinates?: false | true, object?: 
  * When `options` is specified, only events for the specified object are emitted.
  * Otherwise - events for entire preview screen are emitted.
  */
-function onRawTouch(options?: any | {normalizeCoordinates?: false | true, object?: any}): EventSource<RawTouchGesture>;
+static onRawTouch(options?: SceneObjectBase | {normalizeCoordinates?: false | true, object?: SceneObjectBase}): EventSource<RawTouchGesture>;
 
 /**
 *  
@@ -64,7 +66,7 @@ function onRawTouch(options?: any | {normalizeCoordinates?: false | true, object
  * When `options` is specified, only events for the specified object are emitted.
  * Otherwise - events for entire preview screen are emitted.
  */
-function onRotate(options?: any | {normalizeCoordinates?: false | true, object?: any}): EventSource<RotateGesture>;
+static onRotate(options?: SceneObjectBase | {normalizeCoordinates?: false | true, object?: SceneObjectBase}): EventSource<RotateGesture>;
 
 /**
 *  
@@ -76,7 +78,24 @@ function onRotate(options?: any | {normalizeCoordinates?: false | true, object?:
  * When `options` is specified, only events for the specified object are emitted.
  * Otherwise - events for entire preview screen are emitted.
  */
-function onTap(options?: any | {normalizeCoordinates?: false | true, object?: any}): EventSource<TapGesture>;
+static onTap(options?: SceneObjectBase | {normalizeCoordinates?: false | true, object?: SceneObjectBase}): EventSource<TapGesture>;
 
+/**
+ * The `GestureType` enum describes the type of a given `Gesture`.
+ * @property LONG_PRESS Indicates the long-press gesture.
+ * @property PAN Indicates the pan gesture.
+ * @property PINCH Indicates the pinch gesture.
+ * @property RAW_TOUCH Indicates the raw touch gesture.
+ * @property ROTATE Indicates the rotate gesture.
+ * @property TAP Indicates the tap gesture.
+ */
+static readonly GestureType: {
+  LONG_PRESS: "LONG_PRESS",
+  PAN: "PAN",
+  PINCH: "PINCH",
+  RAW_TOUCH: "RAW_TOUCH",
+  ROTATE: "ROTATE",
+  TAP: "TAP",
+}
 }
 export = TouchGesturesModule;

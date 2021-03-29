@@ -1,6 +1,6 @@
 /// <reference path="../Reactive.BoolSignal/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
-declare namespace PersonSegmentationModule {
+declare class PersonSegmentationModule {
 /**
 * ```
 (get) foregroundPercent: ScalarSignal
@@ -9,7 +9,7 @@ declare namespace PersonSegmentationModule {
 
 Represents the percentage of screen space occupied by a person/people.
 */
-const foregroundPercent: ScalarSignal | number;
+static readonly foregroundPercent: ScalarSignal;
 /**
 * ```
 (get) hasForeground: BoolSignal
@@ -18,7 +18,7 @@ const foregroundPercent: ScalarSignal | number;
 
 Represents whether there is anybody in the scene (`true`/`false`), based on whether the percentage of foreground is larger than a threshold.
 */
-const hasForeground: BoolSignal | boolean;
+static readonly hasForeground: BoolSignal;
 /**
 * ```
 (get) (Not Available)
@@ -27,6 +27,6 @@ const hasForeground: BoolSignal | boolean;
 
 Specifies whether the segmentation should be enabled. Default value is 'true'.
 */
-const isEnabled: BoolSignal | boolean;
+static readonly isEnabled: BoolSignal | boolean;
 }
 export = PersonSegmentationModule;

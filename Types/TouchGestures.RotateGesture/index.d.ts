@@ -1,6 +1,7 @@
+/// <reference path="../TouchGestures.Gesture/index.d.ts" />
 /// <reference path="../Reactive.Point2DSignal/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
-declare interface RotateGesture {
+declare interface RotateGesture extends Gesture {
 /**
 * ```
 (get) location: Point2DSignal
@@ -19,5 +20,5 @@ location: Point2DSignal;
 
 Specifies a `ScalarSignal` representing the rotation indicated by the gesture, in radians.
 */
-rotation: ScalarSignal | number;
+rotation: ScalarSignal;
 }

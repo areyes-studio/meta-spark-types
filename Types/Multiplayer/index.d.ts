@@ -1,8 +1,9 @@
 /// <reference path="../Reactive.BoolSignal/index.d.ts" />
 /// <reference path="../Reactive.EventSource/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
+/// <reference path="../Multiplayer.StateSignalType/index.d.ts" />
 /// <reference path="../Reactive.StringSignal/index.d.ts" />
-declare namespace MultiplayerModule {
+declare class MultiplayerModule {
 /**
 * ```
 (get) message: EventSource<{[key: string]: AllowedValue}>
@@ -12,7 +13,7 @@ declare namespace MultiplayerModule {
 Receives the latest incoming message from the peers using the effect.
 Received message should contain only one entry.
 */
-const message: EventSource;
+static readonly message: EventSource;
 /**
 * ```
 (get) numParticipants: ScalarSignal
@@ -21,7 +22,7 @@ const message: EventSource;
 
 Scalar signal of the number of participants currently using the effect in the call
 */
-const numParticipants: ScalarSignal | number;
+static readonly numParticipants: ScalarSignal;
 /**
 * ```
 (get) onParticipantsChanged: EventSource<Array<string>>
@@ -33,14 +34,14 @@ const numParticipants: ScalarSignal | number;
 Triggered when the participants of the call has changed, returning an array of
 the current participant's ids.
 */
-const onParticipantsChanged: EventSource<Array<string>>;
+static readonly onParticipantsChanged: EventSource<Array<string>>;
 /**
 * ```
 (get) participants: Array<string>
 (set) (Not Available)
 ```
 */
-const participants: Array<string>;
+static readonly participants: Array<string>;
 /**
 * ```
 (get) viewerId: StringSignal
@@ -49,7 +50,7 @@ const participants: Array<string>;
 
 Contains the viewerId of the user using this effect as a string signal
 */
-const viewerId: StringSignal | string;
+static readonly viewerId: StringSignal;
 /**
 *  
  * activate(metadata: {[key: string]: StateSignalType}): void
@@ -59,7 +60,7 @@ const viewerId: StringSignal | string;
  * defined as a mapping from the state key (string) to state types (enum StateSignalType).
  *  For example: { numPlayers: StateSignalType::SCALAR, scores: StateSignalType::STRING }
  */
-function activate(metadata: {[key: string]: StateSignalType}): void;
+static activate(metadata: {[key: string]: StateSignalType}): void;
 
 /**
 *  
@@ -70,7 +71,7 @@ function activate(metadata: {[key: string]: StateSignalType}): void;
  * String input will match keys defined from the metadata.
  * Output signal type is dependent on the `keyType` enum from metadata.
  */
-function getState(key: string): ScalarSignal | BoolSignal | StringSignal;
+static getState(key: string): ScalarSignal | BoolSignal | StringSignal;
 
 /**
 *  
@@ -81,7 +82,7 @@ function getState(key: string): ScalarSignal | BoolSignal | StringSignal;
  * ** Please use `viewerId` property instead. **
  * Returns the viewerID of this user.
  */
-function getViewerID(): string;
+static getViewerID(): string;
 
 /**
 *  
@@ -92,7 +93,7 @@ function getViewerID(): string;
  * within an RTC call. Should only have one entry.
  * For example: { "miss": "4" }
  */
-function sendMessage(message: {[key: string]: AllowedValue}): void;
+static sendMessage(message: {[key: string]: AllowedValue}): void;
 
 /**
 *  
@@ -104,7 +105,18 @@ function sendMessage(message: {[key: string]: AllowedValue}): void;
  * The keys here should always be a subset of the of keys in `activate`.
  * For example: { "numPlayers": "2", "scores": "2,5" }
  */
-function sendStateUpdate(state: {[key: string]: AllowedValue}): void;
+static sendStateUpdate(state: {[key: string]: AllowedValue}): void;
 
+/**
+ * 
+ * @property BOOLEAN 
+ * @property SCALAR 
+ * @property STRING 
+ */
+static readonly StateSignalType: {
+  BOOLEAN: "BOOLEAN",
+  SCALAR: "SCALAR",
+  STRING: "STRING",
+}
 }
 export = MultiplayerModule;

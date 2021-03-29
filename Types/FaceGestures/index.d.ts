@@ -1,7 +1,7 @@
 /// <reference path="../Reactive.BoolSignal/index.d.ts" />
 /// <reference path="../Reactive.EventSource/index.d.ts" />
 /// <reference path="../FaceTracking.Face/index.d.ts" />
-declare namespace FaceGesturesModule {
+declare class FaceGesturesModule {
 /**
 *  
  * hasEyebrowsFrowned(face: Face, config?: {backlash?: number, observationPeriod?: number, threshold?: number}): BoolSignal
@@ -14,7 +14,7 @@ declare namespace FaceGesturesModule {
  * 
  * There is no explicit underlying driver signal for this face gesture.
  */
-function hasEyebrowsFrowned(face: Face, config?: {backlash?: number, observationPeriod?: number, threshold?: number}): BoolSignal;
+static hasEyebrowsFrowned(face: Face, config?: {backlash?: number, observationPeriod?: number, threshold?: number}): BoolSignal;
 
 /**
 *  
@@ -28,7 +28,7 @@ function hasEyebrowsFrowned(face: Face, config?: {backlash?: number, observation
  * 
  * There is no explicit underlying driver signal for this face gesture.
  */
-function hasEyebrowsRaised(face: Face, config?: {backlash?: number, observationPeriod?: number, threshold?: number}): BoolSignal;
+static hasEyebrowsRaised(face: Face, config?: {backlash?: number, observationPeriod?: number, threshold?: number}): BoolSignal;
 
 /**
 *  
@@ -41,7 +41,7 @@ function hasEyebrowsRaised(face: Face, config?: {backlash?: number, observationP
  * 
  * A signal goes ON when `Face.leftEye.openness` reaches `config.threshold` and goes OFF at `config.threshold + config.backlash`.
  */
-function hasLeftEyeClosed(face: Face, config?: {angle?: number, backlash?: number}): BoolSignal;
+static hasLeftEyeClosed(face: Face, config?: {angle?: number, backlash?: number}): BoolSignal;
 
 /**
 *  
@@ -54,7 +54,7 @@ function hasLeftEyeClosed(face: Face, config?: {angle?: number, backlash?: numbe
  * 
  * A signal goes ON when `Face.mouth.openness` reaches `config.threshold` and goes OFF at `config.threshold - config.backlash`.
  */
-function hasMouthOpen(face: Face, config?: {angle?: number, backlash?: number}): BoolSignal;
+static hasMouthOpen(face: Face, config?: {angle?: number, backlash?: number}): BoolSignal;
 
 /**
 *  
@@ -67,7 +67,7 @@ function hasMouthOpen(face: Face, config?: {angle?: number, backlash?: number}):
  * 
  * A signal goes ON when `Face.rightEye.openness` reaches `config.threshold` and goes OFF at `config.threshold + config.backlash`.
  */
-function hasRightEyeClosed(face: Face, config?: {angle?: number, backlash?: number}): BoolSignal;
+static hasRightEyeClosed(face: Face, config?: {angle?: number, backlash?: number}): BoolSignal;
 
 /**
 *  
@@ -76,7 +76,7 @@ function hasRightEyeClosed(face: Face, config?: {angle?: number, backlash?: numb
  * 
  * Returns a`BoolSignal` that indicates whether the specified`Face` object is an angry face.
  */
-function isAngry(face: Face): BoolSignal;
+static isAngry(face: Face): BoolSignal;
 
 /**
 *  
@@ -85,7 +85,7 @@ function isAngry(face: Face): BoolSignal;
  * 
  * Returns a`BoolSignal` that indicates whether the specified`Face` object is a happy face.
  */
-function isHappy(face: Face): BoolSignal;
+static isHappy(face: Face): BoolSignal;
 
 /**
 *  
@@ -94,7 +94,7 @@ function isHappy(face: Face): BoolSignal;
  * 
  * Returns a`BoolSignal` that indicates whether the specified`Face` object is a kissing face.
  */
-function isKissing(face: Face): BoolSignal;
+static isKissing(face: Face): BoolSignal;
 
 /**
 *  
@@ -107,7 +107,7 @@ function isKissing(face: Face): BoolSignal;
  * 
  * A signal goes ON when angle reaches `config.angle` and goes OFF at `config.angle - config.backlash`.
  */
-function isLeanedBack(face: Face, config?: {angle?: number, backlash?: number}): BoolSignal;
+static isLeanedBack(face: Face, config?: {angle?: number, backlash?: number}): BoolSignal;
 
 /**
 *  
@@ -120,7 +120,7 @@ function isLeanedBack(face: Face, config?: {angle?: number, backlash?: number}):
  * 
  * A signal goes ON when angle reaches `config.angle` and goes OFF at `config.angle - config.backlash`.
  */
-function isLeanedForward(face: Face, config?: {angle?: number, backlash?: number}): BoolSignal;
+static isLeanedForward(face: Face, config?: {angle?: number, backlash?: number}): BoolSignal;
 
 /**
 *  
@@ -133,7 +133,7 @@ function isLeanedForward(face: Face, config?: {angle?: number, backlash?: number
  * 
  * A signal goes ON when angle reaches `config.angle` and goes OFF at `config.angle - config.backlash`.
  */
-function isLeanedLeft(face: Face, config?: {angle?: number, backlash?: number}): BoolSignal;
+static isLeanedLeft(face: Face, config?: {angle?: number, backlash?: number}): BoolSignal;
 
 /**
 *  
@@ -146,7 +146,7 @@ function isLeanedLeft(face: Face, config?: {angle?: number, backlash?: number}):
  * 
  * A signal goes ON when angle reaches `config.angle` and goes OFF at `config.angle - config.backlash`.
  */
-function isLeanedRight(face: Face, config?: {angle?: number, backlash?: number}): BoolSignal;
+static isLeanedRight(face: Face, config?: {angle?: number, backlash?: number}): BoolSignal;
 
 /**
 *  
@@ -155,7 +155,7 @@ function isLeanedRight(face: Face, config?: {angle?: number, backlash?: number})
  * 
  * Returns a`BoolSignal` that indicates whether the specified`Face` object is a neutral face.
  */
-function isNeutral(face: Face): BoolSignal;
+static isNeutral(face: Face): BoolSignal;
 
 /**
 *  
@@ -164,7 +164,7 @@ function isNeutral(face: Face): BoolSignal;
  * 
  * Returns a`BoolSignal` that indicates whether the specified`Face` object is a sad face.
  */
-function isSad(face: Face): BoolSignal;
+static isSad(face: Face): BoolSignal;
 
 /**
 *  
@@ -178,7 +178,7 @@ function isSad(face: Face): BoolSignal;
  * 
  * A signal goes ON when `mouth.upperLipCurvature * config.lipMix + mouth.lowerLipCurvature * (1 - config.lipMix)` reaches `config.threshold` and goes OFF at `config.threshold - config.backlash`.
  */
-function isSmiling(face: Face, config?: {backlash?: number, lipMix?: number, threshold?: number}): BoolSignal;
+static isSmiling(face: Face, config?: {backlash?: number, lipMix?: number, threshold?: number}): BoolSignal;
 
 /**
 *  
@@ -187,7 +187,7 @@ function isSmiling(face: Face, config?: {backlash?: number, lipMix?: number, thr
  * 
  * Returns a`BoolSignal` that indicates whether the specified`Face` object is a surprised face.
  */
-function isSurprised(face: Face): BoolSignal;
+static isSurprised(face: Face): BoolSignal;
 
 /**
 *  
@@ -200,7 +200,7 @@ function isSurprised(face: Face): BoolSignal;
  * 
  *   A signal goes ON when angle reaches `config.angle` and goes OFF at `config.angle - config.backlash`.
  */
-function isTurnedLeft(face: Face, config?: {angle?: number, backlash?: number}): BoolSignal;
+static isTurnedLeft(face: Face, config?: {angle?: number, backlash?: number}): BoolSignal;
 
 /**
 *  
@@ -213,7 +213,7 @@ function isTurnedLeft(face: Face, config?: {angle?: number, backlash?: number}):
  * 
  * A signal goes ON when angle reaches `config.angle` and goes OFF at `config.angle - config.backlash`.
  */
-function isTurnedRight(face: Face, config?: {angle?: number, backlash?: number}): BoolSignal;
+static isTurnedRight(face: Face, config?: {angle?: number, backlash?: number}): BoolSignal;
 
 /**
 *  
@@ -224,7 +224,7 @@ function isTurnedRight(face: Face, config?: {angle?: number, backlash?: number})
  * * `config.threshold` overrides the default threshold for determining eye openness.
  * * `config.backlash` sets the default backlash. Backlash is used to minimize state jitter while the openness is near the threshold value.
  */
-function onBlink(face: Face, config?: {backlash?: number, threshold?: number}): EventSource;
+static onBlink(face: Face, config?: {backlash?: number, threshold?: number}): EventSource;
 
 /**
 *  
@@ -240,7 +240,7 @@ function onBlink(face: Face, config?: {backlash?: number, threshold?: number}): 
  * * `config.period` sets the maximum time limit for one swing, in milliseconds.
  * * `config.swings` sets the count of consecutive alternating swings after which the gesture is detected.
  */
-function onNod(face: Face, config?: {angle?: number, period?: number, swings?: number}): EventSource;
+static onNod(face: Face, config?: {angle?: number, period?: number, swings?: number}): EventSource;
 
 /**
 *  
@@ -256,7 +256,7 @@ function onNod(face: Face, config?: {angle?: number, period?: number, swings?: n
  * * `config.period` sets the maximum time limit for one swing, in milliseconds.
  * * `config.swings` sets the count of consecutive alternating swings after which the gesture is detected.
  */
-function onShake(face: Face, config?: {angle?: number, period?: number, swings?: number}): EventSource;
+static onShake(face: Face, config?: {angle?: number, period?: number, swings?: number}): EventSource;
 
 }
 export = FaceGesturesModule;

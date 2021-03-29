@@ -1,5 +1,6 @@
+/// <reference path="../Materials.MaterialBase/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
-declare interface ColorPaintMaterial {
+declare interface ColorPaintMaterial extends MaterialBase {
 /**
 * ```
 (get) backgroundInfluence: ScalarSignal
@@ -8,7 +9,7 @@ declare interface ColorPaintMaterial {
 
 Specifies the influence of the background face on the paint texture.
 */
-backgroundInfluence: ScalarSignal | number;
+backgroundInfluence: ScalarSignal;
 /**
 * ```
 (get) paintBrightness: ScalarSignal
@@ -17,5 +18,5 @@ backgroundInfluence: ScalarSignal | number;
 
 Specifies the simulated paint brightness.
 */
-paintBrightness: ScalarSignal | number;
+paintBrightness: ScalarSignal;
 }

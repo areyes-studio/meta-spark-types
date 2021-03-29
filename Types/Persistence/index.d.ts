@@ -1,5 +1,5 @@
 /// <reference path="../Persistence.StorageScope/index.d.ts" />
-declare namespace PersistenceModule {
+declare class PersistenceModule {
 /**
 * ```
 (get) captureScope: StorageScope
@@ -8,7 +8,7 @@ declare namespace PersistenceModule {
 
 Gets an instance of StorageScope corresponding to the capture scope.
 */
-const captureScope: StorageScope;
+static readonly captureScope: StorageScope;
 /**
 * ```
 (get) sharedScope: StorageScope
@@ -17,7 +17,7 @@ const captureScope: StorageScope;
 
 Gets an instance of StorageScope corresponding to the shared scope.
 */
-const sharedScope: StorageScope;
+static readonly sharedScope: StorageScope;
 /**
 * ```
 (get) userScope: StorageScope
@@ -26,6 +26,6 @@ const sharedScope: StorageScope;
 
 Gets an instance of StorageScope corresponding to the user scope.
 */
-const userScope: StorageScope;
+static readonly userScope: StorageScope;
 }
 export = PersistenceModule;

@@ -1,6 +1,7 @@
+/// <reference path="../TouchGestures.Gesture/index.d.ts" />
 /// <reference path="../Reactive.Point2DSignal/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
-declare interface PinchGesture {
+declare interface PinchGesture extends Gesture {
 /**
 * ```
 (get) location: Point2DSignal
@@ -19,5 +20,5 @@ location: Point2DSignal;
 
 Specifies a `ScalarSignal` representing the scale factor indicated by the gesture.
 */
-scale: ScalarSignal | number;
+scale: ScalarSignal;
 }

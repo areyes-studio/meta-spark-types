@@ -1,6 +1,6 @@
 /// <reference path="../Audio.AudioComponent/index.d.ts" />
 /// <reference path="../Audio.PlaybackController/index.d.ts" />
-declare namespace AudioModule {
+declare class AudioModule {
 /**
 *  
  * getAudioComponent(id: string): AudioComponent
@@ -8,7 +8,7 @@ declare namespace AudioModule {
  * 
  * Returns an `AudioComponent` corresponding to the DSP effect with the corresponding id.
  */
-function getAudioComponent(id: string): AudioComponent;
+static getAudioComponent(id: string): AudioComponent;
 
 /**
 *  
@@ -17,7 +17,7 @@ function getAudioComponent(id: string): AudioComponent;
  * 
  * Get a playback controller from assets by name.
  */
-function getAudioPlaybackController(name: string): Promise<PlaybackController>;
+static getAudioPlaybackController(name: string): Promise<PlaybackController>;
 
 }
 export = AudioModule;

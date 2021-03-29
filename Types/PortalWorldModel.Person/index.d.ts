@@ -49,7 +49,7 @@ leftLeg: Leg;
 
 Gets the unique pose ID of the given person.
 */
-poseId: ScalarSignal | number;
+poseId: ScalarSignal;
 /**
 * ```
 (get) rightArm: Arm

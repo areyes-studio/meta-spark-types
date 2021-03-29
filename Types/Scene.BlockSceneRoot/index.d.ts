@@ -1,6 +1,7 @@
 /// <reference path="../Scene.BlockInstanceInputs/index.d.ts" />
 /// <reference path="../Scene.BlockInstanceOutputs/index.d.ts" />
-declare interface BlockSceneRoot {
+/// <reference path="../Scene.SceneObjectBase/index.d.ts" />
+declare interface BlockSceneRoot extends SceneObjectBase {
 /**
 * ```
 (get) inputs: BlockInstanceInputs

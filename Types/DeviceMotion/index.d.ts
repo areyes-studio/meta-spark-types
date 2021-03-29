@@ -1,5 +1,5 @@
 /// <reference path="../Reactive.TransformSignal/index.d.ts" />
-declare namespace DeviceMotionModule {
+declare class DeviceMotionModule {
 /**
 * ```
 (get) worldTransform: TransformSignal
@@ -8,6 +8,6 @@ declare namespace DeviceMotionModule {
 
 Specifies a `TransformSignal` representing the device transformation relative to world coordinate system.
 */
-const worldTransform: TransformSignal;
+static readonly worldTransform: TransformSignal;
 }
 export = DeviceMotionModule;

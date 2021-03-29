@@ -1,8 +1,10 @@
 /// <reference path="../Reactive.ColorSignal/index.d.ts" />
+/// <reference path="../Materials.MaterialBase/index.d.ts" />
 /// <reference path="../Reactive.RgbaSignal/index.d.ts" />
+/// <reference path="../Reactive.StringSignal/index.d.ts" />
 /// <reference path="../Textures.TextureBase/index.d.ts" />
 /// <reference path="../Materials.TextureTransform/index.d.ts" />
-declare interface DefaultMaterial {
+declare interface DefaultMaterial extends MaterialBase {
 /**
 * ```
 (get) ambientColorFactor: RgbaSignal
@@ -16,13 +18,13 @@ Note that RgbaSignal is always returned.
 ambientColorFactor: RgbaSignal;
 /**
 * ```
-(get) blendMode: Signal<MaterialsModule.BlendMode>
-(set) blendMode: Signal<MaterialsModule.BlendMode>
+(get) blendMode: StringSignal<MaterialsModule.BlendMode>
+(set) blendMode: StringSignal<MaterialsModule.BlendMode>
 ```
 
 Specifies the material blend mode.
 */
-blendMode: Signal<MaterialsModule.BlendMode>;
+blendMode: StringSignal<MaterialsModule.BlendMode>;
 /**
 * ```
 (get) diffuseColorFactor: RgbaSignal

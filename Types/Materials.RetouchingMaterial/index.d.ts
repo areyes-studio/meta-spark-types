@@ -1,6 +1,7 @@
 /// <reference path="../Reactive.BoolSignal/index.d.ts" />
+/// <reference path="../Materials.MaterialBase/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
-declare interface RetouchingMaterial {
+declare interface RetouchingMaterial extends MaterialBase {
 /**
 * ```
 (get) eyeBrighteningFactor: ScalarSignal
@@ -9,7 +10,7 @@ declare interface RetouchingMaterial {
 
 Specifies the simulated eye brightening factor.
 */
-eyeBrighteningFactor: ScalarSignal | number;
+eyeBrighteningFactor: ScalarSignal;
 /**
 * ```
 (get) fullScreen: BoolSignal
@@ -18,7 +19,7 @@ eyeBrighteningFactor: ScalarSignal | number;
 
 Specifies whether effect should be full-screen.
 */
-fullScreen: BoolSignal | boolean;
+fullScreen: BoolSignal;
 /**
 * ```
 (get) skinSmoothingFactor: ScalarSignal
@@ -27,7 +28,7 @@ fullScreen: BoolSignal | boolean;
 
 Specifies the simulated skin smoothness factor.
 */
-skinSmoothingFactor: ScalarSignal | number;
+skinSmoothingFactor: ScalarSignal;
 /**
 * ```
 (get) teethWhiteningFactor: ScalarSignal
@@ -36,5 +37,5 @@ skinSmoothingFactor: ScalarSignal | number;
 
 Specifies the simulated teeth whitening factor.
 */
-teethWhiteningFactor: ScalarSignal | number;
+teethWhiteningFactor: ScalarSignal;
 }

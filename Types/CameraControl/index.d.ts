@@ -1,4 +1,4 @@
-declare namespace CameraControlModule {
+declare class CameraControlModule {
 /**
 *  
  * setCaptureDevicePositionBack(): void
@@ -6,7 +6,7 @@ declare namespace CameraControlModule {
  * 
  * Changes capture device position to back, if possible.
  */
-function setCaptureDevicePositionBack(): void;
+static setCaptureDevicePositionBack(): void;
 
 /**
 *  
@@ -15,7 +15,7 @@ function setCaptureDevicePositionBack(): void;
  * 
  * Changes capture device position to front, if possible.
  */
-function setCaptureDevicePositionFront(): void;
+static setCaptureDevicePositionFront(): void;
 
 }
 export = CameraControlModule;

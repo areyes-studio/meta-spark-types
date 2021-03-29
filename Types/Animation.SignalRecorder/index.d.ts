@@ -10,7 +10,7 @@ declare interface SignalRecorder {
 Returns duration of SignalRecorder recording so far, in milliseconds.
 **NOTE**: There may be up to a 2 frame delay in this value.
 */
-durationMs: ScalarSignal | number;
+durationMs: ScalarSignal;
 /**
 * ```
 (get) recordCount: ScalarSignal
@@ -20,7 +20,7 @@ durationMs: ScalarSignal | number;
 Returns number of records taken in this SignalRecorder so far.
 **NOTE**: There may be up to a 2 frame delay in this value.
 */
-recordCount: ScalarSignal | number;
+recordCount: ScalarSignal;
 /**
 *  
  * stop(): SignalRecord

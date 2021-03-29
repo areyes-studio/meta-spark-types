@@ -1,6 +1,6 @@
 /// <reference path="../Patches.PatchesInputs/index.d.ts" />
 /// <reference path="../Patches.PatchesOutputs/index.d.ts" />
-declare namespace PatchesModule {
+declare class PatchesModule {
 /**
 * ```
 (get) inputs: PatchesInputs
@@ -9,7 +9,7 @@ declare namespace PatchesModule {
 
 Returns an object encapsulating all inputs setters for the Patch Editor patches.
 */
-const inputs: PatchesInputs;
+static readonly inputs: PatchesInputs;
 /**
 * ```
 (get) outputs: PatchesOutputs
@@ -18,6 +18,6 @@ const inputs: PatchesInputs;
 
 Returns an object encapsulating all outputs getters for the Patch Editor patches.
 */
-const outputs: PatchesOutputs;
+static readonly outputs: PatchesOutputs;
 }
 export = PatchesModule;

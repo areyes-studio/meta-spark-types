@@ -1,7 +1,8 @@
+/// <reference path="../Reactive.ColorSignal/index.d.ts" />
 /// <reference path="../Reactive.HsvaSignal/index.d.ts" />
 /// <reference path="../Reactive.Point4DSignal/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
-declare interface RgbaSignal {
+declare interface RgbaSignal extends ColorSignal {
 /**
 * ```
 (get) alpha: ScalarSignal
@@ -10,7 +11,7 @@ declare interface RgbaSignal {
 
 Returns the value of the alpha channel between 0 and 1.0.
 */
-alpha: ScalarSignal | number;
+alpha: ScalarSignal;
 /**
 * ```
 (get) blue: ScalarSignal
@@ -19,7 +20,7 @@ alpha: ScalarSignal | number;
 
 Returns the value of the blue channel between 0 and 1.0.
 */
-blue: ScalarSignal | number;
+blue: ScalarSignal;
 /**
 * ```
 (get) green: ScalarSignal
@@ -28,7 +29,7 @@ blue: ScalarSignal | number;
 
 Returns the value of the green channel between 0 and 1.0.
 */
-green: ScalarSignal | number;
+green: ScalarSignal;
 /**
 * ```
 (get) red: ScalarSignal
@@ -37,7 +38,7 @@ green: ScalarSignal | number;
 
 Returns the value of the red channel between 0 and 1.0.
 */
-red: ScalarSignal | number;
+red: ScalarSignal;
 /**
 *  
  * pinLastValue(): RgbaSignal

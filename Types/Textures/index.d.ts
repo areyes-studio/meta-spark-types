@@ -1,5 +1,17 @@
+/// <reference path="../Textures.CameraTexture/index.d.ts" />
+/// <reference path="../Textures.CanvasTexture/index.d.ts" />
+/// <reference path="../Textures.ColorTexture/index.d.ts" />
+/// <reference path="../Textures.DeepLinkTexture/index.d.ts" />
+/// <reference path="../Textures.ExternalStreamTexture/index.d.ts" />
+/// <reference path="../Textures.ExternalTexture/index.d.ts" />
+/// <reference path="../Textures.GalleryTexture/index.d.ts" />
+/// <reference path="../Textures.ImageTexture/index.d.ts" />
+/// <reference path="../Textures.SegmentationTexture/index.d.ts" />
+/// <reference path="../Textures.SequenceTexture/index.d.ts" />
+/// <reference path="../Textures.SourceImageRegionTexture/index.d.ts" />
+/// <reference path="../Textures.SubTexture/index.d.ts" />
 /// <reference path="../Textures.TextureBase/index.d.ts" />
-declare namespace TexturesModule {
+declare class TexturesModule {
 /**
 *  
  * findFirst(textureName: string): Promise<TextureBase | null>
@@ -8,7 +20,7 @@ declare namespace TexturesModule {
  * Returns a promise that is resolved with the texture of a requested name or null if none was found.
  * **See Also**: `Textures.findUsingPattern`, `Textures.getAll`.
  */
-function findFirst(textureName: string): Promise<TextureBase | null>;
+static findFirst(textureName: string): Promise<TextureBase | null>;
 
 /**
 *  
@@ -30,7 +42,7 @@ function findFirst(textureName: string): Promise<TextureBase | null>;
  * 
  * **See Also**: `Textures.getAll`, `Textures.findFirst`.
  */
-function findUsingPattern(namePattern: string, config?: {limit: number}): Promise<Array<TextureBase>>;
+static findUsingPattern(namePattern: string, config?: {limit: number}): Promise<Array<TextureBase>>;
 
 /**
 *  
@@ -40,7 +52,7 @@ function findUsingPattern(namePattern: string, config?: {limit: number}): Promis
  * Returns a promise that is resolved with all of the textures.
  * **See Also**: `Textures.findUsingPattern`, `Textures.findFirst`.
  */
-function getAll(): Promise<Array<TextureBase>>;
+static getAll(): Promise<Array<TextureBase>>;
 
 }
 export = TexturesModule;

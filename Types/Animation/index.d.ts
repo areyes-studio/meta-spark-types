@@ -1,18 +1,22 @@
+/// <reference path="../Animation.AnimationClip/index.d.ts" />
 /// <reference path="../Animation.AnimationClips/index.d.ts" />
+/// <reference path="../Animation.AnimationPlaybackController/index.d.ts" />
 /// <reference path="../Animation.AnimationPlaybackControllers/index.d.ts" />
 /// <reference path="../Animation.ArrayOfScalarSamplers/index.d.ts" />
 /// <reference path="../Animation.ArrayOfScalarSignals/index.d.ts" />
 /// <reference path="../Animation.ColorSampler/index.d.ts" />
+/// <reference path="../Animation.Driver/index.d.ts" />
 /// <reference path="../Reactive.QuaternionSignal/index.d.ts" />
 /// <reference path="../Reactive.RgbaSignal/index.d.ts" />
 /// <reference path="../Animation.RotationSampler/index.d.ts" />
 /// <reference path="../Animation.SamplerFactory/index.d.ts" />
 /// <reference path="../Animation.ScalarSampler/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
+/// <reference path="../Animation.SignalRecord/index.d.ts" />
 /// <reference path="../Animation.SignalRecorder/index.d.ts" />
 /// <reference path="../Animation.TimeDriver/index.d.ts" />
 /// <reference path="../Animation.ValueDriver/index.d.ts" />
-declare namespace AnimationModule {
+declare class AnimationModule {
 /**
 * ```
 (get) animationClips: AnimationClips
@@ -21,7 +25,7 @@ declare namespace AnimationModule {
 
 Get an object that allows access to animation clips.
 */
-const animationClips: AnimationClips;
+static readonly animationClips: AnimationClips;
 /**
 * ```
 (get) playbackControllers: AnimationPlaybackControllers
@@ -30,7 +34,7 @@ const animationClips: AnimationClips;
 
 Get an object that allows access to animation playback controllers.
 */
-const playbackControllers: AnimationPlaybackControllers;
+static readonly playbackControllers: AnimationPlaybackControllers;
 /**
 * ```
 (get) samplers: SamplerFactory
@@ -39,7 +43,7 @@ const playbackControllers: AnimationPlaybackControllers;
 
 Returns an instance of a `SamplerFactory` object that can be used to construct animation samplers.
 */
-const samplers: SamplerFactory;
+static readonly samplers: SamplerFactory;
 /**
 *  
  * animate(driver: TimeDriver | ValueDriver, sampler: ScalarSampler | ArrayOfScalarSamplers | RotationSampler | ColorSampler): ScalarSignal | ArrayOfScalarSignals | QuaternionSignal | RgbaSignal
@@ -48,7 +52,7 @@ const samplers: SamplerFactory;
  * Combines the driver and the sampler to create a signal that can be used to animate arbitrary properties of arbitrary objects.
  * For `TimeDriver`-based animations the animation will start only when `TimeDriver.start` is invoked.
  */
-function animate(driver: TimeDriver | ValueDriver, sampler: ArrayOfScalarSamplers | ColorSampler | RotationSampler | ScalarSampler): ScalarSignal | ArrayOfScalarSignals | QuaternionSignal | RgbaSignal;
+static animate(driver: TimeDriver | ValueDriver, sampler: ArrayOfScalarSamplers | ColorSampler | RotationSampler | ScalarSampler): ScalarSignal | ArrayOfScalarSignals | QuaternionSignal | RgbaSignal;
 
 /**
 *  
@@ -62,7 +66,7 @@ function animate(driver: TimeDriver | ValueDriver, sampler: ArrayOfScalarSampler
  *  - `maxRecordCount` define sthe maximum number of snapshots. It must be > 0.
  * If these two values are not included, a default of `10` is used for `minRecordingGapMs` and `1000` is used for `maxRecordCount`.
  */
-function makeSignalRecorder(targetSignal: ScalarSignal | number, params?: {maxRecordCount?: number, minRecordingGapMs?: number}): SignalRecorder;
+static makeSignalRecorder(targetSignal: ScalarSignal | number, params?: {maxRecordCount?: number, minRecordingGapMs?: number}): SignalRecorder;
 
 /**
 *  
@@ -75,7 +79,7 @@ function makeSignalRecorder(targetSignal: ScalarSignal | number, params?: {maxRe
  *  - `loopCount` - defines the number of iterations before the time driver stops. Default: `0`.
  *  - `mirror` - boolean value that controls whether the drive should replay the animation backwards on every other iteration.
  */
-function timeDriver(params?: {durationMilliseconds?: number, loopCount?: number, mirror?: false | true}): TimeDriver;
+static timeDriver(params?: {durationMilliseconds?: number, loopCount?: number, mirror?: false | true}): TimeDriver;
 
 /**
 *  
@@ -85,7 +89,7 @@ function timeDriver(params?: {durationMilliseconds?: number, loopCount?: number,
  * Returns a `ValueDriver` object that drives an animation based on values emitted from a `ScalarSignal`.
  * The signal values are normalized and clamped to specified `min`` and `max`` values.
  */
-function valueDriver(value: ScalarSignal | number, min: number, max: number): ValueDriver;
+static valueDriver(value: ScalarSignal | number, min: number, max: number): ValueDriver;
 
 }
 export = AnimationModule;

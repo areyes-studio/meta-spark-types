@@ -1,7 +1,8 @@
 /// <reference path="../Reactive.BoolSignal/index.d.ts" />
+/// <reference path="../Materials.MaterialBase/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 /// <reference path="../Textures.TextureBase/index.d.ts" />
-declare interface CustomMaterial {
+declare interface CustomMaterial extends MaterialBase {
 /**
 *  
  * getAllParameters(): Promise<{[key: string]: BoolSignal | ScalarSignal}>

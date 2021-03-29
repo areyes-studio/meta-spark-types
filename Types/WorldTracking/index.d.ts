@@ -1,13 +1,16 @@
 /// <reference path="../WorldTracking.ARReferencePoint/index.d.ts" />
 /// <reference path="../WorldTracking.ARTrackable/index.d.ts" />
+/// <reference path="../WorldTracking.ARTrackableType/index.d.ts" />
 /// <reference path="../Reactive.BoolSignal/index.d.ts" />
 /// <reference path="../Reactive.EventSource/index.d.ts" />
 /// <reference path="../WorldTracking.HitTestResult/index.d.ts" />
+/// <reference path="../WorldTracking.HitTestType/index.d.ts" />
 /// <reference path="../Reactive.Point2DSignal/index.d.ts" />
 /// <reference path="../Reactive.Point3D/index.d.ts" />
+/// <reference path="../Reactive.StringSignal/index.d.ts" />
 /// <reference path="../WorldTracking.TrackingState/index.d.ts" />
 /// <reference path="../WorldTracking.TrackingStateReason/index.d.ts" />
-declare namespace WorldTrackingModule {
+declare class WorldTrackingModule {
 /**
 * ```
 (get) realWorldScaleActive: BoolSignal
@@ -16,7 +19,7 @@ declare namespace WorldTrackingModule {
 
 Returns true if the world tracker has entered a state in which the AR effect can be shown at real world scale.
 */
-const realWorldScaleActive: BoolSignal | boolean;
+static readonly realWorldScaleActive: BoolSignal;
 /**
 * ```
 (get) realWorldScaleSupported: BoolSignal
@@ -25,26 +28,26 @@ const realWorldScaleActive: BoolSignal | boolean;
 
 Returns true if real world scale for world tracking is available on the current device.
 */
-const realWorldScaleSupported: BoolSignal | boolean;
+static readonly realWorldScaleSupported: BoolSignal;
 /**
 * ```
-(get) state: Signal<TrackingState>
+(get) state: StringSignal<TrackingState>
 (set) (Not Available)
 ```
 
 Returns the current state of the world tracker.
 */
-const state: Signal<TrackingState>;
+static readonly state: StringSignal<TrackingState>;
 /**
 * ```
-(get) stateReason: Signal<TrackingStateReason>
+(get) stateReason: StringSignal<TrackingStateReason>
 (set) (Not Available)
 ```
 
 Returns the reason the world tracker is experiencing limited tracking quality,
 if the value returned by `WorldTrackingModule.state` is `LIMITED`.
 */
-const stateReason: Signal<TrackingStateReason>;
+static readonly stateReason: StringSignal<TrackingStateReason>;
 /**
 *  
  * addReferencePoint(config: {trackable?: ARTrackable, worldPosition: Point3D}): Promise<ARReferencePoint>
@@ -53,7 +56,7 @@ const stateReason: Signal<TrackingStateReason>;
  * Adds a reference point, also referred to as an anchor, at the world position provided. Optionally, the reference point can
  * be attached to a trackable when specified with the optional `trackable` argument.
  */
-function addReferencePoint(config: {trackable?: ARTrackable, worldPosition: Point3D}): Promise<ARReferencePoint>;
+static addReferencePoint(config: {trackable?: ARTrackable, worldPosition: Point3D}): Promise<ARReferencePoint>;
 
 /**
 *  
@@ -62,7 +65,7 @@ function addReferencePoint(config: {trackable?: ARTrackable, worldPosition: Poin
  * 
  * Deletes a reference point that was added using the `addReferencePoint()` method.
  */
-function deleteReferencePoint(referencePoint: ARReferencePoint): void;
+static deleteReferencePoint(referencePoint: ARReferencePoint): void;
 
 /**
 *  
@@ -79,7 +82,7 @@ function deleteReferencePoint(referencePoint: ARReferencePoint): void;
  * estimate of real world surfaces than tha provided by the default plane detection algorithm which continuously analyzes the scene to
  * detect planes in the view.
  */
-function hitTest(config: {fallbackToEstimatedPlanes?: false | true, hitTestType?: HitTestType, screenLocation: Point2DSignal}): Promise<Array<HitTestResult>>;
+static hitTest(config: {fallbackToEstimatedPlanes?: false | true, hitTestType?: HitTestType, screenLocation: Point2DSignal}): Promise<Array<HitTestResult>>;
 
 /**
 *  
@@ -89,7 +92,7 @@ function hitTest(config: {fallbackToEstimatedPlanes?: false | true, hitTestType?
  * Returns an [`EventSource`](/classes/reactivemodule.eventsource), to which you may subscribe,
  * that emits an ARTrackable each time a trackable is detected in the view.
  */
-function onTrackableAdded(): EventSource<ARTrackable>;
+static onTrackableAdded(): EventSource<ARTrackable>;
 
 /**
 *  
@@ -99,7 +102,67 @@ function onTrackableAdded(): EventSource<ARTrackable>;
  * Returns an [`EventSource`](/classes/reactivemodule.eventsource), to which you may subscribe,
  * that emits an ARTrackable each time a trackable is deleted.
  */
-function onTrackableDeleted(): EventSource<ARTrackable>;
+static onTrackableDeleted(): EventSource<ARTrackable>;
 
+/**
+ * The `HitTestType` enum lists the types of hit test supported.
+ * @property ANY_PLANE Hit tests are performed on both horizontal and vertical surface planes.
+ * @property FEATURE_POINT Hit tests are limited to feature points only.
+ * @property HORIZONTAL_PLANE Hit tests are limited to horizontal surface planes only.
+ * @property VERTICAL_PLANE Hit tests are limited to vertical surface planes only.
+ */
+static readonly HitTestType: {
+  ANY_PLANE: "ANY_PLANE",
+  FEATURE_POINT: "FEATURE_POINT",
+  HORIZONTAL_PLANE: "HORIZONTAL_PLANE",
+  VERTICAL_PLANE: "VERTICAL_PLANE",
+}
+/**
+ * The `ARTrackableType` enum describes the types of trackable that
+can be detected and tracked. Used by `ARTrackable.type`.
+ * @property FEATURE_POINT The trackable is a feature point.
+ * @property HORIZONTAL_PLANE The trackable is a horizontal plane.
+ * @property UNKNOWN Unknown trackable type.
+ * @property VERTICAL_PLANE The trackable is a vertical plane.
+ */
+static readonly ARTrackableType: {
+  FEATURE_POINT: "FEATURE_POINT",
+  HORIZONTAL_PLANE: "HORIZONTAL_PLANE",
+  UNKNOWN: "UNKNOWN",
+  VERTICAL_PLANE: "VERTICAL_PLANE",
+}
+/**
+ * 
+ * @property BAD_STATE ARCore only
+ * @property EXCESSIVE_MOTION 
+ * @property INITIALIZING 
+ * @property INSUFFICIENT_FEATURES 
+ * @property INSUFFICIENT_LIGHT 
+ * @property NONE 
+ * @property RELOCALIZING 
+ * @property UNKNOWN ARCore only
+ */
+static readonly TrackingStateReason: {
+  BAD_STATE: "BAD_STATE",
+  EXCESSIVE_MOTION: "EXCESSIVE_MOTION",
+  INITIALIZING: "INITIALIZING",
+  INSUFFICIENT_FEATURES: "INSUFFICIENT_FEATURES",
+  INSUFFICIENT_LIGHT: "INSUFFICIENT_LIGHT",
+  NONE: "NONE",
+  RELOCALIZING: "RELOCALIZING",
+  UNKNOWN: "UNKNOWN",
+}
+/**
+ * The `TrackingState` enum describes the states that the world tracker can be in. Used by
+`WorldTrackingModule.state`.
+ * @property LIMITED Tracking is initializing or has paused.
+ * @property NOT_AVAILABLE Tracking has not started or has stopped.
+ * @property TRACKING Tracking is running normally.
+ */
+static readonly TrackingState: {
+  LIMITED: "LIMITED",
+  NOT_AVAILABLE: "NOT_AVAILABLE",
+  TRACKING: "TRACKING",
+}
 }
 export = WorldTrackingModule;

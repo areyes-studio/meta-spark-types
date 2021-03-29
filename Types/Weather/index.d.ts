@@ -1,4 +1,4 @@
-declare namespace WeatherModule {
+declare class WeatherModule {
 /**
 *  
  * getWeather(): Promise<{currentConditionCode?: string, preferredTempUnit?: string, sunriseHour?: number, sunriseMinute?: number, sunsetHour?: number, sunsetMinute?: number, tempCelsius?: number, tempFahrenheit?: number}>
@@ -15,7 +15,7 @@ declare namespace WeatherModule {
  * - `tempFahrenheit` - current temperature in Fahrenheit
  * - `currentConditionCode` - string describing current weather conditions
  */
-function getWeather(): Promise<{currentConditionCode?: string, preferredTempUnit?: string, sunriseHour?: number, sunriseMinute?: number, sunsetHour?: number, sunsetMinute?: number, tempCelsius?: number, tempFahrenheit?: number}>;
+static getWeather(): Promise<{currentConditionCode?: string, preferredTempUnit?: string, sunriseHour?: number, sunriseMinute?: number, sunsetHour?: number, sunsetMinute?: number, tempCelsius?: number, tempFahrenheit?: number}>;
 
 }
 export = WeatherModule;

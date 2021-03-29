@@ -1,7 +1,8 @@
 /// <reference path="../Animation.ColorSampler/index.d.ts" />
 /// <reference path="../Animation.ScalarSampler/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
-declare interface CanvasTexture {
+/// <reference path="../Textures.TextureBase/index.d.ts" />
+declare interface CanvasTexture extends TextureBase {
 /**
 *  
  * addPath(startProgress: ScalarSignal, endProgress: ScalarSignal, xSampler: ScalarSampler, ySampler: ScalarSampler, widthSampler: ScalarSampler, colorSampler: ColorSampler): void

@@ -1,6 +1,6 @@
 /// <reference path="../Reactive.BoolSignal/index.d.ts" />
 /// <reference path="../Reactive.StringSignal/index.d.ts" />
-declare namespace InstructionModule {
+declare class InstructionModule {
 /**
 * ```
 (get) automaticHintsEnabled: BoolSignal
@@ -9,7 +9,7 @@ declare namespace InstructionModule {
 
 Specifies whether or not automatic instruction hints are enabled.
 */
-const automaticHintsEnabled: BoolSignal | boolean;
+static readonly automaticHintsEnabled: BoolSignal;
 /**
 *  
  * bind(enabled: BoolSignal, token: StringSignal): void
@@ -22,7 +22,7 @@ const automaticHintsEnabled: BoolSignal | boolean;
  * You can have at most one binding for instructions, meaning that setting a different binding
  * would replace any previously created and setup binding for instructions.
  */
-function bind(enabled: BoolSignal | boolean, token: StringSignal | string): void;
+static bind(enabled: BoolSignal | boolean, token: StringSignal | string): void;
 
 }
 export = InstructionModule;

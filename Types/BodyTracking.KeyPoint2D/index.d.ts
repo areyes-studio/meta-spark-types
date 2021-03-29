@@ -9,7 +9,7 @@ declare interface KeyPoint2D {
 
 Boolean signal representing whether this body key point is being tracked right now or not.
 */
-isTracked: BoolSignal | boolean;
+isTracked: BoolSignal;
 /**
 * ```
 (get) keyPoint: Point2DSignal

@@ -31,7 +31,7 @@ extent: PointSignal;
 
 Returns a `StringSignal` containing the unique ID assigned to the trackable that was detected.
 */
-id: StringSignal | string;
+id: StringSignal;
 /**
 * ```
 (get) isTracked: BoolSignal
@@ -40,7 +40,7 @@ id: StringSignal | string;
 
 Returns whether the trackable is currently being tracked.
 */
-isTracked: BoolSignal | boolean;
+isTracked: BoolSignal;
 /**
 * ```
 (get) normal: PointSignal
@@ -61,11 +61,11 @@ Returns the position, rotation, and scale of the entity in world coordinate spac
 transform: TransformSignal;
 /**
 * ```
-(get) type: Signal<ARTrackableType>
+(get) type: StringSignal<ARTrackableType>
 (set) (Not Available)
 ```
 
 Returns the type of the trackable that was detected.
 */
-type: Signal<ARTrackableType>;
+type: StringSignal<ARTrackableType>;
 }

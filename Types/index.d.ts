@@ -1,3 +1,3 @@
-declare namespace Module {
+declare class Module {
 }
 export = Module;

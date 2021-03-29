@@ -1,7 +1,7 @@
 /// <reference path="../Scene.BlockInstanceInputs/index.d.ts" />
 /// <reference path="../Scene.BlockInstanceOutputs/index.d.ts" />
 /// <reference path="../Scene.BlockSceneRoot/index.d.ts" />
-declare namespace BlocksModule {
+declare class BlocksModule {
 /**
 * ```
 (get) inputs: BlockInstanceInputs
@@ -10,7 +10,7 @@ declare namespace BlocksModule {
 
 Get an object encapsulating all inputs for this Block.
 */
-const inputs: BlockInstanceInputs;
+static readonly inputs: BlockInstanceInputs;
 /**
 * ```
 (get) outputs: BlockInstanceOutputs
@@ -19,7 +19,7 @@ const inputs: BlockInstanceInputs;
 
 Gets an object encapsulating all outputs for this Block.
 */
-const outputs: BlockInstanceOutputs;
+static readonly outputs: BlockInstanceOutputs;
 /**
 *  
  * download(name: string): Promise<string>
@@ -32,7 +32,7 @@ const outputs: BlockInstanceOutputs;
  * Downloading doesn't instantiate the block or add it to the scene, or make it's inputs/outputs available,
  * but makes sure that all the assets that are required are downloaded and are readily available.
  */
-function download(name: string): Promise<string>;
+static download(name: string): Promise<string>;
 
 /**
 *  
@@ -46,8 +46,9 @@ function download(name: string): Promise<string>;
  * - `initialState` is optional, but encouraged to be used.
  * - `initialState` can contain any `key: value` pair for any settable property of a `Block` class (e.g. `hidden`).
  * - `name` in `initialState` is being used, unless it's not provided - then `dynamicBlock` is used.
+ * - Block's inputs and outputs are not accessible until `SceneObjectBase.addChild()` call finishes
  */
-function instantiate(prototypeName: string, initialState: {[key: string]: any}): Promise<BlockSceneRoot>;
+static instantiate(prototypeName: string, initialState: {[key: string]: any}): Promise<BlockSceneRoot>;
 
 }
 export = BlocksModule;

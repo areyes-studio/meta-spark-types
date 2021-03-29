@@ -28,7 +28,7 @@ enabled: boolean;
 
 Represents the percentage of screen space occupied by hair.
 */
-foregroundPercent: ScalarSignal | number;
+foregroundPercent: ScalarSignal;
 /**
 * ```
 (get) hasForeground: BoolSignal
@@ -37,5 +37,5 @@ foregroundPercent: ScalarSignal | number;
 
 Represents whether there is hair in the scene (true/false).
 */
-hasForeground: BoolSignal | boolean;
+hasForeground: BoolSignal;
 }

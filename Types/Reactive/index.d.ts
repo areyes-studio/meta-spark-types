@@ -1,19 +1,28 @@
+/// <reference path="../Reactive.AntiderivativeOverflowBehaviour/index.d.ts" />
 /// <reference path="../Reactive.BoolSignal/index.d.ts" />
+/// <reference path="../Reactive.BoundingBoxSignal/index.d.ts" />
+/// <reference path="../Reactive.ColorSignal/index.d.ts" />
 /// <reference path="../Reactive.EventSource/index.d.ts" />
 /// <reference path="../Reactive.EventSourceHistory/index.d.ts" />
 /// <reference path="../Reactive.HsvaSignal/index.d.ts" />
+/// <reference path="../Reactive.ISignal/index.d.ts" />
+/// <reference path="../Reactive.Point2D/index.d.ts" />
 /// <reference path="../Reactive.Point2DSignal/index.d.ts" />
+/// <reference path="../Reactive.Point3D/index.d.ts" />
 /// <reference path="../Reactive.Point4DSignal/index.d.ts" />
 /// <reference path="../Reactive.PointSignal/index.d.ts" />
+/// <reference path="../Reactive.PrimitiveOrShaderSignal/index.d.ts" />
 /// <reference path="../Reactive.QuaternionSignal/index.d.ts" />
 /// <reference path="../Reactive.RgbaSignal/index.d.ts" />
 /// <reference path="../Reactive.Rotation/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
+/// <reference path="../Reactive.ShaderSignal/index.d.ts" />
 /// <reference path="../Reactive.SignalHistory/index.d.ts" />
 /// <reference path="../Reactive.StringSignal/index.d.ts" />
+/// <reference path="../Reactive.Subscription/index.d.ts" />
 /// <reference path="../Reactive.TransformSignal/index.d.ts" />
 /// <reference path="../Reactive.VectorSignal/index.d.ts" />
-declare namespace ReactiveModule {
+declare class ReactiveModule {
 /**
 *  
  * HSVA(h: ScalarSignal, s: ScalarSignal, v: ScalarSignal, a: ScalarSignal): HsvaSignal
@@ -22,7 +31,7 @@ declare namespace ReactiveModule {
  * Combines four signals and returns the result as an `HsvaSignal`. Each value should be in the range between 0.0 and 1.0.
  * **Note**: Hue value is also specified in the range between 0.0 and 1.0.
  */
-function HSVA(h: ScalarSignal | number, s: ScalarSignal | number, v: ScalarSignal | number, a: ScalarSignal | number): HsvaSignal;
+static HSVA(h: ScalarSignal | number, s: ScalarSignal | number, v: ScalarSignal | number, a: ScalarSignal | number): HsvaSignal;
 
 /**
 *  
@@ -32,7 +41,7 @@ function HSVA(h: ScalarSignal | number, s: ScalarSignal | number, v: ScalarSigna
  * Combines four signals and returns the result as an `RgbaSignal`. Each value should be in the range between 0.0 and 1.0.
  * **Note**: RGB components are interpreted in sRGB space.
  */
-function RGBA(r: ScalarSignal | number, g: ScalarSignal | number, b: ScalarSignal | number, a: ScalarSignal | number): RgbaSignal;
+static RGBA(r: ScalarSignal | number, g: ScalarSignal | number, b: ScalarSignal | number, a: ScalarSignal | number): RgbaSignal;
 
 /**
 *  
@@ -42,7 +51,7 @@ function RGBA(r: ScalarSignal | number, g: ScalarSignal | number, b: ScalarSigna
  * Returns a signal with the value that is the absolute value of the given signal.
  * **See Also**: `ScalarSignal.abs`
  */
-function abs(x: ScalarSignal | number): ScalarSignal;
+static abs(x: ScalarSignal | number): ScalarSignal;
 
 /**
 *  
@@ -51,7 +60,7 @@ function abs(x: ScalarSignal | number): ScalarSignal;
  * 
  * Returns a signal with the value that is the inverse cosine of the value of the given signal (interpreted as radians).
  */
-function acos(x: ScalarSignal | number): ScalarSignal;
+static acos(x: ScalarSignal | number): ScalarSignal;
 
 /**
 *  
@@ -66,13 +75,13 @@ function acos(x: ScalarSignal | number): ScalarSignal;
  * 
  * **See Also**: `ReactiveModule.sum`, `ScalarSignal.add`, `PointSignal.add`, `VectorSignal.add`
  */
-function add(x: ScalarSignal | number, y: ScalarSignal | number): ScalarSignal;
+static add(x: ScalarSignal | number, y: ScalarSignal | number): ScalarSignal;
 
-function add(x: PointSignal, y: VectorSignal): PointSignal;
+static add(x: PointSignal, y: VectorSignal): PointSignal;
 
-function add(x: VectorSignal, y: PointSignal): PointSignal;
+static add(x: VectorSignal, y: PointSignal): PointSignal;
 
-function add(x: VectorSignal, y: VectorSignal): VectorSignal;
+static add(x: VectorSignal, y: VectorSignal): VectorSignal;
 
 /**
 *  
@@ -82,7 +91,7 @@ function add(x: VectorSignal, y: VectorSignal): VectorSignal;
  * Returns a signal with the value that is the logical conjunction of the values of the given signals. It is `true` every time both input signals are `true` and `false` at all other times.
  * **See Also**: `BoolSignal.and`
  */
-function and(lhs: BoolSignal | boolean, rhs: BoolSignal | boolean): BoolSignal;
+static and(lhs: BoolSignal | boolean, rhs: BoolSignal | boolean): BoolSignal;
 
 /**
 *  
@@ -91,7 +100,7 @@ function and(lhs: BoolSignal | boolean, rhs: BoolSignal | boolean): BoolSignal;
  * 
  * Returns a signal with the value that is the logical and of the values in an array
  */
-function andList(x: Array<BoolSignal>): BoolSignal;
+static andList(x: Array<BoolSignal>): BoolSignal;
 
 /**
 *  
@@ -101,7 +110,7 @@ function andList(x: Array<BoolSignal>): BoolSignal;
  * Returns a signal that estimates the anti derivative of the given signal with respect to time (measured in milliseconds).
  * **Note**: Since the antiderivative is inherently unbound the min/max parameters must be provided to prevent overflow. when `overflowBehaviour` is CLAMP the output is clamped at the min/max. When `overflowBehaviour` is WRAP the output is wrapped. This is useful when the output represents something that is cyclic like an angle in this case min might be 0, max might be 2*PI.
  */
-function antiderivative(signal: ScalarSignal | number, config: {initialValue: number, max: number, min: number, overflowBehaviour: ReactiveModule.AntiderivativeOverflowBehaviour}): ScalarSignal;
+static antiderivative(signal: ScalarSignal | number, config: {initialValue: number, max: number, min: number, overflowBehaviour: ReactiveModule.AntiderivativeOverflowBehaviour}): ScalarSignal;
 
 /**
 *  
@@ -110,7 +119,7 @@ function antiderivative(signal: ScalarSignal | number, config: {initialValue: nu
  * 
  * Returns a signal with the value that is the inverse sine of the value of the given signal (interpreted as radians).
  */
-function asin(x: ScalarSignal | number): ScalarSignal;
+static asin(x: ScalarSignal | number): ScalarSignal;
 
 /**
 *  
@@ -119,7 +128,7 @@ function asin(x: ScalarSignal | number): ScalarSignal;
  * 
  * Returns a signal with the value that is the inverse tangent of the value of the given signal (interpreted as radians).
  */
-function atan(x: ScalarSignal | number): ScalarSignal;
+static atan(x: ScalarSignal | number): ScalarSignal;
 
 /**
 *  
@@ -129,7 +138,7 @@ function atan(x: ScalarSignal | number): ScalarSignal;
  * Returns a signal with the value that is the angle in radians between the x-axis and the ray from (0, 0) to (x, y) where x and y are the values of the specified signals. The range is -PI to +PI.
  * **See Also**: `ScalarSignal.atan2`
  */
-function atan2(x: ScalarSignal | number, y: ScalarSignal | number): ScalarSignal;
+static atan2(x: ScalarSignal | number, y: ScalarSignal | number): ScalarSignal;
 
 /**
 *  
@@ -139,7 +148,7 @@ function atan2(x: ScalarSignal | number, y: ScalarSignal | number): ScalarSignal
  * Returns a signal with the value that is the smallest integer that is greater than or equal to the value of the given signal.
  * **See Also**: `ScalarSignal.ceil`
  */
-function ceil(x: ScalarSignal | number): ScalarSignal;
+static ceil(x: ScalarSignal | number): ScalarSignal;
 
 /**
 *  
@@ -149,7 +158,7 @@ function ceil(x: ScalarSignal | number): ScalarSignal;
  * Returns a signal with the value that is the value of the given `x` signal constrained to lie between the values of the given `min` and `max` signals.
  * **Note**: The behavior is undefined if `min` is greater than `max`.
  */
-function clamp(x: ScalarSignal | number, min: ScalarSignal | number, max: ScalarSignal | number): ScalarSignal;
+static clamp(x: ScalarSignal | number, min: ScalarSignal | number, max: ScalarSignal | number): ScalarSignal;
 
 /**
 *  
@@ -159,7 +168,7 @@ function clamp(x: ScalarSignal | number, min: ScalarSignal | number, max: Scalar
  * Returns a `StringSignal` containing the concatenation of the values specified by the input signals.
  * **See Also**: `StringSignal.concat`
  */
-function concat(lhs: StringSignal | string, rhs: StringSignal | string): StringSignal;
+static concat(lhs: StringSignal | string, rhs: StringSignal | string): StringSignal;
 
 /**
 *  
@@ -168,7 +177,7 @@ function concat(lhs: StringSignal | string, rhs: StringSignal | string): StringS
  * 
  * Returns a signal with the value that is the cosine of the value of the given signal (interpreted as radians).
  */
-function cos(x: ScalarSignal | number): ScalarSignal;
+static cos(x: ScalarSignal | number): ScalarSignal;
 
 /**
 *  
@@ -178,7 +187,7 @@ function cos(x: ScalarSignal | number): ScalarSignal;
  * Returns a vector signal with the value that is the cross product of the given signals.
  * **See Also**: `VectorSignal.dot`, `ScalarSignal.mul`, `VectorSignal.mul`
  */
-function cross(v1: VectorSignal, v2: VectorSignal): VectorSignal;
+static cross(v1: VectorSignal, v2: VectorSignal): VectorSignal;
 
 /**
 *  
@@ -189,7 +198,7 @@ function cross(v1: VectorSignal, v2: VectorSignal): VectorSignal;
  * **Note**: the value of the derivative at the initial point of time is always set to zero.
  * **Note**: the returned signal might be noisy for certain types of input signals, especially those received from the face tracking. It is recommended to pass the input signal to `expSmooth` first with a damping constant in the range between 100 and 500.
  */
-function derivative(signal: ScalarSignal | number): ScalarSignal;
+static derivative(signal: ScalarSignal | number): ScalarSignal;
 
 /**
 *  
@@ -198,7 +207,7 @@ function derivative(signal: ScalarSignal | number): ScalarSignal;
  * 
  * Returns the distance from the point to another point as a `ScalarSignal`.
  */
-function distance(v1: PointSignal, v2: PointSignal): ScalarSignal;
+static distance(v1: PointSignal, v2: PointSignal): ScalarSignal;
 
 /**
 *  
@@ -208,7 +217,7 @@ function distance(v1: PointSignal, v2: PointSignal): ScalarSignal;
  * Returns a signal with the value that is the value of the first signal divided by the value of the second signal.
  * **See Also**: `ScalarSignal.div`
  */
-function div(x: ScalarSignal | number, y: ScalarSignal | number): ScalarSignal;
+static div(x: ScalarSignal | number, y: ScalarSignal | number): ScalarSignal;
 
 /**
 *  
@@ -218,7 +227,7 @@ function div(x: ScalarSignal | number, y: ScalarSignal | number): ScalarSignal;
  * Returns a scalar signal with the value that is the dot product of the given signals.
  * **See Also**: `VectorSignal.cross`, `ScalarSignal.mul`, `VectorSignal.mul`
  */
-function dot(v1: VectorSignal, v2: VectorSignal): ScalarSignal;
+static dot(v1: VectorSignal, v2: VectorSignal): ScalarSignal;
 
 /**
 *  
@@ -232,11 +241,11 @@ function dot(v1: VectorSignal, v2: VectorSignal): ScalarSignal;
  * 
  * **See Also**: `ScalarSignal.eq`, `StringSignal.eq`, `BoolSignal.eq`
  */
-function eq(lhs: ScalarSignal | number, rhs: ScalarSignal | number): BoolSignal;
+static eq(lhs: ScalarSignal | number, rhs: ScalarSignal | number): BoolSignal;
 
-function eq(lhs: StringSignal | string, rhs: StringSignal | string): BoolSignal;
+static eq(lhs: StringSignal | string, rhs: StringSignal | string): BoolSignal;
 
-function eq(lhs: BoolSignal | boolean, rhs: BoolSignal | boolean): BoolSignal;
+static eq(lhs: BoolSignal | boolean, rhs: BoolSignal | boolean): BoolSignal;
 
 /**
 *  
@@ -245,7 +254,7 @@ function eq(lhs: BoolSignal | boolean, rhs: BoolSignal | boolean): BoolSignal;
  * 
  * Returns a signal with the value that is e (the Euler's constant 2.718...) to the power of the value of the given signal.
  */
-function exp(x: ScalarSignal | number): ScalarSignal;
+static exp(x: ScalarSignal | number): ScalarSignal;
 
 /**
 *  
@@ -259,13 +268,13 @@ function exp(x: ScalarSignal | number): ScalarSignal;
  * **Note**: See also `ScalarSignal.expSmooth`, `PointSignal.expSmooth`, `VectorSignal.expSmooth`, `TransformSignal.expSmooth`.
  * **Note**: The smoothed transformation for a signal that specifies a rigid body transformation is guaranteed to be a rigid body transformation. The rotation component is smoothed in spherical coordinates using Slerp (spherical linear interpolation).
  */
-function expSmooth(signal: ScalarSignal | number, dampFactor: number): ScalarSignal;
+static expSmooth(signal: ScalarSignal | number, dampFactor: number): ScalarSignal;
 
-function expSmooth(signal: PointSignal, dampFactor: number): PointSignal;
+static expSmooth(signal: PointSignal, dampFactor: number): PointSignal;
 
-function expSmooth(signal: VectorSignal, dampFactor: number): VectorSignal;
+static expSmooth(signal: VectorSignal, dampFactor: number): VectorSignal;
 
-function expSmooth(signal: TransformSignal, dampFactor: number): TransformSignal;
+static expSmooth(signal: TransformSignal, dampFactor: number): TransformSignal;
 
 /**
 *  
@@ -275,7 +284,7 @@ function expSmooth(signal: TransformSignal, dampFactor: number): TransformSignal
  * Returns a signal with the value that is the largest integer that is less than or equal to the value of the given signal.
  * **See Also**: `ScalarSignal.floor`
  */
-function floor(x: ScalarSignal | number): ScalarSignal;
+static floor(x: ScalarSignal | number): ScalarSignal;
 
 /**
 *  
@@ -284,7 +293,7 @@ function floor(x: ScalarSignal | number): ScalarSignal;
  * 
  * Maps x from [min, max] range to [0.0, 1.0] range.
  */
-function fromRange(x: ScalarSignal | number, min: ScalarSignal | number, max: ScalarSignal | number): ScalarSignal;
+static fromRange(x: ScalarSignal | number, min: ScalarSignal | number, max: ScalarSignal | number): ScalarSignal;
 
 /**
 *  
@@ -294,7 +303,7 @@ function fromRange(x: ScalarSignal | number, min: ScalarSignal | number, max: Sc
  * Returns a Boolean signal that takes the value of `true` every time when the value of the left-hand-side signal is **greater than or equal** to the value of the right-hand-side one, and the value of `false` all other time.
  * **See Also**: `ScalarSignal.ge`
  */
-function ge(lhs: ScalarSignal | number, rhs: ScalarSignal | number): BoolSignal;
+static ge(lhs: ScalarSignal | number, rhs: ScalarSignal | number): BoolSignal;
 
 /**
 *  
@@ -304,7 +313,7 @@ function ge(lhs: ScalarSignal | number, rhs: ScalarSignal | number): BoolSignal;
  * Returns a Boolean signal that takes the value of `true` every time when the value of the left-hand-side signal is strictly **greater than** the value of the right-hand-side one, and the value of `false` all other time.
  * **See Also**: `ScalarSignal.gt`
  */
-function gt(lhs: ScalarSignal | number, rhs: ScalarSignal | number): BoolSignal;
+static gt(lhs: ScalarSignal | number, rhs: ScalarSignal | number): BoolSignal;
 
 /**
 *  
@@ -314,7 +323,7 @@ function gt(lhs: ScalarSignal | number, rhs: ScalarSignal | number): BoolSignal;
  * Returns a Boolean signal that takes the value of `true` every time when the value of the left-hand-side signal is **less than or equal** to the value of the right-hand-side one, and the value of `false` all other time.
  * **See Also**: `ScalarSignal.le`
  */
-function le(lhs: ScalarSignal | number, rhs: ScalarSignal | number): BoolSignal;
+static le(lhs: ScalarSignal | number, rhs: ScalarSignal | number): BoolSignal;
 
 /**
 *  
@@ -323,7 +332,7 @@ function le(lhs: ScalarSignal | number, rhs: ScalarSignal | number): BoolSignal;
  * 
  * Returns a signal with the value that is the natural logarithm of the value of the given signal.
  */
-function log(x: ScalarSignal | number): ScalarSignal;
+static log(x: ScalarSignal | number): ScalarSignal;
 
 /**
 *  
@@ -334,7 +343,7 @@ function log(x: ScalarSignal | number): ScalarSignal;
  * Default `eyeUp` is `ReactiveModule.vector(0, 1, 0)`.
  * **Note:** The eyeTransform needs to be pointing the scene object alongside the X axis.
  */
-function lookAt(eyeTransform: TransformSignal, targetPosition: PointSignal, eyeUp?: VectorSignal): TransformSignal;
+static lookAt(eyeTransform: TransformSignal, targetPosition: PointSignal, eyeUp?: VectorSignal): TransformSignal;
 
 /**
 *  
@@ -344,7 +353,7 @@ function lookAt(eyeTransform: TransformSignal, targetPosition: PointSignal, eyeU
  * Returns a Boolean signal that takes the value of `true` every time when the value of the left-hand-side signal is strictly **less than** the value of the right-hand-side one, and the value of `false` all other time.
  * **See Also**: `ScalarSignal.lt`
  */
-function lt(lhs: ScalarSignal | number, rhs: ScalarSignal | number): BoolSignal;
+static lt(lhs: ScalarSignal | number, rhs: ScalarSignal | number): BoolSignal;
 
 /**
 *  
@@ -353,7 +362,7 @@ function lt(lhs: ScalarSignal | number, rhs: ScalarSignal | number): BoolSignal;
  * 
  * Returns the magnitude of the vector as a `ScalarSignal`.
  */
-function magnitude(v: VectorSignal): ScalarSignal;
+static magnitude(v: VectorSignal): ScalarSignal;
 
 /**
 *  
@@ -367,13 +376,13 @@ function magnitude(v: VectorSignal): ScalarSignal;
  * Calculating the squared magnitude instead of the magnitude is much faster.
  * Often if you are comparing magnitudes of two vectors you can just compare their squared magnitudes.
  */
-function magnitudeSquared(signal: ScalarSignal | number): ScalarSignal;
+static magnitudeSquared(signal: ScalarSignal | number): ScalarSignal;
 
-function magnitudeSquared(signal: Point2DSignal): ScalarSignal;
+static magnitudeSquared(signal: Point2DSignal): ScalarSignal;
 
-function magnitudeSquared(signal: VectorSignal): ScalarSignal;
+static magnitudeSquared(signal: VectorSignal): ScalarSignal;
 
-function magnitudeSquared(signal: Point4DSignal): ScalarSignal;
+static magnitudeSquared(signal: Point4DSignal): ScalarSignal;
 
 /**
 *  
@@ -382,7 +391,7 @@ function magnitudeSquared(signal: Point4DSignal): ScalarSignal;
  * 
  * Returns a signal with the value that is the greater of the values of the given signals.
  */
-function max(x: ScalarSignal | number, y: ScalarSignal | number): ScalarSignal;
+static max(x: ScalarSignal | number, y: ScalarSignal | number): ScalarSignal;
 
 /**
 *  
@@ -391,7 +400,7 @@ function max(x: ScalarSignal | number, y: ScalarSignal | number): ScalarSignal;
  * 
  * Returns a signal with the value that is the lesser of the values of the given signals.
  */
-function min(x: ScalarSignal | number, y: ScalarSignal | number): ScalarSignal;
+static min(x: ScalarSignal | number, y: ScalarSignal | number): ScalarSignal;
 
 /**
 *  
@@ -403,13 +412,13 @@ function min(x: ScalarSignal | number, y: ScalarSignal | number): ScalarSignal;
  * 
  * Returns a signal with the value that is the interpolation of the values of the given signals.
  */
-function mix(x: ScalarSignal | number, y: ScalarSignal | number, alpha: ScalarSignal | number): ScalarSignal;
+static mix(x: ScalarSignal | number, y: ScalarSignal | number, alpha: ScalarSignal | number): ScalarSignal;
 
-function mix(x: PointSignal, y: PointSignal, alpha: ScalarSignal | number): PointSignal;
+static mix(x: PointSignal, y: PointSignal, alpha: ScalarSignal | number): PointSignal;
 
-function mix(x: VectorSignal, y: VectorSignal, alpha: ScalarSignal | number): VectorSignal;
+static mix(x: VectorSignal, y: VectorSignal, alpha: ScalarSignal | number): VectorSignal;
 
-function mix(x: TransformSignal, y: TransformSignal, alpha: ScalarSignal | number): TransformSignal;
+static mix(x: TransformSignal, y: TransformSignal, alpha: ScalarSignal | number): TransformSignal;
 
 /**
 *  
@@ -419,7 +428,7 @@ function mix(x: TransformSignal, y: TransformSignal, alpha: ScalarSignal | numbe
  * Returns a signal with the value that is the floating-point remainder of the division of the value of the first signal by the value of the second signal.
  * **See Also**: `ScalarSignal.mod`
  */
-function mod(x: ScalarSignal | number, y: ScalarSignal | number): ScalarSignal;
+static mod(x: ScalarSignal | number, y: ScalarSignal | number): ScalarSignal;
 
 /**
 *  
@@ -437,7 +446,7 @@ function mod(x: ScalarSignal | number, y: ScalarSignal | number): ScalarSignal;
  * 
  * **See Also**: `ReactiveModule.monitor`
  */
-function monitorMany(signals: {[name: string]: ScalarSignal}, config?: {fireOnInitialValue?: false | true}): EventSource<{newValues: {[key: string]: number}, oldValues: {[key: string]: number}}>;
+static monitorMany(signals: {[name: string]: ScalarSignal}, config?: {fireOnInitialValue?: false | true}): EventSource<{newValues: {[key: string]: number}, oldValues: {[key: string]: number}}>;
 
 /**
 *  
@@ -450,13 +459,13 @@ function monitorMany(signals: {[name: string]: ScalarSignal}, config?: {fireOnIn
  * Returns a signal with the value that is the product of the values of the given signals.
  * **See Also**: `ScalarSignal.mul`, `VectorSignal.mul`
  */
-function mul(x: ScalarSignal | number, y: ScalarSignal | number): ScalarSignal;
+static mul(x: ScalarSignal | number, y: ScalarSignal | number): ScalarSignal;
 
-function mul(x: VectorSignal, y: ScalarSignal | number): VectorSignal;
+static mul(x: VectorSignal, y: ScalarSignal | number): VectorSignal;
 
-function mul(x: ScalarSignal | number, y: VectorSignal): VectorSignal;
+static mul(x: ScalarSignal | number, y: VectorSignal): VectorSignal;
 
-function mul(x: VectorSignal, y: VectorSignal): VectorSignal;
+static mul(x: VectorSignal, y: VectorSignal): VectorSignal;
 
 /**
 *  
@@ -465,7 +474,7 @@ function mul(x: VectorSignal, y: VectorSignal): VectorSignal;
  * 
  * Returns a signal with the value that is the product of the values in an array
  */
-function mulList(x: Array<number>): ScalarSignal;
+static mulList(x: Array<number>): ScalarSignal;
 
 /**
 *  
@@ -479,11 +488,11 @@ function mulList(x: Array<number>): ScalarSignal;
  * 
  * **See Also**: `ScalarSignal.ne`, `StringSignal.ne`, `BoolSignal.ne`
  */
-function ne(lhs: ScalarSignal | number, rhs: ScalarSignal | number): BoolSignal;
+static ne(lhs: ScalarSignal | number, rhs: ScalarSignal | number): BoolSignal;
 
-function ne(lhs: StringSignal | string, rhs: StringSignal | string): BoolSignal;
+static ne(lhs: StringSignal | string, rhs: StringSignal | string): BoolSignal;
 
-function ne(lhs: BoolSignal | boolean, rhs: BoolSignal | boolean): BoolSignal;
+static ne(lhs: BoolSignal | boolean, rhs: BoolSignal | boolean): BoolSignal;
 
 /**
 *  
@@ -494,9 +503,9 @@ function ne(lhs: BoolSignal | boolean, rhs: BoolSignal | boolean): BoolSignal;
  * Returns a signal with the negated value of the given signal.
  * **See Also**: `ScalarSignal.neg`, `VectorSignal.neg`
  */
-function neg(x: ScalarSignal | number): ScalarSignal;
+static neg(x: ScalarSignal | number): ScalarSignal;
 
-function neg(x: VectorSignal): VectorSignal;
+static neg(x: VectorSignal): VectorSignal;
 
 /**
 *  
@@ -505,7 +514,7 @@ function neg(x: VectorSignal): VectorSignal;
  * 
  * Returns the normalized (unit) vector in the direction of the original vector as a `VectorSignal`.
  */
-function normalize(v: VectorSignal): VectorSignal;
+static normalize(v: VectorSignal): VectorSignal;
 
 /**
 *  
@@ -515,7 +524,7 @@ function normalize(v: VectorSignal): VectorSignal;
  * Returns a signal with the logically negated value of the given signal.
  * **See Also**: `BoolSignal.not`
  */
-function not(signal: BoolSignal | boolean): BoolSignal;
+static not(signal: BoolSignal | boolean): BoolSignal;
 
 /**
 *  
@@ -524,7 +533,7 @@ function not(signal: BoolSignal | boolean): BoolSignal;
  * 
  * Returns an `EventSource` that emits exactly one empty event as soon as possible.
  */
-function once(): EventSource<void>;
+static once(): EventSource<void>;
 
 /**
 *  
@@ -534,7 +543,7 @@ function once(): EventSource<void>;
  * Returns a signal with the value that is the logical disjunction of the values of the given signals. It is `true` every time at least one of the input signals is `true` and `false` at all other times.
  * **See Also**: `BoolSignal.or`
  */
-function or(lhs: BoolSignal | boolean, rhs: BoolSignal | boolean): BoolSignal;
+static or(lhs: BoolSignal | boolean, rhs: BoolSignal | boolean): BoolSignal;
 
 /**
 *  
@@ -543,7 +552,7 @@ function or(lhs: BoolSignal | boolean, rhs: BoolSignal | boolean): BoolSignal;
  * 
  * Returns a signal with the value that is the logical or of the values in an array
  */
-function orList(x: Array<BoolSignal>): BoolSignal;
+static orList(x: Array<BoolSignal>): BoolSignal;
 
 /**
 *  
@@ -557,17 +566,17 @@ function orList(x: Array<BoolSignal>): BoolSignal;
  * 
  * Packs two Scalar or Point signals into a bigger Point signal.
  */
-function pack2(x: ScalarSignal | number, y: ScalarSignal | number): Point2DSignal;
+static pack2(x: ScalarSignal | number, y: ScalarSignal | number): Point2DSignal;
 
-function pack2(x: ScalarSignal | number, y: Point2DSignal): PointSignal;
+static pack2(x: ScalarSignal | number, y: Point2DSignal): PointSignal;
 
-function pack2(x: Point2DSignal, y: ScalarSignal | number): PointSignal;
+static pack2(x: Point2DSignal, y: ScalarSignal | number): PointSignal;
 
-function pack2(x: ScalarSignal | number, y: PointSignal): Point4DSignal;
+static pack2(x: ScalarSignal | number, y: PointSignal): Point4DSignal;
 
-function pack2(x: PointSignal, y: ScalarSignal | number): Point4DSignal;
+static pack2(x: PointSignal, y: ScalarSignal | number): Point4DSignal;
 
-function pack2(x: Point2DSignal, y: Point2DSignal): Point4DSignal;
+static pack2(x: Point2DSignal, y: Point2DSignal): Point4DSignal;
 
 /**
 *  
@@ -579,13 +588,13 @@ function pack2(x: Point2DSignal, y: Point2DSignal): Point4DSignal;
  * 
  * Packs three Scalar or Point signals into a bigger Point signal.
  */
-function pack3(x: ScalarSignal | number, y: ScalarSignal | number, z: ScalarSignal | number): PointSignal;
+static pack3(x: ScalarSignal | number, y: ScalarSignal | number, z: ScalarSignal | number): PointSignal;
 
-function pack3(x: ScalarSignal | number, y: ScalarSignal | number, z: Point2DSignal): Point4DSignal;
+static pack3(x: ScalarSignal | number, y: ScalarSignal | number, z: Point2DSignal): Point4DSignal;
 
-function pack3(x: ScalarSignal | number, y: Point2DSignal, z: ScalarSignal | number): Point4DSignal;
+static pack3(x: ScalarSignal | number, y: Point2DSignal, z: ScalarSignal | number): Point4DSignal;
 
-function pack3(x: Point2DSignal, y: ScalarSignal | number, z: ScalarSignal | number): Point4DSignal;
+static pack3(x: Point2DSignal, y: ScalarSignal | number, z: ScalarSignal | number): Point4DSignal;
 
 /**
 *  
@@ -594,7 +603,7 @@ function pack3(x: Point2DSignal, y: ScalarSignal | number, z: ScalarSignal | num
  * 
  * Packs four `ScalarSignals` into a `Point4DSignal`.
  */
-function pack4(x: ScalarSignal | number, y: ScalarSignal | number, z: ScalarSignal | number, w: ScalarSignal | number): Point4DSignal;
+static pack4(x: ScalarSignal | number, y: ScalarSignal | number, z: ScalarSignal | number, w: ScalarSignal | number): Point4DSignal;
 
 /**
 *  
@@ -603,7 +612,7 @@ function pack4(x: ScalarSignal | number, y: ScalarSignal | number, z: ScalarSign
  * 
  * Combines three signals and returns the result as a `PointSignal`.
  */
-function point(x: ScalarSignal | number, y: ScalarSignal | number, z: ScalarSignal | number): PointSignal;
+static point(x: ScalarSignal | number, y: ScalarSignal | number, z: ScalarSignal | number): PointSignal;
 
 /**
 *  
@@ -612,7 +621,7 @@ function point(x: ScalarSignal | number, y: ScalarSignal | number, z: ScalarSign
  * 
  * Combines two signals and returns the result as a `Point2DSignal`.
  */
-function point2d(x: ScalarSignal | number, y: ScalarSignal | number): Point2DSignal;
+static point2d(x: ScalarSignal | number, y: ScalarSignal | number): Point2DSignal;
 
 /**
 *  
@@ -624,7 +633,7 @@ function point2d(x: ScalarSignal | number, y: ScalarSignal | number): Point2DSig
  * 
  * **See Also**: `ScalarSignal.pow`
  */
-function pow(base: ScalarSignal | number, exponent: ScalarSignal | number): ScalarSignal;
+static pow(base: ScalarSignal | number, exponent: ScalarSignal | number): ScalarSignal;
 
 /**
 *  
@@ -633,7 +642,7 @@ function pow(base: ScalarSignal | number, exponent: ScalarSignal | number): Scal
  * 
  * Construct a new quaternion signal with w, x, y, z components.
  */
-function quaternion(w: ScalarSignal | number, x: ScalarSignal | number, y: ScalarSignal | number, z: ScalarSignal | number): QuaternionSignal;
+static quaternion(w: ScalarSignal | number, x: ScalarSignal | number, y: ScalarSignal | number, z: ScalarSignal | number): QuaternionSignal;
 
 /**
 *  
@@ -642,7 +651,7 @@ function quaternion(w: ScalarSignal | number, x: ScalarSignal | number, y: Scala
  * 
  * Construct a new quaternion from an angle and normalized axis.
  */
-function quaternionFromAngleAxis(angle: ScalarSignal | number, axis: VectorSignal): QuaternionSignal;
+static quaternionFromAngleAxis(angle: ScalarSignal | number, axis: VectorSignal): QuaternionSignal;
 
 /**
 *  
@@ -651,7 +660,7 @@ function quaternionFromAngleAxis(angle: ScalarSignal | number, axis: VectorSigna
  * 
  * Construct a new quaternion signal from euler angles, representing pitch, yaw, roll respectively.
  */
-function quaternionFromEuler(x: ScalarSignal | number, y: ScalarSignal | number, z: ScalarSignal | number): QuaternionSignal;
+static quaternionFromEuler(x: ScalarSignal | number, y: ScalarSignal | number, z: ScalarSignal | number): QuaternionSignal;
 
 /**
 *  
@@ -660,7 +669,7 @@ function quaternionFromEuler(x: ScalarSignal | number, y: ScalarSignal | number,
  * 
  * Construct a new quaternion signal that represents required rotation to rotate vector `from` to vector `to`.
  */
-function quaternionFromTo(from: VectorSignal, to: VectorSignal): QuaternionSignal;
+static quaternionFromTo(from: VectorSignal, to: VectorSignal): QuaternionSignal;
 
 /**
 *  
@@ -669,7 +678,7 @@ function quaternionFromTo(from: VectorSignal, to: VectorSignal): QuaternionSigna
  * 
  * Construct a new quaternion signal that represents an identity quaternion.
  */
-function quaternionIdentity(): QuaternionSignal;
+static quaternionIdentity(): QuaternionSignal;
 
 /**
 *  
@@ -679,7 +688,7 @@ function quaternionIdentity(): QuaternionSignal;
  * Creates a new quaternion signal representing rotation in the direction of target.
  * Default selfUp is ReactiveModule.vector(0, 1, 0).
  */
-function quaternionLookAt(targetPosition: PointSignal, selfUp?: VectorSignal): QuaternionSignal;
+static quaternionLookAt(targetPosition: PointSignal, selfUp?: VectorSignal): QuaternionSignal;
 
 /**
 *  
@@ -688,7 +697,7 @@ function quaternionLookAt(targetPosition: PointSignal, selfUp?: VectorSignal): Q
  * 
  * Calculates the reflection direction for an incident vector and a normal as a `VectorSignal`.
  */
-function reflect(incident: VectorSignal, normal: VectorSignal): VectorSignal;
+static reflect(incident: VectorSignal, normal: VectorSignal): VectorSignal;
 
 /**
 *  
@@ -697,7 +706,7 @@ function reflect(incident: VectorSignal, normal: VectorSignal): VectorSignal;
  * 
  * Creates 'Rotation' from quaternion components
  */
-function rotation(w: number, x: number, y: number, z: number): Rotation;
+static rotation(w: number, x: number, y: number, z: number): Rotation;
 
 /**
 *  
@@ -709,7 +718,7 @@ function rotation(w: number, x: number, y: number, z: number): Rotation;
  * 
  * **See Also**: `ScalarSignal.round`
  */
-function round(x: ScalarSignal | number): ScalarSignal;
+static round(x: ScalarSignal | number): ScalarSignal;
 
 /**
 *  
@@ -718,7 +727,7 @@ function round(x: ScalarSignal | number): ScalarSignal;
  * 
  * Combines three signals and returns the result as a `PointSignal`.
  */
-function scale(x: ScalarSignal | number, y: ScalarSignal | number, z: ScalarSignal | number): PointSignal;
+static scale(x: ScalarSignal | number, y: ScalarSignal | number, z: ScalarSignal | number): PointSignal;
 
 /**
 *  
@@ -729,7 +738,7 @@ function scale(x: ScalarSignal | number, y: ScalarSignal | number, z: ScalarSign
  * For input values between and including the thresholds, the Shmitt trigger returns the same value as at the previous update, or **initialValue** if this is the first update.
  * **Note**: The initialValue is assumed to be `false` if it isn't specified.
  */
-function schmittTrigger(signal: ScalarSignal | number, config: {high: number, initialValue?: false | true, low: number}): BoolSignal;
+static schmittTrigger(signal: ScalarSignal | number, config: {high: number, initialValue?: false | true, low: number}): BoolSignal;
 
 /**
 *  
@@ -741,20 +750,7 @@ function schmittTrigger(signal: ScalarSignal | number, config: {high: number, in
  * 
  * **See Also**: `ScalarSignal.sign`
  */
-function sign(x: ScalarSignal | number): ScalarSignal;
-
-/**
-*  
- * signalHistory(source: EventSource<>, count: number): EventSourceHistory<>
- * signalHistory(signal: Signal<>, count: number, initialValues?: Array<>): SignalHistory<>
- *  
- * 
- * Returns an object used to access signal values from past frames. The amount of frames tracked is customizable via framesCount parameter.
- * Historical signal values are going to be initialized with signal value at call time or using initialValues if provided.
- */
-function signalHistory(source: EventSource<>, count: number): EventSourceHistory<>;
-
-function signalHistory(signal: Signal<>, count: number, initialValues?: Array<>): SignalHistory<>;
+static sign(x: ScalarSignal | number): ScalarSignal;
 
 /**
 *  
@@ -763,7 +759,7 @@ function signalHistory(signal: Signal<>, count: number, initialValues?: Array<>)
  * 
  * Returns a signal with the value that is the sine of the value of the given signal (interpreted as radians).
  */
-function sin(x: ScalarSignal | number): ScalarSignal;
+static sin(x: ScalarSignal | number): ScalarSignal;
 
 /**
 *  
@@ -773,7 +769,7 @@ function sin(x: ScalarSignal | number): ScalarSignal;
  * Returns 0.0 if x is less than edge0, and 1.0 if x is greater than edge1.
  * If x is between edge0 and edge1, smooth Hermite interpolation is performed.
  */
-function smoothStep(x: ScalarSignal | number, edge0: ScalarSignal | number, edge1: ScalarSignal | number): ScalarSignal;
+static smoothStep(x: ScalarSignal | number, edge0: ScalarSignal | number, edge1: ScalarSignal | number): ScalarSignal;
 
 /**
 *  
@@ -783,7 +779,7 @@ function smoothStep(x: ScalarSignal | number, edge0: ScalarSignal | number, edge
  * Returns a signal with the value that is the square root of the value of the given signal.
  * **See Also**: `ScalarSignal.sqrt`
  */
-function sqrt(x: ScalarSignal | number): ScalarSignal;
+static sqrt(x: ScalarSignal | number): ScalarSignal;
 
 /**
 *  
@@ -792,7 +788,7 @@ function sqrt(x: ScalarSignal | number): ScalarSignal;
  * 
  * Returns 0.0 if x is less than edge, and 1.0 is returned otherwise.
  */
-function step(x: ScalarSignal | number, edge: ScalarSignal | number): ScalarSignal;
+static step(x: ScalarSignal | number, edge: ScalarSignal | number): ScalarSignal;
 
 /**
 *  
@@ -805,13 +801,13 @@ function step(x: ScalarSignal | number, edge: ScalarSignal | number): ScalarSign
  * Returns a signal with the value that is the difference of the values of the given signals.
  * **See Also**: `ScalarSignal.sub`, `VectorSignal.sub`, `PointSignal.sub`
  */
-function sub(x: ScalarSignal | number, y: ScalarSignal | number): ScalarSignal;
+static sub(x: ScalarSignal | number, y: ScalarSignal | number): ScalarSignal;
 
-function sub(x: PointSignal, y: VectorSignal): PointSignal;
+static sub(x: PointSignal, y: VectorSignal): PointSignal;
 
-function sub(x: VectorSignal, y: VectorSignal): VectorSignal;
+static sub(x: VectorSignal, y: VectorSignal): VectorSignal;
 
-function sub(x: PointSignal, y: PointSignal): VectorSignal;
+static sub(x: PointSignal, y: PointSignal): VectorSignal;
 
 /**
 *  
@@ -826,13 +822,13 @@ function sub(x: PointSignal, y: PointSignal): VectorSignal;
  * 
  * **See Also**: `ReactiveModule.sum`, `ScalarSignal.add`, `PointSignal.add`, `VectorSignal.add`
  */
-function sum(x: ScalarSignal | number, y: ScalarSignal | number): ScalarSignal;
+static sum(x: ScalarSignal | number, y: ScalarSignal | number): ScalarSignal;
 
-function sum(x: PointSignal, y: VectorSignal): PointSignal;
+static sum(x: PointSignal, y: VectorSignal): PointSignal;
 
-function sum(x: VectorSignal, y: PointSignal): PointSignal;
+static sum(x: VectorSignal, y: PointSignal): PointSignal;
 
-function sum(x: VectorSignal, y: VectorSignal): VectorSignal;
+static sum(x: VectorSignal, y: VectorSignal): VectorSignal;
 
 /**
 *  
@@ -841,7 +837,7 @@ function sum(x: VectorSignal, y: VectorSignal): VectorSignal;
  * 
  * Returns a signal with the value that is the sum of the values in an array
  */
-function sumList(x: Array<number>): ScalarSignal;
+static sumList(x: Array<number>): ScalarSignal;
 
 /**
 *  
@@ -850,7 +846,7 @@ function sumList(x: Array<number>): ScalarSignal;
  * 
  * Returns a signal which at any point of time takes the value of one of the elements in the provided map, or the provided default value, depending on the momentary value of the given condition Signal.
  */
-function switch(condition: StringSignal | string, map: {[key: string]: string}, defaultValue: string): StringSignal;
+static switch(condition: StringSignal | string, map: {[key: string]: string}, defaultValue: string): StringSignal;
 
 /**
 *  
@@ -859,7 +855,7 @@ function switch(condition: StringSignal | string, map: {[key: string]: string}, 
  * 
  * Returns a signal with the value that is the tangent of the value of the given signal (interpreted as radians).
  */
-function tan(x: ScalarSignal | number): ScalarSignal;
+static tan(x: ScalarSignal | number): ScalarSignal;
 
 /**
 *  
@@ -868,7 +864,7 @@ function tan(x: ScalarSignal | number): ScalarSignal;
  * 
  * Maps x from [0.0, 1.0] range to [min, max] range.
  */
-function toRange(x: ScalarSignal | number, min: ScalarSignal | number, max: ScalarSignal | number): ScalarSignal;
+static toRange(x: ScalarSignal | number, min: ScalarSignal | number, max: ScalarSignal | number): ScalarSignal;
 
 /**
 *  
@@ -880,11 +876,11 @@ function toRange(x: ScalarSignal | number, min: ScalarSignal | number, max: Scal
  * Returns a signal that has a constant value which is specified by the argument.
  * **Note**: Primitive types are implicitly converted to constant signals when passed as function or property-setter arguments, therefore using `val` in such scenarios is not required.
  */
-function val(constant: number): ScalarSignal;
+static val(constant: number): ScalarSignal;
 
-function val(constant: string): StringSignal;
+static val(constant: string): StringSignal;
 
-function val(constant: boolean): BoolSignal;
+static val(constant: boolean): BoolSignal;
 
 /**
 *  
@@ -893,7 +889,7 @@ function val(constant: boolean): BoolSignal;
  * 
  * Combines three signals and returns the result as a `VectorSignal`.
  */
-function vector(x: ScalarSignal | number, y: ScalarSignal | number, z: ScalarSignal | number): VectorSignal;
+static vector(x: ScalarSignal | number, y: ScalarSignal | number, z: ScalarSignal | number): VectorSignal;
 
 /**
 *  
@@ -905,7 +901,7 @@ function vector(x: ScalarSignal | number, y: ScalarSignal | number, z: ScalarSig
  * 
  * **See Also**: `BoolSignal.xor`
  */
-function xor(lhs: BoolSignal | boolean, rhs: BoolSignal | boolean): BoolSignal;
+static xor(lhs: BoolSignal | boolean, rhs: BoolSignal | boolean): BoolSignal;
 
 /**
 *  
@@ -914,7 +910,17 @@ function xor(lhs: BoolSignal | boolean, rhs: BoolSignal | boolean): BoolSignal;
  * 
  * Returns a signal with the value that is the logical xor of the values in an array
  */
-function xorList(x: Array<BoolSignal>): BoolSignal;
+static xorList(x: Array<BoolSignal>): BoolSignal;
 
+/**
+ * The `AntiderivativeOverflowBehaviour` enum describes the recovery technique used when an
+antiderivative overflows.
+ * @property CLAMP Clamp to either min and max
+ * @property WRAP Start from the other end of the interval (min,max)
+ */
+static readonly AntiderivativeOverflowBehaviour: {
+  CLAMP: "CLAMP",
+  WRAP: "WRAP",
+}
 }
 export = ReactiveModule;

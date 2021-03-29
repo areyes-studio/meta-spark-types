@@ -1,6 +1,16 @@
+/// <reference path="../Materials.BlendShapeToWarpMapMaterial/index.d.ts" />
+/// <reference path="../Materials.BlendedMaterial/index.d.ts" />
+/// <reference path="../Materials.ColorPaintMaterial/index.d.ts" />
+/// <reference path="../Materials.ComposedMaterial/index.d.ts" />
+/// <reference path="../Materials.CullMode/index.d.ts" />
+/// <reference path="../Materials.CustomMaterial/index.d.ts" />
+/// <reference path="../Materials.DefaultMaterial/index.d.ts" />
 /// <reference path="../Materials.MaterialBase/index.d.ts" />
+/// <reference path="../Materials.MetallicRoughnessPbrMaterial/index.d.ts" />
+/// <reference path="../Materials.RetouchingMaterial/index.d.ts" />
 /// <reference path="../Materials.ShaderProcessor/index.d.ts" />
-declare namespace MaterialsModule {
+/// <reference path="../Materials.TextureTransform/index.d.ts" />
+declare class MaterialsModule {
 /**
 * ```
 (get) postProcessor: ShaderProcessor
@@ -9,7 +19,7 @@ declare namespace MaterialsModule {
 
 Specifies the `ShaderProcessor` object used for the post-rendering pass.
 */
-const postProcessor: ShaderProcessor;
+static readonly postProcessor: ShaderProcessor;
 /**
 * ```
 (get) preProcessor: ShaderProcessor
@@ -18,7 +28,7 @@ const postProcessor: ShaderProcessor;
 
 Specifies the `ShaderProcessor` object used for the pre-rendering pass.
 */
-const preProcessor: ShaderProcessor;
+static readonly preProcessor: ShaderProcessor;
 /**
 *  
  * clone(material: string | MaterialBase, initialState?: {[key: string]: any}): Promise<MaterialBase>
@@ -31,7 +41,7 @@ const preProcessor: ShaderProcessor;
  * - `initialState` is optional, but encouraged to be used.
  * - All properties that are using Signal types get assigned a ConstSignal with last value. Use initialState to override it.
  */
-function clone(material: MaterialBase | string, initialState?: {[key: string]: any}): Promise<MaterialBase>;
+static clone(material: MaterialBase | string, initialState?: {[key: string]: any}): Promise<MaterialBase>;
 
 /**
 *  
@@ -44,7 +54,7 @@ function clone(material: MaterialBase | string, initialState?: {[key: string]: a
  * - New materials always get assigned a globally unique `name` and `identifier`.
  * - `initialState` is optional, but encouraged to be used.
  */
-function create(className: string, initialState?: {[key: string]: any}): Promise<MaterialBase>;
+static create(className: string, initialState?: {[key: string]: any}): Promise<MaterialBase>;
 
 /**
 *  
@@ -57,7 +67,7 @@ function create(className: string, initialState?: {[key: string]: any}): Promise
  * - Destroying a material that doesn't exist fails the `Future`.
  * - Destroying a set of Materials that was created in Studio fails the `Future`.
  */
-function destroy(material: MaterialBase | string): Promise<void>;
+static destroy(material: MaterialBase | string): Promise<void>;
 
 /**
 *  
@@ -67,7 +77,7 @@ function destroy(material: MaterialBase | string): Promise<void>;
  * Returns a promise that is resolved with the material of a requested name or null if none was found.
  * **See Also**: `Materials.findUsingPattern`, `Materials.getAll`.
  */
-function findFirst(name: string): Promise<MaterialBase | null>;
+static findFirst(name: string): Promise<MaterialBase | null>;
 
 /**
 *  
@@ -89,7 +99,7 @@ function findFirst(name: string): Promise<MaterialBase | null>;
  * 
  * **See Also**: `Materials.getAll`, `Materials.findFirst`.
  */
-function findUsingPattern(namePattern: string, config?: {limit: number}): Promise<Array<MaterialBase>>;
+static findUsingPattern(namePattern: string, config?: {limit: number}): Promise<Array<MaterialBase>>;
 
 /**
 *  
@@ -99,7 +109,40 @@ function findUsingPattern(namePattern: string, config?: {limit: number}): Promis
  * Returns a promise that is resolved with all of the materials.
  * **See Also**: `Materials.findUsingPattern`, `Materials.findFirst`.
  */
-function getAll(): Promise<Array<MaterialBase>>;
+static getAll(): Promise<Array<MaterialBase>>;
 
+/**
+ * The `CullMode` enum describes how material is culled.
+ * @property BACK Cull back-facing geometry
+ * @property FRONT Cull front-facing geometry
+ */
+static readonly CullMode: {
+  BACK: "BACK",
+  FRONT: "FRONT",
+}
+/**
+ * The `BlendMode` enum describes how material is blended.
+ * @property ADD Adds pixel values of the source to the destination.
+ * @property ALPHA Linear interpolation between the pixels of the source and destination as specified by the
+alpha values of the source.
+ * @property ASSOCIATIVE_ALPHA Same as alpha blend mode, but for source with RGB channels of each pixel premultiplied by its
+alpha.
+ * @property MULTIPLY Multiplies the RGB channels of each pixel from the source with the values of the corresponding
+pixel from the destination.
+ * @property REPLACE The non-transparent pixels of the source replace corresponding pixels of the destination.
+ * @property SCREEN Values of each pixels in the source and destination are inverted, multiplied, and then
+inverted again.
+ * @property SUBTRACT Subtracts pixel values of the source from the destination. In case of negative values, black
+is displayed.
+ */
+static readonly BlendMode: {
+  ADD: "ADD",
+  ALPHA: "ALPHA",
+  ASSOCIATIVE_ALPHA: "ASSOCIATIVE_ALPHA",
+  MULTIPLY: "MULTIPLY",
+  REPLACE: "REPLACE",
+  SCREEN: "SCREEN",
+  SUBTRACT: "SUBTRACT",
+}
 }
 export = MaterialsModule;

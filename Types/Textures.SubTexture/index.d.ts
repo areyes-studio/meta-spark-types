@@ -1,5 +1,6 @@
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
-declare interface SubTexture {
+/// <reference path="../Textures.TextureBase/index.d.ts" />
+declare interface SubTexture extends TextureBase {
 /**
 * ```
 (get) minU: ScalarSignal
@@ -8,7 +9,7 @@ declare interface SubTexture {
 
 Specifies the position of the left boundary in UV texture coordinates.
 */
-minU: ScalarSignal | number;
+minU: ScalarSignal;
 /**
 * ```
 (get) minV: ScalarSignal
@@ -17,7 +18,7 @@ minU: ScalarSignal | number;
 
 Specifies the position of the bottom boundary in UV texture coordinates.
 */
-minV: ScalarSignal | number;
+minV: ScalarSignal;
 /**
 * ```
 (get) sizeU: ScalarSignal
@@ -26,7 +27,7 @@ minV: ScalarSignal | number;
 
 Specifies the horizontal span in UV texture coordinates.
 */
-sizeU: ScalarSignal | number;
+sizeU: ScalarSignal;
 /**
 * ```
 (get) sizeV: ScalarSignal
@@ -35,5 +36,5 @@ sizeU: ScalarSignal | number;
 
 Specifies the vertical span in UV texture coordinates.
 */
-sizeV: ScalarSignal | number;
+sizeV: ScalarSignal;
 }

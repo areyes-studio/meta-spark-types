@@ -1,5 +1,5 @@
 /// <reference path="../Reactive.EventSource/index.d.ts" />
-declare namespace InstantGamingModule {
+declare class InstantGamingModule {
 /**
 * ```
 (get) events: EventSource<any>
@@ -9,7 +9,7 @@ declare namespace InstantGamingModule {
 Returns an `EventSource` that emits an event for every app/platform-specific event received.
 The event contains a JSON object with the data associated with the event.
 */
-const events: EventSource<any>;
+static readonly events: EventSource<any>;
 /**
 *  
  * showGame(): void
@@ -17,7 +17,7 @@ const events: EventSource<any>;
  * 
  * Shows game and returns void.
  */
-function showGame(): void;
+static showGame(): void;
 
 }
 export = InstantGamingModule;

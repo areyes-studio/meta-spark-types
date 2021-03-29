@@ -1,9 +1,16 @@
 /// <reference path="../Reactive.BoolSignal/index.d.ts" />
+/// <reference path="../FaceTracking.Cheek/index.d.ts" />
+/// <reference path="../FaceTracking.Chin/index.d.ts" />
+/// <reference path="../FaceTracking.Eye/index.d.ts" />
+/// <reference path="../FaceTracking.Eyebrow/index.d.ts" />
 /// <reference path="../FaceTracking.Face/index.d.ts" />
 /// <reference path="../Scene.FaceMesh/index.d.ts" />
 /// <reference path="../Scene.FaceTracker/index.d.ts" />
+/// <reference path="../FaceTracking.Forehead/index.d.ts" />
+/// <reference path="../FaceTracking.Mouth/index.d.ts" />
+/// <reference path="../FaceTracking.Nose/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
-declare namespace FaceTrackingModule {
+declare class FaceTrackingModule {
 /**
 * ```
 (get) count: ScalarSignal
@@ -12,7 +19,7 @@ declare namespace FaceTrackingModule {
 
 Returns a `ScalarSignal` representing the number of faces tracked in the scene.
 */
-const count: ScalarSignal | number;
+static readonly count: ScalarSignal;
 /**
 * ```
 (get) (Not Available)
@@ -21,7 +28,7 @@ const count: ScalarSignal | number;
 
 Specifies a `BoolSignal` that takes the value of `true` whenever the Face Tracker should be run, and the value of `false` otherwise. Default value is `true`.
 */
-const isEnabled: BoolSignal | boolean;
+static readonly isEnabled: BoolSignal | boolean;
 /**
 *  
  * createFaceMeshSceneObject(initialState?: {[key: string]: any}): Promise<FaceMesh>
@@ -33,7 +40,7 @@ const isEnabled: BoolSignal | boolean;
  *   - New objects always get assigned a globally unique `name` and `identifier`.
  *   - `initialState` is optional, but encouraged to be used.
  */
-function createFaceMeshSceneObject(initialState?: {[key: string]: any}): Promise<FaceMesh>;
+static createFaceMeshSceneObject(initialState?: {[key: string]: any}): Promise<FaceMesh>;
 
 /**
 *  
@@ -46,7 +53,7 @@ function createFaceMeshSceneObject(initialState?: {[key: string]: any}): Promise
  *   - New objects always get assigned a globally unique `name` and `identifier`.
  *   - `initialState` is optional, but encouraged to be used.
  */
-function createFaceTrackerSceneObject(initialState?: {[key: string]: any}): Promise<FaceTracker>;
+static createFaceTrackerSceneObject(initialState?: {[key: string]: any}): Promise<FaceTracker>;
 
 /**
 *  
@@ -55,7 +62,7 @@ function createFaceTrackerSceneObject(initialState?: {[key: string]: any}): Prom
  * 
  * Returns the `Face` object from the detected face array at the specified index.
  */
-function face(index: number): Face;
+static face(index: number): Face;
 
 }
 export = FaceTrackingModule;

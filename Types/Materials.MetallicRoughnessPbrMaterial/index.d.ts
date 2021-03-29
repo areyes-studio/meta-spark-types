@@ -1,10 +1,12 @@
 /// <reference path="../Reactive.ColorSignal/index.d.ts" />
+/// <reference path="../Materials.MaterialBase/index.d.ts" />
 /// <reference path="../Reactive.PointSignal/index.d.ts" />
 /// <reference path="../Reactive.RgbaSignal/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
+/// <reference path="../Reactive.StringSignal/index.d.ts" />
 /// <reference path="../Textures.TextureBase/index.d.ts" />
 /// <reference path="../Materials.TextureTransform/index.d.ts" />
-declare interface MetallicRoughnessPbrMaterial {
+declare interface MetallicRoughnessPbrMaterial extends MaterialBase {
 /**
 * ```
 (get) (Not Available)
@@ -36,13 +38,13 @@ Specifies the coordinates transform of the baseColorFactor texture of this mater
 baseColorTextureTransform: TextureTransform;
 /**
 * ```
-(get) blendMode: Signal<MaterialsModule.BlendMode>
-(set) blendMode: Signal<MaterialsModule.BlendMode>
+(get) blendMode: StringSignal<MaterialsModule.BlendMode>
+(set) blendMode: StringSignal<MaterialsModule.BlendMode>
 ```
 
 Specifies the material blend mode.
 */
-blendMode: Signal<MaterialsModule.BlendMode>;
+blendMode: StringSignal<MaterialsModule.BlendMode>;
 /**
 * ```
 (get) (Not Available)
@@ -78,7 +80,7 @@ emissiveTextureTransform: TextureTransform;
 
 Specifies the metallic factor.
 */
-metallicFactor: ScalarSignal | number;
+metallicFactor: ScalarSignal;
 /**
 * ```
 (get) (Not Available)
@@ -114,7 +116,7 @@ normalTextureTransform: TextureTransform;
 
 Specifies the roughness factor.
 */
-roughnessFactor: ScalarSignal | number;
+roughnessFactor: ScalarSignal;
 /**
 * ```
 (get) (Not Available)

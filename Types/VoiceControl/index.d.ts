@@ -1,7 +1,8 @@
 /// <reference path="../Reactive.EventSource/index.d.ts" />
 /// <reference path="../Reactive.StringSignal/index.d.ts" />
 /// <reference path="../VoiceControl.TranscriptionSession/index.d.ts" />
-declare namespace VoiceControlModule {
+/// <reference path="../VoiceControl.TranscriptionSessionData/index.d.ts" />
+declare class VoiceControlModule {
 /**
 * ```
 (get) deviceWakeWord: StringSignal
@@ -10,7 +11,7 @@ declare namespace VoiceControlModule {
 
 Returns the wake word required to activate voice control on this device
 */
-const deviceWakeWord: StringSignal | string;
+static readonly deviceWakeWord: StringSignal;
 /**
 * ```
 (get) transcriptionState: StringSignal
@@ -19,7 +20,7 @@ const deviceWakeWord: StringSignal | string;
 
 Returns the state presents if wake word less is available and if it is active
 */
-const transcriptionState: StringSignal | string;
+static readonly transcriptionState: StringSignal;
 /**
 *  
  * monitorCommand(command: string): EventSource<void>
@@ -27,16 +28,25 @@ const transcriptionState: StringSignal | string;
  * 
  * Returns an `EventSource` object that fires when Assistant can match a voice to the command string.
  */
-function monitorCommand(command: string): EventSource<void>;
+static monitorCommand(command: string): EventSource<void>;
 
 /**
 *  
- * monitorIntent(intentSpec: IntentSpec): EventSource<Object>
+ * monitorIntent(intentSpec: IntentSpec, slotSpecFilter: EntitySlotSpec): EventSource<Object>
  *  
  * 
  * Returns an `EventSource` object that fires when Assistant infers that a given intent has been invoked.
  */
-function monitorIntent(intentSpec: IntentSpec): EventSource<Object>;
+static monitorIntent(intentSpec: IntentSpec, slotSpecFilter: EntitySlotSpec): EventSource<Object>;
+
+/**
+*  
+ * registerEntity(name: string, tag: string, synonyms: Array<string>): Promise<DynamicEntity>
+ *  
+ * 
+ * Adds a new entity that is a possible value for slots in this effect
+ */
+static registerEntity(name: string, tag: string, synonyms: Array<string>): Promise<DynamicEntity>;
 
 /**
 *  
@@ -45,7 +55,7 @@ function monitorIntent(intentSpec: IntentSpec): EventSource<Object>;
  * 
  * Start transcription mode
  */
-function startTranscription(): Promise<TranscriptionSession>;
+static startTranscription(): Promise<TranscriptionSession>;
 
 }
 export = VoiceControlModule;

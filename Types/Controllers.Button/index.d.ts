@@ -9,5 +9,5 @@ declare interface Button {
 Returns a `BoolSignal` that is `true` on frames where the button is being pressed, and `false`
 when it isn't.
 */
-pressed: BoolSignal | boolean;
+pressed: BoolSignal;
 }

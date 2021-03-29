@@ -1,6 +1,6 @@
 /// <reference path="../IrisTracking.Eyeball/index.d.ts" />
 /// <reference path="../FaceTracking.Face/index.d.ts" />
-declare namespace IrisTrackingModule {
+declare class IrisTrackingModule {
 /**
 *  
  * leftEyeball(face: Face): Eyeball
@@ -8,7 +8,7 @@ declare namespace IrisTrackingModule {
  * 
  * Returns an `Eyeball` object for the given face, containing information about the 3D position of the left eyeball.
  */
-function leftEyeball(face: Face): Eyeball;
+static leftEyeball(face: Face): Eyeball;
 
 /**
 *  
@@ -17,7 +17,7 @@ function leftEyeball(face: Face): Eyeball;
  * 
  * Returns an `Eyeball` object for the given face, containing information about the 3D position of the right eyeball.
  */
-function rightEyeball(face: Face): Eyeball;
+static rightEyeball(face: Face): Eyeball;
 
 }
 export = IrisTrackingModule;

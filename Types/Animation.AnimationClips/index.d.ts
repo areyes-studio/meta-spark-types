@@ -1,3 +1,4 @@
+/// <reference path="../Animation.AnimationClip/index.d.ts" />
 declare interface AnimationClips {
 /**
 *  

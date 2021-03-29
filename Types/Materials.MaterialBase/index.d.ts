@@ -5,6 +5,7 @@
 /// <reference path="../Shaders.PhysicallyBasedMaterialTextures/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 /// <reference path="../Reactive.ShaderSignal/index.d.ts" />
+/// <reference path="../Reactive.StringSignal/index.d.ts" />
 /// <reference path="../Textures.TextureBase/index.d.ts" />
 /// <reference path="../Materials.TextureTransform/index.d.ts" />
 declare interface MaterialBase {
@@ -16,28 +17,19 @@ declare interface MaterialBase {
 
 Specifies a number between 0.0 and 1.0.
 */
-alphaCutoff: ScalarSignal | number;
+alphaCutoff: ScalarSignal;
 /**
 * ```
-(get) cullMode: Signal<MaterialsModule.CullMode>
-(set) cullMode: Signal<MaterialsModule.CullMode>
+(get) cullMode: StringSignal<MaterialsModule.CullMode>
+(set) cullMode: StringSignal<MaterialsModule.CullMode>
 ```
 
 Specifies the material cull mode.
 */
-cullMode: Signal<MaterialsModule.CullMode>;
+cullMode: StringSignal<MaterialsModule.CullMode>;
 /**
 * ```
 (get) (Not Available)
-(set) diffuse: TextureBase | null
-```
-
-Specifies the texture that forms the basis of this material.
-*/
-diffuse: TextureBase | null;
-/**
-* ```
-(get) diffuse: TextureBase | null
 (set) diffuse: TextureBase | null
 ```
 
@@ -62,7 +54,7 @@ diffuseTextureTransform: TextureTransform;
 Indicates whether the material can be seen from both sides when rendering the scene.
 **Note**: When `FALSE`, only the side specified by object's **Cull Mode** is rendered.
 */
-doubleSided: BoolSignal | boolean;
+doubleSided: BoolSignal;
 /**
 * ```
 (get) identifier: string
@@ -90,7 +82,7 @@ name: string;
 
 Specifies a number between 0.0 and 1.0 indicating the opacity threshold for discarding pixels. 0 is transparent and 1 is opaque.
 */
-opacity: ScalarSignal | number;
+opacity: ScalarSignal;
 /**
 *  
  * getDiffuse(): Promise<TextureBase | null>

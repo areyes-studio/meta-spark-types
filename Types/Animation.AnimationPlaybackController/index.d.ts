@@ -1,3 +1,4 @@
+/// <reference path="../Animation.AnimationClip/index.d.ts" />
 /// <reference path="../Reactive.BoolSignal/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 declare interface AnimationPlaybackController {
@@ -19,7 +20,7 @@ identifier: string;
 A signal that controls whether this controller should loop or not.
 Loops the playback controller. To be used in pair with the `setPlaying` method. If set to `true`, the animation will repeat infinitely.
 */
-looping: BoolSignal | boolean;
+looping: BoolSignal;
 /**
 * ```
 (get) name: string
@@ -38,7 +39,7 @@ name: string;
 A signal that controls wheher this playback controller is playing or not.
 Plays or pauses the playback controller depending on the value entered.
 */
-playing: BoolSignal | boolean;
+playing: BoolSignal;
 /**
 * ```
 (get) speed: ScalarSignal
@@ -48,7 +49,7 @@ playing: BoolSignal | boolean;
 Scalar signal represents current speed of animation playback (1.0 being normal speed).
 Sets the speed of the animation playback.
 */
-speed: ScalarSignal | number;
+speed: ScalarSignal;
 /**
 *  
  * getAnimationClip(): Promise<AnimationClip | null>

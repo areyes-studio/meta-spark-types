@@ -1,5 +1,6 @@
 /// <reference path="../Animation.AnimationPlaybackController/index.d.ts" />
-declare interface ThreeDObject {
+/// <reference path="../Scene.SceneObjectBase/index.d.ts" />
+declare interface ThreeDObject extends SceneObjectBase {
 /**
 *  
  * getAnimationPlaybackController(): Promise<AnimationPlaybackController | null>

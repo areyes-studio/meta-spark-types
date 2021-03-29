@@ -1,4 +1,5 @@
 /// <reference path="../Reactive.HsvaSignal/index.d.ts" />
+/// <reference path="../Reactive.ISignal/index.d.ts" />
 /// <reference path="../Reactive.Point2DSignal/index.d.ts" />
 /// <reference path="../Reactive.PointSignal/index.d.ts" />
 /// <reference path="../Reactive.RgbaSignal/index.d.ts" />
@@ -6,7 +7,7 @@
 /// <reference path="../Reactive.SignalHistory/index.d.ts" />
 /// <reference path="../Reactive.TransformSignal/index.d.ts" />
 /// <reference path="../Reactive.VectorSignal/index.d.ts" />
-declare interface Point4DSignal {
+declare interface Point4DSignal extends ISignal {
 /**
 * ```
 (get) bottom: ScalarSignal
@@ -15,7 +16,7 @@ declare interface Point4DSignal {
 
 Represents the bottom component of the `Insets`, the third element of the vector.
 */
-bottom: ScalarSignal | number;
+bottom: ScalarSignal;
 /**
 * ```
 (get) left: ScalarSignal
@@ -24,7 +25,7 @@ bottom: ScalarSignal | number;
 
 Represents the left component of the `Insets`, the second element of the vector.
 */
-left: ScalarSignal | number;
+left: ScalarSignal;
 /**
 * ```
 (get) right: ScalarSignal
@@ -33,7 +34,7 @@ left: ScalarSignal | number;
 
 Represents the bottom component of the `Insets`, the fourth element of the vector.
 */
-right: ScalarSignal | number;
+right: ScalarSignal;
 /**
 * ```
 (get) top: ScalarSignal
@@ -42,7 +43,7 @@ right: ScalarSignal | number;
 
 Represents the top component of the `Insets`, the first element of the vector.
 */
-top: ScalarSignal | number;
+top: ScalarSignal;
 /**
 * ```
 (get) w: ScalarSignal
@@ -51,7 +52,7 @@ top: ScalarSignal | number;
 
 Represents the W component, the fourth element of the vector.
 */
-w: ScalarSignal | number;
+w: ScalarSignal;
 /**
 * ```
 (get) x: ScalarSignal
@@ -60,7 +61,7 @@ w: ScalarSignal | number;
 
 Represents the X coordinate, the first element of the vector.
 */
-x: ScalarSignal | number;
+x: ScalarSignal;
 /**
 * ```
 (get) y: ScalarSignal
@@ -69,7 +70,7 @@ x: ScalarSignal | number;
 
 Represents the Y coordinate, the second elemnt of the vector.
 */
-y: ScalarSignal | number;
+y: ScalarSignal;
 /**
 * ```
 (get) z: ScalarSignal
@@ -78,7 +79,7 @@ y: ScalarSignal | number;
 
 Represents the Z component, the third element of the vector.
 */
-z: ScalarSignal | number;
+z: ScalarSignal;
 /**
 *  
  * abs(): ScalarSignal
@@ -216,14 +217,14 @@ fromRange(x: ScalarSignal | number, min: ScalarSignal | number, max: ScalarSigna
 /**
 * 
  *  
- * history(framesCount: number): SignalHistory<Point4D>
+ * history(framesCount: number): SignalHistory<any>
  *  
  * 
  * Returns an object used to access signal values from past frames. The amount of frames tracked is customizable via `framesCount` parameter.
  * Historical signal values are going to be initialized with signal value at call time or using `initialValues` if provided.
  * 
  */
-history(framesCount: number): SignalHistory<Point4D>;
+history(framesCount: number): SignalHistory<any>;
 
 /**
 *  

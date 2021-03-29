@@ -1,5 +1,6 @@
 /// <reference path="../Reactive.ISignal/index.d.ts" />
-declare interface ComposedMaterial {
+/// <reference path="../Materials.MaterialBase/index.d.ts" />
+declare interface ComposedMaterial extends MaterialBase {
 /**
 *  
  * setParameter(parameterName: string, signal: ISignal): void

@@ -1,6 +1,7 @@
 /// <reference path="../Reactive.PointSignal/index.d.ts" />
+/// <reference path="../Scene.SceneObjectBase/index.d.ts" />
 /// <reference path="../Textures.TextureBase/index.d.ts" />
-declare interface EnvironmentLightSource {
+declare interface EnvironmentLightSource extends SceneObjectBase {
 /**
 * ```
 (get) (Not Available)

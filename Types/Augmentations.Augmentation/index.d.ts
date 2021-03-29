@@ -8,7 +8,7 @@ declare interface Augmentation {
 (set) (Not Available)
 ```
 */
-downloadProgress: ScalarSignal | number;
+downloadProgress: ScalarSignal;
 /**
 * ```
 (get) state: StringSignal
@@ -17,7 +17,7 @@ downloadProgress: ScalarSignal | number;
 
 Return `StringSignal` with possible values defined by enum `Augmentation.AugmentationState`
 */
-state: StringSignal | string;
+state: StringSignal;
 /**
 *  
  * instantiate(config: {[key: string]: any}): Promise<AugmentationInstance>

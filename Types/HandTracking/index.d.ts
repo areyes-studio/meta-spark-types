@@ -1,6 +1,6 @@
 /// <reference path="../HandTracking.Hand/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
-declare namespace HandTrackingModule {
+declare class HandTrackingModule {
 /**
 * ```
 (get) count: ScalarSignal
@@ -9,7 +9,7 @@ declare namespace HandTrackingModule {
 
 Specifies a `ScalarSignal` indicating the number of detected hands.
 */
-const count: ScalarSignal | number;
+static readonly count: ScalarSignal;
 /**
 *  
  * hand(index: number): Hand
@@ -17,7 +17,7 @@ const count: ScalarSignal | number;
  * 
  * Returns the `Hand` indicated by index.
  */
-function hand(index: number): Hand;
+static hand(index: number): Hand;
 
 }
 export = HandTrackingModule;

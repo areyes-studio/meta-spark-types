@@ -1,8 +1,9 @@
 /// <reference path="../Fonts.FontId/index.d.ts" />
 /// <reference path="../Materials.MaterialBase/index.d.ts" />
+/// <reference path="../Scene.PlanarObject/index.d.ts" />
 /// <reference path="../Reactive.StringSignal/index.d.ts" />
 /// <reference path="../Scene.TextAlignmentWrapper/index.d.ts" />
-declare interface PlanarText {
+declare interface PlanarText extends PlanarObject {
 /**
 * ```
 (get) alignment: TextAlignmentWrapper
@@ -38,7 +39,7 @@ fontSize: number;
 
 Specifies the line spacing. This is the distance between the baselines in the text. If unspecified, spacing defaults to the font size.
 */
-leading: null | number;
+leading: number | null;
 /**
 * ```
 (get) material: MaterialBase | null
@@ -56,7 +57,7 @@ material: MaterialBase | null;
 
 Specifies the maximum number of lines for the text. If unspecified (or zero), the number of lines is unrestricted.
 */
-maxLines: null | number;
+maxLines: number | null;
 /**
 * ```
 (get) (Not Available)
@@ -74,7 +75,7 @@ scaleToFit: boolean;
 
 Specifies the text displayed.
 */
-text: StringSignal | string;
+text: StringSignal;
 /**
 * ```
 (get) (Not Available)

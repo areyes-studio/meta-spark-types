@@ -9,7 +9,7 @@ declare interface Slider {
 
 Will instruct slider to change its value.
 */
-value: ScalarSignal | number;
+value: ScalarSignal;
 /**
 * ```
 (get) (Not Available)
@@ -18,5 +18,5 @@ value: ScalarSignal | number;
 
 Will instruct slider to be visible or not visible, according to passed boolean value.
 */
-visible: BoolSignal | boolean;
+visible: BoolSignal;
 }

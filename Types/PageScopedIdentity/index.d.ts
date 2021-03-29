@@ -1,4 +1,4 @@
-declare namespace PageScopedIdentityModule {
+declare class PageScopedIdentityModule {
 /**
 *  
  * getPageScopedID(): Promise<string>
@@ -6,7 +6,7 @@ declare namespace PageScopedIdentityModule {
  * 
  * Returns a `JS Promise` which will be fulfilled with Page Scoped ID `string` object or an error.
  */
-function getPageScopedID(): Promise<string>;
+static getPageScopedID(): Promise<string>;
 
 }
 export = PageScopedIdentityModule;

@@ -1,5 +1,5 @@
 /// <reference path="../Reactive.StringSignal/index.d.ts" />
-declare namespace AnalyticsModule {
+declare class AnalyticsModule {
 /**
 * ```
 (get) productName: StringSignal
@@ -9,7 +9,7 @@ declare namespace AnalyticsModule {
 Specifies the current context camera product name used for analytics.
 Note: This can return empty string signal in cases where current product name couldn't be determined.
 */
-const productName: StringSignal | string;
+static readonly productName: StringSignal;
 /**
 *  
  * logEvent(eventName: string, extras: any): void
@@ -17,7 +17,7 @@ const productName: StringSignal | string;
  * 
  * Log an analytics event with a custom name and optional extras object.
  */
-function logEvent(eventName: string, extras: any): void;
+static logEvent(eventName: string, extras: any): void;
 
 }
 export = AnalyticsModule;

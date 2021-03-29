@@ -3,7 +3,8 @@
 /// <reference path="../Materials.MaterialBase/index.d.ts" />
 /// <reference path="../Reactive.PointSignal/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
-declare interface DynamicExtrusion {
+/// <reference path="../Scene.SceneObjectBase/index.d.ts" />
+declare interface DynamicExtrusion extends SceneObjectBase {
 /**
 * ```
 (get) defaultBrushDistance: ScalarSignal
@@ -13,7 +14,7 @@ declare interface DynamicExtrusion {
 Specifies how many internal points should be sampled between each 2 consecutive points when drawing the curve with given points. The more points there will be, the more accurate the curve will look.
 This value will be used in the newly created strokes if brushDistance isn't given explicitly in createStroke method.
 */
-defaultBrushDistance: ScalarSignal | number;
+defaultBrushDistance: ScalarSignal;
 /**
 * ```
 (get) defaultBrushSize: ScalarSignal
@@ -23,7 +24,7 @@ defaultBrushDistance: ScalarSignal | number;
 Specifies the default size of a side of brush for Dynamic Extrusion.
 This value will be used in the newly created strokes if brushSize isn't given explicitly in createStroke method.
 */
-defaultBrushSize: ScalarSignal | number;
+defaultBrushSize: ScalarSignal;
 /**
 * ```
 (get) defaultBrushType: BrushType
@@ -53,7 +54,7 @@ defaultMaterial: MaterialBase | null;
 Specifies the width to map texture on the tube. The default value is 10 mm, so the given texture will repeat itself in every 10 mm on the tube.
 This value will be used in the newly created strokes if defaultTextureWidthSize isn't given explicitly in createStroke method.
 */
-defaultTextureWidthSize: ScalarSignal | number;
+defaultTextureWidthSize: ScalarSignal;
 /**
 *  
  * clear(): void
@@ -65,7 +66,7 @@ clear(): void;
 
 /**
 *  
- * createStroke(config: {brushDistance?: number, brushSize?: number, brushType?: DynamicExtrusion.BrushType, completionEvent: EventSource, extrudeInCPU?: false | true, location: PointSignal, material?: MaterialBase, textureHeightStep?: number, textureWidthSize?: number}): void
+ * createStroke(config: {brushDistance?: number, brushSize?: number, brushType?: DynamicExtrusion.BrushType, completionEvent: EventSource<any>, extrudeInCPU?: false | true, location: PointSignal, material?: MaterialBase, textureHeightStep?: number, textureWidthSize?: number}): void
  *  
  * 
  * This method is used to add points to the Dynamic Extrusion through a signal for 3d points in World Space in current units for continuous updating. You can customize the properties for each stroke.
@@ -80,7 +81,7 @@ clear(): void;
  * });
  *  
  */
-createStroke(config: {brushDistance?: number, brushSize?: number, brushType?: DynamicExtrusion.BrushType, completionEvent: EventSource, extrudeInCPU?: false | true, location: PointSignal, material?: MaterialBase, textureHeightStep?: number, textureWidthSize?: number}): void;
+createStroke(config: {brushDistance?: number, brushSize?: number, brushType?: DynamicExtrusion.BrushType, completionEvent: EventSource<any>, extrudeInCPU?: false | true, location: PointSignal, material?: MaterialBase, textureHeightStep?: number, textureWidthSize?: number}): void;
 
 /**
 *  

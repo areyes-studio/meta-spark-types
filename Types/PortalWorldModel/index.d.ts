@@ -1,7 +1,11 @@
+/// <reference path="../PortalWorldModel.Arm/index.d.ts" />
 /// <reference path="../Reactive.BoundingBoxSignal/index.d.ts" />
+/// <reference path="../PortalWorldModel.Head/index.d.ts" />
+/// <reference path="../PortalWorldModel.Leg/index.d.ts" />
 /// <reference path="../PortalWorldModel.Person/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
-declare namespace PortalWorldModelModule {
+/// <reference path="../PortalWorldModel.Torso/index.d.ts" />
+declare class PortalWorldModelModule {
 /**
 * ```
 (get) count: ScalarSignal
@@ -10,7 +14,7 @@ declare namespace PortalWorldModelModule {
 
 The number of people tracked by the model.
 */
-const count: ScalarSignal | number;
+static readonly count: ScalarSignal;
 /**
 * ```
 (get) crop: BoundingBoxSignal
@@ -19,7 +23,7 @@ const count: ScalarSignal | number;
 
 The scene crop (relative to full FOV) currently applied.
 */
-const crop: BoundingBoxSignal;
+static readonly crop: BoundingBoxSignal;
 /**
 *  
  * person(index: number): Person
@@ -27,7 +31,7 @@ const crop: BoundingBoxSignal;
  * 
  * Gets the `Person` corresponding to the given index.
  */
-function person(index: number): Person;
+static person(index: number): Person;
 
 }
 export = PortalWorldModelModule;

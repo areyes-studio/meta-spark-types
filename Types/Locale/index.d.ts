@@ -1,5 +1,5 @@
 /// <reference path="../Reactive.StringSignal/index.d.ts" />
-declare namespace LocaleModule {
+declare class LocaleModule {
 /**
 * ```
 (get) language: StringSignal
@@ -8,7 +8,7 @@ declare namespace LocaleModule {
 
 Provides the ISO 639-1 compliant language identifier, e.g. `en` or `zh`.
 */
-const language: StringSignal | string;
+static readonly language: StringSignal;
 /**
 * ```
 (get) locale: StringSignal
@@ -17,7 +17,7 @@ const language: StringSignal | string;
 
 Provides the ISO 639-1 language + ISO 3166-1 region compliant locale identifier, e.g. `en_US` or `zh_HK`.
 */
-const locale: StringSignal | string;
+static readonly locale: StringSignal;
 /**
 * ```
 (get) region: StringSignal
@@ -26,6 +26,6 @@ const locale: StringSignal | string;
 
 Provides the ISO 3166-1 region identifier, e.g. `US`, or `HK`.
 */
-const region: StringSignal | string;
+static readonly region: StringSignal;
 }
 export = LocaleModule;

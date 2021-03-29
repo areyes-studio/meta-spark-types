@@ -1,22 +1,23 @@
+/// <reference path="../Reactive.StringSignal/index.d.ts" />
 /// <reference path="../Scene.TextAlignment/index.d.ts" />
 /// <reference path="../Scene.VerticalTextAlignment/index.d.ts" />
 declare interface TextAlignmentWrapper {
 /**
 * ```
-(get) horizontal: Signal<TextAlignment>
-(set) horizontal: Signal<TextAlignment>
+(get) horizontal: StringSignal<TextAlignment>
+(set) horizontal: StringSignal<TextAlignment>
 ```
 
 Specifies the horizontal text alignment.
 */
-horizontal: Signal<TextAlignment>;
+horizontal: StringSignal<TextAlignment>;
 /**
 * ```
-(get) vertical: Signal<VerticalTextAlignment>
-(set) vertical: Signal<VerticalTextAlignment>
+(get) vertical: StringSignal<VerticalTextAlignment>
+(set) vertical: StringSignal<VerticalTextAlignment>
 ```
 
 Specifies the vertical text alignment.
 */
-vertical: Signal<VerticalTextAlignment>;
+vertical: StringSignal<VerticalTextAlignment>;
 }

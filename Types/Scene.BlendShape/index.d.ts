@@ -1,3 +1,4 @@
+/// <reference path="../Prefabs.Prefab/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 declare interface BlendShape {
 /**
@@ -17,7 +18,7 @@ name: string;
 
 Specifies the weight of the blend shape.
 */
-weight: ScalarSignal | number;
+weight: ScalarSignal;
 /**
 *  
  * getPrefab(): Promise<Prefab | null>

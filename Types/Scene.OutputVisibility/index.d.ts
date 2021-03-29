@@ -8,7 +8,7 @@ declare interface OutputVisibility {
 
 Specifies whether the object is visible on the capture output.
 */
-forCaptureOutput: BoolSignal | boolean;
+forCaptureOutput: BoolSignal;
 /**
 * ```
 (get) forOverlayOutput: BoolSignal
@@ -17,7 +17,7 @@ forCaptureOutput: BoolSignal | boolean;
 
 Specifies whether the object is visible on the overlay output.
 */
-forOverlayOutput: BoolSignal | boolean;
+forOverlayOutput: BoolSignal;
 /**
 * ```
 (get) forPreviewOutput: BoolSignal
@@ -26,5 +26,5 @@ forOverlayOutput: BoolSignal | boolean;
 
 Specifies whether the object is visible on the preview output.
 */
-forPreviewOutput: BoolSignal | boolean;
+forPreviewOutput: BoolSignal;
 }

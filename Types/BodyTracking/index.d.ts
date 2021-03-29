@@ -1,6 +1,11 @@
 /// <reference path="../BodyTracking.Body/index.d.ts" />
+/// <reference path="../BodyTracking.Body2DArm/index.d.ts" />
+/// <reference path="../BodyTracking.Body2DLeg/index.d.ts" />
+/// <reference path="../BodyTracking.Body2DPose/index.d.ts" />
+/// <reference path="../BodyTracking.Body2DTorso/index.d.ts" />
+/// <reference path="../BodyTracking.KeyPoint2D/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
-declare namespace BodyTrackingModule {
+declare class BodyTrackingModule {
 /**
 * ```
 (get) count: ScalarSignal
@@ -9,7 +14,7 @@ declare namespace BodyTrackingModule {
 
 Returns a `ScalarSignal` representing the count of tracked bodies.
 */
-const count: ScalarSignal | number;
+static readonly count: ScalarSignal;
 /**
 *  
  * body(index: number): Body
@@ -17,7 +22,7 @@ const count: ScalarSignal | number;
  * 
  * Returns a `Body` object.
  */
-function body(index: number): Body;
+static body(index: number): Body;
 
 }
 export = BodyTrackingModule;

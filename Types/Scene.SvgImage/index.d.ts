@@ -1,5 +1,6 @@
+/// <reference path="../Scene.SceneObjectBase/index.d.ts" />
 /// <reference path="../Svgs.Svg/index.d.ts" />
-declare interface SvgImage {
+declare interface SvgImage extends SceneObjectBase {
 /**
 * ```
 (get) (Not Available)

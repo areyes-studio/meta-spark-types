@@ -1,5 +1,5 @@
 /// <reference path="../Fonts.FontId/index.d.ts" />
-declare namespace FontsModule {
+declare class FontsModule {
 /**
 *  
  * findFirst(fontName: string): Promise<FontId | null>
@@ -8,7 +8,7 @@ declare namespace FontsModule {
  * Returns a promise that is resolved with the font identifier of a requested name or null if none was found.
  * **See Also**: `FontsModule.findUsingPattern`, `FontsModule.getAll`.
  */
-function findFirst(fontName: string): Promise<FontId | null>;
+static findFirst(fontName: string): Promise<FontId | null>;
 
 /**
 *  
@@ -30,7 +30,7 @@ function findFirst(fontName: string): Promise<FontId | null>;
  * 
  * **See Also**: `FontsModule.getAll`, `FontsModule.findFirst`.
  */
-function findUsingPattern(namePattern: string, config?: {limit: number}): Promise<Array<FontId>>;
+static findUsingPattern(namePattern: string, config?: {limit: number}): Promise<Array<FontId>>;
 
 /**
 *  
@@ -40,7 +40,7 @@ function findUsingPattern(namePattern: string, config?: {limit: number}): Promis
  * Returns a promise that is resolved with all of the font identifiers.
  * **See Also**: `FontsModule.findUsingPattern`, `FontsModule.findFirst`.
  */
-function getAll(): Promise<Array<FontId>>;
+static getAll(): Promise<Array<FontId>>;
 
 }
 export = FontsModule;

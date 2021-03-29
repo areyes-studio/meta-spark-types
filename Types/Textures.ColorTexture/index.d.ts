@@ -1,5 +1,6 @@
 /// <reference path="../Reactive.ColorSignal/index.d.ts" />
-declare interface ColorTexture {
+/// <reference path="../Textures.TextureBase/index.d.ts" />
+declare interface ColorTexture extends TextureBase {
 /**
 * ```
 (get) (Not Available)

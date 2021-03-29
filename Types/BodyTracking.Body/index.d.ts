@@ -20,7 +20,7 @@ boundingBox: BoundingBoxSignal;
 
 Returns a `StringSignal` object.
 */
-id: StringSignal | string;
+id: StringSignal;
 /**
 * ```
 (get) isTracked: BoolSignal
@@ -29,7 +29,7 @@ id: StringSignal | string;
 
 Returns a `BoolSignal` object.
 */
-isTracked: BoolSignal | boolean;
+isTracked: BoolSignal;
 /**
 * ```
 (get) isTracking: BoolSignal
@@ -38,7 +38,7 @@ isTracked: BoolSignal | boolean;
 
 Returns a `BoolSignal` object.
 */
-isTracking: BoolSignal | boolean;
+isTracking: BoolSignal;
 /**
 * ```
 (get) pose2D: Body2DPose

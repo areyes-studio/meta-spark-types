@@ -9,7 +9,7 @@ declare interface TranscriptionSession {
 
 Returns if the session is active
 */
-active: BoolSignal | boolean;
+active: BoolSignal;
 /**
 * ```
 (get) data: TranscriptionSessionData

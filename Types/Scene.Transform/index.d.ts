@@ -31,7 +31,7 @@ rotation: QuaternionSignal;
 Specifies the object rotation about the X-axis of the object's local coordinate system, in radians.
 **Note**: the rotations are applied to the object in Z-Y-X order. The X rotation is applied first to the object, therefore it is always performed in the object's local coordinate system.
 */
-rotationX: ScalarSignal | number;
+rotationX: ScalarSignal;
 /**
 * ```
 (get) rotationY: ScalarSignal
@@ -41,7 +41,7 @@ rotationX: ScalarSignal | number;
 Specifies the object rotation about the Y-axis of the object's local coordinate system, in radians.
 **Note**: the rotations are applied to the object in Z-Y-X order. The Y rotation is applied second to the object, therefore if the `rotationX` is not zero, then `rotationY` is applied not in the object's local coordinate system but in the rotated one.
 */
-rotationY: ScalarSignal | number;
+rotationY: ScalarSignal;
 /**
 * ```
 (get) rotationZ: ScalarSignal
@@ -51,7 +51,7 @@ rotationY: ScalarSignal | number;
 Specifies the object rotation about the Z-axis of the object's local coordinate system, in radians.
 **Note**: the rotations are applied to the object in Z-Y-X order. The Z rotation is applied last to the object, therefore if the `rotationX` or `rotationY` is not zero, then `rotationZ` is applied not in the object's local coordinate system but in the rotated one.
 */
-rotationZ: ScalarSignal | number;
+rotationZ: ScalarSignal;
 /**
 * ```
 (get) scale: PointSignal
@@ -69,7 +69,7 @@ scale: PointSignal;
 
 Specifies the object scale along the X-axis of the object's local coordinate system.
 */
-scaleX: ScalarSignal | number;
+scaleX: ScalarSignal;
 /**
 * ```
 (get) scaleY: ScalarSignal
@@ -78,7 +78,7 @@ scaleX: ScalarSignal | number;
 
 Specifies the object scale along the Y-axis of the object's local coordinate system.
 */
-scaleY: ScalarSignal | number;
+scaleY: ScalarSignal;
 /**
 * ```
 (get) scaleZ: ScalarSignal
@@ -87,7 +87,7 @@ scaleY: ScalarSignal | number;
 
 Specifies the object scale along the Z-axis of the object's local coordinate system.
 */
-scaleZ: ScalarSignal | number;
+scaleZ: ScalarSignal;
 /**
 * ```
 (get) x: ScalarSignal
@@ -96,7 +96,7 @@ scaleZ: ScalarSignal | number;
 
 Specifies the object offset along the X-axis of the object's local coordinate system.
 */
-x: ScalarSignal | number;
+x: ScalarSignal;
 /**
 * ```
 (get) y: ScalarSignal
@@ -105,7 +105,7 @@ x: ScalarSignal | number;
 
 Specifies the object offset along the Y-axis of the object's local coordinate system.
 */
-y: ScalarSignal | number;
+y: ScalarSignal;
 /**
 * ```
 (get) z: ScalarSignal
@@ -114,7 +114,7 @@ y: ScalarSignal | number;
 
 Specifies the object offset along the Z-axis of the object's local coordinate system.
 */
-z: ScalarSignal | number;
+z: ScalarSignal;
 /**
 *  
  * lookAt(targetPosition: PointSignal, selfUp?: VectorSignal): TransformSignal

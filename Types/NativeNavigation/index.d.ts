@@ -1,4 +1,4 @@
-declare namespace NativeNavigationModule {
+declare class NativeNavigationModule {
 /**
 *  
  * navigateTo(url: string): void
@@ -6,7 +6,7 @@ declare namespace NativeNavigationModule {
  * 
  * Navigate within the application to the content specified by the provided `URL`.
  */
-function navigateTo(url: string): void;
+static navigateTo(url: string): void;
 
 }
 export = NativeNavigationModule;

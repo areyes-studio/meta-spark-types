@@ -1,4 +1,4 @@
-declare namespace Remote3DModelsModule {
+declare class Remote3DModelsModule {
 /**
 *  
  * fetch(url: string): Promise<string>
@@ -6,7 +6,7 @@ declare namespace Remote3DModelsModule {
  * 
  * Returns a promise which is resolved with remote model identifier or error.
  */
-function fetch(url: string): Promise<string>;
+static fetch(url: string): Promise<string>;
 
 }
 export = Remote3DModelsModule;

@@ -1,5 +1,5 @@
 /// <reference path="../Animation.ScalarSampler/index.d.ts" />
-declare interface ArrayOfScalarSamplers {
+declare interface ArrayOfScalarSamplers extends Array<ScalarSampler> {
 /**
 *  
  * get(index: number): ScalarSampler

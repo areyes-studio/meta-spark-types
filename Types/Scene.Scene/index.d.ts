@@ -10,7 +10,7 @@ declare interface Scene {
 
 Specifies whether the scene and its descendants are hidden.
 */
-hidden: BoolSignal | boolean;
+hidden: BoolSignal;
 /**
 * ```
 (get) outputVisibility: OutputVisibility
@@ -31,7 +31,7 @@ outputVisibility: OutputVisibility;
  * 
  * **See Also**: `SceneObjectBase.findFirst`, `SceneObjectBase.findByPath`, `SceneModule.root`.
  */
-findAll(name: string, config?: {recursive: boolean}): Promise<Array<any>>;
+findAll(name: string, config?: {recursive: boolean}): Promise<Array<SceneObjectBase>>;
 
 /**
 *  
@@ -62,7 +62,7 @@ findAll(name: string, config?: {recursive: boolean}): Promise<Array<any>>;
  * 
  * **See Also**: `SceneObjectBase.findAll`, `SceneObjectBase.findFirst`, `SceneModule.root`.
  */
-findByPath(pathQuery: string, config?: {limit: number}): Promise<Array<any>>;
+findByPath(pathQuery: string, config?: {limit: number}): Promise<Array<SceneObjectBase>>;
 
 /**
 *  
@@ -74,6 +74,6 @@ findByPath(pathQuery: string, config?: {limit: number}): Promise<Array<any>>;
  * 
  * **See Also**: `SceneObjectBase.findAll`, `SceneObjectBase.findByPath`, `SceneModule.root`.
  */
-findFirst(name: string, config?: {recursive: boolean}): Promise<any | null>;
+findFirst(name: string, config?: {recursive: boolean}): Promise<SceneObjectBase | null>;
 
 }

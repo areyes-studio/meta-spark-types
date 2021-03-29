@@ -23,7 +23,7 @@ boundingBox: BoundingBox;
 
 Represents whether or not the bounding box for the object is visible.
 */
-boundingBoxVisible: BoolSignal | boolean;
+boundingBoxVisible: BoolSignal;
 /**
 * ```
 (get) cameraVisibility: CameraVisibility
@@ -41,7 +41,7 @@ cameraVisibility: CameraVisibility;
 
 Specifies whether the scene object and its descendants are hidden.
 */
-hidden: BoolSignal | boolean;
+hidden: BoolSignal;
 /**
 * ```
 (get) identifier: string
@@ -110,7 +110,7 @@ worldTransform: WorldTransform;
  * - Adding an object as a child automatically removes it from any other parent.
  * - Adding a child that was created in Studio is not allowed.
  */
-addChild(child: any | string): Promise<void>;
+addChild(child: SceneObjectBase | string): Promise<void>;
 
 /**
 *  
@@ -123,7 +123,7 @@ addChild(child: any | string): Promise<void>;
  * 
  * **See Also**: `SceneObjectBase.findFirst`, `SceneObjectBase.findByPath`, `SceneModule.root`.
  */
-findAll(name: string, config?: {recursive: boolean}): Promise<Array<any>>;
+findAll(name: string, config?: {recursive: boolean}): Promise<Array<SceneObjectBase>>;
 
 /**
 *  
@@ -154,7 +154,7 @@ findAll(name: string, config?: {recursive: boolean}): Promise<Array<any>>;
  * 
  * **See Also**: `SceneObjectBase.findAll`, `SceneObjectBase.findFirst`, `SceneModule.root`.
  */
-findByPath(pathQuery: string, config?: {limit: number}): Promise<Array<any>>;
+findByPath(pathQuery: string, config?: {limit: number}): Promise<Array<SceneObjectBase>>;
 
 /**
 *  
@@ -166,7 +166,7 @@ findByPath(pathQuery: string, config?: {limit: number}): Promise<Array<any>>;
  * 
  * **See Also**: `SceneObjectBase.findAll`, `SceneObjectBase.findByPath`, `SceneModule.root`.
  */
-findFirst(name: string, config?: {recursive: boolean}): Promise<any | null>;
+findFirst(name: string, config?: {recursive: boolean}): Promise<SceneObjectBase | null>;
 
 /**
 *  
@@ -179,7 +179,7 @@ findFirst(name: string, config?: {recursive: boolean}): Promise<any | null>;
  * - Removing a child that is not present under a given parent isn't allowed.
  * - Removing a child doesn't unbind any of it's properties.
  */
-removeChild(child: any | string): Promise<void>;
+removeChild(child: SceneObjectBase | string): Promise<void>;
 
 /**
 *  

@@ -1,6 +1,7 @@
 /// <reference path="../Scene.Bounds2D/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
-declare interface PlanarObject {
+/// <reference path="../Scene.SceneObjectBase/index.d.ts" />
+declare interface PlanarObject extends SceneObjectBase {
 /**
 * ```
 (get) bounds: Bounds2D
@@ -24,7 +25,7 @@ Specifies the height of the object.
 
 **Note**: You can use -1 if you want height to be automatically decided by layout constrains e.g. having both yOffset and yEndOffset. It will fallback to 0 if no constrains applied.
 */
-height: ScalarSignal | number;
+height: ScalarSignal;
 /**
 * ```
 (get) (Not Available)
@@ -105,7 +106,7 @@ Specifies the width of the object.
 
 **Note**: You can use -1 if you want width to be automatically decided by layout constrains e.g. having both xOffset and xEndOffset. It will fallback to 0 if no constrains applied.
 */
-width: ScalarSignal | number;
+width: ScalarSignal;
 /**
 * ```
 (get) xCenterOffset: ScalarSignal
@@ -117,7 +118,7 @@ Specifies the horizontal center offset of the object. Which offset to apply depe
 
 **Note**: this parameter is used as an input to the layout algorithm. The layout-calculated size and location of the object is available via `PlanarObject.bounds` property. The `SceneObjectBase.transform` property doesn't affect the layout, the transformation it specifies is applied on top of it.
 */
-xCenterOffset: ScalarSignal | number;
+xCenterOffset: ScalarSignal;
 /**
 * ```
 (get) xEndOffset: ScalarSignal
@@ -129,7 +130,7 @@ Specifies the horizontal end offset of the object. Which offset to apply depends
 
 **Note**: this parameter is used as an input to the layout algorithm. The layout-calculated size and location of the object is available via `PlanarObject.bounds` property. The `SceneObjectBase.transform` property doesn't affect the layout, the transformation it specifies is applied on top of it.
 */
-xEndOffset: ScalarSignal | number;
+xEndOffset: ScalarSignal;
 /**
 * ```
 (get) xOffset: ScalarSignal
@@ -141,7 +142,7 @@ Specifies the horizontal offset of the object. Which offset to apply depends on 
 
 **Note**: this parameter is used as an input to the layout algorithm. The layout-calculated size and location of the object is available via `PlanarObject.bounds` property. The `SceneObjectBase.transform` property doesn't affect the layout, the transformation it specifies is applied on top of it.
 */
-xOffset: ScalarSignal | number;
+xOffset: ScalarSignal;
 /**
 * ```
 (get) yCenterOffset: ScalarSignal
@@ -153,7 +154,7 @@ Specifies the vertical center offset of the object. Which offset to apply depend
 
 **Note**: this parameter is used as an input to the layout algorithm. The layout-calculated size and location of the object is available via `PlanarObject.bounds` property. The `SceneObjectBase.transform` property doesn't affect the layout, the transformation it specifies is applied on top of it.
 */
-yCenterOffset: ScalarSignal | number;
+yCenterOffset: ScalarSignal;
 /**
 * ```
 (get) yEndOffset: ScalarSignal
@@ -165,7 +166,7 @@ Specifies the vertical end offset of the object. Which offset to apply depends o
 
 **Note**: this parameter is used as an input to the layout algorithm. The layout-calculated size and location of the object is available via `PlanarObject.bounds` property. The `SceneObjectBase.transform` property doesn't affect the layout, the transformation it specifies is applied on top of it.
 */
-yEndOffset: ScalarSignal | number;
+yEndOffset: ScalarSignal;
 /**
 * ```
 (get) yOffset: ScalarSignal
@@ -177,5 +178,5 @@ Specifies the vertical offset of the object. Which offset to apply depends on ve
 
 **Note**: this parameter is used as an input to the layout algorithm. The layout-calculated size and location of the object is available via `PlanarObject.bounds` property. The `SceneObjectBase.transform` property doesn't affect the layout, the transformation it specifies is applied on top of it.
 */
-yOffset: ScalarSignal | number;
+yOffset: ScalarSignal;
 }

@@ -1,7 +1,8 @@
+/// <reference path="../Reactive.ColorSignal/index.d.ts" />
 /// <reference path="../Reactive.Point4DSignal/index.d.ts" />
 /// <reference path="../Reactive.RgbaSignal/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
-declare interface HsvaSignal {
+declare interface HsvaSignal extends ColorSignal {
 /**
 * ```
 (get) alpha: ScalarSignal
@@ -10,7 +11,7 @@ declare interface HsvaSignal {
 
 Returns the value of the `alpha` channel of this signal.
 */
-alpha: ScalarSignal | number;
+alpha: ScalarSignal;
 /**
 * ```
 (get) brightness: ScalarSignal
@@ -19,7 +20,7 @@ alpha: ScalarSignal | number;
 
 Returns the value of the `brightness`(`value`) channel of this signal.
 */
-brightness: ScalarSignal | number;
+brightness: ScalarSignal;
 /**
 * ```
 (get) hue: ScalarSignal
@@ -28,7 +29,7 @@ brightness: ScalarSignal | number;
 
 Returns the value of the `hue` channel of this signal.
 */
-hue: ScalarSignal | number;
+hue: ScalarSignal;
 /**
 * ```
 (get) saturation: ScalarSignal
@@ -37,7 +38,7 @@ hue: ScalarSignal | number;
 
 Returns the value of the `saturation` channel of this signal.
 */
-saturation: ScalarSignal | number;
+saturation: ScalarSignal;
 /**
 *  
  * pinLastValue(): HsvaSignal

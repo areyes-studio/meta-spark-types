@@ -1,8 +1,12 @@
 /// <reference path="../Shaders.BlendMode/index.d.ts" />
+/// <reference path="../Shaders.BlendedMaterialTextures/index.d.ts" />
 /// <reference path="../Shaders.BuiltinUniform/index.d.ts" />
 /// <reference path="../Shaders.ColorSpace/index.d.ts" />
+/// <reference path="../Shaders.DefaultMaterialTextures/index.d.ts" />
 /// <reference path="../Shaders.DerivativeType/index.d.ts" />
+/// <reference path="../Shaders.FacePaintMaterialTextures/index.d.ts" />
 /// <reference path="../Shaders.GradientType/index.d.ts" />
+/// <reference path="../Shaders.PhysicallyBasedMaterialTextures/index.d.ts" />
 /// <reference path="../Reactive.Point2DSignal/index.d.ts" />
 /// <reference path="../Reactive.Point4DSignal/index.d.ts" />
 /// <reference path="../Reactive.PointSignal/index.d.ts" />
@@ -12,7 +16,7 @@
 /// <reference path="../Reactive.TransformSignal/index.d.ts" />
 /// <reference path="../Reactive.VectorSignal/index.d.ts" />
 /// <reference path="../Shaders.VertexAttribute/index.d.ts" />
-declare namespace ShadersModule {
+declare class ShadersModule {
 /**
 *  
  * blend(src: ShaderSignal | PointSignal | Point4DSignal, dst: ShaderSignal | PointSignal | Point4DSignal, config: {mode: BlendMode}): ShaderSignal
@@ -25,7 +29,7 @@ declare namespace ShadersModule {
  * `dst`: either a `PointSignal`, a `Point4DSignal` or a Shader which outputs one of these two types.
  * returns: a shader which outputs a `Point4DSignal` if either of (or both) `src` or `dst` are of type `Point4DSignal`, or a `PointSignal` if not.
  */
-function blend(src: Point4DSignal | PointSignal | ShaderSignal, dst: Point4DSignal | PointSignal | ShaderSignal, config: {mode: BlendMode}): ShaderSignal;
+static blend(src: Point4DSignal | PointSignal | ShaderSignal, dst: Point4DSignal | PointSignal | ShaderSignal, config: {mode: BlendMode}): ShaderSignal;
 
 /**
 *  
@@ -36,7 +40,7 @@ function blend(src: Point4DSignal | PointSignal | ShaderSignal, dst: Point4DSign
  * `color`: either a `PointSignal`, a `Point4DSignal` or a shader which outputs one of these two types.
  * returns: a shader which outputs a `Point4DSignal` if `color` is of `Point4DSignal` type, or a `PointSignal` if not.
  */
-function colorSpaceConvert(color: Point4DSignal | PointSignal | ShaderSignal, config: {inColorSpace: ColorSpace, outColorSpace: ColorSpace}): ShaderSignal;
+static colorSpaceConvert(color: Point4DSignal | PointSignal | ShaderSignal, config: {inColorSpace: ColorSpace, outColorSpace: ColorSpace}): ShaderSignal;
 
 /**
 *  
@@ -48,7 +52,7 @@ function colorSpaceConvert(color: Point4DSignal | PointSignal | ShaderSignal, co
  * `g`: a shader which takes in a value of one type and outputs a different type (for example, `function_g(I): A`), or a signal of `A`.
  * returns: a shader of `function_f(function_g(I)) => A`, if `g` was a shader, or `function_f(signal of A) => B`, if otherwise.
  */
-function composition(f: ShaderSignal, g: Point2DSignal | Point4DSignal | PointSignal | ScalarSignal | ShaderSignal | TransformSignal | VectorSignal | number): ShaderSignal;
+static composition(f: ShaderSignal, g: Point2DSignal | Point4DSignal | PointSignal | ScalarSignal | ShaderSignal | TransformSignal | VectorSignal | number): ShaderSignal;
 
 /**
 *  
@@ -59,7 +63,7 @@ function composition(f: ShaderSignal, g: Point2DSignal | Point4DSignal | PointSi
  * `v`: either a `ScalarSignal`, a `Point2DSignal`, a `PointSignal`, a `Point4DSignal`, a `VectorSignal`, or a shader which outputs one of these types.
  * returns: a shader of a derivate type specified by `config`.
  */
-function derivative(v: Point2DSignal | Point4DSignal | PointSignal | ScalarSignal | ShaderSignal | VectorSignal | number, config: {derivativeType: DerivativeType}): ShaderSignal;
+static derivative(v: Point2DSignal | Point4DSignal | PointSignal | ScalarSignal | ShaderSignal | VectorSignal | number, config: {derivativeType: DerivativeType}): ShaderSignal;
 
 /**
 *  
@@ -71,7 +75,7 @@ function derivative(v: Point2DSignal | Point4DSignal | PointSignal | ScalarSigna
  * `fallback`: a signal or shader which outputs a value of signal type.
  * returns: `main` if its output is present, or `fallback` if not.
  */
-function fallback(main: Point2DSignal | Point4DSignal | PointSignal | ScalarSignal | ShaderSignal | TransformSignal | VectorSignal | number, fallback: Point2DSignal | Point4DSignal | PointSignal | ScalarSignal | ShaderSignal | TransformSignal | VectorSignal | number): ShaderSignal;
+static fallback(main: Point2DSignal | Point4DSignal | PointSignal | ScalarSignal | ShaderSignal | TransformSignal | VectorSignal | number, fallback: Point2DSignal | Point4DSignal | PointSignal | ScalarSignal | ShaderSignal | TransformSignal | VectorSignal | number): ShaderSignal;
 
 /**
 *  
@@ -81,7 +85,7 @@ function fallback(main: Point2DSignal | Point4DSignal | PointSignal | ScalarSign
  * Forces the computation of `val` to happen at the fragment stage.
  * `v`: a signal or shader which outputs a value of signal type.
  */
-function fragmentStage(v: Point2DSignal | Point4DSignal | PointSignal | ScalarSignal | ShaderSignal | TransformSignal | VectorSignal | number): ShaderSignal;
+static fragmentStage(v: Point2DSignal | Point4DSignal | PointSignal | ScalarSignal | ShaderSignal | TransformSignal | VectorSignal | number): ShaderSignal;
 
 /**
 *  
@@ -91,7 +95,7 @@ function fragmentStage(v: Point2DSignal | Point4DSignal | PointSignal | ScalarSi
  * Returns a signal for the identity function over the specified type.
  * returns: shader `function(ScalarSignal): ScalarSignal`
  */
-function functionScalar(): ShaderSignal;
+static functionScalar(): ShaderSignal;
 
 /**
 *  
@@ -101,7 +105,7 @@ function functionScalar(): ShaderSignal;
  * Returns a signal for the identity function over the specified type.
  * returns: shader `function(Point2DSignal): Point2DSignal`
  */
-function functionVec2(): ShaderSignal;
+static functionVec2(): ShaderSignal;
 
 /**
 *  
@@ -111,7 +115,7 @@ function functionVec2(): ShaderSignal;
  * Returns a signal for the identity function over the specified type.
  * returns: shader `function(PointSignal): PointSignal`
  */
-function functionVec3(): ShaderSignal;
+static functionVec3(): ShaderSignal;
 
 /**
 *  
@@ -121,7 +125,7 @@ function functionVec3(): ShaderSignal;
  * Returns a signal for the identity function over the specified type.
  * returns: shader `function(Point4DSignal): Point4DSignal`
  */
-function functionVec4(): ShaderSignal;
+static functionVec4(): ShaderSignal;
 
 /**
 *  
@@ -131,7 +135,7 @@ function functionVec4(): ShaderSignal;
  * Returns a signal for the specified gradient.
  * returns: shader `function(Point2DSignal): ScalarSignal` representing a gradient defined by `config`
  */
-function gradient(config: {type: GradientType}): ShaderSignal;
+static gradient(config: {type: GradientType}): ShaderSignal;
 
 /**
 *  
@@ -141,7 +145,7 @@ function gradient(config: {type: GradientType}): ShaderSignal;
  * Returns a signal of the current render target's size.
  * returns: shader `function(): Point2DSignal`
  */
-function renderTargetSize(): Point2DSignal;
+static renderTargetSize(): Point2DSignal;
 
 /**
 *  
@@ -153,7 +157,7 @@ function renderTargetSize(): Point2DSignal;
  * `width`: number, ScalarSignal or shader `function(): ScalarSignal`
  * returns: shader `function(Point2DSignal): ScalarSignal`
  */
-function sdfAnnular(sdf: ShaderSignal, width: ScalarSignal | ShaderSignal | number): ShaderSignal;
+static sdfAnnular(sdf: ShaderSignal, width: ScalarSignal | ShaderSignal | number): ShaderSignal;
 
 /**
 *  
@@ -165,7 +169,7 @@ function sdfAnnular(sdf: ShaderSignal, width: ScalarSignal | ShaderSignal | numb
  * `radius`: `number`, `ScalarSignal` or shader `function(): ScalarSignal`
  * returns: shader `function(Point2DSignal): ScalarSignal`
  */
-function sdfCircle(center: Point2DSignal | ShaderSignal, radius: ScalarSignal | ShaderSignal | number): ShaderSignal;
+static sdfCircle(center: Point2DSignal | ShaderSignal, radius: ScalarSignal | ShaderSignal | number): ShaderSignal;
 
 /**
 *  
@@ -176,7 +180,7 @@ function sdfCircle(center: Point2DSignal | ShaderSignal, radius: ScalarSignal | 
  * `sdf`: shader `function(Point2DSignal): ScalarSignal`
  * returns: shader `function(Point2DSignal): ScalarSignal`
  */
-function sdfComplement(sdf: ShaderSignal): ShaderSignal;
+static sdfComplement(sdf: ShaderSignal): ShaderSignal;
 
 /**
 *  
@@ -188,7 +192,7 @@ function sdfComplement(sdf: ShaderSignal): ShaderSignal;
  * `sdf2`: shader `function(Point2DSignal): ScalarSignal`
  * returns: shader `function(Point2DSignal): ScalarSignal` which result is the product of substracting result of `sdf2` from result of `sdf1`
  */
-function sdfDifference(sdf1: ShaderSignal, sdf2: ShaderSignal): ShaderSignal;
+static sdfDifference(sdf1: ShaderSignal, sdf2: ShaderSignal): ShaderSignal;
 
 /**
 *  
@@ -200,7 +204,7 @@ function sdfDifference(sdf1: ShaderSignal, sdf2: ShaderSignal): ShaderSignal;
  * `halfSize`: `Point2DSignal` or shader `function(): Point2DSignal`
  * returns: shader `function(Point2DSignal): ScalarSignal`
  */
-function sdfEllipse(center: Point2DSignal | ShaderSignal, halfSize: Point2DSignal | ShaderSignal): ShaderSignal;
+static sdfEllipse(center: Point2DSignal | ShaderSignal, halfSize: Point2DSignal | ShaderSignal): ShaderSignal;
 
 /**
 *  
@@ -213,7 +217,7 @@ function sdfEllipse(center: Point2DSignal | ShaderSignal, halfSize: Point2DSigna
  * `normal`: `Point2DSignal` or shader `function(): Point2DSignal`
  * returns: shader `function(Point2DSignal): ScalarSignal`
  */
-function sdfFlip(sdf: ShaderSignal, offset: Point2DSignal | ShaderSignal, normal: Point2DSignal | ShaderSignal): ShaderSignal;
+static sdfFlip(sdf: ShaderSignal, offset: Point2DSignal | ShaderSignal, normal: Point2DSignal | ShaderSignal): ShaderSignal;
 
 /**
 *  
@@ -225,7 +229,7 @@ function sdfFlip(sdf: ShaderSignal, offset: Point2DSignal | ShaderSignal, normal
  * `normal`: `Point2DSignal` or shader `function(): Point2DSignal`
  * returns: shader `function(Point2DSignal): ScalarSignal`
  */
-function sdfHalfPlane(offset: Point2DSignal | ShaderSignal, normal: Point2DSignal | ShaderSignal): ShaderSignal;
+static sdfHalfPlane(offset: Point2DSignal | ShaderSignal, normal: Point2DSignal | ShaderSignal): ShaderSignal;
 
 /**
 *  
@@ -237,7 +241,7 @@ function sdfHalfPlane(offset: Point2DSignal | ShaderSignal, normal: Point2DSigna
  * `sdf2`: shader `function(Point2DSignal): ScalarSignal`
  * returns: shader `function(Point2DSignal): ScalarSignal`
  */
-function sdfIntersection(sdf1: ShaderSignal, sdf2: ShaderSignal): ShaderSignal;
+static sdfIntersection(sdf1: ShaderSignal, sdf2: ShaderSignal): ShaderSignal;
 
 /**
 *  
@@ -250,7 +254,7 @@ function sdfIntersection(sdf1: ShaderSignal, sdf2: ShaderSignal): ShaderSignal;
  * `halfWidth`: `number`, `ScalarSignal` or shader `function(): ScalarSignal`
  * returns: shader `function(Point2DSignal): ScalarSignal`
  */
-function sdfLine(offset: Point2DSignal | ShaderSignal, normal: Point2DSignal | ShaderSignal, halfWidth: ScalarSignal | ShaderSignal | number): ShaderSignal;
+static sdfLine(offset: Point2DSignal | ShaderSignal, normal: Point2DSignal | ShaderSignal, halfWidth: ScalarSignal | ShaderSignal | number): ShaderSignal;
 
 /**
 *  
@@ -263,7 +267,7 @@ function sdfLine(offset: Point2DSignal | ShaderSignal, normal: Point2DSignal | S
  * `alpha`: `number`, `ScalarSignal` or shader `function(): ScalarSignal`
  * returns: shader `function(Point2DSignal): ScalarSignal`
  */
-function sdfMix(sdf1: ShaderSignal, sdf2: ShaderSignal, alpha: ScalarSignal | ShaderSignal | number): ShaderSignal;
+static sdfMix(sdf1: ShaderSignal, sdf2: ShaderSignal, alpha: ScalarSignal | ShaderSignal | number): ShaderSignal;
 
 /**
 *  
@@ -276,7 +280,7 @@ function sdfMix(sdf1: ShaderSignal, sdf2: ShaderSignal, alpha: ScalarSignal | Sh
  * `numSides`: `number`, `ScalarSignal` or shader `function(): ScalarSignal`
  * returns: shader `function(Point2DSignal): ScalarSignal`
  */
-function sdfPolygon(center: Point2DSignal | ShaderSignal, radius: ScalarSignal | ShaderSignal | number, numSides: ScalarSignal | ShaderSignal | number, config: {sdfVariant: SdfVariant}): ShaderSignal;
+static sdfPolygon(center: Point2DSignal | ShaderSignal, radius: ScalarSignal | ShaderSignal | number, numSides: ScalarSignal | ShaderSignal | number, config: {sdfVariant: SdfVariant}): ShaderSignal;
 
 /**
 *  
@@ -288,7 +292,7 @@ function sdfPolygon(center: Point2DSignal | ShaderSignal, radius: ScalarSignal |
  * `halfSize`: `Point2DSignal` or shader `function(): Point2DSignal`
  * returns: shader `function(Point2DSignal): ScalarSignal`
  */
-function sdfRectangle(center: Point2DSignal | ShaderSignal, halfSize: Point2DSignal | ShaderSignal, config: {sdfVariant: SdfVariant}): ShaderSignal;
+static sdfRectangle(center: Point2DSignal | ShaderSignal, halfSize: Point2DSignal | ShaderSignal, config: {sdfVariant: SdfVariant}): ShaderSignal;
 
 /**
 *  
@@ -302,7 +306,7 @@ function sdfRectangle(center: Point2DSignal | ShaderSignal, halfSize: Point2DSig
  * `size`: `Point2DSignal` or shader `function(): Point2DSignal`
  * returns: shader `function(Point2DSignal): ScalarSignal`
  */
-function sdfRepeat(sdf: ShaderSignal, pivot: Point2DSignal | ShaderSignal, size: Point2DSignal | ShaderSignal): ShaderSignal;
+static sdfRepeat(sdf: ShaderSignal, pivot: Point2DSignal | ShaderSignal, size: Point2DSignal | ShaderSignal): ShaderSignal;
 
 /**
 *  
@@ -315,7 +319,7 @@ function sdfRepeat(sdf: ShaderSignal, pivot: Point2DSignal | ShaderSignal, size:
  * `angle`: `number`, `ScalarSignal` or shader `function(): ScalarSignal`
  * returns: shader `function(Point2DSignal): ScalarSignal`
  */
-function sdfRotation(sdf: ShaderSignal, pivot: Point2DSignal | ShaderSignal, angle: ScalarSignal | ShaderSignal | number): ShaderSignal;
+static sdfRotation(sdf: ShaderSignal, pivot: Point2DSignal | ShaderSignal, angle: ScalarSignal | ShaderSignal | number): ShaderSignal;
 
 /**
 *  
@@ -330,7 +334,7 @@ function sdfRotation(sdf: ShaderSignal, pivot: Point2DSignal | ShaderSignal, ang
  * `numTimes`: `number`, `ScalarSignal` or shader `function(): ScalarSignal`
  * returns: shader `function(Point2DSignal): ScalarSignal`
  */
-function sdfRotationalRepeat(sdf: ShaderSignal, pivot: Point2DSignal | ShaderSignal, radius: ScalarSignal | ShaderSignal | number, numTimes: ScalarSignal | ShaderSignal | number): ShaderSignal;
+static sdfRotationalRepeat(sdf: ShaderSignal, pivot: Point2DSignal | ShaderSignal, radius: ScalarSignal | ShaderSignal | number, numTimes: ScalarSignal | ShaderSignal | number): ShaderSignal;
 
 /**
 *  
@@ -342,7 +346,7 @@ function sdfRotationalRepeat(sdf: ShaderSignal, pivot: Point2DSignal | ShaderSig
  * `radius`: `number`, `ScalarSignal` or shader `function(): ScalarSignal`
  * returns: shader `function(Point2DSignal): ScalarSignal`
  */
-function sdfRound(sdf: ShaderSignal, radius: ScalarSignal | ShaderSignal | number): ShaderSignal;
+static sdfRound(sdf: ShaderSignal, radius: ScalarSignal | ShaderSignal | number): ShaderSignal;
 
 /**
 *  
@@ -355,7 +359,7 @@ function sdfRound(sdf: ShaderSignal, radius: ScalarSignal | ShaderSignal | numbe
  * `size`: `Point2DSignal` or shader `function(): Point2DSignal`
  * returns: shader `function(Point2DSignal): ScalarSignal`
  */
-function sdfScale(sdf: ShaderSignal, pivot: Point2DSignal | ShaderSignal, size: Point2DSignal | ShaderSignal): ShaderSignal;
+static sdfScale(sdf: ShaderSignal, pivot: Point2DSignal | ShaderSignal, size: Point2DSignal | ShaderSignal): ShaderSignal;
 
 /**
 *  
@@ -368,7 +372,7 @@ function sdfScale(sdf: ShaderSignal, pivot: Point2DSignal | ShaderSignal, size: 
  * `shear`: `Point2DSignal` or shader `function(): Point2DSignal`
  * returns: shader `function(Point2DSignal): ScalarSignal`
  */
-function sdfShear(sdf: ShaderSignal, pivot: Point2DSignal | ShaderSignal, shear: Point2DSignal | ShaderSignal): ShaderSignal;
+static sdfShear(sdf: ShaderSignal, pivot: Point2DSignal | ShaderSignal, shear: Point2DSignal | ShaderSignal): ShaderSignal;
 
 /**
 *  
@@ -381,7 +385,7 @@ function sdfShear(sdf: ShaderSignal, pivot: Point2DSignal | ShaderSignal, shear:
  * `k`: `number`, `ScalarSignal` or shader `function(): ScalarSignal`
  * returns: shader `function(Point2DSignal): ScalarSignal`
  */
-function sdfSmoothDifference(sdf1: ShaderSignal, sdf2: ShaderSignal, k: ScalarSignal | ShaderSignal | number): ShaderSignal;
+static sdfSmoothDifference(sdf1: ShaderSignal, sdf2: ShaderSignal, k: ScalarSignal | ShaderSignal | number): ShaderSignal;
 
 /**
 *  
@@ -394,7 +398,7 @@ function sdfSmoothDifference(sdf1: ShaderSignal, sdf2: ShaderSignal, k: ScalarSi
  * `k`: `number`, `ScalarSignal` or shader `function(): ScalarSignal`
  * returns: shader `function(Point2DSignal): ScalarSignal`
  */
-function sdfSmoothIntersection(sdf1: ShaderSignal, sdf2: ShaderSignal, k: ScalarSignal | ShaderSignal | number): ShaderSignal;
+static sdfSmoothIntersection(sdf1: ShaderSignal, sdf2: ShaderSignal, k: ScalarSignal | ShaderSignal | number): ShaderSignal;
 
 /**
 *  
@@ -407,7 +411,7 @@ function sdfSmoothIntersection(sdf1: ShaderSignal, sdf2: ShaderSignal, k: Scalar
  * `k`: `number`, `ScalarSignal` or shader `function(): ScalarSignal`
  * returns: shader `function(Point2DSignal): ScalarSignal`
  */
-function sdfSmoothUnion(sdf1: ShaderSignal, sdf2: ShaderSignal, k: ScalarSignal | ShaderSignal | number): ShaderSignal;
+static sdfSmoothUnion(sdf1: ShaderSignal, sdf2: ShaderSignal, k: ScalarSignal | ShaderSignal | number): ShaderSignal;
 
 /**
 *  
@@ -420,7 +424,7 @@ function sdfSmoothUnion(sdf1: ShaderSignal, sdf2: ShaderSignal, k: ScalarSignal 
  * `radius2`: `number`, `ScalarSignal` or shader `function(): ScalarSignal`
  * `numSides`: `number`, `ScalarSignal` or shader `function(): ScalarSignal`
  */
-function sdfStar(center: Point2DSignal | ShaderSignal, radius1: ScalarSignal | ShaderSignal | number, radius2: ScalarSignal | ShaderSignal | number, numSides: ScalarSignal | ShaderSignal | number): ShaderSignal;
+static sdfStar(center: Point2DSignal | ShaderSignal, radius1: ScalarSignal | ShaderSignal | number, radius2: ScalarSignal | ShaderSignal | number, numSides: ScalarSignal | ShaderSignal | number): ShaderSignal;
 
 /**
 *  
@@ -432,7 +436,7 @@ function sdfStar(center: Point2DSignal | ShaderSignal, radius1: ScalarSignal | S
  * `offset`: `Point2DSignal` or shader `function(): Point2DSignal`
  * returns: shader `function(Point2DSignal): ScalarSignal`
  */
-function sdfTranslation(sdf: ShaderSignal, offset: Point2DSignal | ShaderSignal): ShaderSignal;
+static sdfTranslation(sdf: ShaderSignal, offset: Point2DSignal | ShaderSignal): ShaderSignal;
 
 /**
 *  
@@ -445,7 +449,7 @@ function sdfTranslation(sdf: ShaderSignal, offset: Point2DSignal | ShaderSignal)
  * `twist`: `number`, `ScalarSignal` or shader `function(): ScalarSignal`
  * returns: shader `function(Point2DSignal): ScalarSignal`
  */
-function sdfTwist(sdf: ShaderSignal, pivot: Point2DSignal | ShaderSignal, twist: ScalarSignal | ShaderSignal | number): ShaderSignal;
+static sdfTwist(sdf: ShaderSignal, pivot: Point2DSignal | ShaderSignal, twist: ScalarSignal | ShaderSignal | number): ShaderSignal;
 
 /**
 *  
@@ -457,7 +461,7 @@ function sdfTwist(sdf: ShaderSignal, pivot: Point2DSignal | ShaderSignal, twist:
  * `sdf2`: shader `function(Point2DSignal): ScalarSignal`
  * returns: shader `function(Point2DSignal): ScalarSignal`
  */
-function sdfUnion(sdf1: ShaderSignal, sdf2: ShaderSignal): ShaderSignal;
+static sdfUnion(sdf1: ShaderSignal, sdf2: ShaderSignal): ShaderSignal;
 
 /**
 *  
@@ -469,7 +473,7 @@ function sdfUnion(sdf1: ShaderSignal, sdf2: ShaderSignal): ShaderSignal;
  * `uv`: `Point2DSignal` or shader `function(): Point2DSignal`
  * returns: shader `function(): ScalarSignal`, `function(): Point2DSignal`, `function(): PointSignal` or `function(): Point4DSignal` depending on underlying `texture` shader return type
  */
-function textureSampler(texture: ShaderSignal, uv: Point2DSignal | ShaderSignal): ShaderSignal;
+static textureSampler(texture: ShaderSignal, uv: Point2DSignal | ShaderSignal): ShaderSignal;
 
 /**
 *  
@@ -481,7 +485,7 @@ function textureSampler(texture: ShaderSignal, uv: Point2DSignal | ShaderSignal)
  * `transform`: shader `function(): Matrix3Signal`
  * returns: shader `function(Point2DSignal): ScalarSignal`, `function(Point2DSignal): Point2DSignal`, `function(Point2DSignal): PointSignal` or `function(Point2DSignal): Point4DSignal` depending on underlying `texture` shader return type
  */
-function textureTransform(texture: ShaderSignal, transform: ShaderSignal): ShaderSignal;
+static textureTransform(texture: ShaderSignal, transform: ShaderSignal): ShaderSignal;
 
 /**
 *  
@@ -497,7 +501,7 @@ function textureTransform(texture: ShaderSignal, transform: ShaderSignal): Shade
  * for `VertexAttribute.COLOR` a shader `function(): Point4DSignal`
  * for `VertexAttribute.BASE_POSITION` a shader `function(): Point4DSignal`
  */
-function vertexAttribute(config: {variableName: VertexAttribute}): ShaderSignal;
+static vertexAttribute(config: {variableName: VertexAttribute}): ShaderSignal;
 
 /**
 *  
@@ -517,7 +521,166 @@ function vertexAttribute(config: {variableName: VertexAttribute}): ShaderSignal;
  * for `BuiltinUniform.INV_V_MATRIX` a shader `function(): TransformSignal`
  * for `BuiltinUniform.INV_P_MATRIX` a shader `function(): TransformSignal`
  */
-function vertexTransform(config: {variableName: BuiltinUniform}): ShaderSignal;
+static vertexTransform(config: {variableName: BuiltinUniform}): ShaderSignal;
 
+/**
+ * The `BlendMode` enum describes the blending mode.
+ * @property ADD Blends two colors using the Add blend mode.
+ * @property BURN Blends two colors using the Burn blend mode.
+ * @property DIFFERENCE Blends two colors using the Difference blend mode.
+ * @property DIVIDE Blends two colors using the Divide blend mode.
+ * @property DODGE Blends two colors using the Dodge blend mode.
+ * @property MAX Blends two colors using the Max blend mode.
+ * @property MIN Blends two colors using the Min blend mode.
+ * @property MULTIPLY Blends two colors using the Multiply blend mode.
+ * @property NORMAL Blends two colors using the Normal blend mode.
+ * @property OVERLAY Blends two colors using the Overlay blend mode.
+ * @property PLUSDARKER Blends two colors using the PlusDarker blend mode.
+ * @property SCREEN Blends two colors using the Screen blend mode.
+ * @property SUBTRACT Blends two colors using the Subtract blend mode.
+ */
+static readonly BlendMode: {
+  ADD: "ADD",
+  BURN: "BURN",
+  DIFFERENCE: "DIFFERENCE",
+  DIVIDE: "DIVIDE",
+  DODGE: "DODGE",
+  MAX: "MAX",
+  MIN: "MIN",
+  MULTIPLY: "MULTIPLY",
+  NORMAL: "NORMAL",
+  OVERLAY: "OVERLAY",
+  PLUSDARKER: "PLUSDARKER",
+  SCREEN: "SCREEN",
+  SUBTRACT: "SUBTRACT",
+}
+/**
+ * The `ColorSpace` enum describes the color space.
+ * @property HSL HSL color space.
+ * @property HSV HSV color space.
+ * @property RGB RGB color space.
+ */
+static readonly ColorSpace: {
+  HSL: "HSL",
+  HSV: "HSV",
+  RGB: "RGB",
+}
+/**
+ * The `BuiltinUniform` enum describes the bultin shader uniforms.
+ * @property INV_M_MATRIX Inverse Model Matrix uniform.
+ * @property INV_P_MATRIX Inverse Projection Matrix uniform.
+ * @property INV_V_MATRIX Inverse View Matrix uniform.
+ * @property MVP_MATRIX Model View Projection Matrix uniform.
+ * @property MV_MATRIX Model View Matrix uniform.
+ * @property M_MATRIX Model Matrix uniform.
+ * @property NORMAL_MATRIX Normal Matrix uniform.
+ * @property P_MATRIX Projection Matrix uniform.
+ * @property VP_MATRIX View Projection Matrix uniform.
+ * @property V_MATRIX View Matrix uniform.
+ */
+static readonly BuiltinUniform: {
+  INV_M_MATRIX: "INV_M_MATRIX",
+  INV_P_MATRIX: "INV_P_MATRIX",
+  INV_V_MATRIX: "INV_V_MATRIX",
+  MVP_MATRIX: "MVP_MATRIX",
+  MV_MATRIX: "MV_MATRIX",
+  M_MATRIX: "M_MATRIX",
+  NORMAL_MATRIX: "NORMAL_MATRIX",
+  P_MATRIX: "P_MATRIX",
+  VP_MATRIX: "VP_MATRIX",
+  V_MATRIX: "V_MATRIX",
+}
+/**
+ * The `GradientType` enum describes the type of the shader gradient.
+ * @property CIRCULAR The gradient will radiate outward in a circular direction.
+ * @property HORIZONTAL The gradient will be in horizontal direction.
+ * @property VERTICAL The gradient will be in vertical direction.
+ */
+static readonly GradientType: {
+  CIRCULAR: "CIRCULAR",
+  HORIZONTAL: "HORIZONTAL",
+  VERTICAL: "VERTICAL",
+}
+/**
+ * The `BlendedMaterialTextures` enum describes the different texture slots for a flat material.
+ * @property DIFFUSE The Diffuse Texture slot of the corresponding material.
+ */
+static readonly BlendedMaterialTextures: {
+  DIFFUSE: "DIFFUSE",
+}
+/**
+ * The `DefaultMaterialTextures` enum describes the different texture slots for a default material.
+ * @property DIFFUSE The Diffuse Texture slot of the corresponding material.
+ * @property EMISSIVE The Emissive Texture slot of the corresponding material.
+ * @property NORMAL The Normal Texture slot of the corresponding material.
+ * @property REFLECTIVE The Reflective Texture slot of the corresponding material.
+ * @property SPECULAR The Specular Texture slot of the corresponding material.
+ */
+static readonly DefaultMaterialTextures: {
+  DIFFUSE: "DIFFUSE",
+  EMISSIVE: "EMISSIVE",
+  NORMAL: "NORMAL",
+  REFLECTIVE: "REFLECTIVE",
+  SPECULAR: "SPECULAR",
+}
+/**
+ * The `FacePaintMaterialTextures` enum describes the different texture slots for a face paint
+material.
+ * @property DIFFUSE The Diffuse Texture slot of the corresponding material.
+ */
+static readonly FacePaintMaterialTextures: {
+  DIFFUSE: "DIFFUSE",
+}
+/**
+ * The `PhysicallyBasedMaterialTextures` enum describes the different texture slots for a
+physically based material.
+ * @property BASE_COLOR The Base Color Texture slot of the corresponding material.
+ * @property EMISSIVE The Emissive Texture slot of the corresponding material.
+ * @property METALLIC_ROUGHNESS The Metallic Roughness Texture slot of the corresponding material.
+ * @property NORMAL The Normal Texture slot of the corresponding material.
+ */
+static readonly PhysicallyBasedMaterialTextures: {
+  BASE_COLOR: "BASE_COLOR",
+  EMISSIVE: "EMISSIVE",
+  METALLIC_ROUGHNESS: "METALLIC_ROUGHNESS",
+  NORMAL: "NORMAL",
+}
+/**
+ * The `SdfVariant` enum describes the SDF variant.
+ * @property EXACT Exact SDF variant.
+ * @property SHARP Sharp SDF variant.
+ */
+static readonly SdfVariant: {
+  EXACT: "EXACT",
+  SHARP: "SHARP",
+}
+/**
+ * The `DerivativeType` enum describes the shader derivative type.
+ * @property DFDX Derivative in x direction.
+ * @property DFDY Derivative in y direction.
+ * @property FWIDTH Sum of the absolute derivatives in x and y.
+ */
+static readonly DerivativeType: {
+  DFDX: "DFDX",
+  DFDY: "DFDY",
+  FWIDTH: "FWIDTH",
+}
+/**
+ * The `VertexAttribute` enum describes the bultin vertex attributes.
+ * @property BASE_POSITION Base Position vertex attribute.
+ * @property COLOR Color vertex attribute.
+ * @property NORMAL Normal vertex attribute.
+ * @property POSITION Position vertex attribute.
+ * @property TANGENT Tangent vertex attribute.
+ * @property TEX_COORDS Texture Coordinates vertex attribute.
+ */
+static readonly VertexAttribute: {
+  BASE_POSITION: "BASE_POSITION",
+  COLOR: "COLOR",
+  NORMAL: "NORMAL",
+  POSITION: "POSITION",
+  TANGENT: "TANGENT",
+  TEX_COORDS: "TEX_COORDS",
+}
 }
 export = ShadersModule;

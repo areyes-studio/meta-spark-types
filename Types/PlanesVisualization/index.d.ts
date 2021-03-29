@@ -1,3 +1,3 @@
-declare namespace PlanesVisualizationModule {
+declare class PlanesVisualizationModule {
 }
 export = PlanesVisualizationModule;

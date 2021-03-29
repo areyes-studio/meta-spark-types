@@ -8,7 +8,7 @@ declare interface AugmentationInstance {
 
 Return `StringSignal` with possible values defined by enum `AugmentationInstance.AugmentationInstanceState`
 */
-state: StringSignal | string;
+state: StringSignal;
 /**
 *  
  * remove(): Promise<void>

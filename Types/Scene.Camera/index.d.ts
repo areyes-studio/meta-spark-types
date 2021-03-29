@@ -1,5 +1,6 @@
 /// <reference path="../Scene.FocalPlane/index.d.ts" />
-declare interface Camera {
+/// <reference path="../Scene.SceneObjectBase/index.d.ts" />
+declare interface Camera extends SceneObjectBase {
 /**
 * ```
 (get) focalPlane: FocalPlane

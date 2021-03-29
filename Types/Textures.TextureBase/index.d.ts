@@ -9,7 +9,7 @@ declare interface TextureBase {
 
 Gets the height of the texture in pixels.
 */
-height: ScalarSignal | number;
+height: ScalarSignal;
 /**
 * ```
 (get) identifier: string
@@ -46,5 +46,5 @@ signal: ShaderSignal;
 
 Gets the width of the texture in pixels.
 */
-width: ScalarSignal | number;
+width: ScalarSignal;
 }

@@ -1,11 +1,12 @@
 /// <reference path="../Scene.PlaneType/index.d.ts" />
 /// <reference path="../Reactive.Point2D/index.d.ts" />
 /// <reference path="../Reactive.Point2DSignal/index.d.ts" />
+/// <reference path="../Scene.SceneObjectBase/index.d.ts" />
 /// <reference path="../Reactive.StringSignal/index.d.ts" />
-declare interface LineBasedPlaneTracker {
+declare interface LineBasedPlaneTracker extends SceneObjectBase {
 /**
 * ```
-(get) planeType: Signal<PlaneType>
+(get) planeType: StringSignal<PlaneType>
 (set) (Not Available)
 ```
 
@@ -17,7 +18,7 @@ Possible values:
 - HORIZONTAL_CEILING
 - VERTICAL
 */
-planeType: Signal<PlaneType>;
+planeType: StringSignal<PlaneType>;
 /**
 *  
  * movePlane(screenLocation: Point2D): void

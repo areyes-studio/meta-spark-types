@@ -1,9 +1,10 @@
+/// <reference path="../Reactive.ISignal/index.d.ts" />
 /// <reference path="../Reactive.Point4DSignal/index.d.ts" />
 /// <reference path="../Reactive.PointSignal/index.d.ts" />
 /// <reference path="../Reactive.Rotation/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 /// <reference path="../Reactive.SignalHistory/index.d.ts" />
-declare interface QuaternionSignal {
+declare interface QuaternionSignal extends ISignal {
 /**
 * ```
 (get) eulerAngles: PointSignal
@@ -22,7 +23,7 @@ eulerAngles: PointSignal;
 
 Represents the W component of the quaternion.
 */
-w: ScalarSignal | number;
+w: ScalarSignal;
 /**
 * ```
 (get) x: ScalarSignal
@@ -31,7 +32,7 @@ w: ScalarSignal | number;
 
 Represents the X component of the quaternion.
 */
-x: ScalarSignal | number;
+x: ScalarSignal;
 /**
 * ```
 (get) y: ScalarSignal
@@ -40,7 +41,7 @@ x: ScalarSignal | number;
 
 Represents the Y component of the quaternion.
 */
-y: ScalarSignal | number;
+y: ScalarSignal;
 /**
 * ```
 (get) z: ScalarSignal
@@ -49,7 +50,7 @@ y: ScalarSignal | number;
 
 Represents the Z component of the quaternion.
 */
-z: ScalarSignal | number;
+z: ScalarSignal;
 /**
 *  
  * angleAxis(): Point4DSignal
@@ -89,17 +90,17 @@ dot(signal: QuaternionSignal): ScalarSignal;
 /**
 * 
  *  
- * history(framesCount: number): SignalHistory<Quaternion>
- * history(framesCount: number, initialValues: Array<Rotation>): SignalHistory<Quaternion>
+ * history(framesCount: number): SignalHistory<Rotation>
+ * history(framesCount: number, initialValues: Array<Rotation>): SignalHistory<Rotation>
  *  
  * 
  * Returns an object used to access signal values from past frames. The amount of frames tracked is customizable via `framesCount` parameter.
  * Historical signal values are going to be initialized with signal value at call time or using `initialValues` if provided.
  * 
  */
-history(framesCount: number): SignalHistory<Quaternion>;
+history(framesCount: number): SignalHistory<Rotation>;
 
-history(framesCount: number, initialValues: Array<Rotation>): SignalHistory<Quaternion>;
+history(framesCount: number, initialValues: Array<Rotation>): SignalHistory<Rotation>;
 
 /**
 *  

@@ -2,7 +2,7 @@
 /// <reference path="../LiveStreaming.LiveStreamingReactions/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 /// <reference path="../Reactive.StringSignal/index.d.ts" />
-declare namespace LiveStreamingModule {
+declare class LiveStreamingModule {
 /**
 * ```
 (get) comments: LiveStreamingComments
@@ -11,7 +11,7 @@ declare namespace LiveStreamingModule {
 
 Provides access to a `LiveStreamingComments` object that encapsulates data about the live stream's comments.
 */
-const comments: LiveStreamingComments;
+static readonly comments: LiveStreamingComments;
 /**
 * ```
 (get) concurrentViewerCount: ScalarSignal
@@ -20,7 +20,7 @@ const comments: LiveStreamingComments;
 
 Provides access to a `ScalarSignal` that encapsulates the number of concurrent viewers of the live stream.
 */
-const concurrentViewerCount: ScalarSignal | number;
+static readonly concurrentViewerCount: ScalarSignal;
 /**
 * ```
 (get) reactions: LiveStreamingReactions
@@ -29,7 +29,7 @@ const concurrentViewerCount: ScalarSignal | number;
 
 Provides access to a `LiveStreamingReactions` object that encapsulates data about the live stream's reactions.
 */
-const reactions: LiveStreamingReactions;
+static readonly reactions: LiveStreamingReactions;
 /**
 * ```
 (get) state: StringSignal
@@ -38,6 +38,18 @@ const reactions: LiveStreamingReactions;
 
 Specifies a `LiveStreaming.State` enum value indicating the broadcast state.
 */
-const state: StringSignal | string;
+static readonly state: StringSignal;
+/**
+ * The `LiveStreamingModule.State` enum describes the state of a live stream.
+@
+ * @property LIVE Indicates that the effect is streaming live.
+ * @property NONLIVE Indicates that the effect is not streaming live.
+ * @property PRELIVE Indicates that the effect is about to stream live.
+ */
+static readonly State: {
+  LIVE: "LIVE",
+  NONLIVE: "NONLIVE",
+  PRELIVE: "PRELIVE",
+}
 }
 export = LiveStreamingModule;

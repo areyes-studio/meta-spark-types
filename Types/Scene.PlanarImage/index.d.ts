@@ -1,5 +1,6 @@
 /// <reference path="../Materials.MaterialBase/index.d.ts" />
-declare interface PlanarImage {
+/// <reference path="../Scene.PlanarObject/index.d.ts" />
+declare interface PlanarImage extends PlanarObject {
 /**
 * ```
 (get) material: MaterialBase | null

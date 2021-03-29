@@ -8,7 +8,7 @@ declare interface TextureTransform {
 
 Specifies the offset along the U - axis of the texture coordinates system.
 */
-offsetU: ScalarSignal | number;
+offsetU: ScalarSignal;
 /**
 * ```
 (get) offsetV: ScalarSignal
@@ -17,7 +17,7 @@ offsetU: ScalarSignal | number;
 
 Specifies the offset along the V - axis of the texture coordinates system.
 */
-offsetV: ScalarSignal | number;
+offsetV: ScalarSignal;
 /**
 * ```
 (get) rotation: ScalarSignal
@@ -26,7 +26,7 @@ offsetV: ScalarSignal | number;
 
 Specifies the rotation of the texture coordinates system in radians.
 */
-rotation: ScalarSignal | number;
+rotation: ScalarSignal;
 /**
 * ```
 (get) scaleU: ScalarSignal
@@ -35,7 +35,7 @@ rotation: ScalarSignal | number;
 
 Specifies the scale along the U - axis of the texture coordinates system.
 */
-scaleU: ScalarSignal | number;
+scaleU: ScalarSignal;
 /**
 * ```
 (get) scaleV: ScalarSignal
@@ -44,5 +44,5 @@ scaleU: ScalarSignal | number;
 
 Specifies the scale along the V - axis of the texture coordinates system.
 */
-scaleV: ScalarSignal | number;
+scaleV: ScalarSignal;
 }

@@ -1,6 +1,7 @@
 /// <reference path="../Reactive.BoolSignal/index.d.ts" />
+/// <reference path="../Scene.SceneObjectBase/index.d.ts" />
 /// <reference path="../Reactive.StringSignal/index.d.ts" />
-declare interface TargetTracker {
+declare interface TargetTracker extends SceneObjectBase {
 /**
 * ```
 (get) confidence: StringSignal
@@ -15,7 +16,7 @@ The returned value will be one of the following:
 - LOW
 - NOT_TRACKING
 */
-confidence: StringSignal | string;
+confidence: StringSignal;
 /**
 * ```
 (get) isTracking: BoolSignal
@@ -24,7 +25,7 @@ confidence: StringSignal | string;
 
 Returns whether the TargetTracker is actively tracking a target in the camera view.
 */
-isTracking: BoolSignal | boolean;
+isTracking: BoolSignal;
 /**
 * ```
 (get) outOfViewTrackingActive: BoolSignal
@@ -33,5 +34,5 @@ isTracking: BoolSignal | boolean;
 
 Returns whether the TargetTracker is actively tracking, even if the target has exited the camera's field of view.
 */
-outOfViewTrackingActive: BoolSignal | boolean;
+outOfViewTrackingActive: BoolSignal;
 }

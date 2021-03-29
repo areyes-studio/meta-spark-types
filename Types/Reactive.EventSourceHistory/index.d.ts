@@ -1,5 +1,5 @@
 /// <reference path="../Reactive.EventSource/index.d.ts" />
-declare interface EventSourceHistory {
+declare interface EventSourceHistory<T> {
 /**
 * ```
 (get) length: number
@@ -11,7 +11,7 @@ Returns how many frames are being tracked by this history object.
 length: number;
 /**
 *  
- * at(index: number): EventSource<>
+ * at(index: number): EventSource<T>
  *  
  * 
  * Returns an `EventSource` for the history value at given index.
@@ -21,11 +21,11 @@ length: number;
  * **Note**: See also `EventSourceHistory.frame` method which uses more intuitive negative indexing.
  * **Note**: You can use `EventSourceHistory[0]` to achieve same effect as calling `EventSourceHistory.at(0)`
  */
-at(index: number): EventSource<>;
+at(index: number): EventSource<T>;
 
 /**
 *  
- * frame(frame: number): EventSource<>
+ * frame(frame: number): EventSource<T>
  *  
  * 
  * Returns an `EventSource` for the history value at given frame relative to current one.
@@ -35,6 +35,6 @@ at(index: number): EventSource<>;
  * **Note**: See also `EventSourceHistory.at` method for approach which is index based.
  * **Note**: You can use `EventSourceHistory[-1]` to achieve same effect as calling `EventSourceHistory.frame(-1)`
  */
-frame(frame: number): EventSource<>;
+frame(frame: number): EventSource<T>;
 
 }

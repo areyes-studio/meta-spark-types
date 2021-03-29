@@ -1,5 +1,6 @@
 /// <reference path="../Reactive.BoolSignal/index.d.ts" />
 /// <reference path="../Reactive.EventSource/index.d.ts" />
+/// <reference path="../Reactive.ISignal/index.d.ts" />
 /// <reference path="../Reactive.Point2DSignal/index.d.ts" />
 /// <reference path="../Reactive.Point4DSignal/index.d.ts" />
 /// <reference path="../Reactive.PointSignal/index.d.ts" />
@@ -7,157 +8,7 @@
 /// <reference path="../Reactive.StringSignal/index.d.ts" />
 /// <reference path="../Reactive.TransformSignal/index.d.ts" />
 /// <reference path="../Reactive.VectorSignal/index.d.ts" />
-declare module "ReactiveModule" {
-global {
-interface Number {
-lastValue: number;
-abs(): ScalarSignal;
-
-add(other: ScalarSignal | number): ScalarSignal;
-
-add(other: VectorSignal): PointSignal;
-
-add(other: VectorSignal): VectorSignal;
-
-add(other: PointSignal): PointSignal;
-
-atan2(other: ScalarSignal | number): ScalarSignal;
-
-ceil(): ScalarSignal;
-
-clamp(min: ScalarSignal | number, max: ScalarSignal | number): ScalarSignal;
-
-clamp(min: ScalarSignal | number, max: ScalarSignal | number): Point2DSignal;
-
-clamp(min: ScalarSignal | number, max: ScalarSignal | number): VectorSignal;
-
-cross(other: VectorSignal): VectorSignal;
-
-delayBy(timeSpan: {milliseconds: number}): this;
-
-distance(other: PointSignal): ScalarSignal;
-
-div(other: ScalarSignal | number): ScalarSignal;
-
-dot(other: VectorSignal): ScalarSignal;
-
-eq(other: ScalarSignal | number): BoolSignal;
-
-expSmooth(dampFactor: number): ScalarSignal;
-
-floor(): ScalarSignal;
-
-format(formatString: string): StringSignal;
-
-fromRange(x: ScalarSignal | number, min: ScalarSignal | number, max: ScalarSignal | number): ScalarSignal;
-
-ge(other: ScalarSignal | number): BoolSignal;
-
-gt(other: ScalarSignal | number): BoolSignal;
-
-history(framesCount: number): SignalHistory<Scalar>;
-
-history(framesCount: number, initialValues: Array<number>): SignalHistory<Scalar>;
-
-interval(threshold: number): EventSource;
-
-le(other: ScalarSignal | number): BoolSignal;
-
-lt(other: ScalarSignal | number): BoolSignal;
-
-magnitude(): ScalarSignal;
-
-magnitudeSquared(): ScalarSignal;
-
-max(other: ScalarSignal | number): ScalarSignal;
-
-max(other: ScalarSignal | number): Point2DSignal;
-
-max(other: ScalarSignal | number): VectorSignal;
-
-min(other: ScalarSignal | number): ScalarSignal;
-
-min(other: ScalarSignal | number): Point2DSignal;
-
-min(other: ScalarSignal | number): VectorSignal;
-
-mix(signal: ScalarSignal | number, factor: ScalarSignal | number): ScalarSignal;
-
-mix(signal: Point2DSignal, factor: ScalarSignal | number): Point2DSignal;
-
-mix(signal: PointSignal, factor: ScalarSignal | number): PointSignal;
-
-mix(signal: VectorSignal, factor: ScalarSignal | number): VectorSignal;
-
-mix(signal: Point4DSignal, factor: ScalarSignal | number): Point4DSignal;
-
-mix(signal: TransformSignal, factor: ScalarSignal | number): TransformSignal;
-
-mod(other: ScalarSignal | number): ScalarSignal;
-
-monitor(): EventSource;
-
-monitor(config: { fireOnInitialValue: ?boolean}): EventSource;
-
-mul(other: ScalarSignal | number): ScalarSignal;
-
-mul(other: VectorSignal): VectorSignal;
-
-mul(other: ScalarSignal | number): VectorSignal;
-
-multiTrigger(threshold: number): EventSource;
-
-ne(other: ScalarSignal | number): BoolSignal;
-
-neg(): ScalarSignal;
-
-neg(): VectorSignal;
-
-normalize(): VectorSignal;
-
-pin(): ScalarSignal;
-
-pinLastValue(): ConstScalarSignal;
-
-pow(exponent: ScalarSignal | number): ScalarSignal;
-
-reflect(normal: VectorSignal): VectorSignal;
-
-round(): ScalarSignal;
-
-schmittTrigger(config: { low: number, high: number, initialValue: ?boolean}): BoolSignal;
-
-sign(): ScalarSignal;
-
-smoothStep(x: ScalarSignal | number, edge0: ScalarSignal | number, edge1: ScalarSignal | number): ScalarSignal;
-
-sqrt(): ScalarSignal;
-
-sub(other: ScalarSignal | number): ScalarSignal;
-
-sub(other: PointSignal): VectorSignal;
-
-sub(other: VectorSignal): PointSignal;
-
-sub(other: VectorSignal): VectorSignal;
-
-sum(other: ScalarSignal | number): ScalarSignal;
-
-sum(other: VectorSignal): PointSignal;
-
-sum(other: VectorSignal): VectorSignal;
-
-sum(other: PointSignal): PointSignal;
-
-toRange(x: ScalarSignal | number, min: ScalarSignal | number, max: ScalarSignal | number): ScalarSignal;
-
-toString(): StringSignal;
-
-trigger(threshold: number): EventSource;
-
-}
-}
-export interface ScalarSignal extends Number {
+declare interface ScalarSignal {
 /**
 * ```
 (get) lastValue: number
@@ -373,21 +224,21 @@ gt(other: ScalarSignal | number): BoolSignal;
 /**
 * 
  *  
- * history(framesCount: number): SignalHistory<Scalar>
- * history(framesCount: number, initialValues: Array<number>): SignalHistory<Scalar>
+ * history(framesCount: number): SignalHistory<number>
+ * history(framesCount: number, initialValues: Array<number>): SignalHistory<number>
  *  
  * 
  * Returns an object used to access signal values from past frames. The amount of frames tracked is customizable via `framesCount` parameter.
  * Historical signal values are going to be initialized with signal value at call time or using `initialValues` if provided.
  * 
  */
-history(framesCount: number): SignalHistory<Scalar>;
+history(framesCount: number): SignalHistory<number>;
 
-history(framesCount: number, initialValues: Array<number>): SignalHistory<Scalar>;
+history(framesCount: number, initialValues: Array<number>): SignalHistory<number>;
 
 /**
 *  
- * interval(threshold: number): EventSource
+ * interval(threshold: number): EventSource<number>
  *  
  * 
  * Returns an `EventSource` that emits an event whenever the supplied `ScalarSignal` first passes (becomes greater than or equal) a value of `N*threshold`, N = 1, 2, 3, ... Events are signaled in increasing order of N, starting from 1, with no omissions. For each value of N, the respective event is fired only once.
@@ -400,7 +251,7 @@ history(framesCount: number, initialValues: Array<number>): SignalHistory<Scalar
  * 
  * **See Also**: `ReactiveModule.trigger`, `ReactiveModule.multiTrigger`.
  */
-interval(threshold: number): EventSource;
+interval(threshold: number): EventSource<number>;
 
 /**
 *  
@@ -512,22 +363,22 @@ mod(other: ScalarSignal | number): ScalarSignal;
 /**
 * 
  *  
- * monitor(): EventSource
- * monitor(config: { fireOnInitialValue: ?boolean}): EventSource
+ * monitor(): EventSource<{ oldValue: number, newValue: number }>
+ * monitor(config: { fireOnInitialValue?: boolean}): EventSource<{ oldValue: number, newValue: number }>
  *  
  * 
  * Returns an `EventSource` that emits an event every time the value of the input signal changes. The event contains a JSON object with the old and new values in the format:
  * 
  *  
- * { "oldValue": val, "newValue": val }
+ * { "oldValue": number, "newValue": number }
  *  
  * 
  * **Note**: By default, there is no event fired for the initial value of the signal. If `config.fireOnInitialValue` is set to `true` then an event for initial signal value is also emitted. `oldValue` is unset for this initial event.
  * 
  */
-monitor(): EventSource;
+monitor(): EventSource<{ oldValue: number, newValue: number }>;
 
-monitor(config: { fireOnInitialValue: ?boolean}): EventSource;
+monitor(config: { fireOnInitialValue?: boolean}): EventSource<{ oldValue: number, newValue: number }>;
 
 /**
 *  
@@ -548,7 +399,7 @@ mul(other: ScalarSignal | number): VectorSignal;
 
 /**
 *  
- * multiTrigger(threshold: number): EventSource
+ * multiTrigger(threshold: number): EventSource<number>
  *  
  * 
  * Returns an `EventSource` that fires **every time** the signal raises to (becomes greater than or equal after being less than) the value of `threshold`.
@@ -559,7 +410,7 @@ mul(other: ScalarSignal | number): VectorSignal;
  * 
  * **See Also**: `ReactiveModule.trigger`, `ReactiveModule.interval`.
  */
-multiTrigger(threshold: number): EventSource;
+multiTrigger(threshold: number): EventSource<number>;
 
 /**
 *  
@@ -651,7 +502,7 @@ round(): ScalarSignal;
 
 /**
 *  
- * schmittTrigger(config: { low: number, high: number, initialValue: ?boolean}): BoolSignal
+ * schmittTrigger(config: { low: number, high: number, initialValue?: boolean}): BoolSignal
  *  
  * 
  * Returns a Boolean signal that is `true` when the input is strictly greater than the upper threshold, and `false` when it is strictly less than the lower threshold.
@@ -659,7 +510,7 @@ round(): ScalarSignal;
  * 
  * **Note**: The initialValue is assumed to be `false` if it isn't specified.
  */
-schmittTrigger(config: { low: number, high: number, initialValue: ?boolean}): BoolSignal;
+schmittTrigger(config: { low: number, high: number, initialValue?: boolean}): BoolSignal;
 
 /**
 *  
@@ -759,7 +610,7 @@ toString(): StringSignal;
 
 /**
 *  
- * trigger(threshold: number): EventSource
+ * trigger(threshold: number): EventSource<number>
  *  
  * 
  * Returns an `EventSource` that fires **the first time** the value of the signal raises (becomes greater than or equal) to the level of `threshold`. No more than one event is ever emitted by this `EventSource`.
@@ -770,7 +621,6 @@ toString(): StringSignal;
  * 
  * **See Also**: `ReactiveModule.multiTrigger`, `ReactiveModule.interval`.
  */
-trigger(threshold: number): EventSource;
+trigger(threshold: number): EventSource<number>;
 
-}
 }

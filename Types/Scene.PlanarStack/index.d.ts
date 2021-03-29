@@ -1,33 +1,35 @@
 /// <reference path="../Materials.MaterialBase/index.d.ts" />
+/// <reference path="../Scene.PlanarObject/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
-declare interface PlanarStack {
+/// <reference path="../Reactive.StringSignal/index.d.ts" />
+declare interface PlanarStack extends PlanarObject {
 /**
 * ```
-(get) childAlign: Signal<SceneModule.StackAlign>
-(set) childAlign: Signal<SceneModule.StackAlign>
+(get) childAlign: StringSignal<SceneModule.StackAlign>
+(set) childAlign: StringSignal<SceneModule.StackAlign>
 ```
 
 Specifies the alignment of the stack children
 */
-childAlign: Signal<SceneModule.StackAlign>;
+childAlign: StringSignal<SceneModule.StackAlign>;
 /**
 * ```
-(get) childDistribute: Signal<SceneModule.StackDistribute>
-(set) childDistribute: Signal<SceneModule.StackDistribute>
+(get) childDistribute: StringSignal<SceneModule.StackDistribute>
+(set) childDistribute: StringSignal<SceneModule.StackDistribute>
 ```
 
 Specifies the distribution of the stack children
 */
-childDistribute: Signal<SceneModule.StackDistribute>;
+childDistribute: StringSignal<SceneModule.StackDistribute>;
 /**
 * ```
-(get) direction: Signal<SceneModule.Direction>
-(set) direction: Signal<SceneModule.Direction>
+(get) direction: StringSignal<SceneModule.Direction>
+(set) direction: StringSignal<SceneModule.Direction>
 ```
 
 Specifies the direction of the stack layout.
 */
-direction: Signal<SceneModule.Direction>;
+direction: StringSignal<SceneModule.Direction>;
 /**
 * ```
 (get) gap: ScalarSignal
@@ -36,7 +38,7 @@ direction: Signal<SceneModule.Direction>;
 
 Specifies the gap between the stack children
 */
-gap: ScalarSignal | number;
+gap: ScalarSignal;
 /**
 *  
  * getMaterial(): Promise<MaterialBase | null>

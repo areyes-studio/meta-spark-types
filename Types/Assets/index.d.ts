@@ -1,5 +1,6 @@
 /// <reference path="../Assets.Asset/index.d.ts" />
-declare namespace AssetsModule {
+/// <reference path="../Assets.AssetType/index.d.ts" />
+declare class AssetsModule {
 /**
 *  
  * findFirst(name: string): Promise<Asset | null>
@@ -7,7 +8,7 @@ declare namespace AssetsModule {
  * 
  * Find first text asset that matches a given name pattern.
  */
-function findFirst(name: string): Promise<Asset | null>;
+static findFirst(name: string): Promise<Asset | null>;
 
 /**
 *  
@@ -16,7 +17,7 @@ function findFirst(name: string): Promise<Asset | null>;
  * 
  * Find text assets with names that match a given pattern.
  */
-function findUsingPattern(namePattern: string, config?: {limit: number}): Promise<Array<Asset>>;
+static findUsingPattern(namePattern: string, config?: {limit: number}): Promise<Array<Asset>>;
 
 /**
 *  
@@ -25,7 +26,14 @@ function findUsingPattern(namePattern: string, config?: {limit: number}): Promis
  * 
  * Get all text assets that are bundled in this effect.
  */
-function getAll(): Promise<Array<Asset>>;
+static getAll(): Promise<Array<Asset>>;
 
+/**
+ * 
+ * @property Text 
+ */
+static readonly AssetType: {
+  Text: "Text",
+}
 }
 export = AssetsModule;

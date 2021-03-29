@@ -1,4 +1,4 @@
-declare namespace NetworkingModule {
+declare class NetworkingModule {
 /**
 *  
  * fetch(url: string, request?: {body: string, headers: {[key: string]: string}, method: string}): Promise<ResponseObject>
@@ -9,7 +9,7 @@ declare namespace NetworkingModule {
  * The result of the call is an object with two elements: A status property indicating the HTTP response status of the call,
  * and `json()` function, which returns a promise for the dictionary containing the body of the response (which is expected to be JSON).
  */
-function fetch(url: string, request?: {body: string, headers: {[key: string]: string}, method: string}): Promise<ResponseObject>;
+static fetch(url: string, request?: {body: string, headers: {[key: string]: string}, method: string}): Promise<ResponseObject>;
 
 }
 export = NetworkingModule;

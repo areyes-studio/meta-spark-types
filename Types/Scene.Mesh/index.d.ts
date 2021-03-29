@@ -1,7 +1,9 @@
 /// <reference path="../Scene.BlendShape/index.d.ts" />
 /// <reference path="../Materials.MaterialBase/index.d.ts" />
 /// <reference path="../Scene.MeshSurface/index.d.ts" />
-declare interface Mesh {
+/// <reference path="../Prefabs.Prefab/index.d.ts" />
+/// <reference path="../Scene.SceneObjectBase/index.d.ts" />
+declare interface Mesh extends SceneObjectBase {
 /**
 * ```
 (get) material: MaterialBase | null

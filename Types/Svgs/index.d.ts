@@ -1,5 +1,5 @@
 /// <reference path="../Svgs.Svg/index.d.ts" />
-declare namespace SvgsModule {
+declare class SvgsModule {
 /**
 *  
  * findFirst(name: string): Promise<Svg | null>
@@ -8,7 +8,7 @@ declare namespace SvgsModule {
  * Returns a promise that is resolved with the svg of a requested name or null if none was found.
  * **See Also**: `Svgs.findUsingPattern`, `Svgs.getAll`.
  */
-function findFirst(name: string): Promise<Svg | null>;
+static findFirst(name: string): Promise<Svg | null>;
 
 /**
 *  
@@ -30,7 +30,7 @@ function findFirst(name: string): Promise<Svg | null>;
  * 
  * **See Also**: `Svgs.getAll`, `Svgs.findFirst`.
  */
-function findUsingPattern(namePattern: string, config?: {limit: number}): Promise<Array<Svg>>;
+static findUsingPattern(namePattern: string, config?: {limit: number}): Promise<Array<Svg>>;
 
 /**
 *  
@@ -40,7 +40,7 @@ function findUsingPattern(namePattern: string, config?: {limit: number}): Promis
  * Returns a promise that is resolved with all of the svgs.
  * **See Also**: `Svgs.findUsingPattern`, `Svgs.findFirst`.
  */
-function getAll(): Promise<Array<Svg>>;
+static getAll(): Promise<Array<Svg>>;
 
 }
 export = SvgsModule;

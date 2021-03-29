@@ -48,7 +48,7 @@ forehead: Forehead;
 Specifies a `StringSignal` containing the unique ID assigned to a face. An ID is generated every time a face is detected and tracked in the scene.
 When a face is lost and then tracked again, a new ID is generated even if it is the same person.
 */
-id: StringSignal | string;
+id: StringSignal;
 /**
 * ```
 (get) isTracked: BoolSignal
@@ -58,7 +58,7 @@ id: StringSignal | string;
 A `BoolSignal` indicating whether the face was tracked this frame.
 If the face was not tracked, other properties represent the most recent tracked frame.
 */
-isTracked: BoolSignal | boolean;
+isTracked: BoolSignal;
 /**
 * ```
 (get) leftCheek: Cheek

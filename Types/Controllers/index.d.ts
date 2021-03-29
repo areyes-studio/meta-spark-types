@@ -1,5 +1,5 @@
 /// <reference path="../Controllers.Button/index.d.ts" />
-declare namespace ControllersModule {
+declare class ControllersModule {
 /**
 *  
  * getButton(name: string): Promise<Button>
@@ -10,7 +10,7 @@ declare namespace ControllersModule {
  * controller, must be set up in Spark AR Studio's controller configuration. If no button
  * mapping exists with the given name, the returned promise will fail.
  */
-function getButton(name: string): Promise<Button>;
+static getButton(name: string): Promise<Button>;
 
 }
 export = ControllersModule;

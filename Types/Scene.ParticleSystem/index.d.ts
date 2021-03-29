@@ -7,8 +7,9 @@
 /// <reference path="../Reactive.PointSignal/index.d.ts" />
 /// <reference path="../Animation.ScalarSampler/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
+/// <reference path="../Scene.SceneObjectBase/index.d.ts" />
 /// <reference path="../Reactive.VectorSignal/index.d.ts" />
-declare interface ParticleSystem {
+declare interface ParticleSystem extends SceneObjectBase {
 /**
 * ```
 (get) (Not Available)
@@ -44,7 +45,7 @@ angularVelocityDelta: PointSignal;
 
 Specifies the particle birthrate, in number of particles per second.
 */
-birthrate: ScalarSignal | number;
+birthrate: ScalarSignal;
 /**
 * ```
 (get) birthrateDelta: ScalarSignal
@@ -55,7 +56,7 @@ Specifies the percentage delta value, between 0.0 and 1.0, for the `birthrate` p
 Whenever a particle is spawned, an "instantaneous birthrate" is chosen uniformly in the range `[birthrate * (1 - d); birthrate * (1 + d)]` and the next particle will be spawned in (1/instantaneous birthrate) seconds.
 **Note**: The behavior is undefined for values outside the valid range.
 */
-birthrateDelta: ScalarSignal | number;
+birthrateDelta: ScalarSignal;
 /**
 * ```
 (get) (Not Available)
@@ -100,7 +101,7 @@ hsvaColorModulationModifier: ColorSampler;
 
 Specifies the mean rotation of each particle, in radians.
 */
-initialRotation: ScalarSignal | number;
+initialRotation: ScalarSignal;
 /**
 * ```
 (get) initialRotationDelta: ScalarSignal
@@ -109,7 +110,7 @@ initialRotation: ScalarSignal | number;
 
 Specifies the absolute delta value for the `initialRotation` property. The initial rotation is randomized uniformly in the range `[initialRotation - initialRotationDelta; initialRotation + initialRotationDelta]` for each particle.
 */
-initialRotationDelta: ScalarSignal | number;
+initialRotationDelta: ScalarSignal;
 /**
 * ```
 (get) initialVelocityAngle: ScalarSignal
@@ -118,7 +119,7 @@ initialRotationDelta: ScalarSignal | number;
 
 Specifies the mean initial velocity angle of each particle, in radians.
 */
-initialVelocityAngle: ScalarSignal | number;
+initialVelocityAngle: ScalarSignal;
 /**
 * ```
 (get) initialVelocityAngleDelta: ScalarSignal
@@ -127,7 +128,7 @@ initialVelocityAngle: ScalarSignal | number;
 
 Specifies the absolute delta value for the `initialVelocityAngle` property. The initial velocity angle is randomized uniformly in the range `[initialVelocityAngle - initialVelocityAngleDelta; initialVelocityAngle + initialVelocityAngleDelta]` for each particle.
 */
-initialVelocityAngleDelta: ScalarSignal | number;
+initialVelocityAngleDelta: ScalarSignal;
 /**
 * ```
 (get) initialVelocityMagnitude: ScalarSignal
@@ -136,7 +137,7 @@ initialVelocityAngleDelta: ScalarSignal | number;
 
 Specifies the mean initial velocity magnitude of each particle.
 */
-initialVelocityMagnitude: ScalarSignal | number;
+initialVelocityMagnitude: ScalarSignal;
 /**
 * ```
 (get) initialVelocityMagnitudePercentageDelta: ScalarSignal
@@ -146,7 +147,7 @@ initialVelocityMagnitude: ScalarSignal | number;
 Specifies the percentage delta value, between 0.0 and 1.0, for the `initialVelocityMagnitude` property. The initial velocity magnitude is randomized uniformly in the range `[initialVelocityMagnitude * (1 - d); initialVelocityMagnitude * (1 + d)]` for each particle.
 **Note**: The behavior is undefined for values outside the valid range.
 */
-initialVelocityMagnitudePercentageDelta: ScalarSignal | number;
+initialVelocityMagnitudePercentageDelta: ScalarSignal;
 /**
 * ```
 (get) innerRadius: ScalarSignal
@@ -156,7 +157,7 @@ initialVelocityMagnitudePercentageDelta: ScalarSignal | number;
 Specifies the radius of the inner circle when using the ring emitter for the particle system. The particles spawn between `innerRadius` and `outerRadius`.
 **Note**: `outerRadius` must be greater-than or equal to `innerRadius`.
 */
-innerRadius: ScalarSignal | number;
+innerRadius: ScalarSignal;
 /**
 * ```
 (get) lifetimeSeconds: ScalarSignal
@@ -165,7 +166,7 @@ innerRadius: ScalarSignal | number;
 
 Specifies the mean lifetime of each particle, in seconds.
 */
-lifetimeSeconds: ScalarSignal | number;
+lifetimeSeconds: ScalarSignal;
 /**
 * ```
 (get) lifetimeSecondsPercentageDelta: ScalarSignal
@@ -175,7 +176,7 @@ lifetimeSeconds: ScalarSignal | number;
 Specifies the percentage delta value, between 0.0 and 1.0, for the `lifetimeSeconds` property. The lifetime is randomized uniformly in the range `[lifetimeSeconds * (1 - d); lifetimeSeconds * (1 + d)]` for each particle.
 **Note**: The behavior is undefined for values outside the valid range.
 */
-lifetimeSecondsPercentageDelta: ScalarSignal | number;
+lifetimeSecondsPercentageDelta: ScalarSignal;
 /**
 * ```
 (get) linearDamping: ScalarSignal
@@ -184,7 +185,7 @@ lifetimeSecondsPercentageDelta: ScalarSignal | number;
 
 Specifies the mean linear damping of each particle.
 */
-linearDamping: ScalarSignal | number;
+linearDamping: ScalarSignal;
 /**
 * ```
 (get) linearDampingPercentageDelta: ScalarSignal
@@ -194,7 +195,7 @@ linearDamping: ScalarSignal | number;
 Specifies the percentage delta value, between 0.0 and 1.0, for the `linearDamping` property. The linear dumping is randomized uniformly in the range `[linearDamping * (1 - d); linearDamping * (1 + d)]` for each particle.
 **Note**: The behavior is undefined for values outside the valid range.
 */
-linearDampingPercentageDelta: ScalarSignal | number;
+linearDampingPercentageDelta: ScalarSignal;
 /**
 * ```
 (get) material: MaterialBase | null
@@ -212,7 +213,7 @@ material: MaterialBase | null;
 
 Specifies the optical flow sensitivity.
 */
-opticalFlowSensitivity: ScalarSignal | number;
+opticalFlowSensitivity: ScalarSignal;
 /**
 * ```
 (get) outerRadius: ScalarSignal
@@ -222,7 +223,7 @@ opticalFlowSensitivity: ScalarSignal | number;
 Specifies the radius of the outer circle when using the ring emitter for the particle system. The particles spawn between `innerRadius` and `outerRadius`.
 **Note**: `outerRadius` must be greater-than or equal to `innerRadius`.
 */
-outerRadius: ScalarSignal | number;
+outerRadius: ScalarSignal;
 /**
 * ```
 (get) particleRotation: PointSignal
@@ -278,7 +279,7 @@ positionModifier: ArrayOfScalarSamplers;
 
 Specifies the mean rotational damping of each particle.
 */
-rotationalDamping: ScalarSignal | number;
+rotationalDamping: ScalarSignal;
 /**
 * ```
 (get) rotationalDampingPercentageDelta: ScalarSignal
@@ -288,7 +289,7 @@ rotationalDamping: ScalarSignal | number;
 Specifies the percentage delta value, between 0.0 and 1.0, for the `rotationalDamping` property. The rotational dumping is randomized uniformly in the range `[rotationalDamping * (1 - d); rotationalDamping * (1 + d)]` for each particle.
 **Note**: The behavior is undefined for values outside the valid range.
 */
-rotationalDampingPercentageDelta: ScalarSignal | number;
+rotationalDampingPercentageDelta: ScalarSignal;
 /**
 * ```
 (get) rotationalVelocity: ScalarSignal
@@ -297,7 +298,7 @@ rotationalDampingPercentageDelta: ScalarSignal | number;
 
 Specifies the mean rotational velocity of each particle, in radians-per-second.
 */
-rotationalVelocity: ScalarSignal | number;
+rotationalVelocity: ScalarSignal;
 /**
 * ```
 (get) rotationalVelocityDelta: ScalarSignal
@@ -306,7 +307,7 @@ rotationalVelocity: ScalarSignal | number;
 
 Specifies the absolute delta value for the `rotationalVelocity` property. The rotation velocity is randomized uniformly in the range `[rotationalVelocity - rotationalVelocityDelta; rotationalVelocity + rotationalVelocityDelta]` for each particle.
 */
-rotationalVelocityDelta: ScalarSignal | number;
+rotationalVelocityDelta: ScalarSignal;
 /**
 * ```
 (get) scale: ScalarSignal
@@ -315,7 +316,7 @@ rotationalVelocityDelta: ScalarSignal | number;
 
 Specifies the mean size of each particle, in 3d units.
 */
-scale: ScalarSignal | number;
+scale: ScalarSignal;
 /**
 * ```
 (get) scaleDelta: ScalarSignal
@@ -325,7 +326,7 @@ scale: ScalarSignal | number;
 Specifies the percentage delta value, between 0.0 and 1.0, for the `scale` property. The scale is randomized uniformly in the range `[scale * (1 - d); scale * (1 + d)]` for each particle.
 **Note**: The behavior is undefined for values outside the valid range.
 */
-scaleDelta: ScalarSignal | number;
+scaleDelta: ScalarSignal;
 /**
 * ```
 (get) (Not Available)
@@ -371,7 +372,7 @@ velocityModifier: ArrayOfScalarSamplers;
 
 Specifies whether the particles will move with the emitter or will have their own position after being emitted.
 */
-worldSpace: BoolSignal | boolean;
+worldSpace: BoolSignal;
 /**
 *  
  * getMaterial(): Promise<MaterialBase | null>

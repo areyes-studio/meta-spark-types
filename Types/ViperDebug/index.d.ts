@@ -1,5 +1,5 @@
 /// <reference path="../Reactive.StringSignal/index.d.ts" />
-declare namespace ViperDebugModule {
+declare class ViperDebugModule {
 /**
 * ```
 (get) debugString: StringSignal
@@ -8,7 +8,7 @@ declare namespace ViperDebugModule {
 
 Gets a debug string piped through from Viper.
 */
-const debugString: StringSignal | string;
+static readonly debugString: StringSignal;
 /**
 *  
  * clearViperOnlyMode(): void
@@ -16,7 +16,7 @@ const debugString: StringSignal | string;
  * 
  * Removes running in viper only mode. (Aka, runs the normal gyro+regiontracking+SLAM).
  */
-function clearViperOnlyMode(): void;
+static clearViperOnlyMode(): void;
 
 /**
 *  
@@ -25,7 +25,7 @@ function clearViperOnlyMode(): void;
  * 
  * Makes underlying camera + anchor tracking algorithms run in viper only mode.
  */
-function setViperOnlyMode(): void;
+static setViperOnlyMode(): void;
 
 }
 export = ViperDebugModule;

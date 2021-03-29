@@ -15,12 +15,12 @@ globalTransform: TransformSignal;
 (set) (Not Available)
 ```
 */
-isTracking: BoolSignal | boolean;
+isTracking: BoolSignal;
 /**
 * ```
 (get) targetAspectRatio: ScalarSignal
 (set) (Not Available)
 ```
 */
-targetAspectRatio: ScalarSignal | number;
+targetAspectRatio: ScalarSignal;
 }

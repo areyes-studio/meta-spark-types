@@ -8,7 +8,7 @@ declare interface CameraVisibility {
 
 Specifies whether the object is visible when the back camera is the active one.
 */
-forBackCamera: BoolSignal | boolean;
+forBackCamera: BoolSignal;
 /**
 * ```
 (get) forFrontCamera: BoolSignal
@@ -17,7 +17,7 @@ forBackCamera: BoolSignal | boolean;
 
 Specifies whether the object is visible when the front camera is the active one.
 */
-forFrontCamera: BoolSignal | boolean;
+forFrontCamera: BoolSignal;
 /**
 * ```
 (get) forUnspecifiedCamera: BoolSignal
@@ -26,5 +26,5 @@ forFrontCamera: BoolSignal | boolean;
 
 Specifies whether the object is visible when the active camera couldn't be specified.
 */
-forUnspecifiedCamera: BoolSignal | boolean;
+forUnspecifiedCamera: BoolSignal;
 }

@@ -19,7 +19,7 @@ name: string;
 Specifies a `StringSignal` representing the loading state of the external prefab.
 The value of the signal is guaranteed to be a member of the `PrefabsModule.State` enumeration.
 */
-state: StringSignal | string;
+state: StringSignal;
 /**
 * ```
 (get) url: StringSignal
@@ -29,5 +29,5 @@ state: StringSignal | string;
 Specifies the URL of the prefab to be downloaded.
 Specifies the URL of the prefab to be downloaded.
 */
-url: StringSignal | string;
+url: StringSignal;
 }

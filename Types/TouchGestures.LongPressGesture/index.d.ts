@@ -1,5 +1,6 @@
+/// <reference path="../TouchGestures.Gesture/index.d.ts" />
 /// <reference path="../Reactive.Point2DSignal/index.d.ts" />
-declare interface LongPressGesture {
+declare interface LongPressGesture extends Gesture {
 /**
 * ```
 (get) location: Point2DSignal

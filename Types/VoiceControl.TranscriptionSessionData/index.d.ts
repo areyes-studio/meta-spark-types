@@ -8,7 +8,7 @@ declare interface TranscriptionSessionData {
 
 Returns the current partial transcription phrase. It updates real time as the user speak.
 */
-currentPartialPhrase: StringSignal | string;
+currentPartialPhrase: StringSignal;
 /**
 * ```
 (get) lastFullPhrase: StringSignal
@@ -17,5 +17,5 @@ currentPartialPhrase: StringSignal | string;
 
 Returns the full transcription phrase. It updates only when the user pause speaking.
 */
-lastFullPhrase: StringSignal | string;
+lastFullPhrase: StringSignal;
 }

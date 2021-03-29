@@ -1,6 +1,7 @@
 /// <reference path="../Reactive.BoolSignal/index.d.ts" />
+/// <reference path="../Animation.Driver/index.d.ts" />
 /// <reference path="../Reactive.EventSource/index.d.ts" />
-declare interface TimeDriver {
+declare interface TimeDriver extends Driver {
 /**
 *  
  * isRunning(): BoolSignal

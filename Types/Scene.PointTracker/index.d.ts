@@ -1,7 +1,8 @@
 /// <reference path="../Reactive.Point2D/index.d.ts" />
 /// <reference path="../Reactive.Point2DSignal/index.d.ts" />
+/// <reference path="../Scene.SceneObjectBase/index.d.ts" />
 /// <reference path="../Reactive.StringSignal/index.d.ts" />
-declare interface PointTracker {
+declare interface PointTracker extends SceneObjectBase {
 /**
 * ```
 (get) confidence: StringSignal
@@ -16,7 +17,7 @@ Possible values:
 - LOW
 - NOT_TRACKING
 */
-confidence: StringSignal | string;
+confidence: StringSignal;
 /**
 *  
  * trackPoint(screenLocation: Point2D): void
