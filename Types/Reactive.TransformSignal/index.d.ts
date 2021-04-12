@@ -1,11 +1,10 @@
-/// <reference path="../Reactive.ISignal/index.d.ts" />
 /// <reference path="../Reactive.PointSignal/index.d.ts" />
 /// <reference path="../Reactive.QuaternionSignal/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 /// <reference path="../Reactive.SignalHistory/index.d.ts" />
 /// <reference path="../Scene.Transform/index.d.ts" />
 /// <reference path="../Reactive.VectorSignal/index.d.ts" />
-declare interface TransformSignal extends ISignal {
+declare interface TransformSignal {
 /**
 * ```
 (get) position: PointSignal
@@ -22,7 +21,6 @@ position: PointSignal;
 ```
 
 Represents rotation along the X, Y and Z axis of the local coordinate system.
-
 **Note**: The order of operations (rotations in particular) is the same as in `Transform`. The rotations are applied to the object in Z-Y-X order. The Z rotation is applied last to the object, therefore if the `rotationX` or `rotationY` is not zero, then `rotationZ` is applied not in the object's local coordinate system but in the rotated one.
 */
 rotation: QuaternionSignal;
@@ -33,7 +31,6 @@ rotation: QuaternionSignal;
 ```
 
 Represents rotation about the X-axis of the local coordinate system, in radians. The signal value is in the range [-PI, PI].
-
 **Note**: The order of operations (rotations in particular) is the same as in `Transform`. The rotations are applied to the object in Z-Y-X order. The X rotation is applied first to the object, therefore it is always performed in the object's local coordinate system.
 */
 rotationX: ScalarSignal;
@@ -44,7 +41,6 @@ rotationX: ScalarSignal;
 ```
 
 Represents rotation about the Y-axis of the rotated local coordinate system, in radians. The signal value is in the range [-PI/2, PI/2].
-
 **Note**: The order of operations (rotations in particular) is the same as in `Transform`. The rotations are applied to the object in Z-Y-X order. The Y rotation is applied second to the object, therefore if the `rotationX` is not zero, then `rotationY` is applied not in the object's local coordinate system but in the rotated one.
 */
 rotationY: ScalarSignal;
@@ -55,7 +51,6 @@ rotationY: ScalarSignal;
 ```
 
 Represents rotation about the Z-axis of the rotated local coordinate system, in radians. The signal value is in the range [-PI, PI].
-
 **Note**: The order of operations (rotations in particular) is the same as in `Transform`. The rotations are applied to the object in Z-Y-X order. The Z rotation is applied last to the object, therefore if the `rotationX` or `rotationY` is not zero, then `rotationZ` is applied not in the object's local coordinate system but in the rotated one.
 */
 rotationZ: ScalarSignal;
@@ -92,7 +87,7 @@ scaleY: ScalarSignal;
 (set) (Not Available)
 ```
 
-Represents scale along the Z-axis of the local coordinate system.
+Represents scale along the z-axis of the local coordinate system.
 */
 scaleZ: ScalarSignal;
 /**
@@ -153,11 +148,12 @@ applyToVector(signal: VectorSignal): VectorSignal;
 
 /**
 *  
- * delayBy(timeSpan: {milliseconds: number}): this
+ * delayBy(timeSpan: {milliseconds: number}): TransformSignal
  *  
+ * 
  * Delays a signal. The argument is an object with a "milliseconds" property specifying the delay duration in milliseconds.
  */
-delayBy(timeSpan: {milliseconds: number}): this;
+delayBy(timeSpan: {milliseconds: number}): TransformSignal;
 
 /**
 *  
@@ -165,7 +161,6 @@ delayBy(timeSpan: {milliseconds: number}): this;
  *  
  * 
  * Smoothes a variable signal using exponential averaging over time. The argument specifies the dampening time constant in milliseconds.
- * 
  * **Note**: The smoothed transformation for a signal that specifies a rigid body transformation is guaranteed to be a rigid body transformation. The rotation component is smoothed in spherical coordinates using Slerp (spherical linear interpolation).
  * 
  * **Note**: See also `ReactiveModule.expSmooth`.
@@ -173,14 +168,12 @@ delayBy(timeSpan: {milliseconds: number}): this;
 expSmooth(dampFactor: number): TransformSignal;
 
 /**
-* 
- *  
+*  
  * history(framesCount: number): SignalHistory<Transform>
  *  
  * 
  * Returns an object used to access signal values from past frames. The amount of frames tracked is customizable via `framesCount` parameter.
  * Historical signal values are going to be initialized with signal value at call time or using `initialValues` if provided.
- * 
  */
 history(framesCount: number): SignalHistory<Transform>;
 
@@ -195,17 +188,14 @@ inverse(): TransformSignal;
 
 /**
 *  
- * lookAt(targetPosition: PointSignal): TransformSignal
- * lookAt(targetPosition: PointSignal, selfUp: VectorSignal): TransformSignal
+ * lookAt(targetPosition: PointSignal, selfUp?: VectorSignal): TransformSignal
  *  
- * Default `selfUp` is `ReactiveModule.vector(0, 1, 0)`.
  * 
+ * Default `selfUp` is `ReactiveModule.vector(0, 1, 0)`.
  * Creates a scene object transform with rotation in direction of target.
  * **Note:** self needs to be pointing the scene object alongside the X axis.
  */
-lookAt(targetPosition: PointSignal): TransformSignal;
-
-lookAt(targetPosition: PointSignal, selfUp: VectorSignal): TransformSignal;
+lookAt(targetPosition: PointSignal, selfUp?: VectorSignal): TransformSignal;
 
 /**
 *  

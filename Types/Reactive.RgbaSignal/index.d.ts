@@ -6,7 +6,7 @@ declare interface RgbaSignal extends ColorSignal {
 /**
 * ```
 (get) alpha: ScalarSignal
-(set) (Not Available)
+(set) alpha: ScalarSignal
 ```
 
 Returns the value of the alpha channel between 0 and 1.0.
@@ -15,7 +15,7 @@ alpha: ScalarSignal;
 /**
 * ```
 (get) blue: ScalarSignal
-(set) (Not Available)
+(set) blue: ScalarSignal
 ```
 
 Returns the value of the blue channel between 0 and 1.0.
@@ -24,7 +24,7 @@ blue: ScalarSignal;
 /**
 * ```
 (get) green: ScalarSignal
-(set) (Not Available)
+(set) green: ScalarSignal
 ```
 
 Returns the value of the green channel between 0 and 1.0.
@@ -33,7 +33,7 @@ green: ScalarSignal;
 /**
 * ```
 (get) red: ScalarSignal
-(set) (Not Available)
+(set) red: ScalarSignal
 ```
 
 Returns the value of the red channel between 0 and 1.0.

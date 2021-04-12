@@ -22,13 +22,13 @@ Will instruct picker to be visible or not visible, according to passed boolean v
 visible: BoolSignal;
 /**
 *  
- * configure(config: {items: Array<{id?: string, image_texture: ImageTexture | string, title?: string}>, selectedIndex?: number}): Promise<void>
+ * configure(config: {items: Array<{id?: string, image_texture: ImageTexture | string, title?: string, tooltip?: string}>, selectedIndex?: number}): Promise<void>
  *  
  * 
  * Configures the picker with a given JSON configuration.
  * The configuration consists of an optional initial selected index (0 will be used if not specified) and a list of items.
  * For items you must specify a name of an uncompressed texture which will be used as the picker item image.
  */
-configure(config: {items: Array<{id?: string, image_texture: ImageTexture | string, title?: string}>, selectedIndex?: number}): Promise<void>;
+configure(config: {items: Array<{id?: string, image_texture: ImageTexture | string, title?: string, tooltip?: string}>, selectedIndex?: number}): Promise<void>;
 
 }

@@ -54,7 +54,6 @@ pinLastValue(): HsvaSignal;
  *  
  * 
  * Convert this signal into RGBA color space.
- * 
  * Be aware, that there is a potential loss of data, when converting HSVA values with `Saturation` set to 0.
  */
 toRGBA(): RgbaSignal;

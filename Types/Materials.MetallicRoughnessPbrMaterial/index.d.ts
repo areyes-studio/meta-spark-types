@@ -1,7 +1,6 @@
 /// <reference path="../Reactive.ColorSignal/index.d.ts" />
 /// <reference path="../Materials.MaterialBase/index.d.ts" />
 /// <reference path="../Reactive.PointSignal/index.d.ts" />
-/// <reference path="../Reactive.RgbaSignal/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 /// <reference path="../Reactive.StringSignal/index.d.ts" />
 /// <reference path="../Textures.TextureBase/index.d.ts" />
@@ -18,7 +17,7 @@ Specifies the baseColor texture of the material.
 baseColor: TextureBase | null;
 /**
 * ```
-(get) baseColorFactor: RgbaSignal
+(get) baseColorFactor: ColorSignal
 (set) baseColorFactor: ColorSignal
 ```
 
@@ -26,7 +25,7 @@ Specifies a `ColorSignal` for a base color factor. A `ColorSignal` may be create
 Note that RgbaSignal is always returned.
 **See Also**: `ReactiveModule.RGBA` and `ReactiveModule.HSVA`.
 */
-baseColorFactor: RgbaSignal;
+baseColorFactor: ColorSignal;
 /**
 * ```
 (get) baseColorTextureTransform: TextureTransform

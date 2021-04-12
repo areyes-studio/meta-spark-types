@@ -1,3 +1,4 @@
+/// <reference path="../Reactive.ISignal/index.d.ts" />
 declare interface SignalHistory<T> {
 /**
 * ```
@@ -10,7 +11,7 @@ Returns how many frames are being tracked by this history object.
 length: number;
 /**
 *  
- * at(index: number): T
+ * at(index: number): ISignal
  *  
  * 
  * Returns a `Signal` for the history value at given index.
@@ -20,11 +21,11 @@ length: number;
  * Note: See also `SignalHistory.frame` method which uses more intuitive negative indexing.
  * Note: You can use `SignalHistory[0]` to achieve same effect as calling `SignalHistory.at(0)`
  */
-at(index: number): T;
+at(index: number): ISignal;
 
 /**
 *  
- * frame(frame: number): T
+ * frame(frame: number): ISignal
  *  
  * 
  * Returns a `Signal` for the history value at given frame relative to current one.
@@ -34,6 +35,6 @@ at(index: number): T;
  * Note: See also `SignalHistory.at` method for approach which is index based.
  * Note: You can use `SignalHistory[-1]` to achieve same effect as calling `SignalHistory.frame(-1)`
  */
-frame(frame: number): T;
+frame(frame: number): ISignal;
 
 }

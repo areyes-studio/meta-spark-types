@@ -469,12 +469,12 @@ static mul(x: VectorSignal, y: VectorSignal): VectorSignal;
 
 /**
 *  
- * mulList(x: Array<number>): ScalarSignal
+ * mulList(x: Array<number | ScalarSignal>): ScalarSignal
  *  
  * 
  * Returns a signal with the value that is the product of the values in an array
  */
-static mulList(x: Array<number>): ScalarSignal;
+static mulList(x: Array<number | ScalarSignal>): ScalarSignal;
 
 /**
 *  
@@ -832,12 +832,12 @@ static sum(x: VectorSignal, y: VectorSignal): VectorSignal;
 
 /**
 *  
- * sumList(x: Array<number>): ScalarSignal
+ * sumList(x: Array<number | ScalarSignal>): ScalarSignal
  *  
  * 
  * Returns a signal with the value that is the sum of the values in an array
  */
-static sumList(x: Array<number>): ScalarSignal;
+static sumList(x: Array<number | ScalarSignal>): ScalarSignal;
 
 /**
 *  
