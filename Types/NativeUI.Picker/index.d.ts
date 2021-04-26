@@ -14,12 +14,12 @@ selectedIndex: ScalarSignal;
 /**
 * ```
 (get) (Not Available)
-(set) visible: BoolSignal
+(set) visible: BoolSignal | boolean
 ```
 
 Will instruct picker to be visible or not visible, according to passed boolean value.
 */
-visible: BoolSignal;
+visible: BoolSignal | boolean;
 /**
 *  
  * configure(config: {items: Array<{id?: string, image_texture: ImageTexture | string, title?: string, tooltip?: string}>, selectedIndex?: number}): Promise<void>

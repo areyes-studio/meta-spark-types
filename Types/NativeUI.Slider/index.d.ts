@@ -13,10 +13,10 @@ value: ScalarSignal;
 /**
 * ```
 (get) (Not Available)
-(set) visible: BoolSignal
+(set) visible: BoolSignal | boolean
 ```
 
 Will instruct slider to be visible or not visible, according to passed boolean value.
 */
-visible: BoolSignal;
+visible: BoolSignal | boolean;
 }

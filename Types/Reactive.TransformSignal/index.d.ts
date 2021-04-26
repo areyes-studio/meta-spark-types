@@ -1,3 +1,4 @@
+/// <reference path="../Reactive.ISignal/index.d.ts" />
 /// <reference path="../Reactive.PointSignal/index.d.ts" />
 /// <reference path="../Reactive.QuaternionSignal/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
@@ -148,12 +149,12 @@ applyToVector(signal: VectorSignal): VectorSignal;
 
 /**
 *  
- * delayBy(timeSpan: {milliseconds: number}): TransformSignal
+ * delayBy(timeSpan: {milliseconds: number}): ISignal
  *  
  * 
  * Delays a signal. The argument is an object with a "milliseconds" property specifying the delay duration in milliseconds.
  */
-delayBy(timeSpan: {milliseconds: number}): TransformSignal;
+delayBy(timeSpan: {milliseconds: number}): ISignal;
 
 /**
 *  
@@ -205,5 +206,14 @@ lookAt(targetPosition: PointSignal, selfUp?: VectorSignal): TransformSignal;
  * Returns a new `TransformSignal` containing a constant value which is the last value of the specified signal before `pinLastValue` is called.
  */
 pinLastValue(): TransformSignal;
+
+/**
+*  
+ * transpose(): TransformSignal
+ *  
+ * 
+ * Returns a signal with the value that is equal to the transpose value of the given transformation signal at any point of time.
+ */
+transpose(): TransformSignal;
 
 }

@@ -1,5 +1,17 @@
 /// <reference path="../Reactive.BoolSignal/index.d.ts" />
+/// <reference path="../Controllers.ButtonEvent/index.d.ts" />
+/// <reference path="../Reactive.EventSource/index.d.ts" />
 declare interface Button {
+/**
+* ```
+(get) events: EventSource<ButtonEvent> | null
+(set) (Not Available)
+```
+
+Returns an EventSource<ButtonEvent> which can be subscribed to, receiving every event
+that occurs for the specified button.  Multiple events within a single frame are possible.
+*/
+events: EventSource<ButtonEvent> | null;
 /**
 * ```
 (get) pressed: BoolSignal

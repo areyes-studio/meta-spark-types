@@ -217,18 +217,18 @@ static isTurnedRight(face: Face, config?: {angle?: number, backlash?: number}): 
 
 /**
 *  
- * onBlink(face: Face, config?: {backlash?: number, threshold?: number}): EventSource
+ * onBlink(face: Face, config?: {backlash?: number, threshold?: number}): EventSource<void>
  *  
  * 
  * Returns an `EventSource` that fires when both eyes are closed. An eye is considered closed when its `openness` falls below a certain configurable threshold. When specified:
  * * `config.threshold` overrides the default threshold for determining eye openness.
  * * `config.backlash` sets the default backlash. Backlash is used to minimize state jitter while the openness is near the threshold value.
  */
-static onBlink(face: Face, config?: {backlash?: number, threshold?: number}): EventSource;
+static onBlink(face: Face, config?: {backlash?: number, threshold?: number}): EventSource<void>;
 
 /**
 *  
- * onNod(face: Face, config?: {angle?: number, period?: number, swings?: number}): EventSource
+ * onNod(face: Face, config?: {angle?: number, period?: number, swings?: number}): EventSource<void>
  *  
  * 
  * Returns an `EventSource` that fires immediately after a face nod is detected.
@@ -240,11 +240,11 @@ static onBlink(face: Face, config?: {backlash?: number, threshold?: number}): Ev
  * * `config.period` sets the maximum time limit for one swing, in milliseconds.
  * * `config.swings` sets the count of consecutive alternating swings after which the gesture is detected.
  */
-static onNod(face: Face, config?: {angle?: number, period?: number, swings?: number}): EventSource;
+static onNod(face: Face, config?: {angle?: number, period?: number, swings?: number}): EventSource<void>;
 
 /**
 *  
- * onShake(face: Face, config?: {angle?: number, period?: number, swings?: number}): EventSource
+ * onShake(face: Face, config?: {angle?: number, period?: number, swings?: number}): EventSource<void>
  *  
  * 
  * Returns an `EventSource` that fires immediately after a face shake is detected.
@@ -256,7 +256,7 @@ static onNod(face: Face, config?: {angle?: number, period?: number, swings?: num
  * * `config.period` sets the maximum time limit for one swing, in milliseconds.
  * * `config.swings` sets the count of consecutive alternating swings after which the gesture is detected.
  */
-static onShake(face: Face, config?: {angle?: number, period?: number, swings?: number}): EventSource;
+static onShake(face: Face, config?: {angle?: number, period?: number, swings?: number}): EventSource<void>;
 
 }
 export = FaceGesturesModule;

@@ -228,6 +228,15 @@ static pucker(face: Face): ScalarSignal;
 
 /**
 *  
+ * reset(): Promise<void>
+ *  
+ * 
+ * Triggers a re-calibration of model for the expression tracking module.
+ */
+static reset(): Promise<void>;
+
+/**
+*  
  * upperLidRaiserLeft(face: Face): ScalarSignal
  *  
  * 

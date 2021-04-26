@@ -13,23 +13,23 @@ isRunning(): BoolSignal;
 
 /**
 *  
- * onAfterIteration(): EventSource
+ * onAfterIteration(): EventSource<number>
  *  
  * 
  * Returns an `EventSource` to which you may subscribe.
  * The event fires when the animation with loopCount completes an iteration.
  * Subscribers will receive the one-based index of the completed iteration.
  */
-onAfterIteration(): EventSource;
+onAfterIteration(): EventSource<number>;
 
 /**
 *  
- * onCompleted(): EventSource
+ * onCompleted(): EventSource<any>
  *  
  * 
  * Returns an`EventSource` to which you may subscribe.The event fires once when the animation completes.
  */
-onCompleted(): EventSource;
+onCompleted(): EventSource<any>;
 
 /**
 *  

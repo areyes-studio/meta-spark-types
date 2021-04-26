@@ -25,7 +25,7 @@
 declare class ReactiveModule {
 /**
 *  
- * HSVA(h: ScalarSignal, s: ScalarSignal, v: ScalarSignal, a: ScalarSignal): HsvaSignal
+ * HSVA(h: ScalarSignal | number, s: ScalarSignal | number, v: ScalarSignal | number, a: ScalarSignal | number): HsvaSignal
  *  
  * 
  * Combines four signals and returns the result as an `HsvaSignal`. Each value should be in the range between 0.0 and 1.0.
@@ -35,7 +35,7 @@ static HSVA(h: ScalarSignal | number, s: ScalarSignal | number, v: ScalarSignal 
 
 /**
 *  
- * RGBA(r: ScalarSignal, g: ScalarSignal, b: ScalarSignal, a: ScalarSignal): RgbaSignal
+ * RGBA(r: ScalarSignal | number, g: ScalarSignal | number, b: ScalarSignal | number, a: ScalarSignal | number): RgbaSignal
  *  
  * 
  * Combines four signals and returns the result as an `RgbaSignal`. Each value should be in the range between 0.0 and 1.0.
@@ -607,7 +607,7 @@ static pack4(x: ScalarSignal | number, y: ScalarSignal | number, z: ScalarSignal
 
 /**
 *  
- * point(x: ScalarSignal, y: ScalarSignal, z: ScalarSignal): PointSignal
+ * point(x: ScalarSignal | number, y: ScalarSignal | number, z: ScalarSignal | number): PointSignal
  *  
  * 
  * Combines three signals and returns the result as a `PointSignal`.
@@ -616,7 +616,7 @@ static point(x: ScalarSignal | number, y: ScalarSignal | number, z: ScalarSignal
 
 /**
 *  
- * point2d(x: ScalarSignal, y: ScalarSignal): Point2DSignal
+ * point2d(x: ScalarSignal | number, y: ScalarSignal | number): Point2DSignal
  *  
  * 
  * Combines two signals and returns the result as a `Point2DSignal`.
@@ -722,7 +722,7 @@ static round(x: ScalarSignal | number): ScalarSignal;
 
 /**
 *  
- * scale(x: ScalarSignal, y: ScalarSignal, z: ScalarSignal): PointSignal
+ * scale(x: ScalarSignal | number, y: ScalarSignal | number, z: ScalarSignal | number): PointSignal
  *  
  * 
  * Combines three signals and returns the result as a `PointSignal`.
@@ -884,7 +884,7 @@ static val(constant: boolean): BoolSignal;
 
 /**
 *  
- * vector(x: ScalarSignal, y: ScalarSignal, z: ScalarSignal): VectorSignal
+ * vector(x: ScalarSignal | number, y: ScalarSignal | number, z: ScalarSignal | number): VectorSignal
  *  
  * 
  * Combines three signals and returns the result as a `VectorSignal`.
@@ -893,7 +893,7 @@ static vector(x: ScalarSignal | number, y: ScalarSignal | number, z: ScalarSigna
 
 /**
 *  
- * xor(lhs: BoolSignal, rhs: BoolSignal): BoolSignal
+ * xor(lhs: BoolSignal | boolean, rhs: BoolSignal | boolean): BoolSignal
  *  
  * 
  * Returns a signal with the value that is the logical exclusive disjunction of the values of the given signals. It is `true` every time exactly one of the input signals is `true` and `false` at all other times.

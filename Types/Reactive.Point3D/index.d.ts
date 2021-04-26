@@ -23,7 +23,7 @@ y: number;
 (set) z: number
 ```
 
-Specifies the z  coordinate.
+Specifies the z coordinate.
 */
 z: number;
 }

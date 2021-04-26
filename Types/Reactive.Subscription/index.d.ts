@@ -5,7 +5,6 @@ declare interface Subscription {
  *  
  * 
  * Unsubscribes the previously subscribed callback from the `EventSource`.
- * 
  * **See Also**: `EventSource.subscribe`, `EventSource.subscribeOnNext`.
  */
 unsubscribe(): void;

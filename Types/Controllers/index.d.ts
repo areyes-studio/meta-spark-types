@@ -1,4 +1,6 @@
 /// <reference path="../Controllers.Button/index.d.ts" />
+/// <reference path="../Controllers.ButtonEvent/index.d.ts" />
+/// <reference path="../Controllers.ButtonEventType/index.d.ts" />
 declare class ControllersModule {
 /**
 *  
@@ -12,5 +14,14 @@ declare class ControllersModule {
  */
 static getButton(name: string): Promise<Button>;
 
+/**
+ * 
+ * @property Pressed 
+ * @property Released 
+ */
+static readonly ButtonEventType: {
+  Pressed: "Pressed",
+  Released: "Released",
+}
 }
 export = ControllersModule;

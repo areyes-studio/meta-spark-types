@@ -1,4 +1,5 @@
 /// <reference path="../Scene.AudioTransformWrapper/index.d.ts" />
+/// <reference path="../Reactive.BoolSignal/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 /// <reference path="../Scene.SceneObjectBase/index.d.ts" />
 declare interface Speaker extends SceneObjectBase {
@@ -30,12 +31,12 @@ audioTransformsCount(): number;
 
 /**
 *  
- * isPlaying(): ScalarSignal
+ * isPlaying(): BoolSignal
  *  
  * 
  * Returns a `BooleanSignal` indicating whether this audio source is playing.
  */
-isPlaying(): ScalarSignal;
+isPlaying(): BoolSignal;
 
 /**
 *  

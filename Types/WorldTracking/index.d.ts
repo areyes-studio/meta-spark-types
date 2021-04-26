@@ -1,5 +1,6 @@
 /// <reference path="../WorldTracking.ARReferencePoint/index.d.ts" />
 /// <reference path="../WorldTracking.ARTrackable/index.d.ts" />
+/// <reference path="../WorldTracking.ARTrackableState/index.d.ts" />
 /// <reference path="../WorldTracking.ARTrackableType/index.d.ts" />
 /// <reference path="../Reactive.BoolSignal/index.d.ts" />
 /// <reference path="../Reactive.EventSource/index.d.ts" />
@@ -105,6 +106,49 @@ static onTrackableAdded(): EventSource<ARTrackable>;
 static onTrackableDeleted(): EventSource<ARTrackable>;
 
 /**
+ * 
+ * @property RAY_CAST 
+ * @property SHADER_PICK 
+ */
+static readonly HitTestType: {
+  RAY_CAST: "RAY_CAST",
+  SHADER_PICK: "SHADER_PICK",
+}
+/**
+ * The `ARTrackableState` enum describes the states that the trackable can be in. Used by
+`ARTrackable.state`.
+ * @property INITIALIZING The trackable is initializing.
+ * @property LOCALIZATION_ERROR Localization has failed.
+ * @property MAP_UNAVAILABLE_ERROR No map available at the current location.
+ * @property NETWORK_ERROR Network error.
+ * @property TRACKING The trackable is being tracked.
+ * @property UNKNOWN_ERROR Unknown error.
+ */
+static readonly ARTrackableState: {
+  INITIALIZING: "INITIALIZING",
+  LOCALIZATION_ERROR: "LOCALIZATION_ERROR",
+  MAP_UNAVAILABLE_ERROR: "MAP_UNAVAILABLE_ERROR",
+  NETWORK_ERROR: "NETWORK_ERROR",
+  TRACKING: "TRACKING",
+  UNKNOWN_ERROR: "UNKNOWN_ERROR",
+}
+/**
+ * The `ARTrackableType` enum describes the types of trackable that
+can be detected and tracked. Used by `ARTrackable.type`.
+ * @property FEATURE_POINT The trackable is a feature point.
+ * @property HORIZONTAL_PLANE The trackable is a horizontal plane.
+ * @property REMOTE The trackable is a remote trackable.
+ * @property UNKNOWN Unknown trackable type.
+ * @property VERTICAL_PLANE The trackable is a vertical plane.
+ */
+static readonly ARTrackableType: {
+  FEATURE_POINT: "FEATURE_POINT",
+  HORIZONTAL_PLANE: "HORIZONTAL_PLANE",
+  REMOTE: "REMOTE",
+  UNKNOWN: "UNKNOWN",
+  VERTICAL_PLANE: "VERTICAL_PLANE",
+}
+/**
  * The `HitTestType` enum lists the types of hit test supported.
  * @property ANY_PLANE Hit tests are performed on both horizontal and vertical surface planes.
  * @property FEATURE_POINT Hit tests are limited to feature points only.
@@ -118,18 +162,34 @@ static readonly HitTestType: {
   VERTICAL_PLANE: "VERTICAL_PLANE",
 }
 /**
- * The `ARTrackableType` enum describes the types of trackable that
-can be detected and tracked. Used by `ARTrackable.type`.
- * @property FEATURE_POINT The trackable is a feature point.
- * @property HORIZONTAL_PLANE The trackable is a horizontal plane.
- * @property UNKNOWN Unknown trackable type.
- * @property VERTICAL_PLANE The trackable is a vertical plane.
+ * The `TrackingStateReason` enum describes the possible reasons why
+the world tracker may be experiencing limited tracking quality.
+Used by `WorldTrackingModule.stateReason`, if the value returned
+by `WorldTrackingModule.state` is `LIMITED`.
+ * @property EXCESSIVE_MOTION The device is moving too fast for accurate tracking.
+ * @property INITIALIZING The world tracker is initializing.
+ * @property INSUFFICIENT_FEATURES The scene does not contain sufficient distinguishing features for accurate tracking.
+ * @property INSUFFICIENT_LIGHT The scene is not sufficiently lit for accurate tracking.
+ * @property NONE The world tracker is not experiencing limited tracking quality.
  */
-static readonly ARTrackableType: {
-  FEATURE_POINT: "FEATURE_POINT",
-  HORIZONTAL_PLANE: "HORIZONTAL_PLANE",
-  UNKNOWN: "UNKNOWN",
-  VERTICAL_PLANE: "VERTICAL_PLANE",
+static readonly TrackingStateReason: {
+  EXCESSIVE_MOTION: "EXCESSIVE_MOTION",
+  INITIALIZING: "INITIALIZING",
+  INSUFFICIENT_FEATURES: "INSUFFICIENT_FEATURES",
+  INSUFFICIENT_LIGHT: "INSUFFICIENT_LIGHT",
+  NONE: "NONE",
+}
+/**
+ * The `TrackingState` enum describes the states that the world tracker can be in. Used by
+`WorldTrackingModule.state`.
+ * @property LIMITED Tracking is initializing or has paused.
+ * @property NOT_AVAILABLE Tracking has not started or has stopped.
+ * @property TRACKING Tracking is running normally.
+ */
+static readonly TrackingState: {
+  LIMITED: "LIMITED",
+  NOT_AVAILABLE: "NOT_AVAILABLE",
+  TRACKING: "TRACKING",
 }
 /**
  * 
@@ -151,18 +211,6 @@ static readonly TrackingStateReason: {
   NONE: "NONE",
   RELOCALIZING: "RELOCALIZING",
   UNKNOWN: "UNKNOWN",
-}
-/**
- * The `TrackingState` enum describes the states that the world tracker can be in. Used by
-`WorldTrackingModule.state`.
- * @property LIMITED Tracking is initializing or has paused.
- * @property NOT_AVAILABLE Tracking has not started or has stopped.
- * @property TRACKING Tracking is running normally.
- */
-static readonly TrackingState: {
-  LIMITED: "LIMITED",
-  NOT_AVAILABLE: "NOT_AVAILABLE",
-  TRACKING: "TRACKING",
 }
 }
 export = WorldTrackingModule;

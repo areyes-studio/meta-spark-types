@@ -2,14 +2,14 @@
 declare class PlatformEventsModule {
 /**
 * ```
-(get) allEvents: EventSource
+(get) allEvents: EventSource<any>
 (set) (Not Available)
 ```
 
 Returns an `EventSource` that emits an event for every app/platform-specific event received.
 The event contains a JSON object with the data associated with the event.
 */
-static readonly allEvents: EventSource;
+static readonly allEvents: EventSource<any>;
 /**
 *  
  * send(event: Object): void
