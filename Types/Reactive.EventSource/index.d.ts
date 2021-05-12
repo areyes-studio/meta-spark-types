@@ -1,5 +1,6 @@
+/// <reference path="../Reactive.ISignal/index.d.ts" />
 /// <reference path="../Reactive.Subscription/index.d.ts" />
-declare interface EventSource<T> {
+declare interface EventSource<T> extends ISignal {
 /**
 *  
  * skip(count: number): EventSource<T>

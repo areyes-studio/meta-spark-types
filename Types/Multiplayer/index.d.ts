@@ -53,14 +53,14 @@ Contains the viewerId of the user using this effect as a string signal
 static readonly viewerId: StringSignal;
 /**
 *  
- * activate(metadata: {[key: string]: StateSignalType}): void
+ * activate(metadata: {[key: string]: {initialValue?: number | string | boolean, type: StateSignalType}}): void
  *  
  * 
  * Sets up the initial state signals. Input is the metadata of state types
  * defined as a mapping from the state key (string) to state types (enum StateSignalType).
- *  For example: { numPlayers: StateSignalType::SCALAR, scores: StateSignalType::STRING }
+ * For example: { numPlayers: StateSignalType::SCALAR, scores: StateSignalType::STRING }
  */
-static activate(metadata: {[key: string]: StateSignalType}): void;
+static activate(metadata: {[key: string]: {initialValue?: number | string | boolean, type: StateSignalType}}): void;
 
 /**
 *  
