@@ -181,13 +181,13 @@ static cos(x: ScalarSignal | number): ScalarSignal;
 
 /**
 *  
- * cross(v1: VectorSignal, v2: VectorSignal): VectorSignal
+ * cross(v1: VectorSignal, v2: VectorSignal): PointSignal
  *  
  * 
  * Returns a vector signal with the value that is the cross product of the given signals.
  * **See Also**: `VectorSignal.dot`, `ScalarSignal.mul`, `VectorSignal.mul`
  */
-static cross(v1: VectorSignal, v2: VectorSignal): VectorSignal;
+static cross(v1: VectorSignal, v2: VectorSignal): PointSignal;
 
 /**
 *  

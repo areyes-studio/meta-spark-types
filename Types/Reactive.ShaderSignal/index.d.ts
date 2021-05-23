@@ -103,13 +103,13 @@ clamp(min: ScalarSignal | number, max: ScalarSignal | number): ScalarSignal;
 
 /**
 *  
- * cross(other: VectorSignal): VectorSignal
+ * cross(other: VectorSignal): PointSignal
  *  
  * 
  * Returns a vector signal with the value that is the cross product of the given signals.
  * **See Also**: `VectorSignal.dot`, `ScalarSignal.mul`, `VectorSignal.mul`
  */
-cross(other: VectorSignal): VectorSignal;
+cross(other: VectorSignal): PointSignal;
 
 /**
 *  

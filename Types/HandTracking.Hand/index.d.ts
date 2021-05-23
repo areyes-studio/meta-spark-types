@@ -1,3 +1,4 @@
+/// <reference path="../Reactive.BoolSignal/index.d.ts" />
 /// <reference path="../Reactive.BoundingBoxSignal/index.d.ts" />
 /// <reference path="../Reactive.PointSignal/index.d.ts" />
 /// <reference path="../Reactive.StringSignal/index.d.ts" />
@@ -66,6 +67,15 @@ indexFingerProximal: PointSignal;
 Specifies the 3D position of the tip of the index finger.
 */
 indexFingerTip: PointSignal;
+/**
+* ```
+(get) isTracked: BoolSignal
+(set) (Not Available)
+```
+
+Specifies whether a hand is currently tracked i.e. valid
+*/
+isTracked: BoolSignal;
 /**
 * ```
 (get) littleFingerBase: PointSignal
