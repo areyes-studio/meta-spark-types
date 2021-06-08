@@ -1,4 +1,3 @@
-/// <reference path="../Reactive.BoolSignal/index.d.ts" />
 /// <reference path="../FaceTracking.Cheek/index.d.ts" />
 /// <reference path="../FaceTracking.Chin/index.d.ts" />
 /// <reference path="../FaceTracking.Eye/index.d.ts" />
@@ -20,15 +19,6 @@ declare class FaceTrackingModule {
 Returns a `ScalarSignal` representing the number of faces tracked in the scene.
 */
 static readonly count: ScalarSignal;
-/**
-* ```
-(get) (Not Available)
-(set) isEnabled: BoolSignal | boolean
-```
-
-Specifies a `BoolSignal` that takes the value of `true` whenever the Face Tracker should be run, and the value of `false` otherwise. Default value is `true`.
-*/
-static readonly isEnabled: BoolSignal | boolean;
 /**
 *  
  * createFaceMeshSceneObject(initialState?: {[key: string]: any}): Promise<FaceMesh>

@@ -1,6 +1,4 @@
 /// <reference path="../Scene.AmbientLightSource/index.d.ts" />
-/// <reference path="../Scene.AudioTransformParameterWrapper/index.d.ts" />
-/// <reference path="../Scene.AudioTransformWrapper/index.d.ts" />
 /// <reference path="../Scene.BlendShape/index.d.ts" />
 /// <reference path="../Scene.BlockInstanceInputs/index.d.ts" />
 /// <reference path="../Scene.BlockInstanceOutputs/index.d.ts" />
@@ -21,7 +19,6 @@
 /// <reference path="../Scene.HandTracker/index.d.ts" />
 /// <reference path="../Scene.HorizontalAlignment/index.d.ts" />
 /// <reference path="../Scene.Joint/index.d.ts" />
-/// <reference path="../Scene.LineBasedPlaneTracker/index.d.ts" />
 /// <reference path="../Scene.Mesh/index.d.ts" />
 /// <reference path="../Scene.MeshSurface/index.d.ts" />
 /// <reference path="../Scene.OutputVisibility/index.d.ts" />
@@ -36,14 +33,9 @@
 /// <reference path="../Scene.PlanarText/index.d.ts" />
 /// <reference path="../Scene.Plane/index.d.ts" />
 /// <reference path="../Scene.PlaneTracker/index.d.ts" />
-/// <reference path="../Scene.PlaneType/index.d.ts" />
-/// <reference path="../Scene.PlanesVisualization/index.d.ts" />
 /// <reference path="../Reactive.Point2DSignal/index.d.ts" />
-/// <reference path="../Scene.PointCloud/index.d.ts" />
 /// <reference path="../Scene.PointLightSource/index.d.ts" />
 /// <reference path="../Reactive.PointSignal/index.d.ts" />
-/// <reference path="../Scene.PointTracker/index.d.ts" />
-/// <reference path="../Scene.RemoteSceneObject/index.d.ts" />
 /// <reference path="../Scene.RenderMode/index.d.ts" />
 /// <reference path="../Scene.ScalingOption/index.d.ts" />
 /// <reference path="../Scene.Scene/index.d.ts" />
@@ -65,7 +57,6 @@
 /// <reference path="../Scene.Transform/index.d.ts" />
 /// <reference path="../Scene.VerticalAlignment/index.d.ts" />
 /// <reference path="../Scene.VerticalTextAlignment/index.d.ts" />
-/// <reference path="../Scene.ViperFeaturePoints/index.d.ts" />
 /// <reference path="../Scene.WorldTransform/index.d.ts" />
 declare class SceneModule {
 /**
@@ -248,6 +239,15 @@ static readonly StackDistribute: {
   START: "START",
 }
 /**
+ * The `TrackingMode` enum describes how a PlaneTracker is tracking an object.
+ * @property MOVING_OBJECT Indicates that a moving object is being tracked.
+ * @property PLANE Indicates that a horizontal plane is being tracked.
+ */
+static readonly TrackingMode: {
+  MOVING_OBJECT: "MOVING_OBJECT",
+  PLANE: "PLANE",
+}
+/**
  * The `TextAlignment` enum describes how a text element is aligned horizontally.
  * @property CENTER Indicates that the text is centered.
  * @property LEFT Indicates that the text is left-justified.
@@ -268,32 +268,6 @@ static readonly VerticalTextAlignment: {
   BOTTOM: "BOTTOM",
   CENTER: "CENTER",
   TOP: "TOP",
-}
-/**
- * The `PlaneType` enum describes the type of a plane.
- * @property HORIZONTAL Indicates a horizontal floor or ceiling plane.
- * @property HORIZONTAL_CEILING Indicates a horizontal ceiling plane.
- * @property HORIZONTAL_FLOOR Indicates a horizontal floor plane.
- * @property HORIZONTAL_OR_VERTICAL Indicates a horizontal or a vertical plane.
- * @property NONE Indicates no plane.
- * @property VERTICAL Indicates a vertical plane.
- */
-static readonly PlaneType: {
-  HORIZONTAL: "HORIZONTAL",
-  HORIZONTAL_CEILING: "HORIZONTAL_CEILING",
-  HORIZONTAL_FLOOR: "HORIZONTAL_FLOOR",
-  HORIZONTAL_OR_VERTICAL: "HORIZONTAL_OR_VERTICAL",
-  NONE: "NONE",
-  VERTICAL: "VERTICAL",
-}
-/**
- * The `TrackingMode` enum describes how a PlaneTracker is tracking an object.
- * @property MOVING_OBJECT Indicates that a moving object is being tracked.
- * @property PLANE Indicates that a horizontal plane is being tracked.
- */
-static readonly TrackingMode: {
-  MOVING_OBJECT: "MOVING_OBJECT",
-  PLANE: "PLANE",
 }
 }
 export = SceneModule;

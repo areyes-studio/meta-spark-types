@@ -11,15 +11,6 @@ Specifies whether the object is visible on the capture output.
 forCaptureOutput: BoolSignal;
 /**
 * ```
-(get) forOverlayOutput: BoolSignal
-(set) forOverlayOutput: BoolSignal
-```
-
-Specifies whether the object is visible on the overlay output.
-*/
-forOverlayOutput: BoolSignal;
-/**
-* ```
 (get) forPeerOutput: BoolSignal
 (set) forPeerOutput: BoolSignal
 ```

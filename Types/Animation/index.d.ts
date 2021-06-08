@@ -12,8 +12,6 @@
 /// <reference path="../Animation.SamplerFactory/index.d.ts" />
 /// <reference path="../Animation.ScalarSampler/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
-/// <reference path="../Animation.SignalRecord/index.d.ts" />
-/// <reference path="../Animation.SignalRecorder/index.d.ts" />
 /// <reference path="../Animation.TimeDriver/index.d.ts" />
 /// <reference path="../Animation.ValueDriver/index.d.ts" />
 declare class AnimationModule {
@@ -53,20 +51,6 @@ static readonly samplers: SamplerFactory;
  * For `TimeDriver`-based animations the animation will start only when `TimeDriver.start` is invoked.
  */
 static animate(driver: TimeDriver | ValueDriver, sampler: ArrayOfScalarSamplers | ColorSampler | RotationSampler | ScalarSampler): ScalarSignal | ArrayOfScalarSignals | QuaternionSignal | RgbaSignal;
-
-/**
-*  
- * makeSignalRecorder(targetSignal: ScalarSignal, params?: {maxRecordCount?: number, minRecordingGapMs?: number}): SignalRecorder
- *  
- * 
- * Begins recording a scalar signal (targetSignal) for use in a sampler.
- * This returns a SignalRecorder object that returns a SignalRecord when stopped.
- * Optional parameters are included for performance reasons:
- *  - `minRecordingGapMs` defines the minimum amount of delay between snapshots taken in ms.
- *  - `maxRecordCount` define sthe maximum number of snapshots. It must be > 0.
- * If these two values are not included, a default of `10` is used for `minRecordingGapMs` and `1000` is used for `maxRecordCount`.
- */
-static makeSignalRecorder(targetSignal: ScalarSignal | number, params?: {maxRecordCount?: number, minRecordingGapMs?: number}): SignalRecorder;
 
 /**
 *  

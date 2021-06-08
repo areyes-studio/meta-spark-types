@@ -8,7 +8,8 @@ declare class NativeUIModule {
 (set) picker: Picker
 ```
 
-Represents the picker object.
+Represents the [`Picker`](/classes/nativeuimodule.picker) object in the `NativeUI`.
+The picker object must be configured with the [`configure()`](/classes/nativeuimodule.picker#methods) method and its `visible` property set to `true` in order to be displayed.
 */
 static readonly picker: Picker;
 /**
@@ -17,44 +18,30 @@ static readonly picker: Picker;
 (set) slider: Slider
 ```
 
-Represents the slider object.
+Represents the [`Slider`](/classes/nativeuimodule.slider) object in the `NativeUI`.
+The slider object will not be displayed unless its `visible` property is set to `true`.
 */
 static readonly slider: Slider;
-/**
-*  
- * enterRawTextEditMode(nodeName: string): Promise<boolean>
- *  
- * 
- * Requests a raw user input for given node. The key difference between raw user input and regular user input is that raw user input does not provide any editing UI.
- * Returns a promise that is resolved with `true` when keyboard was shown and now it's being hidden or `false` if failed to enter the raw text edit mode.
- */
-static enterRawTextEditMode(nodeName: string): Promise<boolean>;
-
 /**
 *  
  * enterTextEditMode(nodeName: string): Promise<boolean>
  *  
  * 
- * Requests user input for given node.
- * Returns a promise that is resolved with boolean value representing whenever the request succeeded.
+ * Requests text input from the user for the specified object.
+ * * `nodeName` - the name of the text object to request user input for.
+ * The promise returned is resolved with a boolean value which represents whether the input request was successful.
+ * 
+ * On a successful input, the `nodeName` object's text will be updated automatically.
  */
 static enterTextEditMode(nodeName: string): Promise<boolean>;
-
-/**
-*  
- * exitRawTextEditMode(): Promise<boolean>
- *  
- * 
- * Exits raw text edit mode.
- */
-static exitRawTextEditMode(): Promise<boolean>;
 
 /**
 *  
  * getText(nodeName: string): StringSignal
  *  
  * 
- * Gets the user edited text of the given node.
+ * Returns the user edited text of the `nodeName` object.
+ * * `nodeName` - the text object to retrieve the text from.
  */
 static getText(nodeName: string): StringSignal;
 
@@ -63,7 +50,9 @@ static getText(nodeName: string): StringSignal;
  * setText(nodeName: string, text: string): void
  *  
  * 
- * Sets the text to the provided value for the node with a given name.
+ * Sets the text property of the `nodeName` object to the value specified by `text`.
+ * * `nodeName` - the text object to update.
+ * * `text` - the string to assign to the `nodeName`'s text property.
  */
 static setText(nodeName: string, text: string): void;
 

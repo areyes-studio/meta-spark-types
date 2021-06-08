@@ -4,15 +4,6 @@
 declare interface RetouchingMaterial extends MaterialBase {
 /**
 * ```
-(get) eyeBrighteningFactor: ScalarSignal
-(set) eyeBrighteningFactor: ScalarSignal
-```
-
-Specifies the simulated eye brightening factor.
-*/
-eyeBrighteningFactor: ScalarSignal;
-/**
-* ```
 (get) fullScreen: BoolSignal
 (set) fullScreen: BoolSignal
 ```
@@ -29,13 +20,4 @@ fullScreen: BoolSignal;
 Specifies the simulated skin smoothness factor.
 */
 skinSmoothingFactor: ScalarSignal;
-/**
-* ```
-(get) teethWhiteningFactor: ScalarSignal
-(set) teethWhiteningFactor: ScalarSignal
-```
-
-Specifies the simulated teeth whitening factor.
-*/
-teethWhiteningFactor: ScalarSignal;
 }

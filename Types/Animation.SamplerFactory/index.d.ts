@@ -2,7 +2,6 @@
 /// <reference path="../Animation.ColorSampler/index.d.ts" />
 /// <reference path="../Animation.RotationSampler/index.d.ts" />
 /// <reference path="../Animation.ScalarSampler/index.d.ts" />
-/// <reference path="../Animation.SignalRecord/index.d.ts" />
 declare interface SamplerFactory {
 /**
 *  
@@ -344,17 +343,6 @@ polybezier(config: {keyframes?: Array<number> | Array<Array<number>>, knots?: Ar
 
 /**
 *  
- * polybezierFromRecord(record: SignalRecord): ScalarSampler
- *  
- * 
- * Returns a polybezier with values recorded from a sampler as keyframes.
- * Elapsed time is used as the knots.
- * See 'polybezier' function. (This does not have tangents specified.)
- */
-polybezierFromRecord(record: SignalRecord): ScalarSampler;
-
-/**
-*  
  * polyline(config: {keyframes?: Array<number> | Array<Array<number>> | Array<Rotation>, knots?: Array<number>}): ScalarSampler | ArrayOfScalarSamplers | RotationSampler
  *  
  * 
@@ -364,16 +352,6 @@ polybezierFromRecord(record: SignalRecord): ScalarSampler;
  * If `config.knots` is not specified then the knot sequence defaults to [0, 1, 2, ..., `config.keyframes.length` - 1].
  */
 polyline(config: {keyframes?: Array<number> | Array<Array<number>> | Array<Rotation>, knots?: Array<number>}): ScalarSampler | ArrayOfScalarSamplers | RotationSampler;
-
-/**
-*  
- * polylineFromRecord(record: SignalRecord): ScalarSampler
- *  
- * 
- * Returns a polyline with values recorded from a signal as keyframes.
- * Elapsed time is used as knots. See 'polyline' function.
- */
-polylineFromRecord(record: SignalRecord): ScalarSampler;
 
 /**
 *  

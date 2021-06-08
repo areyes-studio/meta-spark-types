@@ -1,6 +1,7 @@
 /// <reference path="../LiveStreaming.LiveStreamingComments/index.d.ts" />
 /// <reference path="../LiveStreaming.LiveStreamingReactions/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
+/// <reference path="../LiveStreaming.State/index.d.ts" />
 /// <reference path="../Reactive.StringSignal/index.d.ts" />
 declare class LiveStreamingModule {
 /**

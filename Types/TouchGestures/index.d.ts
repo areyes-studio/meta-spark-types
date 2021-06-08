@@ -4,7 +4,6 @@
 /// <reference path="../TouchGestures.LongPressGesture/index.d.ts" />
 /// <reference path="../TouchGestures.PanGesture/index.d.ts" />
 /// <reference path="../TouchGestures.PinchGesture/index.d.ts" />
-/// <reference path="../TouchGestures.RawTouchGesture/index.d.ts" />
 /// <reference path="../TouchGestures.RotateGesture/index.d.ts" />
 /// <reference path="../TouchGestures.TapGesture/index.d.ts" />
 declare class TouchGesturesModule {
@@ -43,18 +42,6 @@ static onPan(options?: SceneObjectBase | {normalizeCoordinates?: false | true, o
  * Otherwise - events for entire preview screen are emitted.
  */
 static onPinch(options?: SceneObjectBase | {normalizeCoordinates?: false | true, object?: SceneObjectBase}): EventSource<PinchGesture>;
-
-/**
-*  
- * onRawTouch(options?: SceneObjectBase | {normalizeCoordinates?: false | true, object?: SceneObjectBase}): EventSource<RawTouchGesture>
- *  
- * 
- * Returns an [`EventSource`](/classes/reactivemodule.eventsource),
- * to which you may subscribe, that emits a `RawTouch` object for each touch interaction.
- * When `options` is specified, only events for the specified object are emitted.
- * Otherwise - events for entire preview screen are emitted.
- */
-static onRawTouch(options?: SceneObjectBase | {normalizeCoordinates?: false | true, object?: SceneObjectBase}): EventSource<RawTouchGesture>;
 
 /**
 *  

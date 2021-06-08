@@ -7,7 +7,7 @@ declare interface Slider {
 (set) value: ScalarSignal
 ```
 
-Will instruct slider to change its value.
+The value of the slider object, as a scalar signal between 0 and 1.
 */
 value: ScalarSignal;
 /**
@@ -16,7 +16,7 @@ value: ScalarSignal;
 (set) visible: BoolSignal | boolean
 ```
 
-Will instruct slider to be visible or not visible, according to passed boolean value.
+The visibility of the slider object, set via a boolean value.
 */
 visible: BoolSignal | boolean;
 }

@@ -1,5 +1,5 @@
 /// <reference path="../TouchGestures.GestureType/index.d.ts" />
-/// <reference path="../Prefabs.State/index.d.ts" />
+/// <reference path="../LiveStreaming.State/index.d.ts" />
 declare interface Gesture {
 /**
 * ```

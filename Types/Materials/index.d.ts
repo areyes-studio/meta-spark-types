@@ -8,27 +8,8 @@
 /// <reference path="../Materials.MaterialBase/index.d.ts" />
 /// <reference path="../Materials.MetallicRoughnessPbrMaterial/index.d.ts" />
 /// <reference path="../Materials.RetouchingMaterial/index.d.ts" />
-/// <reference path="../Materials.ShaderProcessor/index.d.ts" />
 /// <reference path="../Materials.TextureTransform/index.d.ts" />
 declare class MaterialsModule {
-/**
-* ```
-(get) postProcessor: ShaderProcessor
-(set) (Not Available)
-```
-
-Specifies the `ShaderProcessor` object used for the post-rendering pass.
-*/
-static readonly postProcessor: ShaderProcessor;
-/**
-* ```
-(get) preProcessor: ShaderProcessor
-(set) (Not Available)
-```
-
-Specifies the `ShaderProcessor` object used for the pre-rendering pass.
-*/
-static readonly preProcessor: ShaderProcessor;
 /**
 *  
  * clone(material: string | MaterialBase, initialState?: {[key: string]: any}): Promise<MaterialBase>

@@ -1,6 +1,6 @@
 /// <reference path="../Reactive.EventSource/index.d.ts" />
 /// <reference path="../Textures.GalleryTextureMediaBase/index.d.ts" />
-/// <reference path="../Prefabs.State/index.d.ts" />
+/// <reference path="../LiveStreaming.State/index.d.ts" />
 /// <reference path="../Reactive.StringSignal/index.d.ts" />
 /// <reference path="../Textures.TextureBase/index.d.ts" />
 declare interface GalleryTexture extends TextureBase {

@@ -1,5 +1,3 @@
-/// <reference path="../Textures.ExternalTexture/index.d.ts" />
-/// <reference path="../Textures.ImageTexture/index.d.ts" />
 /// <reference path="../Reactive.Point2D/index.d.ts" />
 /// <reference path="../Reactive.Point2DSignal/index.d.ts" />
 /// <reference path="../Reactive.Point3D/index.d.ts" />
@@ -81,18 +79,5 @@ trackPoint(screenLocation: Point2D): void;
 trackPoint(screenX: number, screenY: number): void;
 
 trackPoint(screenLocation: Point2DSignal, gestureState: StringSignal | string): void;
-
-/**
-*  
- * trackTexture(texture: ImageTexture | ExternalTexture): void
- *  
- * 
- * This method updates PlaneTracker to track against a texture.
- * The center of the texture is the origin of the PlaneTracker.
- * For the ExternalTexture version of this function call, care should be taken to
- * ensure that the texture is in an 'Available' state, else the pending or
- * fallback textures may be used instead.
- */
-trackTexture(texture: ExternalTexture | ImageTexture): void;
 
 }

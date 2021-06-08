@@ -71,15 +71,6 @@ static hasRightEyeClosed(face: Face, config?: {angle?: number, backlash?: number
 
 /**
 *  
- * isAngry(face: Face): BoolSignal
- *  
- * 
- * Returns a`BoolSignal` that indicates whether the specified`Face` object is an angry face.
- */
-static isAngry(face: Face): BoolSignal;
-
-/**
-*  
  * isHappy(face: Face): BoolSignal
  *  
  * 
@@ -147,24 +138,6 @@ static isLeanedLeft(face: Face, config?: {angle?: number, backlash?: number}): B
  * A signal goes ON when angle reaches `config.angle` and goes OFF at `config.angle - config.backlash`.
  */
 static isLeanedRight(face: Face, config?: {angle?: number, backlash?: number}): BoolSignal;
-
-/**
-*  
- * isNeutral(face: Face): BoolSignal
- *  
- * 
- * Returns a`BoolSignal` that indicates whether the specified`Face` object is a neutral face.
- */
-static isNeutral(face: Face): BoolSignal;
-
-/**
-*  
- * isSad(face: Face): BoolSignal
- *  
- * 
- * Returns a`BoolSignal` that indicates whether the specified`Face` object is a sad face.
- */
-static isSad(face: Face): BoolSignal;
 
 /**
 *  

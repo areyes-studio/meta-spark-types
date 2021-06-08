@@ -142,6 +142,21 @@ static atan2(x: ScalarSignal | number, y: ScalarSignal | number): ScalarSignal;
 
 /**
 *  
+ * boundingBox(x: ScalarSignal, y: ScalarSignal, width: ScalarSignal, height: ScalarSignal): BoundingBoxSignal
+ *  
+ * 
+ * Constructs a [`BoundingBoxSignal`](/classes/reactivemodule.boundingboxsignal) with the dimensions specified by `width` and `height`, positioned at the location specified by `x` and `y`.
+ * All arguments should be provided as normalized screen space units.
+ * 
+ * * `x` -  the x position of the top left corner of the bounding box.
+ * * `y` - the y position of the top left corner of the bounding box.
+ * * `width` - the width of the bounding box.
+ * * `height` - the height of the bounding box.
+ */
+static boundingBox(x: ScalarSignal | number, y: ScalarSignal | number, width: ScalarSignal | number, height: ScalarSignal | number): BoundingBoxSignal;
+
+/**
+*  
  * ceil(x: ScalarSignal): ScalarSignal
  *  
  * 
@@ -314,6 +329,22 @@ static ge(lhs: ScalarSignal | number, rhs: ScalarSignal | number): BoolSignal;
  * **See Also**: `ScalarSignal.gt`
  */
 static gt(lhs: ScalarSignal | number, rhs: ScalarSignal | number): BoolSignal;
+
+/**
+*  
+ * ifThenElse<T, U>(condition: BoolSignal | boolean, thenValue: EventSource<T>, elseValue: EventSource<U>): EventSource<T | U>
+ * ifThenElse(condition: BoolSignal | boolean, thenValue: ScalarSignal | number, elseValue: ScalarSignal | number): ScalarSignal
+ * ifThenElse(condition: BoolSignal | boolean, thenValue: StringSignal | string, elseValue: StringSignal | string): StringSignal
+ * ifThenElse(condition: BoolSignal | boolean, thenValue: BoolSignal | boolean, elseValue: BoolSignal | boolean): BoolSignal
+ *  
+ * 
+ * Returns a signal or an `EventSource` which at any point of time takes the value (passes the events in case of `EventSource`) of one or another inputs, depending on the momentary value of the given condition `BoolSignal`.
+ */
+static ifThenElse(condition: BoolSignal | boolean, thenValue: ScalarSignal | number, elseValue: ScalarSignal | number): ScalarSignal;
+
+static ifThenElse(condition: BoolSignal | boolean, thenValue: StringSignal | string, elseValue: StringSignal | string): StringSignal;
+
+static ifThenElse(condition: BoolSignal | boolean, thenValue: BoolSignal | boolean, elseValue: BoolSignal | boolean): BoolSignal;
 
 /**
 *  

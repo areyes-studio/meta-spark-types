@@ -1,20 +1,10 @@
 /// <reference path="../Reactive.BoolSignal/index.d.ts" />
-/// <reference path="../Scene.BoundingBox/index.d.ts" />
 /// <reference path="../Scene.CameraVisibility/index.d.ts" />
 /// <reference path="../Scene.OutputVisibility/index.d.ts" />
 /// <reference path="../Scene.Transform/index.d.ts" />
 /// <reference path="../Reactive.TransformSignal/index.d.ts" />
 /// <reference path="../Scene.WorldTransform/index.d.ts" />
 declare interface SceneObjectBase {
-/**
-* ```
-(get) boundingBox: BoundingBox
-(set) (Not Available)
-```
-
-Retrieves the object's bounding box
-*/
-boundingBox: BoundingBox;
 /**
 * ```
 (get) boundingBoxVisible: BoolSignal
