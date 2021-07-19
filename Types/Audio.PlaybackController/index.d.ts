@@ -4,7 +4,7 @@ declare interface PlaybackController {
  * loop(): void
  *  
  * 
- * Deprecated: Please use the `setLooping` method. Loop the playback controller, sound comes through all speakers (also known as Audio Source in the past) that reference the playback controller.
+ * Deprecated. Use the `setLooping()` method instead to loop the audio playback controller.
  */
 loop(): void;
 
@@ -13,7 +13,7 @@ loop(): void;
  * play(): void
  *  
  * 
- * Deprecated: Please use the `setPlaying` method. Play the playback controller, sound comes through all speakers (also known as Audio Source in the past) that reference the playback controller.
+ * Deprecated. Use the `setPlaying()` method instead to play the audio playback controller.
  */
 play(): void;
 
@@ -22,7 +22,8 @@ play(): void;
  * reset(): void
  *  
  * 
- * Resets the playback controller audio to the beginning. If the playback controller is currently playing then it will immediately re-start.
+ * Resets the audio playback controller to the beginning of the audio.
+ * If the audio playback controller is currently playing, playback will restart immediately when `reset()` is called. Otherwise, playback will not start until `setPlaying(true)` is called.
  */
 reset(): void;
 
@@ -31,7 +32,9 @@ reset(): void;
  * setLooping(looping: boolean): void
  *  
  * 
- * Loops the playback controller. To be used in pair with the `setPlaying` method. If set to `true`, the audio will repeat infinitely.
+ * Sets whether the audio playback controller should loop. If `true` is passed in to the method the audio will loop infinitely.
+ * Even if an audio playback controller is set to loop, `setPlaying(true)` still needs to be called for the audio to play.
+ * * `looping` - a boolean value specifying whether the audio should loop.
  */
 setLooping(looping: boolean): void;
 
@@ -40,7 +43,9 @@ setLooping(looping: boolean): void;
  * setPlaying(playing: boolean): void
  *  
  * 
- * Plays or pauses the playback controller depending on the value entered. When the audio is finished playing, use `reset` to play from the beginning.
+ * Sets whether the audio playback controller should play. If `true` is passed in to the method the audio will play, if `false` is passed in playback will pause.
+ * Audio does not automatically reset when playback finishes. Use the `reset()` method to reset playback to the beginning of the audio.
+ * * `playing` - a boolean value specifying whether the audio should play.
  */
 setPlaying(playing: boolean): void;
 
@@ -49,7 +54,7 @@ setPlaying(playing: boolean): void;
  * stop(): void
  *  
  * 
- * Deprecated: Please use the `setPlaying` method to pause the audio or the `reset` method to return the audio to the beginning. Stop the playback controller.
+ * Deprecated. Use the `setPlaying()` method instead to stop the audio playback controller.
  */
 stop(): void;
 

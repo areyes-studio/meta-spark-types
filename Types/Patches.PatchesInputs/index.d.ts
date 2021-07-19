@@ -1,10 +1,10 @@
 /// <reference path="../Reactive.BoolSignal/index.d.ts" />
 /// <reference path="../Reactive.EventSource/index.d.ts" />
-/// <reference path="../Reactive.Point2DSignal/index.d.ts" />
 /// <reference path="../Reactive.PointSignal/index.d.ts" />
 /// <reference path="../Reactive.RgbaSignal/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 /// <reference path="../Reactive.StringSignal/index.d.ts" />
+/// <reference path="../Reactive.Vec2Signal/index.d.ts" />
 /// <reference path="../Reactive.VectorSignal/index.d.ts" />
 declare interface PatchesInputs {
 /**
@@ -36,12 +36,12 @@ setPoint(name: string, signal: PointSignal): Promise<void>;
 
 /**
 *  
- * setPoint2D(name: string, signal: Point2DSignal): Promise<void>
+ * setPoint2D(name: string, signal: Vec2Signal): Promise<void>
  *  
  * 
- * Sends a `Point2DSignal` to the Patch Editor under specified `name`.
+ * Sends a `Vec2Signal` to the Patch Editor under specified `name`.
  */
-setPoint2D(name: string, signal: Point2DSignal): Promise<void>;
+setPoint2D(name: string, signal: Vec2Signal): Promise<void>;
 
 /**
 *  

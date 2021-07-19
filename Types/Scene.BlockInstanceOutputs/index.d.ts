@@ -1,11 +1,11 @@
 /// <reference path="../Reactive.BoolSignal/index.d.ts" />
 /// <reference path="../Reactive.ColorSignal/index.d.ts" />
 /// <reference path="../Reactive.EventSource/index.d.ts" />
-/// <reference path="../Reactive.Point2DSignal/index.d.ts" />
 /// <reference path="../Reactive.PointSignal/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 /// <reference path="../Reactive.ShaderSignal/index.d.ts" />
 /// <reference path="../Reactive.StringSignal/index.d.ts" />
+/// <reference path="../Reactive.Vec2Signal/index.d.ts" />
 /// <reference path="../Reactive.VectorSignal/index.d.ts" />
 declare interface BlockInstanceOutputs {
 /**
@@ -62,24 +62,24 @@ getPoint(name: string): Promise<PointSignal>;
 
 /**
 *  
- * getPoint2D(name: string): Promise<Point2DSignal>
+ * getPoint2D(name: string): Promise<Vec2Signal>
  *  
  * 
- * Returns a promise that is resolved with a `Point2DSignal` from the Block output with the given `name`. Fails the promise if no
- * output with that `name` is present in the Block or if the output with that `name` is not of type `Point2DSignal`.
+ * Returns a promise that is resolved with a `Vec2Signal` from the Block output with the given `name`. Fails the promise if no
+ * output with that `name` is present in the Block or if the output with that `name` is not of type `Vec2Signal`.
  */
-getPoint2D(name: string): Promise<Point2DSignal>;
+getPoint2D(name: string): Promise<Vec2Signal>;
 
 /**
 *  
- * getPoint2DOrFallback(name: string, fallback: Point2DSignal): Point2DSignal
+ * getPoint2DOrFallback(name: string, fallback: Vec2Signal): Vec2Signal
  *  
  * 
- * Returns a `Point2DSignal` from the Block output with the given `name`.
+ * Returns a `Vec2Signal` from the Block output with the given `name`.
  * Returns the `fallback` if any error happens, such as if no output with that `name` is present in the Block, or if the
- * output with that `name` is not of type `Point2DSignal'.
+ * output with that `name` is not of type `Vec2Signal'.
  */
-getPoint2DOrFallback(name: string, fallback: Point2DSignal): Point2DSignal;
+getPoint2DOrFallback(name: string, fallback: Vec2Signal): Vec2Signal;
 
 /**
 *  

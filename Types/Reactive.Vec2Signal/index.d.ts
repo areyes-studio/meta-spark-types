@@ -4,7 +4,7 @@
 /// <reference path="../Reactive.SignalHistory/index.d.ts" />
 /// <reference path="../Reactive.TransformSignal/index.d.ts" />
 /// <reference path="../Reactive.VectorSignal/index.d.ts" />
-declare interface Point2DSignal {
+declare interface Vec2Signal {
 /**
 * ```
 (get) height: ScalarSignal
@@ -276,12 +276,12 @@ normalize(): VectorSignal;
 
 /**
 *  
- * pinLastValue(): Point2DSignal
+ * pinLastValue(): Vec2Signal
  *  
  * 
- * Returns a new `Point2DSignal` containing a constant value which is the last value of the specified signal before `pinLastValue` is called.
+ * Returns a new `Vec2Signal` containing a constant value which is the last value of the specified signal before `pinLastValue` is called.
  */
-pinLastValue(): Point2DSignal;
+pinLastValue(): Vec2Signal;
 
 /**
 *  

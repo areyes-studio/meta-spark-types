@@ -33,7 +33,6 @@
 /// <reference path="../Scene.PlanarText/index.d.ts" />
 /// <reference path="../Scene.Plane/index.d.ts" />
 /// <reference path="../Scene.PlaneTracker/index.d.ts" />
-/// <reference path="../Reactive.Point2DSignal/index.d.ts" />
 /// <reference path="../Scene.PointLightSource/index.d.ts" />
 /// <reference path="../Reactive.PointSignal/index.d.ts" />
 /// <reference path="../Scene.RenderMode/index.d.ts" />
@@ -55,6 +54,7 @@
 /// <reference path="../Scene.ThreeDObject/index.d.ts" />
 /// <reference path="../Scene.TrackingMode/index.d.ts" />
 /// <reference path="../Scene.Transform/index.d.ts" />
+/// <reference path="../Reactive.Vec2Signal/index.d.ts" />
 /// <reference path="../Scene.VerticalAlignment/index.d.ts" />
 /// <reference path="../Scene.VerticalTextAlignment/index.d.ts" />
 /// <reference path="../Scene.WorldTransform/index.d.ts" />
@@ -101,7 +101,7 @@ static destroy(sceneObject: SceneObjectBase | string): Promise<void>;
 
 /**
 *  
- * projectToScreen(point: PointSignal): Point2DSignal
+ * projectToScreen(point: PointSignal): Vec2Signal
  *  
  * 
  * Returns a signal with the value that corresponds to the 2D point value (in Screen Space) of the given world coordinate.
@@ -112,14 +112,14 @@ static destroy(sceneObject: SceneObjectBase | string): Promise<void>;
  * 
  * This functionality can be used for precisely positioning 2D screen elements or to add additional effects that apply to the entire camera texture, based on contents of the scene.
  */
-static projectToScreen(point: PointSignal): Point2DSignal;
+static projectToScreen(point: PointSignal): Vec2Signal;
 
 /**
 *  
- * unprojectToFocalPlane(location: Point2DSignal): PointSignal
+ * unprojectToFocalPlane(location: Vec2Signal): PointSignal
  *  
  * 
- * Returns a signal with the value that corresponds to the 3d point (in World Space, in current units) of the given screenSpace point from the Point2DSignal.
+ * Returns a signal with the value that corresponds to the 3d point (in World Space, in current units) of the given screenSpace point from the Vec2Signal.
  * The z coordinate of the PointSignal will be calculated so that the 3d point will always be on the canvas (which should be on the Focal Plane).
  * This function can be combined with TouchGestures to create a 3d point signal.
  * 
@@ -131,14 +131,14 @@ static projectToScreen(point: PointSignal): Point2DSignal;
  * });
  *  
  */
-static unprojectToFocalPlane(location: Point2DSignal): PointSignal;
+static unprojectToFocalPlane(location: Vec2Signal): PointSignal;
 
 /**
 *  
- * unprojectWithDepth(location: Point2DSignal, depth: number): PointSignal
+ * unprojectWithDepth(location: Vec2Signal, depth: number): PointSignal
  *  
  * 
- * Returns a signal with the value that corresponds to the 3d point value (in World Space, in current units) of the given screenSpace point from the Point2DSignal.
+ * Returns a signal with the value that corresponds to the 3d point value (in World Space, in current units) of the given screenSpace point from the Vec2Signal.
  * The z coordinate of the PointSignal will always be equal to the given depth value. The depth should be given in current units.
  * This function can be combined with TouchGestures to create a 3d point signal.
  *  
@@ -149,7 +149,7 @@ static unprojectToFocalPlane(location: Point2DSignal): PointSignal;
  * });
  *  
  */
-static unprojectWithDepth(location: Point2DSignal, depth: number): PointSignal;
+static unprojectWithDepth(location: Vec2Signal, depth: number): PointSignal;
 
 /**
  * The `HorizontalAlignment` enum describes how an element is aligned horizontally.

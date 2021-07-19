@@ -1,17 +1,17 @@
 /// <reference path="../TouchGestures.Gesture/index.d.ts" />
-/// <reference path="../Reactive.Point2DSignal/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
+/// <reference path="../Reactive.Vec2Signal/index.d.ts" />
 declare interface RotateGesture extends Gesture {
 /**
 * ```
-(get) location: Point2DSignal
+(get) location: Vec2Signal
 (set) (Not Available)
 ```
 
-Specifies a `Point2DSignal` that represents the current center point between two touches of the rotate gesture in screen coordinates.
+Specifies a `Vec2Signal` that represents the current center point between two touches of the rotate gesture in screen coordinates.
 **Note**: The location is always specified in the screen coordinates, even if the event was emitted as a result of Rotateing on a specific object.
 */
-location: Point2DSignal;
+location: Vec2Signal;
 /**
 * ```
 (get) rotation: ScalarSignal

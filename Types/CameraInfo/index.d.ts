@@ -1,9 +1,9 @@
 /// <reference path="../Reactive.BoolSignal/index.d.ts" />
 /// <reference path="../CameraInfo.CameraPosition/index.d.ts" />
-/// <reference path="../Reactive.Point2DSignal/index.d.ts" />
-/// <reference path="../Reactive.Point4DSignal/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 /// <reference path="../Reactive.StringSignal/index.d.ts" />
+/// <reference path="../Reactive.Vec2Signal/index.d.ts" />
+/// <reference path="../Reactive.Vec4Signal/index.d.ts" />
 declare class CameraInfoModule {
 /**
 * ```
@@ -16,13 +16,13 @@ Specifies a `CameraPosition` enum signal identifying the current camera in use o
 static readonly captureDevicePosition: StringSignal;
 /**
 * ```
-(get) effectSafeAreaInsets: Point4DSignal
+(get) effectSafeAreaInsets: Vec4Signal
 (set) (Not Available)
 ```
 
-Specifies a `Point4DSignal` indicating the insets of the effect safe area.
+Specifies a `Vec4Signal` indicating the insets of the effect safe area.
 */
-static readonly effectSafeAreaInsets: Point4DSignal;
+static readonly effectSafeAreaInsets: Vec4Signal;
 /**
 * ```
 (get) isCapturingPhoto: BoolSignal
@@ -52,13 +52,13 @@ Specifies a `ScalarSignal` describing the scale of the preview's screen, i.e. th
 static readonly previewScreenScale: ScalarSignal;
 /**
 * ```
-(get) previewSize: Point2DSignal
+(get) previewSize: Vec2Signal
 (set) (Not Available)
 ```
 
-Specifies a `Point2DSignal` describing the size of the preview, in pixels.
+Specifies a `Vec2Signal` describing the size of the preview, in pixels.
 */
-static readonly previewSize: Point2DSignal;
+static readonly previewSize: Vec2Signal;
 /**
  * The `CameraPosition` enum describes the direction the camera is facing.
  * @property BACK Indicates that the back-facing camera is in use.

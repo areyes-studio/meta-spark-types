@@ -1,11 +1,11 @@
 /// <reference path="../Reactive.BoolSignal/index.d.ts" />
 /// <reference path="../Reactive.ColorSignal/index.d.ts" />
 /// <reference path="../Reactive.EventSource/index.d.ts" />
-/// <reference path="../Reactive.Point2DSignal/index.d.ts" />
 /// <reference path="../Reactive.PointSignal/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 /// <reference path="../Reactive.ShaderSignal/index.d.ts" />
 /// <reference path="../Reactive.StringSignal/index.d.ts" />
+/// <reference path="../Reactive.Vec2Signal/index.d.ts" />
 /// <reference path="../Reactive.VectorSignal/index.d.ts" />
 declare interface BlockInstanceInputs {
 /**
@@ -43,14 +43,14 @@ setPoint(name: string, v: PointSignal): Promise<void>;
 
 /**
 *  
- * setPoint2D(name: string, v: Point2DSignal): Promise<void>
+ * setPoint2D(name: string, v: Vec2Signal): Promise<void>
  *  
  * 
- * Sends a `Point2DSignal` to the Block's input with the given `name`. Returns a promise that is fulfilled
+ * Sends a `Vec2Signal` to the Block's input with the given `name`. Returns a promise that is fulfilled
  * if the operation succeeds and is rejected if the operation fails, such as if no
- * input exists with the given name, or if the input's type is not a `Point2DSignal`.
+ * input exists with the given name, or if the input's type is not a `Vec2Signal`.
  */
-setPoint2D(name: string, v: Point2DSignal): Promise<void>;
+setPoint2D(name: string, v: Vec2Signal): Promise<void>;
 
 /**
 *  

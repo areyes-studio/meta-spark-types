@@ -7,9 +7,7 @@
 /// <reference path="../Reactive.HsvaSignal/index.d.ts" />
 /// <reference path="../Reactive.ISignal/index.d.ts" />
 /// <reference path="../Reactive.Point2D/index.d.ts" />
-/// <reference path="../Reactive.Point2DSignal/index.d.ts" />
 /// <reference path="../Reactive.Point3D/index.d.ts" />
-/// <reference path="../Reactive.Point4DSignal/index.d.ts" />
 /// <reference path="../Reactive.PointSignal/index.d.ts" />
 /// <reference path="../Reactive.PrimitiveOrShaderSignal/index.d.ts" />
 /// <reference path="../Reactive.QuaternionSignal/index.d.ts" />
@@ -21,6 +19,8 @@
 /// <reference path="../Reactive.StringSignal/index.d.ts" />
 /// <reference path="../Reactive.Subscription/index.d.ts" />
 /// <reference path="../Reactive.TransformSignal/index.d.ts" />
+/// <reference path="../Reactive.Vec2Signal/index.d.ts" />
+/// <reference path="../Reactive.Vec4Signal/index.d.ts" />
 /// <reference path="../Reactive.VectorSignal/index.d.ts" />
 declare class ReactiveModule {
 /**
@@ -398,9 +398,9 @@ static magnitude(v: VectorSignal): ScalarSignal;
 /**
 *  
  * magnitudeSquared(signal: ScalarSignal): ScalarSignal
- * magnitudeSquared(signal: Point2DSignal): ScalarSignal
+ * magnitudeSquared(signal: Vec2Signal): ScalarSignal
  * magnitudeSquared(signal: VectorSignal): ScalarSignal
- * magnitudeSquared(signal: Point4DSignal): ScalarSignal
+ * magnitudeSquared(signal: Vec4Signal): ScalarSignal
  *  
  * 
  * Returns the squared length (magnitude) of a given signal.
@@ -409,11 +409,11 @@ static magnitude(v: VectorSignal): ScalarSignal;
  */
 static magnitudeSquared(signal: ScalarSignal | number): ScalarSignal;
 
-static magnitudeSquared(signal: Point2DSignal): ScalarSignal;
+static magnitudeSquared(signal: Vec2Signal): ScalarSignal;
 
 static magnitudeSquared(signal: VectorSignal): ScalarSignal;
 
-static magnitudeSquared(signal: Point4DSignal): ScalarSignal;
+static magnitudeSquared(signal: Vec4Signal): ScalarSignal;
 
 /**
 *  
@@ -587,54 +587,54 @@ static orList(x: Array<BoolSignal>): BoolSignal;
 
 /**
 *  
- * pack2(x: ScalarSignal, y: ScalarSignal): Point2DSignal
- * pack2(x: ScalarSignal, y: Point2DSignal): PointSignal
- * pack2(x: Point2DSignal, y: ScalarSignal): PointSignal
- * pack2(x: ScalarSignal, y: PointSignal): Point4DSignal
- * pack2(x: PointSignal, y: ScalarSignal): Point4DSignal
- * pack2(x: Point2DSignal, y: Point2DSignal): Point4DSignal
+ * pack2(x: ScalarSignal, y: ScalarSignal): Vec2Signal
+ * pack2(x: ScalarSignal, y: Vec2Signal): PointSignal
+ * pack2(x: Vec2Signal, y: ScalarSignal): PointSignal
+ * pack2(x: ScalarSignal, y: PointSignal): Vec4Signal
+ * pack2(x: PointSignal, y: ScalarSignal): Vec4Signal
+ * pack2(x: Vec2Signal, y: Vec2Signal): Vec4Signal
  *  
  * 
  * Packs two Scalar or Point signals into a bigger Point signal.
  */
-static pack2(x: ScalarSignal | number, y: ScalarSignal | number): Point2DSignal;
+static pack2(x: ScalarSignal | number, y: ScalarSignal | number): Vec2Signal;
 
-static pack2(x: ScalarSignal | number, y: Point2DSignal): PointSignal;
+static pack2(x: ScalarSignal | number, y: Vec2Signal): PointSignal;
 
-static pack2(x: Point2DSignal, y: ScalarSignal | number): PointSignal;
+static pack2(x: Vec2Signal, y: ScalarSignal | number): PointSignal;
 
-static pack2(x: ScalarSignal | number, y: PointSignal): Point4DSignal;
+static pack2(x: ScalarSignal | number, y: PointSignal): Vec4Signal;
 
-static pack2(x: PointSignal, y: ScalarSignal | number): Point4DSignal;
+static pack2(x: PointSignal, y: ScalarSignal | number): Vec4Signal;
 
-static pack2(x: Point2DSignal, y: Point2DSignal): Point4DSignal;
+static pack2(x: Vec2Signal, y: Vec2Signal): Vec4Signal;
 
 /**
 *  
  * pack3(x: ScalarSignal, y: ScalarSignal, z: ScalarSignal): PointSignal
- * pack3(x: ScalarSignal, y: ScalarSignal, z: Point2DSignal): Point4DSignal
- * pack3(x: ScalarSignal, y: Point2DSignal, z: ScalarSignal): Point4DSignal
- * pack3(x: Point2DSignal, y: ScalarSignal, z: ScalarSignal): Point4DSignal
+ * pack3(x: ScalarSignal, y: ScalarSignal, z: Vec2Signal): Vec4Signal
+ * pack3(x: ScalarSignal, y: Vec2Signal, z: ScalarSignal): Vec4Signal
+ * pack3(x: Vec2Signal, y: ScalarSignal, z: ScalarSignal): Vec4Signal
  *  
  * 
  * Packs three Scalar or Point signals into a bigger Point signal.
  */
 static pack3(x: ScalarSignal | number, y: ScalarSignal | number, z: ScalarSignal | number): PointSignal;
 
-static pack3(x: ScalarSignal | number, y: ScalarSignal | number, z: Point2DSignal): Point4DSignal;
+static pack3(x: ScalarSignal | number, y: ScalarSignal | number, z: Vec2Signal): Vec4Signal;
 
-static pack3(x: ScalarSignal | number, y: Point2DSignal, z: ScalarSignal | number): Point4DSignal;
+static pack3(x: ScalarSignal | number, y: Vec2Signal, z: ScalarSignal | number): Vec4Signal;
 
-static pack3(x: Point2DSignal, y: ScalarSignal | number, z: ScalarSignal | number): Point4DSignal;
+static pack3(x: Vec2Signal, y: ScalarSignal | number, z: ScalarSignal | number): Vec4Signal;
 
 /**
 *  
- * pack4(x: ScalarSignal, y: ScalarSignal, z: ScalarSignal, w: ScalarSignal): Point4DSignal
+ * pack4(x: ScalarSignal, y: ScalarSignal, z: ScalarSignal, w: ScalarSignal): Vec4Signal
  *  
  * 
- * Packs four `ScalarSignals` into a `Point4DSignal`.
+ * Packs four `ScalarSignals` into a `Vec4Signal`.
  */
-static pack4(x: ScalarSignal | number, y: ScalarSignal | number, z: ScalarSignal | number, w: ScalarSignal | number): Point4DSignal;
+static pack4(x: ScalarSignal | number, y: ScalarSignal | number, z: ScalarSignal | number, w: ScalarSignal | number): Vec4Signal;
 
 /**
 *  
@@ -647,12 +647,12 @@ static point(x: ScalarSignal | number, y: ScalarSignal | number, z: ScalarSignal
 
 /**
 *  
- * point2d(x: ScalarSignal | number, y: ScalarSignal | number): Point2DSignal
+ * point2d(x: ScalarSignal | number, y: ScalarSignal | number): Vec2Signal
  *  
  * 
- * Combines two signals and returns the result as a `Point2DSignal`.
+ * Combines two signals and returns the result as a `Vec2Signal`.
  */
-static point2d(x: ScalarSignal | number, y: ScalarSignal | number): Point2DSignal;
+static point2d(x: ScalarSignal | number, y: ScalarSignal | number): Vec2Signal;
 
 /**
 *  

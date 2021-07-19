@@ -1,10 +1,10 @@
 /// <reference path="../Reactive.BoolSignal/index.d.ts" />
 /// <reference path="../Reactive.EventSource/index.d.ts" />
-/// <reference path="../Reactive.Point2DSignal/index.d.ts" />
 /// <reference path="../Reactive.PointSignal/index.d.ts" />
 /// <reference path="../Reactive.RgbaSignal/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 /// <reference path="../Reactive.StringSignal/index.d.ts" />
+/// <reference path="../Reactive.Vec2Signal/index.d.ts" />
 /// <reference path="../Reactive.VectorSignal/index.d.ts" />
 declare interface PatchesOutputs {
 /**
@@ -54,21 +54,21 @@ getPoint(name: string): Promise<PointSignal>;
 
 /**
 *  
- * getPoint2D(name: string): Promise<Point2DSignal>
+ * getPoint2D(name: string): Promise<Vec2Signal>
  *  
  * 
- * Returns a promise that is resolved with a `Point2DSignal` existing in the Patch Editor under specified `name`.
+ * Returns a promise that is resolved with a `Vec2Signal` existing in the Patch Editor under specified `name`.
  */
-getPoint2D(name: string): Promise<Point2DSignal>;
+getPoint2D(name: string): Promise<Vec2Signal>;
 
 /**
 *  
- * getPoint2DOrFallback(name: string, fallback: Point2DSignal): Point2DSignal
+ * getPoint2DOrFallback(name: string, fallback: Vec2Signal): Vec2Signal
  *  
  * 
- * Returns a `Point2DSignal` existing in the Patch Editor under specified `name` or `fallback` on error.
+ * Returns a `Vec2Signal` existing in the Patch Editor under specified `name` or `fallback` on error.
  */
-getPoint2DOrFallback(name: string, fallback: Point2DSignal): Point2DSignal;
+getPoint2DOrFallback(name: string, fallback: Vec2Signal): Vec2Signal;
 
 /**
 *  

@@ -1,17 +1,17 @@
 /// <reference path="../Scene.BoundingBox/index.d.ts" />
-/// <reference path="../Reactive.Point2DSignal/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 /// <reference path="../Reactive.SignalHistory/index.d.ts" />
+/// <reference path="../Reactive.Vec2Signal/index.d.ts" />
 declare interface BoundingBoxSignal {
 /**
 * ```
-(get) center: Point2DSignal
+(get) center: Vec2Signal
 (set) (Not Available)
 ```
 
 Represents the center of the bounding box, in normalized screen space units.
 */
-center: Point2DSignal;
+center: Vec2Signal;
 /**
 * ```
 (get) height: ScalarSignal

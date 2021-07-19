@@ -1,5 +1,5 @@
 /// <reference path="../Reactive.BoolSignal/index.d.ts" />
-/// <reference path="../Reactive.Point2DSignal/index.d.ts" />
+/// <reference path="../Reactive.Vec2Signal/index.d.ts" />
 declare interface KeyPoint2D {
 /**
 * ```
@@ -12,11 +12,11 @@ Boolean signal representing whether this body key point is being tracked right n
 isTracked: BoolSignal;
 /**
 * ```
-(get) keyPoint: Point2DSignal
+(get) keyPoint: Vec2Signal
 (set) (Not Available)
 ```
 
 Point signal representing the key point
 */
-keyPoint: Point2DSignal;
+keyPoint: Vec2Signal;
 }

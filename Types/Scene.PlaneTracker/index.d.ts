@@ -1,9 +1,9 @@
 /// <reference path="../Reactive.Point2D/index.d.ts" />
-/// <reference path="../Reactive.Point2DSignal/index.d.ts" />
 /// <reference path="../Reactive.Point3D/index.d.ts" />
 /// <reference path="../Scene.SceneObjectBase/index.d.ts" />
 /// <reference path="../Reactive.StringSignal/index.d.ts" />
 /// <reference path="../Scene.TrackingMode/index.d.ts" />
+/// <reference path="../Reactive.Vec2Signal/index.d.ts" />
 declare interface PlaneTracker extends SceneObjectBase {
 /**
 * ```
@@ -61,7 +61,7 @@ setMode(mode: StringSignal<TrackingMode>, config?: {fallback: TrackingMode}): vo
 *  
  * trackPoint(screenLocation: Point2D): void
  * trackPoint(screenX: number, screenY: number): void
- * trackPoint(screenLocation: Point2DSignal, gestureState: StringSignal): void
+ * trackPoint(screenLocation: Vec2Signal, gestureState: StringSignal): void
  *  
  * 
  * PlaneTracker origin is bound to a point in 3d space, located on detected plane.
@@ -78,6 +78,6 @@ trackPoint(screenLocation: Point2D): void;
 
 trackPoint(screenX: number, screenY: number): void;
 
-trackPoint(screenLocation: Point2DSignal, gestureState: StringSignal | string): void;
+trackPoint(screenLocation: Vec2Signal, gestureState: StringSignal | string): void;
 
 }

@@ -1,8 +1,8 @@
-/// <reference path="../Reactive.Point4DSignal/index.d.ts" />
 /// <reference path="../Reactive.PointSignal/index.d.ts" />
 /// <reference path="../Reactive.Rotation/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 /// <reference path="../Reactive.SignalHistory/index.d.ts" />
+/// <reference path="../Reactive.Vec4Signal/index.d.ts" />
 declare interface QuaternionSignal {
 /**
 * ```
@@ -52,12 +52,12 @@ Represents the Z component of the quaternion.
 z: ScalarSignal;
 /**
 *  
- * angleAxis(): Point4DSignal
+ * angleAxis(): Vec4Signal
  *  
  * 
  * Returns the angle/axis representation of this quaternion. First element in the vector is angle in radians, with last 3 being X, Y, Z axis respectively.
  */
-angleAxis(): Point4DSignal;
+angleAxis(): Vec4Signal;
 
 /**
 *  

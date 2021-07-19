@@ -1,7 +1,7 @@
 /// <reference path="../Reactive.ColorSignal/index.d.ts" />
 /// <reference path="../Reactive.HsvaSignal/index.d.ts" />
-/// <reference path="../Reactive.Point4DSignal/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
+/// <reference path="../Reactive.Vec4Signal/index.d.ts" />
 declare interface RgbaSignal extends ColorSignal {
 /**
 * ```
@@ -59,11 +59,11 @@ toHSVA(): HsvaSignal;
 
 /**
 *  
- * toVec4(): Point4DSignal
+ * toVec4(): Vec4Signal
  *  
  * 
  * Convert this signal to Vector signal, using R, G, B, A for four components of vector respectively.
  */
-toVec4(): Point4DSignal;
+toVec4(): Vec4Signal;
 
 }
