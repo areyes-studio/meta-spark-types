@@ -6,8 +6,7 @@ declare interface Eyebrow {
 (set) (Not Available)
 ```
 
-Specifies a `PointSignal` representing the inside end of the eyebrow in the face local coordinate system.
-**See Also**: `Face.cameraTransform` to convert the point to the coordinate system of the camera.
+The location of the inner end of the eyebrow, as a [`PointSignal`](/classes/ReactiveModule.PointSignal).
 */
 insideEnd: PointSignal;
 /**
@@ -16,8 +15,7 @@ insideEnd: PointSignal;
 (set) (Not Available)
 ```
 
-Specifies a `PointSignal` representing the outside end of the eyebrow in the face local coordinate system.
-**See Also**: `Face.cameraTransform` to convert the point to the coordinate system of the camera.
+The location of the outer end of the eyebrow, as a [`PointSignal`](/classes/ReactiveModule.PointSignal).
 */
 outsideEnd: PointSignal;
 /**
@@ -26,8 +24,7 @@ outsideEnd: PointSignal;
 (set) (Not Available)
 ```
 
-Specifies a `PointSignal` representing the top of the eyebrow in the face local coordinate system.
-**See Also**: `Face.cameraTransform` to convert the point to the coordinate system of the camera.
+The location of the top of the eyebrow, as a [`PointSignal`](/classes/ReactiveModule.PointSignal).
 */
 top: PointSignal;
 }

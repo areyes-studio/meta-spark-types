@@ -6,8 +6,7 @@ declare interface Cheek {
 (set) (Not Available)
 ```
 
-Specifies a `PointSignal` representing the center of the cheek in the face local coordinate system.
-**See Also**: `Face.cameraTransform` to convert the point to the coordinate system of the camera.
+The location of the center of the cheek, as a [`PointSignal`](/classes/ReactiveModule.PointSignal).
 */
 center: PointSignal;
 /**
@@ -16,8 +15,7 @@ center: PointSignal;
 (set) (Not Available)
 ```
 
-Specifies a `PointSignal` representing the cheekbone in the face local coordinate system.
-**See Also**: `Face.cameraTransform` to convert the point to the coordinate system of the camera.
+The location of the cheekbone, as a [`PointSignal`](/classes/ReactiveModule.PointSignal).
 */
 cheekbone: PointSignal;
 }

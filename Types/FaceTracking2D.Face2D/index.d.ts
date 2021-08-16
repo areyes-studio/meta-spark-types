@@ -7,7 +7,7 @@ declare interface Face2D {
 (set) (Not Available)
 ```
 
-Specifies a `BoundingBoxSignal` object describing the face bounding box relative to normalized screen space.
+The bounding box of the tracked face relative to normalized screen space, as a [`BoundingBoxSignal`](/classes/ReactiveModule.BoundingBoxSignal).
 */
 boundingBox: BoundingBoxSignal;
 /**
@@ -16,8 +16,8 @@ boundingBox: BoundingBoxSignal;
 (set) (Not Available)
 ```
 
-A `BoolSignal` indicating whether the face was tracked this frame.
-If the face was not tracked, other properties represent the most recent tracked frame.
+Indicates whether the face is being tracked in the current frame, with a [`BoolSignal`](/classes/ReactiveModule.BoolSignal).
+If `false`, the value of the `Face2D` object's properties represent their value during the frame they were most recently tracked in.
 */
 isTracked: BoolSignal;
 }

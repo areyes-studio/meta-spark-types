@@ -716,7 +716,7 @@ static quaternionIdentity(): QuaternionSignal;
  * quaternionLookAt(targetPosition: PointSignal, selfUp?: VectorSignal): QuaternionSignal
  *  
  * 
- * Creates a new quaternion signal representing rotation in the direction of target.
+ * Creates a new quaternion signal representing rotation in the direction of a normalized target direction vector.
  * Default selfUp is ReactiveModule.vector(0, 1, 0).
  */
 static quaternionLookAt(targetPosition: PointSignal, selfUp?: VectorSignal): QuaternionSignal;

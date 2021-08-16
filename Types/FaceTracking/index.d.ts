@@ -16,7 +16,7 @@ declare class FaceTrackingModule {
 (set) (Not Available)
 ```
 
-Returns a `ScalarSignal` representing the number of faces tracked in the scene.
+The number of faces currently tracked in the scene, as a [`ScalarSignal`](/classes/ReactiveModule.ScalarSignal).
 */
 static readonly count: ScalarSignal;
 /**
@@ -24,11 +24,9 @@ static readonly count: ScalarSignal;
  * createFaceMeshSceneObject(initialState?: {[key: string]: any}): Promise<FaceMesh>
  *  
  * 
- * Create a 'FaceMesh' scene object asynchronously.
- * When creating the scene objects, keep the following in mind:
- *   - All objects must have an existing class.
- *   - New objects always get assigned a globally unique `name` and `identifier`.
- *   - `initialState` is optional, but encouraged to be used.
+ * Creates a new [dynamic](https://sparkar.facebook.com/ar-studio/learn/scripting/dynamic-instantiation) `FaceMesh` object in the scene.
+ * * `initialState` - an optional set of JSON-formatted parameters to instantiate the `FaceMesh` object with. For example, `{"name": "DynamicFaceMesh", "visible": true}`. The parameter `key`s must be valid `FaceMesh` object properties.
+ * Use of dynamic objects requires the Scripting Dynamic Instantiation capability to be enabled within the project's properties.
  */
 static createFaceMeshSceneObject(initialState?: {[key: string]: any}): Promise<FaceMesh>;
 
@@ -37,11 +35,9 @@ static createFaceMeshSceneObject(initialState?: {[key: string]: any}): Promise<F
  * createFaceTrackerSceneObject(initialState?: {[key: string]: any}): Promise<FaceTracker>
  *  
  * 
- * Create a 'FaceTracker' scene object asynchronously.
- * When creating the scene objects, keep the following in mind:
- *   - All objects must have an existing class.
- *   - New objects always get assigned a globally unique `name` and `identifier`.
- *   - `initialState` is optional, but encouraged to be used.
+ * Creates a new [dynamic](https://sparkar.facebook.com/ar-studio/learn/scripting/dynamic-instantiation) `FaceTracker` object in the scene.
+ * * `initialState` - an optional set of JSON-formatted parameters to instantiate the `FaceTracker` object with. For example, `{"name": "DynamicFaceTracker", "visible": true}`. The parameter `key`s must be valid `FaceTracker` object properties.
+ *  Use of dynamic objects requires the Scripting Dynamic Instantiation capability to be enabled within the project's properties.
  */
 static createFaceTrackerSceneObject(initialState?: {[key: string]: any}): Promise<FaceTracker>;
 
@@ -50,7 +46,8 @@ static createFaceTrackerSceneObject(initialState?: {[key: string]: any}): Promis
  * face(index: number): Face
  *  
  * 
- * Returns the `Face` object from the detected face array at the specified index.
+ * Returns a [`Face`](/classes/facetrackingmodule.face) object from the array of detected faces.
+ * * `index` - the index of the `Face` object to retrieve from the array.
  */
 static face(index: number): Face;
 

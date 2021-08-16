@@ -7,7 +7,7 @@ declare class FaceTracking2DModule {
 (set) (Not Available)
 ```
 
-Returns a `ScalarSignal` representing the number of faces tracked in the scene.
+The number of faces currently tracked in the scene, as a [`ScalarSignal`](/classes/ReactiveModule.ScalarSignal).
 */
 static readonly count: ScalarSignal;
 /**
@@ -15,7 +15,8 @@ static readonly count: ScalarSignal;
  * face(index: number): Face2D
  *  
  * 
- * Returns the `Face2D` object from the detected face array at the specified index.
+ * Returns a [`Face2D`](/classes/facetracking2dmodule.face2d) object from the array of detected faces.
+ * * `index` - the index of the `Face2D` object to retrieve from the array.
  */
 static face(index: number): Face2D;
 

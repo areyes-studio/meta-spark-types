@@ -6,8 +6,7 @@ declare interface Nose {
 (set) (Not Available)
 ```
 
-Specifies a `PointSignal` representing the location of the bridge of the nose in the face local coordinate system.
-**See Also**: `Face.cameraTransform` to convert the point to the coordinate system of the camera.
+The location of the bridge of the nose, as a [`PointSignal`](/classes/ReactiveModule.PointSignal).
 */
 bridge: PointSignal;
 /**
@@ -16,8 +15,7 @@ bridge: PointSignal;
 (set) (Not Available)
 ```
 
-Specifies a `PointSignal` representing the location of the left nostril in the face local coordinate system.
-**See Also**: `Face.cameraTransform` to convert the point to the coordinate system of the camera.
+The location of the left nostril, as a [`PointSignal`](/classes/ReactiveModule.PointSignal).
 */
 leftNostril: PointSignal;
 /**
@@ -26,8 +24,7 @@ leftNostril: PointSignal;
 (set) (Not Available)
 ```
 
-Specifies a `PointSignal` representing the location of the right nostril in the face local coordinate system.
-**See Also**: `Face.cameraTransform` to convert the point to the coordinate system of the camera.
+The location of the right nostril, as a [`PointSignal`](/classes/ReactiveModule.PointSignal).
 */
 rightNostril: PointSignal;
 /**
@@ -36,8 +33,7 @@ rightNostril: PointSignal;
 (set) (Not Available)
 ```
 
-Specifies a `PointSignal` representing the location of the tip of the nose in the face local coordinate system.
-**See Also**: `Face.cameraTransform` to convert the point to the coordinate system of the camera.
+The location of the tip of the nose, as a [`PointSignal`](/classes/ReactiveModule.PointSignal).
 */
 tip: PointSignal;
 }

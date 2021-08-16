@@ -6,8 +6,7 @@ declare interface Chin {
 (set) (Not Available)
 ```
 
-Specifies a `PointSignal` representing the location of the tip of the chin in the face local coordinate system.
-**See Also**: `Face.cameraTransform` to convert the point to the coordinate system of the camera.
+The location of the tip of the chin, as a [`PointSignal`](/classes/ReactiveModule.PointSignal).
 */
 tip: PointSignal;
 }

@@ -7,8 +7,7 @@ declare interface Mouth {
 (set) (Not Available)
 ```
 
-Specifies a `PointSignal` representing the location of the center of the mouth in the face local coordinate system.
-**See Also**: `Face.cameraTransform` to convert the point to the coordinate system of the camera.
+The location of the center of the mouth, as a [`PointSignal`](/classes/ReactiveModule.PointSignal).
 */
 center: PointSignal;
 /**
@@ -17,8 +16,7 @@ center: PointSignal;
 (set) (Not Available)
 ```
 
-Specifies a `PointSignal` representing the location of the left corner of the mouth in the face local coordinate system.
-**See Also**: `Face.cameraTransform` to convert the point to the coordinate system of the camera.
+The location of the left corner of the mouth, as a [`PointSignal`](/classes/ReactiveModule.PointSignal).
 */
 leftCorner: PointSignal;
 /**
@@ -27,8 +25,7 @@ leftCorner: PointSignal;
 (set) (Not Available)
 ```
 
-Specifies a `PointSignal` representing the location of the center of the lower lip in the face local coordinate system.
-**See Also**: `Face.cameraTransform` to convert the point to the coordinate system of the camera.
+The location of the center of the lower lip, as a [`PointSignal`](/classes/ReactiveModule.PointSignal).
 */
 lowerLipCenter: PointSignal;
 /**
@@ -37,8 +34,8 @@ lowerLipCenter: PointSignal;
 (set) (Not Available)
 ```
 
-Specifies a `ScalarSignal` indicating how high or low the mouth angles are with respect to the lip center. 0.0 is a straight line.
-Mouth angles higher than the lip center yield positive curvature, lowering the mouth angles makes it negative.
+The curvature of the lower lip relative to the lip center, as a [`ScalarSignal`](/classes/ReactiveModule.ScalarSignal).
+A value of `0` represents no curvature on the lower lip. A mouth angled higher than the lip center results in a positive curvature value, while a mouth angled lower than the lip center results in a negative curvature value.
 */
 lowerLipCurvature: ScalarSignal;
 /**
@@ -47,8 +44,8 @@ lowerLipCurvature: ScalarSignal;
 (set) (Not Available)
 ```
 
-Specifies a `ScalarSignal` representing the openness of the mouth.
-The openness of the mouth is a non-negative value where 0.0 is mouth closed and 1.0 mouth wide open (it can also take values greater than 1.0).
+The openness of the mouth, as a [`ScalarSignal`](/classes/ReactiveModule.ScalarSignal).
+The higher the value returned, the more wide open the detected mouth is. The minimum value is `0`, which indicates a closed mouth.
 */
 openness: ScalarSignal;
 /**
@@ -57,8 +54,7 @@ openness: ScalarSignal;
 (set) (Not Available)
 ```
 
-Specifies a `PointSignal` representing the location of the right corner of the mouth in the face local coordinate system.
-**See Also**: `Face.cameraTransform` to convert the point to the coordinate system of the camera.
+The location of the right corner of the mouth, as a [`PointSignal`](/classes/ReactiveModule.PointSignal).
 */
 rightCorner: PointSignal;
 /**
@@ -67,8 +63,7 @@ rightCorner: PointSignal;
 (set) (Not Available)
 ```
 
-Specifies a `PointSignal` representing the location of the center of the upper lip in the face local coordinate system.
-**See Also**: `Face.cameraTransform` to convert the point to the coordinate system of the camera.
+The location of the center of the upper lip, as a [`PointSignal`](/classes/ReactiveModule.PointSignal).
 */
 upperLipCenter: PointSignal;
 /**
@@ -77,8 +72,8 @@ upperLipCenter: PointSignal;
 (set) (Not Available)
 ```
 
-Specifies a `ScalarSignal` indicating how high or low the mouth angles are with respect to the lip center. 0.0 is a straight line.
-Mouth angles higher than the lip center yield positive curvature, lowering the mouth angles makes it negative.
+The curvature of the upper lip relative to the lip center, as a [`ScalarSignal`](/classes/ReactiveModule.ScalarSignal).
+A value of `0` represents no curvature on the upper lip. A mouth angled higher than the lip center results in a positive curvature value, while a mouth angled lower than the lip center results in a negative curvature value.
 */
 upperLipCurvature: ScalarSignal;
 }

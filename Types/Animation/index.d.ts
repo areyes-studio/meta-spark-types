@@ -44,13 +44,22 @@ Returns an instance of a `SamplerFactory` object that can be used to construct a
 static readonly samplers: SamplerFactory;
 /**
 *  
- * animate(driver: TimeDriver | ValueDriver, sampler: ScalarSampler | ArrayOfScalarSamplers | RotationSampler | ColorSampler): ScalarSignal | ArrayOfScalarSignals | QuaternionSignal | RgbaSignal
+ * animate(driver: TimeDriver | ValueDriver, sampler: ScalarSampler): ScalarSignal
+ * animate(driver: TimeDriver | ValueDriver, sampler: ArrayOfScalarSamplers): ArrayOfScalarSignals
+ * animate(driver: TimeDriver | ValueDriver, sampler: RotationSampler): QuaternionSignal
+ * animate(driver: TimeDriver | ValueDriver, sampler: ColorSampler): RgbaSignal
  *  
  * 
  * Combines the driver and the sampler to create a signal that can be used to animate arbitrary properties of arbitrary objects.
  * For `TimeDriver`-based animations the animation will start only when `TimeDriver.start` is invoked.
  */
-static animate(driver: TimeDriver | ValueDriver, sampler: ArrayOfScalarSamplers | ColorSampler | RotationSampler | ScalarSampler): ScalarSignal | ArrayOfScalarSignals | QuaternionSignal | RgbaSignal;
+static animate(driver: TimeDriver | ValueDriver, sampler: ScalarSampler): ScalarSignal;
+
+static animate(driver: TimeDriver | ValueDriver, sampler: ArrayOfScalarSamplers): ArrayOfScalarSignals;
+
+static animate(driver: TimeDriver | ValueDriver, sampler: RotationSampler): QuaternionSignal;
+
+static animate(driver: TimeDriver | ValueDriver, sampler: ColorSampler): RgbaSignal;
 
 /**
 *  

@@ -17,8 +17,8 @@ declare interface Face {
 (set) (Not Available)
 ```
 
-Specifies a `TransformSignal` object describing the face transformation relative to camera coordinate system.
-**Note**: `cameraTransform.applyTo(point)`, where `point` is a point in face local coordinate system, returns a point in camera local coordinate system.
+The face transform relative to the camera coordinate system, as a [`TransformSignal`](/classes/ReactiveModule.TransformSignal).
+Calling `cameraTransform.applyToPoint(point)`, where `point` is a point in the face's local coordinate system, will return a point in the camera's local coordinate system.
 */
 cameraTransform: TransformSignal;
 /**
@@ -27,7 +27,7 @@ cameraTransform: TransformSignal;
 (set) (Not Available)
 ```
 
-Specifies a `Chin` object describing the attributes of the chin.
+The [`Chin`](/classes/facetrackingmodule.chin) of the tracked face.
 */
 chin: Chin;
 /**
@@ -36,7 +36,7 @@ chin: Chin;
 (set) (Not Available)
 ```
 
-Specifies a `Forehead` object describing the attributes of the forehead.
+The [`Forehead`](/classes/facetrackingmodule.forehead) of the tracked face.
 */
 forehead: Forehead;
 /**
@@ -45,8 +45,10 @@ forehead: Forehead;
 (set) (Not Available)
 ```
 
-Specifies a `StringSignal` containing the unique ID assigned to a face. An ID is generated every time a face is detected and tracked in the scene.
-When a face is lost and then tracked again, a new ID is generated even if it is the same person.
+The unique ID assigned to a tracked face, as a [`StringSignal`](/classes/ReactiveModule.StringSignal).
+A unique ID is generated for every new face detected and tracked in the scene.
+
+If a face loses tracking it will be assigned a new unique ID when it is tracked again - the effect will not recognise individual faces.
 */
 id: StringSignal;
 /**
@@ -55,8 +57,8 @@ id: StringSignal;
 (set) (Not Available)
 ```
 
-A `BoolSignal` indicating whether the face was tracked this frame.
-If the face was not tracked, other properties represent the most recent tracked frame.
+Indicates whether the face is being tracked in the current frame, with a [`BoolSignal`](/classes/ReactiveModule.BoolSignal).
+If `false`, the value of the `Face` object's properties represent their value during the frame they were most recently tracked in.
 */
 isTracked: BoolSignal;
 /**
@@ -65,7 +67,7 @@ isTracked: BoolSignal;
 (set) (Not Available)
 ```
 
-Specifies a `Cheek` object describing the attributes of the left cheek.
+The left [`Cheek`](/classes/facetrackingmodule.cheek) of the tracked face.
 */
 leftCheek: Cheek;
 /**
@@ -74,7 +76,7 @@ leftCheek: Cheek;
 (set) (Not Available)
 ```
 
-Specifies an `Eye` object describing the attributes of the left eye.
+The left [`Eye`](/classes/facetrackingmodule.eye) of the tracked face.
 */
 leftEye: Eye;
 /**
@@ -83,7 +85,7 @@ leftEye: Eye;
 (set) (Not Available)
 ```
 
-Specifies an `Eyebrow` object describing the attributes of the left eyebrow.
+The left [`Eyebrow`](/classes/facetrackingmodule.eyebrow) of the tracked face.
 */
 leftEyebrow: Eyebrow;
 /**
@@ -92,7 +94,7 @@ leftEyebrow: Eyebrow;
 (set) (Not Available)
 ```
 
-Specifies a `Mouth` object describing the attributes of the mouth.
+The [`Mouth`](/classes/facetrackingmodule.mouth) of the tracked face.
 */
 mouth: Mouth;
 /**
@@ -101,7 +103,7 @@ mouth: Mouth;
 (set) (Not Available)
 ```
 
-Specifies a `Nose` object describing the attributes of the nose.
+The [`Nose`](/classes/facetrackingmodule.nose) of the tracked face.
 */
 nose: Nose;
 /**
@@ -110,7 +112,7 @@ nose: Nose;
 (set) (Not Available)
 ```
 
-Specifies a `Cheek` object describing the attributes of the right cheek.
+The right [`Cheek`](/classes/facetrackingmodule.cheek) of the tracked face.
 */
 rightCheek: Cheek;
 /**
@@ -119,7 +121,7 @@ rightCheek: Cheek;
 (set) (Not Available)
 ```
 
-Specifies an `Eye` object describing the attributes of the right eye.
+The right [`Eye`](/classes/facetrackingmodule.eye) of the tracked face.
 */
 rightEye: Eye;
 /**
@@ -128,7 +130,7 @@ rightEye: Eye;
 (set) (Not Available)
 ```
 
-Specifies an `Eyebrow` object describing the attributes of the right eyebrow.
+The right [`Eyebrow`](/classes/facetrackingmodule.eyebrow) of the tracked face.
 */
 rightEyebrow: Eyebrow;
 /**
@@ -136,8 +138,10 @@ rightEyebrow: Eyebrow;
  * point(u: ScalarSignal | number, v: ScalarSignal | number): PointSignal
  *  
  * 
- * Returns a `PointSignal` object representing a point in the face local coordinate system that corresponds to a UV point on the facial mesh texture map.
- * **See Also**: `Face.cameraTransform` to convert the point to the coordinate system of the camera.
+ * Returns a [`PointSignal`](/classes/ReactiveModule.PointSignal) with the point in the face's local coordinate system that corresponds to the specified UV point from the facial mesh texture map.
+ * Use the `Face.cameraTransform()` method to convert the point to the camera coordinate system.
+ * * `u` - the U coordinate from the facial mesh texture map.
+ * * `v` - the V coordinate from the facial mesh texture map.
  */
 point(u: ScalarSignal | number, v: ScalarSignal | number): PointSignal;
 
