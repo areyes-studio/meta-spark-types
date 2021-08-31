@@ -198,7 +198,7 @@ Specifies the percentage delta value, between 0.0 and 1.0, for the `linearDampin
 linearDampingPercentageDelta: ScalarSignal;
 /**
 * ```
-(get) material: MaterialBase | null
+(get) (Not Available)
 (set) material: MaterialBase | null
 ```
 

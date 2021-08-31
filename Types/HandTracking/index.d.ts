@@ -7,7 +7,7 @@ declare class HandTrackingModule {
 (set) (Not Available)
 ```
 
-Specifies a `ScalarSignal` indicating the number of detected hands.
+The number of hands currently tracked in the scene, as a [`ScalarSignal`](/classes/ReactiveModule.ScalarSignal).
 */
 static readonly count: ScalarSignal;
 /**
@@ -15,7 +15,8 @@ static readonly count: ScalarSignal;
  * hand(index: number): Hand
  *  
  * 
- * Returns the `Hand` indicated by index.
+ * Returns a [`Hand`](/classes/handtrackingmodule.hand) object from the array of detected hands.
+ * * `index` - the index of the `Hand` object to retrieve from the array.
  */
 static hand(index: number): Hand;
 

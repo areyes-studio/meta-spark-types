@@ -13,7 +13,7 @@ Specifies the vertical size, in 3D units.
 height: ScalarSignal;
 /**
 * ```
-(get) material: MaterialBase | null
+(get) (Not Available)
 (set) material: MaterialBase | null
 ```
 

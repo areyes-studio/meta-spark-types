@@ -3,7 +3,7 @@
 declare interface PlanarImage extends PlanarObject {
 /**
 * ```
-(get) material: MaterialBase | null
+(get) (Not Available)
 (set) material: MaterialBase | null
 ```
 

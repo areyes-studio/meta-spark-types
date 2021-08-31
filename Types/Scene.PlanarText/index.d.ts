@@ -42,7 +42,7 @@ Specifies the line spacing. This is the distance between the baselines in the te
 leading: number | null;
 /**
 * ```
-(get) material: MaterialBase | null
+(get) (Not Available)
 (set) material: MaterialBase | null
 ```
 

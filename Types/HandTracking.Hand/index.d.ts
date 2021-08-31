@@ -6,7 +6,7 @@ declare interface Hand {
 (set) (Not Available)
 ```
 
-Specifies the hand transformation relative to camera coordinate system.
+The hand transform relative to the camera coordinate system, as a [`TransformSignal`](/classes/ReactiveModule.TransformSignal)
 */
 cameraTransform: TransformSignal;
 }
