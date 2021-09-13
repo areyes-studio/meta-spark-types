@@ -1,5 +1,6 @@
 /// <reference path="../NativeUI.Picker/index.d.ts" />
 /// <reference path="../NativeUI.Slider/index.d.ts" />
+/// <reference path="../NativeUI.SliderType/index.d.ts" />
 /// <reference path="../Reactive.StringSignal/index.d.ts" />
 declare class NativeUIModule {
 /**
@@ -56,5 +57,16 @@ static getText(nodeName: string): StringSignal;
  */
 static setText(nodeName: string, text: string): void;
 
+/**
+ * 
+ * @property COLOR 
+ * @property PROGRESS 
+ * @property SCALE 
+ */
+static readonly SliderType: {
+  COLOR: "COLOR",
+  PROGRESS: "PROGRESS",
+  SCALE: "SCALE",
+}
 }
 export = NativeUIModule;
