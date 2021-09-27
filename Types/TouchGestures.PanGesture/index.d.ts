@@ -7,8 +7,8 @@ declare interface PanGesture extends Gesture {
 (set) (Not Available)
 ```
 
-Specifies a `Vec2Signal` that represents the location of the gesture in screen coordinates.
-**Note**: The location is always specified in the screen coordinates, even if the event was emitted as a result of panning on a specific object.
+The screen space coordinates of the gesture's start point, as a [`Vec2Signal`](/classes/ReactiveModule.Vec2Signal).
+Coordinates are always returned in screen space, even if an object was specified in the pan gesture method call, for example: `TouchGestures.onPan(plane)`.
 */
 location: Vec2Signal;
 /**
@@ -17,8 +17,8 @@ location: Vec2Signal;
 (set) (Not Available)
 ```
 
-Specifies a `Vec2Signal` indicating the position of the gesture, in screen coordinates, relative to the start point.
-**Note**: The translation is always specified in the screen coordinates, even if the event was emitted as a result of panning on a specific object.
+The screen space coordinates of the gesture's position relative to the start point, as a [`Vec2Signal`](/classes/ReactiveModule.Vec2Signal).
+Coordinates are always returned in screen space, even if an object was specified in the pan gesture method call, for example: `TouchGestures.onPan(plane)`.
 */
 translation: Vec2Signal;
 }

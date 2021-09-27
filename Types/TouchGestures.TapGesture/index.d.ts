@@ -7,8 +7,8 @@ declare interface TapGesture extends Gesture {
 (set) (Not Available)
 ```
 
-Specifies a `Point2D` representing the location of the tap, in pixels screen coordinates.
-**Note**: The location is always specified in the screen coordinates, even if the event was emitted as a result of tapping on a specific object.
+The screen space coordinates of the location that the tap gesture was detected, as a [`Point2D`](/classes/ReactiveModule.Point2D) object.
+Coordinates are always returned in screen space, even if an object was specified in the touch gesture method call, for example: `TouchGestures.onTap(plane)`.
 */
 location: Point2D;
 /**
@@ -17,8 +17,8 @@ location: Point2D;
 (set) (Not Available)
 ```
 
-Specifies a `number` representing the distance from the 3D tapped point on the object to the camera.
-**Note**: The distance is only specified if the event was emitted as a result of tapping on a specific object (eg. `TouchGestures.onTap(plane)`). Otherwise `Infinity` is returned.
+The distance from the 3D location of the tap gesture to the camera, as a `number`.
+This requires an object to have been specified in the touch gesture method call, for example: `TouchGestures.onTap(plane)`. Otherwise, a value of `infinity` is returned.
 */
 objectDepthDistance: number;
 }

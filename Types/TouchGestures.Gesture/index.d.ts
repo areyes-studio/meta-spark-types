@@ -7,7 +7,17 @@ declare interface Gesture {
 (set) (Not Available)
 ```
 
-Returns a `Signal` that represents the current state of the gesture.
+The state of the current gesture, as a signal containing a [`State`](/enums/touchgesturesmodule.gesture.state) enum value.
+You can monitor the value of the returned signal with the [`monitor`](/classes/reactivemodule.stringsignal#methods) method to detect when a gesture ends. For example:
+```
+TouchGestures.onLongPress().subscribe((gesture) => {
+  gesture.state.monitor().subscribe((state) => {
+    if(state.newValue == 'ENDED'){
+      // Code here will run when the gesture ends
+    }
+  });
+});
+```
 */
 state: Signal<State>;
 /**
@@ -16,7 +26,7 @@ state: Signal<State>;
 (set) (Not Available)
 ```
 
-Specifies a `TouchGesturesModule.Gesture.Type` enum value representing the type of gesture detected.
+The type of gesture detected, as a [`GestureType`](/enums/touchgesturesmodule.gesturetype) enum value.
 */
 type: GestureType;
 }

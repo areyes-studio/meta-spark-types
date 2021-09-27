@@ -8,8 +8,8 @@ declare interface PinchGesture extends Gesture {
 (set) (Not Available)
 ```
 
-Specifies a `Vec2Signal` that represents the current center point between two touches of the pinch gesture in screen coordinates.
-**Note**: The location is always specified in the screen coordinates, even if the event was emitted as a result of pinching on a specific object.
+The screen space coordinates of the center point between the two touch touches of the pinch gesture, as a [`Vec2Signal`](/classes/ReactiveModule.Vec2Signal).
+Coordinates are always returned in screen space, even if an object was specified in the pinch gesture method call, for example: `TouchGestures.onPinch(plane)`.
 */
 location: Vec2Signal;
 /**
@@ -18,7 +18,7 @@ location: Vec2Signal;
 (set) (Not Available)
 ```
 
-Specifies a `ScalarSignal` representing the scale factor indicated by the gesture.
+The scale factor indicated by the pinch gesture, as a [`ScalarSignal`](/classes/ReactiveModule.ScalarSignal).
 */
 scale: ScalarSignal;
 }

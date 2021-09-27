@@ -7,8 +7,8 @@ declare interface LongPressGesture extends Gesture {
 (set) (Not Available)
 ```
 
-Specifies a `Vec2Signal` that represents the location of the gesture in screen coordinates.
-**Note**: The location is always specified in the screen coordinates, even if the event was emitted as a result of LongPressing on a specific object.
+The screen space coordinates of the gesture's location, as a [`Vec2Signal`](/classes/ReactiveModule.Vec2Signal).
+Coordinates are always returned in screen space, even if an object was specified in the long press gesture method call, for example: `TouchGestures.onLongPress(plane)`.
 */
 location: Vec2Signal;
 }
