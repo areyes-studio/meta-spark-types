@@ -58,10 +58,10 @@ static getText(nodeName: string): StringSignal;
 static setText(nodeName: string, text: string): void;
 
 /**
- * 
- * @property COLOR 
- * @property PROGRESS 
- * @property SCALE 
+ * The `SliderType` enum describes the Native UI slider types.
+ * @property COLOR Color type, slider bar would be rendered and sampled according to the color sampler config
+ * @property PROGRESS Progress type, slider thumb would snap according to step value
+ * @property SCALE Scale type, default slider behavior
  */
 static readonly SliderType: {
   COLOR: "COLOR",
