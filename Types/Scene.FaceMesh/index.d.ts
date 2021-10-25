@@ -1,3 +1,4 @@
+/// <reference path="../Scene.BlendShape/index.d.ts" />
 /// <reference path="../Materials.MaterialBase/index.d.ts" />
 /// <reference path="../Scene.SceneObjectBase/index.d.ts" />
 declare interface FaceMesh extends SceneObjectBase {
@@ -10,6 +11,15 @@ declare interface FaceMesh extends SceneObjectBase {
 Specifies the material of the scene object.
 */
 material: MaterialBase | null;
+/**
+*  
+ * getBlendShapes(): Promise<Array<BlendShape>>
+ *  
+ * 
+ * Returns a `JS Promise` which will be fulfilled with `array of blend Shapes` or an error.
+ */
+getBlendShapes(): Promise<Array<BlendShape>>;
+
 /**
 *  
  * getMaterial(): Promise<MaterialBase | null>

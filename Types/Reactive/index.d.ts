@@ -1,6 +1,6 @@
 /// <reference path="../Reactive.AntiderivativeOverflowBehaviour/index.d.ts" />
 /// <reference path="../Reactive.BoolSignal/index.d.ts" />
-/// <reference path="../Reactive.BoundingBoxSignal/index.d.ts" />
+/// <reference path="../Reactive.Box2DSignal/index.d.ts" />
 /// <reference path="../Reactive.ColorSignal/index.d.ts" />
 /// <reference path="../Reactive.EventSource/index.d.ts" />
 /// <reference path="../Reactive.EventSourceHistory/index.d.ts" />
@@ -142,10 +142,10 @@ static atan2(x: ScalarSignal | number, y: ScalarSignal | number): ScalarSignal;
 
 /**
 *  
- * boundingBox(x: ScalarSignal, y: ScalarSignal, width: ScalarSignal, height: ScalarSignal): BoundingBoxSignal
+ * boundingBox(x: ScalarSignal, y: ScalarSignal, width: ScalarSignal, height: ScalarSignal): Box2DSignal
  *  
  * 
- * Constructs a [`BoundingBoxSignal`](/classes/reactivemodule.boundingboxsignal) with the dimensions specified by `width` and `height`, positioned at the location specified by `x` and `y`.
+ * Constructs a [`Box2DSignal`](/classes/reactivemodule.box2dsignal) with the dimensions specified by `width` and `height`, positioned at the location specified by `x` and `y`.
  * All arguments should be provided as normalized screen space units.
  * 
  * * `x` -  the x position of the top left corner of the bounding box.
@@ -153,7 +153,22 @@ static atan2(x: ScalarSignal | number, y: ScalarSignal | number): ScalarSignal;
  * * `width` - the width of the bounding box.
  * * `height` - the height of the bounding box.
  */
-static boundingBox(x: ScalarSignal | number, y: ScalarSignal | number, width: ScalarSignal | number, height: ScalarSignal | number): BoundingBoxSignal;
+static boundingBox(x: ScalarSignal | number, y: ScalarSignal | number, width: ScalarSignal | number, height: ScalarSignal | number): Box2DSignal;
+
+/**
+*  
+ * box2d(x: ScalarSignal, y: ScalarSignal, width: ScalarSignal, height: ScalarSignal): Box2DSignal
+ *  
+ * 
+ * Constructs a [`Box2DSignal`](/classes/reactivemodule.box2dsignal) with the dimensions specified by `width` and `height`, positioned at the location specified by `x` and `y`.
+ * All arguments should be provided as normalized screen space units.
+ * 
+ * * `x` -  the x position of the top left corner of the bounding box.
+ * * `y` - the y position of the top left corner of the bounding box.
+ * * `width` - the width of the bounding box.
+ * * `height` - the height of the bounding box.
+ */
+static box2d(x: ScalarSignal | number, y: ScalarSignal | number, width: ScalarSignal | number, height: ScalarSignal | number): Box2DSignal;
 
 /**
 *  

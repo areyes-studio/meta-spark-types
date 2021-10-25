@@ -1,16 +1,16 @@
 /// <reference path="../Reactive.BoolSignal/index.d.ts" />
-/// <reference path="../Reactive.BoundingBoxSignal/index.d.ts" />
+/// <reference path="../Reactive.Box2DSignal/index.d.ts" />
 /// <reference path="../Reactive.TransformSignal/index.d.ts" />
 declare interface Hand {
 /**
 * ```
-(get) boundingBox: BoundingBoxSignal
+(get) boundingBox: Box2DSignal
 (set) (Not Available)
 ```
 
-The bounding box of the tracked hand relative to normalized screen space, as a [`BoundingBoxSignal`](/classes/ReactiveModule.BoundingBoxSignal).
+The bounding box of the tracked hand relative to normalized screen space, as a [`Box2DSignal`](/classes/ReactiveModule.Box2DSignal).
 */
-boundingBox: BoundingBoxSignal;
+boundingBox: Box2DSignal;
 /**
 * ```
 (get) cameraTransform: TransformSignal

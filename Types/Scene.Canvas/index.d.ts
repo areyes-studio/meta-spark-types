@@ -1,19 +1,19 @@
 /// <reference path="../Reactive.BoolSignal/index.d.ts" />
-/// <reference path="../Scene.Bounds2D/index.d.ts" />
+/// <reference path="../Reactive.Box2DSignal/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 /// <reference path="../Scene.SceneObjectBase/index.d.ts" />
 /// <reference path="../Reactive.StringSignal/index.d.ts" />
 declare interface Canvas extends SceneObjectBase {
 /**
 * ```
-(get) bounds: Bounds2D
+(get) bounds: Box2DSignal
 (set) (Not Available)
 ```
 
 Represents the current 2D bounds relative to the parent element. This is the result of the layout calculation. Values are measured in 3D units.
 **Note**: The `Canvas.transform` property doesn't affect the layout, the transformation it specifies is applied on top of it.
 */
-bounds: Bounds2D;
+bounds: Box2DSignal;
 /**
 * ```
 (get) height: ScalarSignal

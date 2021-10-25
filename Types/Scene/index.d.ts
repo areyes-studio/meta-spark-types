@@ -4,7 +4,6 @@
 /// <reference path="../Scene.BlockInstanceOutputs/index.d.ts" />
 /// <reference path="../Scene.BlockSceneRoot/index.d.ts" />
 /// <reference path="../Scene.BoundingBox/index.d.ts" />
-/// <reference path="../Scene.Bounds2D/index.d.ts" />
 /// <reference path="../Scene.Camera/index.d.ts" />
 /// <reference path="../Scene.CameraVisibility/index.d.ts" />
 /// <reference path="../Scene.Canvas/index.d.ts" />
