@@ -1,10 +1,22 @@
 /// <reference path="../Reactive.BoolSignal/index.d.ts" />
+/// <reference path="../Reactive.Box3DSignal/index.d.ts" />
 /// <reference path="../Scene.CameraVisibility/index.d.ts" />
 /// <reference path="../Scene.OutputVisibility/index.d.ts" />
 /// <reference path="../Scene.Transform/index.d.ts" />
 /// <reference path="../Reactive.TransformSignal/index.d.ts" />
 /// <reference path="../Scene.WorldTransform/index.d.ts" />
 declare interface SceneObjectBase {
+/**
+* ```
+(get) boundingBox: Box3DSignal
+(set) (Not Available)
+```
+
+Returns a signal that contains a 3D Bounding Box
+of this object in it's local coordinate system.
+Note: This bounding box doesn't include object's children.
+*/
+boundingBox: Box3DSignal;
 /**
 * ```
 (get) boundingBoxVisible: BoolSignal
@@ -99,6 +111,8 @@ worldTransform: WorldTransform;
  * Please note the following specific behavior when using this API:
  * - Adding an object as a child automatically removes it from any other parent.
  * - Adding a child that was created in Studio is not allowed.
+ * 
+ * Note: This API requires "Scripting Dynamic Instantiation" capability to be enabled.
  */
 addChild(child: SceneObjectBase | string): Promise<void>;
 
@@ -160,6 +174,33 @@ findFirst(name: string, config?: {recursive: boolean}): Promise<SceneObjectBase 
 
 /**
 *  
+ * getBoundingBox(options?: {includeChildren: boolean}): Box3DSignal
+ *  
+ * 
+ * Returns a signal that contains a 3D Bounding Box of this object.
+ * Optional parameters include:
+ *  - `includeChildren`: whether to include all children of this object when computing box.
+ *                       If "true" - the resulting bounding box is in the parent coordinate system.
+ *                       If "false" or not provided - resulting bounding box is in the local object's coordinate system.
+ *                       Default: "false".
+ */
+getBoundingBox(options?: {includeChildren: boolean}): Box3DSignal;
+
+/**
+*  
+ * getBoundingBoxVisible(options?: {includeChildren: boolean}): BoolSignal
+ *  
+ * 
+ * Returns a signal that contains value representing
+ * whether bounding box of a given object is visible or not in the viewport.
+ * Optional parameters include:
+ *  - `includeChildren`: whether to include all children of this object when computing bounding box.
+ *                       Default: "false".
+ */
+getBoundingBoxVisible(options?: {includeChildren: boolean}): BoolSignal;
+
+/**
+*  
  * removeChild(child: SceneObjectBase | string): Promise<void>
  *  
  * 
@@ -168,6 +209,8 @@ findFirst(name: string, config?: {recursive: boolean}): Promise<SceneObjectBase 
  * - Removing a child that was created in Studio isn't allowed.
  * - Removing a child that is not present under a given parent isn't allowed.
  * - Removing a child doesn't unbind any of it's properties.
+ * 
+ * Note: This API requires "Scripting Dynamic Instantiation" capability to be enabled.
  */
 removeChild(child: SceneObjectBase | string): Promise<void>;
 
@@ -181,6 +224,8 @@ removeChild(child: SceneObjectBase | string): Promise<void>;
  * - Removing a child that was created in Studio isn't allowed.
  * - Removing a child that is not present under a given parent isn't allowed.
  * - Removing a child doesn't unbind any of it's properties.
+ * 
+ * Note: This API requires "Scripting Dynamic Instantiation" capability to be enabled.
  */
 removeFromParent(): Promise<void>;
 

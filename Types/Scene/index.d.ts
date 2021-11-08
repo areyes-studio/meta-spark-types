@@ -3,7 +3,6 @@
 /// <reference path="../Scene.BlockInstanceInputs/index.d.ts" />
 /// <reference path="../Scene.BlockInstanceOutputs/index.d.ts" />
 /// <reference path="../Scene.BlockSceneRoot/index.d.ts" />
-/// <reference path="../Scene.BoundingBox/index.d.ts" />
 /// <reference path="../Scene.Camera/index.d.ts" />
 /// <reference path="../Scene.CameraVisibility/index.d.ts" />
 /// <reference path="../Scene.Canvas/index.d.ts" />
@@ -80,6 +79,8 @@ static readonly root: Scene;
  * - `initialState` can contain any `key: value` pair for any settable property of the class being instantiated.
  * - `name` in `initialState` is being used, unless it's not provided - then `dynamicObject` is used.
  * )
+ * 
+ * Note: This API requires "Scripting Dynamic Instantiation" capability to be enabled.
  */
 static create(className: string, initialState?: {[key: string]: any}): Promise<SceneObjectBase>;
 
@@ -95,6 +96,8 @@ static create(className: string, initialState?: {[key: string]: any}): Promise<S
  *  - Destroying a scene object automatically removes it all children from it.
  *  - Destroying a scene object that doesn't exist fails the `Promise`.
  *  - Destroying a scene object that was created in Studio fails the `Promise`.
+ * 
+ * Note: This API requires "Scripting Dynamic Instantiation" capability to be enabled.
  */
 static destroy(sceneObject: SceneObjectBase | string): Promise<void>;
 

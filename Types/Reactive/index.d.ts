@@ -1,6 +1,7 @@
 /// <reference path="../Reactive.AntiderivativeOverflowBehaviour/index.d.ts" />
 /// <reference path="../Reactive.BoolSignal/index.d.ts" />
 /// <reference path="../Reactive.Box2DSignal/index.d.ts" />
+/// <reference path="../Reactive.Box3DSignal/index.d.ts" />
 /// <reference path="../Reactive.ColorSignal/index.d.ts" />
 /// <reference path="../Reactive.EventSource/index.d.ts" />
 /// <reference path="../Reactive.EventSourceHistory/index.d.ts" />
@@ -169,6 +170,17 @@ static boundingBox(x: ScalarSignal | number, y: ScalarSignal | number, width: Sc
  * * `height` - the height of the bounding box.
  */
 static box2d(x: ScalarSignal | number, y: ScalarSignal | number, width: ScalarSignal | number, height: ScalarSignal | number): Box2DSignal;
+
+/**
+*  
+ * box3d(min: PointSignal, max: PointSignal): Box3DSignal
+ *  
+ * 
+ * Constructs a `Box3DSignal` with the provided `min` and `max` points.
+ * * `min` -  the minimum point of the bounding box.
+ * * `max` - the maximum point of the bounding box.
+ */
+static box3d(min: PointSignal, max: PointSignal): Box3DSignal;
 
 /**
 *  

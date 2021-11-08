@@ -21,6 +21,8 @@ declare class MaterialsModule {
  * - New materials always get assigned a globally unique `name` and `identifier`.
  * - `initialState` is optional, but encouraged to be used.
  * - All properties that are using Signal types get assigned a ConstSignal with last value. Use initialState to override it.
+ * 
+ * Note: This API requires "Scripting Dynamic Instantiation" capability to be enabled.
  */
 static clone(material: MaterialBase | string, initialState?: {[key: string]: any}): Promise<MaterialBase>;
 
@@ -34,6 +36,8 @@ static clone(material: MaterialBase | string, initialState?: {[key: string]: any
  * - All materials must have an existing class.
  * - New materials always get assigned a globally unique `name` and `identifier`.
  * - `initialState` is optional, but encouraged to be used.
+ * 
+ * Note: This API requires "Scripting Dynamic Instantiation" capability to be enabled.
  */
 static create(className: string, initialState?: {[key: string]: any}): Promise<MaterialBase>;
 
@@ -47,6 +51,8 @@ static create(className: string, initialState?: {[key: string]: any}): Promise<M
  * - All bound properties will be automatically unbound on destruction.
  * - Destroying a material that doesn't exist fails the `Future`.
  * - Destroying a set of Materials that was created in Studio fails the `Future`.
+ * 
+ * Note: This API requires "Scripting Dynamic Instantiation" capability to be enabled.
  */
 static destroy(material: MaterialBase | string): Promise<void>;
 

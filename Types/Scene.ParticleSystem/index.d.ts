@@ -59,7 +59,7 @@ Whenever a particle is spawned, an "instantaneous birthrate" is chosen uniformly
 birthrateDelta: ScalarSignal;
 /**
 * ```
-(get) (Not Available)
+(get) colorModulationHSVA: HsvaSignal
 (set) colorModulationHSVA: HsvaSignal
 ```
 
