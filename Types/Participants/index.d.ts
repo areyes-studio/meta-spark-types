@@ -55,8 +55,8 @@ static getParticipantById(id: string): Promise<Participant>;
  * 
  * Returns an [`EventSource`](/classes/ReactiveModule.EventSource) object that emits a new [`Participant`](/classes/ParticipantsModule.Participant) object each time a new participant joins the video call. For example:
  *  
- * Participants.onOtherParticipantAdded().subscribe((participant) =>{
- *   // const newParticipantId = participant.id;
+ * Participants.onOtherParticipantAdded().subscribe((participant) => {
+ *     // const newParticipantId = participant.id;
  * });
  *  
  */

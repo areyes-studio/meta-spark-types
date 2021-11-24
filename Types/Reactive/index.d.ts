@@ -18,6 +18,7 @@
 /// <reference path="../Reactive.ShaderSignal/index.d.ts" />
 /// <reference path="../Reactive.SignalHistory/index.d.ts" />
 /// <reference path="../Reactive.StringSignal/index.d.ts" />
+/// <reference path="../Reactive.StringSignalSource/index.d.ts" />
 /// <reference path="../Reactive.Subscription/index.d.ts" />
 /// <reference path="../Reactive.TransformSignal/index.d.ts" />
 /// <reference path="../Reactive.Vec2Signal/index.d.ts" />
@@ -140,6 +141,15 @@ static atan(x: ScalarSignal | number): ScalarSignal;
  * **See Also**: `ScalarSignal.atan2`
  */
 static atan2(x: ScalarSignal | number, y: ScalarSignal | number): ScalarSignal;
+
+/**
+*  
+ * boolSignalSource(sourceId: string): BoolSignalSource
+ *  
+ * 
+ * Create a BoolSignalSource when could be used to update the signal value
+ */
+static boolSignalSource(sourceId: string): BoolSignalSource;
 
 /**
 *  
@@ -780,6 +790,15 @@ static round(x: ScalarSignal | number): ScalarSignal;
 
 /**
 *  
+ * scalarSignalSource(sourceId: string): ScalarSignalSource
+ *  
+ * 
+ * Create a ScalarSignalSource when could be used to update the signal value
+ */
+static scalarSignalSource(sourceId: string): ScalarSignalSource;
+
+/**
+*  
  * scale(x: ScalarSignal | number, y: ScalarSignal | number, z: ScalarSignal | number): PointSignal
  *  
  * 
@@ -847,6 +866,15 @@ static sqrt(x: ScalarSignal | number): ScalarSignal;
  * Returns 0.0 if x is less than edge, and 1.0 is returned otherwise.
  */
 static step(x: ScalarSignal | number, edge: ScalarSignal | number): ScalarSignal;
+
+/**
+*  
+ * stringSignalSource(sourceId: string): StringSignalSource
+ *  
+ * 
+ * Create a StringSignalSource when could be used to update the signal value
+ */
+static stringSignalSource(sourceId: string): StringSignalSource;
 
 /**
 *  

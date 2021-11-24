@@ -5,7 +5,10 @@ declare class MultipeerModule {
  * getMessageChannel(topic: string): MessageChannel
  *  
  * 
- * Get access to named message channel or GLOBAL channel by default
+ * Returns the specified [`MessageChannel`](/classes/MultipeerModule.MessageChannel).
+ * If no channel with the specified name is found, the `GLOBAL` channel is used by default.
+ * 
+ * * `topic` - the name of the message channel (topic) to retrieve.
  */
 static getMessageChannel(topic: string): MessageChannel;
 
