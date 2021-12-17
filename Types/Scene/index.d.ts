@@ -1,7 +1,5 @@
 /// <reference path="../Scene.AmbientLightSource/index.d.ts" />
 /// <reference path="../Scene.BlendShape/index.d.ts" />
-/// <reference path="../Scene.BlockInstanceInputs/index.d.ts" />
-/// <reference path="../Scene.BlockInstanceOutputs/index.d.ts" />
 /// <reference path="../Scene.BlockSceneRoot/index.d.ts" />
 /// <reference path="../Scene.Camera/index.d.ts" />
 /// <reference path="../Scene.CameraVisibility/index.d.ts" />

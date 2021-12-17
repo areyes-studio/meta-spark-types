@@ -1,5 +1,5 @@
-/// <reference path="../Scene.BlockInstanceInputs/index.d.ts" />
-/// <reference path="../Scene.BlockInstanceOutputs/index.d.ts" />
+/// <reference path="../Blocks.BlockInstanceInputs/index.d.ts" />
+/// <reference path="../Blocks.BlockInstanceOutputs/index.d.ts" />
 /// <reference path="../Reactive.BoolSignal/index.d.ts" />
 /// <reference path="../Reactive.Box3DSignal/index.d.ts" />
 /// <reference path="../Scene.SceneObjectBase/index.d.ts" />

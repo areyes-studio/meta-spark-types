@@ -65,6 +65,7 @@ angleAxis(): Vec4Signal;
  *  
  * 
  * Returns a signal with the value that is the angular distance between this quaternion and the provided quaternion, in radians.
+ * * `signal` - the other signal to calculate the angular distance between, as a `QuaternionSignal`.
  */
 angleTo(signal: QuaternionSignal): ScalarSignal;
 
@@ -83,6 +84,7 @@ conjugate(): QuaternionSignal;
  *  
  * 
  * Returns a scalar signal with the value that is the dot product of the given signals.
+ * * `signal` - the other to use in the dot product operation, as a `QuaternionSignal`.
  */
 dot(signal: QuaternionSignal): ScalarSignal;
 
@@ -91,8 +93,11 @@ dot(signal: QuaternionSignal): ScalarSignal;
  * history(framesCount: number, initialValues?: Array<Rotation>): SignalHistory<Rotation>
  *  
  * 
- * Returns an object used to access signal values from past frames. The amount of frames tracked is customizable via `framesCount` parameter.
+ * Returns an object used to access signal values from past frames.
  * Historical signal values are going to be initialized with signal value at call time or using `initialValues` if provided.
+ * 
+ * * `framesCount` - the number of frames to track.
+ * * `initialValues` - an optional initial value to assign to the signal.
  */
 history(framesCount: number, initialValues?: Array<Rotation>): SignalHistory<Rotation>;
 
@@ -111,6 +116,8 @@ invert(): QuaternionSignal;
  *  
  * 
  * Returns a signal with the value that is the linear interpolation between this and another signal by a given factor.
+ * * `signal` - the other signal to interpolate between, as a `QuaternionSignal`.
+ * * `factor` - the factor to interpolate by, as a [`ScalarSignal`](/classes/ReactiveModule.ScalarSignal) or `number`.
  */
 mix(signal: QuaternionSignal, factor: ScalarSignal | number): QuaternionSignal;
 
@@ -120,6 +127,7 @@ mix(signal: QuaternionSignal, factor: ScalarSignal | number): QuaternionSignal;
  *  
  * 
  * Returns a signal with the value that is the product of the values of the given signals.
+ * * `signal` - the other signal to use in the multiplication operation, as a `QuaternionSignal`.
  */
 mul(signal: QuaternionSignal): QuaternionSignal;
 
@@ -138,6 +146,8 @@ pinLastValue(): QuaternionSignal;
  *  
  * 
  * Returns a signal with the value that is the spherical linear interpolation between this and another signal by a given factor.
+ * * `signal` - the other signal to interpolate between, as a `QuaternionSignal`.
+ * * `factor` - the factor to interpolate by, as a [`ScalarSignal`](/classes/ReactiveModule.ScalarSignal) or `number`.
  */
 slerp(signal: QuaternionSignal, factor: ScalarSignal | number): QuaternionSignal;
 

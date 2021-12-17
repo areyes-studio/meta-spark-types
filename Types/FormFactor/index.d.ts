@@ -5,7 +5,12 @@ declare class FormFactorModule {
  * get(categoryType: FormFactorCategoryType): FormFactorCategoryBase
  *  
  * 
- * Get a form factor by category id
+ * Returns a specific form factor type from the effect's form factors.
+ * * `categoryType` - the form factor type to retrieve, as a [`FormFactorCategoryType`](/classes/formfactormodule.formfactorcategorytype) enum value.
+ * 
+ *  
+ * const locFactor = FormFactor.get(FormFactor.FormFactorCategoryType.LOCALE);
+ *  
  */
 static get(categoryType: FormFactorCategoryType): FormFactorCategoryBase;
 
@@ -14,7 +19,14 @@ static get(categoryType: FormFactorCategoryType): FormFactorCategoryBase;
  * getAll(): FormFactorCategoryMap
  *  
  * 
- * Get all the used form factors
+ * Retrieves all of the form factors used in the effect.
+ * To retrieve a specific form factor type, access the returned [`FormFactorCategoryMap`](/classes/formfactormodule.formfactorcategorymap) array with a [`FormFactorCategoryType`](/classes/formfactormodule.formfactorcategorytype) value:
+ * 
+ *  
+ * const formFactors = FormFactor.getAll();
+ * const locFactor = formFactors[FormFactor.FormFactorCategoryType.LOCALE].
+ *                                                            formFactorValue;
+ *  
  */
 static getAll(): FormFactorCategoryMap;
 

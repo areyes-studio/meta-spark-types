@@ -1,5 +1,7 @@
 /// <reference path="../Blocks.BlockAsset/index.d.ts" />
 /// <reference path="../Blocks.BlockAssets/index.d.ts" />
+/// <reference path="../Blocks.BlockInstanceInputs/index.d.ts" />
+/// <reference path="../Blocks.BlockInstanceOutputs/index.d.ts" />
 /// <reference path="../Scene.BlockSceneRoot/index.d.ts" />
 declare class BlocksModule {
 /**
@@ -11,6 +13,24 @@ declare class BlocksModule {
 Get an object that allows access to the Block Assets.
 */
 static readonly assets: BlockAssets;
+/**
+* ```
+(get) inputs: BlockInstanceInputs
+(set) (Not Available)
+```
+
+Get an object encapsulating all inputs for this Block.
+*/
+static readonly inputs: BlockInstanceInputs;
+/**
+* ```
+(get) outputs: BlockInstanceOutputs
+(set) (Not Available)
+```
+
+Gets an object encapsulating all outputs for this Block.
+*/
+static readonly outputs: BlockInstanceOutputs;
 /**
 *  
  * instantiate(blockAssetOrName: string | BlockAsset, initialState: {[key: string]: any}): Promise<BlockSceneRoot>

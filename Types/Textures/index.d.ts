@@ -7,11 +7,15 @@
 /// <reference path="../Textures.GalleryTextureMediaImage/index.d.ts" />
 /// <reference path="../Textures.GalleryTextureMediaVideo/index.d.ts" />
 /// <reference path="../Textures.ImageTexture/index.d.ts" />
+/// <reference path="../Textures.SceneDepthTexture/index.d.ts" />
 /// <reference path="../Textures.SegmentationTexture/index.d.ts" />
 /// <reference path="../Textures.SequenceTexture/index.d.ts" />
 /// <reference path="../Textures.SourceImageRegionTexture/index.d.ts" />
 /// <reference path="../Textures.SubTexture/index.d.ts" />
 /// <reference path="../Textures.TextureBase/index.d.ts" />
+/// <reference path="../Textures.TextureColorEncoding/index.d.ts" />
+/// <reference path="../Textures.TextureFilteringMode/index.d.ts" />
+/// <reference path="../Textures.TextureWrapMode/index.d.ts" />
 declare class TexturesModule {
 /**
 *  
@@ -55,5 +59,43 @@ static findUsingPattern(namePattern: string, config?: {limit: number}): Promise<
  */
 static getAll(): Promise<Array<TextureBase>>;
 
+/**
+ * `TextureColorEncoding` describes different color encoding formats used for data in a texture.
+ * @property LINEAR Linear RGB Encoding
+ * @property RGBD RGB-D Encoding, a combination of a RGB image and its corresponding depth image.
+ * @property SRGB sRGB Encoding
+ */
+static readonly TextureColorEncoding: {
+  LINEAR: "LINEAR",
+  RGBD: "RGBD",
+  SRGB: "SRGB",
+}
+/**
+ * `TextureFilteringMode` describes different modes for how a texture
+should address size mismatch between the actual image data, and it's footprint when rendered.
+ * @property BILINEAR Applies bilinear interpolation.
+ * @property BILINEAR_MIPMAP Apply bilinear interpolation, and mipmapping.
+ * @property NEAREST Use nearest neighbor interpolation when minifying or magnifying a texture.
+ * @property TRILINEAR Apply trilinear interpolation.
+ */
+static readonly TextureFilteringMode: {
+  BILINEAR: "BILINEAR",
+  BILINEAR_MIPMAP: "BILINEAR_MIPMAP",
+  NEAREST: "NEAREST",
+  TRILINEAR: "TRILINEAR",
+}
+/**
+ * `TextureWrapMode` describes different ways a given texture should be sampled
+when a coordinate falls outside of the 0->1 range.
+ * @property CLAMP Clamps the coordinates in the 0->1 range.
+ * @property MIRROR The texture will be repeated, but it will be mirrored when
+the integer part of the coordinate is odd.
+ * @property REPEAT The integer part of the coordinate will be ignored, resulting in repeating pattern.
+ */
+static readonly TextureWrapMode: {
+  CLAMP: "CLAMP",
+  MIRROR: "MIRROR",
+  REPEAT: "REPEAT",
+}
 }
 export = TexturesModule;
