@@ -32,15 +32,6 @@ Returns a `BoolSignal` object.
 isTracked: BoolSignal;
 /**
 * ```
-(get) isTracking: BoolSignal
-(set) (Not Available)
-```
-
-Returns a `BoolSignal` object.
-*/
-isTracking: BoolSignal;
-/**
-* ```
 (get) pose2D: Body2DPose
 (set) (Not Available)
 ```

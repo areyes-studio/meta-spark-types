@@ -1178,6 +1178,15 @@ static toRange(x: ScalarSignal | number, min: ScalarSignal | number, max: Scalar
 
 /**
 *  
+ * transform(translation: PointSignal, scale: PointSignal, rotation: QuaternionSignal): TransformSignal
+ *  
+ * 
+ * Creates a scene object transform from translation, scale and rotation rotation
+ */
+static transform(translation: PointSignal, scale: PointSignal, rotation: QuaternionSignal): TransformSignal;
+
+/**
+*  
  * val(constant: number): ScalarSignal
  * val(constant: string): StringSignal
  * val(constant: boolean): BoolSignal

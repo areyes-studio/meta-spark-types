@@ -17,6 +17,15 @@ concat(other: StringSignal | string): StringSignal;
 
 /**
 *  
+ * contains(searchFor: StringSignal | string): BoolSignal
+ *  
+ * 
+ * If the value contains the value of `searchFor` then `true` is returned. If not, then `false` is returned.
+ */
+contains(searchFor: StringSignal | string): BoolSignal;
+
+/**
+*  
  * delayBy(timeSpan: {milliseconds: number}): ISignal
  *  
  * 

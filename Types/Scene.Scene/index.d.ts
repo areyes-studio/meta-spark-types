@@ -22,6 +22,20 @@ Represents the `OutputVisibility` that contains a set of flags that specify the 
 outputVisibility: OutputVisibility;
 /**
 *  
+ * addChild(child: SceneObjectBase | string): Promise<void>
+ *  
+ * 
+ * Add a child to the root of the scene.
+ * Please note the following specific behavior when using this API:
+ * - Adding an object as a child automatically removes it from any other parent.
+ * - Adding a child that was created in Studio is not allowed.
+ * 
+ * Note: This API requires "Scripting Dynamic Instantiation" capability to be enabled.
+ */
+addChild(child: SceneObjectBase | string): Promise<void>;
+
+/**
+*  
  * findAll(name: string, config?: {recursive: boolean}): Promise<Array<SceneObjectBase>>
  *  
  * 
@@ -38,7 +52,7 @@ findAll(name: string, config?: {recursive: boolean}): Promise<Array<SceneObjectB
  * findByPath(pathQuery: string, config?: {limit: number}): Promise<Array<SceneObjectBase>>
  *  
  * 
- * Returns a promise that is resolved with the all occurances of scene objects matching the path query or empty array if none was found.
+ * Returns a promise that is resolved with the all occurrences of scene objects matching the path query or empty array if none was found.
  * Path query format:
  * `*` matches any characters sequence.
  * `*` as standalone component matches one level of the scene tree (i.e. any child)
@@ -48,11 +62,11 @@ findAll(name: string, config?: {recursive: boolean}): Promise<Array<SceneObjectB
  * 
  * Examples:
  * `findByPath("*")` will match all the direct children of the caller.
- * `findByPath("*/A")` will match all grandchildren of the caller named A.
- * `findByPath("**/A")` will match all descendants of the caller named A.
+ * `findByPath("* /A")` will match all grandchildren of the caller named A.
+ * `findByPath("** /A")` will match all descendants of the caller named A.
  * `findByPath("A*")` will match all children of the caller which name is prefixed with 'A', like 'ABC'.
- * `findByPath("**/*A*")` will match all descendants of the caller which name contains 'A', like 'AX' and 'XA'.
- * `findByPath("**/A", {limit: 10})` will match at most first 10 descendants of the caller named A.
+ * `findByPath("** /*A*")` will match all descendants of the caller which name contains 'A', like 'AX' and 'XA'.
+ * `findByPath("** /A", {limit: 10})` will match at most first 10 descendants of the caller named A.
  * `findByPath("\\*")` will match all children of the caller named *.
  * `findByPath("\\\\")` will match all children of the caller named \.
  * 
@@ -69,11 +83,26 @@ findByPath(pathQuery: string, config?: {limit: number}): Promise<Array<SceneObje
  * findFirst(name: string, config?: {recursive: boolean}): Promise<SceneObjectBase | null>
  *  
  * 
- * Returns a promise that is resolved with the first occurance of scene object with given name or null if none was found.
+ * Returns a promise that is resolved with the first occurrence of scene object with given name or null if none was found.
  * `recursive` param of `config` controls whenever the find should be performed recursively (`true` by default).
  * 
  * **See Also**: `SceneObjectBase.findAll`, `SceneObjectBase.findByPath`, `SceneModule.root`.
  */
 findFirst(name: string, config?: {recursive: boolean}): Promise<SceneObjectBase | null>;
+
+/**
+*  
+ * removeChild(child: SceneObjectBase | string): Promise<void>
+ *  
+ * 
+ * Remove a child from the root of the scene.
+ * When removing scene objects, keep the following in mind:
+ * - Removing a child that was created in Studio isn't allowed.
+ * - Removing a child that is not present under a given parent isn't allowed.
+ * - Removing a child doesn't unbind any of it's properties.
+ * 
+ * Note: This API requires "Scripting Dynamic Instantiation" capability to be enabled.
+ */
+removeChild(child: SceneObjectBase | string): Promise<void>;
 
 }

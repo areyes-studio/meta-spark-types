@@ -95,42 +95,6 @@ Specifies the modifier that will be added to the particle color according to the
 hsvaColorModulationModifier: ColorSampler;
 /**
 * ```
-(get) initialRotation: ScalarSignal
-(set) initialRotation: ScalarSignal
-```
-
-Specifies the mean rotation of each particle, in radians.
-*/
-initialRotation: ScalarSignal;
-/**
-* ```
-(get) initialRotationDelta: ScalarSignal
-(set) initialRotationDelta: ScalarSignal
-```
-
-Specifies the absolute delta value for the `initialRotation` property. The initial rotation is randomized uniformly in the range `[initialRotation - initialRotationDelta; initialRotation + initialRotationDelta]` for each particle.
-*/
-initialRotationDelta: ScalarSignal;
-/**
-* ```
-(get) initialVelocityAngle: ScalarSignal
-(set) initialVelocityAngle: ScalarSignal
-```
-
-Specifies the mean initial velocity angle of each particle, in radians.
-*/
-initialVelocityAngle: ScalarSignal;
-/**
-* ```
-(get) initialVelocityAngleDelta: ScalarSignal
-(set) initialVelocityAngleDelta: ScalarSignal
-```
-
-Specifies the absolute delta value for the `initialVelocityAngle` property. The initial velocity angle is randomized uniformly in the range `[initialVelocityAngle - initialVelocityAngleDelta; initialVelocityAngle + initialVelocityAngleDelta]` for each particle.
-*/
-initialVelocityAngleDelta: ScalarSignal;
-/**
-* ```
 (get) initialVelocityMagnitude: ScalarSignal
 (set) initialVelocityMagnitude: ScalarSignal
 ```
@@ -290,24 +254,6 @@ Specifies the percentage delta value, between 0.0 and 1.0, for the `rotationalDa
 **Note**: The behavior is undefined for values outside the valid range.
 */
 rotationalDampingPercentageDelta: ScalarSignal;
-/**
-* ```
-(get) rotationalVelocity: ScalarSignal
-(set) rotationalVelocity: ScalarSignal
-```
-
-Specifies the mean rotational velocity of each particle, in radians-per-second.
-*/
-rotationalVelocity: ScalarSignal;
-/**
-* ```
-(get) rotationalVelocityDelta: ScalarSignal
-(set) rotationalVelocityDelta: ScalarSignal
-```
-
-Specifies the absolute delta value for the `rotationalVelocity` property. The rotation velocity is randomized uniformly in the range `[rotationalVelocity - rotationalVelocityDelta; rotationalVelocity + rotationalVelocityDelta]` for each particle.
-*/
-rotationalVelocityDelta: ScalarSignal;
 /**
 * ```
 (get) scale: ScalarSignal

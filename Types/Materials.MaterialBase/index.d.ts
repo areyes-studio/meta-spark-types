@@ -1,8 +1,4 @@
-/// <reference path="../Shaders.BlendedMaterialTextures/index.d.ts" />
 /// <reference path="../Reactive.BoolSignal/index.d.ts" />
-/// <reference path="../Shaders.DefaultMaterialTextures/index.d.ts" />
-/// <reference path="../Shaders.FacePaintMaterialTextures/index.d.ts" />
-/// <reference path="../Shaders.PhysicallyBasedMaterialTextures/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 /// <reference path="../Reactive.ShaderSignal/index.d.ts" />
 /// <reference path="../Reactive.StringSignal/index.d.ts" />
@@ -91,15 +87,6 @@ opacity: ScalarSignal;
  * Returns a promise that is resolved with the texture associated with a given material or null if no texture was assigned.
  */
 getDiffuse(): Promise<TextureBase | null>;
-
-/**
-*  
- * setTexture(signal: ShaderSignal, config: {textureSlotName: DefaultMaterialTextures | BlendedMaterialTextures | FacePaintMaterialTextures | PhysicallyBasedMaterialTextures}): void
- *  
- * 
- * Assigns a ShaderSignal to the specified texture slot.
- */
-setTexture(signal: ShaderSignal, config: {textureSlotName: DefaultMaterialTextures | BlendedMaterialTextures | FacePaintMaterialTextures | PhysicallyBasedMaterialTextures}): void;
 
 /**
 *  
