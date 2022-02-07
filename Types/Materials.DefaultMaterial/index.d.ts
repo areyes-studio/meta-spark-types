@@ -94,6 +94,15 @@ Specifies the reflective texture of the material.
 reflective: TextureBase | null;
 /**
 * ```
+(get) reflectiveTextureTransform: TextureTransform
+(set) reflectiveTextureTransform: TextureTransformSignal
+```
+
+Specifies the coordinates transform of the reflective texture of this material.
+*/
+reflectiveTextureTransform: TextureTransform;
+/**
+* ```
 (get) specularColorFactor: RgbaSignal
 (set) specularColorFactor: ColorSignal
 ```
