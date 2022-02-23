@@ -10,7 +10,7 @@ declare class NativeUIModule {
 ```
 
 Represents the [`Picker`](/classes/nativeuimodule.picker) object in the `NativeUI`.
-The picker object must be configured with the [`configure()`](/classes/nativeuimodule.picker#methods) method and its `visible` property set to `true` in order to be displayed.
+The picker object must be configured with the [`configure()`](/classes/nativeuimodule.picker#methods) method and its `hidden` property set to `true` in order to be displayed.
 */
 static readonly picker: Picker;
 /**
@@ -20,7 +20,7 @@ static readonly picker: Picker;
 ```
 
 Represents the [`Slider`](/classes/nativeuimodule.slider) object in the `NativeUI`.
-The slider object will not be displayed unless its `visible` property is set to `true`.
+The slider object will not be displayed unless its `hidden` property is set to `true`.
 */
 static readonly slider: Slider;
 /**

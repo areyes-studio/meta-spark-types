@@ -25,8 +25,6 @@ value: ScalarSignal;
 (get) (Not Available)
 (set) visible: BoolSignal | boolean
 ```
-
-The visibility of the slider object, set via a boolean value.
 */
 visible: BoolSignal | boolean;
 /**

@@ -16,6 +16,16 @@ Specifies a number between 0.0 and 1.0.
 alphaCutoff: ScalarSignal;
 /**
 * ```
+(get) alphaTestEnabled: BoolSignal
+(set) alphaTestEnabled: BoolSignal
+```
+
+Specifies a boolean value that represents whether alpha testing is enabled on this material or not.
+If alpha testing is enabled - when `opacity` is passing the threshold determined by `alphaCutoff` - the rendered output is going to be fully transparent.
+*/
+alphaTestEnabled: BoolSignal;
+/**
+* ```
 (get) cullMode: StringSignal<MaterialsModule.CullMode>
 (set) cullMode: StringSignal<MaterialsModule.CullMode>
 ```
@@ -23,6 +33,28 @@ alphaCutoff: ScalarSignal;
 Specifies the material cull mode.
 */
 cullMode: StringSignal<MaterialsModule.CullMode>;
+/**
+* ```
+(get) depthTestEnabled: BoolSignal
+(set) depthTestEnabled: BoolSignal
+```
+
+Specifies a boolean value that represents whether depth testing is enabled.
+When enabled, any scene object using this material will be obscured by nearer objects
+that have already `depthWriteEnabled` set.
+*/
+depthTestEnabled: BoolSignal;
+/**
+* ```
+(get) depthWriteEnabled: BoolSignal
+(set) depthWriteEnabled: BoolSignal
+```
+
+Specifies a boolean value that represents whether depth writing is enabled.
+When enabled, any scene object using this material will always draw over any other object.
+They will obscure farther objects that are drawn after, unless these objects also have `depthWriteEnabled` set to `true`.
+*/
+depthWriteEnabled: BoolSignal;
 /**
 * ```
 (get) (Not Available)

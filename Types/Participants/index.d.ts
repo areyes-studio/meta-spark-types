@@ -9,6 +9,7 @@ declare class ParticipantsModule {
 ```
 
 The total number of participants in the video call, not including the current participant (`self`), as a [`ScalarSignal`](/classes/ReactiveModule.ScalarSignal).
+To retrieve the total number of other participants active in the effect, use `otherParticipantsInSameEffectCount` instead.
 */
 static readonly otherParticipantCount: ScalarSignal;
 /**
@@ -25,7 +26,7 @@ static readonly self: Promise<Participant>;
  * getAllOtherParticipants(): Promise<Array<Participant>>
  *  
  * 
- * Returns an array of [`Participant`](/classes/ParticipantsModule.Participant) objects containing all of the other participants in the current video call, not including the current user (`self`).
+ * Returns an array of [`Participant`](/classes/ParticipantsModule.Participant) objects containing all of the other participants in the video call, not including the current user (`self`).
  */
 static getAllOtherParticipants(): Promise<Array<Participant>>;
 

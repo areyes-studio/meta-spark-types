@@ -321,7 +321,8 @@ reflect(normal: VectorSignal): VectorSignal;
  * rotate(rotation: QuaternionSignal): VectorSignal
  *  
  * 
- * Creates a new [`VectorSignal`](/classes/ReactiveModule.VectorSignal) that is calculated by rotating this vector using a given [`quaternion`](/classes/ReactiveModule.QuaternionSignal).
+ * Rotates the vector using the specified [`quaternion`](/classes/ReactiveModule.QuaternionSignal) value and returns the new vector as a `VectorSignal`.
+ * See the main example at the top of this page or for the Patch Editor equivalent, see the [Rotate Vector Patch](https://sparkar.facebook.com/ar-studio/learn/patch-editor/utility-patches/rotate-vector-patch) article.
  */
 rotate(rotation: QuaternionSignal): VectorSignal;
 
