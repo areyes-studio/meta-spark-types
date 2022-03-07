@@ -204,9 +204,12 @@ getBoundingBoxVisible(options?: {includeChildren: boolean}): BoolSignal;
  * getParent(): Promise<SceneObjectBase | null>
  *  
  * 
- * Returns a promise that is resolved with the parent of the scene object or `null` if it has no parent.
- * To find all the direct children use `SceneObjectBase.findByPath("*").
- * **See Also**: `SceneObjectBase.findAll`, `SceneObjectBase.findByPath`, `SceneModule.root`.
+ * Returns a promise that is resolved with scene object's parent, or `null` if it doesn't have one.
+ *  
+ * const childObject = await Scene.root.findFirst("myObject");
+ * const parentObject = await childObject.getParent();
+ *  
+ * To find a parent object's children instead use `SceneObjectBase.findByPath("*");`.
  */
 getParent(): Promise<SceneObjectBase | null>;
 

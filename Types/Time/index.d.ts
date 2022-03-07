@@ -3,6 +3,15 @@
 declare class TimeModule {
 /**
 * ```
+(get) deltaTimeMS: ScalarSignal
+(set) (Not Available)
+```
+
+Retrieves delta time information in milliseconds from the effect.
+*/
+static readonly deltaTimeMS: ScalarSignal;
+/**
+* ```
 (get) ms: ScalarSignal
 (set) (Not Available)
 ```

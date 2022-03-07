@@ -14,6 +14,16 @@ To retrieve the total number of other participants active in the effect, use `ot
 static readonly otherParticipantCount: ScalarSignal;
 /**
 * ```
+(get) otherParticipantsInSameEffectCount: ScalarSignal
+(set) (Not Available)
+```
+
+The total number of participants active in the effect, not including the current participant (`self`), as a [`ScalarSignal`](/classes/ReactiveModule.ScalarSignal).
+To retrieve the total number of other participants in the video call whether they are active in the effect or not, use `otherParticipantCount` instead.
+*/
+static readonly otherParticipantsInSameEffectCount: ScalarSignal;
+/**
+* ```
 (get) self: Promise<Participant>
 (set) (Not Available)
 ```
@@ -29,6 +39,15 @@ static readonly self: Promise<Participant>;
  * Returns an array of [`Participant`](/classes/ParticipantsModule.Participant) objects containing all of the other participants in the video call, not including the current user (`self`).
  */
 static getAllOtherParticipants(): Promise<Array<Participant>>;
+
+/**
+*  
+ * getOtherParticipantsInSameEffect(): Promise<Array<Participant>>
+ *  
+ * 
+ * Returns an array of [`Participant`](/classes/ParticipantsModule.Participant) objects containing all of the participants active in the effect, not including the current user (`self`).
+ */
+static getOtherParticipantsInSameEffect(): Promise<Array<Participant>>;
 
 /**
 *  

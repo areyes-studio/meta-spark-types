@@ -1,4 +1,3 @@
-/// <reference path="../Reactive.ISignal/index.d.ts" />
 /// <reference path="../Reactive.Point3D/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 /// <reference path="../Reactive.SignalHistory/index.d.ts" />
@@ -44,9 +43,8 @@ abs(): ScalarSignal;
 
 /**
 *  
- * add(other: ScalarSignal): ScalarSignal
- * add(other: VectorSignal): PointSignal
- * add(other: PointSignal): PointSignal
+ * add(other: ScalarSignal): VectorSignal
+ * add(other: PointSignal): VectorSignal
  * add(other: VectorSignal): VectorSignal
  *  
  * 
@@ -55,11 +53,9 @@ abs(): ScalarSignal;
  * 
  * **See Also**: `ReactiveModule.sum`, `ScalarSignal.add`, `PointSignal.add`, `VectorSignal.add`
  */
-add(other: ScalarSignal | number): ScalarSignal;
+add(other: ScalarSignal | number): VectorSignal;
 
-add(other: VectorSignal): PointSignal;
-
-add(other: PointSignal): PointSignal;
+add(other: PointSignal): VectorSignal;
 
 add(other: VectorSignal): VectorSignal;
 
@@ -105,12 +101,12 @@ cross(other: VectorSignal): PointSignal;
 
 /**
 *  
- * delayBy(timeSpan: {milliseconds: number}): ISignal
+ * delayBy(timeSpan: {milliseconds: number}): PointSignal
  *  
  * 
  * Delays a signal. The argument is an object with a "milliseconds" property specifying the delay duration in milliseconds.
  */
-delayBy(timeSpan: {milliseconds: number}): ISignal;
+delayBy(timeSpan: {milliseconds: number}): PointSignal;
 
 /**
 *  
@@ -253,20 +249,14 @@ mod(other: ScalarSignal | number): ScalarSignal;
 
 /**
 *  
- * mul(other: ScalarSignal): ScalarSignal
  * mul(other: ScalarSignal): VectorSignal
- * mul(other: VectorSignal): VectorSignal
  * mul(other: VectorSignal): VectorSignal
  *  
  * 
  * Returns a signal with the value that is the product of the values of the given signals.
  * **See Also**: `ScalarSignal.mul`, `VectorSignal.mul`
  */
-mul(other: ScalarSignal | number): ScalarSignal;
-
 mul(other: ScalarSignal | number): VectorSignal;
-
-mul(other: VectorSignal): VectorSignal;
 
 mul(other: VectorSignal): VectorSignal;
 
@@ -366,9 +356,8 @@ sqrt(): ScalarSignal;
 /**
 *  
  * sub(other: ScalarSignal): ScalarSignal
- * sub(other: VectorSignal): PointSignal
- * sub(other: VectorSignal): VectorSignal
  * sub(other: PointSignal): VectorSignal
+ * sub(other: VectorSignal): VectorSignal
  *  
  * 
  * Returns a signal with the value that is the difference of the values of the given signals.
@@ -376,17 +365,14 @@ sqrt(): ScalarSignal;
  */
 sub(other: ScalarSignal | number): ScalarSignal;
 
-sub(other: VectorSignal): PointSignal;
+sub(other: PointSignal): VectorSignal;
 
 sub(other: VectorSignal): VectorSignal;
 
-sub(other: PointSignal): VectorSignal;
-
 /**
 *  
- * sum(other: ScalarSignal): ScalarSignal
- * sum(other: VectorSignal): PointSignal
- * sum(other: PointSignal): PointSignal
+ * sum(other: ScalarSignal): VectorSignal
+ * sum(other: PointSignal): VectorSignal
  * sum(other: VectorSignal): VectorSignal
  *  
  * 
@@ -395,11 +381,9 @@ sub(other: PointSignal): VectorSignal;
  * 
  * **See Also**: `ReactiveModule.sum`, `ScalarSignal.add`, `PointSignal.add`, `VectorSignal.add`
  */
-sum(other: ScalarSignal | number): ScalarSignal;
+sum(other: ScalarSignal | number): VectorSignal;
 
-sum(other: VectorSignal): PointSignal;
-
-sum(other: PointSignal): PointSignal;
+sum(other: PointSignal): VectorSignal;
 
 sum(other: VectorSignal): VectorSignal;
 
