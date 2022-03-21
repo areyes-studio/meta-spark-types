@@ -1,6 +1,7 @@
 /// <reference path="../Reactive.ColorSignal/index.d.ts" />
 /// <reference path="../Materials.MaterialBase/index.d.ts" />
 /// <reference path="../Reactive.RgbaSignal/index.d.ts" />
+/// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 /// <reference path="../Reactive.StringSignal/index.d.ts" />
 /// <reference path="../Textures.TextureBase/index.d.ts" />
 /// <reference path="../Materials.TextureTransform/index.d.ts" />
@@ -47,6 +48,17 @@ Specifies the emissive texture of the material.
 emissive: TextureBase | null;
 /**
 * ```
+(get) emissiveColorFactor: RgbaSignal
+(set) emissiveColorFactor: ColorSignal
+```
+
+Specifies a `ColorSignal` for a emmisive color factor. A `ColorSignal` may be created using the `RGBA()` and `HSVA()` methods of the `Reactive` module.
+Note that RgbaSignal is always returned.
+**See Also**: `ReactiveModule.RGBA` and `ReactiveModule.HSVA`.
+*/
+emissiveColorFactor: RgbaSignal;
+/**
+* ```
 (get) emissiveTextureTransform: TextureTransform
 (set) emissiveTextureTransform: TextureTransformSignal
 ```
@@ -83,6 +95,15 @@ multiply: TextureBase | null;
 Specifies the coordinates transform of the multiplicative texture of this material.
 */
 multiplyTextureTransform: TextureTransform;
+/**
+* ```
+(get) normalTextureScale: ScalarSignal
+(set) normalTextureScale: ScalarSignal
+```
+
+The scalar parameter applied to each normal vector of the texture. This value scales the normal vector in X and Y directions.
+*/
+normalTextureScale: ScalarSignal;
 /**
 * ```
 (get) (Not Available)
