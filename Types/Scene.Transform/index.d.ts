@@ -6,6 +6,13 @@
 declare interface Transform {
 /**
 * ```
+(get) forward: VectorSignal
+(set) (Not Available)
+```
+*/
+forward: VectorSignal;
+/**
+* ```
 (get) position: PointSignal
 (set) position: PointSignal
 ```
@@ -13,6 +20,13 @@ declare interface Transform {
 Specifies the object position along the X, Y and Z axis of the object's local coordinate system.
 */
 position: PointSignal;
+/**
+* ```
+(get) right: VectorSignal
+(set) (Not Available)
+```
+*/
+right: VectorSignal;
 /**
 * ```
 (get) rotation: QuaternionSignal
@@ -88,6 +102,13 @@ scaleY: ScalarSignal;
 Specifies the object scale along the Z-axis of the object's local coordinate system.
 */
 scaleZ: ScalarSignal;
+/**
+* ```
+(get) up: VectorSignal
+(set) (Not Available)
+```
+*/
+up: VectorSignal;
 /**
 * ```
 (get) x: ScalarSignal

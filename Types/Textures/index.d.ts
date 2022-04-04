@@ -19,6 +19,52 @@
 declare class TexturesModule {
 /**
 *  
+ * clone(texture: string | TextureBase, initialState?: {[key: string]: any}): Promise<TextureBase>
+ *  
+ * 
+ * Clone a texture asynchronously.
+ * When creating the textures, keep the following in mind:
+ * - Cloning a texture with an identifier that doesn't exist fails the `Promise`.
+ * - New textures always get assigned a globally unique `name` and `identifier`.
+ * - `initialState` is optional, but encouraged to be used.
+ * - All properties that are using Signal types get assigned a ConstSignal with last value. Use initialState to override it.
+ * 
+ * Note: This API requires "Scripting Dynamic Instantiation" capability to be enabled.
+ */
+static clone(texture: TextureBase | string, initialState?: {[key: string]: any}): Promise<TextureBase>;
+
+/**
+*  
+ * create(className: string, initialState?: {[key: string]: any}): Promise<TextureBase>
+ *  
+ * 
+ * Create a texture asynchronously.
+ * When creating the textures, keep the following in mind:
+ * - All textures must have an existing class.
+ * - New textures always get assigned a globally unique `name` and `identifier`.
+ * - `initialState` is optional, but encouraged to be used.
+ * 
+ * Note: This API requires "Scripting Dynamic Instantiation" capability to be enabled.
+ */
+static create(className: string, initialState?: {[key: string]: any}): Promise<TextureBase>;
+
+/**
+*  
+ * destroy(texture: string | TextureBase): Promise<void>
+ *  
+ * 
+ * Destroy a texture asynchronously.
+ * When destroying the textures, keep the following in mind:
+ * - All bound properties will be automatically unbound on destruction.
+ * - Destroying a texture that doesn't exist fails the `Future`.
+ * - Destroying a set of textures that was created in Studio fails the `Future`.
+ * 
+ * Note: This API requires "Scripting Dynamic Instantiation" capability to be enabled.
+ */
+static destroy(texture: TextureBase | string): Promise<void>;
+
+/**
+*  
  * findFirst(textureName: string): Promise<TextureBase | null>
  *  
  * 

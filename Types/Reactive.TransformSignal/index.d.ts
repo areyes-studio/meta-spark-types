@@ -7,6 +7,13 @@
 declare interface TransformSignal {
 /**
 * ```
+(get) forward: VectorSignal
+(set) (Not Available)
+```
+*/
+forward: VectorSignal;
+/**
+* ```
 (get) position: PointSignal
 (set) (Not Available)
 ```
@@ -14,6 +21,13 @@ declare interface TransformSignal {
 Represents the offset in the local coordinate system.
 */
 position: PointSignal;
+/**
+* ```
+(get) right: VectorSignal
+(set) (Not Available)
+```
+*/
+right: VectorSignal;
 /**
 * ```
 (get) rotation: QuaternionSignal
@@ -90,6 +104,13 @@ scaleY: ScalarSignal;
 Represents scale along the z-axis of the local coordinate system.
 */
 scaleZ: ScalarSignal;
+/**
+* ```
+(get) up: VectorSignal
+(set) (Not Available)
+```
+*/
+up: VectorSignal;
 /**
 * ```
 (get) x: ScalarSignal
