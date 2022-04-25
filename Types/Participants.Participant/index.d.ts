@@ -1,4 +1,5 @@
 /// <reference path="../Reactive.BoolSignal/index.d.ts" />
+/// <reference path="../Reactive.StringSignal/index.d.ts" />
 declare interface Participant {
 /**
 * ```
@@ -34,4 +35,13 @@ Whether the participant is currently active in the same effect, as a [`BoolSigna
 This is distinct from `isActiveInCall` as a participant may be active in the video call but not necessarily be active in the running effect.
 */
 isActiveInSameEffect: BoolSignal;
+/**
+* ```
+(get) loadStatus: StringSignal<ParticipantLoadStatus>
+(set) (Not Available)
+```
+
+The participant's load status, as a [`StringSignal`](/classes/ReactiveModule.StringSignal) containing a [`ParticipantLoadStatus`](/classes/ParticipantsModule.ParticipantLoadStatus) enum value (`LOADING`, `LOADED`, `ERROR` or `OPTED_OUT`).
+*/
+loadStatus: StringSignal<ParticipantLoadStatus>;
 }

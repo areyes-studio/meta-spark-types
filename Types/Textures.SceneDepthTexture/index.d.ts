@@ -6,6 +6,8 @@ declare interface SceneDepthTexture extends TextureBase {
 (get) trackingQuality: StringSignal<TrackingQuality>
 (set) (Not Available)
 ```
+
+The quality of tracking, as a [`StringSignal`](/classes/ReactiveModule.StringSignal) containing a [`TrackingQuality`](/enums/TexturesModule.TrackingQuality) enum value.
 */
 trackingQuality: StringSignal<TrackingQuality>;
 }

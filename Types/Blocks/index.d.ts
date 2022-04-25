@@ -34,6 +34,21 @@ Gets an object encapsulating all outputs for this Block.
 static readonly outputs: BlockInstanceOutputs;
 /**
 *  
+ * download(blockAssetOrName: string | BlockAsset): Promise<string>
+ *  
+ * 
+ * Downloads the given Block Asset, or the Block with the given name, and returns a Promise that
+ * is resolved with the Block's name (if the download succeeds), or fails with an error (if it does not).
+ * For Blocks that are not downloadable, this becomes a no-op.
+ * For Blocks that were already downloaded and are already available, this becomes a no-op.
+ * 
+ * Downloading doesn't instantiate the Block or add it to the scene, or make its inputs/outputs available,
+ * but makes sure that all the assets that are required are downloaded and are readily available.
+ */
+static download(blockAssetOrName: BlockAsset | string): Promise<string>;
+
+/**
+*  
  * instantiate(blockAssetOrName: string | BlockAsset, initialState: {[key: string]: any}, modulesConfig?: BlockModulesConfig): Promise<BlockSceneRoot>
  *  
  * 

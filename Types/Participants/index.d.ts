@@ -1,7 +1,17 @@
+/// <reference path="../Reactive.BoolSignal/index.d.ts" />
 /// <reference path="../Reactive.EventSource/index.d.ts" />
 /// <reference path="../Participants.Participant/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 declare class ParticipantsModule {
+/**
+* ```
+(get) effectGroupInitialised: BoolSignal
+(set) (Not Available)
+```
+
+Whether the group apply of effect in video call initialised, that means all other participants trying to load the same effect has finished loading.
+*/
+static readonly effectGroupInitialised: BoolSignal;
 /**
 * ```
 (get) otherParticipantCount: ScalarSignal
