@@ -1,6 +1,7 @@
 /// <reference path="../Reactive.BoolSignal/index.d.ts" />
 /// <reference path="../Scene.OutputVisibility/index.d.ts" />
 /// <reference path="../Scene.SceneObjectBase/index.d.ts" />
+/// <reference path="../Reactive.TransformSignal/index.d.ts" />
 declare interface Scene {
 /**
 * ```
@@ -20,6 +21,16 @@ hidden: BoolSignal;
 Represents the `OutputVisibility` that contains a set of flags that specify the overall scene visibility depending on the output.
 */
 outputVisibility: OutputVisibility;
+/**
+* ```
+(get) worldTransform: TransformSignal
+(set) (Not Available)
+```
+
+Specifies a `TransformSignal` object describing the scene roots transformation relative to world coordinate system.
+This property is available only within the context of a block.
+*/
+worldTransform: TransformSignal;
 /**
 *  
  * addChild(child: SceneObjectBase | string): Promise<void>
