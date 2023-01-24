@@ -1,7 +1,7 @@
 {
-    "name": "spark-ar-types",
-    "version": "154.0.0",
-    "description": "Data types from Spark AR Studio",
+    "name": "meta-spark-types",
+    "version": "155.0.0",
+    "description": "Data types from Meta Spark Studio",
     "author": "AREYES.STUDIO",
     "license": "UNLICENSED"
 }
