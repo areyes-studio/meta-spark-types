@@ -1,6 +1,5 @@
 /// <reference path="../Persistence.BlockStorage/index.d.ts" />
 /// <reference path="../Persistence.StorageLocation/index.d.ts" />
-/// <reference path="../Persistence.StorageScope/index.d.ts" />
 declare class PersistenceModule {
 /**
 * ```
@@ -28,16 +27,6 @@ Gets an instance of StorageLocation that stores data on the user's local
  effects cannot access the data stored by other effects.
 */
 static readonly local: StorageLocation;
-/**
-* ```
-(get) userScope: StorageScope
-(set) (Not Available)
-```
-
-Deprecated. Please use Persistence.local and its StorageLocation class instead.
-Gets an instance of StorageScope corresponding to the user scope.
-*/
-static readonly userScope: StorageScope;
 /**
 *  
  * blockStorage(storageIdentifier: string): BlockStorage

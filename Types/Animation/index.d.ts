@@ -1,3 +1,5 @@
+/// <reference path="../Reactive.AnimationBlend/index.d.ts" />
+/// <reference path="../Reactive.AnimationBlendInput/index.d.ts" />
 /// <reference path="../Animation.AnimationClip/index.d.ts" />
 /// <reference path="../Animation.AnimationClips/index.d.ts" />
 /// <reference path="../Animation.AnimationPlaybackController/index.d.ts" />
@@ -60,6 +62,29 @@ static animate(driver: TimeDriver | ValueDriver, sampler: ArrayOfScalarSamplers)
 static animate(driver: TimeDriver | ValueDriver, sampler: RotationSampler): QuaternionSignal;
 
 static animate(driver: TimeDriver | ValueDriver, sampler: ColorSampler): RgbaSignal;
+
+/**
+*  
+ * animationBlend(blendInputs: Array<AnimationBlendInput>, normalizeWeights?: false | true): AnimationBlend
+ *  
+ * 
+ * Constructs a blended animation from an array of AnimationBlendInputs, which can be applied to a target ThreeDObject.
+ * * 'blendInputs' - the array of blend inputs. Each input consists of an animation clip, progress, and weight.
+ * * 'normalizeWeights' - whether to divide each weight by the total sum, to force the weights to sum to 1.
+ */
+static animationBlend(blendInputs: Array<AnimationBlendInput>, normalizeWeights?: false | true): AnimationBlend;
+
+/**
+*  
+ * blendInput(clip: AnimationClip, progress: ScalarSignal, weight: ScalarSignal): AnimationBlendInput
+ *  
+ * 
+ * Constructs an AnimationBlendInput which can be used for Animation Blending.
+ * * 'clip' - the source animation clip from which to sample animation data.
+ * * 'progress' - the time driver controlling at which point in time to sample the above clip. Ranges from 0 to 1.
+ * * 'weight' - the amount this input affects the final blend. Weights for all blend inputs ideally add up to 1.
+ */
+static blendInput(clip: AnimationClip, progress: ScalarSignal | number, weight: ScalarSignal | number): AnimationBlendInput;
 
 /**
 *  

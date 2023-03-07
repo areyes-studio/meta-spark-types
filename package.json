@@ -1,7 +1,11 @@
 {
     "name": "@areyes-studio/meta-spark-types",
-    "version": "155.0.0",
+    "version": "158.0.0",
     "description": "Data types from Meta Spark Studio",
     "author": "AREYES.STUDIO",
-    "license": "UNLICENSED"
+    "license": "UNLICENSED",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/areyes-studio/meta-spark-types"
+    }
 }
