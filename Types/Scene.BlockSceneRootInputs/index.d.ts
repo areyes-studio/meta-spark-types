@@ -8,7 +8,7 @@
 /// <reference path="../Reactive.Vec2Signal/index.d.ts" />
 /// <reference path="../Reactive.Vec4Signal/index.d.ts" />
 /// <reference path="../Reactive.VectorSignal/index.d.ts" />
-declare interface BlockInstanceInputs {
+declare interface BlockSceneRootInputs {
 /**
 *  
  * findFirst(name: string, config?: {type?: string}): Promise<BlockInstanceInput | null>

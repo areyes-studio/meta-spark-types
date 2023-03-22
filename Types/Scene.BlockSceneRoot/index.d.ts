@@ -1,5 +1,5 @@
-/// <reference path="../Blocks.BlockInstanceInputs/index.d.ts" />
-/// <reference path="../Blocks.BlockInstanceOutputs/index.d.ts" />
+/// <reference path="../Scene.BlockSceneRootInputs/index.d.ts" />
+/// <reference path="../Scene.BlockSceneRootOutputs/index.d.ts" />
 /// <reference path="../Reactive.BoolSignal/index.d.ts" />
 /// <reference path="../Reactive.Box3DSignal/index.d.ts" />
 /// <reference path="../Scene.SceneObjectBase/index.d.ts" />
@@ -29,22 +29,22 @@ Note: Visibility is determined on the entire set of contents of the Block,
 boundingBoxVisible: BoolSignal;
 /**
 * ```
-(get) inputs: BlockInstanceInputs
+(get) inputs: BlockSceneRootInputs
 (set) (Not Available)
 ```
 
 Returns an object encapsulating all input setters for the Block Instance.
 */
-inputs: BlockInstanceInputs;
+inputs: BlockSceneRootInputs;
 /**
 * ```
-(get) outputs: BlockInstanceOutputs
+(get) outputs: BlockSceneRootOutputs
 (set) (Not Available)
 ```
 
 Returns an object encapsulating all outputs getters for the Block Instance.
 */
-outputs: BlockInstanceOutputs;
+outputs: BlockSceneRootOutputs;
 /**
 *  
  * getBoundingBox(options?: {includeChildren?: false | true, skipHidden?: false | true}): Box3DSignal

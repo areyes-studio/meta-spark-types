@@ -33,7 +33,7 @@ visible: BoolSignal | boolean;
  *  
  * 
  * Configures the parameters of the slider with the JSON configuration specified.
- * * `config` -  The configuration to configure the picker object with.
+ * * `config` -  The configuration to configure the slider object with.
  * The `config` JSON object can have the following fields:
  * * `type` - the type of the slider. Either `SCALE`, `PROGRESS` or `COLOR`. Defaults to `SCALE` if no value is specified.
  * * `steps` - an optional number of steps to divide the track of the slider into. Required for sliders of type `PROGRESS`.

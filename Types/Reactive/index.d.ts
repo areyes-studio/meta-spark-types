@@ -1,6 +1,7 @@
 /// <reference path="../Reactive.AnimationBlend/index.d.ts" />
 /// <reference path="../Reactive.AnimationBlendInput/index.d.ts" />
 /// <reference path="../Reactive.AntiderivativeOverflowBehaviour/index.d.ts" />
+/// <reference path="../Reactive.AudioSignal/index.d.ts" />
 /// <reference path="../Reactive.BoolSignal/index.d.ts" />
 /// <reference path="../Reactive.BoolSignalSource/index.d.ts" />
 /// <reference path="../Reactive.Box2D/index.d.ts" />

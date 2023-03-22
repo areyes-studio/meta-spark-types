@@ -4,7 +4,6 @@
 /// <reference path="../WorldTracking.ARTrackableType/index.d.ts" />
 /// <reference path="../Reactive.EventSource/index.d.ts" />
 /// <reference path="../WorldTracking.HitTestResult/index.d.ts" />
-/// <reference path="../WorldTracking.HitTestType/index.d.ts" />
 /// <reference path="../Reactive.Point3D/index.d.ts" />
 /// <reference path="../Reactive.StringSignal/index.d.ts" />
 /// <reference path="../WorldTracking.TrackingState/index.d.ts" />
@@ -85,15 +84,6 @@ static onTrackableAdded(): EventSource<ARTrackable>;
 static onTrackableDeleted(): EventSource<ARTrackable>;
 
 /**
- * 
- * @property RAY_CAST 
- * @property SHADER_PICK 
- */
-static readonly HitTestType: {
-  RAY_CAST: "RAY_CAST",
-  SHADER_PICK: "SHADER_PICK",
-}
-/**
  * The `ARTrackableState` enum describes the states that the trackable can be in. Used by
 `ARTrackable.state`.
  * @property INITIALIZING The trackable is initializing.
@@ -127,19 +117,6 @@ static readonly ARTrackableType: {
   HORIZONTAL_PLANE: "HORIZONTAL_PLANE",
   REMOTE: "REMOTE",
   UNKNOWN: "UNKNOWN",
-  VERTICAL_PLANE: "VERTICAL_PLANE",
-}
-/**
- * The `HitTestType` enum lists the types of hit test supported.
- * @property ANY_PLANE Hit tests are performed on both horizontal and vertical surface planes.
- * @property FEATURE_POINT Hit tests are limited to feature points only.
- * @property HORIZONTAL_PLANE Hit tests are limited to horizontal surface planes only.
- * @property VERTICAL_PLANE Hit tests are limited to vertical surface planes only.
- */
-static readonly HitTestType: {
-  ANY_PLANE: "ANY_PLANE",
-  FEATURE_POINT: "FEATURE_POINT",
-  HORIZONTAL_PLANE: "HORIZONTAL_PLANE",
   VERTICAL_PLANE: "VERTICAL_PLANE",
 }
 /**
