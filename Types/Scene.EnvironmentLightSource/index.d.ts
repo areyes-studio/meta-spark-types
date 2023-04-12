@@ -4,20 +4,20 @@
 declare interface EnvironmentLightSource extends SceneObjectBase {
 /**
 * ```
-(get) (Not Available)
+(get) diffuseEnvironment: TextureBase | null
 (set) diffuseEnvironment: TextureBase | null
 ```
 
-Set a diffuse environment texture on this material.
+Gets/Set a diffuse environment texture on this material.
 */
 diffuseEnvironment: TextureBase | null;
 /**
 * ```
-(get) (Not Available)
+(get) specularEnvironment: TextureBase | null
 (set) specularEnvironment: TextureBase | null
 ```
 
-Set a specular environment texture on this material.
+Gets/Set a specular environment texture on this material.
 */
 specularEnvironment: TextureBase | null;
 /**

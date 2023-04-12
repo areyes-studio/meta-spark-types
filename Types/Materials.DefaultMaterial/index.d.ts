@@ -1,3 +1,4 @@
+/// <reference path="../Reactive.Color/index.d.ts" />
 /// <reference path="../Reactive.ColorSignal/index.d.ts" />
 /// <reference path="../Materials.MaterialBase/index.d.ts" />
 /// <reference path="../Reactive.RgbaSignal/index.d.ts" />
@@ -19,6 +20,16 @@ Note that RgbaSignal is always returned.
 ambientColorFactor: RgbaSignal;
 /**
 * ```
+(get) ambientColorFactorValue: Color
+(set) ambientColorFactorValue: Color
+```
+
+Specifies a `Color` for a ambient color factor. A `Color` may be created using the `Color.fromRGBA()` and `Color.fromHSVA()` static methods of the `Color` class.
+Note that Rgba Color is always returned.
+*/
+ambientColorFactorValue: Color;
+/**
+* ```
 (get) blendMode: StringSignal<MaterialsModule.BlendMode>
 (set) blendMode: StringSignal<MaterialsModule.BlendMode>
 ```
@@ -26,6 +37,15 @@ ambientColorFactor: RgbaSignal;
 Specifies the material blend mode.
 */
 blendMode: StringSignal<MaterialsModule.BlendMode>;
+/**
+* ```
+(get) blendModeValue: MaterialsModule.BlendMode
+(set) blendModeValue: MaterialsModule.BlendMode
+```
+
+Specifies the material blend mode.
+*/
+blendModeValue: BlendMode;
 /**
 * ```
 (get) diffuseColorFactor: RgbaSignal
@@ -39,10 +59,22 @@ Note that RgbaSignal is always returned.
 diffuseColorFactor: RgbaSignal;
 /**
 * ```
-(get) (Not Available)
+(get) diffuseColorFactorValue: Color
+(set) diffuseColorFactorValue: Color
+```
+
+Specifies a `Color` for a diffuse color factor. A `Color` may be created using the `Color.fromRGBA()` and `Color.fromHSVA()` static methods of the `Color` class.
+Note that Rgba Color is always returned.
+**See Also**: `Color.fromRGBA` and `Color.fromHSVA`.
+*/
+diffuseColorFactorValue: Color;
+/**
+* ```
+(get) emissive: TextureBase | null
 (set) emissive: TextureBase | null
 ```
 
+Returns the emissive texture of the material or null if no texture was assigned.
 Specifies the emissive texture of the material.
 */
 emissive: TextureBase | null;
@@ -57,6 +89,17 @@ Note that RgbaSignal is always returned.
 **See Also**: `ReactiveModule.RGBA` and `ReactiveModule.HSVA`.
 */
 emissiveColorFactor: RgbaSignal;
+/**
+* ```
+(get) emissiveColorFactorValue: Color
+(set) emissiveColorFactorValue: Color
+```
+
+/**
+Specifies a `Color` for a emmisive color factor. A `Color` may be created using the `Color.fromRGBA()` and `Color.fromHSVA()` static methods of the `Color` class.
+Note that Rgba Color is always returned.
+*/
+emissiveColorFactorValue: Color;
 /**
 * ```
 (get) emissiveTextureTransform: TextureTransform
@@ -79,10 +122,11 @@ Note that RgbaSignal is always returned.
 emmisiveColorFactor: RgbaSignal;
 /**
 * ```
-(get) (Not Available)
+(get) multiply: TextureBase | null
 (set) multiply: TextureBase | null
 ```
 
+Returns the multiplicative texture of the material or null if no texture was assigned.
 Specifies the multiplicative texture of the material.
 */
 multiply: TextureBase | null;
@@ -106,10 +150,20 @@ The scalar parameter applied to each normal vector of the texture. This value sc
 normalTextureScale: ScalarSignal;
 /**
 * ```
-(get) (Not Available)
+(get) normalTextureScaleValue: number
+(set) normalTextureScaleValue: number
+```
+
+The scalar parameter applied to each normal vector of the texture. This value scales the normal vector in X and Y directions.
+*/
+normalTextureScaleValue: number;
+/**
+* ```
+(get) reflective: TextureBase | null
 (set) reflective: TextureBase | null
 ```
 
+Returns the reflective texture of the material or null if no texture was assigned.
 Specifies the reflective texture of the material.
 */
 reflective: TextureBase | null;
@@ -133,6 +187,16 @@ Note that RgbaSignal is always returned.
 **See Also**: `ReactiveModule.RGBA` and `ReactiveModule.HSVA`.
 */
 specularColorFactor: RgbaSignal;
+/**
+* ```
+(get) specularColorFactorValue: Color
+(set) specularColorFactorValue: Color
+```
+
+Specifies a `Color` for a specular color factor. A `Color` may be created using the `Color.fromRGBA()` and `Color.fromHSVA()` static methods of the `Color` class.
+Note that Rgba Color is always returned.
+*/
+specularColorFactorValue: Color;
 /**
 *  
  * getEmissive(): Promise<TextureBase | null>

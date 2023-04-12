@@ -1,3 +1,4 @@
+/// <reference path="../Reactive.AnimationClipSignal/index.d.ts" />
 /// <reference path="../Reactive.BoolSignal/index.d.ts" />
 /// <reference path="../Reactive.ColorSignal/index.d.ts" />
 /// <reference path="../Reactive.EventSource/index.d.ts" />
@@ -32,6 +33,17 @@ findUsingPattern(namePattern: string, config?: {limit?: number, type?: string}):
  * 
  */
 getAll(config?: {type?: string}): Promise<Array<BlockInstanceInput>>;
+
+/**
+*  
+ * setAnimationClip(name: string, v: AnimationClipSignal): Promise<void>
+ *  
+ * 
+ * Sends an `AnimationClipSignal` to the Block's input with the given `name`. Returns a promise that is fulfilled
+ * if the operation succeeds and is rejected if the operation fails, such as if no
+ * input exists with the given name, or if the input's type is not of type AnimationClip.
+ */
+setAnimationClip(name: string, v: AnimationClipSignal): Promise<void>;
 
 /**
 *  

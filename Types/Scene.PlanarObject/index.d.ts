@@ -42,44 +42,44 @@ Specifies the horizontal alignment.
 horizontalAlignment: HorizontalAlignment;
 /**
 * ```
-(get) (Not Available)
-(set) marginBottom: number
+(get) marginBottom: ScalarSignal
+(set) marginBottom: ScalarSignal
 ```
 
 Specifies the size of the bottom margin.
 **Note**: it behaves in a similar way to the `margin-bottom` CSS property.
 */
-marginBottom: number;
+marginBottom: ScalarSignal;
 /**
 * ```
-(get) (Not Available)
-(set) marginEnd: number
+(get) marginEnd: ScalarSignal
+(set) marginEnd: ScalarSignal
 ```
 
 Specifies the size of the right margin.
 **Note**: it behaves in a similar way to the `margin-right` CSS property.
 */
-marginEnd: number;
+marginEnd: ScalarSignal;
 /**
 * ```
-(get) (Not Available)
-(set) marginStart: number
+(get) marginStart: ScalarSignal
+(set) marginStart: ScalarSignal
 ```
 
 Specifies the size of the left margin.
 **Note**: it behaves in a similar way to the `margin-left` CSS property.
 */
-marginStart: number;
+marginStart: ScalarSignal;
 /**
 * ```
-(get) (Not Available)
-(set) marginTop: number
+(get) marginTop: ScalarSignal
+(set) marginTop: ScalarSignal
 ```
 
 Specifies the size of the top margin.
 **Note**: it behaves in a similar way to the `margin-top` CSS property.
 */
-marginTop: number;
+marginTop: ScalarSignal;
 /**
 * ```
 (get) (Not Available)

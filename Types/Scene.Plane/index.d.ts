@@ -13,15 +13,6 @@ Specifies the vertical size, in 3D units.
 height: ScalarSignal;
 /**
 * ```
-(get) (Not Available)
-(set) material: MaterialBase | null
-```
-
-Specifies the material of the scene object.
-*/
-material: MaterialBase | null;
-/**
-* ```
 (get) width: ScalarSignal
 (set) width: ScalarSignal
 ```

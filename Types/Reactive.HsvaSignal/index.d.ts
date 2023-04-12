@@ -1,3 +1,4 @@
+/// <reference path="../Reactive.Color/index.d.ts" />
 /// <reference path="../Reactive.ColorSignal/index.d.ts" />
 /// <reference path="../Reactive.RgbaSignal/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
@@ -30,6 +31,15 @@ brightness: ScalarSignal;
 Returns the value of the `hue` channel of this signal.
 */
 hue: ScalarSignal;
+/**
+* ```
+(get) lastValue: Color
+(set) (Not Available)
+```
+
+Returns a new `Color` containing the last value of the specified signal .
+*/
+lastValue: Color;
 /**
 * ```
 (get) saturation: ScalarSignal

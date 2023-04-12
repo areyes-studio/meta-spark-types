@@ -1,3 +1,4 @@
+/// <reference path="../Reactive.AnimationClipSignal/index.d.ts" />
 /// <reference path="../Reactive.BoolSignal/index.d.ts" />
 /// <reference path="../Reactive.EventSource/index.d.ts" />
 /// <reference path="../Reactive.PointSignal/index.d.ts" />
@@ -9,6 +10,28 @@
 /// <reference path="../Reactive.Vec4Signal/index.d.ts" />
 /// <reference path="../Reactive.VectorSignal/index.d.ts" />
 declare interface BlockInstanceInputs {
+/**
+*  
+ * getAnimationClip(name: string): Promise<AnimationClipSignal>
+ *  
+ * 
+ * Returns a promise that is resolved with an AnimationClipSignal from the Block output
+ *  with the given `name`. Fails the promise if no output with that `name` is present
+ *  in the Block or if the output with that `name` is not of type AnimationClip.
+ */
+getAnimationClip(name: string): Promise<AnimationClipSignal>;
+
+/**
+*  
+ * getAnimationClipOrFallback(name: string, fallback: AnimationClipSignal): AnimationClipSignal
+ *  
+ * 
+ * Returns an AnimationClipSignal from the Block output with the given `name`. Returns the
+ * `fallback` if any error happens, such as if no output with that `name` is present in the Block,
+ * or if the output with that `name` is not of type AnimationClip.
+ */
+getAnimationClipOrFallback(name: string, fallback: AnimationClipSignal): AnimationClipSignal;
+
 /**
 *  
  * getBoolean(name: string): Promise<BoolSignal>

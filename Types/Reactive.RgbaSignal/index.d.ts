@@ -1,3 +1,4 @@
+/// <reference path="../Reactive.Color/index.d.ts" />
 /// <reference path="../Reactive.ColorSignal/index.d.ts" />
 /// <reference path="../Reactive.HsvaSignal/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
@@ -30,6 +31,15 @@ blue: ScalarSignal;
 Returns the value of the green channel between 0 and 1.0.
 */
 green: ScalarSignal;
+/**
+* ```
+(get) lastValue: Color
+(set) (Not Available)
+```
+
+Returns a new `Color` containing the last value of the specified signal .
+*/
+lastValue: Color;
 /**
 * ```
 (get) red: ScalarSignal

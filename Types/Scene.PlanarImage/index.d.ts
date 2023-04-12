@@ -12,15 +12,6 @@ Represents a depth bias that can be used for rendering.
 */
 depthBias: ScalarSignal;
 /**
-* ```
-(get) (Not Available)
-(set) material: MaterialBase | null
-```
-
-Specifies the material of the scene object.
-*/
-material: MaterialBase | null;
-/**
 *  
  * getMaterial(): Promise<MaterialBase | null>
  *  

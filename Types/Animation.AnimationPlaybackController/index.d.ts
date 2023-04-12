@@ -1,4 +1,5 @@
 /// <reference path="../Animation.AnimationClip/index.d.ts" />
+/// <reference path="../Reactive.AnimationClipSignal/index.d.ts" />
 /// <reference path="../Reactive.BoolSignal/index.d.ts" />
 /// <reference path="../Reactive.ScalarSignal/index.d.ts" />
 declare interface AnimationPlaybackController {
@@ -61,6 +62,15 @@ getAnimationClip(): Promise<AnimationClip | null>;
 
 /**
 *  
+ * getAnimationClipSignal(): AnimationClipSignal
+ *  
+ * 
+ * Get the AnimationClipSignal this controller is using.
+ */
+getAnimationClipSignal(): AnimationClipSignal;
+
+/**
+*  
  * reset(): void
  *  
  * 
@@ -76,5 +86,14 @@ reset(): void;
  * Set the animation clip that this controller should use.
  */
 setAnimationClip(clip: AnimationClip | null): Promise<void>;
+
+/**
+*  
+ * setAnimationClipSignal(clip: AnimationClipSignal): void
+ *  
+ * 
+ * Set the AnimationClipSignal this controller should use.
+ */
+setAnimationClipSignal(clip: AnimationClipSignal): void;
 
 }

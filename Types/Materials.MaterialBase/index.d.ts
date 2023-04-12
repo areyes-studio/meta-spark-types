@@ -57,7 +57,7 @@ They will obscure farther objects that are drawn after, unless these objects als
 depthWriteEnabled: BoolSignal;
 /**
 * ```
-(get) (Not Available)
+(get) diffuse: TextureBase | null
 (set) diffuse: TextureBase | null
 ```
 

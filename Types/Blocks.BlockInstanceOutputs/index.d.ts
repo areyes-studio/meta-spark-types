@@ -1,3 +1,4 @@
+/// <reference path="../Reactive.AnimationClipSignal/index.d.ts" />
 /// <reference path="../Reactive.BoolSignal/index.d.ts" />
 /// <reference path="../Reactive.EventSource/index.d.ts" />
 /// <reference path="../Reactive.PointSignal/index.d.ts" />
@@ -9,6 +10,17 @@
 /// <reference path="../Reactive.Vec4Signal/index.d.ts" />
 /// <reference path="../Reactive.VectorSignal/index.d.ts" />
 declare interface BlockInstanceOutputs {
+/**
+*  
+ * setAnimationClip(name: string, signal: AnimationClipSignal): Promise<void>
+ *  
+ * 
+ * Sends an AnimationClipSignal to the Block's input with the given `name`. Returns a promise that
+ *  is fulfilled if the operation succeeds and is rejected if the operation fails, such
+ *  as if no input exists with the given name, or if the input's type is not of type AnimationClip.
+ */
+setAnimationClip(name: string, signal: AnimationClipSignal): Promise<void>;
+
 /**
 *  
  * setBoolean(name: string, signal: BoolSignal | boolean): Promise<void>

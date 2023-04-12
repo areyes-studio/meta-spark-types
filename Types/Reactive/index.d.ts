@@ -1,5 +1,6 @@
 /// <reference path="../Reactive.AnimationBlend/index.d.ts" />
 /// <reference path="../Reactive.AnimationBlendInput/index.d.ts" />
+/// <reference path="../Reactive.AnimationClipSignal/index.d.ts" />
 /// <reference path="../Reactive.AntiderivativeOverflowBehaviour/index.d.ts" />
 /// <reference path="../Reactive.AudioSignal/index.d.ts" />
 /// <reference path="../Reactive.BoolSignal/index.d.ts" />
@@ -8,6 +9,7 @@
 /// <reference path="../Reactive.Box2DSignal/index.d.ts" />
 /// <reference path="../Reactive.Box3D/index.d.ts" />
 /// <reference path="../Reactive.Box3DSignal/index.d.ts" />
+/// <reference path="../Reactive.Color/index.d.ts" />
 /// <reference path="../Reactive.ColorSignal/index.d.ts" />
 /// <reference path="../Reactive.EventSource/index.d.ts" />
 /// <reference path="../Reactive.EventSourceHistory/index.d.ts" />
@@ -50,6 +52,20 @@ static readonly Box2D: Box2D;
 ```
 */
 static readonly Box3D: Box3D;
+/**
+* ```
+(get) Color: Color
+(set) Color: Color
+```
+*/
+static readonly Color: Color;
+/**
+* ```
+(get) ColorModel: ColorModel
+(set) ColorModel: ColorModel
+```
+*/
+static readonly ColorModel: ColorModel;
 /**
 * ```
 (get) Mat4: Mat4
