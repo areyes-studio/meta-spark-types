@@ -81,6 +81,7 @@ outputVisibility: OutputVisibility;
 (set) (Not Available)
 ```
 
+Deprecated. Please use getParent() and worldTransform APIs instead.
 Specifies a `TransformSignal` object describing the parent's transformation relative to world coordinate system.
 */
 parentWorldTransform: TransformSignal;
